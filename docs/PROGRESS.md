@@ -1,7 +1,7 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: reviewed interim preview update; independent coverage audit
+Milestone: clause-frame redesign reviewed; reserved evaluation next
 Status: build goal active — fresh detection acceptance remains unmet
 
 ## Verified delivery
@@ -33,11 +33,12 @@ All seven reserved attempts failed the original detection requirement of at leas
 | V7 | 6/12 | 6/6 | 0 |
 
 - V6 was frozen before v5 diagnostics, run once against the committed candidate, and failed detection. All source/corpus integrity checks passed. V7 was frozen before v6 diagnostic consumption, run once on reviewed commit 10d4e764c09938b61a04b2a3cd8cd48c7a091441 and failed detection. V8 was frozen before v7 diagnostic consumption and remains sealed.
-- The shared grammar refactor preserved precision but did not meet fresh coverage. An independent reviewer is now preparing a separate 100-case development audit, frozen before running the engine, to test common variation across all five families. Further fresh runs wait for that broader audit and shared-cause repairs. Gaps include responsibility status, explicit approval status, nonspecific prerequisite timing and the grammatical force of product promises. No new scope or acceptance changes.
+- The independent 100-case development audit found 16/50 intended positive findings, 49/50 clean controls unflagged and 65/100 exact rule sets on the deployed baseline. The repaired clause-frame redesign at full manifest c43d1866b582f5772c28af469d375bfdaf26a790247ce4a870784b8320a84245 reaches 100/100 exact cases, with 50/50 positives and 50/50 clean controls, and retains the private 80/80 matrix. Labels, original inputs and baseline results are unchanged; one request-count label remains judgment-dependent. These are development results, not fresh evidence.
+- This local candidate passes seven setup/integrity tests, 211 public engine tests, build/typecheck and 19 browser checks. Consumed v1–v7 reached 83/84 expected findings, 83/83 useful emissions and zero flags across 28 clean controls. One historical abstention remains. Independent review first found nine false flags across seven task/dependency/approval scope defects; all were repaired, together with a timing regression. The reviewer cleared 29 targeted probes plus 211 public tests and typecheck. V8 remains sealed until this candidate is committed and authorised for one run.
 - Diagnostic-derived nearby examples remain private regression material. Independent reviewer-authored cases can enter development tests. No reserved corpus or labels are uploaded or published.
 - The frozen private 80-draft development matrix improved from 65/80 exact cases to 80/80; consumed v1–v6 reached 71/72 expected and 71/71 useful findings with zero clean flags. Independent review verified all scope fixes and final suppression repairs. These known-case results do not satisfy fresh evaluation.
 - Timing is aligned with the original brief: a direct request alone is insufficient; another stated step must depend on the vague timing. The broader secondary contract wording and five ad-hoc tests were corrected, with original fixtures and reserved labels preserved.
-- The candidate is identified by hashes of all three runtime engine modules and one canonical manifest hash, checked before and after evaluation. A regression test verifies that imported-module changes alter candidate identity.
+- Candidates are identified by hashes of every runtime engine module and one canonical manifest hash, checked before and after evaluation. The local redesign has five modules; the current hosted preview has three. A regression test verifies that imported-module changes alter candidate identity.
 - Engineering completion, real-world accuracy and customer validation are not claimed.
 
 ## Workflow and boundaries
@@ -45,13 +46,12 @@ All seven reserved attempts failed the original detection requirement of at leas
 - The existing lead task is associated with the correct local project; repository operations use the canonical root explicitly.
 - ChatGPT project instructions are saved. Project Sources contains CHATGPT_CONTEXT-2026-09-10-1358UTC.md.txt, a dated brief/progress snapshot; its superseded 13:17 copy was removed after the new source became ready. Matching companion-task delivery was acknowledged. This is explicit milestone refresh, not continuous sync.
 - Native app self-control remains restricted; use supported task tools and website UI without bypassing that restriction.
-- Render uses the inspected existing Hobby allowance. A follow-up check showed 4/25 services, 2 MB/5 GB bandwidth and 0/500 pipeline minutes displayed. Automatic deploys are off. No billing, plan, domain or unrelated service changes were made.
+- Render uses the inspected existing Hobby allowance. The latest refreshed check showed 4/25 services, 4 MB/5 GB bandwidth and 0/500 pipeline minutes displayed. Automatic deploys are off. No billing, plan, domain or unrelated service changes were made.
 - The accidental Vercel Git connection was disconnected and verified; no project or deployment was deleted.
 - Human usability sessions: 0/3. Pilots: 0/5. Keith recruits; no outreach or customer feedback is claimed.
 - Main merge, public launch, visibility/domain changes, new spending and external outreach remain unapproved.
 
 ## Next action
 
-Verify the updated interim preview; use the independently authored coverage audit
-and newly consumed diagnostics to diagnose the persistent coverage gap. Preserve
-all seven failures. The goal stays active until the original engineering gates pass.
+Commit the independently reviewed candidate before one reserved v8 run.
+Preserve all seven failures; the goal stays active until the original gates pass.

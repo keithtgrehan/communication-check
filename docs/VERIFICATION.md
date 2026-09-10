@@ -46,6 +46,72 @@ unresolved defect in this bounded review. The candidate was committed as 10d4e76
 authorised v7 run again detected only 6/12 and failed the detection gate. Passing the private matrix and consumed
 corpora does not establish fresh generalisation.
 
+## Independent development coverage audit
+
+A separate reviewer froze 100 new fictional cases before running candidate
+d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243.
+Case SHA256: 47bddb94a7ea6a08e9f5b67e4042efd482cbdf4ae0b69d546ce58fff2e903b7d.
+There are ten positive and ten paired clean cases per family. The reviewer had
+prior source-review knowledge but read no reserved/consumed corpus, raw diagnostic,
+implementer matrix, development fixture, demo or v8 material for this audit.
+
+| Family | Selected positive findings detected | Clean cases unflagged |
+| --- | --- | --- |
+| Ownership | 2/10 | 10/10 |
+| Timing | 2/10 | 10/10 |
+| Competing requests | 6/10 | 9/10 |
+| Agreement | 1/10 | 10/10 |
+| Commitments | 5/10 | 10/10 |
+| Total | 16/50 | 49/50 |
+
+Exact rule-set matches: 65/100. There were 17 emissions, no invalid spans and no
+execution errors. Source and case hashes were unchanged before/after. One request
+counting label is explicitly judgment-dependent; it and the raw baseline remain
+unchanged, with any disagreement recorded separately. Cases are now available for
+development under ignored work/reviewer-coverage, never shared milestone sources.
+These are diagnostic development counts, not a fresh reserved result or an
+estimate of real-world accuracy. They demonstrate that the implementer's earlier
+80/80 matrix result did not cover important ordinary grammatical variation.
+
+The subsequent clause-frame redesign at full runtime manifest
+434abdcb026e797b9fde4f11f4dde48c87e29522545919a1bf6c19dd14c16421
+matches all 100 fixed cases: 50/50 selected positive detections, 50/50 clean
+controls unflagged, 50 emissions and no invalid spans. Every family has ten
+positive detections and ten clean controls. Original inputs, labels and baseline
+results are unchanged. R04-P is counted by the general action-frame logic;
+its previously documented label ambiguity remains. The private matrix remains
+80/80. These improvements are known-case development evidence only.
+
+Root validation on this five-module candidate passes seven setup/integrity tests,
+199 public engine tests, build/typecheck and all 19 local Chromium checks.
+Consumed v1–v7 detected 82/84 expected findings with 82/82 useful emissions and
+zero clean-control flags across 28 controls; all corpus/source checks passed.
+One historical v2 abstention and a new v5 timing regression remain. Independent
+review ran 32 probes and reproduced nine false flags across seven P2 causes:
+descriptive adjectives/relative clauses/exploratory wording treated as tasks,
+conversational timing/unrelated event objects treated as dependencies, and
+ordinary receipt/unrelated proposals treated as pending agreement. All nine were
+clean on the previous deployed candidate; intended positive and commitment
+controls passed and all spans were valid. This candidate is not cleared. Repairs
+are in progress; the deployed preview is still 10d4e76.
+Four separate 12,000-character runtime sanity probes completed without errors or
+invalid spans, with observed local times of roughly 2–225 ms. This single-machine
+sanity check is not a general performance benchmark or device guarantee.
+
+The repaired candidate c43d1866b582f5772c28af469d375bfdaf26a790247ce4a870784b8320a84245
+retains 100/100 independent development cases and 80/80 private matrix cases.
+Consumed v1–v7 now reaches 83/84 expected findings, 83/83 useful emissions and no
+flags across 28 clean controls; the timing regression is repaired and only the
+historical v2 abstention remains. The original corpus/label hashes are unchanged.
+Root full validation passes seven setup/integrity tests, 211 public engine tests,
+build/typecheck and 19 local Chromium tests. The independent reviewer cleared all
+nine original false flags and 29 bounded probes, including positive preservation,
+same/different references, routine receipt, ordering, commitment roles and
+Unicode/CRLF/quoted-mask spans. It independently passed 211 tests and typecheck,
+with no material unresolved finding in this bounded review. V8 is still sealed;
+commit and explicit authorisation precede its single run. The same four maximum-
+length sanity probes completed in roughly 1.5–26 ms on this local run.
+
 ## Runtime privacy method
 
 Use a distinctive fictional canary. Observe every browser request and console/page

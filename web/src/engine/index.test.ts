@@ -503,3 +503,33 @@ describe('independent review: suppression object and proposition scope', () => {
     expect(rules('As agreed, we need your approval and the workflow you suggested is confirmed after you authorised it.')).toEqual([]);
   });
 });
+
+// Independently authored reviewer repros from the ClauseFrame scope review.
+describe('independent review: grammatical categories and explicit links', () => {
+  it.each([
+    'The status icon should be green.',
+    'The registration page requires red text for validation errors.',
+    'Please review the draft, which our designer revised, and confirm the session date.',
+    'During training, we discussed whether you need to archive the examples, restore the template, and export the contacts.',
+    'We can chat soon after lunch.',
+    'I can call later after your presentation.',
+    'Please approve the survey copy soon. We are blocked until that approval for the office lease arrives.',
+    'The proposed training venue is confirmed. It has yet to receive the printed signs.',
+    'The suggested room layout is confirmed, although the spending limit is still a proposal.',
+  ])('abstains without an asserted task or same-proposition link: %s', text => expect(rules(text)).toEqual([]));
+
+  it('retains actual passive tasks and asserted requests', () => {
+    expect(rules('The registration settings must be checked.')).toEqual(['action-owner']);
+    expect(rules('You need to archive the examples, restore the template, and export the contacts.')).toEqual(['competing-requests']);
+  });
+
+  it('retains a dependent action and matching approval object', () => {
+    expect(rules('We can prepare the workspace after you approve the survey. Please approve it soon.')).toEqual(['vague-timing']);
+    expect(rules('Please approve the survey copy soon. We are blocked until that approval for the survey copy arrives.')).toEqual(['vague-timing']);
+  });
+
+  it('retains approval receipt and an explicitly linked unsettled proposal', () => {
+    expect(rules('The proposed training venue is confirmed. It has yet to receive your approval.')).toEqual(['agreement-wording']);
+    expect(rules('The suggested room layout is confirmed, although it is still a proposal.')).toEqual(['agreement-wording']);
+  });
+});

@@ -52,11 +52,21 @@ regressions and re-review. Browser automation checks real clipboard behaviour,
 keyboard use, responsive layouts and runtime network/storage with fictional
 canaries. See docs/VERIFICATION.md for actual evidence and limitations.
 
+Seven successive reserved attempts have failed the original detection gate.
+Strong results on previously observed examples did not transfer reliably to new
+wording. A separate, fixed 100-case development audit exposed ordinary grammatical
+gaps across all five families: the deployed baseline detected 16/50 intended
+positive findings and left 49/50 clean controls unflagged. Those findings now guide
+a shared clause-frame redesign. Inputs, labels, failure history and acceptance
+criteria remain fixed. A later passing small fictional evaluation would not erase
+this iteration history or establish real-world accuracy.
+
 ## Delivery and next decision
 
 The repository stays private with a draft implementation PR. A separate provider
-preview is for review, not a public product launch. The README links the final
-preview and verification. Screenshots and a short demo script support a concrete
+preview is for review, not a public product launch. The README links the current
+interim preview and verification; the engineering goal remains unfinished.
+Screenshots and a short demo script support a concrete
 review; rollback instructions isolate this preview from other projects.
 
 No human sessions or customer pilots have been run. The next evidence is three

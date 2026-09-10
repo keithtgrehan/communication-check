@@ -24,6 +24,10 @@ A further authenticated check at 13:46 UTC showed the same Hobby plan and 4/25
 services, 2 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline
 charges. The separate static preview remains within the inspected allowance.
 
+A refreshed authenticated check at 14:46 UTC showed Hobby, 4/25 services,
+4 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges.
+No plan, billing, spend-limit or domain setting was changed.
+
 Use one separate static site, private source repository, provider URL, no custom
 domain, no service plan upgrade and automatic deploys off. No backend or database.
 Only web/dist is published: bundled app/assets, favicon, robots and dependency
