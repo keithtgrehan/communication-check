@@ -114,7 +114,7 @@ Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1
 - The previous verified preview is dep-dahaejmq1p3s73ba4d90 at 4f1f0fc; this is the rollback target if needed. Its detection gate also remained unmet.
 - Engine detection acceptance remains unfinished despite the verified interface and runtime behaviour.
 
-## Current verified interim deployment
+## Previous verified interim deployment
 
 - Source commit: 10d4e764c09938b61a04b2a3cd8cd48c7a091441.
 - Full runtime engine manifest: d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243.
@@ -123,3 +123,15 @@ Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1
 - Allowance rechecked at 14:10 UTC: Hobby, 4/25 services, 2 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges. No plan, billing or domain changes.
 - The previous verified preview is dep-dahapitbedkc739s6990 at 6e17932; this is the current rollback target. Its detection gate also remained unmet.
 - This is an interim review preview: all seven fresh evaluations have failed the detection requirement, so engineering completion remains unclaimed.
+
+
+## Current portfolio preview
+
+- URL: https://communication-check-preview.onrender.com
+- Source checkout: 8a83afd46133abf07d7c0087fd09b222112b09d0; reviewed runtime from d1230d6d066bc4a8eef9aa08d7818c1404d09c04.
+- Runtime manifest: 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125.
+- Deployment dep-dahdjffqj5pc73a9mhrg, live 2026-09-10 16:24:43 UTC. Service srv-dahaejeq1p3s73ba4btg remains static, auto-deploy off and PR previews off.
+- Six exact asset hashes, six response headers, eight excluded-path 404s and all 19 hosted Chromium checks pass. The current JSON record replaces the previous deployment's record.
+- Refreshed billing inspection at 16:24 UTC: Hobby, 4/25 services, 6 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview-service and pipeline charges. Existing billing settings were unchanged. The provider allowance is bounded, not a guarantee of unlimited free hosting.
+- Rollback target: previous verified dep-dahblp5bedkc739vpj90 at 10d4e764c09938b61a04b2a3cd8cd48c7a091441. Select it in this service's Events page, then reverify its assets and hosted flow. Both versions have documented detection limits.
+- Keith revised delivery to a polished portfolio prototype. All ten failed detection evaluations remain preserved; this deployment does not imply the original accuracy gate passed. The provider URL is reachable and noindex, not authenticated or approval for a public product launch.

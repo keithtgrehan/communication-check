@@ -1,79 +1,70 @@
-# Communication Check — portfolio case study
+# Communication Check
 
-## Problem and audience
+**Make the next step clear.**
 
-B2B SaaS account managers and customer-success managers often write follow-up
-emails after customer onboarding calls. The intended next step may be obscured by
-unclear ownership, loose timing, several competing requests or wording that sounds
-more settled than the available context supports. This MVP explores whether a
-small review can help before the writer sends the email. Customer demand and
-measured benefit remain unvalidated.
+A focused portfolio prototype for reviewing customer onboarding follow-up emails.
+[Try the working demo](https://communication-check-preview.onrender.com).
 
-## Product decision
+## The problem
 
-Keep the workflow short: paste or try a fictional draft, check, inspect exact
-wording, edit, recheck and copy. Show at most three prompts. The writer can dismiss
-each one. There is no overall score, automatic rewrite, fact verification or send
-action. A strong commitment triggers a confirmation prompt, not a claim that the
-writer was unauthorised or wrong.
+A follow-up email can sound clear to its writer while leaving the customer unsure
+who acts next, what takes priority, or whether a promise has been confirmed. I
+explored a short review step for B2B SaaS account managers and customer-success
+managers. This is a product hypothesis; customer demand and business impact have
+not been validated.
 
-## Implementation and tradeoffs
+## The experience
 
-React/Vite provides the interface; a deterministic TypeScript engine checks five
-families of English wording. Both examples and pasted drafts call the same engine.
-Original UTF-16 spans preserve exact quote/selection alignment, including Unicode.
-Recognised quoted history and signatures are ignored without changing offsets.
-Drafts and findings live in page memory; production resources are local static
-assets and a restrictive connection policy complements runtime privacy tests.
+Paste a draft or try one of three fictional examples. Check it, inspect the exact
+wording behind each prompt, edit, recheck and copy. The interface limits results
+to three prompts so the review stays manageable. Every prompt can be dismissed;
+the writer keeps the decision.
 
-Shared clause and token features recognise explicit requests, owners, timing
-dependencies and approval references while retaining original evidence offsets.
-This is bounded English grammar recognition rather than general language parsing.
-Every runtime engine module contributes to a recorded candidate hash.
+A warm neutral background, dark teal accents and editorial typography give the
+product a calm, focused feel. The desktop layout places the draft beside its
+review. On smaller screens, the same sequence becomes a single column. Clear
+focus states, keyboard controls and precise evidence selection support the core
+workflow.
 
-The rule set is inspectable and needs no remote model or backend. It also
-misses unfamiliar paraphrases and some quotation formats, cannot recover meeting
-context, and can surface wording that is appropriate in a particular situation.
-One finding per family and the three-result cap can hide further concerns. These
-limits are explicit in the product and evaluation report.
+The product asks the writer to confirm a commitment. It never claims to know what
+was agreed, assigns no score, and does not rewrite or send the email. An empty
+result explains that facts and agreements have not been verified.
 
-## Evidence and iteration
+## The decisions behind it
 
-Eighteen development drafts and three demos were written separately from reserved
-material. An independent evaluator froze labels and exact matching criteria before
-running a fixed candidate. The first candidate missed the acceptance gates: 9/12
-expected findings and one unnecessary clean-control flag. That result remains in
-the report. A fresh reserved set was prepared before repairs; subsequent outcomes
-are recorded in docs/EVALUATION.md rather than silently replacing the first run.
+The app runs a deterministic TypeScript checker inside a static React interface.
+There is no remote model, account or backend. Drafts and findings stay in page
+memory, and editing immediately clears stale results. Explicit copy uses the
+current draft; reload clears the editor.
 
-An independent reviewer reproduced conversational-timing, qualified-commitment,
-offscreen selection and expanded-help contrast defects. Repairs receive specific
-regressions and re-review. Browser automation checks real clipboard behaviour,
-keyboard use, responsive layouts and runtime network/storage with fictional
-canaries. See docs/VERIFICATION.md for actual evidence and limitations.
+This keeps the interaction inspectable and avoids sending drafts to a service.
+It also creates a clear tradeoff: the rules can miss unfamiliar wording and cannot
+recover the context of a customer call. The three examples use the same engine as
+pasted drafts; their results are not staged responses.
 
-Ten successive reserved attempts have failed the original detection gate.
-Strong results on previously observed examples did not transfer reliably to new
-wording. A separate, fixed 100-case development audit exposed ordinary grammatical
-gaps across all five families: the deployed baseline detected 16/50 intended
-positive findings and left 49/50 clean controls unflagged. Those findings now guide
-a shared clause-frame redesign and outcome/claim-scope repair. These repairs still
-failed fresh evaluation. A contract audit found the test expectations within the
-original scope; an architecture assessment supported one isolated experiment in
-composing assignment, approval and financial states before further integration.
-Inputs, labels, failure history and acceptance
-criteria remain fixed. A later passing small fictional evaluation would not erase
-this iteration history or establish real-world accuracy.
+## What was delivered
 
-## Delivery and next decision
+A responsive working preview, three interactive demos, reviewed implementation,
+desktop and mobile screenshots, a 75-second walkthrough and a documented rollback
+path. Product direction and decisions were coordinated with Codex/Astra agents;
+this was an AI-assisted build.
 
-The repository stays private with a draft implementation PR. A separate provider
-preview is for review, not a public product launch. The README links the current
-interim preview and verification; the engineering goal remains unfinished.
-Screenshots and a short demo script support a concrete
-review; rollback instructions isolate this preview from other projects.
+The reviewed implementation passes 225 engine tests, seven setup/integrity checks,
+and 19 local browser checks covering editing, clipboard, exact evidence, keyboard,
+responsive layout and runtime privacy behaviour. The same 19 checks pass on the hosted preview; six deployed assets match the
+reviewed local build. Automated browser checks are not a full
+accessibility certification or human usability study.
 
-No human sessions or customer pilots have been run. The next evidence is three
-usability sessions and five voluntary AM/CSM pilots, owned by Keith. A later
-concept could pass human-approved RCR commitments to a writer and then this checker;
-no integration or shared platform is implemented here.
+## What I learned
+
+Passing tests on known examples did not establish broad language coverage. All
+ten reserved fictional evaluations missed the original detection target; the
+latest detected 4 of 12 selected issues, with no flags across its four clean
+controls. Those results remain visible in the evaluation report.
+
+I chose to ship the polished portfolio prototype and stop the deeper parser
+experiment for this delivery. The result demonstrates product scope, interaction
+design, browser-local implementation and an honest approach to validation. It is
+not presented as a reliable general-purpose writing assistant. Future product
+work would start with real user feedback and a deliberate decision about detection
+quality before expanding the scope.

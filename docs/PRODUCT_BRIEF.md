@@ -6,6 +6,15 @@
 
 Build a credible portfolio product first, test usefulness with real users second, and explore low-maintenance revenue only after repeat usefulness. The first audience is B2B SaaS account managers and customer-success managers writing onboarding follow-up emails.
 
+**Current delivery decision, 2026-09-10:** Keith asked to focus on shipping quickly
+and making the product look good on a portfolio. Deliver the existing reviewed
+application as a polished, functional portfolio prototype, with a verified preview
+and concise portfolio materials. Stop the deeper semantic-parser experiment and
+further evaluation rounds for this delivery. The original detection target remains
+unmet and must be documented honestly; it is not a shipping gate for this explicitly
+revised portfolio scope. Do not claim reliable general-language detection,
+production readiness, human validation or that the original target passed.
+
 ## Frozen MVP
 
 Choose a fictional example or paste a draft → check → inspect useful findings → edit → recheck → copy. Provide three fictional demos that use the same checker as user drafts. Show up to three useful findings; each quotes exact original wording, explains the concern plainly, offers an actionable review prompt, and can be dismissed.
@@ -30,7 +39,7 @@ The interface must work responsively with keyboard access, visible focus and acc
 
 ## Readiness and evidence
 
-Engineering readiness requires meaningful check/span/browser/privacy tests, a verified preview, independent review and resolution of serious defects. Public release is a separate approval gate. Human market validation is outstanding until real participants provide feedback; fictional tests and agent labels do not demonstrate real-world accuracy or market fit.
+Portfolio delivery requires meaningful check/span/browser/privacy tests, a verified preview, reviewed code, a polished usable interface and portfolio materials. Preserve the failed detection evidence as a known limitation and future product-readiness requirement. Public release is a separate approval gate. Human market validation is outstanding until real participants provide feedback; fictional tests and agent labels do not demonstrate real-world accuracy or market fit.
 
 Prepare a protocol for three usability users and five repeat-use pilots while engineering continues. Browser-local action and commitment review is a hypothesis, not proven uniqueness. Do not send outreach or fabricate participation, consent or findings.
 

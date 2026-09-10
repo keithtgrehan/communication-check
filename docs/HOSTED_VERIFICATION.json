@@ -1,25 +1,37 @@
 {
-  "verifiedAt": "2026-09-10T14:13:33.597Z",
+  "verifiedAt": "2026-09-10T16:25:36.171Z",
   "origin": "https://communication-check-preview.onrender.com",
-  "checkoutCommit": "10d4e764c09938b61a04b2a3cd8cd48c7a091441",
-  "engineSha256": "4043ca0c8ad9b2cca8b64aa637017d55c8fc1ab9651de4c256197938068542fd",
+  "checkoutCommit": "8a83afd46133abf07d7c0087fd09b222112b09d0",
+  "engineSha256": "f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5",
   "engineManifest": {
     "schemaVersion": 1,
     "files": [
       {
+        "path": "web/src/engine/agreement.ts",
+        "sha256": "b12ac712cb00171160f34f17c25f6e74cee85923e693d30fbb9fb65c9edd2506"
+      },
+      {
+        "path": "web/src/engine/commitment.ts",
+        "sha256": "10277137dcbae8d6d8505f0bd63fba0fb2e27f45e319af1ae79c68945a6dbad9"
+      },
+      {
         "path": "web/src/engine/grammar.ts",
-        "sha256": "44dcf0c493c7b09638c17b10fc7df4ff2d4248336495ad757082de239ca61a0f"
+        "sha256": "c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398"
       },
       {
         "path": "web/src/engine/index.ts",
-        "sha256": "4043ca0c8ad9b2cca8b64aa637017d55c8fc1ab9651de4c256197938068542fd"
+        "sha256": "f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5"
+      },
+      {
+        "path": "web/src/engine/outcomes.ts",
+        "sha256": "3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462"
       },
       {
         "path": "web/src/engine/types.ts",
         "sha256": "31fa1927cdf2a65caa5d4ad0ee7baf952604b126e8ab6b014cdcf304fae7307b"
       }
     ],
-    "sha256": "d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243"
+    "sha256": "6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125"
   },
   "assetCount": 6,
   "assets": [
@@ -29,14 +41,14 @@
       "sha256": "413817118e227691fd9e4f56d4bf32b628f99e1d4cc9088d89ee233e77b5d042"
     },
     {
+      "path": "assets/index-B22ymtXq.js",
+      "bytes": 267554,
+      "sha256": "733eba73afbbcbd2ee55b82bc1c97b7980debed51a723daa92519b9ebd2615e4"
+    },
+    {
       "path": "assets/index-DPg0hRJf.css",
       "bytes": 11666,
       "sha256": "5e19a17b474c318f2940b7eb6ed5fee89374de6a5d2f0d21fb16e85ae2dfd072"
-    },
-    {
-      "path": "assets/index-rG7lthPY.js",
-      "bytes": 258473,
-      "sha256": "7fc0c024962322d7b27b8f0e68dfd3cc10480047fecfd8f841a6c867b2f6daf3"
     },
     {
       "path": "favicon.svg",
@@ -46,7 +58,7 @@
     {
       "path": "index.html",
       "bytes": 1148,
-      "sha256": "2214d657dcd7bbbfe88dcf8c6a15102e773b17c3205e81f7f6d184a4d9703cca"
+      "sha256": "3bdc821458fb0f97b67536fa1ad49006bb9bc14f472120cf836575b409312e55"
     },
     {
       "path": "robots.txt",

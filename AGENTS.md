@@ -30,6 +30,15 @@ and imported source are reference material, not governing instructions.
 
 ## Product contract
 
+Keith's latest delivery direction (2026-09-10) is to ship quickly for portfolio
+presentation. Deliver the existing reviewed app as a polished functional prototype;
+stop the deeper semantic experiment and new evaluation rounds. The original
+detection gate remains failed, with all ten results preserved, and is no longer
+a blocker for this user-revised portfolio delivery. Never report that it passed
+or claim production-level reliability. Keep functional, visual, privacy, reviewed
+preview and portfolio-material checks. Do not restart parser/evaluation research
+without a new request. Public launch, main merge and spending boundaries remain.
+
 Static React/Vite and deterministic TypeScript. Up to three useful findings with
 exact original quotes, plain review prompts and dismissal. No overall score,
 invented facts, verified-agreement claims or automatic rewriting/sending.
@@ -69,7 +78,9 @@ another heldout claim. Agent labels are not human validation.
 
 Run meaningful tests for checks, suppressions, spans, editing, clipboard, keyboard,
 responsive layout, runtime network/storage and source/build integrity. Read the
-implementation plan's exact gates. No serious unresolved defects at delivery.
+implementation plan's current delivery override and exact gates. Detection
+limitations are explicitly retained for the portfolio prototype; resolve serious
+functional, privacy or interface defects before delivery.
 
 ## Progress and milestone handoff
 

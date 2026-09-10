@@ -13,11 +13,17 @@ rewrite the draft, assign a score or send email.
 
 ## Current evidence
 
-The app is implemented and the local workflow passes browser verification.
-Engine coverage repair and fresh reserved evaluation are still in progress; the
-first ten reserved runs did not meet the detection gate. Contract and architecture
-audits support one isolated semantic-composition experiment before further integration.
-The [working preview](https://communication-check-preview.onrender.com) is live; all 19 hosted browser checks pass.
+This is a functional portfolio prototype. The reviewed implementation passes
+225 engine tests, seven setup/integrity checks, build/typecheck and 19 local browser
+checks. The [working preview](https://communication-check-preview.onrender.com)
+now serves that reviewed version. All 19 hosted browser checks pass, and all six
+assets match the local build. Portfolio delivery is ready; see the
+[case study](docs/CASE_STUDY.md) and [portfolio copy](docs/PORTFOLIO_COPY.md).
+
+Detection remains experimental: the latest reserved fictional set detected 4/12
+selected issues, and all ten attempts missed the original target. Keith prioritised
+shipping the polished prototype; the deeper parser experiment has been cancelled
+for this delivery. No production-reliability or human-validation claim is made.
 See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
 The [existing draft PR](https://github.com/keithtgrehan/communication-check/pull/1)

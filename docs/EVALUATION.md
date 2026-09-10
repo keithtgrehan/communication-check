@@ -494,3 +494,17 @@ would not satisfy or replace the original five-family reserved acceptance gate.
 After the v10 failure was preserved, the lead authorised diagnostic consumption and an independent contract-fit audit, with source changes, further engine runs and new corpora paused. The evaluator prepared a private audit packet outside repository sources containing exact frozen v10 text, all labels/rationales/regions/anchors, original matching/gates, original result details, runtime hashes and commit provenance. The original corpus hash was verified unchanged; the packet has its own integrity manifest. No label, result or denominator was altered.
 
 The diagnostic review verified that all eight misses are absent corresponding family outputs, not rejected exact-span matches or display-cap displacement. Minimal exact evidence and original frozen rationales were delivered privately to the lead only for the audit. The independent auditor is to assess contract fit and record substantive disagreements separately, without silently relabelling or changing historical counts. No engine execution, wording repair, new corpus or fresh evaluation was performed. All ten original failures remain preserved; v10 is consumed for diagnosis only.
+
+
+## Delivery scope changed by Keith — 2026-09-10
+
+Keith asked to “put focus on shipping quickly, it just has to look good on
+portfolio”. The original detection gate remains failed; all ten results, labels,
+matching criteria and thresholds above are preserved. This is an explicit change
+to the delivery scope, not a passing evaluation or a changed historical score.
+
+The reviewed app will ship as a functional portfolio prototype with its limitations
+stated. The isolated semantic experiment was cancelled before implementation,
+challenge creation or freeze, or prototype execution. No v11 or additional reserved
+run is authorised for this delivery. Original detection quality remains future
+product-readiness work; fictional agent labels do not establish human usefulness.

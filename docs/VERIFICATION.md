@@ -1,7 +1,8 @@
 # Verification record
 
-Date: 2026-09-10. The build is still in progress. This record distinguishes
-implemented/tested behaviour from pending gates; it is not a release approval.
+Date: 2026-09-10. Keith revised delivery to a polished portfolio prototype.
+The latest delivery record at the end supersedes earlier in-progress status.
+Historical test and evaluation evidence is retained; this is not public-release approval.
 
 ## Local evidence
 
@@ -252,7 +253,7 @@ challenge, effort ceiling and stop conditions are specified in the implementatio
 plan. The stage challenge has not yet been created or run. It cannot replace the
 original five-family acceptance gate. The production runtime remains unchanged.
 
-## Hosted evidence — current review preview
+## Historical hosted evidence — previous review preview
 
 https://communication-check-preview.onrender.com was built from
 10d4e764c09938b61a04b2a3cd8cd48c7a091441 and is live on Render. Six asset hashes
@@ -269,3 +270,20 @@ Coverage is still insufficient against the frozen engine acceptance gates;
 code/tests and final evaluation updates remain in progress. Human usability 0/3
 and pilots 0/5 remain unperformed. No real-world accuracy, customer benefit,
 factual approval, commercial readiness or public-release approval is claimed.
+
+
+## Final portfolio delivery — 2026-09-10
+
+Keith explicitly prioritised shipping quickly for his portfolio. This supersedes
+prior in-progress delivery statements; it does not change any historical detection
+result or claim the original gate passed. The semantic experiment was cancelled
+before prototype implementation or challenge creation/freeze/execution.
+
+- Deployed checkout: 8a83afd46133abf07d7c0087fd09b222112b09d0, containing the reviewed runtime from d1230d6d066bc4a8eef9aa08d7818c1404d09c04.
+- Complete six-module runtime manifest: 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125. Working and committed manifests match; later delivery changes are documentation/screenshots only.
+- Local evidence remains seven setup/integrity tests, 225 public engine tests, build/typecheck and 19 Chromium checks. Independent review cleared five original repros and 20 probes with no material unresolved finding in that bounded review.
+- Render deployment dep-dahdjffqj5pc73a9mhrg became live at 16:24:43 UTC. Six exact asset hashes, six response headers and eight excluded-path 404s pass. Timestamp and hashes: docs/HOSTED_VERIFICATION.json.
+- All 19 hosted Chromium browser checks pass (11.4 seconds), including runtime network/storage/log canaries, offline behaviour, exact selection, clipboard, keyboard, 320/390/1440px layouts and 200% content zoom.
+- Fresh desktop/mobile/clean screenshots use the built-in fictional demos on this deployment. Desktop and mobile images were visually inspected with no layout issue identified.
+- The app is delivered as a functional portfolio prototype. All ten original detection failures remain, latest 4/12. The known language-coverage limitation is disclosed; no general reliability, human usefulness or production-readiness claim is made. Human sessions remain 0/3 and pilots 0/5.
+- Separate preview only; repository private, PR #1 draft and unmerged. No public product launch, domain, billing or unrelated service changes.

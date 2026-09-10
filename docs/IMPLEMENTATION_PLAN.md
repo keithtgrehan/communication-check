@@ -1,5 +1,21 @@
 # Communication Check implementation plan
 
+## Current delivery override — 2026-09-10
+
+Keith explicitly redirected the work: “put focus on shipping quickly, it just has
+to look good on portfolio.” Ship the reviewed existing app as a polished, functional
+portfolio prototype. Cancel the deeper proposition-normalizer experiment and its
+60-case challenge for this delivery; no prototype was implemented or executed and
+no challenge was frozen. Preserve the assessment privately as optional future work.
+
+Complete the latest reviewed hosted preview, browser/privacy verification,
+screenshots, concise case study, demo script and draft PR. The ten failed reserved
+evaluations remain visible and the original detection gate remains unmet; do not
+claim it passed. That accuracy target is future product-readiness work, not a
+blocker for this revised portfolio delivery. All original data-handling, no-spend,
+private-repository, no-merge and no-public-launch boundaries remain. The older
+architecture experiment section below is historical and superseded by this decision.
+
 ## Baseline and execution boundaries
 
 Root: `/Users/keith/Documents/ChatGPT/communication-check`. Remote: private `keithtgrehan/communication-check`. Work on `codex/communication-check-mvp`.

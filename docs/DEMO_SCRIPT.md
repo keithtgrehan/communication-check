@@ -22,9 +22,9 @@ review prompt. Then load “Clear next steps” and show its empty result. “No
 means these rules found no issue. It does not mean the email's facts are verified.”
 
 **60–75 seconds — Limits and next step.** “The rules run in this page. Runtime
-checks cover draft transmission and persistence; the small fictional evaluation
-is engineering evidence, not customer validation. Next are three usability
-sessions and five AM/CSM pilots.”
+checks cover draft transmission and persistence; the checker has limited language coverage and has not been
+validated with customers. This prototype demonstrates a focused review workflow
+that keeps the writer in control.”
 
 Show only verified counts from docs/EVALUATION.md and docs/VERIFICATION.md if
 adding result captions. Do not turn a failed first run into an unstated success.

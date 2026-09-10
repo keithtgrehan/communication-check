@@ -52,3 +52,12 @@ The useful checkpoints are a working end-to-end flow, completed evaluation, and 
 Implementation-branch work, a draft PR and a separately verified no-new-spend preview are authorised by the accepted plan. Do not merge, publicly launch, change repository visibility, add domains or incur new spending without specific approval. Do not send external outreach. Finish reviewable work before asking for a final release decision.
 
 Use an automation only for an actual later follow-up or milestone handoff need. Avoid duplicate goals, duplicate build leads or recurring “still working” updates. Goal completion is evidence-based, and setup alone is not implementation completion.
+
+
+## Current delivery priority — 2026-09-10
+
+Keith prioritised shipping quickly for his portfolio. Finish the reviewed preview
+and portfolio materials; do not restart the semantic experiment or fresh evaluation
+rounds. The original detection target remains unmet and documented. GPT supports
+product discussion and critique; this lead Codex task owns implementation and
+verified handoffs. Use the existing project and task for later requested changes.
