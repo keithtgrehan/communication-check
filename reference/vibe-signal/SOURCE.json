@@ -1,0 +1,33 @@
+{
+  "repository": "https://github.com/keithtgrehan/vibe-signal",
+  "commit": "000ba0685f961e253b0d34c0b02539ac897356e9",
+  "mode": "selected-owner-authorised-source-snapshot",
+  "importedAt": "2026-09-10",
+  "runtime": false,
+  "files": [
+    {
+      "path": "web/src/App.jsx",
+      "gitBlob": "497c8abcb4e7439a0456600f6fef1ea7b9032c16"
+    },
+    {
+      "path": "web/src/styles.css",
+      "gitBlob": "e2e249bdb5d2f47c9720f4bbebe923b112adb262"
+    },
+    {
+      "path": "web/src/resultViewModel.js",
+      "gitBlob": "045206ec843cbda5a6152e957be23de996fa5c12"
+    },
+    {
+      "path": "web/vite.config.js",
+      "gitBlob": "1706b509626f3e1181e6577decb8b16c037eea08"
+    },
+    {
+      "path": "web/package.json",
+      "gitBlob": "9f150177fd431601609b78dd796d0a63b6d58811"
+    },
+    {
+      "path": "web/index.html",
+      "gitBlob": "7e7f0ff83f8b531d2db56a3bcf5032bc21ae9ab4"
+    }
+  ]
+}
