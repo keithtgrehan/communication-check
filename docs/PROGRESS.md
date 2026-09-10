@@ -9,12 +9,14 @@ Status: setup validated and independently reviewed; product implementation not s
 - Private GitHub repository created: https://github.com/keithtgrehan/communication-check.
 - Canonical checkout: /Users/keith/Documents/ChatGPT/communication-check.
 - Initial source baseline: 7dfc3a7; implementation branch: codex/communication-check-mvp.
+- Reviewed setup pushed at 0875125. Draft PR: https://github.com/keithtgrehan/communication-check/pull/1. Keep this PR and update it for the finished MVP; no merge.
 - Six selected Vibe source files imported as an inactive reference snapshot, with pinned source/blob hashes.
 - Source baseline: Vibe 000ba0685f961e253b0d34c0b02539ac897356e9; no source Git history, credentials, datasets or deployment resources copied.
 - Product brief, implementation plan, working instructions, source ledger and goal prompt prepared.
 - Local post-commit handoff generation and pre-push destination/branch guard installed; six setup tests pass and six source blob hashes match upstream.
 - Independent setup review completed. Its existing-hook preservation finding was fixed and the fix verified with a real temporary-repository test.
-- Project-scoped Astra High defaults and a maximum of three subagents configured. Existing explicit app selections take precedence; no permission settings changed.
+- Actual post-commit packet refresh verified against the commit, and the approved branch push passed the installed guard.
+- Project-scoped Astra High defaults and a maximum of three subagents saved for trusted project sessions. Existing explicit app selections take precedence; current task model/permission settings were not changed.
 - Keith moved the preserved lead task to the correct local project; the association is verified. Its recorded working directory remains the original generated folder, so all repository commands explicitly target the canonical checkout.
 - Existing example-review task delivered five corrected fictional B2B SaaS customer-onboarding follow-ups. These are discussion examples, not reserved evaluation fixtures or approved engine labels. Keith's subsequent recruiter-example discussion remains separate from the frozen product scope.
 

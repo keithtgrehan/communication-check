@@ -13,6 +13,8 @@ plan and workflow when needed. Inspect Git status, branch and remotes before edi
 The current setup is user-authorised. The initial baseline on main is complete;
 all further implementation commits/pushes belong on the implementation branch.
 Do not recreate the repository, import the source again or discard existing work.
+Reuse draft PR #1 and update its title, description and evidence for the final MVP.
+Do not open a duplicate PR for the same implementation branch.
 
 Keith approved necessary implementation, tests/fixes, branch commits/pushes,
 a draft PR and a separate preview within verified existing no-new-spend hosting.
