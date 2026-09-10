@@ -26,7 +26,12 @@ Recognised quoted history and signatures are ignored without changing offsets.
 Drafts and findings live in page memory; production resources are local static
 assets and a restrictive connection policy complements runtime privacy tests.
 
-The small rule set is inspectable and needs no remote model or backend. It also
+Shared clause and token features recognise explicit requests, owners, timing
+dependencies and approval references while retaining original evidence offsets.
+This is bounded English grammar recognition rather than general language parsing.
+Every runtime engine module contributes to a recorded candidate hash.
+
+The rule set is inspectable and needs no remote model or backend. It also
 misses unfamiliar paraphrases and some quotation formats, cannot recover meeting
 context, and can surface wording that is appropriate in a particular situation.
 One finding per family and the three-result cap can hide further concerns. These

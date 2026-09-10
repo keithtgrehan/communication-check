@@ -1,6 +1,6 @@
 # Separate preview and rollback
 
-Status: first hosted review preview is live and verified. Engine coverage work continues.
+Status: updated review preview is live and verified. Engine coverage work continues.
 
 ## Verified hosting basis — 2026-09-10
 
@@ -19,6 +19,10 @@ can be billed. Check current workspace usage before further deploys or wider sha
 A follow-up authenticated check at 13:03 UTC showed 4/25 services, 0 MB/5 GB
 bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges. The
 existing unrelated service charges were unchanged; no billing settings were edited.
+
+A further authenticated check at 13:46 UTC showed the same Hobby plan and 4/25
+services, 2 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline
+charges. The separate static preview remains within the inspected allowance.
 
 Use one separate static site, private source repository, provider URL, no custom
 domain, no service plan upgrade and automatic deploys off. No backend or database.
@@ -90,3 +94,11 @@ followed by an explicitly selected deploy within allowance.
   an authenticated private site or an authorised public product launch.
 
 Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1:4173.
+
+## Current verified deployment
+
+- Source commit: 6e1793255bd18dd69e68f86e1e6b8167cb0506e5.
+- Deployment: dep-dahapitbedkc739s6990; live 2026-09-10 at 13:13:00 UTC.
+- All six asset hashes, six response headers and eight excluded source/config paths pass; all 19 hosted Chromium checks pass.
+- The previous verified preview is dep-dahaejmq1p3s73ba4d90 at 4f1f0fc; this is the rollback target if needed. Its detection gate also remained unmet.
+- Engine detection acceptance remains unfinished despite the verified interface and runtime behaviour.

@@ -15,7 +15,7 @@ No rule is required to emit a finding on every possible semantic ambiguity.
 Five rule families:
 
 - action-owner: explicit ambiguous next-step ownership/action wording.
-- vague-timing: nonspecific timing on a requested/dependent next action.
+- vague-timing: nonspecific timing on an action that an explicitly stated next step depends on. The dependency may be local or clearly linked through an adjacent reference; a request alone is insufficient.
 - competing-requests: several actionable requests without order or priority.
 - agreement-wording: wording that presents an explicit proposal/pending decision as agreed.
 - commitment-confirmation: strong delivery, pricing or functionality promises needing confirmation.
@@ -35,3 +35,9 @@ Reserved evaluation labels/matching criteria are frozen before implementation.
 The independent evaluator works outside repository/shared sources and returns only
 aggregate results until evaluation is complete. The engine agent owns 18 fictional
 development fixtures; the interface agent owns the three distinct visible demos.
+
+Timing clarification, 2026-09-10: the earlier "requested/dependent" wording
+was broader than the authoritative product brief. This description and the
+contradictory ad-hoc tests are being aligned with that existing brief. The external
+finding API, original development fixtures, reserved labels and evaluation gates
+are unchanged.

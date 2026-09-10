@@ -15,7 +15,7 @@ rewrite the draft, assign a score or send email.
 
 The app is implemented and the local workflow passes browser verification.
 Engine coverage repair and fresh reserved evaluation are still in progress; the
-first four reserved runs did not meet the detection gate. The [working preview](https://communication-check-preview.onrender.com) is live; all 19 hosted browser checks pass.
+first five reserved runs did not meet the detection gate. The [working preview](https://communication-check-preview.onrender.com) is live; all 19 hosted browser checks pass.
 See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
 The [existing draft PR](https://github.com/keithtgrehan/communication-check/pull/1)
@@ -43,7 +43,7 @@ npm run validate
 npm audit --audit-level=low
 ```
 
-`validate` runs six repository/setup tests, engine unit tests, TypeScript/build
+`validate` runs repository/setup and engine-integrity tests, engine unit tests, TypeScript/build
 checks, source/bundle guards and the Chromium browser suite. On a Linux machine
 without browser system dependencies use `npx playwright install --with-deps chromium`.
 To verify a hosted candidate after building the matching checkout:

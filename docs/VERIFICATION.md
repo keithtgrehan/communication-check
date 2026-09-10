@@ -6,8 +6,8 @@ implemented/tested behaviour from pending gates; it is not a release approval.
 ## Local evidence
 
 - Node 22.23.1, npm 10.9.8, pinned package-lock dependencies.
-- Six setup tests pass: allowlisted handoff, working-copy labels, credential/symlink rejection, destination/branch guard, six exact reference blobs, existing-hook preservation.
-- Current candidate: 163 engine unit tests pass with the original 18 development drafts unchanged. Engine SHA 457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb. Full local validate passes six setup tests, 163 unit tests, build/typecheck and 19 browser tests.
+- Seven setup/integrity tests pass: full runtime-module identity, allowlisted handoff, working-copy labels, credential/symlink rejection, destination/branch guard, six exact reference blobs, existing-hook preservation.
+- Current local candidate: full runtime manifest e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772. Full local validation passes seven setup/integrity tests, 187 public engine tests, build/typecheck and 19 browser tests. The original 18 development drafts are unchanged. Twelve independent reviewer cases are included unchanged; diagnostic-derived controls remain private. This candidate is not yet deployed.
 - TypeScript and Vite production build pass. Source/build guards reject known network, storage/logging APIs and donor/fixture contamination. Guards are regressions, not proof of privacy.
 - npm audit reports 0 known vulnerabilities at inspection; this is time-specific, not assurance against unknown vulnerabilities.
 - 19 Chromium browser tests pass: three real-engine demos, exact evidence/dismiss/recheck, stale clearing, copy current edits, denial/manual copy, reset, blank/oversize, privacy/offline, keyboard/axe/layout 320/390/1440, 200% content zoom, and 9 beginning/middle/end visible-selection cases.
@@ -39,21 +39,30 @@ remain offscreen, and expanded help failed text contrast. All four were repaired
 and independently rechecked on candidate v2. The reviewer also tested nine fresh
 Unicode selection cases, original engine repros/nearby positives, expanded-help
 axe and no browser errors/logs. No material code defects remained in that pass.
-Further review covered resolved proposals, unrelated adjacent decisions, certainty checks, human-role wording, modified product subjects, explicit guarantees, passive delivery and ordinary cost questions. Focused repairs preserved genuine product/pricing commitments and qualifications. The reviewer cleared the final engine at the hash above after 16 independent pricing cases, earlier 24 subject/delivery cases and 163 public tests plus typecheck. No material unresolved defect was identified in that bounded review. This is independent agent review, not certification or proof that every English paraphrase is handled.
+Further review covered resolved proposals, unrelated adjacent decisions, certainty checks, human-role wording, modified product subjects, explicit guarantees, passive delivery and ordinary cost questions. Focused repairs preserved genuine product/pricing commitments and qualifications. The reviewer cleared the earlier engine at entry hash 457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb after 16 independent pricing cases, earlier 24 subject/delivery cases and 163 public tests plus typecheck. A later bounded review cleared candidate 12a347c1d7c755feae7a26524c7de286a7fb39e1c345d86b179d683bc12a7612, which then failed the fifth reserved detection gate. The current structural refactor has also completed independent review. Agent review is not certification or proof that every English paraphrase is handled.
+
+The structural review reproduced two P2 scope defects: a determiner or shared
+action verb could link unrelated adjacent tasks, and a reported exploratory
+question could be mistaken for an owner requirement. Both were repaired and
+independently cleared on full manifest e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772.
+All 18 targeted review cases passed, including adjacent true positives, unrelated
+references, exploratory requirements and Unicode/CRLF/quoted masking spans. The
+reviewer independently passed 187 public tests and typecheck, with no material
+unresolved defect in this bounded review. The sealed evaluation has not been run.
 
 ## Reserved evaluation and outstanding gates
 
-Four independent reserved attempts failed the detection gate; all remain in
-docs/EVALUATION.md. Latest v4 detected 6/12 selected findings with 6/6 useful emissions,
-zero clean-control flags and all spans exact. Consumed v1–v3 regression results
-are 35/36 expected and 35/35 useful findings with no clean flags, not new heldout
-evidence. V4 was frozen before v3 diagnostics and repairs; it was run once and failed
-the detection threshold. V5 will be frozen before further diagnostic repair.
+Five independent reserved attempts failed the detection gate; all remain in
+docs/EVALUATION.md. Latest v5 detected 7/12 selected findings with 7/7 useful emissions,
+zero clean-control flags and all spans exact. Current consumed v1–v5 regression
+results are 59/60 expected and 59/59 useful findings with no flags across 20 clean
+controls, not new heldout evidence. V6 was frozen before v5 diagnostic consumption
+and remains sealed. All labels, denominators, matching criteria and gates remain unchanged.
 
-## Hosted evidence — first review preview
+## Hosted evidence — current review preview
 
 https://communication-check-preview.onrender.com was built from
-4f1f0fcf96321ee588b7952a70a574f2e5c1e9aa and is live on Render. Six asset hashes
+6e1793255bd18dd69e68f86e1e6b8167cb0506e5 and is live on Render. Six asset hashes
 match the local production build byte-for-byte. Six security/privacy/indexing
 headers pass on the actual response; eight tested source/config paths return 404.
 The full 19-test Chromium suite passes against the hosted URL, including the same

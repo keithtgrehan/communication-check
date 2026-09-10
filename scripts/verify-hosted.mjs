@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, relative } from 'node:path';
+import { getEngineManifest } from './engine-manifest.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const origin = new URL(process.env.PREVIEW_URL || '');
@@ -41,6 +42,7 @@ const report = {
   origin: origin.origin,
   checkoutCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
   engineSha256: digest(execFileSync('git', ['show', 'HEAD:web/src/engine/index.ts'], { cwd: root })),
+  engineManifest: getEngineManifest({ root, revision: 'HEAD' }),
   assetCount: assets.length,
   assets,
   excludedPathsReturned404: excludedPaths,

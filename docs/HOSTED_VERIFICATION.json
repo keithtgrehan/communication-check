@@ -1,8 +1,8 @@
 {
-  "verifiedAt": "2026-09-10T12:52:06.926Z",
+  "verifiedAt": "2026-09-10T13:13:53.169Z",
   "origin": "https://communication-check-preview.onrender.com",
-  "checkoutCommit": "4f1f0fcf96321ee588b7952a70a574f2e5c1e9aa",
-  "engineSha256": "028e2ef77a20991bc7e700ea6e47f6e8f88da1a367d35799685bfd5f921c09dc",
+  "checkoutCommit": "6e1793255bd18dd69e68f86e1e6b8167cb0506e5",
+  "engineSha256": "457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb",
   "assetCount": 6,
   "assets": [
     {
@@ -11,14 +11,14 @@
       "sha256": "413817118e227691fd9e4f56d4bf32b628f99e1d4cc9088d89ee233e77b5d042"
     },
     {
-      "path": "assets/index-CTBD6yps.js",
-      "bytes": 245165,
-      "sha256": "9de2ed142d25543f7a88cc87995ff424055082019e2f1b6b5188f2b21d810ee6"
-    },
-    {
       "path": "assets/index-DPg0hRJf.css",
       "bytes": 11666,
       "sha256": "5e19a17b474c318f2940b7eb6ed5fee89374de6a5d2f0d21fb16e85ae2dfd072"
+    },
+    {
+      "path": "assets/index-Dp6p1Skb.js",
+      "bytes": 248028,
+      "sha256": "5668fc14e183be3c4d6d658b0d300e592fb27e85f01d7be576d9f00c3d095c72"
     },
     {
       "path": "favicon.svg",
@@ -28,7 +28,7 @@
     {
       "path": "index.html",
       "bytes": 1148,
-      "sha256": "e2d3f4fa9818e3cbe6842f38264f7264af0fcadfc5671e6f1521e869b1218fe2"
+      "sha256": "7c320286188971593e918053eaca5fbe5dee7c0a949483d0d682fbe16fcdcd11"
     },
     {
       "path": "robots.txt",

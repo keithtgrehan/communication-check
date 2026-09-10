@@ -1,35 +1,54 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: end-to-end implementation and independent evaluation
-Status: build goal active; hosted preview verified, final engine evaluation pending
+Milestone: structural engine refactor independently reviewed; sealed evaluation next
+Status: build goal active — fresh detection acceptance remains unmet
 
-## Verified
+## Verified delivery
 
-- Canonical checkout: /Users/keith/Documents/ChatGPT/communication-check.
+- Canonical root: /Users/keith/Documents/ChatGPT/communication-check.
 - Private repository: https://github.com/keithtgrehan/communication-check.
-- Branch codex/communication-check-mvp; reuse draft PR https://github.com/keithtgrehan/communication-check/pull/1; no merge.
-- Static React/Vite editor and deterministic TypeScript engine implemented: five check families, exact UTF-16 evidence, up to three findings, dismissal, editing/recheck, current-text copy, reset and three separate fictional demos.
-- Engine: 18 original development drafts and 163 passing public regression tests. Production build and source/build guards pass. Three demos remain separate from evaluation fixtures.
-- 19 local browser checks now pass, including long-draft visible selection and expanded-help contrast. Independent review verified the four original repairs. Browser checks cover clipboard success/denial, stale results, limits, keyboard, 320/390/1440px layout, 200% content zoom, network/storage/log canary, reload clearing and offline operation. Chromium automation is not physical-device or human usability testing.
-- Initial reserved evaluation FAILED: 9/12 selected findings, 9/10 useful emissions, one flag across four clean controls. All emitted spans valid. Original results retained in docs/EVALUATION.md.
-- Fresh reserved v2 FAILED detection: 4/12 selected, 4/4 useful emissions, zero clean-control flags. Both failed results are retained. V1–v3 are now consumed diagnostic regressions: 35/36 expected findings, 35/35 useful emissions and zero flags across 12 clean controls under unchanged labels. These are regression results, not new heldout evidence.
-- Runtime dependencies pinned; initial npm audit returned zero known vulnerabilities. Audited six-file Vibe reference remains outside runtime.
-- Vercel's accidental connection to reference/vibe-signal/web was disconnected and verified; other projects/deployments untouched.
-- Render's existing Hobby workspace allowance verified: 3/25 services, 0MB/5GB bandwidth and 0/500 pipeline minutes used at inspection. Static hosting has no instance charge; existing overage billing remains possible beyond allowance. No new plan, paid service or billing change authorised.
-- Keith moved the preserved lead task to the correct local project; current task cwd is now canonical. Repository commands still specify it explicitly.
-- ChatGPT website project instructions were saved and verified. Initial context was added as CHATGPT_CONTEXT.md.txt in Project Sources; this is a dated snapshot, not ongoing sync. The browser extension file permission is now enabled by Keith.
+- Branch: codex/communication-check-mvp. Existing draft PR: https://github.com/keithtgrehan/communication-check/pull/1. No merge.
+- Review preview: https://communication-check-preview.onrender.com at commit 6e1793255bd18dd69e68f86e1e6b8167cb0506e5.
+- Preview implements the static React/Vite editor and deterministic engine: five check families, up to three exact quotes, dismissal, edit/recheck, current-text copy, reset and three fictional demos.
+- That preview passed 163 engine tests, six setup tests, production build/typecheck and 19 local plus 19 hosted Chromium checks. Six asset hashes, six response headers and eight excluded source paths were verified. See docs/HOSTED_VERIFICATION.json.
+- Browser checks cover Unicode evidence selection, stale clearing, clipboard success/denial, blank/oversize input, keyboard/contrast, 320/390/1440px layouts, 200% content zoom, network/storage/log canaries, reload clearing and offline operation. These are automated Chromium checks, not physical-device or human usability tests.
+- The refactored local candidate has full runtime manifest e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772. Full validation passes seven setup/integrity tests, 187 public engine tests, build/typecheck and 19 browser checks. Independent review cleared both scope repairs with 18 targeted cases; it is not yet deployed.
+- Original 18 development drafts are unchanged; 12 independent reviewer cases were added. Consumed v1–v5 regression results reached 59/60 expected findings, 59/59 useful emissions and zero flags across 20 clean controls. One historical language-reference abstention remains. These are known-case regressions, not fresh evidence.
+- Dependency audit reported zero known vulnerabilities at inspection. Six pinned Vibe reference blobs remain unchanged and excluded from runtime.
+- Screenshots, case study, demo script, human-validation protocol and isolated preview rollback instructions are prepared; final evidence must follow the final candidate.
 
-## Boundaries and outstanding work
+## Evaluation and current work
 
-- Fresh v3 FAILED detection: 6/12 expected, 6/6 useful emissions, zero clean flags and valid spans. Its original result is retained. Independent review cleared candidate 457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb after targeted repairs. Fresh v4 also FAILED: 6/12 expected, 6/6 useful emissions, zero clean flags, valid spans. All four failed attempts remain recorded. V5 will be frozen before v4 diagnostic repair; no engineering completion is claimed.
-- Preview: https://communication-check-preview.onrender.com at 4f1f0fc. Six exact asset hashes, six response headers and eight excluded source paths verified; all 19 hosted browser checks pass. Screenshots, demo/case-study, human protocol and rollback docs prepared. Final engine updates and PR evidence remain.
-- Native app self-control remains restricted; use supported task tools and browser project UI without bypassing it.
-- Milestone messages go to the existing product companion; Sources updates are separate, explicit actions.
-- Human usability sessions and AM/CSM pilots are outstanding. Agent-labelled fictional results are not real-world accuracy or customer validation.
-- Public launch, main merge, visibility/domain changes, new spending and external outreach remain unapproved.
+All five reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
+
+| Reserved attempt | Expected findings detected | Useful emissions | Clean-control flags |
+| --- | --- | --- | --- |
+| V1 | 9/12 | 9/10 | 1 |
+| V2 | 4/12 | 4/4 | 0 |
+| V3 | 6/12 | 6/6 | 0 |
+| V4 | 6/12 | 6/6 | 0 |
+| V5 | 7/12 | 7/7 | 0 |
+
+- V6 was frozen before v5 diagnostics and remains sealed outside shared project sources.
+- Repeated misses concern grammatical forms and explicit references. The repair introduces shared, span-preserving action/context features within the deterministic engine; no new dependencies, remote model, UI scope or acceptance changes.
+- Diagnostic-derived nearby examples remain private regression material. Independent reviewer-authored cases can enter development tests. No reserved corpus or labels are uploaded or published.
+- Timing is aligned with the original brief: a direct request alone is insufficient; another stated step must depend on the vague timing. The broader secondary contract wording and five ad-hoc tests were corrected, with original fixtures and reserved labels preserved.
+- The candidate is identified by hashes of all three runtime engine modules and one canonical manifest hash, checked before and after evaluation. A regression test verifies that imported-module changes alter candidate identity.
+- Engineering completion, real-world accuracy and customer validation are not claimed.
+
+## Workflow and boundaries
+
+- The existing lead task is associated with the correct local project; repository operations use the canonical root explicitly.
+- ChatGPT project instructions are saved. Project Sources contains CHATGPT_CONTEXT-2026-09-10-1317UTC.md.txt, a dated brief/progress snapshot; its superseded setup copy was removed after the new source became ready. Matching companion-task delivery was acknowledged. This is explicit milestone refresh, not continuous sync.
+- Native app self-control remains restricted; use supported task tools and website UI without bypassing that restriction.
+- Render uses the inspected existing Hobby allowance. A follow-up check showed 4/25 services, 0 MB/5 GB bandwidth and 0/500 pipeline minutes displayed. Automatic deploys are off. No billing, plan, domain or unrelated service changes were made.
+- The accidental Vercel Git connection was disconnected and verified; no project or deployment was deleted.
+- Human usability sessions: 0/3. Pilots: 0/5. Keith recruits; no outreach or customer feedback is claimed.
+- Main merge, public launch, visibility/domain changes, new spending and external outreach remain unapproved.
 
 ## Next action
 
-Complete independent review and the sealed evaluation, then update the preview,
-verify its exact build and finish delivery evidence within the existing allowance.
+Commit the independently cleared candidate,
+then run the sealed evaluation once. Update and verify the hosted candidate and
+finish delivery evidence only when the original engineering gates are met.

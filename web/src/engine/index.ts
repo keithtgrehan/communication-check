@@ -1,3 +1,4 @@
+import { analyzeClause, hasExplicitDeadline, hasUnresolvedApproval, linkedDependency, matchingReference, standaloneUnresolvedApproval } from './grammar';
 import { MAX_DRAFT_LENGTH, MAX_FINDINGS, type CheckResult, type Finding, type RuleId } from './types';
 
 interface Span { start: number; end: number; text: string }
@@ -35,19 +36,6 @@ const COPY: Record<RuleId, Pick<Finding, 'title' | 'explanation' | 'prompt'>> = 
 const PRIORITY: RuleId[] = [
   'agreement-wording', 'commitment-confirmation', 'action-owner', 'vague-timing', 'competing-requests',
 ];
-const ACTION = '(?:send|share|upload|submit|complete|review|confirm|approve|choose|select|provide|arrange|schedule|book|sign|return|fill|check|verify|nominate|chase|test|enable|configure|set up|add|invite|assign|finish|update|resolve|handle|take ownership of|take responsibility for|own|take care of|sort out|start)';
-const REQUEST = new RegExp(`\\b(?:please\\s+(?:\\w+\\s+){0,2}${ACTION}|(?:can|could|would|will)\\s+you\\s+(?:please\\s+)?${ACTION}|(?:I|we)\\s+need\\s+you\\s+to\\s+${ACTION}|(?:your team|you)\\s+(?:need|needs)\\s+to\\s+${ACTION})\\b`, 'i');
-const VAGUE = /\b(?:soon|shortly|asap|as soon as possible|when(?:ever)? you can(?=\s*(?:[.,;!?]|$|\bso\b|\bto\b))|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|at (?:some|your earliest) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
-const DEPENDENCY = /\b(?:so (?:that )?(?:(?:we|you|they|our|your)\b|(?:the|this|that|a|an) (?:[\w-]+ ){1,6}(?:can|will)\b)|before (?:(?:we|you|they)|(?:the|our|your) (?:[\w-]+ ){1,5}) ?can|(?:to|will) unblock|depends? on|dependent on|waiting (?:for|on)|once .{0,80}(?:can|will)|then (?:we|you|they) can|to (?:begin|start|enable|complete|finish) (?:the|our|your))\b/i;
-const DEADLINE = /\b(?:by|before|on|no later than)\s+(?:(?:next|this)\s+)?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|today|\d{1,2}(?::\d{2})?(?:\s*(?:am|pm))?\b|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b)|\bwithin\s+\d+\s+(?:business\s+)?(?:hours?|days?|weeks?)\b/i;
-// Bare action words also name things ("test results", "review notes"). Require
-// an explicit object determiner/pronoun; polite requests are handled separately.
-const LIST_REQUEST = new RegExp(`^(?:(?:[-*•]|\\d+[.)])\\s+)?(?:and\\s+)?${ACTION}\\s+(?:the|a|an|this|that|these|those|your|our|my|each|all|any|some|us|me|them|it)\\b`, 'i');
-
-function requestedAction(text: string): boolean {
-  return (REQUEST.test(text) || LIST_REQUEST.test(text))
-    && !/\b(?:do not|don['’]t|no need to|not asking you to)\b/i.test(text);
-}
 
 function span(text: string, start: number, end: number): Span {
   while (start < end && /\s/.test(text[start])) start++;
@@ -148,43 +136,41 @@ function clauses(sentence: Span, text: string): Span[] {
   return result;
 }
 
-function ambiguousAction(text: string): boolean {
-  // A location/team noun phrase must end immediately before the requested
-  // action. It cannot swallow a reporting verb and another person's action.
-  const ownerLocation = '(?:(?:on|from|in|within)\\s+(?:(?:our|your|their|the|either|both|this|that)\\s+)?(?:[\\w-]+\\s+){0,2}(?:sides?|teams?|groups?|departments?|organi[sz]ations?|companies|company|offices?|staff)\\s+)?';
-  const unclearOwner = new RegExp(`\\b(?:someone|somebody|one of us|one of you|whoever)\\s+${ownerLocation}(?:(?:will|should|needs? to|has to|can|could|must)\\s+)?${ACTION}\\b`, 'i');
-  const passive = /\b(?:needs? to be|must be|should be)\s+(?:sent|shared|uploaded|submitted|completed|reviewed|confirmed|approved|assigned|scheduled|configured|updated|resolved|handled|sorted|done)\b/i;
-  const agent = text.match(/\bby\s+(you|us|me|our team|your team|the [\w-]+ team|[A-Z][\p{L}'-]+)\b/u);
-  const explicitAgent = !!agent && !/^(?:then|tomorrow|today|next|this|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)$/i.test(agent[1]);
-  const vagueAction = /\b(?:please|could you|can you|someone should)\s+(?:handle|sort out|take care of)\s+(?:this|that|it|things|the next steps)\s*[.!?]?$/i;
-  const collaborativeVagueAction = /\b(?:let['’]s|let us)\s+get\s+.{1,100}\s+(?:sorted|handled|resolved|done)\b/i;
-  return unclearOwner.test(text) || ((passive.test(text) || collaborativeVagueAction.test(text)) && !explicitAgent) || vagueAction.test(text);
-}
-
 function agreementConcern(sentence: Span, previous: Span | undefined, next: Span | undefined): boolean {
   const agreed = /\b(?:as agreed|we agreed|you agreed|we have agreed|we['’]ve agreed|it is agreed|it['’]s agreed|as confirmed|we confirmed)\b/i;
-  const proposalConfirmed = /\b(?:proposed|tentative)\s+(?:[\w-]+\s+){0,5}(?:is|are|has been|have been)\s+(?:now\s+)?confirmed\b/i;
-  if (!agreed.test(sentence.text) && !proposalConfirmed.test(sentence.text)) return false;
+  const proposalStatus = /\b(?:proposed|tentative)\s+(?:[\w-]+\s+){0,5}(?:is|are|has been|have been)\s+(?:now\s+)?(?:agreed|confirmed|finali[sz]ed)\b/i;
+  if (!agreed.test(sentence.text) && !proposalStatus.test(sentence.text)) return false;
   if (/\b(?:not agreed|haven['’]t agreed|have not agreed|never agreed|if we agreed|whether we agreed)\b/i.test(sentence.text)) return false;
   if (/\bas agreed,?\s+(?:this|that|it|the proposal|the plan)\s+(?:is|remains)\s+(?:still )?(?:a proposal|tentative|pending)\b/i.test(sentence.text)) return false;
   // A formerly proposed date can now be confirmed. Require an unresolved status,
   // not the word "proposed" alone, to conflict with agreement wording.
-  const pending = /\b(?:still (?:a proposal|proposed|tentative|pending|unconfirmed|undecided)|(?:approval|confirmation|decision|sign[- ]off) (?:is |remains? )?(?:still )?pending|(?:haven['’]t|hasn['’]t|have not|has not|not yet) (?:yet )?(?:been )?(?:agreed|approved|confirmed|decided|accepted|given)|(?:only|just) (?:a |our |your |their )?(?:proposal|suggestion)|awaiting (?:your |their |final )?(?:approval|confirmation|sign[- ]off))\b/i;
-  if (pending.test(sentence.text)) return true;
+
+  if (hasUnresolvedApproval(sentence.text)) {
+    const status = sentence.text.match(proposalStatus);
+    if (!status || agreed.test(sentence.text)) return true;
+    // A resolved proposal conflicts only with its own explicitly unresolved
+    // approval. A separate budget/other decision is not evidence against it.
+    const rest = sentence.text.slice(status.index! + status[0].length).replace(/^\s*,?\s*(?:(?:even though|although|though|but|yet|while|and)\s+)?/i, '');
+
+    const unresolvedReference = /^(?:you|we|they)\s+(?:have not|haven['’]t)\s+(?:yet\s+)?(?:approved|accepted|confirmed)\s+(?:it|this|that)(?:\s+yet)?\s*[.!?]?$/i;
+    return standaloneUnresolvedApproval(rest) || unresolvedReference.test(rest);
+  }
   // Require an explicit reference between adjacent statements; do not join unrelated decisions.
   const agreementClause = sentence.text.replace(/^(?:as agreed|as confirmed),?\s+/i, '');
   const previousReference = /^(?:this|that|these|those|it)\s+(?:is|are|was|were|will|would|should|has|have)\b/i.test(agreementClause)
     || /\b(?:agreed (?:to|on)|confirmed)\s+(?:this|that|these|those|it)(?=\s*(?:[.!?]|$))/i.test(agreementClause);
-  if (previous && previousReference && pending.test(previous.text)) return true;
+  if (previous && previousReference && hasUnresolvedApproval(previous.text)) return true;
   // Link a pronoun subject or the object of an explicit unresolved-approval
   // predicate. An internal "discuss that" or temporal "this week" is unrelated.
-  if (!next || /\b(?:another|other|separate|unrelated)\b/i.test(next.text) || !pending.test(next.text)) return false;
+  if (!next || /\b(?:another|other|separate|unrelated)\b/i.test(next.text) || !hasUnresolvedApproval(next.text)) return false;
   if (/^(?:this|that|these|those|it)\s+(?:is|are|was|were|remains?|still|has|have|needs?)\b/i.test(next.text)) return true;
   // An explicitly named permission can refer to the immediately preceding
   // access privilege even when the wording uses an action rather than a noun.
-  const permissionReference = /^(?:this|that)\s+(?:permission|access right|privilege)\s+(?:is|was|remains|has|still)\b/i.test(next.text);
+  const permissionReference = /^(?:this|that)\s+(?:permission|access right|privilege|access policy|visibility policy)\s+(?:is|was|remains|has|still)\b/i.test(next.text);
   const accessPrivilege = /\b(?:guests?|users?|members?|admins?|administrators?|customers?|you|they|your team)\s+(?:can|may|will be able to|are able to|are allowed to|will be allowed to)\s+(?:view|read|edit|access|delete|create|download|upload|invite|share)\b/i.test(sentence.text);
-  if (permissionReference && accessPrivilege) return true;
+  const accessVisibility = /\b(?:will\s+)?(?:remain|be)\s+(?:visible|accessible)\s+to\s+(?:(?:your|our|their|the|all)\s+)?(?:[\w-]+\s+){0,2}(?:users?|guests?|members?|admins?|administrators?|customers?|you)\b/i.test(sentence.text);
+  if (permissionReference && (accessPrivilege || accessVisibility)) return true;
+  if (matchingReference(sentence.text, next.text)) return true;
   const objectReference = next.text.match(/\b(?:haven['’]t|hasn['’]t|have not|has not|not yet)\s+(?:yet\s+)?(?:accepted|approved|confirmed|agreed to|signed off on)\s+(?:this|that|these|those)\b(.*)/i);
   if (!objectReference) return false;
   const remainder = objectReference[1].trim();
@@ -223,7 +209,7 @@ function commitment(text: string): boolean {
   // Strong universal assurances require an affirmative technical component
   // subject, not merely the absence of a recognised human role.
   const universal = text.match(/\b(?:the|our|your|this|that)\s+((?:[\w-]+\s+){0,4}[\w-]+)\s+will\s+(?:(?:always|definitely|automatically)\s+)?(read|parse|process|recogni[sz]e|support|handle|accept|convert)\s+(?:every|all|any)\b/i);
-  const technicalSubject = /\b(?:scanner|decoder|encoder|parser|importer|exporter|processor|converter|renderer|validator|indexer|analy[sz]er|widget|pipeline|engine|software|system|component|module|application|app|tool|connector|integration)s?$/i;
+  const technicalSubject = /(?:\b(?:scanner|decoder|encoder|parser|importer|exporter|processor|converter|renderer|validator|indexer|analy[sz]er|widget|pipeline|engine|software|system|component|module|application|app|tool|connector|integration)s?|\b(?:form|query|workflow|report|dashboard|page|survey|automation)[ -]builders?)$/i;
   const technicalObjects = /\b(?:formats?|files?|records?|inputs?|labels?|fields?|documents?|data|requests?)\b/i;
   const technicalReading = !universal || universal[2].toLowerCase() !== 'read' || /\b(?:formats?|encodings?|protocols?|schemas?)\b/i.test(text);
   const absoluteAssurance = /\b(?:without (?:fail|(?:any )?errors?)|perfectly|guaranteed)\b|100\s*%/i;
@@ -241,7 +227,7 @@ function commitment(text: string): boolean {
     const head = core.match(/[\w-]+$/)?.[0];
     const offering = /^(?:package|plan|subscription|tier|edition|bundle)s?$/i;
     const customReport = /\bcustom\s+(?:[\w-]+\s+){0,3}reports?$/i.test(core);
-    return !!head && (product.test(head) || technicalSubject.test(head) || customReport || (offering.test(head) && product.test(text)));
+    return !!head && (product.test(head) || technicalSubject.test(core) || customReport || (offering.test(head) && product.test(text)));
   };
   const directSubject = [...text.matchAll(/\b(?:will|shall|guarantee(?:s|d)?|promises?)\b|['’]ll\b/gi)]
     .some(marker => isProductSubject(text.slice(0, marker.index)));
@@ -275,20 +261,20 @@ export function checkDraft(text: string): CheckResult {
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
     if (agreementConcern(part, parts[i - 1], parts[i + 1])) candidates.push({ ruleId: 'agreement-wording', span: part });
-    for (const clause of clauses(part, text)) {
-      if (requestedAction(clause.text)) {
-        requests.push(clause);
-        const coordinated = new RegExp(`(?:,\\s*(?:and\\s+)?|\\band\\s+)${ACTION}\\b`, 'gi');
-        for (const _ of clause.text.matchAll(coordinated)) requests.push(clause);
-      }
-      if (ambiguousAction(clause.text) && !/\b(?:not|never|no need|don['’]t)\b/i.test(clause.text)) {
+    const clauseParts = clauses(part, text);
+    for (let j = 0; j < clauseParts.length; j++) {
+      const clause = clauseParts[j];
+      const features = analyzeClause(clause.text, clause.start);
+      for (let count = 0; count < features.requestCount; count++) requests.push(clause);
+      if (features.ownerUnclear && !/\b(?:not|never|no need|don['’]t)\b/i.test(clause.text)) {
         candidates.push({ ruleId: 'action-owner', span: clause });
       }
-      const refinedDeadline = /\bbut\s+no later than\b/i.test(part.text) && DEADLINE.test(part.text);
-      if (VAGUE.test(clause.text) && !DEADLINE.test(clause.text) && !refinedDeadline
-        && (requestedAction(clause.text) || DEPENDENCY.test(clause.text)) && !/\b(?:no need|not needed|don['’]t|do not)\b/i.test(clause.text)) {
-        const match = clause.text.match(VAGUE)!;
-        candidates.push({ ruleId: 'vague-timing', span: span(text, clause.start + match.index!, clause.start + match.index! + match[0].length) });
+      const neighbourParts = [clauseParts[j - 1] ?? parts[i - 1], clauseParts[j + 1] ?? parts[i + 1]].filter((item): item is Span => !!item);
+      const neighbours = neighbourParts.map(item => analyzeClause(item.text, item.start));
+      const refinedDeadline = /\bbut\s+no later than\b/i.test(part.text) && hasExplicitDeadline(part.text);
+      if (features.vagueTimes.length && !features.hasDeadline && !refinedDeadline
+        && linkedDependency(features, neighbours) && !/\b(?:no need|not needed|don['’]t|do not)\b/i.test(clause.text)) {
+        candidates.push({ ruleId: 'vague-timing', span: features.vagueTimes[0] });
       }
       if (commitment(clause.text)) candidates.push({ ruleId: 'commitment-confirmation', span: clause });
     }

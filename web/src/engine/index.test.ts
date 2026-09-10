@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { checkDraft } from './index';
+import { REVIEWER_CASES } from './__fixtures__/reviewer';
 import { DEVELOPMENT_DRAFTS } from './__fixtures__/development';
 import { MAX_DRAFT_LENGTH, type RuleId } from './types';
 
@@ -65,8 +66,10 @@ describe('meaningful suppressions and changes in wording', () => {
     expect(checkDraft(text).findings[0].quote).toBe('we will ship the custom connector by Friday.');
   });
 
-  it('clears the vague-time finding when the request has a date', () => {
-    expect(rules('Please upload the team list soon.')).toEqual(['vague-timing']);
+  // Brief-alignment correction (lead, 2026-09-10): a request alone is not a dependency.
+  it('requires a stated dependency and respects an explicit date', () => {
+    expect(rules('Please upload the team list soon.')).toEqual([]);
+    expect(rules('Please upload the team list soon so we can prepare your workspace.')).toEqual(['vague-timing']);
     expect(rules('Please upload the team list by Tuesday.')).toEqual([]);
   });
 
@@ -116,8 +119,8 @@ describe('independent review regressions: timing and qualification scope', () =>
     expect(rules(text)).toEqual([]);
   });
 
-  it('still reviews timing on a request or a dependency in its own clause', () => {
-    expect(rules('Please review the tenant list soon; it was lovely to meet your team.')).toEqual(['vague-timing']);
+  it('requires a dependency local to the timing instead of only a request', () => {
+    expect(rules('Please review the tenant list soon; it was lovely to meet your team.')).toEqual([]);
     expect(rules('Please review the tenant list; the sample data arrives soon, so you can test the import.')).toEqual(['vague-timing']);
   });
 
@@ -357,7 +360,8 @@ describe('original evidence and history boundaries', () => {
   });
 
   it('does not mistake a body request after thanks for a signature', () => {
-    const text = 'Thanks,\nCould you share the workspace roster soon?';
+    // Explicit dependency preserves this test's signature/span purpose under the brief.
+    const text = 'Thanks,\nCould you share the workspace roster soon? We need it to prepare the invitation list.';
     expect(rules(text)).toEqual(['vague-timing']);
     verifySpans(text);
   });
@@ -382,7 +386,8 @@ describe('original evidence and history boundaries', () => {
   });
 
   it('recognises line-wrapped requests and preserves a line break inside evidence', () => {
-    const request = 'Could you share the team list\r\nwhen you get a chance?';
+    // Explicit dependency preserves this test's line-wrap/span purpose under the brief.
+    const request = 'Could you share the team list\r\nwhen you get a chance? We need it to prepare the invitations.';
     expect(rules(request)).toEqual(['vague-timing']);
     const promise = 'We will deliver the custom\nconnector by Friday.';
     expect(checkDraft(promise).findings[0].quote).toBe(promise);
@@ -402,8 +407,9 @@ describe('output contract, ranking and input limits', () => {
     expect(() => checkDraft('👋'.repeat(MAX_DRAFT_LENGTH / 2 + 1))).toThrow(RangeError);
   });
 
+  // The timing request now states the dependency required by the authoritative brief.
   it('ranks concerns, caps three and avoids repeated findings from the same family', () => {
-    const text = 'Someone should upload the roster. Please share the tenant ID soon. We will ship the custom export by Friday. We will deliver the API connector by Monday. Please approve the mapping. Please confirm the training group.';
+    const text = 'Someone should upload the roster. Please share the tenant ID soon so we can prepare your workspace. We will ship the custom export by Friday. We will deliver the API connector by Monday. Please approve the mapping. Please confirm the training group.';
     expect(rules(text)).toEqual(['commitment-confirmation', 'action-owner', 'vague-timing']);
     expect(new Set(checkDraft(text).findings.map(item => item.id)).size).toBe(3);
     verifySpans(text);
@@ -420,5 +426,42 @@ describe('output contract, ranking and input limits', () => {
       expect(finding.prompt).not.toMatch(/Monday|Tuesday|Noor|unauthori[sz]ed|false|verified|breach/);
       expect(Object.keys(finding).sort()).toEqual(['end', 'explanation', 'id', 'prompt', 'quote', 'ruleId', 'start', 'title']);
     }
+  });
+});
+
+// Independent reviewer-authored development cases; never heldout evidence.
+describe('independent shared-grammar review cases', () => {
+  for (const example of REVIEWER_CASES) {
+    it(example.id + ': ' + example.rationale, () => {
+      expect([...rules(example.draft)].sort()).toEqual([...example.expectedRuleIds].sort());
+      verifySpans(example.draft);
+    });
+  }
+});
+
+// Independent reviewer reproductions and adjacent controls; no evaluation-corpus provenance.
+describe('independent review: grounded dependency links and exploratory ownership', () => {
+  it.each([
+    'Please review this screenshot soon. We are waiting for the purchase order before provisioning.',
+    'Please review the welcome message soon. The team is waiting for legal to review the purchase order.',
+    'Please review that screenshot soon. We are waiting for the purchase order before provisioning.',
+    'Please review the welcome message soon. We are waiting for the welcome pack before provisioning.',
+    'During the demonstration, we discussed whether the setup needs an owner.',
+    'During the demonstration, we discussed whether we need someone to reconcile the billing contacts.',
+  ])('abstains when the link or asserted requirement is absent: %s', text => expect(rules(text)).toEqual([]));
+
+  it.each([
+    'The setup needs an owner.',
+    'We need someone to reconcile the billing contacts.',
+    'We discussed whether to proceed; the setup still needs an owner.',
+  ])('retains an explicit current requirement: %s', text => expect(rules(text)).toEqual(['action-owner']));
+
+  it.each([
+    'Please review this screenshot soon. We are waiting for the screenshot before provisioning.',
+    'Please review the welcome message soon. We are waiting for the welcome message before provisioning.',
+    'We are waiting for the purchase order before provisioning. Please send it soon.',
+  ])('retains a grounded object or standalone anaphoric link: %s', text => {
+    expect(rules(text)).toEqual(['vague-timing']);
+    verifySpans(text);
   });
 });
