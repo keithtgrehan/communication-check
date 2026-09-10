@@ -48,7 +48,7 @@ All ten reserved attempts failed the original detection requirement of at least 
 ## Workflow and outstanding work
 
 - The lead task is associated with the correct local project; repository operations use the canonical root explicitly. Native self-control restrictions remain in place.
-- ChatGPT project instructions are saved. The last verified Project Sources upload is the dated 15:13 UTC brief/progress file, replacing the superseded 13:58 copy. Later companion-task milestone updates are delivered separately; they do not automatically replace Project Sources. Details: docs/WORKFLOW.md.
+- ChatGPT project instructions are saved. The last verified Project Sources upload is the dated 16:02 UTC brief/progress file, replacing the superseded 15:13 copy. Later companion-task milestone updates are delivered separately; they do not automatically replace Project Sources. Details: docs/WORKFLOW.md.
 - Render's refreshed 15:47 UTC check showed Hobby, 4/25 services, 6 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 preview service/pipeline charges. Automatic deploys are off. No billing, plan, domain or unrelated service changes were made. The accidental Vercel Git connection was disconnected and verified without deleting projects or deployments.
 - Human usability sessions: 0/3. Pilots: 0/5. Keith recruits; no outreach or customer feedback is claimed. Main merge, public launch, visibility/domain changes and new spending remain unapproved.
 
