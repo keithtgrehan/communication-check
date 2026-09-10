@@ -7,7 +7,7 @@ implemented/tested behaviour from pending gates; it is not a release approval.
 
 - Node 22.23.1, npm 10.9.8, pinned package-lock dependencies.
 - Seven setup/integrity tests pass: full runtime-module identity, allowlisted handoff, working-copy labels, credential/symlink rejection, destination/branch guard, six exact reference blobs, existing-hook preservation.
-- Current local candidate: full runtime manifest d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243. Full local validation passes seven setup/integrity tests, 199 public engine tests, build/typecheck and 19 browser tests. The original 18 development drafts are unchanged. Twelve independent reviewer cases are included unchanged; diagnostic-derived controls remain private. This candidate is not yet deployed.
+- Current hosted candidate: full runtime manifest d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243. Full local validation passes seven setup/integrity tests, 199 public engine tests, build/typecheck and 19 browser tests. The original 18 development drafts are unchanged. Twelve independent reviewer cases are included unchanged; diagnostic-derived controls remain private. This candidate is deployed and verified at commit 10d4e764c09938b61a04b2a3cd8cd48c7a091441.
 - TypeScript and Vite production build pass. Source/build guards reject known network, storage/logging APIs and donor/fixture contamination. Guards are regressions, not proof of privacy.
 - npm audit reports 0 known vulnerabilities at inspection; this is time-specific, not assurance against unknown vulnerabilities.
 - 19 Chromium browser tests pass: three real-engine demos, exact evidence/dismiss/recheck, stale clearing, copy current edits, denial/manual copy, reset, blank/oversize, privacy/offline, keyboard/axe/layout 320/390/1440, 200% content zoom, and 9 beginning/middle/end visible-selection cases.
@@ -42,8 +42,8 @@ useful, zero clean-control flags and all source/corpus integrity checks passing.
 Full local validation passes 199 public tests, seven setup/integrity tests,
 build/typecheck and 19 browser checks. The independent reviewer cleared all 14
 final targeted probes plus 199 public tests and typecheck, with no material
-unresolved defect in this bounded review. V7 remains sealed until the committed
-candidate is explicitly authorised. Passing the private matrix and consumed
+unresolved defect in this bounded review. The candidate was committed as 10d4e764c09938b61a04b2a3cd8cd48c7a091441; its single
+authorised v7 run again detected only 6/12 and failed the detection gate. Passing the private matrix and consumed
 corpora does not establish fresh generalisation.
 
 ## Runtime privacy method
@@ -85,22 +85,22 @@ unresolved defect in this bounded review. The subsequent sealed v6 evaluation fa
 
 ## Reserved evaluation and outstanding gates
 
-Six independent reserved attempts failed the detection gate; all remain in
-docs/EVALUATION.md. Latest v6 detected 6/12 selected findings with 6/6 useful emissions,
-zero clean-control flags and all spans exact. Current consumed v1–v5 regression
-results are 59/60 expected and 59/59 useful findings with no flags across 20 clean
-controls, not new heldout evidence. V6 was frozen before v5 diagnostic consumption
-and was run once against commit 3cbe8467d9d25e0ef587334ce8f8b8112c38149d. All labels, denominators, matching criteria and gates remain unchanged.
+Seven independent reserved attempts failed the detection gate; all remain in
+docs/EVALUATION.md. Latest v7 detected 6/12 selected findings with 6/6 useful emissions,
+zero clean-control flags and all spans exact. Current consumed v1–v6 regression
+results are 71/72 expected and 71/71 useful findings with no flags across 24 clean
+controls, not new heldout evidence. V7 was frozen before v6 diagnostic consumption
+and was run once against commit 10d4e764c09938b61a04b2a3cd8cd48c7a091441. All labels, denominators, matching criteria and gates remain unchanged.
 
 ## Hosted evidence — current review preview
 
 https://communication-check-preview.onrender.com was built from
-6e1793255bd18dd69e68f86e1e6b8167cb0506e5 and is live on Render. Six asset hashes
+10d4e764c09938b61a04b2a3cd8cd48c7a091441 and is live on Render. Six asset hashes
 match the local production build byte-for-byte. Six security/privacy/indexing
 headers pass on the actual response; eight tested source/config paths return 404.
 The full 19-test Chromium suite passes against the hosted URL, including the same
 network/storage/log canary and offline checking. The service auto-deploy setting
-is off. Raw static integrity evidence is in docs/HOSTED_VERIFICATION.json.
+is off. Static integrity evidence, including all three runtime module hashes and the canonical manifest, is in docs/HOSTED_VERIFICATION.json.
 
 Screenshots use only the built-in fictional demos, captured from this hosted
 preview. Viewport sizes are automation, not physical mobile devices.

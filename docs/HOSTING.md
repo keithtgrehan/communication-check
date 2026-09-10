@@ -95,10 +95,20 @@ followed by an explicitly selected deploy within allowance.
 
 Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1:4173.
 
-## Current verified deployment
+## Second verified deployment
 
 - Source commit: 6e1793255bd18dd69e68f86e1e6b8167cb0506e5.
 - Deployment: dep-dahapitbedkc739s6990; live 2026-09-10 at 13:13:00 UTC.
 - All six asset hashes, six response headers and eight excluded source/config paths pass; all 19 hosted Chromium checks pass.
 - The previous verified preview is dep-dahaejmq1p3s73ba4d90 at 4f1f0fc; this is the rollback target if needed. Its detection gate also remained unmet.
 - Engine detection acceptance remains unfinished despite the verified interface and runtime behaviour.
+
+## Current verified interim deployment
+
+- Source commit: 10d4e764c09938b61a04b2a3cd8cd48c7a091441.
+- Full runtime engine manifest: d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243.
+- Deployment: dep-dahblp5bedkc739vpj90; live 2026-09-10 at 14:13:06 UTC.
+- Six hosted assets match local build hashes; six response headers and eight excluded source/config paths pass. All 19 hosted Chromium checks pass.
+- Allowance rechecked at 14:10 UTC: Hobby, 4/25 services, 2 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges. No plan, billing or domain changes.
+- The previous verified preview is dep-dahapitbedkc739s6990 at 6e17932; this is the current rollback target. Its detection gate also remained unmet.
+- This is an interim review preview: all seven fresh evaluations have failed the detection requirement, so engineering completion remains unclaimed.
