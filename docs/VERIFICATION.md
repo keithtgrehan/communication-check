@@ -113,6 +113,19 @@ with no material unresolved finding in this bounded review. It was committed as
 that run detected 8/12 and failed the gate. The same four maximum-
 length sanity probes completed in roughly 1.5–26 ms on this local run.
 
+The subsequent bounded state/voice/timing repair is frozen at full manifest
+ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6.
+It retains the unchanged fixed 100/100 audit and 80/80 private matrix. Consumed
+v1–v8 reaches 95/96 expected findings and 95/95 useful emissions, with no flags
+across 32 clean controls and all source/corpus/span/cap checks passing. The four
+v8 misses are recovered; only the historical v2 abstention remains. Root full
+validation passes seven setup/integrity tests, 211 public engine tests,
+build/typecheck and 19 local browser checks. The independent reviewer cleared
+25 focused probes, including adjacent negatives and Unicode/CRLF/quoted-mask
+spans, and independently passed 211 public tests and typecheck. No material
+finding remains in that bounded delta review. V9 is sealed pending commit and
+explicit authorisation; these consumed/development results are not fresh evidence.
+
 ## Runtime privacy method
 
 Use a distinctive fictional canary. Observe every browser request and console/page

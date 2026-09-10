@@ -35,7 +35,8 @@ const ACTION = '(?:send|share|upload|submit|complete|review|confirm|approve|choo
 const REQUEST_START = /\b(?:please\s+(?:(?:also|kindly)\s+)?|(?:can|could|would|will)\s+you\s+(?:(?:please|also|kindly)\s+)*|(?:I|we)\s+(?:still\s+)?need\s+you\s+to\s+|(?:your team|you)\s+(?:(?:also|still)\s+)?(?:need|have)\s+to\s+)([a-z]+)\b/gi;
 // Indefinite amounts and temporal units are separate from exact numeric durations.
 const INDEFINITE_DURATION = /\b(?:in|within)\s+(?:a\s+(?:(?:little|short)\s+)?(?:bit|while|moment)|(?:a\s+)?(?:few|couple of|several)\s+(?:minutes?|hours?|days?|weeks?))\b(?=\s*(?:[.,;!?]|$|so\b|before\b|to\b))/i;
-const VAGUE = /\b(?:soon|shortly|asap|later|in (?:the )?(?:near|foreseeable|not too distant) future|as soon as (?:possible|practical|feasible|convenient)|when(?:ever)? you can(?=\s*(?:[.,;!?]|$|\bso\b|\bto\b))|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|when(?:ever)? you have time|in the coming (?:days|weeks|months)|at (?:some|your(?: earliest)?) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
+const FEASIBILITY = '(?:possible|practical|feasible|convenient)';
+const VAGUE = /\b(?:soon|shortly|asap|later|in (?:the )?(?:near|foreseeable|not too distant) future|when(?:ever)? you can(?=\s*(?:[.,;!?]|$|\bso\b|\bto\b))|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|when(?:ever)? you have time|in the coming (?:days|weeks|months)|at (?:some|your(?: earliest)?) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
 const DEPENDENCY = /\b(?:so (?:that )?(?:(?:I|we|you|they|our|your)\b|(?:the|this|that|a|an) (?:[\w-]+ ){1,6}(?:can|will)\b)|before (?:(?:I|we|you|they)|(?:the|our|your) (?:[\w-]+ ){1,5}) ?can|(?:to|will) unblock|depends? on|dependent on|waiting (?:for|on)|then (?:I|we|you|they) can|to (?:begin|start|enable|complete|finish) (?:the|our|your))\b/i;
 const DEADLINE = /\b(?:by|before|on|no later than)\s+(?:(?:next|this)\s+)?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|today|noon|midnight|\d{1,2}(?::\d{2})?(?:\s*(?:am|pm))?\b|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b)|\bwithin\s+\d+\s+(?:business\s+)?(?:hours?|days?|weeks?)\b/i;
 // Bare action words also name things ("test results", "review notes"). Require
@@ -89,9 +90,10 @@ function vagueDirective(text: string): boolean {
 
 function responsibilityState(text: string): RegExpMatchArray | null {
   const owner = '(?:owner|assignee|person)';
-  const assignment = '(?:assigned|appointed|designated)';
+  const assignment = '(?:assigned|appointed|designated|named|chosen)';
   return text.match(new RegExp(`\\b(?:nobody|no one|no ${owner})\\s+(?:is|has(?: yet)? been)\\s+${assignment}\\s+(?:yet\\s+)?(?:to|for)\\s+(.+?)(?:[.!?]|$)`, 'i'))
-    ?? text.match(new RegExp(`\\b(?:the|an?|our|your)\\s+(?:[\\w-]+\\s+){0,5}(?:owner|assignee|task|approval|review)\\s+has\\s+not\\s+(?:yet\\s+)?been\\s+${assignment}(?:\\s+(.+?))?(?:[.!?]|$)`, 'i'))
+    ?? text.match(new RegExp(`\\b(?:the|an?|our|your)\\s+(?:[\\w-]+\\s+){0,5}(?:owner|assignee)\\s+has\\s+not\\s+(?:yet\\s+)?been\\s+${assignment}(?:\\s+(.+?))?(?:[.!?]|$)`, 'i'))
+    ?? text.match(new RegExp(`\\b(?:the|an?|our|your)\\s+(?:[\\w-]+\\s+){0,5}(?:task|approval|review)\\s+has\\s+not\\s+(?:yet\\s+)?been\\s+(?:assigned|appointed|designated)(?:\\s+(.+?))?(?:[.!?]|$)`, 'i'))
     ?? text.match(/\b(?:we|I|you|they)\s+(?:still\s+)?(?:have|has)\s+not\s+(?:yet\s+)?assigned\s+(?:anyone|anybody|an owner|an assignee)\s+to\s+(.+?)(?:[.!?]|$)/i)
     ?? text.match(/\b(?:nobody|no one)\s+has\s+(?:yet\s+)?taken\s+(?:responsibility|ownership|charge)\s+(?:for|of)\s+(.+?)(?:[.!?]|$)/i)
     ?? text.match(/\bthere\s+is\s+(?:still\s+)?no\s+(?:owner|assignee)\s+for\s+(.+?)(?:[.!?]|$)/i)
@@ -207,7 +209,7 @@ export function analyzeClause(text: string, offset = 0): ClauseFrame {
     const objectText = tail.replace(/(?:\s*(?:,|and|then|finally)\s*)+$/i, '');
     add('request', null, originalSpan(text, offset, request.start, request.start + request.verb.length), originalSpan(text, offset, request.start + request.verb.length, request.start + request.verb.length + objectText.length), 'recipient');
   }
-  const vagueTimes = [...text.matchAll(new RegExp(`(?:${VAGUE.source}|${INDEFINITE_DURATION.source})`, 'gi'))].filter(match => {
+  const vagueTimes = [...text.matchAll(new RegExp(`(?:${VAGUE.source}|${INDEFINITE_DURATION.source}|\\b(?:as soon as|whenever)\\s+${FEASIBILITY}\\b)`, 'gi'))].filter(match => {
     if (match[0].toLowerCase() === 'soon' && /as\s+$/i.test(text.slice(0, match.index)) && /^\s+as\b/i.test(text.slice(match.index + match[0].length))) return false;
     if (match[0].toLowerCase() !== 'later') return true;
     return !/^\s+(?:today|tomorrow|tonight|this\s+(?:week|month|year)|next\s+(?:week|month|year)|on\s+|at\s+|by\s+)/i.test(text.slice(match.index + match[0].length));

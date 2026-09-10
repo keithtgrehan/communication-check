@@ -21,7 +21,8 @@ export function commitmentConcern(text: string): boolean {
   // promised price state/benefit, or an explicit guarantee of a price outcome.
   const priceOutcome = /\b(?:fixed|locked|unchanged|free|refund|discount|credit|no (?:extra|additional)|at no)\b|[$€£]\s*\d|\d\s*%/i;
   const pricePredicate = /\b(?:will|shall|['’]ll)\s+(?:(?:always|never|definitely)\s+)?(?:cost|charge|pay|waive|refund|discount|increase|reduce|fix|lock)\b|\b(?:will|shall|['’]ll)\s+(?:remain|stay|be)\s+(?:(?:permanently|fully)\s+)?(?:fixed|locked|unchanged|free|no (?:extra|additional)|[$€£]\s*\d)/i;
-  const priceAssurance = pricePredicate.test(text) || (priceOutcome.test(text)
+  const passiveFinancialInclusion = /\b(?:will|shall)\s+be\s+(?:included|provided|offered|supplied)\s+(?:at\s+)?no\s+(?:(?:extra|additional)\s+)?(?:cost|charge|fee)s?\b/i.test(text);
+  const priceAssurance = passiveFinancialInclusion || pricePredicate.test(text) || (priceOutcome.test(text)
     && /\b(?:guarantee(?:s|d)?|promise)\b|\b(?:will|shall|['’]ll)\s+(?:offer|grant|apply|give|provide|include|honou?r)\b/i.test(text));
   const capability = /\b(?:support|handle|work with|integrate with|sync|synchroni[sz]e|process|automate|eliminate|prevent|ensure|include|provide|enable|allow|run|meet)\b/i;
   // Strong universal assurances require an affirmative technical component

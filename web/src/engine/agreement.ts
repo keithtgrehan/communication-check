@@ -47,7 +47,7 @@ function settlements(text: string): SettlementFrame[] {
   }
   // A copular/perfect settled state attaches to its subject, including a
   // relative proposal clause and modifiers between the subject and predicate.
-  for (const match of text.matchAll(/\b(?:is|are|has been|have been)\s+(?:now\s+)?(?:confirmed|agreed|final|finali[sz]ed|settled)\b|\bas\s+(?:our|the|your)\s+agreed\s+[\w-]+(?:\s+[\w-]+){0,2}/gi)) {
+  for (const match of text.matchAll(/\b(?:is|are|has been|have been)\s+(?:now\s+)?(?:approved|confirmed|agreed|final|finali[sz]ed|settled)\b|\bas\s+(?:our|the|your)\s+agreed\s+[\w-]+(?:\s+[\w-]+){0,2}/gi)) {
     const before = text.slice(0, match.index);
     const boundary = [...before.matchAll(/;|,\s*|\band\s+(?=the|your|our|this|that)/gi)].at(-1);
     const start = boundary ? boundary.index + boundary[0].length : 0;
