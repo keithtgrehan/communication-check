@@ -2,9 +2,9 @@
 
 ## Current result
 
-**Engineering evaluation gate remains unmet.** The single reserved v7 run on reviewed commit `10d4e764c09938b61a04b2a3cd8cd48c7a091441` detected **6/12** preselected useful findings (required at least 10/12). All **6/6** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
+**Engineering evaluation gate remains unmet.** The single reserved v8 run on reviewed commit `558c66de18dab75931cf5ee3e0ad7a1b20638d06` detected **8/12** preselected useful findings (required at least 10/12). All **8/8** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
 
-Evaluated at `2026-09-10T14:10:29.784Z` with complete runtime manifest SHA256 `d9b899b1f05c76f08ab47f536d3095ca1c681c89e480613851421d9db145e243`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All seven reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
+Evaluated at `2026-09-10T14:48:31.394Z` with complete runtime manifest SHA256 `c43d1866b582f5772c28af469d375bfdaf26a790247ce4a870784b8320a84245`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All eight reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
 
 ## Initial reserved evaluation v1
 
@@ -345,3 +345,38 @@ At 14:38 UTC, consumed v1–v7 were checked with full runtime manifest SHA256 `4
 Every individual runtime hash, full manifest/document and corpus hash was verified unchanged before and after each run. Expected matches were v1 12/12, v2 11/12, v3 12/12, v4 12/12, v5 11/12, v6 12/12 and v7 12/12. All 82 emissions matched useful labels with valid spans; there were zero findings across 28 clean controls, cap violations or execution errors. All v7 misses were recovered, but a new v5 timing regression with an explicit dependent step was identified and sent privately to the engine agent. The known v2 miss remained. Original labels and gates stayed unchanged. Each consumed set met numerical thresholds as regression evidence only; all seven reserved failures remain preserved. V8 remained sealed and unrun.
 
 At 14:46 UTC, consumed v1–v7 were checked once per corpus on full manifest SHA256 `c43d1866b582f5772c28af469d375bfdaf26a790247ce4a870784b8320a84245`, with the unchanged complete five-module import closure confirmed by the lead. Changed individual hashes were `agreement.ts` = `25c7238250299f6bed98a61d73b95d4bd026ea2e52e361b11c75859c9c286200`, `grammar.ts` = `bc0a60814d2a3181084d5d403c6e9d6330fd27f7da2eadd220cb37df2787e2b4`, and `index.ts` = `f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5`; `commitment.ts` and `types.ts` retained the preceding listed hashes. Every runtime source, manifest/document and corpus hash was unchanged before/after execution. Expected matches were 12/12, 11/12, 12/12, 12/12, 12/12, 12/12 and 12/12, with 83/83 useful emissions and zero clean-control findings, invalid spans, cap violations or errors. The v5 timing regression was recovered. Original labels, criteria and all seven reserved failures remain unchanged; v8 remained sealed and unrun.
+
+## Fresh reserved evaluation v8
+
+The lead explicitly authorised exactly one fresh v8 evaluation on reviewed, committed candidate `558c66de18dab75931cf5ee3e0ad7a1b20638d06`. It ran at `2026-09-10T14:48:31.394Z` using a unique runner tag. **The candidate fails the reserved detection gate.** No repeat occurred and no subsequent corpus was created.
+
+V8 was frozen at `2026-09-10T14:14:15.749274+00:00`, before v7 diagnostic details were inspected or released and before the subsequent development coverage audit and repairs. Corpus SHA256 is `222f0adcdb68c89450ad4de83187b63ef778c0297bc5d499896577de9c8a200a`. It retains twelve fictional customer onboarding drafts, four clean controls and twelve preselected useful findings across the other eight drafts, covering all five families within the three-finding cap. Original labels, pre-recorded scope rationales, regions, anchors, matching criteria and gates remained unchanged. The pre-evaluation drafting correction is recorded above; it was never run against the candidate and discarded no result.
+
+The root-approved complete runtime manifest from `.handoff/ENGINE_CANDIDATE.json` had SHA256 `c43d1866b582f5772c28af469d375bfdaf26a790247ce4a870784b8320a84245`. The lead verified that working and committed runtime manifests matched before execution. The evaluator independently verified all five individual runtime hashes, the full manifest, manifest document and corpus hash before and after the run:
+
+| Runtime file | SHA256 |
+| --- | --- |
+| `web/src/engine/agreement.ts` | `25c7238250299f6bed98a61d73b95d4bd026ea2e52e361b11c75859c9c286200` |
+| `web/src/engine/commitment.ts` | `c34a492d1c06aa59c25ca659d65cad191b847a57f436614bd8382409de7569dd` |
+| `web/src/engine/grammar.ts` | `bc0a60814d2a3181084d5d403c6e9d6330fd27f7da2eadd220cb37df2787e2b4` |
+| `web/src/engine/index.ts` | `f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5` |
+| `web/src/engine/types.ts` | `31fa1927cdf2a65caa5d4ad0ee7baf952604b126e8ab6b014cdcf304fae7307b` |
+
+Every integrity check passed. The evaluator read no implementation, development fixture, demo or reviewer source. V8 drafts, labels, paraphrases and diagnostics were not supplied to the lead or engine during repairs. The evaluator knew prior aggregate failures and consumed v1–v6 diagnostics, but froze v8 before reading v7 diagnostics. Procedural separation was maintained and is not an enforced sandbox.
+
+| Measure | Observed | Gate | Result |
+| --- | --- | --- | --- |
+| Preselected useful findings detected | 8 / 12 (66.7%) | At least 10 / 12 | Fail |
+| Emitted findings matching frozen useful labels | 8 / 8 (100%) | At least 90% | Pass |
+| Emissions across four clean controls | 0 | Zero | Pass |
+| Exact original evidence spans | 8 / 8 | All valid | Pass |
+| Drafts exceeding three findings | 0 / 12 | Zero | Pass |
+| Draft execution/result errors | 0 / 12 | Zero | Pass |
+
+Four expected findings were missed; no unmatched emissions occurred. The evaluator reported aggregate results only and did not inspect or release v8 per-case diagnostics. Corpus and labels remain outside repository sources and normal handoffs. All seven preceding reserved failures and consumed-regression history are preserved. No original label or acceptance threshold changed.
+
+This eighth fresh attempt still falls below the frozen detection threshold. Its higher raw count than the immediately preceding set does not establish a controlled improvement because the corpora differ. Iterative repair, repeated small sets and agent-authored labels prevent an unbiased real-world accuracy interpretation. Any later result must retain this entire history and its limits. Passing other checks does not satisfy the unmet coverage gate, and these evaluations do not establish factual verification, human usefulness or market fit.
+
+After v8 failed, the lead authorised bounded diagnostic consumption. Before any v8 diagnostic was inspected or released, the evaluator froze v9 at `2026-09-10T14:51:01.072352+00:00`, SHA256 `d6541cfdb9515675dc3e7a1a4ab873c7d7804f735c7b299ee1db2a4e1e364d89`. It retains twelve drafts, four clean controls, twelve expectations and all five families, with unchanged original matching/gates and pre-frozen scope rationales. No candidate ran during reservation and no implementation, development or reviewer source was read.
+
+The authorised v8 review found four absent family outputs, not span-match rejection or cap displacement. Exact evidence, frozen rationales and minimal adjacent context were delivered directly to the lead and engine outside shared sources and normal handoffs. Coarse categories concern passive owner vacancy, separable sign-off wording, zero-incremental-cost inclusion, and vague temporal qualification on an explicit prerequisite. No labels, denominators or historical results changed. All eight failures remain preserved. V8 is now consumed regression material; v9 remains sealed and unrun until explicit authorisation for a reviewed committed candidate. No further broad audit campaign or fresh evaluation was initiated by the evaluator.

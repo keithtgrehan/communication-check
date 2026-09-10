@@ -108,8 +108,9 @@ build/typecheck and 19 local Chromium tests. The independent reviewer cleared al
 nine original false flags and 29 bounded probes, including positive preservation,
 same/different references, routine receipt, ordering, commitment roles and
 Unicode/CRLF/quoted-mask spans. It independently passed 211 tests and typecheck,
-with no material unresolved finding in this bounded review. V8 is still sealed;
-commit and explicit authorisation precede its single run. The same four maximum-
+with no material unresolved finding in this bounded review. It was committed as
+558c66de18dab75931cf5ee3e0ad7a1b20638d06 before its authorised single v8 run;
+that run detected 8/12 and failed the gate. The same four maximum-
 length sanity probes completed in roughly 1.5–26 ms on this local run.
 
 ## Runtime privacy method
@@ -151,12 +152,14 @@ unresolved defect in this bounded review. The subsequent sealed v6 evaluation fa
 
 ## Reserved evaluation and outstanding gates
 
-Seven independent reserved attempts failed the detection gate; all remain in
-docs/EVALUATION.md. Latest v7 detected 6/12 selected findings with 6/6 useful emissions,
-zero clean-control flags and all spans exact. Current consumed v1–v6 regression
-results are 71/72 expected and 71/71 useful findings with no flags across 24 clean
-controls, not new heldout evidence. V7 was frozen before v6 diagnostic consumption
-and was run once against commit 10d4e764c09938b61a04b2a3cd8cd48c7a091441. All labels, denominators, matching criteria and gates remain unchanged.
+Eight independent reserved attempts failed the detection gate; all remain in
+docs/EVALUATION.md. Latest v8 detected 8/12 selected findings with 8/8 useful
+emissions, zero clean-control flags and all spans exact. Current consumed v1–v7
+regression results are 83/84 expected and 83/83 useful findings with no flags across
+28 clean controls, not new heldout evidence. V8 was frozen before v7 diagnostic
+consumption and ran once at 14:48:31.394 UTC against commit
+558c66de18dab75931cf5ee3e0ad7a1b20638d06. All runtime/manifest/corpus integrity
+checks passed. All labels, denominators, matching criteria and gates remain unchanged.
 
 ## Hosted evidence — current review preview
 
