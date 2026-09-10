@@ -40,7 +40,7 @@ const report = {
   verifiedAt: new Date().toISOString(),
   origin: origin.origin,
   checkoutCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
-  engineSha256: digest(readFileSync(join(root, 'web/src/engine/index.ts'))),
+  engineSha256: digest(execFileSync('git', ['show', 'HEAD:web/src/engine/index.ts'], { cwd: root })),
   assetCount: assets.length,
   assets,
   excludedPathsReturned404: excludedPaths,

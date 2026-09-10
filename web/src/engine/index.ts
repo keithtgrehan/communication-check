@@ -35,10 +35,10 @@ const COPY: Record<RuleId, Pick<Finding, 'title' | 'explanation' | 'prompt'>> = 
 const PRIORITY: RuleId[] = [
   'agreement-wording', 'commitment-confirmation', 'action-owner', 'vague-timing', 'competing-requests',
 ];
-const ACTION = '(?:send|share|upload|submit|complete|review|confirm|approve|choose|select|provide|schedule|book|sign|return|fill|check|verify|nominate|chase|test|enable|configure|set up|add|invite|assign|finish|update|resolve|handle|take ownership of|take responsibility for|own|take care of|sort out|start)';
+const ACTION = '(?:send|share|upload|submit|complete|review|confirm|approve|choose|select|provide|arrange|schedule|book|sign|return|fill|check|verify|nominate|chase|test|enable|configure|set up|add|invite|assign|finish|update|resolve|handle|take ownership of|take responsibility for|own|take care of|sort out|start)';
 const REQUEST = new RegExp(`\\b(?:please\\s+(?:\\w+\\s+){0,2}${ACTION}|(?:can|could|would|will)\\s+you\\s+(?:please\\s+)?${ACTION}|(?:I|we)\\s+need\\s+you\\s+to\\s+${ACTION}|(?:your team|you)\\s+(?:need|needs)\\s+to\\s+${ACTION})\\b`, 'i');
-const VAGUE = /\b(?:soon|shortly|asap|as soon as possible|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|at (?:some|your earliest) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
-const DEPENDENCY = /\b(?:so (?:that )?(?:we|you|they|our|your)|before (?:(?:we|you|they)|(?:the|our|your) (?:[\w-]+ ){1,5}) ?can|(?:to|will) unblock|depends? on|dependent on|waiting (?:for|on)|once .{0,80}(?:can|will)|then (?:we|you|they) can|to (?:begin|start|enable|complete|finish) (?:the|our|your))\b/i;
+const VAGUE = /\b(?:soon|shortly|asap|as soon as possible|when(?:ever)? you can(?=\s*(?:[.,;!?]|$|\bso\b|\bto\b))|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|at (?:some|your earliest) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
+const DEPENDENCY = /\b(?:so (?:that )?(?:(?:we|you|they|our|your)\b|(?:the|this|that|a|an) (?:[\w-]+ ){1,6}(?:can|will)\b)|before (?:(?:we|you|they)|(?:the|our|your) (?:[\w-]+ ){1,5}) ?can|(?:to|will) unblock|depends? on|dependent on|waiting (?:for|on)|once .{0,80}(?:can|will)|then (?:we|you|they) can|to (?:begin|start|enable|complete|finish) (?:the|our|your))\b/i;
 const DEADLINE = /\b(?:by|before|on|no later than)\s+(?:(?:next|this)\s+)?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|today|\d{1,2}(?::\d{2})?(?:\s*(?:am|pm))?\b|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b)|\bwithin\s+\d+\s+(?:business\s+)?(?:hours?|days?|weeks?)\b/i;
 // Bare action words also name things ("test results", "review notes"). Require
 // an explicit object determiner/pronoun; polite requests are handled separately.
@@ -149,7 +149,10 @@ function clauses(sentence: Span, text: string): Span[] {
 }
 
 function ambiguousAction(text: string): boolean {
-  const unclearOwner = new RegExp(`\\b(?:someone|somebody|one of us|one of you|whoever)\\s+(?:(?:will|should|needs? to|has to|can|could|must)\\s+)?${ACTION}\\b`, 'i');
+  // A location/team noun phrase must end immediately before the requested
+  // action. It cannot swallow a reporting verb and another person's action.
+  const ownerLocation = '(?:(?:on|from|in|within)\\s+(?:(?:our|your|their|the|either|both|this|that)\\s+)?(?:[\\w-]+\\s+){0,2}(?:sides?|teams?|groups?|departments?|organi[sz]ations?|companies|company|offices?|staff)\\s+)?';
+  const unclearOwner = new RegExp(`\\b(?:someone|somebody|one of us|one of you|whoever)\\s+${ownerLocation}(?:(?:will|should|needs? to|has to|can|could|must)\\s+)?${ACTION}\\b`, 'i');
   const passive = /\b(?:needs? to be|must be|should be)\s+(?:sent|shared|uploaded|submitted|completed|reviewed|confirmed|approved|assigned|scheduled|configured|updated|resolved|handled|sorted|done)\b/i;
   const agent = text.match(/\bby\s+(you|us|me|our team|your team|the [\w-]+ team|[A-Z][\p{L}'-]+)\b/u);
   const explicitAgent = !!agent && !/^(?:then|tomorrow|today|next|this|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)$/i.test(agent[1]);
@@ -177,6 +180,11 @@ function agreementConcern(sentence: Span, previous: Span | undefined, next: Span
   // predicate. An internal "discuss that" or temporal "this week" is unrelated.
   if (!next || /\b(?:another|other|separate|unrelated)\b/i.test(next.text) || !pending.test(next.text)) return false;
   if (/^(?:this|that|these|those|it)\s+(?:is|are|was|were|remains?|still|has|have|needs?)\b/i.test(next.text)) return true;
+  // An explicitly named permission can refer to the immediately preceding
+  // access privilege even when the wording uses an action rather than a noun.
+  const permissionReference = /^(?:this|that)\s+(?:permission|access right|privilege)\s+(?:is|was|remains|has|still)\b/i.test(next.text);
+  const accessPrivilege = /\b(?:guests?|users?|members?|admins?|administrators?|customers?|you|they|your team)\s+(?:can|may|will be able to|are able to|are allowed to|will be allowed to)\s+(?:view|read|edit|access|delete|create|download|upload|invite|share)\b/i.test(sentence.text);
+  if (permissionReference && accessPrivilege) return true;
   const objectReference = next.text.match(/\b(?:haven['’]t|hasn['’]t|have not|has not|not yet)\s+(?:yet\s+)?(?:accepted|approved|confirmed|agreed to|signed off on)\s+(?:this|that|these|those)\b(.*)/i);
   if (!objectReference) return false;
   const remainder = objectReference[1].trim();
@@ -202,16 +210,52 @@ function commitment(text: string): boolean {
   // Running a validation/check is ordinary follow-up work, not a functionality promise.
   if (/\b(?:I|we|your team|our team)(?:['’]ll|\s+will)\s+(?:run|perform)\s+(?:(?:the|an?|our|your)\s+)?(?:[\w-]+\s+){0,3}(?:validation|checks?|tests?)\b/i.test(text)) return false;
   const definite = /\b(?:will|shall|guarantee(?:s|d)?|promise|commit(?:ted)? to)\b|\b(?:we|I|it|they|you)['’]ll\b/i.test(text);
-  const delivery = /\b(?:deliver|ship|release|build|launch|deploy|implement|finish|complete|go live|be (?:ready|available|live))\b/i;
+  const delivery = /\b(?:deliver|ship|release|build|launch|deploy|implement|finish|complete|go live|be (?:ready|available|live|delivered|shipped|released|built|launched|deployed|implemented|completed))\b/i;
   const product = /\b(?:(?:feature|connector|integration|export|import|migration|dashboard|api|platform|product|app|application|release|rollout|deployment|implementation|configuration|system|tool|update|bug|workflow|portal|module|automation)s?|sso|scim|saml|software|custom|fix(?:es)?|patch(?:es)?|reporting|capabilit(?:y|ies)|functionality)\b/i;
   const price = /\b(?:pric(?:e|es|ing)|cost|fee|fees|charg(?:e|es)|discount|free|rate|subscription|refund|credit)\b/i;
-  const priceAssurance = /\b(?:remain|stay|fixed|locked|never|no (?:extra|additional)|at no|free|waive|refund|discount|cost|charge|pay|increase|reduce|include)\b|[$€£]\s*\d/i;
+  // A cost/discount topic is not an assurance. Require a financial predicate,
+  // promised price state/benefit, or an explicit guarantee of a price outcome.
+  const priceOutcome = /\b(?:fixed|locked|unchanged|free|refund|discount|credit|no (?:extra|additional)|at no)\b|[$€£]\s*\d|\d\s*%/i;
+  const pricePredicate = /\b(?:will|shall|['’]ll)\s+(?:(?:always|never|definitely)\s+)?(?:cost|charge|pay|waive|refund|discount|increase|reduce|fix|lock)\b|\b(?:will|shall|['’]ll)\s+(?:remain|stay|be)\s+(?:(?:permanently|fully)\s+)?(?:fixed|locked|unchanged|free|no (?:extra|additional)|[$€£]\s*\d)/i;
+  const priceAssurance = pricePredicate.test(text) || (priceOutcome.test(text)
+    && /\b(?:guarantee(?:s|d)?|promise)\b|\b(?:will|shall|['’]ll)\s+(?:offer|grant|apply|give|provide|include|honou?r)\b/i.test(text));
   const capability = /\b(?:support|handle|work with|integrate with|sync|synchroni[sz]e|process|automate|eliminate|prevent|ensure|include|provide|enable|allow|run|meet)\b/i;
-  if (definite && delivery.test(text) && product.test(text)) return true;
-  if (definite && price.test(text) && priceAssurance.test(text)) return true;
-  if (definite && product.test(text) && capability.test(text)) return true;
+  // Strong universal assurances require an affirmative technical component
+  // subject, not merely the absence of a recognised human role.
+  const universal = text.match(/\b(?:the|our|your|this|that)\s+((?:[\w-]+\s+){0,4}[\w-]+)\s+will\s+(?:(?:always|definitely|automatically)\s+)?(read|parse|process|recogni[sz]e|support|handle|accept|convert)\s+(?:every|all|any)\b/i);
+  const technicalSubject = /\b(?:scanner|decoder|encoder|parser|importer|exporter|processor|converter|renderer|validator|indexer|analy[sz]er|widget|pipeline|engine|software|system|component|module|application|app|tool|connector|integration)s?$/i;
+  const technicalObjects = /\b(?:formats?|files?|records?|inputs?|labels?|fields?|documents?|data|requests?)\b/i;
+  const technicalReading = !universal || universal[2].toLowerCase() !== 'read' || /\b(?:formats?|encodings?|protocols?|schemas?)\b/i.test(text);
+  const absoluteAssurance = /\b(?:without (?:fail|(?:any )?errors?)|perfectly|guaranteed)\b|100\s*%/i;
+  // Capability claims need a product as the subject. A product word modifying
+  // a human role ("integration specialist") does not make that person's work
+  // a product capability. Delivery and pricing commitments remain independent.
+  const isProductSubject = (phrase: string): boolean => {
+    // Find the head of a bounded noun phrase: versions and prepositional
+    // complements modify the product, whereas "specialist" is a human head.
+    let core = phrase.trim().replace(/\s+(?:is|are|was|were)$/i, '');
+    core = core.split(/[,;]|\bthat\s+/i).at(-1)!.trim();
+    core = core.split(/\s+(?:for|with|of|in|on)\s+/i)[0];
+    core = core.replace(/\s+(?:v(?:ersion)?\s*)?\d+(?:\.\d+)*(?:[-\w]*)?$/i, '');
+    if (core.split(/\s+/).length > 8) return false;
+    const head = core.match(/[\w-]+$/)?.[0];
+    const offering = /^(?:package|plan|subscription|tier|edition|bundle)s?$/i;
+    const customReport = /\bcustom\s+(?:[\w-]+\s+){0,3}reports?$/i.test(core);
+    return !!head && (product.test(head) || technicalSubject.test(head) || customReport || (offering.test(head) && product.test(text)));
+  };
+  const directSubject = [...text.matchAll(/\b(?:will|shall|guarantee(?:s|d)?|promises?)\b|['’]ll\b/gi)]
+    .some(marker => isProductSubject(text.slice(0, marker.index)));
+  const guaranteedComplement = text.match(/\bguarantee(?:s|d)?\s+that\s+((?:[\w.-]+\s+){0,11}?[\w.-]+)\s+(?=(?:can|will|shall|supports?|handles?|works?|integrates?|syncs?|process(?:es)?|automates?|includes?|provides?|enables?|allows?|runs?|meets?)\b)/i);
+  const productSubject = directSubject || (!!guaranteedComplement && isProductSubject(guaranteedComplement[1]));
+  const activeProductDelivery = [...text.matchAll(/\b(?:deliver|ship|release|build|launch|deploy|implement|finish|complete)\s+([^;.!?]+)/gi)]
+    .some(match => isProductSubject(match[1].split(/\s+(?:by|before|after|within|on)\s+|,|\band\b/i)[0]));
+
+  if (definite && universal && technicalSubject.test(universal[1]) && technicalObjects.test(text) && technicalReading && absoluteAssurance.test(text)) return true;
+  if (definite && delivery.test(text) && (productSubject || activeProductDelivery)) return true;
+  if (definite && price.test(text) && priceAssurance) return true;
+  if (definite && productSubject && capability.test(text)) return true;
   return (price.test(text) && /\b(?:is|are)\s+(?:permanently |fully )?(?:fixed|locked|guaranteed|free)\b|\bno additional (?:cost|charge|fee)s?\b/i.test(text))
-    || (product.test(text) && /\b(?:guaranteed to|guarantee(?:s)? that)\b/i.test(text));
+    || (productSubject && /\b(?:guaranteed to|guarantee(?:s)? that)\b/i.test(text));
 }
 
 function orderedRequests(sentences: Span[], requests: Span[]): boolean {

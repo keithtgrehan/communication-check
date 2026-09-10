@@ -2,9 +2,9 @@
 
 ## Current result
 
-**Engineering evaluation gate remains unmet.** The single reserved v3 run on the reviewed candidate detected **6/12** preselected useful findings (required at least 10/12). All **6/6** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted evidence spans were exact; there were no cap violations or execution errors.
+**Engineering evaluation gate remains unmet.** The single reserved v4 run on the reviewed candidate detected **6/12** preselected useful findings (required at least 10/12). All **6/6** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted evidence spans were exact; there were no cap violations or execution errors.
 
-Current evaluated engine SHA256: `028e2ef77a20991bc7e700ea6e47f6e8f88da1a367d35799685bfd5f921c09dc`. Evaluated at `2026-09-10T12:47:39.825Z`. Passing development and consumed-regression checks do not supersede this fresh reserved result. All three reserved attempts and subsequent consumed-regression runs are recorded below; no failed evaluation was discarded. These are fictional, agent-labelled engineering examples, not human validation or real-world accuracy estimates.
+Current evaluated engine SHA256: `457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb`. Evaluated at `2026-09-10T13:11:17.688Z`. Passing development, browser and consumed-regression checks do not supersede this fresh reserved result. All four reserved attempts failed the frozen detection requirement and are preserved below alongside the consumed-regression history. No failed evaluation was discarded or threshold relaxed. These fictional, agent-labelled examples are bounded engineering evidence, not human validation or real-world accuracy estimates.
 
 ## Initial reserved evaluation v1
 
@@ -116,3 +116,54 @@ The lead explicitly authorised one sealed v3 run after independent review of the
 Six expected findings were missed; there were no unmatched emissions. The v3 drafts, labels, paraphrases and detailed diagnostics remain reserved outside repository sources and ordinary handoffs. This aggregate result does not identify which concerns were missed.
 
 The current engine emitted useful findings on this small sample but did not meet the frozen coverage requirement. Known-case repair success and independent code review do not establish adequate detection on new drafts. The three reserved corpora differ, so their results are not a controlled comparative experiment. All original failures remain relevant limitations; repeated small agent-authored evaluations do not support a real-world accuracy claim. Engineering readiness must not be claimed against the original acceptance contract while this gate remains unmet.
+
+After the v3 result, the lead authorised diagnostic repair use of its six misses. V3 therefore became consumed regression material; its frozen labels and original failed result remain unchanged. Before inspecting or releasing those diagnostics, the evaluator froze a fresh v4 corpus at `2026-09-10T12:49:40.722591+00:00`, SHA256 `4fa0b385065c1c858502fada04c102ce34bb1fc5b38a62c642f414617f19a40c`. V4 retains the same twelve-draft/four-control/twelve-expectation structure, five-family scope, matching criteria and gates, with per-label scope rationales recorded before freezing. The evaluator read no implementation or development fixtures. V3 diagnostic wording was delivered directly to the lead for bounded repair; no fixture text was added to shared sources or this report. V4 remains sealed and unrun pending repairs, consumed-set verification and a fixed-candidate instruction.
+
+## Consumed v1–v3 regression check
+
+At 12:53 UTC, the evaluator ran all three consumed sets against engine SHA256 `b37ecacbd8c61ca09f74114fb323ec962a0595b542aaed9a8c17ebb7bdf2a346`, verified unchanged before and after execution. All original corpus hashes, labels and matching criteria were preserved.
+
+| Consumed set | Expected findings matched | Useful emissions | Clean-control emissions | Valid emitted spans |
+| --- | --- | --- | --- | --- |
+| V1 | 12 / 12 | 12 / 12 | 0 across four controls | 12 / 12 |
+| V2 | 11 / 12 | 11 / 11 | 0 across four controls | 11 / 11 |
+| V3 | 12 / 12 | 12 / 12 | 0 across four controls | 12 / 12 |
+
+The one v2 missed expectation remained unchanged from the prior consumed run. There were no unmatched emissions, cap violations or execution errors across the 36 consumed drafts. Each set met the original numerical thresholds as a regression check. These results verify known-case repairs and do not replace any original reserved failure. V4 remained sealed and unrun.
+
+A further consumed-only check at 12:55 UTC used candidate SHA256 `8cc1bac45e4844098cc2a3527968be19831246e17ffcefc0a2c966a974bb0789`, after a status-only false-positive suppression repair. The candidate hash was unchanged before and after execution. Expected matches remained v1 12/12, v2 11/12 and v3 12/12; all 35 emissions matched useful labels. There were zero clean-control findings, invalid spans, cap violations or draft execution errors. A mistyped local runner path failed before loading any corpus and was corrected; it produced no evaluation result. Original labels were unchanged, and v4 remained unrun.
+
+The 12:59 UTC consumed-only run checked candidate SHA256 `430fe5e68e3d12158a8b80fdf5bf80412937385bbc1d9c979c7b44d54164029b`, after further independently identified false-positive repairs. The hash was verified unchanged before and after all three runs. Expected matches remained 12/12, 11/12 and 12/12 for v1–v3 respectively, with 35/35 useful emissions and zero clean-control emissions, invalid spans, cap violations or errors. Original labels and criteria remained unchanged; v4 was not run.
+
+At 13:03 UTC, candidate SHA256 `7e5085552ac44c2f5738ef3709f17c0395ed920ca6cbaa2b594d5f6b0bb026a1` was checked against consumed v1–v3. The hash remained unchanged. Expected matches were 12/12, 10/12 and 11/12 respectively; all 33 emitted findings matched useful labels, with zero clean-control emissions, invalid spans, cap violations or errors. Although each set met the numerical thresholds, two previously detected expectations were newly missed. The evaluator reported those regressions directly to the engine agent without changing any labels. V4 remained unrun.
+
+At 13:05 UTC, candidate SHA256 `c21f9c655a93cf56d7549d3d541b74483018e05d65b7bab696ae34c03f7b787f` restored both newly lost consumed expectations. Its hash was unchanged before and after the v1–v3 run. Expected matches were again 12/12, 11/12 and 12/12 respectively, with 35/35 useful emissions and zero clean-control findings, invalid spans, cap violations or errors. All original labels remained unchanged. V4 remained unrun.
+
+The 13:06 UTC consumed-only check used candidate SHA256 `7f63a58c6081620d74490a421b936c5cdf5d14314260da47e06e91ccce1d53f4`, after a further routine-work suppression repair. Its hash was unchanged before and after all three runs. Expected matches remained v1 12/12, v2 11/12 and v3 12/12; all 35 emissions matched useful labels, with zero clean-control findings, invalid spans, cap violations or errors. Original labels were unchanged; v4 remained unrun.
+
+At 13:10 UTC, consumed v1–v3 were checked against candidate SHA256 `457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb`, following an independently identified pricing-topic suppression repair. The hash was unchanged before and after all three runs. Expected matches remained 12/12, 11/12 and 12/12 respectively, with 35/35 useful emissions and zero clean-control emissions, invalid spans, cap violations or errors. Original labels and criteria were unchanged; v4 remained unrun.
+
+## Fresh reserved evaluation v4
+
+After independent review of the frozen candidate, the lead explicitly authorised exactly one sealed v4 evaluation. It ran at `2026-09-10T13:11:17.688Z`. **The candidate fails the reserved detection gate.** No repeat was performed.
+
+- Evaluated engine SHA256: `457e8d096866a7b955fafaaea3cc323f3e00f2191acd04eb653ad74c88c4d5eb`.
+- Corpus frozen at `2026-09-10T12:49:40.722591+00:00`, before v3 diagnostics were inspected or released and before the subsequent repairs.
+- V4 corpus SHA256: `4fa0b385065c1c858502fada04c102ce34bb1fc5b38a62c642f414617f19a40c`.
+- Both candidate and corpus hashes were verified unchanged before and after the single run.
+- Twelve fresh fictional customer onboarding drafts: four clean controls and twelve preselected useful findings over eight other drafts, covering all five families within the three-finding cap. Scope rationales, regions and anchors were frozen per label before evaluation.
+- The evaluator knew the earlier aggregate failures but created v4 before reading v3 diagnostic details. The evaluator did not read implementation, development fixtures or demos. Implementation agents and the lead did not receive v4 drafts, labels, paraphrases or diagnostics during repairs.
+- Original matching logic, one-to-one evidence criteria, labels, span validation and all numerical gates were unchanged. The runner changed only its selected corpus and frozen-hash filenames. No semantic exceptions or discarded evaluation runs were used.
+
+| Measure | Observed | Gate | Result |
+| --- | --- | --- | --- |
+| Preselected useful findings detected | 6 / 12 (50%) | At least 10 / 12 | Fail |
+| Emitted findings matching frozen useful labels | 6 / 6 (100%) | At least 90% | Pass |
+| Emissions across four clean controls | 0 | Zero | Pass |
+| Exact original evidence spans | 6 / 6 | All valid | Pass |
+| Drafts exceeding three findings | 0 / 12 | Zero | Pass |
+| Draft execution/result errors | 0 / 12 | Zero | Pass |
+
+Six expected findings were missed and no unmatched emissions occurred. The evaluator reported only aggregate counts and did not inspect or release v4 per-case diagnostics. Drafts and labels remain outside repository sources and normal handoffs. Every earlier reserved failure and consumed-regression result remains recorded above.
+
+The repeated gap between consumed-case results and fresh reserved coverage is a material engineering limitation. On this set the emitted findings were useful under the frozen labels, but half the selected concerns were missed. These counts do not support a claim that the original detection acceptance gate has been met. The four corpora are different, the labels are agent-authored, and iterative development was informed by consumed examples; this history must accompany any description of evaluation results. It is not an unbiased estimate of real-world accuracy or evidence of human usefulness.

@@ -250,6 +250,69 @@ describe('lead review regressions: preceding context and definite wording', () =
   });
 });
 
+describe('independent review regressions: bounded owners and technical subjects', () => {
+  it.each([
+    'Someone from our team confirmed Alice will upload the roster.',
+    'Someone from our team helped Alice upload the roster yesterday.',
+    'Someone within our support group announced that Alice will upload the roster.',
+    'Someone in our department watched Alice upload the roster yesterday.',
+  ])('does not cross reporting or completed work into a different action: %s', text => {
+    expect(rules(text)).toEqual([]);
+  });
+
+  it.each([
+    'Our support representative will handle every request without fail.',
+    'Our onboarding specialist will process all documents without errors.',
+    'The pipeline operator will process all documents without errors.',
+    'The scanner specialist will handle every request without fail.',
+    'Our integration specialist will handle every request without fail.',
+    'Our integration specialist will process the onboarding documents.',
+    'Our migration coordinator will handle every request without fail.',
+    'Our integration specialist is guaranteed to process the onboarding documents.',
+    'We guarantee that our integration specialist can handle the paperwork.',
+    'Our API v2 specialist will handle the paperwork.',
+    'Our integration specialist with Acme CRM will process the onboarding documents.',
+    'Our coordinator for the migration will process the onboarding documents.',
+    'We cannot guarantee that the connector supports CSV imports.',
+    'The connector for your workspace might support CSV imports.',
+    'Our integration specialist will complete the onboarding paperwork.',
+    'Our migration coordinator will finish the onboarding paperwork.',
+    'Our integration specialist will deliver the paperwork by Tuesday.',
+    'Our account manager will answer your cost questions.',
+    'Our account manager will answer your discount questions.',
+    'Our account manager will answer your fee questions.',
+    'Our account manager will help with pricing questions.',
+
+  ])('does not infer that an unfamiliar role is a technical component: %s', text => {
+    expect(rules(text)).toEqual([]);
+  });
+
+  it.each([
+    'Our integration specialist will deliver the new connector by Tuesday.',
+    'Our migration coordinator will ship the custom export by Tuesday.',
+    'The connector will process the onboarding documents.',
+    'The connector is guaranteed to handle the new data format.',
+    'We guarantee that the connector will support the new data format.',
+    'We guarantee that the connector can support CSV imports.',
+    'We guarantee that the connector supports CSV imports.',
+    'The connector for your workspace will support CSV imports.',
+    'Our API v2 will support CSV imports.',
+    'Our integration with Acme CRM will handle every archived record.',
+    'Our integration specialist confirms the connector will be delivered by Tuesday.',
+    'Our integration specialist will complete the new connector by Tuesday.',
+    'Our migration coordinator will finish the custom export by Tuesday.',
+    'Your price will remain fixed for three years.',
+    'Your subscription will cost €500.',
+    'We guarantee a price of €500.',
+    'We will apply a 20% discount to your subscription.',
+    'There will be no additional fees for onboarding.',
+
+  ])('retains delivery commitments and actual product capabilities: %s', text => {
+    expect(rules(text)).toEqual(['commitment-confirmation']);
+    verifySpans(text);
+  });
+});
+
 describe('competing requests and priority', () => {
   it('flags three unprioritised actions, but not just two or a long explanation', () => {
     const firstTwo = 'Please send the tenant ID. Could you approve the mapping?';

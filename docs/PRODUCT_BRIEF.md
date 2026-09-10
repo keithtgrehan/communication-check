@@ -43,4 +43,4 @@ Prepare a protocol for three usability users and five repeat-use pilots while en
 - Keep Vibe Signal, RCR, Synapse Atlas and other projects separate and untouched.
 - Later connection to document only: RCR approved commitments → writer's draft → Communication Check. Do not build a shared platform.
 
-The repository brief and progress record are authoritative. ChatGPT receives sanitised milestone copies of those two documents only. The current setup is preparation; no product, deployment or validation is implied by this brief.
+The repository brief and progress record are authoritative. ChatGPT receives sanitised milestone copies of those two documents only. Implementation status and evidence are recorded in docs/PROGRESS.md; this brief specifies requirements and does not itself establish validation.

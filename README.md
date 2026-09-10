@@ -15,7 +15,7 @@ rewrite the draft, assign a score or send email.
 
 The app is implemented and the local workflow passes browser verification.
 Engine coverage repair and fresh reserved evaluation are still in progress; the
-first two reserved runs did not meet all gates. A hosted preview is pending.
+first four reserved runs did not meet the detection gate. The [working preview](https://communication-check-preview.onrender.com) is live; all 19 hosted browser checks pass.
 See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
 The [existing draft PR](https://github.com/keithtgrehan/communication-check/pull/1)
@@ -83,7 +83,7 @@ not real-world accuracy. Human sessions and pilots are outstanding.
 - [Product brief](docs/PRODUCT_BRIEF.md) and [implementation plan](docs/IMPLEMENTATION_PLAN.md).
 - [Working instructions](AGENTS.md), [GPT/Codex workflow](docs/WORKFLOW.md) and [goal prompt](docs/GOAL_PROMPT.md).
 - [Finding contract](docs/FINDING_CONTRACT.md), [reuse ledger](docs/REUSE_LEDGER.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
-- [Case study](docs/CASE_STUDY.md), [75-second demo](docs/DEMO_SCRIPT.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
+- [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [75-second demo](docs/DEMO_SCRIPT.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
 
 The authoritative root is `/Users/keith/Documents/ChatGPT/communication-check`.
 `reference/vibe-signal/` contains six audited inactive source blobs; it is not

@@ -1,6 +1,6 @@
 # Separate preview and rollback
 
-Status: preview preparation; no successful hosted deployment claimed yet.
+Status: first hosted review preview is live and verified. Engine coverage work continues.
 
 ## Verified hosting basis — 2026-09-10
 
@@ -16,13 +16,17 @@ this static preview. The no-new-spend basis is use within the inspected remainin
 allowance, not a promise of unlimited free hosting. Usage beyond included limits
 can be billed. Check current workspace usage before further deploys or wider sharing.
 
+A follow-up authenticated check at 13:03 UTC showed 4/25 services, 0 MB/5 GB
+bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges. The
+existing unrelated service charges were unchanged; no billing settings were edited.
+
 Use one separate static site, private source repository, provider URL, no custom
 domain, no service plan upgrade and automatic deploys off. No backend or database.
 Only web/dist is published: bundled app/assets, favicon, robots and dependency
 licences. Repository docs, references, source maps, tests and reserved files are
 excluded. Provider URL accessibility is for review; no public launch is authorised.
 
-## Intended configuration
+## Verified configuration
 
 - Repository: https://github.com/keithtgrehan/communication-check
 - Branch: codex/communication-check-mvp; root repository directory.
@@ -70,6 +74,19 @@ the source repo, change other services, force-push or merge to main. An alternat
 code rollback is a normal reviewed revert commit on the implementation branch,
 followed by an explicitly selected deploy within allowance.
 
-Preview service/deployment IDs, URL and verified commit will be recorded after
-successful creation and verification. Local fallback: npm run build then npm run
-preview, opening http://127.0.0.1:4173.
+## First verified deployment
+
+- Preview: https://communication-check-preview.onrender.com
+- Service: srv-dahaejeq1p3s73ba4btg (communication-check-preview).
+- Dashboard: https://dashboard.render.com/static/srv-dahaejeq1p3s73ba4btg.
+- Deployment: dep-dahaejmq1p3s73ba4d90; live on 2026-09-10 at 12:49:29 UTC.
+- Source commit: 4f1f0fcf96321ee588b7952a70a574f2e5c1e9aa.
+- Actual type static_site, autoDeploy no/off, PR previews off, root empty,
+  publishPath web/dist and intended build command verified through Render.
+- Six headers saved and verified on actual responses. All six local build assets
+  match hosted SHA256 hashes; eight source/config paths return 404. See
+  docs/HOSTED_VERIFICATION.json. All 19 hosted Chromium browser checks pass.
+- Provider URL is publicly reachable and noindex; this is a review preview, not
+  an authenticated private site or an authorised public product launch.
+
+Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1:4173.
