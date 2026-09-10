@@ -2,9 +2,9 @@
 
 ## Current result
 
-**Engineering evaluation gate remains unmet.** The single reserved v8 run on reviewed commit `558c66de18dab75931cf5ee3e0ad7a1b20638d06` detected **8/12** preselected useful findings (required at least 10/12). All **8/8** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
+**Engineering evaluation gate remains unmet.** The single reserved v9 run on reviewed commit `487fec81307d9ea8d214d7480a164abd89e9aa95` detected **5/12** preselected useful findings (required at least 10/12). All **5/5** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
 
-Evaluated at `2026-09-10T14:48:31.394Z` with complete runtime manifest SHA256 `c43d1866b582f5772c28af469d375bfdaf26a790247ce4a870784b8320a84245`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All eight reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
+Evaluated at `2026-09-10T14:57:35.493Z` with complete runtime manifest SHA256 `ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All nine reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
 
 ## Initial reserved evaluation v1
 
@@ -386,3 +386,38 @@ The authorised v8 review found four absent family outputs, not span-match reject
 At 14:55 UTC, consumed v1–v8 ran once each under full runtime manifest SHA256 `ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6`, with the unchanged complete five-file closure confirmed by the lead. Changed runtime hashes were `agreement.ts` = `18dd5c1cff81f27d173bd380770a7f5580cb3ef595c79ac2dc62b83c5b8d2f26`, `commitment.ts` = `083297562a92cf9a9695a7c0e5af4c420305540a226ac0c5ba208abd56701b1e`, and `grammar.ts` = `77bc4b2f071a5c239b90ccc13c30e2356c6941b7f6497285a98a3138e720d20d`; `index.ts` and `types.ts` retained the preceding listed hashes. All runtime source, manifest/document and corpus hashes were verified unchanged before/after each run.
 
 Expected matches totalled 95/96: v2 remained 11/12, while each of v1 and v3–v8 matched 12/12. All 95 emissions matched useful labels and had exact spans. There were zero findings across 32 clean controls, cap violations or execution errors across the 96 consumed drafts. All four original v8 misses were recovered. Original labels, denominators and thresholds were unchanged. These are consumed regression results only; all eight original reserved failures remain preserved. V9 remained sealed and unrun.
+
+## Fresh reserved evaluation v9
+
+The lead explicitly authorised exactly one fresh v9 run on reviewed, committed candidate `487fec81307d9ea8d214d7480a164abd89e9aa95`. It ran at `2026-09-10T14:57:35.493Z` with a unique runner tag. **The candidate fails the reserved detection gate.** No repeat occurred and no subsequent corpus was created.
+
+V9 was frozen at `2026-09-10T14:51:01.072352+00:00`, before v8 diagnostic details were inspected or released and before the subsequent bounded repairs. Corpus SHA256 is `d6541cfdb9515675dc3e7a1a4ab873c7d7804f735c7b299ee1db2a4e1e364d89`. The original twelve-draft/four-clean/twelve-expectation/five-family structure and three-finding cap were preserved. Labels, scope rationales, evidence regions, anchors, one-to-one matching and all numerical gates were frozen before evaluation and unchanged thereafter.
+
+The complete runtime manifest from `.handoff/ENGINE_CANDIDATE.json` had SHA256 `ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6`. The lead verified working and committed manifests matched before authorisation. The evaluator independently verified all five source hashes, full manifest, manifest document and corpus hash before and after the run:
+
+| Runtime file | SHA256 |
+| --- | --- |
+| `web/src/engine/agreement.ts` | `18dd5c1cff81f27d173bd380770a7f5580cb3ef595c79ac2dc62b83c5b8d2f26` |
+| `web/src/engine/commitment.ts` | `083297562a92cf9a9695a7c0e5af4c420305540a226ac0c5ba208abd56701b1e` |
+| `web/src/engine/grammar.ts` | `77bc4b2f071a5c239b90ccc13c30e2356c6941b7f6497285a98a3138e720d20d` |
+| `web/src/engine/index.ts` | `f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5` |
+| `web/src/engine/types.ts` | `31fa1927cdf2a65caa5d4ad0ee7baf952604b126e8ab6b014cdcf304fae7307b` |
+
+Every integrity check passed. The evaluator read no implementation, development fixture, demo or reviewer source. V9 drafts, labels and diagnostic details were withheld from the lead and engine during repairs. Prior aggregate failures and consumed v1–v7 diagnoses were known to the evaluator, but v9 was frozen before v8 diagnostics were read. This separation is procedural and is not an enforced sandbox.
+
+| Measure | Observed | Gate | Result |
+| --- | --- | --- | --- |
+| Preselected useful findings detected | 5 / 12 (41.7%) | At least 10 / 12 | Fail |
+| Emitted findings matching frozen useful labels | 5 / 5 (100%) | At least 90% | Pass |
+| Emissions across four clean controls | 0 | Zero | Pass |
+| Exact original evidence spans | 5 / 5 | All valid | Pass |
+| Drafts exceeding three findings | 0 / 12 | Zero | Pass |
+| Draft execution/result errors | 0 / 12 | Zero | Pass |
+
+Seven expected findings were missed; no unmatched emissions occurred. The evaluator reported aggregates only and did not inspect or release v9 per-case diagnostics. Corpus, labels and details remain outside repository sources and normal handoffs. All eight preceding reserved failures and consumed-regression history remain preserved; no label, denominator or threshold changed.
+
+The ninth fresh attempt still fails the original coverage requirement. Counts across different small corpora do not form a controlled improvement estimate. Repeated iteration informed by consumed examples, fictional examples and agent-authored labels make these engineering probes unsuitable as unbiased real-world accuracy estimates. Every result and its history must remain visible. Passing other checks does not satisfy this separate detection gate or establish human usefulness, factual verification or market fit.
+
+After v9 failed, the lead paused further fresh evaluations for an architectural assessment of browser-local deterministic parsing. Before inspecting or releasing v9 diagnostics, the evaluator froze v10 at `2026-09-10T15:01:08.487121+00:00`, SHA256 `0078003fcd897c39d97b051dea795ba5f0f308fcd6cb598b469e395fb808e10b`. Original corpus size, four clean controls, twelve expectations, all five families, scope rationales and matching/gates were retained. No candidate execution occurred and no implementation, development or reviewer source was read.
+
+Authorised v9 diagnostics were then verified as seven absent family outputs, not evidence-match rejection or cap displacement. Minimal exact evidence, local context and frozen rationales were delivered privately to the lead and engine, outside shared sources and ordinary handoffs. Aggregate cause categories concern temporal idioms, financial polarity semantics, indefinite owner phrase composition, nominalised delivery outcomes, same-reference approval/authorisation meaning, and universal product capability wording. No original labels or results changed; all nine reserved failures remain preserved. V9 is now consumed regression material. V10 remains sealed and unrun pending explicit root authorisation after a justified implementation and independent review, not an automatic continuation of wording repairs.

@@ -52,7 +52,7 @@ regressions and re-review. Browser automation checks real clipboard behaviour,
 keyboard use, responsive layouts and runtime network/storage with fictional
 canaries. See docs/VERIFICATION.md for actual evidence and limitations.
 
-Eight successive reserved attempts have failed the original detection gate.
+Nine successive reserved attempts have failed the original detection gate.
 Strong results on previously observed examples did not transfer reliably to new
 wording. A separate, fixed 100-case development audit exposed ordinary grammatical
 gaps across all five families: the deployed baseline detected 16/50 intended

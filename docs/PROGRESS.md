@@ -1,7 +1,7 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: focused repair reviewed; ninth evaluation next
+Milestone: ninth evaluation recorded; semantic representation repair
 Status: build goal active — fresh detection acceptance remains unmet
 
 ## Verified delivery
@@ -20,7 +20,7 @@ Status: build goal active — fresh detection acceptance remains unmet
 
 ## Evaluation and current work
 
-All eight reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
+All nine reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
 
 | Reserved attempt | Expected findings detected | Useful emissions | Clean-control flags |
 | --- | --- | --- | --- |
@@ -32,10 +32,12 @@ All eight reserved attempts failed the original detection requirement of at leas
 | V6 | 6/12 | 6/6 | 0 |
 | V7 | 6/12 | 6/6 | 0 |
 | V8 | 8/12 | 8/8 | 0 |
+| V9 | 5/12 | 5/5 | 0 |
 
-- V6 was frozen before v5 diagnostics and V7 before v6 diagnostics; both ran once on committed candidates and failed detection. V8 was frozen before v7 diagnostic consumption, then run once at 14:48:31 UTC against reviewed commit 558c66de18dab75931cf5ee3e0ad7a1b20638d06. It detected 8/12, with 8/8 useful emissions and no clean-control flags, errors, cap or span issues. All source/corpus integrity checks passed. V9 was frozen at 14:51:01 UTC before v8 diagnostics were released and remains sealed.
+- V8 was frozen before v7 diagnostic consumption, then run once on reviewed commit 558c66de18dab75931cf5ee3e0ad7a1b20638d06 and failed at 8/12. V9 was frozen before v8 diagnostics, then run once at 14:57:35 UTC on reviewed commit 487fec81307d9ea8d214d7480a164abd89e9aa95 and failed at 5/12. All source/corpus checks passed. V10 was frozen at 15:01:08 UTC before v9 diagnostics were released; it remains sealed and unrun.
 - The independent 100-case development audit found 16/50 intended positive findings, 49/50 clean controls unflagged and 65/100 exact rule sets on the deployed baseline. The focused repair at full manifest ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6 retains 100/100 exact cases, with 50/50 positives and 50/50 clean controls, and the private 80/80 matrix. Labels, original inputs and baseline results are unchanged; one request-count label remains judgment-dependent. These are development results, not fresh evidence.
-- This local candidate passes seven setup/integrity tests, 211 public engine tests, build/typecheck and 19 browser checks. Consumed v1–v8 reached 95/96 expected findings, 95/95 useful emissions and zero flags across 32 clean controls. One historical abstention remains. Earlier scope regressions were repaired and independently reviewed. The latest four state/voice/timing fixes passed 25 independent focused probes plus 211 public tests and typecheck, with no material finding in that bounded review. The eight fresh detection failures remain unmet evidence until a new authorised run passes.
+- This local candidate passes seven setup/integrity tests, 211 public engine tests, build/typecheck and 19 browser checks. Consumed v1–v8 reached 95/96 expected findings, 95/95 useful emissions and zero flags across 32 clean controls. One historical abstention remains. Earlier scope regressions were repaired and independently reviewed. The latest four state/voice/timing fixes passed 25 independent focused probes plus 211 public tests and typecheck, with no material finding in that bounded review. The subsequent v9 detection failure remains an unmet gate.
+- The parser assessment is complete: an isolated word-tagging library trial did not resolve the semantic gaps and is not being added to the app. Root authorised structured commitment outcome/polarity, unspecified-owner and temporal/event-reference repairs. Further reserved runs wait for implementation and independent review. The no-LLM, no-draft-transmission and original acceptance requirements remain unchanged.
 - Diagnostic-derived nearby examples remain private regression material. Independent reviewer-authored cases can enter development tests. No reserved corpus or labels are uploaded or published.
 - The frozen private 80-draft development matrix improved from 65/80 exact cases to 80/80; consumed v1–v6 reached 71/72 expected and 71/71 useful findings with zero clean flags. Independent review verified all scope fixes and final suppression repairs. These known-case results do not satisfy fresh evaluation.
 - Timing is aligned with the original brief: a direct request alone is insufficient; another stated step must depend on the vague timing. The broader secondary contract wording and five ad-hoc tests were corrected, with original fixtures and reserved labels preserved.
@@ -54,5 +56,5 @@ All eight reserved attempts failed the original detection requirement of at leas
 
 ## Next action
 
-Commit the independently reviewed candidate before one authorised v9 run.
-Preserve all eight failures; the goal stays active until the original gates pass.
+Implement and independently review the semantic representation repair.
+Preserve all nine failures; no further reserved run is currently authorised.

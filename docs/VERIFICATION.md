@@ -123,8 +123,38 @@ validation passes seven setup/integrity tests, 211 public engine tests,
 build/typecheck and 19 local browser checks. The independent reviewer cleared
 25 focused probes, including adjacent negatives and Unicode/CRLF/quoted-mask
 spans, and independently passed 211 public tests and typecheck. No material
-finding remains in that bounded delta review. V9 is sealed pending commit and
-explicit authorisation; these consumed/development results are not fresh evidence.
+finding remains in that bounded delta review. It was committed as
+487fec81307d9ea8d214d7480a164abd89e9aa95 before its authorised single v9 run,
+which failed at 5/12 expected findings. The consumed/development results remain
+known-case evidence. Further reserved runs are paused for architectural assessment.
+
+## Parsing architecture assessment after v9
+
+Live npm metadata identified compromise 14.17.0 under MIT, with efrt 2.7.0,
+grad-school 0.0.5 and suffix-thumb 5.0.3. The lead installed those only in ignored
+work/parser-spike with lifecycle scripts disabled. The isolated dependency audit
+reported zero known vulnerabilities. App dependencies, lockfile and runtime source
+were unchanged. A source search found none of the inspected network/storage API
+names; this is not a browser privacy verification.
+
+The library's [official concepts](https://github.com/spencermountain/compromise/blob/master/docs/concepts.md)
+describe local rule-based word tagging and explicitly state that it supplies no
+dependency/parse tree. Its [MIT licence](https://github.com/spencermountain/compromise/blob/master/LICENSE)
+requires retention of its notice if distributed. A read-only scratch check on
+seven released misses and nine existing controls preserved all 192 term offsets,
+including Unicode/CRLF. It supplied some useful word forms but misanalysed several
+relevant predicate/subject constructions. Temporal indefiniteness, financial
+benefit polarity, nominal delivery and event-reference semantics remained custom
+work. One local 12,000-character parse/extraction took approximately 552 ms; sample
+differences prevent comparison with earlier engine timings.
+
+Decision: do not add this parser to production. Instead, represent commitment
+outcomes separately from grammatical polarity and qualification, parse unspecified
+owner phrases around their indefinite head, and centralize temporal/event-reference
+categories. This retains the original architecture and requirements. Implementation
+and independent review must demonstrate the benefit before another reserved run;
+the sealed v10 set remains untouched. The raw scratch record contains consumed
+examples and remains outside shared sources and handoffs.
 
 ## Runtime privacy method
 
@@ -165,13 +195,13 @@ unresolved defect in this bounded review. The subsequent sealed v6 evaluation fa
 
 ## Reserved evaluation and outstanding gates
 
-Eight independent reserved attempts failed the detection gate; all remain in
-docs/EVALUATION.md. Latest v8 detected 8/12 selected findings with 8/8 useful
-emissions, zero clean-control flags and all spans exact. Current consumed v1–v7
-regression results are 83/84 expected and 83/83 useful findings with no flags across
-28 clean controls, not new heldout evidence. V8 was frozen before v7 diagnostic
-consumption and ran once at 14:48:31.394 UTC against commit
-558c66de18dab75931cf5ee3e0ad7a1b20638d06. All runtime/manifest/corpus integrity
+Nine independent reserved attempts failed the detection gate; all remain in
+docs/EVALUATION.md. Latest v9 detected 5/12 selected findings with 5/5 useful
+emissions, zero clean-control flags and all spans exact. Current consumed v1–v8
+regression results are 95/96 expected and 95/95 useful findings with no flags across
+32 clean controls, not new heldout evidence. V9 was frozen before v8 diagnostic
+consumption and ran once at 14:57:35.493 UTC against commit
+487fec81307d9ea8d214d7480a164abd89e9aa95. All runtime/manifest/corpus integrity
 checks passed. All labels, denominators, matching criteria and gates remain unchanged.
 
 ## Hosted evidence — current review preview
