@@ -1,4 +1,4 @@
-import { analyzeClause, hasExplicitDeadline, hasUnresolvedApproval, linkedDependency, matchingReference, standaloneUnresolvedApproval } from './grammar';
+import { agreementConcernsApproval, analyzeClause, hasExplicitDeadline, hasUnresolvedApproval, linkedDependency, matchingReference, proposalAssertion, standaloneUnresolvedApproval } from './grammar';
 import { MAX_DRAFT_LENGTH, MAX_FINDINGS, type CheckResult, type Finding, type RuleId } from './types';
 
 interface Span { start: number; end: number; text: string }
@@ -138,21 +138,27 @@ function clauses(sentence: Span, text: string): Span[] {
 
 function agreementConcern(sentence: Span, previous: Span | undefined, next: Span | undefined): boolean {
   const agreed = /\b(?:as agreed|we agreed|you agreed|we have agreed|we['’]ve agreed|it is agreed|it['’]s agreed|as confirmed|we confirmed)\b/i;
-  const proposalStatus = /\b(?:proposed|tentative)\s+(?:[\w-]+\s+){0,5}(?:is|are|has been|have been)\s+(?:now\s+)?(?:agreed|confirmed|finali[sz]ed)\b/i;
-  if (!agreed.test(sentence.text) && !proposalStatus.test(sentence.text)) return false;
+  const proposalStatus = proposalAssertion(sentence.text);
+  if (!agreed.test(sentence.text) && !proposalStatus) return false;
   if (/\b(?:not agreed|haven['’]t agreed|have not agreed|never agreed|if we agreed|whether we agreed)\b/i.test(sentence.text)) return false;
   if (/\bas agreed,?\s+(?:this|that|it|the proposal|the plan)\s+(?:is|remains)\s+(?:still )?(?:a proposal|tentative|pending)\b/i.test(sentence.text)) return false;
   // A formerly proposed date can now be confirmed. Require an unresolved status,
   // not the word "proposed" alone, to conflict with agreement wording.
 
+  if (agreementConcernsApproval(sentence.text)) {
+    if (!proposalStatus) return false;
+    // The approval-process proposition does not suppress a separate settled
+    // proposal. Review that proposition with its own unresolved-approval context.
+    return agreementConcern({ text: sentence.text.slice(proposalStatus.start), start: sentence.start + proposalStatus.start, end: sentence.end }, undefined, next);
+  }
   if (hasUnresolvedApproval(sentence.text)) {
-    const status = sentence.text.match(proposalStatus);
+    const status = proposalStatus;
     if (!status || agreed.test(sentence.text)) return true;
     // A resolved proposal conflicts only with its own explicitly unresolved
     // approval. A separate budget/other decision is not evidence against it.
-    const rest = sentence.text.slice(status.index! + status[0].length).replace(/^\s*,?\s*(?:(?:even though|although|though|but|yet|while|and)\s+)?/i, '');
+    const rest = sentence.text.slice(status.end).replace(/^\s*,?\s*(?:(?:even though|although|though|but|yet|while|and)\s+)?/i, '');
 
-    const unresolvedReference = /^(?:you|we|they)\s+(?:have not|haven['’]t)\s+(?:yet\s+)?(?:approved|accepted|confirmed)\s+(?:it|this|that)(?:\s+yet)?\s*[.!?]?$/i;
+    const unresolvedReference = /^(?:you|we|they)\s+(?:have not|haven['’]t)\s+(?:yet\s+)?(?:approved|accepted|confirmed|authori[sz]ed)\s+(?:it|this|that)(?:\s+yet)?\s*[.!?]?$/i;
     return standaloneUnresolvedApproval(rest) || unresolvedReference.test(rest);
   }
   // Require an explicit reference between adjacent statements; do not join unrelated decisions.
@@ -236,6 +242,20 @@ function commitment(text: string): boolean {
   const activeProductDelivery = [...text.matchAll(/\b(?:deliver|ship|release|build|launch|deploy|implement|finish|complete)\s+([^;.!?]+)/gi)]
     .some(match => isProductSubject(match[1].split(/\s+(?:by|before|after|within|on)\s+|,|\band\b/i)[0]));
 
+  // Strong assurance can establish the relevant commitment without an exact
+  // product-name or capability-verb match. Positive context is still required.
+  const automatedUniversal = text.match(/\b(?:the|our|your|this|that)\s+((?:[\w-]+\s+){0,5}[\w-]+)\s+will\s+(?:[a-z]+ly\s+)?[a-z]+\s+(?:every|all|any)\s+[^.!?;]+/i);
+  const automaticCapability = !!automatedUniversal
+    && (technicalSubject.test(automatedUniversal[1]) || /\bservices?$/i.test(automatedUniversal[1]))
+    && /\bautomatically\b/i.test(automatedUniversal[0])
+    && /\bwithout (?:exceptions?|fail|(?:any )?errors?)\b/i.test(automatedUniversal[0]);
+  const readyPromise = text.match(/\b(?:promise|guarantee)(?:s|d)?\s+that\s+((?:[\w-]+\s+){1,8}[\w-]+)\s+will\s+be\s+(?:ready|available|live)\b/i);
+  // A readiness promise needs an affirmative product class. "Custom" alone
+  // also describes routine correspondence and cannot establish this context.
+  const technicalDeliverable = /(?:\b(?:devices?|terminals?|kiosks?|appliances?)|\b(?:sign-in|check-in|registration|reception|visitor)[ -]stations?)$/i;
+  const explicitDeliverableReadiness = !!readyPromise
+    && (isProductSubject(readyPromise[1]) || technicalDeliverable.test(readyPromise[1])) && hasExplicitDeadline(text);
+  if (automaticCapability || explicitDeliverableReadiness) return true;
   if (definite && universal && technicalSubject.test(universal[1]) && technicalObjects.test(text) && technicalReading && absoluteAssurance.test(text)) return true;
   if (definite && delivery.test(text) && (productSubject || activeProductDelivery)) return true;
   if (definite && price.test(text) && priceAssurance) return true;
@@ -247,7 +267,7 @@ function commitment(text: string): boolean {
 function orderedRequests(sentences: Span[], requests: Span[]): boolean {
   if (requests.every(request => /^\s*\d+[.)]\s/.test(request.text))) return true;
   const context = sentences.map(item => item.text).join('\n');
-  return /\b(?:in (?:this |the following )?order|in priority order|first (?:step|priority|action)|start with|begin with|for now,? (?:please )?only|first,|first please)\b/i.test(context)
+  return /\b(?:in (?:this |the following )?order|in priority order|first (?:step|priority|action)|start with|begin with|for now,? (?:please )?only|first please)\b|\bfirst,(?=\s)/i.test(context)
     || /\b(?:afterwards|once (?:that|those|these) (?:is|are)|then,? please)\b/i.test(context);
 }
 
@@ -266,7 +286,7 @@ export function checkDraft(text: string): CheckResult {
       const clause = clauseParts[j];
       const features = analyzeClause(clause.text, clause.start);
       for (let count = 0; count < features.requestCount; count++) requests.push(clause);
-      if (features.ownerUnclear && !/\b(?:not|never|no need|don['’]t)\b/i.test(clause.text)) {
+      if (features.ownerUnclear) {
         candidates.push({ ruleId: 'action-owner', span: clause });
       }
       const neighbourParts = [clauseParts[j - 1] ?? parts[i - 1], clauseParts[j + 1] ?? parts[i + 1]].filter((item): item is Span => !!item);

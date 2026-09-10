@@ -465,3 +465,41 @@ describe('independent review: grounded dependency links and exploratory ownershi
     verifySpans(text);
   });
 });
+
+// Independent reviewer cases for assertion scope and positive product grounding.
+describe('independent review: absence polarity, approval process and readiness', () => {
+  it.each([
+    'It is not true that nobody is assigned to reconcile the tenant IDs.',
+    'No one is assigned to reconcile the tenant IDs because we do not need to reconcile them.',
+    'As agreed, this needs your approval.',
+    'As agreed, we still need your approval before enabling exports.',
+    'I promise that your custom meeting checklist will be ready by Thursday.',
+    'I promise that your custom training invitation will be ready by Thursday.',
+    'As agreed, the workspace configuration still requires your approval.',
+    'We agreed that the workspace configuration requires your approval.',
+  ])('abstains on denied work, an approval process or ordinary correspondence: %s', text => expect(rules(text)).toEqual([]));
+
+  it('preserves a present absent assignment without cancelling a different action', () => {
+    expect(rules('No one is assigned to reconcile the tenant IDs because we do not need to review the agenda.')).toEqual(['action-owner']);
+    expect(rules('No one is assigned to reconcile the tenant IDs.')).toEqual(['action-owner']);
+  });
+
+  it('preserves a positively grounded technical readiness promise', () => {
+    expect(rules('I promise that the check-in terminal will be ready by Thursday.')).toEqual(['commitment-confirmation']);
+    expect(rules('I promise that the check-in terminal may be ready by Thursday.')).toEqual([]);
+  });
+});
+
+// Independently reproduced reviewer regressions: each suppression belongs to its own proposition.
+describe('independent review: suppression object and proposition scope', () => {
+  it('does not cancel a different task sharing the same verb', () => {
+    expect(rules('No one is assigned to review the tenant IDs, and we do not need to review the archived list.')).toEqual(['action-owner']);
+    expect(rules('No one is assigned to review the tenant IDs, and we do not need to review the tenant IDs.')).toEqual([]);
+    expect(rules('No one is assigned to review the tenant IDs, and we do not need to review them.')).toEqual([]);
+  });
+
+  it('reviews a separate settled proposition after an agreed approval process', () => {
+    expect(rules('As agreed, we need your approval and the workflow you suggested is confirmed, although you have not authorised it.')).toEqual(['agreement-wording']);
+    expect(rules('As agreed, we need your approval and the workflow you suggested is confirmed after you authorised it.')).toEqual([]);
+  });
+});

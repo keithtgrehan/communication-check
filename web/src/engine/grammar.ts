@@ -2,7 +2,7 @@
 export interface OriginalSpan { start: number; end: number; text: string }
 export interface GrammarToken extends OriginalSpan { normal: string; lemma: string; kind: 'word' | 'punctuation' }
 export interface ActionFrame {
-  kind: 'request' | 'delegated-task' | 'owner-vacancy' | 'passive-task';
+  kind: 'request' | 'delegated-task' | 'owner-vacancy' | 'passive-task' | 'unassigned-task';
   subject: OriginalSpan | null;
   predicate: OriginalSpan;
   object: OriginalSpan;
@@ -33,6 +33,8 @@ const ACTION_GERUND = '(?:' + ACTION.slice(3, -1).split('|').map(action => actio
   return (verb.endsWith('e') ? verb.slice(0, -1) : verb) + 'ing';
 })).join('|') + ')';
 const REQUEST = new RegExp(`\\b(?:please\\s+(?:\\w+\\s+){0,2}${ACTION}|(?:can|could|would|will)\\s+you\\s+(?:please\\s+)?${ACTION}|(?:I|we)\\s+need\\s+you\\s+to\\s+${ACTION}|(?:your team|you)\\s+(?:need|needs)\\s+to\\s+${ACTION})\\b`, 'i');
+// Indefinite amounts and temporal units are separate from exact numeric durations.
+const INDEFINITE_DURATION = /\b(?:in|within)\s+(?:a\s+(?:(?:little|short)\s+)?(?:bit|while|moment)|(?:a\s+)?(?:few|couple of|several)\s+(?:minutes?|hours?|days?|weeks?))\b(?=\s*(?:[.,;!?]|$|so\b|before\b|to\b))/i;
 const VAGUE = /\b(?:soon|shortly|asap|later|in (?:the )?(?:near|foreseeable|not too distant) future|as soon as possible|when(?:ever)? you can(?=\s*(?:[.,;!?]|$|\bso\b|\bto\b))|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|at (?:some|your earliest) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
 const DEPENDENCY = /\b(?:so (?:that )?(?:(?:I|we|you|they|our|your)\b|(?:the|this|that|a|an) (?:[\w-]+ ){1,6}(?:can|will)\b)|before (?:(?:I|we|you|they)|(?:the|our|your) (?:[\w-]+ ){1,5}) ?can|(?:to|will) unblock|depends? on|dependent on|waiting (?:for|on)|once .{0,80}(?:can|will)|then (?:I|we|you|they) can|to (?:begin|start|enable|complete|finish) (?:the|our|your))\b/i;
 const DEADLINE = /\b(?:by|before|on|no later than)\s+(?:(?:next|this)\s+)?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|today|\d{1,2}(?::\d{2})?(?:\s*(?:am|pm))?\b|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b)|\bwithin\s+\d+\s+(?:business\s+)?(?:hours?|days?|weeks?)\b/i;
@@ -51,7 +53,7 @@ const FORMS: Record<string, string> = {
   needs: 'need', needed: 'need', requires: 'require', required: 'require', owners: 'owner', assignees: 'assignee',
   approval: 'approval', confirmation: 'approval', authorization: 'approval', authorisation: 'approval', consent: 'approval', acceptance: 'approval',
   agreed: 'agree', agreeing: 'agree', agreement: 'agree', confirmed: 'confirm', confirms: 'confirm',
-  shared: 'share', shares: 'share', sharing: 'share', sent: 'send', built: 'build',
+  shared: 'share', shares: 'share', sharing: 'share', routing: 'route', routed: 'route', suggested: 'suggest', proposed: 'propose', authorised: 'approve', authorized: 'approve', sent: 'send', built: 'build',
   has: 'have', is: 'be', are: 'be', was: 'be', were: 'be', been: 'be',
 };
 for (const action of ACTION.slice(3, -1).split('|')) {
@@ -77,7 +79,9 @@ function originalSpan(text: string, offset: number, start: number, end: number):
   return { start: offset + start, end: offset + end, text: text.slice(start, end) };
 }
 
-export function hasExplicitDeadline(text: string): boolean { return DEADLINE.test(text); }
+export function hasExplicitDeadline(text: string): boolean {
+  return DEADLINE.test(text) || /\b(?:in|within)\s+(?:exactly\s+)?(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s+(?:business\s+)?(?:minutes?|hours?|days?|weeks?)\b/i.test(text);
+}
 export function hasExplicitAgent(text: string): boolean {
   const agent = text.match(/\bby\s+(you|us|me|our team|your team|the [\w-]+ team|[A-Z][\p{L}'-]+)\b/u);
   return !!agent && !/^(?:then|tomorrow|today|next|this|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)$/i.test(agent[1]);
@@ -110,7 +114,7 @@ export function analyzeClause(text: string, offset = 0): ClauseFeatures {
   const actions: ActionFrame[] = [];
   const add = (kind: ActionFrame['kind'], subject: OriginalSpan | null, predicate: OriginalSpan, object: OriginalSpan, owner: ActionFrame['owner']) => {
     const prefix = text.slice(0, predicate.end - offset).replace(/’/g, "'");
-    actions.push({ kind, subject, predicate, object, owner, modality: kind === 'request' ? 'requested' : 'required', negated: NEGATED.test(prefix), qualified: QUALIFIED.test(prefix),
+    actions.push({ kind, subject, predicate, object, owner, modality: kind === 'request' ? 'requested' : 'required', negated: NEGATED.test(kind === 'unassigned-task' ? text.slice(0, predicate.start - offset) : prefix), qualified: QUALIFIED.test(prefix),
       assertion: /\bwhether\b/i.test(prefix) ? 'exploratory' : 'asserted' });
   };
   const adjacent = (items: GrammarToken[]) => items.every((item, i) => !i || /^\s+$/.test(text.slice(items[i - 1].end - offset, item.start - offset)));
@@ -134,6 +138,29 @@ export function analyzeClause(text: string, offset = 0): ClauseFeatures {
       add('passive-task', null, c, subject, 'vacant');
     }
   }
+  // Negative assignment states establish an absent owner; they do not negate
+  // the underlying task. Only present status and explicit assignment predicates qualify.
+  const absentAssignment = text.match(/\b(?:nobody|no one|no (?:owner|assignee|person))\s+(?:is|has(?: yet)? been)\s+(?:assigned|appointed|designated)\s+(?:yet\s+)?(?:to|for)\s+(.+?)(?:[.!?]|$)/i)
+    ?? text.match(/\b(?:the|an?|our|your)\s+(?:[\w-]+\s+){0,5}(?:owner|assignee|task|approval|review)\s+has\s+not\s+(?:yet\s+)?been\s+(?:assigned|appointed|designated)(?:\s+(.+?))?(?:[.!?]|$)/i);
+  if (absentAssignment) {
+    const start = absentAssignment.index!;
+    const assignment = originalSpan(text, offset, start, start + absentAssignment[0].length);
+    // A denied vacancy or an explicitly cancelled underlying action is not an outstanding task.
+    const task = tokenize((absentAssignment[1] ?? '').split(/[,;]|\b(?:and|but|because|since)\b/i)[0]).filter(token => token.kind === 'word');
+    const taskVerb = task[0]?.lemma;
+    const objectWords = (tokens: GrammarToken[]) => tokens.filter(token => !/^(?:the|a|an|your|our|their)$/.test(token.normal)).map(token => token.lemma);
+    const assignedObject = objectWords(task.slice(1));
+    const cancellation = [...text.matchAll(/\b(?:(?:do not|don['’]t|no longer)\s+need|no need)\s+to\s+([a-z]+)\s+([^.!?;]+)/gi)];
+    const cancelledTask = !!taskVerb && cancellation.some(match => {
+      if (tokenize(match[1])[0]?.lemma !== taskVerb) return false;
+      const object = match[2].split(/,|\b(?:and|but|because|since)\b/i)[0].trim();
+      if (/^(?:it|them|this|that|these|those)$/i.test(object)) return true;
+      const cancelledObject = objectWords(tokenize(object).filter(token => token.kind === 'word'));
+      return assignedObject.length > 0 && assignedObject.length === cancelledObject.length
+        && assignedObject.every((word, index) => word === cancelledObject[index]);
+    });
+    if (!cancelledTask) add('unassigned-task', null, assignment, assignment, 'vacant');
+  }
   if (requestedAction(text)) {
     const request = text.match(REQUEST);
     const list = request ? null : text.match(LIST_REQUEST);
@@ -147,7 +174,7 @@ export function analyzeClause(text: string, offset = 0): ClauseFeatures {
       add('request', null, originalSpan(text, offset, start, start + match[1].length), originalSpan(text, offset, start + match[1].length, text.length), 'recipient');
     }
   }
-  const vagueTimes = [...text.matchAll(new RegExp(VAGUE.source, 'gi'))].filter(match => {
+  const vagueTimes = [...text.matchAll(new RegExp(`(?:${VAGUE.source}|${INDEFINITE_DURATION.source})`, 'gi'))].filter(match => {
     if (match[0].toLowerCase() !== 'later') return true;
     return !/^\s+(?:today|tomorrow|tonight|this\s+(?:week|month|year)|next\s+(?:week|month|year)|on\s+|at\s+|by\s+)/i.test(text.slice(match.index + match[0].length));
   }).map(match => originalSpan(text, offset, match.index, match.index + match[0].length));
@@ -155,7 +182,7 @@ export function analyzeClause(text: string, offset = 0): ClauseFeatures {
   const hasDependency = DEPENDENCY.test(text) || referenceDependency
     || /\b(?:cannot|can't|can’t|won't|won’t|will not)\b[^.!?;]*\bwithout\b/i.test(text);
   return { span, tokens, actions, requestCount: actions.filter(action => action.kind === 'request').length,
-    ownerUnclear: ambiguousAction(text) || actions.some(action => action.kind !== 'request' && action.assertion === 'asserted' && !action.negated && !action.qualified), vagueTimes,
+    ownerUnclear: (ambiguousAction(text) && !/\b(?:not|never|no need|don['’]t)\b/i.test(text)) || actions.some(action => action.kind !== 'request' && action.assertion === 'asserted' && !action.negated && !action.qualified), vagueTimes,
     hasDeadline: hasExplicitDeadline(text), hasDependency, referenceDependency };
 }
 
@@ -185,11 +212,30 @@ export function linkedDependency(current: ClauseFeatures, neighbours: ClauseFeat
 }
 
 const APPROVAL_NOUN = '(?:approval|confirmation|consent|authori[sz]ation|acceptance|sign[- ]off)';
-const PENDING = new RegExp(`\\b(?:still (?:a proposal|proposed|tentative|pending|unconfirmed|undecided)|(?:${APPROVAL_NOUN}|decision) (?:of (?:this|that) (?:arrangement|approach|proposal|plan) )?(?:is |remains? )?(?:still )?(?:pending|outstanding)|(?:haven['’]t|hasn['’]t|have not|has not|not yet) (?:yet )?(?:been )?(?:agreed|approved|confirmed|decided|accepted|given)|(?:only|just) (?:a |our |your |their )?(?:proposal|suggestion)|awaiting (?:your |their |final )?${APPROVAL_NOUN})\\b`, 'i');
+const PENDING = new RegExp(`\\b(?:still (?:a proposal|proposed|tentative|pending|unconfirmed|undecided)|(?:${APPROVAL_NOUN}|decision) (?:of (?:this|that) (?:arrangement|approach|proposal|plan) )?(?:is |remains? )?(?:still )?(?:pending|outstanding)|(?:haven['’]t|hasn['’]t|have not|has not|not yet) (?:yet )?(?:been )?(?:agreed|approved|confirmed|decided|accepted|given|authori[sz]ed)|(?:only|just) (?:a |our |your |their )?(?:proposal|suggestion)|(?:still )?(?:needs?|requires?) (?:your |their |final )?${APPROVAL_NOUN}|awaiting (?:your |their |final )?${APPROVAL_NOUN})\\b`, 'i');
 export function hasUnresolvedApproval(text: string): boolean { return PENDING.test(text); }
 export function standaloneUnresolvedApproval(text: string): boolean {
   return new RegExp(`^(?:(?:your|our|their|its|the|final)\\s+)?${APPROVAL_NOUN}\\s+(?:(?:is|remains)\\s+)?(?:still\\s+)?(?:pending|outstanding)\\s*[.!?]?$`, 'i').test(text);
 }
+
+/** Agreeing on the need for approval does not present the underlying proposal as approved. */
+export function agreementConcernsApproval(text: string): boolean {
+  const body = text.replace(/^(?:as (?:agreed|confirmed),?\s+|we (?:have )?agreed (?:that|on)\s+)/i, '');
+  if (body === text) return false;
+  const process = body.match(new RegExp(`^((?:[\\w-]+\\s+){1,7}?)(?:still\\s+)?(?:needs?|requires?)\\s+(?:your |our |their |final )?${APPROVAL_NOUN}\\b`, 'i'));
+  return !!process && !/\b(?:will|shall|can|is|are|was|were|has|have)\b/i.test(process[1]);
+}
+
+/** An explicit proposal/suggestion on the subject is now presented as settled. */
+export function proposalAssertion(text: string): OriginalSpan | null {
+  const match = text.match(/\b(?:proposed|tentative)\s+(?:[\w-]+\s+){0,5}(?:is|are|has been|have been)\s+(?:now\s+)?(?:agreed|confirmed|finali[sz]ed)\b/i)
+    ?? text.match(/\b(?:the|your|our|this|that)\s+(?:[\w-]+\s+){1,5}(?:you|we|they)\s+(?:(?:have|had)\s+)?(?:suggested|proposed|recommended)\s+(?:is|are|has been|have been)\s+(?:now\s+)?(?:agreed|confirmed|finali[sz]ed)\b/i);
+  return match ? originalSpan(text, 0, match.index!, match.index! + match[0].length) : null;
+}
+
+// A routing nominalisation requires an actual finite movement to a destination,
+// never merely discussion of a queue or a route. Concepts remain deliberately bounded.
+const ROUTING_EVENT = /\bwill\s+(?:enter\s+|(?:be\s+)?(?:routed|sent|placed|assigned)\s+(?:to|into)\s+)(?:(?:the|a|an|your|our)\s+)?(?:[\w-]+\s+){0,4}(?:queue|workflow|channel|group|stage|pipeline)\b/i;
 
 /** Match an explicit event noun to a finite action, or a directly declared topic. */
 export function matchingReference(assertion: string, reference: string): boolean {
@@ -199,6 +245,7 @@ export function matchingReference(assertion: string, reference: string): boolean
     const words = tokenize(referent[1]).filter(token => token.kind === 'word');
     const event = words.find(token => token.normal.endsWith('ing') && token.lemma !== token.normal);
     const generic = new Set(['arrangement', 'approach', 'plan', 'proposal', 'policy', 'decision', 'setup']);
+    if (event?.lemma === 'route' && words.every(token => token === event || generic.has(token.lemma)) && ROUTING_EVENT.test(assertion)) return true;
     if (event && words.every(token => token === event || generic.has(token.lemma) || source.some(original => original.lemma === token.lemma))) {
       const index = source.findIndex((token, i) => token.lemma === event.lemma && i > 0 && /^(?:will|shall|can|be|have)$/.test(source[i - 1].lemma));
       if (index >= 0) return true;
