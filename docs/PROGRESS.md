@@ -2,7 +2,7 @@
 
 Updated: 2026-09-10
 Milestone: polished portfolio prototype and verified preview delivered
-Status: user-revised portfolio scope complete; final milestone handoff being refreshed
+Status: user-revised portfolio scope complete; final Project Sources upload verified
 
 ## Delivered
 
@@ -55,7 +55,7 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 ## Workflow and boundaries
 
 - The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
-- ChatGPT project instructions are saved. The last verified Sources snapshot is 16:02 UTC; the final portfolio packet is being refreshed. Task-message delivery and Sources updates remain separate milestone actions, not continuous sync.
+- ChatGPT project instructions are saved. The final 16:28 UTC portfolio Sources snapshot was uploaded and verified ready before the earlier 16:02 source was removed. Task-message delivery and Sources updates remain separate milestone actions, not continuous sync.
 - Refreshed 16:24 UTC Render allowance: Hobby, 4/25 services, 6 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahblp5bedkc739vpj90 at 10d4e76. No billing, plan, domain or unrelated service changes.
 - Repository stays private and PR stays draft/unmerged. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
 
