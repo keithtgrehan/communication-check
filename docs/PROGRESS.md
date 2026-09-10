@@ -1,7 +1,7 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: structural engine refactor independently reviewed; sealed evaluation next
+Milestone: structural refactor reviewed; sixth fresh evaluation failed
 Status: build goal active — fresh detection acceptance remains unmet
 
 ## Verified delivery
@@ -13,14 +13,14 @@ Status: build goal active — fresh detection acceptance remains unmet
 - Preview implements the static React/Vite editor and deterministic engine: five check families, up to three exact quotes, dismissal, edit/recheck, current-text copy, reset and three fictional demos.
 - That preview passed 163 engine tests, six setup tests, production build/typecheck and 19 local plus 19 hosted Chromium checks. Six asset hashes, six response headers and eight excluded source paths were verified. See docs/HOSTED_VERIFICATION.json.
 - Browser checks cover Unicode evidence selection, stale clearing, clipboard success/denial, blank/oversize input, keyboard/contrast, 320/390/1440px layouts, 200% content zoom, network/storage/log canaries, reload clearing and offline operation. These are automated Chromium checks, not physical-device or human usability tests.
-- The refactored local candidate has full runtime manifest e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772. Full validation passes seven setup/integrity tests, 187 public engine tests, build/typecheck and 19 browser checks. Independent review cleared both scope repairs with 18 targeted cases; it is not yet deployed.
+- The refactored local candidate at commit 3cbe8467d9d25e0ef587334ce8f8b8112c38149d has full runtime manifest e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772. Full validation passes seven setup/integrity tests, 187 public engine tests, build/typecheck and 19 browser checks. Independent review cleared both scope repairs with 18 targeted cases; it is not yet deployed.
 - Original 18 development drafts are unchanged; 12 independent reviewer cases were added. Consumed v1–v5 regression results reached 59/60 expected findings, 59/59 useful emissions and zero flags across 20 clean controls. One historical language-reference abstention remains. These are known-case regressions, not fresh evidence.
 - Dependency audit reported zero known vulnerabilities at inspection. Six pinned Vibe reference blobs remain unchanged and excluded from runtime.
 - Screenshots, case study, demo script, human-validation protocol and isolated preview rollback instructions are prepared; final evidence must follow the final candidate.
 
 ## Evaluation and current work
 
-All five reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
+All six reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
 
 | Reserved attempt | Expected findings detected | Useful emissions | Clean-control flags |
 | --- | --- | --- | --- |
@@ -29,9 +29,10 @@ All five reserved attempts failed the original detection requirement of at least
 | V3 | 6/12 | 6/6 | 0 |
 | V4 | 6/12 | 6/6 | 0 |
 | V5 | 7/12 | 7/7 | 0 |
+| V6 | 6/12 | 6/6 | 0 |
 
-- V6 was frozen before v5 diagnostics and remains sealed outside shared project sources.
-- Repeated misses concern grammatical forms and explicit references. The repair introduces shared, span-preserving action/context features within the deterministic engine; no new dependencies, remote model, UI scope or acceptance changes.
+- V6 was frozen before v5 diagnostics, run once against the committed candidate, and failed detection. All source/corpus integrity checks passed. V7 was frozen before v6 diagnostic consumption and remains sealed.
+- The shared grammar refactor preserved precision but did not meet fresh coverage. Further repair will use a private five-family coverage matrix with varied forms and paired clean controls. Gaps include responsibility status, explicit approval status, nonspecific prerequisite timing and the grammatical force of product promises. No new scope or acceptance changes.
 - Diagnostic-derived nearby examples remain private regression material. Independent reviewer-authored cases can enter development tests. No reserved corpus or labels are uploaded or published.
 - Timing is aligned with the original brief: a direct request alone is insufficient; another stated step must depend on the vague timing. The broader secondary contract wording and five ad-hoc tests were corrected, with original fixtures and reserved labels preserved.
 - The candidate is identified by hashes of all three runtime engine modules and one canonical manifest hash, checked before and after evaluation. A regression test verifies that imported-module changes alter candidate identity.
@@ -49,6 +50,6 @@ All five reserved attempts failed the original detection requirement of at least
 
 ## Next action
 
-Commit the independently cleared candidate,
-then run the sealed evaluation once. Update and verify the hosted candidate and
-finish delivery evidence only when the original engineering gates are met.
+Implement and verify shared causes against the private coverage matrix. Preserve
+the original gates and failure history; do not claim completion from consumed-case
+success. Continue bounded repairs and finish hosted delivery only when gates pass.

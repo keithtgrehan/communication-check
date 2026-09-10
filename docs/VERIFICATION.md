@@ -48,16 +48,16 @@ independently cleared on full manifest e152aaee36ce9ac7596b695959ae85eba1e9f9328
 All 18 targeted review cases passed, including adjacent true positives, unrelated
 references, exploratory requirements and Unicode/CRLF/quoted masking spans. The
 reviewer independently passed 187 public tests and typecheck, with no material
-unresolved defect in this bounded review. The sealed evaluation has not been run.
+unresolved defect in this bounded review. The subsequent sealed v6 evaluation failed detection, as recorded below.
 
 ## Reserved evaluation and outstanding gates
 
-Five independent reserved attempts failed the detection gate; all remain in
-docs/EVALUATION.md. Latest v5 detected 7/12 selected findings with 7/7 useful emissions,
+Six independent reserved attempts failed the detection gate; all remain in
+docs/EVALUATION.md. Latest v6 detected 6/12 selected findings with 6/6 useful emissions,
 zero clean-control flags and all spans exact. Current consumed v1–v5 regression
 results are 59/60 expected and 59/59 useful findings with no flags across 20 clean
 controls, not new heldout evidence. V6 was frozen before v5 diagnostic consumption
-and remains sealed. All labels, denominators, matching criteria and gates remain unchanged.
+and was run once against commit 3cbe8467d9d25e0ef587334ce8f8b8112c38149d. All labels, denominators, matching criteria and gates remain unchanged.
 
 ## Hosted evidence — current review preview
 

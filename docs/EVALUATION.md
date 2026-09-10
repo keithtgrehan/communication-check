@@ -2,9 +2,9 @@
 
 ## Current result
 
-**Engineering evaluation gate remains unmet.** The single reserved v5 run on the reviewed candidate detected **7/12** preselected useful findings (required at least 10/12). All **7/7** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted evidence spans were exact; there were no cap violations or execution errors.
+**Engineering evaluation gate remains unmet.** The single reserved v6 run on reviewed commit `3cbe8467d9d25e0ef587334ce8f8b8112c38149d` detected **6/12** preselected useful findings (required at least 10/12). All **6/6** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
 
-Current evaluated engine SHA256: `12a347c1d7c755feae7a26524c7de286a7fb39e1c345d86b179d683bc12a7612`. Evaluated at `2026-09-10T13:22:44.010Z`. Passing development, browser, independent-review and consumed-regression checks do not supersede this fresh reserved result. All five reserved attempts failed the frozen detection requirement and are preserved below alongside the consumed-regression history. No failed evaluation was discarded or threshold relaxed. These fictional, agent-labelled examples are bounded engineering evidence, not human validation or real-world accuracy estimates.
+Evaluated at `2026-09-10T13:52:26.337Z` with complete runtime manifest SHA256 `e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All six reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
 
 ## Initial reserved evaluation v1
 
@@ -247,3 +247,36 @@ At 13:44 UTC, the evaluator reran consumed v1–v5 using replacement runtime man
 Expected matches were v1 12/12, v2 11/12, v3 12/12, v4 12/12 and v5 12/12, with 59/59 useful emissions and zero clean-control findings, invalid spans, cap violations or errors. The new v1 timing regression was recovered; the prior v2 miss remained. Original labels and criteria were unchanged. These remain consumed regression results, and all five original reserved failures are preserved. V6 remained sealed and unrun.
 
 At 13:49 UTC, consumed v1–v5 were checked against runtime manifest SHA256 `e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772`. `grammar.ts` was SHA256 `af4bab20b26f7a3f755515b5519dc7ab647f6d9d15acd6b95f39dbe092bb3f64`; `index.ts` and `types.ts` retained their earlier manifest hashes. All runtime files, manifest/document and corpora were verified unchanged before/after each run. Expected matches remained 12/12, 11/12, 12/12, 12/12 and 12/12 respectively, with 59/59 useful emissions and zero clean-control findings, invalid spans, cap violations or errors. Labels and gates were unchanged, all original failures remain, and v6 was not run.
+
+## Fresh reserved evaluation v6
+
+The lead explicitly authorised exactly one sealed v6 run on reviewed commit `3cbe8467d9d25e0ef587334ce8f8b8112c38149d`. It ran at `2026-09-10T13:52:26.337Z`. **The candidate fails the reserved detection gate.** The runner enforced a unique run tag; no repeat occurred.
+
+The corpus was frozen at `2026-09-10T13:25:27.445753+00:00`, before v5 diagnostics were inspected or released and before the subsequent grammar refactor. Corpus SHA256 is `bfc8c9a7beed78a47c9e0968ff0d0df2a3e1274ab5a5ce3699ed27beb93e5115`. It retains twelve fictional customer onboarding drafts, four clean controls and twelve expected findings across the other eight drafts, covering all five families. Labels, scope rationales, acceptable evidence regions and anchors were frozen before evaluation, with unchanged original matching criteria and gates.
+
+The root-approved complete runtime manifest was supplied from `.handoff/ENGINE_CANDIDATE.json`, with SHA256 `e152aaee36ce9ac7596b695959ae85eba1e9f93284c892a0d3638812c8d31772`. The lead verified the committed and working runtime manifests matched before authorising execution. The evaluator independently verified all individual working-source hashes, the canonical manifest digest, manifest document bytes and corpus hash before and after the single invocation:
+
+| Runtime file | SHA256 |
+| --- | --- |
+| `web/src/engine/grammar.ts` | `af4bab20b26f7a3f755515b5519dc7ab647f6d9d15acd6b95f39dbe092bb3f64` |
+| `web/src/engine/index.ts` | `4ea4a64b2f34e9e994a878217525373e24571fa55ffff43d4477268381a57fdc` |
+| `web/src/engine/types.ts` | `31fa1927cdf2a65caa5d4ad0ee7baf952604b126e8ab6b014cdcf304fae7307b` |
+
+Every integrity check passed. The evaluator hashed source bytes without inspecting implementation, development fixtures, demos or reviewer source. V6 was not provided to implementation agents or the lead during repairs. The evaluator knew prior aggregate failures and consumed v1–v4 diagnostics, but froze v6 before inspecting v5 diagnostics. Procedural separation was maintained; it was not an enforced sandbox.
+
+| Measure | Observed | Gate | Result |
+| --- | --- | --- | --- |
+| Preselected useful findings detected | 6 / 12 (50%) | At least 10 / 12 | Fail |
+| Emitted findings matching frozen useful labels | 6 / 6 (100%) | At least 90% | Pass |
+| Emissions across four clean controls | 0 | Zero | Pass |
+| Exact original evidence spans | 6 / 6 | All valid | Pass |
+| Drafts exceeding three findings | 0 / 12 | Zero | Pass |
+| Draft execution/result errors | 0 / 12 | Zero | Pass |
+
+Six expectations were missed; no unmatched emissions occurred. Only aggregate counts were reported. The evaluator did not inspect or release v6 per-case diagnostics. Corpus, labels and detailed outputs remain outside repository sources and ordinary handoffs. All five preceding reserved failures and consumed-regression results remain preserved.
+
+The six reserved attempts continue to show inadequate detection coverage under the unchanged product acceptance contract. The latest emitted findings were useful according to their frozen agent labels, but half the selected concerns were missed. Different corpora, repeated iteration and consumed-example repairs prevent these figures from being read as an unbiased accuracy estimate. Passing other engineering checks does not satisfy this separate gate; human usefulness, factual verification and market fit remain unestablished.
+
+After v6 failed, the lead authorised its diagnostic consumption. Before reading or releasing any v6 diagnostic detail, the evaluator froze v7 at `2026-09-10T13:54:50.167214+00:00`, SHA256 `0d03e225b66da5965a132ab0b1a2675b434e4e874535b93f4bcfdcd3fd9bdb48`. The same twelve-draft/four-control/twelve-expectation/five-family structure, original criteria and gates were retained, with scope rationales frozen per label. No candidate run occurred during reservation, and no implementation, development or reviewer source was inspected.
+
+All six v6 misses were then verified as absent family outputs, not span-match rejection or cap displacement. Exact consumed evidence, minimal adjacent context and frozen rationales were delivered directly to the lead and engine, outside shared sources and ordinary handoffs. The substantive diagnostic categories include negative-passive responsibility status, dependent timing vocabulary, same-entity affirmation/authorisation relations, and strong product promises expressed through varying nouns or predicates. No original label or result changed. V6 is now consumed regression material; v7 remains sealed and unrun pending explicit reviewed-manifest authorisation. All six historical failures remain preserved, and repeated small evaluations remain unsuitable as unbiased accuracy estimates.
