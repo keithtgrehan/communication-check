@@ -2,9 +2,9 @@
 
 ## Current result
 
-**Engineering evaluation gate remains unmet.** The single reserved v9 run on reviewed commit `487fec81307d9ea8d214d7480a164abd89e9aa95` detected **5/12** preselected useful findings (required at least 10/12). All **5/5** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
+**Engineering evaluation gate remains unmet.** The single reserved v10 run on reviewed commit `d1230d6d066bc4a8eef9aa08d7818c1404d09c04` detected **4/12** preselected useful findings (required at least 10/12). All **4/4** emitted findings matched useful labels, and the four clean controls received **zero** findings. All emitted spans were exact; there were no cap violations or execution errors.
 
-Evaluated at `2026-09-10T14:57:35.493Z` with complete runtime manifest SHA256 `ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All nine reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
+Evaluated at `2026-09-10T15:48:01.691Z` with complete runtime manifest SHA256 `6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125`. Every runtime source hash, manifest and corpus hash was verified unchanged before/after the single run. Passing development, browser, independent-review and consumed-regression checks do not supersede this reserved result. All ten reserved attempts failed the frozen detection requirement and remain recorded below, alongside consumed-regression history. No failed evaluation was discarded or threshold relaxed. These iterative, small, fictional agent-labelled evaluations are engineering probes, not human validation or unbiased real-world accuracy estimates.
 
 ## Initial reserved evaluation v1
 
@@ -438,3 +438,39 @@ At 15:18 UTC, consumed v1–v9 ran once each on full six-file runtime manifest S
 All six runtime source hashes, full manifest/document and every corpus hash were verified unchanged before and after execution. Expected matches totalled 107/108: v2 remained 11/12 and every other set matched 12/12. All 107 emitted findings matched useful labels with exact spans; there were zero findings across 36 clean controls, cap violations or execution errors across 108 consumed drafts. All seven original v9 misses were recovered. No original labels, matching criteria or gates changed. These are consumed regression results only; all nine reserved failures remain preserved. V10 remained sealed and unrun.
 
 At 15:46 UTC, consumed v1–v9 ran once each on the root-approved complete six-file manifest SHA256 `6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125` from `.handoff/ENGINE_CANDIDATE.json`. Relative to the preceding six-file table, `grammar.ts` changed to SHA256 `c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398` and `outcomes.ts` changed to `3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462`; `agreement.ts`, `commitment.ts`, `index.ts` and `types.ts` retained their listed hashes. All individual runtime files, full manifest/document and corpus hashes were unchanged before and after each execution. Expected matches remained 107/108 (v2 11/12, all other sets 12/12), with 107/107 useful emissions and zero clean-control findings, invalid spans, cap violations or errors. Original labels, matching and gates stayed unchanged. All nine original reserved failures remain visible; v10 remained sealed and unrun.
+
+## Fresh reserved evaluation v10
+
+The lead explicitly authorised exactly one fresh v10 run on reviewed committed candidate `d1230d6d066bc4a8eef9aa08d7818c1404d09c04`. It ran at `2026-09-10T15:48:01.691Z` with a unique runner tag. **The candidate fails the reserved detection gate.** No retry occurred, no per-case diagnostic was inspected or released, and no subsequent corpus was created.
+
+V10 was frozen at `2026-09-10T15:01:08.487121+00:00`, before v9 diagnostic details were inspected or released and before the subsequent architectural work. Corpus SHA256 is `0078003fcd897c39d97b051dea795ba5f0f308fcd6cb598b469e395fb808e10b`. Original size, four clean controls, twelve expected findings across eight other drafts, all five families and the three-finding cap were retained. Labels, scope rationales, evidence regions, anchors, matching and numerical gates were frozen and unchanged.
+
+The complete runtime manifest from `.handoff/ENGINE_CANDIDATE.json` had SHA256 `6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125`. The lead verified working and committed runtime manifests matched before authorisation. The evaluator independently verified every listed working-source hash, full manifest, manifest document and corpus hash before and after the single invocation:
+
+| Runtime file | SHA256 |
+| --- | --- |
+| `web/src/engine/agreement.ts` | `b12ac712cb00171160f34f17c25f6e74cee85923e693d30fbb9fb65c9edd2506` |
+| `web/src/engine/commitment.ts` | `10277137dcbae8d6d8505f0bd63fba0fb2e27f45e319af1ae79c68945a6dbad9` |
+| `web/src/engine/grammar.ts` | `c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398` |
+| `web/src/engine/index.ts` | `f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5` |
+| `web/src/engine/outcomes.ts` | `3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462` |
+| `web/src/engine/types.ts` | `31fa1927cdf2a65caa5d4ad0ee7baf952604b126e8ab6b014cdcf304fae7307b` |
+
+Every integrity check passed. The evaluator read no implementation, development fixture, reviewer source or private development audit. V10 examples and labels were not supplied to the lead or implementation agents during repairs. The evaluator knew earlier aggregate failures and consumed v1–v8 diagnostics, but froze v10 before v9 diagnostics were inspected. Separation was procedural, not an enforced sandbox.
+
+| Measure | Observed | Gate | Result |
+| --- | --- | --- | --- |
+| Preselected useful findings detected | 4 / 12 (33.3%) | At least 10 / 12 | Fail |
+| Emitted findings matching frozen useful labels | 4 / 4 (100%) | At least 90% | Pass |
+| Emissions across four clean controls | 0 | Zero | Pass |
+| Exact original evidence spans | 4 / 4 | All valid | Pass |
+| Drafts exceeding three findings | 0 / 12 | Zero | Pass |
+| Draft execution/result errors | 0 / 12 | Zero | Pass |
+
+Eight expected findings were missed; no unmatched emissions occurred. Only aggregates were reported. Raw corpus, labels and diagnostic details remain outside repository sources and normal handoffs. All nine preceding failed reserved evaluations and every consumed-regression result remain preserved; no labels, denominators or thresholds were changed.
+
+This tenth fresh attempt remains below the original detection requirement. The repeated gap between consumed-example results and reserved coverage is an unresolved engineering limitation. Different small sets, agent-authored labels and iterative development informed by consumed examples do not provide unbiased real-world accuracy estimates. The entire failure history must accompany any later claim about evaluation. Other passing checks do not satisfy the detection gate or establish human usefulness, factual verification or market fit.
+
+After the v10 failure was preserved, the lead authorised diagnostic consumption and an independent contract-fit audit, with source changes, further engine runs and new corpora paused. The evaluator prepared a private audit packet outside repository sources containing exact frozen v10 text, all labels/rationales/regions/anchors, original matching/gates, original result details, runtime hashes and commit provenance. The original corpus hash was verified unchanged; the packet has its own integrity manifest. No label, result or denominator was altered.
+
+The diagnostic review verified that all eight misses are absent corresponding family outputs, not rejected exact-span matches or display-cap displacement. Minimal exact evidence and original frozen rationales were delivered privately to the lead only for the audit. The independent auditor is to assess contract fit and record substantive disagreements separately, without silently relabelling or changing historical counts. No engine execution, wording repair, new corpus or fresh evaluation was performed. All ten original failures remain preserved; v10 is consumed for diagnosis only.

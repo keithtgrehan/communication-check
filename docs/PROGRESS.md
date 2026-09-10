@@ -1,7 +1,7 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: semantic repair independently cleared; next reserved evaluation pending
+Milestone: tenth evaluation failed; contract and architecture audit
 Status: build goal active — fresh detection acceptance remains unmet
 
 ## Verified delivery
@@ -20,7 +20,7 @@ Status: build goal active — fresh detection acceptance remains unmet
 
 ## Evaluation and current work
 
-All nine reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
+All ten reserved attempts failed the original detection requirement of at least 10/12 selected findings. The original labels, gates and complete results remain in docs/EVALUATION.md.
 
 | Reserved attempt | Expected findings detected | Useful emissions | Clean-control flags |
 | --- | --- | --- | --- |
@@ -33,6 +33,7 @@ All nine reserved attempts failed the original detection requirement of at least
 | V7 | 6/12 | 6/6 | 0 |
 | V8 | 8/12 | 8/8 | 0 |
 | V9 | 5/12 | 5/5 | 0 |
+| V10 | 4/12 | 4/4 | 0 |
 
 - V8 was frozen before v7 diagnostic consumption, then run once on reviewed commit 558c66de18dab75931cf5ee3e0ad7a1b20638d06 and failed at 8/12. V9 was frozen before v8 diagnostics, then run once at 14:57:35 UTC on reviewed commit 487fec81307d9ea8d214d7480a164abd89e9aa95 and failed at 5/12. All source/corpus checks passed. V10 was frozen at 15:01:08 UTC before v9 diagnostics were released; it remains sealed and unrun.
 - The independent 100-case development audit found 16/50 intended positive findings, 49/50 clean controls unflagged and 65/100 exact rule sets on the deployed baseline. The focused repair at full manifest ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6 retains 100/100 exact cases, with 50/50 positives and 50/50 clean controls, and the private 80/80 matrix. Labels, original inputs and baseline results are unchanged; one request-count label remains judgment-dependent. These are development results, not fresh evidence.
@@ -40,6 +41,7 @@ All nine reserved attempts failed the original detection requirement of at least
 - The parser assessment is complete: an isolated word-tagging library trial did not resolve the semantic gaps and is not being added to the app. Root authorised structured commitment outcome/polarity, unspecified-owner and temporal/event-reference repairs. Further reserved runs wait for implementation and independent review. The no-LLM, no-draft-transmission and original acceptance requirements remain unchanged.
 - The resulting six-module candidate (manifest 3bedb1fbffd890207014a6389bf596dddb551795896bcb4e983a2ca5da77ae37) passed seven setup checks, 211 public tests, build/typecheck and 19 browser checks. Consumed v1–v9 reached 107/108 expected and 107/107 useful findings, with zero flags across 36 clean controls. These are known-case results. Independent review found five new false flags across assertion scope, human-service classification and timing boundaries; this candidate is not cleared. Focused corrections are underway; v10 remains sealed.
 - Those five defects are repaired at manifest 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125. Root validation passes seven setup checks, 225 public tests, build/typecheck and 19 browser checks. The independent reviewer cleared all five original defects and 20 focused probes, preserving genuine positive cases and exact spans. Consumed v1–v9 remains 107/108 expected, 107/107 useful and zero clean flags with full source/corpus integrity. Fixed development benchmarks remain 100/100 and 80/80. This clears the bounded code review, not the fresh detection gate.
+- V10 ran once at 15:48:01 UTC on reviewed commit d1230d6d066bc4a8eef9aa08d7818c1404d09c04 and failed at 4/12 expected, 4/4 useful, zero clean flags/errors with full runtime/corpus integrity. Further patch-and-evaluation rounds are paused for a contract-fit and architecture audit. No new corpus or fresh run is authorised; the failed result will not be relabelled or discarded.
 - Diagnostic-derived nearby examples remain private regression material. Independent reviewer-authored cases can enter development tests. No reserved corpus or labels are uploaded or published.
 - The frozen private 80-draft development matrix improved from 65/80 exact cases to 80/80; consumed v1–v6 reached 71/72 expected and 71/71 useful findings with zero clean flags. Independent review verified all scope fixes and final suppression repairs. These known-case results do not satisfy fresh evaluation.
 - Timing is aligned with the original brief: a direct request alone is insufficient; another stated step must depend on the vague timing. The broader secondary contract wording and five ad-hoc tests were corrected, with original fixtures and reserved labels preserved.
@@ -58,5 +60,5 @@ All nine reserved attempts failed the original detection requirement of at least
 
 ## Next action
 
-Commit the reviewed candidate, then run sealed v10 once against that exact version.
-Preserve all nine prior failures and the original labels, matching rules and gates.
+Audit whether the failed examples match the frozen product contract and identify a justified architecture decision.
+Preserve all ten failures and the original labels, matching rules and gates.

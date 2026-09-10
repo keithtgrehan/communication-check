@@ -52,12 +52,14 @@ regressions and re-review. Browser automation checks real clipboard behaviour,
 keyboard use, responsive layouts and runtime network/storage with fictional
 canaries. See docs/VERIFICATION.md for actual evidence and limitations.
 
-Nine successive reserved attempts have failed the original detection gate.
+Ten successive reserved attempts have failed the original detection gate.
 Strong results on previously observed examples did not transfer reliably to new
 wording. A separate, fixed 100-case development audit exposed ordinary grammatical
 gaps across all five families: the deployed baseline detected 16/50 intended
 positive findings and left 49/50 clean controls unflagged. Those findings now guide
-a shared clause-frame redesign. Inputs, labels, failure history and acceptance
+a shared clause-frame redesign and outcome/claim-scope repair. These repairs still
+failed fresh evaluation, so another wording-patch cycle is paused for a contract
+and architecture audit. Inputs, labels, failure history and acceptance
 criteria remain fixed. A later passing small fictional evaluation would not erase
 this iteration history or establish real-world accuracy.
 

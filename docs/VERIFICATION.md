@@ -195,8 +195,8 @@ unresolved defect in this bounded review. The subsequent sealed v6 evaluation fa
 
 ## Reserved evaluation and outstanding gates
 
-Nine independent reserved attempts failed the detection gate; all remain in
-docs/EVALUATION.md. Latest v9 detected 5/12 selected findings with 5/5 useful
+Ten independent reserved attempts failed the detection gate; all remain in
+docs/EVALUATION.md. Latest v10 detected 4/12 selected findings with 4/4 useful
 emissions, zero clean-control flags and all spans exact. Current consumed v1–v9
 regression results are 107/108 expected and 107/107 useful findings with no flags across
 36 clean controls, not new heldout evidence. V9 was frozen before v8 diagnostic
@@ -228,7 +228,13 @@ tests and typecheck. No material finding remains in that bounded review. Consume
 v1–v9 remains 107/108 expected and 107/107 useful, with zero findings across 36 clean
 controls and every source/manifest/corpus integrity check passing. Fixed development
 benchmarks remain 100/100 and 80/80. These results do not establish fresh detection
-acceptance. V10 is still sealed and will run only on the committed reviewed bytes.
+acceptance. V10 subsequently ran once at 15:48:01.691 UTC on reviewed commit
+d1230d6d066bc4a8eef9aa08d7818c1404d09c04 and failed at 4/12 expected findings,
+4/4 useful emissions and zero clean flags, invalid spans, cap violations or errors.
+Every source/manifest/corpus integrity check passed. All ten failures and original
+labels/gates remain preserved. Further fresh runs and wording repairs are paused
+for a contract-fit and architecture audit; this reviewable candidate has not replaced
+the interim hosted version below.
 
 ## Hosted evidence — current review preview
 
