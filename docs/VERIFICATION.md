@@ -236,6 +236,22 @@ labels/gates remain preserved. Further fresh runs and wording repairs are paused
 for a contract-fit and architecture audit; this reviewable candidate has not replaced
 the interim hosted version below.
 
+The subsequent contract-fit audit checked the frozen v10 packet and recomputed
+matching against its recorded outputs without another engine execution. All twelve
+labels and four controls were judged within scope; all eight misses were absent
+family outputs rather than matching/cap failures. Packet integrity passed and no
+labels or historical counts changed. The auditor knew the implementation and had
+authored development cases, so this was independent contract judgment after diagnostic
+access rather than a blind evaluation or human validation.
+
+A separate read-only architecture assessment found that the frame objects still
+wrap surface recognizers, with inconsistent participant and operator scope. Root
+authorised one isolated deterministic proposition-normalizer experiment before any
+further production integration. Its private contract, one-shot 60-case composition
+challenge, effort ceiling and stop conditions are specified in the implementation
+plan. The stage challenge has not yet been created or run. It cannot replace the
+original five-family acceptance gate. The production runtime remains unchanged.
+
 ## Hosted evidence — current review preview
 
 https://communication-check-preview.onrender.com was built from

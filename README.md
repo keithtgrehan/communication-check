@@ -15,8 +15,9 @@ rewrite the draft, assign a score or send email.
 
 The app is implemented and the local workflow passes browser verification.
 Engine coverage repair and fresh reserved evaluation are still in progress; the
-first ten reserved runs did not meet the detection gate. Further repairs await a
-contract and architecture audit. The [working preview](https://communication-check-preview.onrender.com) is live; all 19 hosted browser checks pass.
+first ten reserved runs did not meet the detection gate. Contract and architecture
+audits support one isolated semantic-composition experiment before further integration.
+The [working preview](https://communication-check-preview.onrender.com) is live; all 19 hosted browser checks pass.
 See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
 The [existing draft PR](https://github.com/keithtgrehan/communication-check/pull/1)

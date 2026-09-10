@@ -82,3 +82,48 @@ Engineering can finish while Keith arranges testers. Human feedback, public rele
 Deliver a verified working preview, reviewable draft PR, README, source ledger, portfolio case study, 60–90 second demo script, screenshots, rollback instructions and an explicit list of outstanding validation. Include how to run/check the product, the evaluated commit, validation evidence and honest limitations.
 
 Rollback documents how to restore the previous preview deployment or disable this separate preview without touching other projects. Keep the repository private and the PR unmerged. Prepare all reviewable work before requesting public-release approval. Document the later RCR approved-commitments → writer's draft → Communication Check concept only.
+
+## Architecture decision after ten failed reserved evaluations
+
+The tenth reviewed candidate detected 4/12 expected findings. Independent contract
+review found all twelve labels and four clean controls within the frozen scope;
+none of the eight misses resulted from evidence matching or the finding cap.
+All ten failures remain recorded. The current surface recognizers have not shown
+reliable transfer, despite strong known-case results. Stop adding individual phrase
+repairs and do not run another reserved set automatically.
+
+Proceed with one isolated deterministic proposition-normalizer experiment, outside
+the production import graph, within the original approximate five-day effort budget.
+Cap this feasibility slice at two focused engineering days, with no artificial wait.
+Represent task assignment, decision approval and monetary bounds/benefits together
+with their participants, original spans and predicate-local assertion/negation/
+qualification. Unknown structures and unresolved references remain unknown. Reuse
+the span tokenizer; add no dependency, LLM, network, persistence or UI change.
+
+Freeze a precise private grammar/semantic inventory and atomic development examples
+before an independent evaluator freezes a 60-case composition challenge. It contains
+30 positives and 30 matched controls across the three relations, including fifteen
+meaning-preserving pairs and unseen combinations of disclosed atoms. It is a bounded
+development experiment, not a new original-format heldout acceptance claim. The
+implementer must not see the completed challenge before the prototype is frozen.
+
+Allow exactly one challenge run. Integration requires all sixty expected outcomes,
+zero control flags, exact spans and consistent decisions across all fifteen pairs,
+plus independent confirmation that the implementation composes relations/operators
+rather than adding case-specific exceptions. Any failure stops integration; preserve
+the result and make an explicit next decision. Do not automatically create a replacement
+challenge. A passing slice permits narrow adapters and review within the remaining
+original effort budget; it does not establish all-five-family detection acceptance.
+
+Product typing and timing attachment remain separate, bounded integration work.
+Do not infer software merely from an unfamiliar noun or absence of a human role.
+Preserve the existing verified UI, API, evidence semantics and privacy behaviour.
+One implementer owns the private prototype and, only after approval to integrate,
+propositions.ts and engine adapters. The lead owns types/index, configuration,
+runtime manifests, Git, hosting and docs; the evaluator owns the private challenge.
+A fresh reviewer must inspect any final integrated candidate. Adding a runtime
+module requires a new complete manifest and all original verification gates.
+
+No narrowing of the product, weakened labels/thresholds, LLM or public launch is
+authorised by this experiment. If it fails or cannot remain within the small offline
+engine constraint, prepare a concrete product/architecture decision for Keith.

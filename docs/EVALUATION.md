@@ -471,6 +471,26 @@ Eight expected findings were missed; no unmatched emissions occurred. Only aggre
 
 This tenth fresh attempt remains below the original detection requirement. The repeated gap between consumed-example results and reserved coverage is an unresolved engineering limitation. Different small sets, agent-authored labels and iterative development informed by consumed examples do not provide unbiased real-world accuracy estimates. The entire failure history must accompany any later claim about evaluation. Other passing checks do not satisfy the detection gate or establish human usefulness, factual verification or market fit.
 
+## Post-v10 contract-fit audit and next experiment
+
+After preserving the single failed result, the lead authorised diagnostic consumption
+for an independent contract-fit audit. The auditor verified the private packet and
+recomputed the unchanged matching against recorded outputs only, without another
+engine invocation. All twelve original labels and four clean controls were judged
+defensible within the frozen product scope. All eight misses lacked their family
+output; affected drafts emitted at most one finding. Matching regions, anchors and
+the three-finding cap did not explain the misses. No label, denominator, result or
+threshold was changed. The auditor knew the implementation and had authored some
+development cases; this is contract judgment after diagnostic access, not a blind
+test or human validation. Raw material remains outside shared sources.
+
+No v11 corpus or fresh run is authorised. A separate architecture assessment supports
+one isolated deterministic semantic-composition experiment, with a precise private
+contract and one independent 60-case development challenge before integration.
+The challenge and its all-case/clean/span/pair criteria are described in the
+implementation plan. No stage result is yet claimed. Passing that bounded slice
+would not satisfy or replace the original five-family reserved acceptance gate.
+
 After the v10 failure was preserved, the lead authorised diagnostic consumption and an independent contract-fit audit, with source changes, further engine runs and new corpora paused. The evaluator prepared a private audit packet outside repository sources containing exact frozen v10 text, all labels/rationales/regions/anchors, original matching/gates, original result details, runtime hashes and commit provenance. The original corpus hash was verified unchanged; the packet has its own integrity manifest. No label, result or denominator was altered.
 
 The diagnostic review verified that all eight misses are absent corresponding family outputs, not rejected exact-span matches or display-cap displacement. Minimal exact evidence and original frozen rationales were delivered privately to the lead only for the audit. The independent auditor is to assess contract fit and record substantive disagreements separately, without silently relabelling or changing historical counts. No engine execution, wording repair, new corpus or fresh evaluation was performed. All ten original failures remain preserved; v10 is consumed for diagnosis only.

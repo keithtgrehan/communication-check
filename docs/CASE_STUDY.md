@@ -58,8 +58,10 @@ wording. A separate, fixed 100-case development audit exposed ordinary grammatic
 gaps across all five families: the deployed baseline detected 16/50 intended
 positive findings and left 49/50 clean controls unflagged. Those findings now guide
 a shared clause-frame redesign and outcome/claim-scope repair. These repairs still
-failed fresh evaluation, so another wording-patch cycle is paused for a contract
-and architecture audit. Inputs, labels, failure history and acceptance
+failed fresh evaluation. A contract audit found the test expectations within the
+original scope; an architecture assessment supported one isolated experiment in
+composing assignment, approval and financial states before further integration.
+Inputs, labels, failure history and acceptance
 criteria remain fixed. A later passing small fictional evaluation would not erase
 this iteration history or establish real-world accuracy.
 
