@@ -103,7 +103,7 @@ function validate() {
   if (git(['config', '--get', 'core.hooksPath']) !== '.githooks') throw new Error('Run npm run setup to install local hooks.');
   const count = checkSnapshot();
   buildHandoff(ROOT, { commit: git(['rev-parse', 'HEAD']), branch: BRANCH });
-  console.log(`Setup validated: correct branch/remote, working documents, local hooks and ${count} exact source blobs. Product checks are not implemented yet.`);
+  console.log(`Setup validated: correct branch/remote, working documents, local hooks and ${count} exact source blobs. Run the product checks separately with npm run validate.`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

@@ -1,36 +1,35 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: repository and collaboration setup
-Status: setup validated and independently reviewed; product implementation not started
+Milestone: end-to-end implementation and independent evaluation
+Status: build goal active; repairs and hosted delivery in progress
 
 ## Verified
 
-- Private GitHub repository created: https://github.com/keithtgrehan/communication-check.
 - Canonical checkout: /Users/keith/Documents/ChatGPT/communication-check.
-- Initial source baseline: 7dfc3a7; implementation branch: codex/communication-check-mvp.
-- Reviewed setup pushed at 0875125. Draft PR: https://github.com/keithtgrehan/communication-check/pull/1. Keep this PR and update it for the finished MVP; no merge.
-- Six selected Vibe source files imported as an inactive reference snapshot, with pinned source/blob hashes.
-- Source baseline: Vibe 000ba0685f961e253b0d34c0b02539ac897356e9; no source Git history, credentials, datasets or deployment resources copied.
-- Product brief, implementation plan, working instructions, source ledger and goal prompt prepared.
-- Local post-commit handoff generation and pre-push destination/branch guard installed; six setup tests pass and six source blob hashes match upstream.
-- Independent setup review completed. Its existing-hook preservation finding was fixed and the fix verified with a real temporary-repository test.
-- Actual post-commit packet refresh verified against the commit, and the approved branch push passed the installed guard.
-- Project-scoped Astra High defaults and a maximum of three subagents saved for trusted project sessions. Existing explicit app selections take precedence; current task model/permission settings were not changed.
-- Keith moved the preserved lead task to the correct local project; the association is verified. Its recorded working directory remains the original generated folder, so all repository commands explicitly target the canonical checkout.
-- Existing example-review task delivered five corrected fictional B2B SaaS customer-onboarding follow-ups. These are discussion examples, not reserved evaluation fixtures or approved engine labels. Keith's subsequent recruiter-example discussion remains separate from the frozen product scope.
+- Private repository: https://github.com/keithtgrehan/communication-check.
+- Branch codex/communication-check-mvp; reuse draft PR https://github.com/keithtgrehan/communication-check/pull/1; no merge.
+- Static React/Vite editor and deterministic TypeScript engine implemented: five check families, exact UTF-16 evidence, up to three findings, dismissal, editing/recheck, current-text copy, reset and three separate fictional demos.
+- Initial engine: 18 development drafts, 68 passing tests; expanded to 120 public regression tests after independent review. Local production build, source/build guards and 10 browser tests passed after fixing the sample-label contrast.
+- 19 local browser checks now pass, including long-draft visible selection and expanded-help contrast. Independent review verified the four original repairs. Browser checks cover clipboard success/denial, stale results, limits, keyboard, 320/390/1440px layout, 200% content zoom, network/storage/log canary, reload clearing and offline operation. Chromium automation is not physical-device or human usability testing.
+- Initial reserved evaluation FAILED: 9/12 selected findings, 9/10 useful emissions, one flag across four clean controls. All emitted spans valid. Original results retained in docs/EVALUATION.md.
+- Fresh reserved v2 FAILED detection: 4/12 selected, 4/4 useful emissions, zero clean-control flags. Both failed results are retained. Consumed tests are now diagnostic regressions with23/24 expected findings,23/23 useful emissions and zero clean flags under unchanged labels; v3 was reserved before further repair.
+- Runtime dependencies pinned; initial npm audit returned zero known vulnerabilities. Audited six-file Vibe reference remains outside runtime.
+- Vercel's accidental connection to reference/vibe-signal/web was disconnected and verified; other projects/deployments untouched.
+- Render's existing Hobby workspace allowance verified: 3/25 services, 0MB/5GB bandwidth and 0/500 pipeline minutes used at inspection. Static hosting has no instance charge; existing overage billing remains possible beyond allowance. No new plan, paid service or billing change authorised.
+- Keith moved the preserved lead task to the correct local project; current task cwd is now canonical. Repository commands still specify it explicitly.
+- ChatGPT website project instructions were saved and verified. Initial context was added as CHATGPT_CONTEXT.md.txt in Project Sources; this is a dated snapshot, not ongoing sync. The browser extension file permission is now enabled by Keith.
 
-## Boundaries and blockers
+## Boundaries and outstanding work
 
-- No product, working preview, benchmark result or human validation exists yet.
-- Native app computer control is blocked by its safety rules; supported tools cannot reassign this existing task's project or update ChatGPT Project Sources/Instructions.
-- The lead conversation is preserved and correctly grouped. Repository actions use the canonical folder explicitly.
-- ChatGPT milestone delivery goes to the existing product-companion task, not automatic Project Sources sync.
-- Vercel connected team was Hobby during planning. Separate Render static preview remains a candidate pending commercial/account allowance and overage verification.
-- Public launch, main merge, visibility/domain changes and new spending remain unapproved.
+- Final engine independently reviewed at SHA028e2ef77a20991bc7e700ea6e47f6e8f88da1a367d35799685bfd5f921c09dc; 120 public tests/typecheck pass. Fresh v3 FAILED detection:6/12 expected,6/6 useful emissions,zero clean flags. All spans valid. Coverage repair continues; hosted review preview is being prepared.
+- Finish preview, draft PR evidence, screenshots, demo/case-study materials and rollback instructions.
+- Native app self-control remains restricted; use supported task tools and browser project UI without bypassing it.
+- Milestone messages go to the existing product companion; Sources updates are separate, explicit actions.
+- Human usability sessions and AM/CSM pilots are outstanding. Agent-labelled fictional results are not real-world accuracy or customer validation.
+- Public launch, main merge, visibility/domain changes, new spending and external outreach remain unapproved.
 
 ## Next action
 
-Upon Keith invoking the build goal, reserve evaluation material, agree the finding
-contract and build the first sample → findings → edit → recheck → copy flow.
-The initial plan and setup are complete; no build goal has started.
+Repair the independently reproduced defects, evaluate the new frozen candidate,
+then publish and verify the separate preview within the existing allowance.

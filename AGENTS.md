@@ -87,15 +87,16 @@ duplicate product threads. Ask the companion only for the specific critique need
 or a brief acknowledgement of a status-only update. Treat its suggestions as advice,
 not approved scope changes. Do not send raw drafts or heldout material.
 
-This is task-message delivery, not Project Sources synchronisation. The tools do
-not support Project Sources uploads or reassigning this lead task's local project.
-Do not bypass the native app's computer-control restriction or edit its internal
-state. Keith manually associated this lead task with the correct local project on
-2026-09-10; this was verified in app metadata. The recorded task working directory
-still points to the original generated folder, so run repository operations with
-this explicit canonical working directory. docs/CHATGPT_PROJECT_INSTRUCTIONS.md is
-ready for a one-time manual Project Instructions paste; use live GitHub reads when
-available instead of assuming uploaded files remain current.
+This is task-message delivery, not automatic Project Sources synchronisation.
+Supported task tools do not upload Project Sources or reassign this lead's local
+project. Do not bypass native app computer-control restrictions or edit its
+internal state. Keith manually associated the preserved lead with the correct
+project on 2026-09-10; the current cwd is now canonical. Continue using the explicit
+canonical directory for repository operations. The ChatGPT website's supported
+browser UI was used to save/verify docs/CHATGPT_PROJECT_INSTRUCTIONS.md and add
+an initial CHATGPT_CONTEXT.md.txt source. These are dated copies, not automatic
+sync; use live GitHub reads when available or explicitly replace the allowlisted
+source at a milestone. Never upload the whole repository or reserved material.
 
 Use a single foreground execution goal for the build; do not create scheduled
 polling merely to keep work running. Continue useful engineering while human tester

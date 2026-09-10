@@ -19,3 +19,13 @@ verification was performed and this product does not inherit RCR's approvals.
 
 The future RCR connection is documentation-only: human-approved commitments →
 writer's draft → Communication Check. No shared platform or integration in MVP.
+
+## Implemented reuse decisions
+
+The MVP app, rules, demos, fixtures, span handling and privacy tests were written
+for Communication Check. No additional donor source was copied. Vibe's six
+reference blobs remain unchanged and do not enter the build. RCR and other
+candidate patterns above informed requirements only; no code or regression
+fixture was imported from them. UTF-16 slicing and selection use browser-native
+offsets. The only bundled external runtime code is React, React DOM and Scheduler;
+see THIRD_PARTY_NOTICES.md and the shipped exact MIT notice.
