@@ -1,0 +1,12 @@
+{
+  "name": "communication-check-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "setup": "node scripts/project.mjs setup",
+    "handoff": "node scripts/project.mjs handoff",
+    "validate:setup": "node scripts/project.mjs validate && node --test scripts/tests/*.test.mjs"
+  }
+}

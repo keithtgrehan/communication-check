@@ -7,7 +7,7 @@ reviewing customer onboarding follow-up emails.
 
 ## Status
 
-Repository and collaboration setup are being prepared. The application, rule
+Repository and collaboration setup are complete and independently reviewed. The application, rule
 engine, hosted preview and evaluation results are not implemented yet.
 See [current progress](docs/PROGRESS.md) for verified status.
 
