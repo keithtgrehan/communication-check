@@ -421,3 +421,20 @@ The ninth fresh attempt still fails the original coverage requirement. Counts ac
 After v9 failed, the lead paused further fresh evaluations for an architectural assessment of browser-local deterministic parsing. Before inspecting or releasing v9 diagnostics, the evaluator froze v10 at `2026-09-10T15:01:08.487121+00:00`, SHA256 `0078003fcd897c39d97b051dea795ba5f0f308fcd6cb598b469e395fb808e10b`. Original corpus size, four clean controls, twelve expectations, all five families, scope rationales and matching/gates were retained. No candidate execution occurred and no implementation, development or reviewer source was read.
 
 Authorised v9 diagnostics were then verified as seven absent family outputs, not evidence-match rejection or cap displacement. Minimal exact evidence, local context and frozen rationales were delivered privately to the lead and engine, outside shared sources and ordinary handoffs. Aggregate cause categories concern temporal idioms, financial polarity semantics, indefinite owner phrase composition, nominalised delivery outcomes, same-reference approval/authorisation meaning, and universal product capability wording. No original labels or results changed; all nine reserved failures remain preserved. V9 is now consumed regression material. V10 remains sealed and unrun pending explicit root authorisation after a justified implementation and independent review, not an automatic continuation of wording repairs.
+
+## Consumed v1–v9 regression check
+
+At 15:18 UTC, consumed v1–v9 ran once each on full six-file runtime manifest SHA256 `3bedb1fbffd890207014a6389bf596dddb551795896bcb4e983a2ca5da77ae37`. The approved closure added `outcomes.ts`. Individual runtime hashes were:
+
+| Runtime file | SHA256 |
+| --- | --- |
+| `web/src/engine/agreement.ts` | `b12ac712cb00171160f34f17c25f6e74cee85923e693d30fbb9fb65c9edd2506` |
+| `web/src/engine/commitment.ts` | `10277137dcbae8d6d8505f0bd63fba0fb2e27f45e319af1ae79c68945a6dbad9` |
+| `web/src/engine/grammar.ts` | `a581eb142471ba7ad98b87159e608d7d4e6e6d8cbae644f680450cd8e8f0e23c` |
+| `web/src/engine/index.ts` | `f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5` |
+| `web/src/engine/outcomes.ts` | `95d8e116443f8bd8c4245985404b9491aae57f67936450e4a2ff7daf8ff589df` |
+| `web/src/engine/types.ts` | `31fa1927cdf2a65caa5d4ad0ee7baf952604b126e8ab6b014cdcf304fae7307b` |
+
+All six runtime source hashes, full manifest/document and every corpus hash were verified unchanged before and after execution. Expected matches totalled 107/108: v2 remained 11/12 and every other set matched 12/12. All 107 emitted findings matched useful labels with exact spans; there were zero findings across 36 clean controls, cap violations or execution errors across 108 consumed drafts. All seven original v9 misses were recovered. No original labels, matching criteria or gates changed. These are consumed regression results only; all nine reserved failures remain preserved. V10 remained sealed and unrun.
+
+At 15:46 UTC, consumed v1–v9 ran once each on the root-approved complete six-file manifest SHA256 `6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125` from `.handoff/ENGINE_CANDIDATE.json`. Relative to the preceding six-file table, `grammar.ts` changed to SHA256 `c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398` and `outcomes.ts` changed to `3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462`; `agreement.ts`, `commitment.ts`, `index.ts` and `types.ts` retained their listed hashes. All individual runtime files, full manifest/document and corpus hashes were unchanged before and after each execution. Expected matches remained 107/108 (v2 11/12, all other sets 12/12), with 107/107 useful emissions and zero clean-control findings, invalid spans, cap violations or errors. Original labels, matching and gates stayed unchanged. All nine original reserved failures remain visible; v10 remained sealed and unrun.

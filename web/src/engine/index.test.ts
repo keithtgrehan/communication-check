@@ -533,3 +533,38 @@ describe('independent review: grammatical categories and explicit links', () => 
     expect(rules('The suggested room layout is confirmed, although it is still a proposal.')).toEqual(['agreement-wording']);
   });
 });
+
+// Independent reviewer repros and paired controls for the outcome-state delta.
+describe('independent review: claimant scope, service heads and timing boundaries', () => {
+  it.each([
+    'Nobody promised that you will not be charged for the additional seats.',
+    'We asked that engineering guarantee delivery of the audit connector by Tuesday.',
+    'Our software consulting service will arrange every training session.',
+    'Please send the attendee list as soon as you can export it so we can schedule the session.',
+    'Please sign the export policy before long-term storage is enabled so we can archive the records.',
+    'No one has guaranteed delivery of the audit connector by Tuesday.',
+    'We requested that engineering promise delivery of the audit connector by Tuesday.',
+    'Our data consulting service will organise every workshop.',
+  ])('abstains on reported claims, human services and concrete events: %s', text => {
+    expect(rules(text)).toEqual([]);
+    verifySpans(text);
+  });
+
+  it.each([
+    'We promised that you will not be charged for the additional seats.',
+    'We guarantee delivery of the audit connector by Tuesday.',
+    'Nobody promised the agenda, and we guarantee delivery of the audit connector by Tuesday.',
+    'The data-conversion service will convert every file.',
+  ])('preserves an actual promise or technical service capability: %s', text => {
+    expect(rules(text)).toEqual(['commitment-confirmation']);
+    verifySpans(text);
+  });
+
+  it.each([
+    'Please send the attendee list as soon as you can so we can schedule the session.',
+    'Please sign the export policy before long so we can archive the records.',
+  ])('preserves terminal nonspecific timing on a dependent action: %s', text => {
+    expect(rules(text)).toEqual(['vague-timing']);
+    verifySpans(text);
+  });
+});

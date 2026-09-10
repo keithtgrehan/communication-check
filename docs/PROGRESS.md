@@ -1,7 +1,7 @@
 # Communication Check progress
 
 Updated: 2026-09-10
-Milestone: ninth evaluation recorded; semantic representation repair
+Milestone: semantic repair independently cleared; next reserved evaluation pending
 Status: build goal active — fresh detection acceptance remains unmet
 
 ## Verified delivery
@@ -38,23 +38,25 @@ All nine reserved attempts failed the original detection requirement of at least
 - The independent 100-case development audit found 16/50 intended positive findings, 49/50 clean controls unflagged and 65/100 exact rule sets on the deployed baseline. The focused repair at full manifest ef17ba80358dee9ddcfbdab0acaa9e86df563f209730eb55b235637b523f71d6 retains 100/100 exact cases, with 50/50 positives and 50/50 clean controls, and the private 80/80 matrix. Labels, original inputs and baseline results are unchanged; one request-count label remains judgment-dependent. These are development results, not fresh evidence.
 - This local candidate passes seven setup/integrity tests, 211 public engine tests, build/typecheck and 19 browser checks. Consumed v1–v8 reached 95/96 expected findings, 95/95 useful emissions and zero flags across 32 clean controls. One historical abstention remains. Earlier scope regressions were repaired and independently reviewed. The latest four state/voice/timing fixes passed 25 independent focused probes plus 211 public tests and typecheck, with no material finding in that bounded review. The subsequent v9 detection failure remains an unmet gate.
 - The parser assessment is complete: an isolated word-tagging library trial did not resolve the semantic gaps and is not being added to the app. Root authorised structured commitment outcome/polarity, unspecified-owner and temporal/event-reference repairs. Further reserved runs wait for implementation and independent review. The no-LLM, no-draft-transmission and original acceptance requirements remain unchanged.
+- The resulting six-module candidate (manifest 3bedb1fbffd890207014a6389bf596dddb551795896bcb4e983a2ca5da77ae37) passed seven setup checks, 211 public tests, build/typecheck and 19 browser checks. Consumed v1–v9 reached 107/108 expected and 107/107 useful findings, with zero flags across 36 clean controls. These are known-case results. Independent review found five new false flags across assertion scope, human-service classification and timing boundaries; this candidate is not cleared. Focused corrections are underway; v10 remains sealed.
+- Those five defects are repaired at manifest 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125. Root validation passes seven setup checks, 225 public tests, build/typecheck and 19 browser checks. The independent reviewer cleared all five original defects and 20 focused probes, preserving genuine positive cases and exact spans. Consumed v1–v9 remains 107/108 expected, 107/107 useful and zero clean flags with full source/corpus integrity. Fixed development benchmarks remain 100/100 and 80/80. This clears the bounded code review, not the fresh detection gate.
 - Diagnostic-derived nearby examples remain private regression material. Independent reviewer-authored cases can enter development tests. No reserved corpus or labels are uploaded or published.
 - The frozen private 80-draft development matrix improved from 65/80 exact cases to 80/80; consumed v1–v6 reached 71/72 expected and 71/71 useful findings with zero clean flags. Independent review verified all scope fixes and final suppression repairs. These known-case results do not satisfy fresh evaluation.
 - Timing is aligned with the original brief: a direct request alone is insufficient; another stated step must depend on the vague timing. The broader secondary contract wording and five ad-hoc tests were corrected, with original fixtures and reserved labels preserved.
-- Candidates are identified by hashes of every runtime engine module and one canonical manifest hash, checked before and after evaluation. The local redesign has five modules; the current hosted preview has three. A regression test verifies that imported-module changes alter candidate identity.
+- Candidates are identified by hashes of every runtime engine module and one canonical manifest hash, checked before and after evaluation. The local redesign has six modules; the current hosted preview has three. A regression test verifies that imported-module changes alter candidate identity.
 - Engineering completion, real-world accuracy and customer validation are not claimed.
 
 ## Workflow and boundaries
 
 - The existing lead task is associated with the correct local project; repository operations use the canonical root explicitly.
-- ChatGPT project instructions are saved. Project Sources contains CHATGPT_CONTEXT-2026-09-10-1358UTC.md.txt, a dated brief/progress snapshot; its superseded 13:17 copy was removed after the new source became ready. Matching companion-task delivery was acknowledged. This is explicit milestone refresh, not continuous sync.
+- ChatGPT project instructions are saved. The dated 15:13 UTC brief/progress file was uploaded through the supported browser chooser and verified ready before its superseded 13:58 copy was removed. Companion-task updates are also delivered at milestones. This is explicit refresh, not continuous sync; details are in docs/WORKFLOW.md.
 - Native app self-control remains restricted; use supported task tools and website UI without bypassing that restriction.
-- Render uses the inspected existing Hobby allowance. The latest refreshed check showed 4/25 services, 4 MB/5 GB bandwidth and 0/500 pipeline minutes displayed. Automatic deploys are off. No billing, plan, domain or unrelated service changes were made.
+- Render uses the inspected existing Hobby allowance. The latest refreshed check showed 4/25 services, 6 MB/5 GB bandwidth and 0/500 pipeline minutes displayed, with $0.00 preview service and pipeline charges. Automatic deploys are off. No billing, plan, domain or unrelated service changes were made.
 - The accidental Vercel Git connection was disconnected and verified; no project or deployment was deleted.
 - Human usability sessions: 0/3. Pilots: 0/5. Keith recruits; no outreach or customer feedback is claimed.
 - Main merge, public launch, visibility/domain changes, new spending and external outreach remain unapproved.
 
 ## Next action
 
-Implement and independently review the semantic representation repair.
-Preserve all nine failures; no further reserved run is currently authorised.
+Commit the reviewed candidate, then run sealed v10 once against that exact version.
+Preserve all nine prior failures and the original labels, matching rules and gates.

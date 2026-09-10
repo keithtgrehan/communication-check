@@ -36,6 +36,10 @@ const REQUEST_START = /\b(?:please\s+(?:(?:also|kindly)\s+)?|(?:can|could|would|
 // Indefinite amounts and temporal units are separate from exact numeric durations.
 const INDEFINITE_DURATION = /\b(?:in|within)\s+(?:a\s+(?:(?:little|short)\s+)?(?:bit|while|moment)|(?:a\s+)?(?:few|couple of|several)\s+(?:minutes?|hours?|days?|weeks?))\b(?=\s*(?:[.,;!?]|$|so\b|before\b|to\b))/i;
 const FEASIBILITY = '(?:possible|practical|feasible|convenient)';
+// Open temporal comparisons and idioms carry no measurable deadline. Finite
+// event triggers and exact durations are deliberately outside these classes.
+const TEMPORAL_COMPARISON = /\bas (?:early|soon|quickly|promptly) as (?:I|we|you|they) can\b(?=\s*(?:[.,;!?]|$|so\b|to\b))/i;
+const TEMPORAL_IDIOM = /\bbefore (?:too )?long\b(?=\s*(?:[.,;!?]|$|so\b|to\b))/i;
 const VAGUE = /\b(?:soon|shortly|asap|later|in (?:the )?(?:near|foreseeable|not too distant) future|when(?:ever)? you can(?=\s*(?:[.,;!?]|$|\bso\b|\bto\b))|when(?:ever)? you (?:get|have) (?:a|the) (?:chance|moment)|when(?:ever)? you have time|in the coming (?:days|weeks|months)|at (?:some|your(?: earliest)?) (?:point|convenience)|in due course|sometime|at some stage)\b/i;
 const DEPENDENCY = /\b(?:so (?:that )?(?:(?:I|we|you|they|our|your)\b|(?:the|this|that|a|an) (?:[\w-]+ ){1,6}(?:can|will)\b)|before (?:(?:I|we|you|they)|(?:the|our|your) (?:[\w-]+ ){1,5}) ?can|(?:to|will) unblock|depends? on|dependent on|waiting (?:for|on)|then (?:I|we|you|they) can|to (?:begin|start|enable|complete|finish) (?:the|our|your))\b/i;
 const DEADLINE = /\b(?:by|before|on|no later than)\s+(?:(?:next|this)\s+)?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|tomorrow|today|noon|midnight|\d{1,2}(?::\d{2})?(?:\s*(?:am|pm))?\b|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b)|\bwithin\s+\d+\s+(?:business\s+)?(?:hours?|days?|weeks?)\b/i;
@@ -109,6 +113,21 @@ export function isRequestedAction(action: ActionFrame): boolean { return action.
 
 const STATIVE = new Set(['be', 'have', 'know', 'understand', 'want', 'like', 'prefer', 'believe', 'feel', 'mean', 'seem', 'appear', 'note', 'remember']);
 
+/** Parse at most two prepositional owner modifiers. Partitive quantifiers
+ * introduce their own nominal complement; a finite predicate is never skipped
+ * while looking for a later obligation. Unknown group structures abstain. */
+function ownerModifierLength(tail: string): number | null {
+  let consumed = 0;
+  const group = /^\s+(?:on|from|in|within)\s+(?:(?:one|some|any|either|both|each)\s+of\s+)?(?:(?:our|your|their|the|either|both|this|that)\s+)?(?:[\w-]+\s+){0,2}?(?:sides?|teams?|groups?|departments?|organi[sz]ations?|companies|company|offices?|staff)\b/i;
+  for (let depth = 0; depth < 2; depth++) {
+    if (!/^\s+(?:on|from|in|within)\b/i.test(tail.slice(consumed))) return consumed;
+    const phrase = tail.slice(consumed).match(group);
+    if (!phrase) return null;
+    consumed += phrase[0].length;
+  }
+  return /^\s+(?:on|from|in|within)\b/i.test(tail.slice(consumed)) ? null : consumed;
+}
+
 /** Extract only explicit grammatical requests/requirements; unknown relationships remain absent. */
 export function analyzeClause(text: string, offset = 0): ClauseFrame {
   const span = originalSpan(text, offset, 0, text.length);
@@ -147,18 +166,23 @@ export function analyzeClause(text: string, offset = 0): ClauseFrame {
       add('passive-task', null, originalSpan(text, offset, start, start + inflected.length), subject, 'vacant');
     }
   }
-  const ownerLocation = '(?:(?:on|from|in|within)\\s+(?:(?:our|your|their|the|either|both|this|that)\\s+)?(?:[\\w-]+\\s+){0,2}(?:sides?|teams?|groups?|departments?|organi[sz]ations?|companies|company|offices?|staff)\\s+)?';
-  const actor = '(?:someone|somebody|one of us|one of you|whoever)';
-  const obligation = '(?:(?:will|should|must|can|could)\\s+(?:(?:need|have)\\s+to\\s+)?|(?:needs?|has|have)\\s+to\\s+)';
-  const unnamed = new RegExp(`\\b(${actor})\\s+${ownerLocation}${obligation}([a-z]+)\\b`, 'gi');
-  const unnamedQuestion = new RegExp(`\\b(?:can|could)\\s+(${actor})\\s+${ownerLocation}([a-z]+)\\b`, 'gi');
-  for (const match of [...text.matchAll(unnamed), ...text.matchAll(unnamedQuestion)]) {
-    const start = match.index + match[0].length - match[2].length;
-    const remainder = text.slice(start + match[2].length);
-    if (/^(?:tell|report|say|confirm|describe)$/i.test(match[2]) && /\b(?:who|whether|that)\b/i.test(remainder)) continue;
-    const responsibility = match[2].toLowerCase() === 'be' && /^\s+(?:responsible|accountable)\s+for\s+[a-z]+ing\b/i.test(remainder);
-    if ((!STATIVE.has(match[2].toLowerCase()) || responsibility) && /\s+\S/.test(remainder)) {
-      add('delegated-task', originalSpan(text, offset, match.index, match.index + match[1].length), originalSpan(text, offset, start, start + match[2].length), originalSpan(text, offset, start + match[2].length, text.length), 'unspecified');
+  for (const actor of text.matchAll(/\b(?:someone|somebody|one of us|one of you|whoever)\b/gi)) {
+    const actorEnd = actor.index + actor[0].length;
+    const modifierLength = ownerModifierLength(text.slice(actorEnd));
+    if (modifierLength === null) continue;
+    const subjectEnd = actorEnd + modifierLength;
+    const tail = text.slice(subjectEnd);
+    const obligation = tail.match(/^\s+(?:(?:will|should|must|can|could)\s+(?:(?:need|have)\s+to\s+)?|(?:needs?|has|have)\s+to\s+)([a-z]+)\b/i);
+    const question = /\b(?:can|could)\s+$/i.test(text.slice(0, actor.index)) ? tail.match(/^\s+([a-z]+)\b/i) : null;
+    const action = obligation ?? question;
+    if (!action) continue;
+    const verb = action[1];
+    const start = subjectEnd + action[0].length - verb.length;
+    const remainder = text.slice(start + verb.length);
+    if (/^(?:tell|report|say|confirm|describe)$/i.test(verb) && /\b(?:who|whether|that)\b/i.test(remainder)) continue;
+    const responsibility = verb.toLowerCase() === 'be' && /^\s+(?:responsible|accountable)\s+for\s+[a-z]+ing\b/i.test(remainder);
+    if ((!STATIVE.has(verb.toLowerCase()) || responsibility) && /\s+\S/.test(remainder)) {
+      add('delegated-task', originalSpan(text, offset, actor.index, subjectEnd), originalSpan(text, offset, start, start + verb.length), originalSpan(text, offset, start + verb.length, text.length), 'unspecified');
     }
   }
   for (const match of text.matchAll(/\b(?:must|should)\s+be\s+([a-z]+(?:ed|en)|sent|done)\b/gi)) {
@@ -209,7 +233,7 @@ export function analyzeClause(text: string, offset = 0): ClauseFrame {
     const objectText = tail.replace(/(?:\s*(?:,|and|then|finally)\s*)+$/i, '');
     add('request', null, originalSpan(text, offset, request.start, request.start + request.verb.length), originalSpan(text, offset, request.start + request.verb.length, request.start + request.verb.length + objectText.length), 'recipient');
   }
-  const vagueTimes = [...text.matchAll(new RegExp(`(?:${VAGUE.source}|${INDEFINITE_DURATION.source}|\\b(?:as soon as|whenever)\\s+${FEASIBILITY}\\b)`, 'gi'))].filter(match => {
+  const vagueTimes = [...text.matchAll(new RegExp(`(?:${VAGUE.source}|${INDEFINITE_DURATION.source}|${TEMPORAL_COMPARISON.source}|${TEMPORAL_IDIOM.source}|\\b(?:as soon as|whenever)\\s+${FEASIBILITY}\\b)`, 'gi'))].filter(match => {
     if (match[0].toLowerCase() === 'soon' && /as\s+$/i.test(text.slice(0, match.index)) && /^\s+as\b/i.test(text.slice(match.index + match[0].length))) return false;
     if (match[0].toLowerCase() !== 'later') return true;
     return !/^\s+(?:today|tomorrow|tonight|this\s+(?:week|month|year)|next\s+(?:week|month|year)|on\s+|at\s+|by\s+)/i.test(text.slice(match.index + match[0].length));

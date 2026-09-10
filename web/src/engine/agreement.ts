@@ -77,7 +77,7 @@ function explicitReference(proposition: string, reference: string): boolean {
   const concepts = eventConcepts(proposition);
   const named = reference.match(/^(?:this|that)\s+((?:[\w-]+\s+){0,2}?[\w-]+)\s+(?:is|are|was|were|remains?|still|has|have|needs?|requires?)\b/i);
   if (named) {
-    if (/^(?:permission|privilege|access right|access policy|visibility (?:policy|arrangement))$/i.test(named[1]) && concepts.has('access')) return true;
+    if (/^(?:permission|privilege|access right|(?:access|visibility) (?:policy|arrangement|plan))$/i.test(named[1]) && concepts.has('access')) return true;
     if (/^(?:sharing|distribution)\s+(?:arrangement|plan|policy)$/i.test(named[1]) && concepts.has('distribution')) return true;
     if (/^routing\s+(?:arrangement|plan|policy)$/i.test(named[1]) && concepts.has('routing')) return true;
     if (/\b(?:sharing|distribution|routing|visibility|permission|privilege|access)\b/i.test(named[1])) return false;

@@ -28,6 +28,13 @@ A refreshed authenticated check at 14:46 UTC showed Hobby, 4/25 services,
 4 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges.
 No plan, billing, spend-limit or domain setting was changed.
 
+A refreshed authenticated check at 15:47 UTC showed Hobby, 4/25 services,
+6 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges.
+The expanded service breakdown showed communication-check-preview at $0.00;
+the $2.25 workspace service charge belonged to an existing unrelated service.
+The preview configuration still had automatic deploys and PR previews disabled.
+No billing, plan, domain or unrelated service settings were changed.
+
 Use one separate static site, private source repository, provider URL, no custom
 domain, no service plan upgrade and automatic deploys off. No backend or database.
 Only web/dist is published: bundled app/assets, favicon, robots and dependency

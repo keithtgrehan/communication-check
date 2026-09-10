@@ -1,11 +1,15 @@
+import { financialOutcomes, deliveryOutcomes, universalCapability, technicalService } from './outcomes';
 import { hasExplicitDeadline } from './grammar';
 
 /** Definite claim force is evaluated separately from its product or financial outcome. */
 export function commitmentConcern(text: string): boolean {
   if (/[?]\s*$/.test(text) || /^(?:(?:[-*•]|\d+[.)])\s*)?(?:can|could|would|will|does|do|is|are|please confirm|please check)\b/i.test(text)) return false;
+  const finances = financialOutcomes(text);
   const qualified = /\b(?:if|unless|subject to|pending|provided (?:that|we)|assuming|depending on|tentative(?:ly)?|provisional(?:ly)?|not (?:yet )?confirmed|needs? (?:further )?(?:approval|confirmation|testing)|aim(?:ing)? to|hope to|plan to|expect to|intend to|trying to|target(?:ing)?|might|could|should|cannot|can['’]t|won['’]t|will not|do not|don['’]t|not able to|not guarantee|no guarantee|not promising)\b/i;
   const uncertainty = /\b(?:not (?:yet )?(?:sure|certain)|uncertain|unconfirmed|(?:has|have|had) not (?:yet )?been (?:confirmed|verified|approved)|(?:hasn['’]t|haven['’]t|hadn['’]t) (?:yet )?been (?:confirmed|verified|approved))\b/i;
-  if (qualified.test(text) || uncertainty.test(text) || /\bmay\s+(?:not\s+)?(?:be|support|deliver|ship|cost|include|work|have|need|provide|allow|handle|change)\b/i.test(text)) return false;
+  const unrelatedQualification = [...text.matchAll(new RegExp(qualified.source, 'gi'))].some(match =>
+    !finances.some(frame => frame.negation && match.index >= frame.negation.start && match.index + match[0].length <= frame.negation.end));
+  if (unrelatedQualification || uncertainty.test(text) || /\bmay\s+(?:not\s+)?(?:be|support|deliver|ship|cost|include|work|have|need|provide|allow|handle|change)\b/i.test(text)) return false;
   // An explicit request to validate the promise already does the review we would suggest.
   if (/\b(?:please|can you|could you|need to|must|let['’]s)\s+(?:confirm|verify|check)\b/i.test(text)) return false;
   if (/\b(?:will|shall|['’]ll)\s+(?:discuss|review|explain|check|confirm|ask about|talk about)\b/i.test(text)) return false;
@@ -21,8 +25,7 @@ export function commitmentConcern(text: string): boolean {
   // promised price state/benefit, or an explicit guarantee of a price outcome.
   const priceOutcome = /\b(?:fixed|locked|unchanged|free|refund|discount|credit|no (?:extra|additional)|at no)\b|[$€£]\s*\d|\d\s*%/i;
   const pricePredicate = /\b(?:will|shall|['’]ll)\s+(?:(?:always|never|definitely)\s+)?(?:cost|charge|pay|waive|refund|discount|increase|reduce|fix|lock)\b|\b(?:will|shall|['’]ll)\s+(?:remain|stay|be)\s+(?:(?:permanently|fully)\s+)?(?:fixed|locked|unchanged|free|no (?:extra|additional)|[$€£]\s*\d)/i;
-  const passiveFinancialInclusion = /\b(?:will|shall)\s+be\s+(?:included|provided|offered|supplied)\s+(?:at\s+)?no\s+(?:(?:extra|additional)\s+)?(?:cost|charge|fee)s?\b/i.test(text);
-  const priceAssurance = passiveFinancialInclusion || pricePredicate.test(text) || (priceOutcome.test(text)
+  const priceAssurance = finances.length > 0 || pricePredicate.test(text) || (priceOutcome.test(text)
     && /\b(?:guarantee(?:s|d)?|promise)\b|\b(?:will|shall|['’]ll)\s+(?:offer|grant|apply|give|provide|include|honou?r)\b/i.test(text));
   const capability = /\b(?:support|handle|work with|integrate with|sync|synchroni[sz]e|process|automate|eliminate|prevent|ensure|include|provide|enable|allow|run|meet)\b/i;
   // Strong universal assurances require an affirmative technical component
@@ -46,28 +49,27 @@ export function commitmentConcern(text: string): boolean {
     const head = core.match(/[\w-]+$/)?.[0];
     const offering = /^(?:package|plan|subscription|tier|edition|bundle)s?$/i;
     const customReport = /\bcustom\s+(?:[\w-]+\s+){0,3}reports?$/i.test(core);
-    return !!head && (product.test(head) || technicalSubject.test(core) || customReport || (offering.test(head) && product.test(text)));
+    return !!head && (product.test(head) || technicalSubject.test(core) || technicalService(core) || customReport || (offering.test(head) && product.test(text)));
   };
   const directSubject = [...text.matchAll(/\b(?:will|shall|guarantee(?:s|d)?|promises?)\b|['’]ll\b/gi)]
     .some(marker => isProductSubject(text.slice(0, marker.index)));
   const guaranteedComplement = text.match(/\bguarantee(?:s|d)?\s+that\s+((?:[\w.-]+\s+){0,11}?[\w.-]+)\s+(?=(?:can|will|shall|supports?|handles?|works?|integrates?|syncs?|process(?:es)?|automates?|includes?|provides?|enables?|allows?|runs?|meets?)\b)/i);
   const productSubject = directSubject || (!!guaranteedComplement && isProductSubject(guaranteedComplement[1]));
-  const activeProductDelivery = [...text.matchAll(/\b(?:deliver|ship|release|build|launch|deploy|implement|finish|complete)\s+([^;.!?]+)/gi)]
-    .some(match => isProductSubject(match[1].split(/\s+(?:by|before|after|within|on)\s+|,|\band\b/i)[0]));
-
-  const universalOutcome = text.match(/\b(?:will|shall)\s+(?:[a-z]+ly\s+)?([a-z]+)\s+(?:every|all|any)\b/i);
+  const deliveries = deliveryOutcomes(text);
+  const activeProductDelivery = deliveries.some(frame => isProductSubject(frame.target.text));
+  const nominalProductGuarantee = deliveries.some(frame => frame.force === 'guarantee' && isProductSubject(frame.target.text));
+  const universalOutcome = universalCapability(text);
   const errorFree = /\bwithout\s+(?:(?:any|a single)\s+)?(?:errors?|mistakes?|exceptions?|fail)\b|\berror[- ]free\b/i.test(text);
   const serviceSubject = text.match(/\b((?:[\w-]+\s+){0,5}services?)\s+(?:will|shall)\b/i)?.[1];
   const digitalObject = /\b(?:data|records?|files?|formats?|inputs?|images?|photographs?|transactions?|rules?|events?|uploaded|imported)\b/i.test(text);
-  const universalProductCapability = !!universalOutcome && !/^(?:be|have|discuss|review|explain|send|share)$/i.test(universalOutcome[1])
-    && (productSubject || (!!serviceSubject && errorFree && digitalObject));
+  const universalProductCapability = !!universalOutcome && (productSubject || (!!serviceSubject && errorFree && digitalObject));
   const guaranteedPatient = /\b(?:every|all|any)\s+[^.!?;]{1,100}\s+(?:is|are)\s+guaranteed\s+to\s+[a-z]+\b/i.test(text);
   const productDestination = [...text.matchAll(/\b(?:in|into|on)\s+((?:(?:the|our|your|this)\s+)?(?:[\w-]+\s+){0,3}?[\w-]+)(?=\s+(?:within|by|before|after|in)|[.!?,;]|$)/gi)]
     .some(match => isProductSubject(match[1]));
   const priceState = price.test(text) && /\b(?:will|shall)\s+(?:remain|stay|be)\s+(?:at\s+)?[$€£]\s*\d/i.test(text);
   const zeroPrice = /\bthere\s+(?:will|shall)\s+be\s+no\s+(?:(?:extra|additional)\s+)?(?:charges?|fees?|costs?)\b(?=\s*(?:for\b|on\b|to\b|[.!?]|$))/i.test(text)
     || /\bno\s+(?:(?:extra|additional)\s+)?(?:charges?|fees?|costs?)\s+(?:will|shall)\s+(?:apply|be\s+(?:charged|added))\b/i.test(text);
-  if (universalProductCapability || (guaranteedPatient && productDestination) || priceState || zeroPrice) return true;
+  if (finances.length || nominalProductGuarantee || universalProductCapability || (guaranteedPatient && productDestination) || priceState || zeroPrice) return true;
   // Strong assurance can establish the relevant commitment without an exact
   // product-name or capability-verb match. Positive context is still required.
   const automatedUniversal = text.match(/\b(?:the|our|your|this|that)\s+((?:[\w-]+\s+){0,5}[\w-]+)\s+will\s+(?:[a-z]+ly\s+)?[a-z]+\s+(?:every|all|any)\s+[^.!?;]+/i);

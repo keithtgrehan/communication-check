@@ -197,12 +197,38 @@ unresolved defect in this bounded review. The subsequent sealed v6 evaluation fa
 
 Nine independent reserved attempts failed the detection gate; all remain in
 docs/EVALUATION.md. Latest v9 detected 5/12 selected findings with 5/5 useful
-emissions, zero clean-control flags and all spans exact. Current consumed v1–v8
-regression results are 95/96 expected and 95/95 useful findings with no flags across
-32 clean controls, not new heldout evidence. V9 was frozen before v8 diagnostic
+emissions, zero clean-control flags and all spans exact. Current consumed v1–v9
+regression results are 107/108 expected and 107/107 useful findings with no flags across
+36 clean controls, not new heldout evidence. V9 was frozen before v8 diagnostic
 consumption and ran once at 14:57:35.493 UTC against commit
 487fec81307d9ea8d214d7480a164abd89e9aa95. All runtime/manifest/corpus integrity
 checks passed. All labels, denominators, matching criteria and gates remain unchanged.
+
+The six-module semantic repair at manifest
+3bedb1fbffd890207014a6389bf596dddb551795896bcb4e983a2ca5da77ae37 passed
+seven setup/integrity checks, 211 public engine tests, build/typecheck and 19 local
+browser checks. Fixed development benchmarks remain 100/100 and 80/80. The
+consumed v1–v9 result above belongs to this candidate, with full runtime and corpus
+integrity verified. Independent review ran 26 focused probes and found five new
+false flags: denied/requested promises treated as assertions, human consulting
+classified as technical capability, and concrete or hyphenated timing phrases
+treated as vague timing. All five were clean at the previous committed candidate.
+This candidate is not cleared; targeted repairs and independent recheck are required
+before the still-sealed v10 evaluation.
+
+The reviewed correction at manifest
+6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125 resolves
+all five false flags. Fourteen reviewer-derived regression/paired-positive tests
+were added without changing existing expectations. Root validation passes seven
+setup/integrity checks, 225 public tests, build/typecheck and 19 browser checks.
+An independent recheck passes all five original repros and 20 focused probes,
+including positive preservation, claimant scope, service heads, event/deadline
+boundaries and Unicode/CRLF/quoted spans; the reviewer independently passed 225
+tests and typecheck. No material finding remains in that bounded review. Consumed
+v1–v9 remains 107/108 expected and 107/107 useful, with zero findings across 36 clean
+controls and every source/manifest/corpus integrity check passing. Fixed development
+benchmarks remain 100/100 and 80/80. These results do not establish fresh detection
+acceptance. V10 is still sealed and will run only on the committed reviewed bytes.
 
 ## Hosted evidence — current review preview
 
