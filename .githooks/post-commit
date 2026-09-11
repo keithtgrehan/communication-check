@@ -1,0 +1,2 @@
+#!/bin/sh
+node scripts/project.mjs handoff >/dev/null || printf '%s\n' 'Communication Check handoff refresh failed; run npm run handoff.' >&2
