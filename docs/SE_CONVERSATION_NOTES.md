@@ -74,9 +74,10 @@ Use Promises to confirm → Check → Select in draft → edit the guarantee →
 → Copy. Then show Clear next steps and explain its caveat. Practise with the
 existing demo script after the final UI is verified. A recording is optional.
 
-The 10 September verification record reports 225 engine tests, seven setup checks
-and 19 local plus 19 hosted browser checks. Those are baseline engineering results;
-the refreshed interface requires its own verification before presenting new claims.
+The 11 September refresh passes 225 engine tests, seven setup checks and 28 local
+plus 28 hosted browser checks. Fresh independent review found no material issues;
+six deployed assets match the reviewed build. These are engineering results,
+not evidence of broad language accuracy or customer usefulness.
 
 ## Publication boundary
 

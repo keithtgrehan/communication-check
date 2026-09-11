@@ -14,9 +14,9 @@ rewrite the draft, assign a score or send email.
 ## Current evidence
 
 This is a functional portfolio prototype. The reviewed implementation passes
-225 engine tests, seven setup/integrity checks, build/typecheck and 19 local browser
+225 engine tests, seven setup/integrity checks, build/typecheck and 28 local browser
 checks. The [working preview](https://communication-check-preview.onrender.com)
-now serves that reviewed version. All 19 hosted browser checks pass, and all six
+now serves that reviewed version. All 28 hosted browser checks pass, and all six
 assets match the local build. Portfolio delivery is ready; see the
 [case study](docs/CASE_STUDY.md) and [portfolio copy](docs/PORTFOLIO_COPY.md).
 
@@ -91,7 +91,7 @@ not real-world accuracy. Human sessions and pilots are outstanding.
 - [Product brief](docs/PRODUCT_BRIEF.md) and [implementation plan](docs/IMPLEMENTATION_PLAN.md).
 - [Working instructions](AGENTS.md), [GPT/Codex workflow](docs/WORKFLOW.md) and [goal prompt](docs/GOAL_PROMPT.md).
 - [Finding contract](docs/FINDING_CONTRACT.md), [reuse ledger](docs/REUSE_LEDGER.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
-- [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [75-second demo](docs/DEMO_SCRIPT.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
+- [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [75-second demo script](docs/DEMO_SCRIPT.md), [SE conversation notes](docs/SE_CONVERSATION_NOTES.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
 
 The authoritative root is `/Users/keith/Documents/ChatGPT/communication-check`.
 `reference/vibe-signal/` contains six audited inactive source blobs; it is not

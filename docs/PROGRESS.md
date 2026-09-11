@@ -1,28 +1,28 @@
 # Communication Check progress
 
 Updated: 2026-09-11
-Milestone: authorised monochrome UI refresh and portfolio packaging started
-Status: local refresh and independent review passed; preview update next
+Milestone: monochrome UI refresh deployed and verified
+Status: refreshed preview and portfolio package ready; milestone handoff pending
 
 ## Current refresh checklist
 
 - [x] v0 direction reviewed — one proposal and one focused revision, using existing $5 monthly credit with v0 Mini. Only three fictional screenshots and design brief supplied; no purchase or repository connection.
 - [x] Presentation integrated — monochrome layout, 16px draft/body, 14px secondary text, 44px controls and 880px stacking; engine and original handlers preserved.
 - [x] Local checks and fresh independent review — 7 setup + 225 engine + 28 browser checks pass. Fresh Astra review found no material issues; focused checks at 320/880/881/1440px passed.
-- [ ] Preview updated and verified — previous deployment remains live.
-- [ ] Portfolio materials ready — Featured copy and SE conversation notes prepared; final screenshots and verification pending.
+- [x] Preview updated and verified — dep-dai10kbm8hqs73dnm68g, live 2026-09-11 14:29:50 UTC at 4931fe2f8968b0447c5e2872e520306aa0bb74b7; all 28 hosted checks pass.
+- [x] Portfolio materials ready — three verified hosted screenshots, Featured title/description/link/thumbnail, updated case study with all ten results, demo script and SE notes. Recording deferred.
 
-## Previously delivered
+## Current delivery
 
 - Canonical root: /Users/keith/Documents/ChatGPT/communication-check.
 - Private repository: https://github.com/keithtgrehan/communication-check. Branch: codex/communication-check-mvp. Existing draft PR #1: https://github.com/keithtgrehan/communication-check/pull/1; unmerged.
-- Working preview: https://communication-check-preview.onrender.com. Render deployment dep-dahdjffqj5pc73a9mhrg, live at 16:24:43 UTC from checkout 8a83afd46133abf07d7c0087fd09b222112b09d0. Later delivery edits are documentation/screenshots only.
+- Working preview: https://communication-check-preview.onrender.com. Render deployment dep-dai10kbm8hqs73dnm68g, live 2026-09-11 at 14:29:50 UTC from checkout 4931fe2f8968b0447c5e2872e520306aa0bb74b7. Later delivery edits are documentation/screenshots only.
 - Static React/Vite editor: five check families, up to three exact quotes, dismissal, edit/recheck, current-text copy, reset and three fictional demos. No rewriting, sending, scores or factual/agreement verification.
 - Reviewed runtime from d1230d6d066bc4a8eef9aa08d7818c1404d09c04; complete six-module manifest 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125.
-- Seven setup/integrity tests, 225 public engine tests, build/typecheck and 19 local browser checks pass. Independent review cleared five original regressions and 20 focused probes. Original 18 development fixtures are unchanged.
-- All 19 hosted Chromium checks pass. Six assets match the local build byte-for-byte; six response headers and eight source/config exclusions pass. See docs/HOSTED_VERIFICATION.json and docs/VERIFICATION.md.
+- Seven setup/integrity tests, 225 public engine tests, build/typecheck and 28 local browser checks pass. Independent review cleared five original regressions and 20 focused probes. Original 18 development fixtures are unchanged.
+- All 28 hosted Chromium checks pass. Six assets match the local build byte-for-byte; six response headers and eight source/config exclusions pass. See docs/HOSTED_VERIFICATION.json and docs/VERIFICATION.md.
 - Browser coverage includes exact evidence, editing/dismissal, clipboard success/denial, keyboard, 320/390/1440px layouts, 200% content zoom, runtime network/storage/log canaries, reload clearing and offline use. Automated checks are not physical-device testing or accessibility certification.
-- Portfolio case study, reusable project copy, desktop/mobile/clean screenshots, 75-second demo, README, reuse ledger, third-party notices, human-validation protocol and rollback instructions are ready. The screenshots use fictional demos and were visually inspected. Six pinned inactive Vibe source blobs remain unchanged and excluded from runtime.
+- Portfolio case study, reusable project copy, desktop/mobile/clean screenshots, 75-second demo script, SE conversation notes, README, reuse ledger, third-party notices, human-validation protocol and rollback instructions are ready. The screenshots use fictional demos and were visually inspected. Six pinned inactive Vibe source blobs remain unchanged and excluded from runtime.
 
 ## Explicit scope decision
 
@@ -64,10 +64,11 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 - The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
 - ChatGPT project instructions are saved. The final 16:28 UTC portfolio Sources snapshot was uploaded and verified ready before the earlier 16:02 source was removed. Task-message delivery and Sources updates remain separate milestone actions, not continuous sync.
-- Refreshed 16:24 UTC Render allowance: Hobby, 4/25 services, 6 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahblp5bedkc739vpj90 at 10d4e76. No billing, plan, domain or unrelated service changes.
+- Refreshed 2026-09-11 14:27 UTC Render allowance: Hobby, 4/25 services, 8 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahdjffqj5pc73a9mhrg at 8a83afd. No billing, plan, domain or unrelated service changes.
 - Repository stays private and PR stays draft/unmerged. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
 
 ## Next action
 
-Finish independent review, update the existing preview and verify hosted behaviour,
-then capture final screenshots and deliver the portfolio package.
+Deliver the allowlisted milestone handoff, then Keith reviews the preview and
+prepared Featured package. Publication requires separate approval; no further
+engine research or design round is started.

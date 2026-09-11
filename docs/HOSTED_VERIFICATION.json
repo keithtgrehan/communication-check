@@ -1,7 +1,7 @@
 {
-  "verifiedAt": "2026-09-10T16:25:36.171Z",
+  "verifiedAt": "2026-09-11T14:30:13.822Z",
   "origin": "https://communication-check-preview.onrender.com",
-  "checkoutCommit": "8a83afd46133abf07d7c0087fd09b222112b09d0",
+  "checkoutCommit": "4931fe2f8968b0447c5e2872e520306aa0bb74b7",
   "engineSha256": "f986ee9f49812a97ae8ee1e49669b5d733ce657585bcb3da68d34e920353cfb5",
   "engineManifest": {
     "schemaVersion": 1,
@@ -41,24 +41,24 @@
       "sha256": "413817118e227691fd9e4f56d4bf32b628f99e1d4cc9088d89ee233e77b5d042"
     },
     {
-      "path": "assets/index-B22ymtXq.js",
-      "bytes": 267554,
-      "sha256": "733eba73afbbcbd2ee55b82bc1c97b7980debed51a723daa92519b9ebd2615e4"
+      "path": "assets/index-BhOk_XVI.js",
+      "bytes": 266253,
+      "sha256": "c08de01c23b1970e386ca6c47999072575fc81b0e0f93a18e21bc8c5ea768978"
     },
     {
-      "path": "assets/index-DPg0hRJf.css",
-      "bytes": 11666,
-      "sha256": "5e19a17b474c318f2940b7eb6ed5fee89374de6a5d2f0d21fb16e85ae2dfd072"
+      "path": "assets/index-uI2eGlNh.css",
+      "bytes": 7394,
+      "sha256": "4985b14336b16cefed7a00e08ddca2373c2ffbeec0fe7c3d10909b5f43ca495f"
     },
     {
       "path": "favicon.svg",
       "bytes": 243,
-      "sha256": "0462bdbb8d187e6c5aee2b0ed4d32904b52813beb87c793225c1e98875b5e48b"
+      "sha256": "09bd5db9c88142be5cd2c0f29b262fe9fdfde791f29279d161f017a66fd9b652"
     },
     {
       "path": "index.html",
-      "bytes": 1148,
-      "sha256": "3bdc821458fb0f97b67536fa1ad49006bb9bc14f472120cf836575b409312e55"
+      "bytes": 1163,
+      "sha256": "e8c88d37e68c8f199a120b9f9f2f9796d5a01b23719e306288eb00d0ae46934d"
     },
     {
       "path": "robots.txt",

@@ -50,8 +50,8 @@ path. Product direction and decisions were coordinated with Codex/Astra agents;
 this was an AI-assisted build.
 
 The reviewed implementation passes 225 engine tests, seven setup/integrity checks,
-and 19 local browser checks covering editing, clipboard, exact evidence, keyboard,
-responsive layout and runtime privacy behaviour. The same 19 checks pass on the hosted preview; six deployed assets match the
+and 28 local browser checks covering editing, clipboard, exact evidence, keyboard,
+responsive layout and runtime privacy behaviour. The same 28 checks pass on the hosted preview; six deployed assets match the
 reviewed local build. Automated browser checks are not a full
 accessibility certification or human usability study.
 

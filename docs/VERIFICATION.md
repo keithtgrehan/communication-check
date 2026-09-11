@@ -287,3 +287,18 @@ before prototype implementation or challenge creation/freeze/execution.
 - Fresh desktop/mobile/clean screenshots use the built-in fictional demos on this deployment. Desktop and mobile images were visually inspected with no layout issue identified.
 - The app is delivered as a functional portfolio prototype. All ten original detection failures remain, latest 4/12. The known language-coverage limitation is disclosed; no general reliability, human usefulness or production-readiness claim is made. Human sessions remain 0/3 and pilots 0/5.
 - Separate preview only; repository private, PR #1 draft and unmerged. No public product launch, domain, billing or unrelated service changes.
+
+## Monochrome refresh delivery — 11 September 2026
+
+This is the current delivery record. The engine and all ten original failed
+detection results remain unchanged; there were no new evaluation rounds.
+
+- Reviewed/deployed checkout: 4931fe2f8968b0447c5e2872e520306aa0bb74b7.
+- Full engine manifest: 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125; unchanged from the prior portfolio version. App handlers/state before JSX, demos and dependencies are unchanged.
+- Full local validation: 7 setup/integrity checks, 225 engine tests, typecheck/build/source guards and 28 Chromium checks pass.
+- Fresh independent Astra Extra High review found no material issues. It inspected five state screenshots and ran focused 320/880/881/1440px probes covering layout, exact selection, stale invalidation, current-text copy and axe. Detailed scope/limits: docs/UI_REFRESH.md.
+- Generic checker error was tested using an ignored isolated build alias, without a production debug seam: draft retention/retry, absent stale findings, edit recovery and zero axe violations. Disabled text contrast: 5.49–5.70:1.
+- Render dep-dai10kbm8hqs73dnm68g became live at 14:29:50 UTC. All six assets match the local build; six HTTP headers and eight excluded-path 404s pass. Machine-readable evidence: docs/HOSTED_VERIFICATION.json.
+- All 28 hosted Chromium checks pass in 35.9 seconds: 320/390/879/881/1440px, 44px controls, long-quote wrapping, initial primary action at 1440×900, secondary states/keyboard/axe, 200% content zoom, all three real-engine demos, exact evidence at long-draft beginning/middle/end, editing, dismissal, current-copy/refusal, runtime canary network/storage/log checks, offline use and reload clearing.
+- Automated Chromium and agent inspection are not physical-device or assistive-technology testing, accessibility certification, general-language accuracy or human validation. No production-reliability claim is made.
+- Final hosted desktop/mobile/clean screenshots were captured after verification and visually inspected. The scripted guarantee edit, stale clearing, recheck and current-copy flow passed on the hosted candidate. Recording is deferred.

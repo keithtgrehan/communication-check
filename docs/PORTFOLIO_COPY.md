@@ -39,5 +39,6 @@ and no completed customer validation.
 - Clean-result screenshot demonstrates that no flags does not verify facts.
 - Existing case study: CASE_STUDY.md; walkthrough: DEMO_SCRIPT.md.
 - Conversation preparation: SE_CONVERSATION_NOTES.md.
-- The monochrome refresh and its final screenshots are pending; the existing preview and screenshots show the prior design.
+- The monochrome preview and all three hosted screenshots are verified, 11 September 2026. Use desktop-review.png as the Featured thumbnail.
+- Video recording is deferred; the 75-second script is ready.
 - This copy is prepared, not posted. LinkedIn publication, video upload and outreach require separate authorisation. No separate portfolio site has been changed.

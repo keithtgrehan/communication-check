@@ -1,6 +1,6 @@
 # Separate preview and rollback
 
-Status: existing portfolio preview is live; the authorised monochrome refresh is in final local review. Engine research is stopped for this delivery.
+Status: monochrome portfolio preview is live and verified. Engine research is stopped for this delivery.
 
 ## Verified hosting basis — 2026-09-10
 
@@ -125,7 +125,7 @@ Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1
 - This is an interim review preview: all seven fresh evaluations have failed the detection requirement, so engineering completion remains unclaimed.
 
 
-## Current portfolio preview
+## Previous portfolio preview — 10 September
 
 - URL: https://communication-check-preview.onrender.com
 - Source checkout: 8a83afd46133abf07d7c0087fd09b222112b09d0; reviewed runtime from d1230d6d066bc4a8eef9aa08d7818c1404d09c04.
@@ -146,3 +146,12 @@ The existing static preview remains on the intended repository/branch with
 auto-deploy and PR previews off. Rollback for the forthcoming visual refresh is
 verified deployment dep-dahdjffqj5pc73a9mhrg at
 8a83afd46133abf07d7c0087fd09b222112b09d0.
+
+## Current monochrome portfolio preview — 11 September
+
+- Source checkout: 4931fe2f8968b0447c5e2872e520306aa0bb74b7. Engine manifest unchanged at 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125.
+- Deployment: dep-dai10kbm8hqs73dnm68g, live 2026-09-11 14:29:50 UTC, on the same static service/provider URL.
+- Six exact asset hashes, six response headers and eight excluded source/config paths pass. All 28 hosted Chromium checks pass (35.9 seconds).
+- Rollback: dep-dahdjffqj5pc73a9mhrg at 8a83afd46133abf07d7c0087fd09b222112b09d0. Use this service's Events rollback action and reverify assets and hosted checks.
+- Automatic deploys and PR previews remain off; no hosting configuration, plan, billing, domain or unrelated service changes. Allowance inspected above before deployment.
+- Private source and separate noindex preview; no main merge or public launch. All ten detection failures remain preserved.
