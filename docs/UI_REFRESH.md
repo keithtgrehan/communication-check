@@ -34,7 +34,7 @@ that the refresh passes. Existing state accessibility checks pass.
 - [x] Local integration and full validation complete: 7 setup, 225 engine and 28 browser checks; typecheck/build and source guards pass.
 - [x] Fresh independent Astra Extra High review cleared with no material findings.
 - [x] Existing Render preview updated and verified: reviewed commit 4931fe2, six assets/headers, eight exclusions and all 28 hosted browser checks pass.
-- [x] Final screenshots and portfolio copy complete; milestone handoff is the final delivery step.
+- [x] Final screenshots, portfolio copy and allowlisted milestone handoff complete.
 
 LinkedIn publication, recording upload and outreach remain unauthorised. Recording
 is optional and deferred until required materials are ready.
@@ -68,3 +68,7 @@ were visually inspected. The demo script edit/recheck/current-copy flow passed
 on the hosted candidate. Featured title, description, demo link and desktop
 thumbnail, case study with all ten failed results, script and SE notes are ready.
 Recording is deferred. Nothing has been posted to LinkedIn or sent as outreach.
+
+The existing product-companion task received the allowlisted brief/progress packet
+and completed its turn. No new task was created. ChatGPT Project Sources still
+contains its dated 10 September copy; task delivery does not replace that source.

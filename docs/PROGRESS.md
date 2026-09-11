@@ -2,7 +2,7 @@
 
 Updated: 2026-09-11
 Milestone: monochrome UI refresh deployed and verified
-Status: refreshed preview and portfolio package ready; milestone handoff pending
+Status: refreshed preview and portfolio package delivered
 
 ## Current refresh checklist
 
@@ -63,12 +63,12 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 ## Workflow and boundaries
 
 - The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
-- ChatGPT project instructions are saved. The final 16:28 UTC portfolio Sources snapshot was uploaded and verified ready before the earlier 16:02 source was removed. Task-message delivery and Sources updates remain separate milestone actions, not continuous sync.
+- ChatGPT project instructions are saved. The Sources snapshot remains dated 2026-09-10 16:28 UTC. The 11 September allowlisted brief/progress packet was delivered to the existing companion task, which completed its turn. Task delivery is not Sources synchronisation.
 - Refreshed 2026-09-11 14:27 UTC Render allowance: Hobby, 4/25 services, 8 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahdjffqj5pc73a9mhrg at 8a83afd. No billing, plan, domain or unrelated service changes.
 - Repository stays private and PR stays draft/unmerged. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
 
 ## Next action
 
-Deliver the allowlisted milestone handoff, then Keith reviews the preview and
-prepared Featured package. Publication requires separate approval; no further
-engine research or design round is started.
+Keith reviews the preview and prepared Featured package. Publication requires
+separate approval. Recording is deferred; no further engine research or design
+round is started.
