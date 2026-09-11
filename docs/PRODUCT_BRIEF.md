@@ -15,6 +15,13 @@ unmet and must be documented honestly; it is not a shipping gate for this explic
 revised portfolio scope. Do not claim reliable general-language detection,
 production readiness, human validation or that the original target passed.
 
+**Visual refresh authorised, 2026-09-11:** Use one v0 direction for a restrained
+monochrome presentation, larger readable text, compact introduction/examples and
+an open review column. Preserve the existing engine and behaviour. Allow at most
+two focused v0 revisions; verify locally, independently and on the existing preview
+before final screenshots. Prepare LinkedIn Featured and Solutions Engineering
+materials; publication and outreach remain separate, unapproved actions.
+
 ## Frozen MVP
 
 Choose a fictional example or paste a draft → check → inspect useful findings → edit → recheck → copy. Provide three fictional demos that use the same checker as user drafts. Show up to three useful findings; each quotes exact original wording, explains the concern plainly, offers an actionable review prompt, and can be dismissed.

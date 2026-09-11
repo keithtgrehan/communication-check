@@ -119,7 +119,7 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   await expect(page.locator('.finding-card')).toHaveCount(0);
 });
 
-for (const width of [320, 390, 1440]) {
+for (const width of [320, 390, 879, 881, 1440]) {
   test(`keyboard flow, layout and accessibility at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('/');
@@ -129,6 +129,13 @@ for (const width of [320, 390, 1440]) {
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).focus();
     await page.keyboard.press('Tab');
     await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeFocused();
+    const focusRing = await page.getByRole('button', { name: 'Check draft', exact: true }).evaluate(button => {
+      const style = getComputedStyle(button);
+      return { style: style.outlineStyle, width: parseFloat(style.outlineWidth), color: style.outlineColor };
+    });
+    expect(focusRing.style).not.toBe('none');
+    expect(focusRing.width).toBeGreaterThanOrEqual(2);
+    expect(focusRing.color).not.toBe('rgba(0, 0, 0, 0)');
     await page.keyboard.press('Enter');
     await expect(page.getByRole('heading', { name: 'Checks to consider' })).toBeFocused();
     await page.keyboard.press('Tab');

@@ -29,3 +29,11 @@ candidate patterns above informed requirements only; no code or regression
 fixture was imported from them. UTF-16 slicing and selection use browser-native
 offsets. The only bundled external runtime code is React, React DOM and Scheduler;
 see THIRD_PARTY_NOTICES.md and the shipped exact MIT notice.
+
+## 11 September visual refresh
+
+The user-authorised v0 design session supplied one monochrome direction and one
+focused revision using only three fictional screenshots and a minimal brief.
+Presentation was adapted to the existing React/Vite JSX and CSS; no generated
+scaffold, mock checker, handler code or dependency was imported. See
+[UI refresh provenance](UI_REFRESH.md) for the design-session link and validation.

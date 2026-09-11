@@ -1,36 +1,43 @@
 # Communication Check — portfolio copy
 
-## Project card
+## LinkedIn Featured title
 
-**Communication Check**
+Communication Check | Customer follow-up review prototype
 
-A browser-local prototype that helps customer-success teams review onboarding
-follow-up emails. Paste a draft, inspect up to three prompts tied to exact wording,
-then edit and copy. Built with React and TypeScript through an AI-assisted workflow.
+## Featured description
 
-[Try the demo](https://communication-check-preview.onrender.com)
+A working prototype exploring how customer-success teams can review onboarding
+follow-ups before sending. Inspect prompts tied to exact wording, edit, recheck
+and copy. Drafts stay in the browser. Built with React and TypeScript through an
+AI-assisted workflow. The deterministic checker has limited language coverage
+and has not been validated with customers.
 
-## Short project description
+## Destination
 
-I designed and built a focused review experience for the moment before a customer
-follow-up is sent. Communication Check highlights wording worth checking around
-ownership, timing, competing requests, agreement language and commitments.
+[Try the demo](https://communication-check-preview.onrender.com/)
 
-The interface keeps the writer in control: no scores, automatic rewrites or send
-button. Drafts stay in the browser, and every prompt points to the original text.
-Three fictional examples make the product easy to explore without supplying a
-real email.
+Use the demo as the primary link; the source repository remains private.
 
-This is a functional portfolio prototype. The rule-based checker has limited
-language coverage; usefulness with real customers has not yet been validated.
+## Short case-study introduction
 
-## Suggested presentation
+After an onboarding call, a follow-up can leave the customer unsure who acts next
+or whether a commitment has been confirmed. I directed an AI-assisted prototype
+exploring a focused review step before sending.
 
-- Lead image: desktop-review.png.
-- Supporting image: mobile-review.png.
-- Primary link: the working demo above.
-- Walkthrough: follow DEMO_SCRIPT.md for approximately 75 seconds.
-- Supporting story: CASE_STUDY.md explains the product decisions and tradeoffs.
+Three decisions shape the experience: each prompt points to exact original
+wording; the writer keeps control of changes; and checking runs locally in the
+browser. There are no scores, automatic rewrites or send actions.
 
-Use the screenshots and description on your portfolio when you choose to publish
-it. No change to a separate portfolio website has been made as part of this build.
+I set the product direction, scope and presentation priorities. Codex/Astra agents
+implemented the application and ran the documented checks. The result is a
+functional portfolio prototype, with limited deterministic language detection
+and no completed customer validation.
+
+## Presentation assets and status
+
+- Lead image: desktop-review.png; supporting image: mobile-review.png.
+- Clean-result screenshot demonstrates that no flags does not verify facts.
+- Existing case study: CASE_STUDY.md; walkthrough: DEMO_SCRIPT.md.
+- Conversation preparation: SE_CONVERSATION_NOTES.md.
+- The monochrome refresh and its final screenshots are pending; the existing preview and screenshots show the prior design.
+- This copy is prepared, not posted. LinkedIn publication, video upload and outreach require separate authorisation. No separate portfolio site has been changed.

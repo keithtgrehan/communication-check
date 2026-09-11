@@ -1,10 +1,18 @@
 # Communication Check progress
 
-Updated: 2026-09-10
-Milestone: polished portfolio prototype and verified preview delivered
-Status: user-revised portfolio scope complete; final Project Sources upload verified
+Updated: 2026-09-11
+Milestone: authorised monochrome UI refresh and portfolio packaging started
+Status: local refresh and independent review passed; preview update next
 
-## Delivered
+## Current refresh checklist
+
+- [x] v0 direction reviewed — one proposal and one focused revision, using existing $5 monthly credit with v0 Mini. Only three fictional screenshots and design brief supplied; no purchase or repository connection.
+- [x] Presentation integrated — monochrome layout, 16px draft/body, 14px secondary text, 44px controls and 880px stacking; engine and original handlers preserved.
+- [x] Local checks and fresh independent review — 7 setup + 225 engine + 28 browser checks pass. Fresh Astra review found no material issues; focused checks at 320/880/881/1440px passed.
+- [ ] Preview updated and verified — previous deployment remains live.
+- [ ] Portfolio materials ready — Featured copy and SE conversation notes prepared; final screenshots and verification pending.
+
+## Previously delivered
 
 - Canonical root: /Users/keith/Documents/ChatGPT/communication-check.
 - Private repository: https://github.com/keithtgrehan/communication-check. Branch: codex/communication-check-mvp. Existing draft PR #1: https://github.com/keithtgrehan/communication-check/pull/1; unmerged.
@@ -61,6 +69,5 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can review the three demo flows and use the prepared screenshots and copy
-for his portfolio. Resume this same lead task only for a concrete requested change;
-do not restart deeper engine research automatically.
+Finish independent review, update the existing preview and verify hosted behaviour,
+then capture final screenshots and deliver the portfolio package.

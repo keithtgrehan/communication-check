@@ -20,7 +20,7 @@ wording behind each prompt, edit, recheck and copy. The interface limits results
 to three prompts so the review stays manageable. Every prompt can be dismissed;
 the writer keeps the decision.
 
-A warm neutral background, dark teal accents and editorial typography give the
+A warm white background, charcoal controls and restrained editorial typography give the
 product a calm, focused feel. The desktop layout places the draft beside its
 review. On smaller screens, the same sequence becomes a single column. Clear
 focus states, keyboard controls and precise evidence selection support the core
@@ -45,7 +45,7 @@ pasted drafts; their results are not staged responses.
 ## What was delivered
 
 A responsive working preview, three interactive demos, reviewed implementation,
-desktop and mobile screenshots, a 75-second walkthrough and a documented rollback
+desktop and mobile screenshots, a 75-second walkthrough script and a documented rollback
 path. Product direction and decisions were coordinated with Codex/Astra agents;
 this was an AI-assisted build.
 
@@ -68,3 +68,24 @@ design, browser-local implementation and an honest approach to validation. It is
 not presented as a reliable general-purpose writing assistant. Future product
 work would start with real user feedback and a deliberate decision about detection
 quality before expanding the scope.
+
+## Preserved evaluation history
+
+Every reserved attempt missed the original target of at least 10/12 selected
+findings. These small fictional sets are not estimates of real-world accuracy.
+No thresholds, labels or historical results were changed for portfolio delivery.
+
+| Attempt | Expected findings detected | Useful emissions | Clean-control flags |
+| --- | --- | --- | --- |
+| V1 | 9/12 | 9/10 | 1 |
+| V2 | 4/12 | 4/4 | 0 |
+| V3 | 6/12 | 6/6 | 0 |
+| V4 | 6/12 | 6/6 | 0 |
+| V5 | 7/12 | 7/7 | 0 |
+| V6 | 6/12 | 6/6 | 0 |
+| V7 | 6/12 | 6/6 | 0 |
+| V8 | 8/12 | 8/8 | 0 |
+| V9 | 5/12 | 5/5 | 0 |
+| V10 | 4/12 | 4/4 | 0 |
+
+Detailed methods and preserved aggregate records remain in docs/EVALUATION.md.

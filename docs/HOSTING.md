@@ -1,6 +1,6 @@
 # Separate preview and rollback
 
-Status: updated review preview is live and verified. Engine coverage work continues.
+Status: existing portfolio preview is live; the authorised monochrome refresh is in final local review. Engine research is stopped for this delivery.
 
 ## Verified hosting basis — 2026-09-10
 
@@ -135,3 +135,14 @@ Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1
 - Refreshed billing inspection at 16:24 UTC: Hobby, 4/25 services, 6 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview-service and pipeline charges. Existing billing settings were unchanged. The provider allowance is bounded, not a guarantee of unlimited free hosting.
 - Rollback target: previous verified dep-dahblp5bedkc739vpj90 at 10d4e764c09938b61a04b2a3cd8cd48c7a091441. Select it in this service's Events page, then reverify its assets and hosted flow. Both versions have documented detection limits.
 - Keith revised delivery to a polished portfolio prototype. All ten failed detection evaluations remain preserved; this deployment does not imply the original accuracy gate passed. The provider URL is reachable and noindex, not authenticated or approval for a public product launch.
+
+## 11 September refresh preparation
+
+Authenticated billing check at 14:27 UTC: Hobby, 4/25 services, 8 MB/5 GB
+bandwidth, 0/500 pipeline minutes displayed and $0.00 preview/pipeline charges.
+The $2.47 workspace service charge belongs to the existing unrelated RCR service.
+No plan, billing, spend-limit, domain or other service settings were changed.
+The existing static preview remains on the intended repository/branch with
+auto-deploy and PR previews off. Rollback for the forthcoming visual refresh is
+verified deployment dep-dahdjffqj5pc73a9mhrg at
+8a83afd46133abf07d7c0087fd09b222112b09d0.

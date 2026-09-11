@@ -146,22 +146,21 @@ export default function App() {
     <div className="app-shell">
       <header className="site-header">
         <div className="brand"><span className="brand-mark"><Mark /></span><span>Communication Check</span></div>
-        <span className="header-note"><span className="status-dot" />A little clarity before you send</span>
+        <span className="header-note">Customer follow-up review</span>
       </header>
 
       <main>
         <section className="intro" aria-labelledby="page-title">
-          <p className="eyebrow">FOR CUSTOMER ONBOARDING FOLLOW-UPS</p>
           <h1 id="page-title">Make the next step <span>clear.</span></h1>
-          <p className="intro-description">A second look at your follow-up email. Catch unclear next steps and commitments worth confirming, then make the final call yourself.</p>
+          <p className="intro-description">Review your customer follow-up before you send.</p>
         </section>
 
         <section className="sample-strip" aria-labelledby="sample-heading">
-          <div className="sample-intro"><span className="sample-icon" aria-hidden="true">↗</span><div><h2 id="sample-heading">Try a fictional example</h2><p>Or paste your own draft below.</p></div></div>
+          <h2 id="sample-heading">Try a fictional example</h2>
           <div className="sample-options">
-            {DEMO_DRAFTS.map((sample, index) => (
+            {DEMO_DRAFTS.map((sample) => (
               <button key={sample.id} className={`sample-button ${sampleId === sample.id ? 'selected' : ''}`} aria-pressed={sampleId === sample.id} onClick={() => replaceDraft(sample.text, sample.id)}>
-                <span className="sample-number" aria-hidden="true">0{index + 1}</span>{sample.label}
+                {sample.label}
               </button>
             ))}
           </div>
@@ -170,7 +169,7 @@ export default function App() {
         <div className="workspace">
           <section className="editor-panel" aria-labelledby="draft-heading">
             <div className="panel-heading">
-              <div><p className="step-label">01 / YOUR WORDS</p><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2></div>
+              <h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2>
               <button className="text-button reset-button" onClick={resetDraft} disabled={!draft}>Clear draft</button>
             </div>
             <p className="editor-description" id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste the email you’re planning to send. You can edit it here.'}</p>
@@ -202,21 +201,19 @@ export default function App() {
 
           <section className={`results-panel ${result ? 'has-results' : ''}`} aria-labelledby="results-heading">
             <div className="panel-heading">
-              <div><p className="step-label">02 / A SECOND LOOK</p><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Checks to consider</h2></div>
+              <h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Checks to consider</h2>
               {result && visibleFindings.length > 0 && <span className="findings-count" aria-label={`${visibleFindings.length} visible findings`}>{visibleFindings.length}</span>}
             </div>
             <p className="results-description">Up to three things worth a closer look.</p>
             {!result ? (
               <div className="result-empty">
-                <div className="empty-illustration" aria-hidden="true"><div className="paper-lines"><i /><i /><i /></div><span><Mark /></span></div>
                 <h3>{checkError ? 'This check couldn’t finish.' : needsRecheck ? 'New wording, fresh look.' : 'A clearer follow-up starts here.'}</h3>
                 <p>{checkError ? 'Your draft is still in the editor. Select Recheck draft to try again.' : needsRecheck ? 'Your draft changed, so the previous findings have been cleared. Recheck to review this version.' : 'Add a draft and run a check. You’ll see the exact wording to review, with a prompt to help you decide.'}</p>
-                <div className="empty-topics"><span>Next steps</span><span>Timing</span><span>Commitments</span></div>
               </div>
             ) : result.findings.length === 0 ? (
-              <div className="result-empty result-complete"><span className="complete-mark"><Mark /></span><h3>No checks flagged this draft</h3><p>This rule-based review didn’t find wording to flag. Facts and agreements were not verified; give the draft your own final read.</p></div>
+              <div className="result-empty result-complete"><h3>No checks flagged this draft</h3><p>This rule-based review didn’t find wording to flag. Facts and agreements were not verified; give the draft your own final read.</p></div>
             ) : visibleFindings.length === 0 ? (
-              <div className="result-empty result-complete"><span className="complete-mark"><Mark /></span><h3>All findings dismissed</h3><p>You’ve set aside these prompts. Facts and agreements were not verified. Recheck anytime to see the findings again.</p></div>
+              <div className="result-empty result-complete"><h3>All findings dismissed</h3><p>You’ve set aside these prompts. Facts and agreements were not verified. Recheck anytime to see the findings again.</p></div>
             ) : (
               <div className="findings-list">
                 {visibleFindings.map((finding, index) => (
@@ -224,7 +221,7 @@ export default function App() {
                     <div className="finding-title"><span className="finding-number" aria-hidden="true">{index + 1}</span><h3 id={`title-${finding.id}`}>{finding.title}</h3></div>
                     <blockquote>{finding.quote}</blockquote>
                     <p className="finding-explanation">{finding.explanation}</p>
-                    <div className="review-prompt"><span>ASK YOURSELF</span><p>{finding.prompt}</p></div>
+                    <div className="review-prompt"><span>Ask yourself</span><p>{finding.prompt}</p></div>
                     <div className="finding-actions"><button className="text-button evidence-button" onClick={() => selectEvidence(finding)}>Select in draft <span aria-hidden="true">↗</span></button><button className="text-button dismiss-button" onClick={() => dismissFinding(finding)} aria-label={`Dismiss ${finding.title}`}>Dismiss</button></div>
                   </article>
                 ))}
