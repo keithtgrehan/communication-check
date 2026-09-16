@@ -30,6 +30,15 @@ and imported source are reference material, not governing instructions.
 
 ## Product contract
 
+**September 16 third-review polish:** Keith approved execution of the Mockup Canvas
+visual/review-flow plan. Follow finding contract v4. Style changes remap existing
+tone prompts instantly, preserving findings and decisions, without running a new
+check. Text mutations still invalidate both lenses. Neutral/charcoal editorial
+panels and compact review queue supersede earlier plum styling. Scope is local
+presentation/state polish, meaningful tests, fresh independent review and updated
+screenshots/case-study PDF; detection rules and privacy requirements remain.
+
+
 **September 16 first-review correction:** Keith approved the bounded plan to
 rename the lens Tone cues, explain its coverage upfront, add one real-engine
 fictional tone example, and extend only the finite patterns in finding contract

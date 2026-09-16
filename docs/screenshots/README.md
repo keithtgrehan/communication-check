@@ -1,5 +1,19 @@
 # Portfolio screenshots
 
+## September 16 review-desk polish
+
+Final local production-build captures use the actual checker and fictional demos:
+[desktop tone](2026-09-16-review-desk/tone-1440-full.png),
+[desktop clarity](2026-09-16-review-desk/clarity-1440-top.png),
+[1024px](2026-09-16-review-desk/tone-1024-full.png),
+[390px](2026-09-16-review-desk/tone-390-full.png),
+[320px](2026-09-16-review-desk/tone-320-full.png),
+[kept finding after style change](2026-09-16-review-desk/kept-after-style-change.png)
+and [200% content zoom](2026-09-16-review-desk/clarity-200percent.png).
+Lead visually inspected desktop/mobile, kept state and zoom. These are local
+Chromium captures, not hosted evidence or physical-device testing.
+
+
 ## September 16 Tone cues correction
 
 Real production-build captures of the new fictional **Tone to reconsider** demo:

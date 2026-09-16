@@ -120,7 +120,7 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   await page.getByRole('button', { name: 'Edit this wording' }).click();
   await expect(editor).toBeFocused();
   await page.getByRole('radio', { name: 'Warm', exact: true }).check();
-  await page.getByRole('button', { name: 'Review tone again' }).click();
+  await expect(page.locator('.review-prompt:visible')).toContainText('specific occasion');
   await expect(page.locator('.finding-card')).toHaveCount(1);
   const storage = await page.evaluate(async () => ({
     local: { ...localStorage }, session: { ...sessionStorage }, cookies: document.cookie,
@@ -145,9 +145,13 @@ for (const width of [320, 390, 879, 881, 1440]) {
     const sample = page.getByRole('button', { name: /Promises to confirm/ });
     await sample.focus();
     await page.keyboard.press('Enter');
-    await page.getByRole('textbox', { name: 'Your follow-up draft' }).focus();
+    // Toolbar precedes the editor visually and in keyboard order.
+    const checkButton = page.getByRole('button', { name: 'Check draft', exact: true });
+    await checkButton.focus();
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeFocused();
+    await expect(page.getByRole('button', { name: 'Copy draft', exact: true })).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    await expect(checkButton).toBeFocused();
     const focusRing = await page.getByRole('button', { name: 'Check draft', exact: true }).evaluate(button => {
       const style = getComputedStyle(button);
       return { style: style.outlineStyle, width: parseFloat(style.outlineWidth), color: style.outlineColor };
@@ -163,7 +167,7 @@ for (const width of [320, 390, 879, 881, 1440]) {
     await expect(page.getByRole('button', { name: 'Edit this wording' })).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toBeFocused();
-    await page.getByText('What this check can do', { exact: true }).click();
+    await page.getByText('What this checks', { exact: true }).click();
     await expect(page.getByText('Examples are fictional;', { exact: false })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();

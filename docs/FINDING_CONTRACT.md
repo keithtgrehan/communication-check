@@ -1,10 +1,36 @@
-# Finding contract — version 3 (16 September 2026)
+# Finding contract — version 4 (16 September 2026)
+
+## Approved review-desk polish after third review
+
+Keith approved implementation of the Mockup Canvas presentation and reduced
+review friction. This section supersedes earlier intent-invalidation and visual
+instructions. Detection rules, spans, limits and privacy boundaries are unchanged.
+
+- Explicit initial checks remain required. A style change only remaps the prompt
+  on already checked tone findings; it never runs detection or creates a result.
+- Preserve exact evidence, finding identities, open row, Keep/Undo decisions and
+  empty checked results on style changes. Draft mutations still invalidate both
+  lenses immediately; switching lenses preserves valid snapshots.
+- Tone prompt selection is a pure exported `tonePromptFor(ruleId, intent)` helper.
+  Snapshot currency depends on text revision; style is display preference only.
+- Adopt the mockup's neutral paper, charcoal controls, serif headings and defined
+  Draft / Review panels, compact toolbar and numbered review rows. Retain tabs,
+  existing examples, Edit/Keep/Undo and reviewed progress; no subject field or
+  Clarify later action. Initial first row opens, Keep advances, Undo reopens.
+- One short visible tone coverage statement and expandable What this checks;
+  retain qualified empty results and one privacy footer. No scores or resolved
+  claims. Desktop/mobile/keyboard/zoom and runtime privacy checks remain required.
+
+Ownership for this pass: presentation agent owns App.tsx, styles.css and
+presentation.spec.ts ONLY (leave existing state handlers for lead integration).
+Behaviour agent owns tone.ts prompt helper, tone.test.ts and tone-review.spec.ts
+ONLY. Lead owns integration of App state after presentation handoff, shared types,
+other tests, docs, screenshots/PDF and Git. Independent reviewer starts read-only.
 
 ## Approved bounded correction after first review
 
 Keith authorized this correction after reviewing the local app. This section
-supersedes the narrower tone policy below; clarity and snapshot behavior remain
-unchanged. No model, general sentiment assessment or new reserved evaluation.
+supersedes the narrower tone policy below; clarity remains unchanged. Snapshot behavior is superseded by v4 above. No model, general sentiment assessment or new reserved evaluation.
 
 - Rename the optional lens to **Tone cues**, explain supported checks upfront,
   and state that intent changes review questions, not detection sensitivity.
@@ -58,14 +84,14 @@ and quote; no identity depends on display order or title. Engine IDs remain
 deterministic. UTF-16 positions include emoji and repeated wording correctly.
 
 One editor owns text and a monotonically increasing text revision. Each lens
-owns a nullable ReviewSnapshot: textRevision, intentRevision (null for clarity),
-result, reviewedIds and expandedId. UI may store these fields equivalently in
+owns a nullable ReviewSnapshot: textRevision, result, reviewedIds and expandedId. UI may store these fields equivalently in
 separate state, but must preserve this ownership. Text mutation increments text
 revision and invalidates both snapshots/decisions immediately, including loading
-an example and clearing. Intent change increments intent revision and invalidates
-tone only. Lens switching performs no analysis and preserves valid snapshots,
+an example and clearing. Intent change updates prompt presentation on an existing tone snapshot only,
+preserving exact evidence, identity, decisions and expanded row. It never creates
+a result for unchecked or edited text. Lens switching performs no analysis and preserves valid snapshots,
 decisions and editor selection where practical. Explicit checks use current text.
-Rechecking identical text/intent retains keep decisions by findingIdentity.
+Rechecking identical text retains keep decisions by findingIdentity.
 
 Only one finding is expanded in the active lens. Edit this wording selects and
 scrolls the exact range; it neither rewrites nor marks Reviewed. Keep as written

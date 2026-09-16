@@ -1,6 +1,6 @@
 # Communication Check
 
-**A clearer message. Still your voice.**
+**Decide what deserves another look.**
 
 A focused portfolio prototype for reviewing customer onboarding follow-up emails.
 [Try the September 11 hosted demo](https://communication-check-preview.onrender.com).
@@ -22,12 +22,13 @@ Clarity & commitments shows up to three prompts. Optional Tone cues shows up to
 two supported wording cues. Direct, Collaborative or Warm changes the review
 question, not which wording is flagged. Open a finding, select
 its exact wording to edit, or keep it as written. Keep marks Reviewed with Undo;
-unchanged rechecks preserve decisions. Text edits clear both reviews; changing
-style clears tone only. Copy always uses the current draft.
+unchanged rechecks preserve decisions. Style changes update the question instantly
+while keeping findings and decisions. Text edits clear both reviews. Copy always
+uses the current draft.
 
-Warm paper, charcoal text, restrained plum accents and editorial typography give the
-product a calm, focused feel. The desktop layout places the draft beside its
-review. On smaller screens, the same sequence becomes a single column. Clear
+Neutral paper, charcoal controls and editorial typography give the product a
+calm, focused feel. Defined Draft and Review panels pair a compact toolbar with
+a numbered review queue. The desktop layout places the draft beside its review. On smaller screens, the same sequence becomes a single column. Clear
 focus states, keyboard controls and precise evidence selection support the core
 workflow.
 
@@ -83,14 +84,14 @@ factual correctness or production-level accuracy.
 
 The September 11 delivery includes a hosted preview, three interactive demos,
 portfolio screenshots, a walkthrough script and a documented rollback path.
-The September 16 follow-on adds the Canvas3 layout, optional tone review and
-keep/undo interactions in the existing local app. A first-review correction adds
-upfront coverage, a tone demo and limited judgmental/dismissive/pressure patterns.
+The September 16 local app adds optional tone review and keep/undo interactions.
+A first-review correction adds coverage guidance, a tone demo and bounded patterns.
+The third-review polish adopts a compact review desk and immediate style switching.
 The hosted preview is unchanged.
 
-Fresh local validation on September 16 passes **399 engine tests** (225 existing
-clarity tests and 174 tone development tests), **seven setup/integrity checks**,
-build/typecheck/source guards and **48 browser checks**. Browser coverage includes
+Fresh local validation on September 16 passes **404 engine tests** (225 existing
+clarity tests and 179 tone development tests), **seven setup/integrity checks**,
+build/typecheck/source guards and **51 browser checks**. Browser coverage includes
 both review lenses, editing, current-text clipboard/fallback, exact evidence,
 keyboard access, responsive layout and runtime privacy/offline behavior.
 [Local screenshots](screenshots/README.md) include 1440, 1024, 390 and 320px widths,

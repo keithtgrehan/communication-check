@@ -430,3 +430,65 @@ Reviewed final source SHA-256:
 Keith's next action is the short usefulness review in TONE_CORRECTION.md. Automated
 checks and independent agent review do not establish human usefulness, broad
 semantic reliability, physical-device compatibility or accessibility certification.
+
+
+## 16 September third-review review-desk polish
+
+Keith approved execution of the review-desk plan after supplying the third review
+ZIP and Mockup Canvas PDF. The attachment is visual reference, not a feature brief.
+Baseline: `98d963c`, canonical private repository, existing follow-on branch
+`codex/communication-check-tone-review`. Existing PDF artifacts were preserved.
+
+Two bounded Astra High workers handled disjoint presentation and tone helper/test
+files. Lead integrated snapshot handling and shared types. Version 4 of the finding
+contract supersedes intent invalidation: style remaps existing prompts only,
+without running detection, clearing findings, moving the open row or forgetting
+Keep/Undo. Text revisions still invalidate both lenses. Tone rule conditions,
+priority, caps and exact original spans are unchanged.
+
+Final lead checks passed:
+
+- Seven setup/integrity checks and **404 engine tests** (225 clarity + 179 tone).
+- Production typecheck/build and source/build exclusion guards.
+- **51 browser tests**, rerun after shortening visible Copy/Clear labels while
+  preserving accessible names. Coverage includes style-before-check and
+  style-after-edit abstention, multi-finding identity/open-state/decision
+  preservation, no-flags checked state, lens switching, exact evidence,
+  edit/revert, current clipboard/fallback and review progression.
+- Keyboard/focus, automated accessibility and contrast, 320/390/879/881/1024/1440
+  layouts, long quote wrapping, doubled text and 200% content zoom.
+- Runtime canary observed no additional draft-bearing network requests, logs,
+  URLs, storage writes, cookies, databases, caches or service workers. Local
+  checking continued offline and reload cleared drafts/findings.
+
+Production screenshots in `screenshots/2026-09-16-review-desk/` show fictional
+examples processed by the actual checker. Lead inspected desktop, mobile,
+kept-after-style-change and zoom views. The four-page case-study PDF was refreshed
+with the neutral design, current state description, current counts and an actual
+local screenshot; every rendered page was visually checked and all ten historical
+failed evaluation results remain intact. A prior PDF copy is preserved in ignored
+local work storage. Hosted preview remains the September 11 release.
+
+Independent final review identified a narrow-screen enlarged-text tab overflow:
+the long Clarity label could intrude into the Tone tab click area. The lead allowed
+mobile tabs to wrap at their minimum content width and added 320/390px regressions
+that inspect text rectangles and actual hit targets, not only page overflow.
+All 51 browser checks pass on the corrected build (26 presentation/workflow and
+25 tone/evidence-scroll). Fresh Astra Extra High reviewer confirmed corrected 320/390px text containment
+and actual pointer targets, independently passed eight focused presentation checks
+including both regressions, and cleared the final candidate. The reviewer had
+independently passed all 49 pre-fix browser checks and 179 tone tests. Additional
+probes passed for all-collapsed and reviewed-open state preservation, exact
+selection after style change, Undo focus and editing invalidation. No remaining
+material findings. This was a read-only independent review.
+
+Final runtime source SHA-256:
+
+- web/src/App.tsx: `d78696a9c0c3a31054cb55f2109b54506102c39affa42c38774f0aebe78f8bbf`
+- web/src/styles.css: `ff48a61f21497151869d5efbc1e4bc5d46ea002f25de1416b238c9cd57d3319f`
+- web/src/engine/tone.ts: `6bea91cbcf1c8d37c080ef9666348b3d299c515035adde032cecbb73200e8a2b`
+- web/src/engine/types.ts: `99b53f7e3ca9dbd89f5c7ad77de94e7478e873f3cf28e95e88ede9d26b50f101`
+
+This is bounded engineering evidence, not general detection reliability, human
+validation, physical-device testing or accessibility certification. No deployment,
+merge, model, reserved evaluation round or publication occurred in this pass.

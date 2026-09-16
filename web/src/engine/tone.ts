@@ -71,6 +71,11 @@ const COPY: Record<ToneRuleId, { title: string; explanation: string; prompts: Re
   },
 };
 
+/** Select review guidance without running detection or changing finding evidence. */
+export function tonePromptFor(ruleId: ToneRuleId, intent: ToneIntent): string {
+  return COPY[ruleId].prompts[intent];
+}
+
 interface Unit { start: number; end: number; text: string }
 
 function judgmentalCue(text: string): { negationStart?: number } | undefined {
@@ -163,7 +168,7 @@ export function checkTone(text: string, intent: ToneIntent): ToneCheckResult {
     candidates.push({
       id: `${ruleId}:${unit.start}:${unit.end}`, ruleId,
       start: unit.start, end: unit.end, quote: text.slice(unit.start, unit.end),
-      title: copy.title, explanation: copy.explanation, prompt: copy.prompts[intent],
+      title: copy.title, explanation: copy.explanation, prompt: tonePromptFor(ruleId, intent),
     });
   }
   candidates.sort((a, b) => PRIORITY.indexOf(a.ruleId) - PRIORITY.indexOf(b.ruleId) || a.start - b.start);

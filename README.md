@@ -1,6 +1,6 @@
 # Communication Check
 
-**A clearer message. Still your voice.**
+**Decide what deserves another look.**
 
 A private portfolio MVP for B2B SaaS account managers and customer-success managers
 reviewing customer onboarding follow-up emails. Paste a draft or choose one of
@@ -11,7 +11,9 @@ vague timing, competing requests, agreement wording and strong product commitmen
 The September 16 local update adds optional Tone cues: up to two findings for
 supported accusation, judgmental, dismissive and pressure wording. A chosen
 Direct, Collaborative or Warm preference changes the review question, not which
-wording is detected. A dedicated fictional tone example shows the check. Edit this wording
+wording is detected. Switching style updates checked prompts immediately and preserves
+review decisions. The local review desk uses neutral panels and a compact toolbar.
+A dedicated fictional tone example shows the check. Edit this wording
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
@@ -19,8 +21,8 @@ the decision. The app does not verify facts/agreements, rewrite, score or send e
 
 The September 16 follow-on is implemented locally on
 `codex/communication-check-tone-review`; it has not been deployed. Fresh validation
-passes 399 engine tests (225 clarity + 174 tone), seven setup checks, the production
-build/typecheck/source guards and 48 browser tests. See [progress](docs/PROGRESS.md)
+passes 404 engine tests (225 clarity + 179 tone), seven setup checks, the production
+build/typecheck/source guards and 51 browser tests. See [progress](docs/PROGRESS.md)
 for the completed independent review and [local screenshots](docs/screenshots/README.md).
 
 The September 11 hosted version is a functional portfolio prototype. At delivery,

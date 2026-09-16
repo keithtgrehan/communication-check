@@ -24,6 +24,19 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Approved polish after third review:** Keith asked Codex to implement the agreed
+Mockup Canvas visual direction: neutral paper, charcoal controls, serif headings,
+defined Draft / Review panels, compact toolbar and numbered review queue. Reduce
+repeated help text while retaining upfront coverage, qualified empty results and
+privacy information. Style changes update existing tone prompts immediately and
+preserve evidence, open rows and Keep/Undo; they never start an unchecked review.
+Only draft mutations invalidate both lenses. This supersedes earlier plum/Canvas3
+styling and intent-invalidation instructions. Preserve detection scope, exact
+selection, lens controls and memory-only handling. Verify locally with independent
+review, then refresh screenshots and the existing case-study PDF. No additional
+model, research, screen, subject field, deployment or publication is included.
+
+
 **Approved correction after Keith's first review:** rename the optional lens
 **Tone cues**, explain the finite supported checks upfront and clarify that
 Direct/Collaborative/Warm changes the review question, not detection sensitivity.
@@ -44,9 +57,8 @@ in `/Users/keith/Desktop/Shipping MVPs MD Sept 16th/`. This decision supersedes
 conflicting earlier plans. The Replit ZIP is design evidence, not a replacement
 application or authority for backend/model/rewrite features.
 
-Use the Canvas3 composition: warm paper, near-white editor, charcoal text and
-restrained plum on actions, selection and focus. Headline: “A clearer message.
-Still your voice.” Keep one shared draft, initial Clarity & commitments and
+Use the approved Mockup Canvas composition: light neutral paper, near-white editor,
+charcoal text and controls, editorial typography and defined Draft / Review panels. Headline: “Decide what deserves another look.” Keep one shared draft, initial Clarity & commitments and
 optional Tone cues. Tone uses local deterministic wording cues with intended
 styles Direct, Collaborative (default) and Warm. It is an explicit review action,
 not continuous analysis or a general tone judgment. Preserve the clarity engine.
@@ -55,7 +67,7 @@ Each finding shows exact original evidence, a tentative interpretation and a rev
 prompt. Edit this wording focuses/selects its range without rewriting. Keep as
 written marks Reviewed with Undo. Preserve valid decisions on lens switching and
 unchanged rechecks. Every text mutation clears both snapshots/decisions; intent
-changes clear tone only. Keep the clarity cap of three and separate tone cap of
+changes update existing tone questions immediately while preserving review state. Keep the clarity cap of three and separate tone cap of
 two; avoid scores, universal all-clears and claims of exhaustive coverage.
 
 This delivery is a reviewable local change with fresh checks, desktop/mobile

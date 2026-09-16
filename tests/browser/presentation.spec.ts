@@ -7,9 +7,8 @@ async function expectAccessibleState(page: Page, state: string) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${state}: page overflow`).toBe(true);
 }
 
-// These are the approved refresh acceptance criteria, independent of the v0
-// proposal. They deliberately expose unreadable text and undersized controls in
-// the previous presentation instead of treating it as the desired baseline.
+// Readability, responsive behavior and contrast remain acceptance criteria
+// across presentation changes, including the editorial review desk.
 for (const width of [320, 390, 879, 881, 1440]) {
   test(`refresh layout, readable draft, touch targets and long quote wrapping at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
@@ -32,6 +31,12 @@ for (const width of [320, 390, 879, 881, 1440]) {
     const resultsBounds = await page.locator('.results-panel').boundingBox();
     expect(editorBounds).not.toBeNull();
     expect(resultsBounds).not.toBeNull();
+    const checkBounds = await page.locator('.primary-button').boundingBox();
+    const draftBounds = await editor.boundingBox();
+    expect.soft(checkBounds!.y + checkBounds!.height, 'Check action stays above the draft').toBeLessThanOrEqual(draftBounds!.y);
+    const examplesBounds = await page.locator('.sample-strip').boundingBox();
+    expect.soft(examplesBounds!.y, 'Examples follow both workspace panels').toBeGreaterThanOrEqual(Math.max(editorBounds!.y + editorBounds!.height, resultsBounds!.y + resultsBounds!.height));
+    await expect(page.locator('.finding-number')).toHaveText('01');
     if (width <= 879) {
       expect.soft(resultsBounds!.y, 'Stack the full editor and its actions before results').toBeGreaterThanOrEqual(editorBounds!.y + editorBounds!.height);
     } else {
@@ -116,7 +121,7 @@ for (const width of [320, 390, 1024, 1440]) {
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-frame')).border).toBeGreaterThanOrEqual(3);
     expect((await contrast('.sample-button:first-child')).border).toBeGreaterThanOrEqual(3);
-    expect((await contrast('.secondary-button')).text).toBeGreaterThanOrEqual(4.5);
+    expect((await contrast('.editor-actions .secondary-button:not(.reset-button)')).text).toBeGreaterThanOrEqual(4.5);
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests. Stop making excuses and send the workspace list.');
     const primary = page.locator('.primary-button');
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
@@ -130,7 +135,7 @@ for (const width of [320, 390, 1024, 1440]) {
     expect(focus.outlineStyle).not.toBe('none');
     expect(focus.outline).toBeGreaterThanOrEqual(3);
     // Primary focus outline is outside the filled button, on the near-white editor.
-    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(105, 72, 95)');
+    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(52, 53, 48)');
     await page.getByRole('tab', { name: /Tone cues/ }).click();
     for (const label of ['Direct', 'Collaborative', 'Warm']) {
       const radio = page.getByRole('radio', { name: label, exact: true });
@@ -167,3 +172,42 @@ test('200 percent text enlargement preserves tone controls and entire mobile flo
   await page.getByRole('button', { name: 'Edit this wording' }).click();
   await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toBeFocused();
 });
+
+
+for (const width of [320, 390]) {
+  test(`doubled tab text stays in its own click target at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    await page.evaluate(() => {
+      const elements = Array.from(document.querySelectorAll<HTMLElement>('body *'));
+      const sizes = elements.map(element => parseFloat(getComputedStyle(element).fontSize) * 2);
+      elements.forEach((element, index) => { element.style.fontSize = `${sizes[index]}px`; });
+    });
+    for (const name of ['Clarity & commitments', /Tone cues/]) {
+      const tab = page.getByRole('tab', { name });
+      await tab.scrollIntoViewIfNeeded();
+      const checks = await tab.evaluate(element => {
+        const box = element.getBoundingClientRect();
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+        const rects: DOMRect[] = [];
+        for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+          if (!node.textContent?.trim()) continue;
+          const range = document.createRange(); range.selectNodeContents(node);
+          rects.push(...Array.from(range.getClientRects()));
+        }
+        return {
+          overflow: element.scrollWidth > element.clientWidth + 1,
+          contained: rects.every(rect => rect.left >= box.left - 1 && rect.right <= box.right + 1),
+          correctTarget: rects.every(rect => {
+            const hit = document.elementFromPoint(rect.right - 2, rect.top + rect.height / 2);
+            return hit === element || (hit !== null && element.contains(hit));
+          }),
+        };
+      });
+      expect(checks).toEqual({ overflow: false, contained: true, correctTarget: true });
+      await tab.click();
+      await expect(tab).toHaveAttribute('aria-selected', 'true');
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+}

@@ -48,15 +48,13 @@ export interface ReviewResult extends Omit<CheckResult, 'findings'> {
 }
 export const MAX_TONE_FINDINGS = 2;
 
-/** Decisions belong to a particular text/intent snapshot, never a title alone. */
+/** Decisions belong to a particular text snapshot, never a title or style alone. */
 export function findingIdentity(finding: ReviewFinding): string {
   return JSON.stringify([finding.ruleId, finding.start, finding.end, finding.quote]);
 }
 
 export interface ReviewSnapshot {
   textRevision: number;
-  /** Null for clarity; tone uses the current intent revision. */
-  intentRevision: number | null;
   result: ReviewResult;
   reviewedIds: string[];
   expandedId: string | null;

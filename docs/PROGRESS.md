@@ -1,8 +1,14 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: bounded Tone cues correction delivered; independent review complete
-Status: 7 setup + 399 engine + 48 browser checks pass locally; hosted preview unchanged
+Milestone: review-desk polish delivered; independent review complete
+Status: 7 setup + 404 engine + 51 browser checks pass locally; hosted preview unchanged
+
+## September 16 third-review polish
+
+- Keith approved the Mockup Canvas design and immediate style switching after the third screenshot review. Neutral panels, compact Check/Copy/Clear toolbar, numbered review queue and concise help are implemented. Style changes update prompts without clearing findings, open rows or Keep/Undo; actual text edits still invalidate both lenses.
+- Two Astra High workers handled presentation and pure prompt-helper/tests in disjoint files; lead integrated state handling. Seven setup checks, 404 engine tests (225 clarity + 179 tone), build/typecheck/source guards and all 51 browser checks pass. Runtime privacy/offline, keyboard, mobile and enlarged views pass. Detection rules and historical evaluations are unchanged.
+- Final desktop/1024/390/320px, kept-state and zoom captures and the refreshed four-page PDF are ready. Fresh Astra Extra High review found an enlarged-text tab hit-target issue; lead fixed it with two regressions and reviewer confirmed the fix. No remaining material findings. Local-only delivery; hosted preview unchanged. Details: REVIEW_DESK_POLISH.md.
 
 ## September 16 first-review correction
 
@@ -17,10 +23,8 @@ Status: 7 setup + 399 engine + 48 browser checks pass locally; hosted preview un
 - Case-study How it works refinement is complete after validation: diagram/text fallback, 220-word explanation and verified fictional engine example. Source-to-quote behavior, limited context checks, AI-assisted development versus runtime, privacy and known limitations are explicit.
 
 - Keith explicitly started implementation using the latest Desktop implementation handoff/build prompt; these supersede conflicting earlier scope/workflow notes.
-- Verified canonical root/remote and clean original checkout at 40d7c0b. Fetched main b22bcfd465dcc0489d21682a446af1321ce7d242; PR #1 merged September 11. Main has the same file tree as the original checkout.
-- Created codex/communication-check-tone-review from origin/main; original branch preserved. Initial validate stopped at the obsolete branch-name guard. Unchanged product baseline then passed 7 setup unit checks, 225 engine tests, build/typecheck/guards and 28 browser tests on September 16.
-- Updated the branch guard to the specifically authorized follow-on branch; main/wrong-repository/tag/deletion restrictions remain. Shared snapshot/intent/finding contracts and disjoint UI/tone ownership are in docs/FINDING_CONTRACT.md. Extracted existing history/signature masking without changing its implementation.
-- Scope: Canvas3 composition, local optional tone review, exact selection, keep/undo and snapshot invalidation. After validation, approximately one hour refining How it works in the existing case study. No model/API, extra app screen, parser research, new evaluation round, deployment, launch, merge or spending.
+- Verified canonical checkout/remote; reconciled main b22bcfd after PR #1 merged September 11, preserving the original branch. Follow-on uses codex/communication-check-tone-review. Branch guard was updated; main/wrong-repository/tag/deletion protections remain. Baseline setup/225 engine/28 browser checks passed.
+- Original follow-on scope was Canvas3 plus bounded local tone, exact selection, keep/undo and invalidation, followed by the approximately one-hour How it works refinement. No model, research, evaluation round, deployment, launch, merge or spending. See FINDING_CONTRACT.md for later approved changes.
 - Both Markdown briefs and the reference ZIP were added to ChatGPT Project Sources and verified after reload September 16. This is a dated source upload, not continuous synchronization.
 
 ## September 11 delivered baseline
@@ -88,7 +92,6 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can now refresh http://127.0.0.1:4173, try Tone to reconsider, his earlier
-wording and one ordinary follow-up, then report useful/missed/distracting prompts.
-Local implementation is complete. Hosting, publication and merge remain separate;
-the historical detection gate remains failed. No action was needed during the build.
+Keith can refresh the local review desk and check appearance and instant style
+switching; the matching PDF is ready. Hosting,
+publication and merge remain separate; the historical detection gate remains failed.

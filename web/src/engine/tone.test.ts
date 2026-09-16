@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { checkTone } from './tone';
-import { findingIdentity, MAX_DRAFT_LENGTH, MAX_TONE_FINDINGS, type ToneIntent } from './types';
+import { checkTone, tonePromptFor } from './tone';
+import { findingIdentity, MAX_DRAFT_LENGTH, MAX_TONE_FINDINGS, type ToneIntent, type ToneRuleId } from './types';
 
 // Fresh fictional development inputs only. These exercise the bounded policy;
 // they are not a heldout evaluation or evidence of general tone accuracy.
@@ -355,6 +355,44 @@ describe('quotation, signature and exact original evidence', () => {
 });
 
 describe('intent, identity, ordering and limits', () => {
+  it.each<[ToneRuleId, string]>([
+    ['sweeping-blame', 'You always ignore our requests.'],
+    ['dismissive-request', 'As I already told you, please send the workspace list.'],
+    ['pressure-wording', 'Please send the workspace list, no more excuses.'],
+    ['judgmental-framing', 'This is not a good look.'],
+  ])('remaps only the prompt for %s, retaining original evidence and identity across all styles', (ruleId, cue) => {
+    const text = `Hi Zoë 👋,\n\n> ${cue}\n\n${cue}\n\nBest,\nMorgan`;
+    const checked = checkTone(text, 'collaborative');
+    expect(checked.findings).toHaveLength(1);
+    const original = Object.freeze(checked.findings[0]);
+    expect(original.ruleId).toBe(ruleId);
+    expect(original.start).toBe(text.lastIndexOf(cue));
+    expect(original.quote).toBe(text.slice(original.start, original.end));
+    const identity = findingIdentity(original);
+    const prompts = intents.map(intent => tonePromptFor(ruleId, intent));
+    expect(new Set(prompts).size).toBe(3);
+
+    for (const intent of intents) {
+      const remapped = { ...original, prompt: tonePromptFor(ruleId, intent) };
+      expect(findingIdentity(remapped)).toBe(identity);
+      expect({ ...remapped, prompt: original.prompt }).toEqual(original);
+      expect({ ...checked, findings: [remapped] }).toEqual(checkTone(text, intent));
+    }
+    expect(tonePromptFor(ruleId, 'collaborative')).toBe(original.prompt);
+  });
+
+  it('remaps a capped multi-finding result without changing priority, exclusions or count', () => {
+    const text = '🧭 Follow-up\n> You always ignore our requests.\nSend the list, no excuses.\nStop making excuses and upload the roster.\nYou always ignore our requests.\nThis is not a good look.';
+    const checked = checkTone(text, 'collaborative');
+    expect(checked.findings.map(finding => finding.ruleId)).toEqual(['sweeping-blame', 'dismissive-request']);
+    expect(checked.excludedSections).toBe(1);
+    for (const intent of intents) {
+      const remapped = { ...checked, findings: checked.findings.map(finding => ({ ...finding, prompt: tonePromptFor(finding.ruleId, intent) })) };
+      expect(remapped).toEqual(checkTone(text, intent));
+      expect(remapped.findings.map(findingIdentity)).toEqual(checked.findings.map(findingIdentity));
+    }
+  });
+
   it('changes review guidance for a genuine cue without changing the evidence or finding count', () => {
     const text = 'You always ignore our requests. Please send the workspace list by Thursday.';
     const results = intents.map(intent => checkTone(text, intent));

@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { checkTone } from '../../web/src/engine/tone';
+import { checkTone, tonePromptFor } from '../../web/src/engine/tone';
 import { checkDraft } from '../../web/src/engine';
 import { type ToneIntent } from '../../web/src/engine/types';
 
@@ -67,22 +67,85 @@ test('lens switching and identical rechecks preserve independent keep decisions 
   await expect(page.getByRole('heading', { name: 'Checks to consider' })).toBeFocused();
 });
 
-test('intent changes invalidate only tone, including changing back to the original intent', async ({ page }) => {
+test('style changes preserve multi-finding identities, open row and decisions across keyboard changes, rechecks and lenses', async ({ page }) => {
+  const draft = mixedDraft + '\nPlease submit the checklist, no more excuses.';
   await page.goto('/');
-  await editorFor(page).fill(mixedDraft);
+  const editor = editorFor(page);
+  await editor.fill(draft);
   await page.getByRole('button', { name: 'Check draft', exact: true }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await toneTab(page).click();
   await runTone(page);
+  const expected = checkTone(draft, 'collaborative').findings;
+  expect(expected).toHaveLength(2);
+  const cards = page.locator('.finding-card');
+  const toggles = page.locator('.finding-toggle');
+  const ids = await page.locator('.finding-detail').evaluateAll(elements => elements.map(element => element.id));
+  await expect(toggles.nth(0)).toHaveAttribute('aria-expanded', 'true');
   await page.getByRole('button', { name: 'Keep as written' }).click();
-  await page.getByRole('radio', { name: 'Direct', exact: true }).check();
-  await expect(page.locator('.finding-card')).toHaveCount(0);
-  await page.getByRole('radio', { name: 'Collaborative', exact: true }).check();
-  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await expect(toggles.nth(1)).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.findings-count')).toHaveText('1 of 2 reviewed');
+
+  await page.getByRole('radio', { name: 'Collaborative', exact: true }).focus();
+  for (const intent of ['warm', 'direct', 'collaborative'] as ToneIntent[]) {
+    await page.keyboard.press('ArrowRight');
+    const selectedStyle = page.getByRole('radio', { name: intent, exact: false });
+    await expect(selectedStyle).toBeChecked();
+    await expect(selectedStyle).toBeFocused();
+    await expect(cards).toHaveCount(2);
+    expect(await page.locator('.finding-detail').evaluateAll(elements => elements.map(element => element.id))).toEqual(ids);
+    expect(await cards.locator('blockquote').allTextContents()).toEqual(expected.map(finding => finding.quote));
+    expect(await cards.locator('.review-prompt > p').allTextContents()).toEqual(expected.map(finding => tonePromptFor(finding.ruleId, intent)));
+    await expect(toggles.nth(0)).toHaveAttribute('aria-expanded', 'false');
+    await expect(toggles.nth(1)).toHaveAttribute('aria-expanded', 'true');
+    await expect(cards.nth(0).getByRole('button', { name: /^Undo keep:/ })).toBeEnabled();
+    await expect(page.locator('.findings-count')).toHaveText('1 of 2 reviewed');
+    await expect(editor).toHaveValue(draft);
+  }
+
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  expect(await editor.evaluate((field: HTMLTextAreaElement) => ({ start: field.selectionStart, end: field.selectionEnd }))).toEqual({ start: expected[1].start, end: expected[1].end });
   await runTone(page);
-  await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
+  await expect(toggles.nth(1)).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.findings-count')).toHaveText('1 of 2 reviewed');
   await clarityTab(page).click();
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
+  await toneTab(page).click();
+  await expect(toggles.nth(1)).toHaveAttribute('aria-expanded', 'true');
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.getByRole('radio', { name: 'Direct', exact: true }).check();
+  await expect(page.locator('.findings-count')).toHaveText('2 of 2 reviewed');
+  await expect(page.locator('.finding-toggle[aria-expanded="true"]')).toHaveCount(0);
+  await runTone(page);
+  await expect(page.locator('.findings-count')).toHaveText('2 of 2 reviewed');
+  await cards.nth(0).getByRole('button', { name: /^Undo keep:/ }).click();
+  await expect(cards.nth(0).getByRole('button', { name: 'Edit this wording' })).toBeFocused();
+  await expect(toggles.nth(0)).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.findings-count')).toHaveText('1 of 2 reviewed');
+  await expect(cards.nth(0).locator('.review-prompt > p')).toHaveText(tonePromptFor(expected[0].ruleId, 'direct'));
+});
+
+test('style selection before a check or after a draft mutation never creates or restores findings', async ({ page }) => {
+  await page.goto('/');
+  const editor = editorFor(page);
+  await editor.fill(mixedDraft);
+  await toneTab(page).click();
+  for (const intent of ['Direct', 'Warm', 'Collaborative']) {
+    await page.getByRole('radio', { name: intent, exact: true }).check();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Check tone', exact: true })).toBeEnabled();
+    await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toHaveCount(0);
+  }
+  await runTone(page);
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await editor.fill(mixedDraft + '\nPlease send the checklist, no more excuses.');
+  for (const intent of ['Direct', 'Warm', 'Collaborative']) {
+    await page.getByRole('radio', { name: intent, exact: true }).check();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toHaveCount(0);
+  }
+  await runTone(page);
+  await expect(page.locator('.findings-count')).toHaveText('0 of 2 reviewed');
 });
 
 test('typing, cut, undo, example loads and clear invalidate both lenses and decisions', async ({ page }) => {
@@ -194,6 +257,17 @@ test('tone clean states are limited, empty and oversized drafts are guarded, cop
   await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
   await expect(page.locator('.result-empty').getByText(/cannot judge how your message will be received/)).toBeVisible();
   await expect(page.locator('.findings-count')).toHaveCount(0);
+  for (const intent of ['Direct', 'Warm', 'Collaborative']) {
+    await page.getByRole('radio', { name: intent, exact: true }).check();
+    await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
+    await expect(page.locator('.result-empty')).toContainText('cannot judge how your message will be received');
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Review tone again' })).toBeEnabled();
+  }
+  await clarityTab(page).click();
+  await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toHaveCount(0);
+  await toneTab(page).click();
+  await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
   await editor.fill('x'.repeat(12001));
   await expect(editor).toHaveValue('x'.repeat(12001));
   await expect(page.getByRole('button', { name: 'Review tone again' })).toBeDisabled();
@@ -223,7 +297,16 @@ test('tone example explains coverage before an explicit check and matches ordina
   await example.click();
   await expect(example).toHaveAttribute('aria-pressed', 'true');
   await expect(toneTab(page)).toHaveAttribute('aria-selected', 'true');
-  await expect(page.locator('.tone-scope')).toHaveText('Looks for a few patterns of accusation (“you always ignore our requests”), judgment (“not a good look”), dismissal (“as I already told you”) and extra pressure (“no excuses”). Coverage is limited; it cannot assess your whole message.');
+  await expect(page.locator('.tone-scope')).toBeVisible();
+  await expect(page.locator('.tone-scope')).toContainText('accusation, judgment, dismissal and pressure');
+  await expect(page.locator('.tone-scope')).toContainText('Coverage is limited.');
+  await expect(page.locator('.intent-picker')).toContainText('Changes the review question, not what gets flagged.');
+  const coverage = page.locator('.about-checks');
+  await coverage.locator('summary').click();
+  await expect(coverage).toHaveAttribute('open', '');
+  await expect(coverage.getByText(/not a good look/)).toBeVisible();
+  await expect(coverage.getByText(/It can miss issues/)).toBeVisible();
+  await coverage.locator('summary').click();
   await expect(page.locator('#draft-description')).toContainText('Fictional example');
   await expect(page.getByRole('status')).toHaveText('Fictional tone example loaded. Select Check tone when you’re ready.');
   await page.evaluate(() => window.scrollTo(0, 0));
@@ -288,25 +371,23 @@ test('a fictional follow-up selects only its current judgmental sentence and kee
   await expect(editor).toHaveValue(text.slice(0, start) + text.slice(start + quote.length));
 });
 
-test('style changes the question while the same judgmental wording stays flagged', async ({ page }) => {
+test('style immediately changes the question while the same judgmental wording stays flagged', async ({ page }) => {
   const quote = 'This is not a good look, we are still waiting for your workspace list.';
   const text = `Hi Riley,\n\n${quote}\n\nPlease send the workspace list by Thursday.`;
   await page.goto('/');
   await editorFor(page).fill(text);
   await toneTab(page).click();
-  await expect(page.locator('.intent-picker')).toContainText('Your style changes the review questions. The same wording is flagged for every style.');
+  await runTone(page);
   const prompts: string[] = [];
   const titles: string[] = [];
   for (const intent of ['Direct', 'Collaborative', 'Warm']) {
     await page.getByRole('radio', { name: intent, exact: true }).check();
-    await expect(page.locator('.finding-card')).toHaveCount(0);
-    await runTone(page);
     await expect(page.locator('.finding-card')).toHaveCount(1);
     await expect(page.locator('blockquote:visible')).toHaveText(quote);
+    await expect(page.locator('.review-prompt > p')).toHaveText(tonePromptFor('judgmental-framing', intent.toLowerCase() as ToneIntent));
     prompts.push(await page.locator('.review-prompt > p').innerText());
     titles.push(await page.locator('.finding-toggle').innerText());
     await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
-    await page.getByRole('button', { name: 'Keep as written' }).click();
     await expect(editorFor(page)).toHaveValue(text);
   }
   expect(new Set(prompts).size).toBe(3);
