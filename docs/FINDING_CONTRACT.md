@@ -1,4 +1,34 @@
-# Finding contract — version 2 (16 September 2026)
+# Finding contract — version 3 (16 September 2026)
+
+## Approved bounded correction after first review
+
+Keith authorized this correction after reviewing the local app. This section
+supersedes the narrower tone policy below; clarity and snapshot behavior remain
+unchanged. No model, general sentiment assessment or new reserved evaluation.
+
+- Rename the optional lens to **Tone cues**, explain supported checks upfront,
+  and state that intent changes review questions, not detection sensitivity.
+- Add one clearly fictional tone demo using the ordinary draft/check path.
+  Existing clarity demos remain intact. No fabricated findings or auto-analysis.
+- Add `judgmental-framing`: bounded evaluative **not a good look** constructions
+  (including a trailing comma clause), and addressed **you should know better**.
+  Do not flag ordinary **not a good look at/view of** descriptions, questions,
+  quoted/reported/conditional wording or negation of the concern.
+- Extend dismissal with **as I already told you, [request]**; extend request-ending
+  pressure with **no more excuses**. Keep explicit request grounding for these.
+  No generic negative-word list, deadline penalty or inference of recipient mood.
+- A narrowly matched cue may contain `not`; only that cue's own token may bypass
+  the existing negation safeguard. Other qualifications retain suppression.
+- At most one finding per family, two total. Existing family ordering stays;
+  judgmental framing follows the original three. Original UTF-16 spans remain exact.
+- Development checks cover positive variants and ordinary/negated/quoted/reported
+  counterexamples, boundaries, repeated phrases, emoji and current UI behavior.
+  Passing them is not evidence of broad language reliability.
+
+Ownership for this correction: interface worker owns App.tsx, styles.css,
+demos.ts and all tests/browser files; engine worker owns only tone.ts and
+tone.test.ts. Lead owns shared types, this contract, docs, dependencies and Git.
+Fresh independent reviewer starts read-only after integration.
 
 ## Current follow-on contract and ownership
 
@@ -17,7 +47,8 @@ engine entry point, configuration, documentation and Git.
 Intent is `direct | collaborative | warm` (UI default: collaborative). It is a
 pure bounded wording-cue review with a separate cap of two, the same 12,000 UTF-16
 limit/RangeError/blank behavior as clarity and the shared `activeText` masking
-helper. Rule IDs: sweeping-blame, dismissive-request, pressure-wording. Both
+helper. Rule IDs: sweeping-blame, dismissive-request, pressure-wording,
+judgmental-framing. Both
 result shapes contain findings, checkedCharacters and excludedSections.
 
 The shared `ReviewFinding` union preserves title/explanation/prompt and exact
@@ -46,7 +77,7 @@ manual-copy fallback. Empty tone states explicitly retain coverage limitations.
 No new reserved evaluation is part of this slice; only fresh fictional tone
 development cases. Historical evaluation records remain unchanged.
 
-## Bounded tone policy
+## Original bounded tone policy (extended by version 3 above)
 
 Tone only considers addressed statements or explicit requests at a sentence/line
 start. Sweeping blame combines always/never with a short list of negative

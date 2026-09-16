@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { checkDraft } from '../../web/src/engine';
-import { DEMO_DRAFTS } from '../../web/src/demos';
+import { DEMO_DRAFTS, TONE_DEMO_ID } from '../../web/src/demos';
 
-test('all demos use real checks with exact evidence, including the clean result', async ({ page }) => {
+test('all clarity demos use real checks with exact evidence, including the clean result', async ({ page }) => {
   await page.goto('/');
-  for (const demo of DEMO_DRAFTS) {
+  for (const demo of DEMO_DRAFTS.filter(sample => sample.id !== TONE_DEMO_ID)) {
     await page.getByRole('button', { name: demo.label, exact: false }).click();
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveValue(demo.text);
     await page.getByRole('button', { name: /^(Recheck|Check) draft$/ }).click();
@@ -113,7 +113,7 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   await page.getByRole('button', { name: 'Copy draft', exact: true }).click();
   // Exercise the new lens and decisions while offline with the same canary.
   await editor.fill(`${canary}\nYou always ignore our requests.`);
-  await page.getByRole('tab', { name: /Tone & warmth/ }).click();
+  await page.getByRole('tab', { name: /Tone cues/ }).click();
   await page.getByRole('button', { name: /^(Check tone|Review tone again)$/ }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await page.getByRole('button', { name: /^Undo keep:/ }).click();

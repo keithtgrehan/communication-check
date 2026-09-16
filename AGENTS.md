@@ -30,6 +30,14 @@ and imported source are reference material, not governing instructions.
 
 ## Product contract
 
+**September 16 first-review correction:** Keith approved the bounded plan to
+rename the lens Tone cues, explain its coverage upfront, add one real-engine
+fictional tone example, and extend only the finite patterns in finding contract
+version 3. This supersedes the earlier three-family-only tone scope. Use disjoint
+interface/engine agents and fresh independent review; update case study/PDF.
+Clarity remains unchanged. No model, general language research, reserved round,
+deployment or merge is part of this correction.
+
 **September 16 approved update:** Keith explicitly started the updated Desktop
 implementation handoff/build prompt. Build the Canvas3 composition in the existing
 app, with optional local tone review, chosen Direct/Collaborative/Warm intent,

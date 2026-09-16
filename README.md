@@ -4,12 +4,14 @@
 
 A private portfolio MVP for B2B SaaS account managers and customer-success managers
 reviewing customer onboarding follow-up emails. Paste a draft or choose one of
-three fictional examples, check exact wording, edit, recheck and copy.
+four fictional examples, check exact wording, edit, recheck and copy.
 
 Clarity & commitments provides up to three review prompts for unclear ownership,
 vague timing, competing requests, agreement wording and strong product commitments.
-The September 16 local update adds optional Tone & warmth: up to two wording cues
-with a chosen Direct, Collaborative or Warm review preference. Edit this wording
+The September 16 local update adds optional Tone cues: up to two findings for
+supported accusation, judgmental, dismissive and pressure wording. A chosen
+Direct, Collaborative or Warm preference changes the review question, not which
+wording is detected. A dedicated fictional tone example shows the check. Edit this wording
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
@@ -17,8 +19,8 @@ the decision. The app does not verify facts/agreements, rewrite, score or send e
 
 The September 16 follow-on is implemented locally on
 `codex/communication-check-tone-review`; it has not been deployed. Fresh validation
-passes 307 engine tests (225 clarity + 82 tone), seven setup checks, the production
-build/typecheck/source guards and 43 browser tests. See [progress](docs/PROGRESS.md)
+passes 399 engine tests (225 clarity + 174 tone), seven setup checks, the production
+build/typecheck/source guards and 48 browser tests. See [progress](docs/PROGRESS.md)
 for the completed independent review and [local screenshots](docs/screenshots/README.md).
 
 The September 11 hosted version is a functional portfolio prototype. At delivery,

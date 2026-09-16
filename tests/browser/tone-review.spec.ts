@@ -5,7 +5,7 @@ import { checkDraft } from '../../web/src/engine';
 import { type ToneIntent } from '../../web/src/engine/types';
 
 const mixedDraft = 'Hi Zoë 👋,\n\nYou always ignore our requests.\nPlease send the workspace list by Thursday.\nWe guarantee the custom integration will be ready by Friday.';
-const toneTab = (page: Page) => page.getByRole('tab', { name: /Tone & warmth/ });
+const toneTab = (page: Page) => page.getByRole('tab', { name: /Tone cues/ });
 const clarityTab = (page: Page) => page.getByRole('tab', { name: 'Clarity & commitments' });
 const editorFor = (page: Page) => page.getByRole('textbox', { name: 'Your follow-up draft' });
 const runTone = async (page: Page) => {
@@ -214,3 +214,116 @@ test('late clipboard refusal cannot select a replacement draft', async ({ page }
   await expect(editor).toHaveValue('Replacement draft.');
   await expect(page.getByRole('status')).not.toContainText('Clipboard access is unavailable');
 });
+
+test('tone example explains coverage before an explicit check and matches ordinary input', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  const example = page.getByRole('button', { name: 'Tone to reconsider', exact: true });
+  const editor = editorFor(page);
+  await example.click();
+  await expect(example).toHaveAttribute('aria-pressed', 'true');
+  await expect(toneTab(page)).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.tone-scope')).toHaveText('Looks for a few patterns of accusation (“you always ignore our requests”), judgment (“not a good look”), dismissal (“as I already told you”) and extra pressure (“no excuses”). Coverage is limited; it cannot assess your whole message.');
+  await expect(page.locator('#draft-description')).toContainText('Fictional example');
+  await expect(page.getByRole('status')).toHaveText('Fictional tone example loaded. Select Check tone when you’re ready.');
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await expect(page.getByRole('button', { name: 'Check tone', exact: true })).toBeInViewport({ ratio: 1 });
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  const text = await editor.inputValue();
+  await runTone(page);
+  await expect(page.locator('.finding-card')).toHaveCount(1);
+  await expect(page.locator('blockquote:visible')).toHaveText('This is not a good look, we are still waiting for your workspace list.');
+  const exampleFinding = await page.locator('.finding-card').innerText();
+
+  await page.reload();
+  await editor.fill(text);
+  await expect(example).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('#draft-description')).not.toContainText('Fictional example');
+  await toneTab(page).click();
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await runTone(page);
+  await expect(page.locator('.finding-card')).toHaveCount(1);
+  await expect(page.locator('.finding-card')).toHaveText(exampleFinding, { useInnerText: true });
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  const quote = 'This is not a good look, we are still waiting for your workspace list.';
+  expect(await editor.evaluate((field: HTMLTextAreaElement) => ({ start: field.selectionStart, end: field.selectionEnd, selected: field.value.slice(field.selectionStart, field.selectionEnd) }))).toEqual({ start: text.indexOf(quote), end: text.indexOf(quote) + quote.length, selected: quote });
+
+  await example.click();
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await editor.press('End');
+  await editor.press('Space');
+  await expect(example).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('#draft-description')).not.toContainText('Fictional example');
+});
+
+test('a fictional follow-up selects only its current judgmental sentence and keeps decisions through recheck', async ({ page }) => {
+  const quote = 'This is not a good look, we are still waiting for your workspace list.';
+  const text = `Hi Zoë 👋,\n\n> ${quote}\n\nThanks for our setup call.\n\n${quote}\n\nPlease send the workspace list by Thursday.\n\nBest,\nMorgan`;
+  await page.goto('/');
+  const editor = editorFor(page);
+  await editor.fill(text);
+  await toneTab(page).click();
+  await runTone(page);
+  await expect(page.locator('.finding-card')).toHaveCount(1);
+  await expect(page.locator('blockquote:visible')).toHaveText(quote);
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  const start = text.lastIndexOf(quote);
+  expect(await editor.evaluate((field: HTMLTextAreaElement) => ({ start: field.selectionStart, end: field.selectionEnd }))).toEqual({ start, end: start + quote.length });
+  await expect(editor).toBeFocused();
+  await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await expect(page.getByRole('button', { name: /^Undo keep:/ })).toBeFocused();
+  await expect(editor).toHaveValue(text);
+  await runTone(page);
+  await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
+  await page.getByRole('button', { name: /^Undo keep:/ }).click();
+  await expect(page.getByRole('button', { name: 'Edit this wording' })).toBeFocused();
+  await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  await editor.press('Backspace');
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await runTone(page);
+  await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
+  await expect(page.locator('.result-empty')).toContainText('cannot judge how your message will be received');
+  await expect(editor).toHaveValue(text.slice(0, start) + text.slice(start + quote.length));
+});
+
+test('style changes the question while the same judgmental wording stays flagged', async ({ page }) => {
+  const quote = 'This is not a good look, we are still waiting for your workspace list.';
+  const text = `Hi Riley,\n\n${quote}\n\nPlease send the workspace list by Thursday.`;
+  await page.goto('/');
+  await editorFor(page).fill(text);
+  await toneTab(page).click();
+  await expect(page.locator('.intent-picker')).toContainText('Your style changes the review questions. The same wording is flagged for every style.');
+  const prompts: string[] = [];
+  const titles: string[] = [];
+  for (const intent of ['Direct', 'Collaborative', 'Warm']) {
+    await page.getByRole('radio', { name: intent, exact: true }).check();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await runTone(page);
+    await expect(page.locator('.finding-card')).toHaveCount(1);
+    await expect(page.locator('blockquote:visible')).toHaveText(quote);
+    prompts.push(await page.locator('.review-prompt > p').innerText());
+    titles.push(await page.locator('.finding-toggle').innerText());
+    await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
+    await page.getByRole('button', { name: 'Keep as written' }).click();
+    await expect(editorFor(page)).toHaveValue(text);
+  }
+  expect(new Set(prompts).size).toBe(3);
+  expect(new Set(titles).size).toBe(1);
+});
+
+for (const quote of [
+  'As I already told you, please send the workspace list.',
+  'Please send the workspace list by Thursday, no more excuses.',
+]) {
+  test(`an ordinary pasted request surfaces its supported tone cue: ${quote}`, async ({ page }) => {
+    await page.goto('/');
+    await editorFor(page).fill(`Hi Riley,\n\n${quote}\n\nBest,\nMorgan`);
+    await toneTab(page).click();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await runTone(page);
+    await expect(page.locator('.finding-card')).toHaveCount(1);
+    await expect(page.locator('blockquote:visible')).toHaveText(quote);
+  });
+}

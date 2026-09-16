@@ -131,7 +131,7 @@ for (const width of [320, 390, 1024, 1440]) {
     expect(focus.outline).toBeGreaterThanOrEqual(3);
     // Primary focus outline is outside the filled button, on the near-white editor.
     expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(105, 72, 95)');
-    await page.getByRole('tab', { name: /Tone & warmth/ }).click();
+    await page.getByRole('tab', { name: /Tone cues/ }).click();
     for (const label of ['Direct', 'Collaborative', 'Warm']) {
       const radio = page.getByRole('radio', { name: label, exact: true });
       const target = radio.locator('..');
@@ -160,7 +160,7 @@ test('200 percent text enlargement preserves tone controls and entire mobile flo
     elements.forEach((element, index) => { element.style.fontSize = `${sizes[index]}px`; });
   });
   await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests.');
-  await page.getByRole('tab', { name: /Tone & warmth/ }).click();
+  await page.getByRole('tab', { name: /Tone cues/ }).click();
   await page.getByRole('button', { name: 'Check tone', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

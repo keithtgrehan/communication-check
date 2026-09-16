@@ -1,5 +1,7 @@
 import type { DemoDraft } from './engine/types';
 
+export const TONE_DEMO_ID = 'tone-to-reconsider';
+
 export const DEMO_DRAFTS: DemoDraft[] = [
   {
     id: 'clear-next-steps',
@@ -46,6 +48,21 @@ It was helpful to hear how your team plans to use the reporting workspace.
 We guarantee that the custom integration will be ready by Friday.
 
 Please send the name of your technical contact by Wednesday, 16 September so I can include them in the setup discussion.
+
+Best,
+Morgan`,
+  },
+  {
+    id: TONE_DEMO_ID,
+    label: 'Tone to reconsider',
+    description: 'Judgmental wording beside an ordinary request.',
+    text: `Hi Riley,
+
+Thanks for joining the workspace setup call.
+
+This is not a good look, we are still waiting for your workspace list.
+
+Please send the workspace list by Thursday.
 
 Best,
 Morgan`,

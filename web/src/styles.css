@@ -44,6 +44,7 @@ h1 span { font-style: italic; white-space: nowrap; }
 .lens-tab:hover { color: var(--ink); background: #eee9e3; }
 .lens-tab[aria-selected="true"] { border-bottom-color: var(--accent); color: var(--accent); }
 .optional-label { font-size: 14px; font-weight: 400; color: var(--muted); }
+.tone-scope { max-width: 850px; margin: -12px 0 8px; color: var(--muted); font-size: 15px; line-height: 1.6; }
 .workspace { display: grid; grid-template-columns: minmax(0, 60fr) minmax(0, 40fr); gap: 24px; align-items: start; }
 .editor-panel, .results-panel { min-width: 0; }
 .editor-panel { padding: 16px 24px 20px; border: 1px solid #b9b1af; background: var(--surface); border-radius: 3px; }

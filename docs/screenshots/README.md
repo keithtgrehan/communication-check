@@ -1,5 +1,18 @@
 # Portfolio screenshots
 
+## September 16 Tone cues correction
+
+Real production-build captures of the new fictional **Tone to reconsider** demo:
+[desktop viewport](2026-09-16-tone-cues/tone-cues-desktop-top.png),
+[full desktop](2026-09-16-tone-cues/tone-cues-1440-full.png),
+[390px](2026-09-16-tone-cues/tone-cues-390-full.png) and
+[320px](2026-09-16-tone-cues/tone-cues-320-full.png).
+Lead and independent reviewer inspected the final desktop/mobile layouts. The
+primary action is fully visible at 1440×900; mobile text wraps without horizontal
+overflow. Captures preceded the question-punctuation safeguard fix, which changes
+no UI or result for this demo. These are local Chromium captures, not hosted
+evidence, physical-device testing or human validation.
+
 ## September 16 local follow-on
 
 Captured from the real production build at `http://127.0.0.1:4173`, branch

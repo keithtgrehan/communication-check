@@ -3,6 +3,8 @@
 **Title:** Communication Check | Customer follow-up review prototype
 
 Use only built-in fictional examples. Practise once on the final verified UI.
+This script describes the September 16 local candidate. The September 11 hosted
+preview still uses its earlier controls and has no tone lens.
 Record only if it will not delay the screenshots and portfolio copy. This file is
 a script, not evidence that a video was recorded or published.
 
@@ -13,7 +15,7 @@ next. I explored a short review step before the writer sends it.”
 
 ## 12–30 seconds — Show exact evidence
 
-Load **Promises to confirm**, select **Check draft**, then **Select in draft**.
+Load **Promises to confirm**, select **Check draft**, then **Edit this wording**.
 
 “The prompt points to the original wording. It asks me to confirm a product
 commitment; it cannot know what was agreed in the meeting.”
@@ -42,8 +44,10 @@ usefulness has not yet been validated with customers.”
 
 ## Optional discussion after the demo
 
-Use **Too many asks** if asked for another example. Explain the three-result cap
-and dismissal. Keep the detailed evaluation history in the case study; functional
+Use **Tone to reconsider** for the bounded tone example, then **Check tone**.
+Explain the supported cues and show **Keep as written** and **Undo**. Intent
+changes the review question, not detection sensitivity. Use **Too many asks** for
+another clarity example. Keep the detailed evaluation history in the case study; functional
 test counts are not accuracy evidence. The conversation notes cover architecture,
 privacy and the division between Keith's direction and agent implementation.
 

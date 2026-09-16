@@ -376,3 +376,57 @@ Only documentation/status recording and a trailing blank-line cleanup in the
 extracted helper changed after this review. Final branch and
 commit are reported in the delivery handoff; screenshot/runtime provenance is
 unchanged. No push, deployment, merge, launch, spending or outreach occurred.
+
+## 16 September first-review Tone cues correction
+
+Verified canonical branch `codex/communication-check-tone-review` at `4813014`
+before editing; only the existing PDF output directory was untracked. Preserved
+that commit's model-deferral decision. Keith authorized the finite correction
+in `TONE_CORRECTION.md` and finding contract v3. No model research, new dependency,
+reserved evaluation, hosting change, push or merge occurred.
+
+Two Astra High workers owned disjoint interface and engine files. The lead
+integrated the shared contract/type and docs. The new tone demo uses normal
+current-draft checking; the original three clarity demo texts and all clarity
+implementation modules remain unchanged. Demo loading selects its relevant lens
+without analysis. Intent changes review questions, never detection sensitivity.
+
+Final lead validation passed seven setup/integrity checks, all 399 engine tests
+(225 clarity + 174 tone), build/typecheck/source guards and all 48 Chromium
+browser checks (18.9 seconds in the final run). All 82 prior tone tests remain;
+92 additional development cases cover the finite extension and counterexamples.
+These include quotation, reporting, negation, ordinary look-at/view descriptions,
+self-reflection, mixed-punctuation questions, emoji, original spans and caps.
+No heldout accuracy or general language coverage claim is made.
+
+Five new browser cases verify explicit demo/input parity without fabricated
+results, the judgmental sentence with exact selection/keep/undo/recheck/edit,
+intent-invariant evidence with distinct questions, and normal pasted dismissal
+and pressure requests. Existing checks cover both lenses, keyboard, current copy
+and refusal, responsive and enlarged layouts, source integrity and runtime
+network/log/URL/storage/offline canaries. Final desktop primary action remains
+fully visible at 1440×900. The production privacy checks passed; this is bounded
+Chromium evidence, not an audit of extensions, OS services or all browsers.
+
+Fresh Astra Extra High review found one actual safeguard defect: a question
+ending in ?! bypassed suppression that checked only the final character. The
+lead fixed the terminal-punctuation check and added six regressions. The reviewer
+independently passed 174 tone tests and 22 targeted browser checks, plus separate
+punctuation probes across all intents, and cleared the final implementation.
+Final desktop/390/320 screenshots were visually inspected by lead and reviewer;
+no outstanding implementation findings. The reviewer did not review the final PDF.
+
+Lead regenerated the four-page case-study PDF with current counts, an actual
+new-rule example and a real interface screenshot, then rendered/inspected every
+page and checked text extraction and page bounds. All ten historical evaluation
+results remain. Original PDF retained locally in ignored work storage. PDF
+output is local, not a hosted publication or Project Sources synchronization.
+
+Reviewed final source SHA-256:
+- tone.ts: `810400683fa4ed570805216351c288181f0767b7733dd0695595ecb918263028`
+- App.tsx: `0a868aeab502873af19bb1a5f5e1223b500d99b9957e513162c9cbdf1604759c`
+- styles.css: `1ecdd2a93d180da36bb14ca7a54575fcfad2130f8c1b3c42da77d510b83f70c0`
+
+Keith's next action is the short usefulness review in TONE_CORRECTION.md. Automated
+checks and independent agent review do not establish human usefulness, broad
+semantic reliability, physical-device compatibility or accessibility certification.

@@ -24,6 +24,20 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Approved correction after Keith's first review:** rename the optional lens
+**Tone cues**, explain the finite supported checks upfront and clarify that
+Direct/Collaborative/Warm changes the review question, not detection sensitivity.
+Add one fictional tone demonstration through the same check path as pasted text.
+Extend the local rules only for bounded evaluative "not a good look" wording,
+addressed "you should know better", "as I already told you" requests and
+request-ending "no more excuses". Ordinary usage, quotations, reporting and
+negation require explicit development counterexamples. Finding contract version 3
+defines the exact scope. This is a limited coverage correction, not general tone
+assessment or a new accuracy claim. Keep clarity unchanged and refresh the case
+study/PDF after local validation and independent review. Keith reviews usefulness
+on his own wording only after the candidate is ready; no action is needed during
+implementation. This authorization supersedes earlier conflicting tone scope.
+
 Keith explicitly authorized implementation using the latest
 COMMUNICATION_CHECK_IMPLEMENTATION_HANDOFF.md and COMMUNICATION_CHECK_CODEX_BUILD_PROMPT.md
 in `/Users/keith/Desktop/Shipping MVPs MD Sept 16th/`. This decision supersedes
@@ -33,7 +47,7 @@ application or authority for backend/model/rewrite features.
 Use the Canvas3 composition: warm paper, near-white editor, charcoal text and
 restrained plum on actions, selection and focus. Headline: “A clearer message.
 Still your voice.” Keep one shared draft, initial Clarity & commitments and
-optional Tone & warmth. Tone uses local deterministic wording cues with intended
+optional Tone cues. Tone uses local deterministic wording cues with intended
 styles Direct, Collaborative (default) and Warm. It is an explicit review action,
 not continuous analysis or a general tone judgment. Preserve the clarity engine.
 

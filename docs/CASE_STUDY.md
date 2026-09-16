@@ -17,9 +17,10 @@ not been validated.
 
 ## The experience
 
-Paste a draft or try one of three fictional examples. Clarity & commitments
-shows up to three prompts. Optional Tone & warmth shows up to two wording cues
-using a chosen Direct, Collaborative or Warm preference. Open a finding, select
+Paste a draft or try one of four fictional examples, including a tone example.
+Clarity & commitments shows up to three prompts. Optional Tone cues shows up to
+two supported wording cues. Direct, Collaborative or Warm changes the review
+question, not which wording is flagged. Open a finding, select
 its exact wording to edit, or keep it as written. Keep marks Reviewed with Undo;
 unchanged rechecks preserve decisions. Text edits clear both reviews; changing
 style clears tone only. Copy always uses the current draft.
@@ -49,7 +50,7 @@ finding → human decision.
 Communication Check keeps the original draft and its character positions so a
 finding can select the exact wording, including repeated phrases and emoji.
 Local deterministic TypeScript rules recognize a bounded set of linguistic cues:
-for example, a definite product commitment or an addressed sweeping accusation.
+for example, a definite product commitment or a bounded judgmental phrase.
 
 Context checks are limited rules and suppressions. They exclude recognized
 quoted history and signatures and handle supported qualifications; tone review
@@ -73,21 +74,23 @@ factual correctness or production-level accuracy.
 
 **Verified fictional example** — local tone engine, Collaborative intent:
 
-- Input: “You always ignore our requests. Please send the workspace list by Thursday.”
-- Exact emitted quote: “You always ignore our requests.”
-- Review question: “Would naming the specific missed action and a shared next step help coordinate the follow-up?”
-- Possible human decision: select the wording and describe the specific missed request, then recheck; or keep it as written. Neither action verifies the underlying facts.
+- Input: “This is not a good look, we are still waiting for your workspace list. Please send the workspace list by Thursday.”
+- Exact emitted quote: “This is not a good look, we are still waiting for your workspace list.”
+- Review question: “Would describing the specific issue and a shared next step help coordinate this follow-up?”
+- Possible human decision: select the wording and describe the specific issue, then recheck; or keep it as written. Neither action verifies the underlying facts.
 
 ## What was delivered
 
 The September 11 delivery includes a hosted preview, three interactive demos,
 portfolio screenshots, a walkthrough script and a documented rollback path.
 The September 16 follow-on adds the Canvas3 layout, optional tone review and
-keep/undo interactions in the existing local app. The hosted preview is unchanged.
+keep/undo interactions in the existing local app. A first-review correction adds
+upfront coverage, a tone demo and limited judgmental/dismissive/pressure patterns.
+The hosted preview is unchanged.
 
-Fresh local validation on September 16 passes **307 engine tests** (225 existing
-clarity tests and 82 new tone development tests), **seven setup/integrity checks**,
-build/typecheck/source guards and **43 browser checks**. Browser coverage includes
+Fresh local validation on September 16 passes **399 engine tests** (225 existing
+clarity tests and 174 tone development tests), **seven setup/integrity checks**,
+build/typecheck/source guards and **48 browser checks**. Browser coverage includes
 both review lenses, editing, current-text clipboard/fallback, exact evidence,
 keyboard access, responsive layout and runtime privacy/offline behavior.
 [Local screenshots](screenshots/README.md) include 1440, 1024, 390 and 320px widths,
@@ -105,12 +108,11 @@ ten reserved fictional evaluations missed the original detection target; the
 latest detected 4 of 12 selected issues, with no flags across its four clean
 controls. Those results remain visible in the evaluation report.
 
-I chose to ship the polished portfolio prototype and stop the deeper parser
-experiment for this delivery. The result demonstrates product scope, interaction
-design, browser-local implementation and an honest approach to validation. It is
-not presented as a reliable general-purpose writing assistant. Future product
-work would start with real user feedback and a deliberate decision about detection
-quality before expanding the scope.
+I chose to ship a bounded portfolio prototype. My first hands-on review exposed
+that none of the clarity demos demonstrated tone and ordinary judgmental wording
+was missed. The correction makes coverage explicit, adds a tone example and
+extends a few local patterns. It does not establish broad reliability. Further
+expansion needs real user feedback and a deliberate decision about detection quality.
 
 ## Preserved evaluation history
 

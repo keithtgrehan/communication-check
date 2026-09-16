@@ -35,7 +35,7 @@ export const MAX_FINDINGS = 3;
 
 export type ReviewLens = 'clarity' | 'tone';
 export type ToneIntent = 'direct' | 'collaborative' | 'warm';
-export type ToneRuleId = 'sweeping-blame' | 'dismissive-request' | 'pressure-wording';
+export type ToneRuleId = 'sweeping-blame' | 'dismissive-request' | 'pressure-wording' | 'judgmental-framing';
 export interface ToneFinding extends Omit<Finding, 'ruleId'> {
   ruleId: ToneRuleId;
 }

@@ -67,6 +67,173 @@ describe('bounded tone wording cues', () => {
   });
 });
 
+describe('bounded judgment and request additions', () => {
+  it.each([
+    'This is not a good look, is it?!',
+    'This is not a good look!?',
+    'You should know better, right?!',
+    'You should know better!?',
+    'You always ignore our requests?!',
+    'Please send the list, no more excuses?!',
+  ])('abstains on questions with mixed terminal punctuation: %s', text => {
+    expect(rules(text)).toEqual([]);
+  });
+
+  it.each([
+    'Not a good look.',
+    'This is not a good look.',
+    'That’s not a good look.',
+    "It's not a good look!",
+    'THIS IS NOT A GOOD LOOK!',
+    'This is not a good look, we are still waiting for the workspace list.',
+    'Not a good look, the import checklist is still incomplete.',
+    'Several teams are waiting on access and the project lead is asking about progress, not a good look',
+    'The checklist is incomplete, that is not a good look.',
+    'You should know better.',
+    'YOU SHOULD KNOW BETTER!',
+    'You should know better, please review the import checklist.',
+    'You should know better than to skip the agreed review.',
+  ])('recognises only the defined evaluative constructions: %s', text => {
+    for (const intent of intents) expect(rules(text, intent)).toEqual(['judgmental-framing']);
+    expect(checkTone(text, 'warm').findings[0].quote).toBe(text);
+    verifyEvidence(text);
+  });
+
+  it.each([
+    'As I already told you, send the workspace list.',
+    'As I already told you, please confirm the import owner.',
+    'AS I ALREADY TOLD YOU, UPLOAD THE CHECKLIST!',
+    'As I already told you, you need to review the sandbox details.',
+    'As I already told you, I expect you to reply by Thursday.',
+  ])('grounds the dismissive reminder in an explicit request: %s', text => {
+    expect(rules(text)).toEqual(['dismissive-request']);
+    expect(checkTone(text, 'direct').findings[0].quote).toBe(text);
+    verifyEvidence(text);
+  });
+
+  it.each([
+    'Please send the workspace list by Thursday, no more excuses.',
+    'You must submit the form—no more excuses!',
+    'I need you to review the checklist; no more excuses.',
+    'UPLOAD THE LIST, NO MORE EXCUSES!',
+  ])('extends only the request-ending pressure construction: %s', text => {
+    expect(rules(text)).toEqual(['pressure-wording']);
+    expect(checkTone(text, 'direct').findings[0].quote).toBe(text);
+    verifyEvidence(text);
+  });
+
+  it.each([
+    'This is not a good look at the workspace.',
+    'Not a good look at the revised dashboard.',
+    'The screenshot is not a good look at the settings.',
+    'This is not a good look view of the workspace.',
+    'This is not a good view of the dashboard.',
+    'That is not a good lookup key.',
+    'You should know better than anyone how the import works.',
+    'You should know better how the settings work after training.',
+    'We should know better.',
+    'You could have handled that better.',
+    'This reflects poorly on the team.',
+    'That looks bad.',
+    'This is a bad look.',
+    'As I told you, please send the checklist.',
+    'As I already told you, the workspace is ready.',
+    'As I already told you, thanks for sending the checklist.',
+    'As I already told you, could you send the checklist?',
+    'As I already told you to send the checklist, the owner is waiting.',
+    'No more excuses.',
+    'There are no more excuses.',
+    'Please send the list with no more excuses.',
+    'Please send the list, no further excuses.',
+    'Please send the list, no more excuses are needed.',
+    'Please send the list, no more excuses about the delay.',
+  ])('retains ordinary uses and unsupported paraphrases as boundaries: %s', text => {
+    for (const intent of intents) expect(rules(text, intent)).toEqual([]);
+  });
+
+  it.each([
+    'This is not a good look?',
+    'You should know better?',
+    'This is not a good look, but that is not true.',
+    'The delay is not unusual, not a good look.',
+    'This is not a good look, not a good look.',
+    'This is not a good look, unless the screenshot is outdated.',
+    'This is not a good look, if the report is accurate.',
+    'If this is not a good look, we can discuss it.',
+    'Perhaps this is not a good look.',
+    'This is not a good look, apparently.',
+    'Do not say you should know better.',
+    'You should not know better.',
+    'You should know better, but that is untrue.',
+    'You should know better, if the checklist was available.',
+    'You should know better, said the project lead.',
+    'You should know better, wrote the project lead.',
+    'You should know better, the project lead told me.',
+    'This is not a good look, according to the project lead.',
+    'The report says this is not a good look.',
+    'I forgot the checklist, not a good look.',
+    'We missed the deadline, not a good look.',
+    'This is not a good look, my own mistake.',
+    'You should know better, I tell myself.',
+    'As I already told you, please do not send the checklist.',
+    'As I already told you, please send the checklist if ready.',
+    'As I already told you, please send the sample.',
+    'As I already told you, please send the checklist, according to the example.',
+    'Please send the list if ready, no more excuses.',
+    'Please do not send the list, no more excuses.',
+    'Please send the list, no more excuses, unless access is blocked.',
+    'The lead said: Please send the list, no more excuses.',
+  ])('preserves qualification, reporting and identifiable self-reflection safeguards: %s', text => {
+    expect(rules(text)).toEqual([]);
+  });
+
+  it.each([
+    'This is not a good look.',
+    'You should know better.',
+    'As I already told you, please send the workspace list.',
+    'Please send the workspace list, no more excuses.',
+  ])('excludes new cues in quotation and recognised history: %s', cue => {
+    for (const text of [`“${cue}”`, `"${cue}"`, `> ${cue}`, `On Monday, Riley wrote:\n${cue}`]) {
+      expect(rules(text)).toEqual([]);
+    }
+  });
+
+  it('keeps exact UTF-16 evidence for the active repeated evaluative sentence', () => {
+    const cue = 'This is not a good look, the 🧩 import checklist is still incomplete.';
+    const text = `🪴 Notes for Zoë\r\n> ${cue}\r\n\r\n  • ${cue}\n${cue}`;
+    const finding = checkTone(text, 'warm').findings[0];
+    expect(finding.start).toBe(text.indexOf(cue, text.indexOf(cue) + cue.length));
+    expect(finding.end).toBe(finding.start + cue.length);
+    expect(finding.quote).toBe(cue);
+    expect(checkTone(text, 'warm').findings).toHaveLength(1);
+    verifyEvidence(text);
+  });
+
+  it('preserves original priorities and caps judgmental framing after the other families', () => {
+    const judgment = 'This is not a good look.';
+    const pressure = 'Please send the list, no more excuses.';
+    const dismissal = 'As I already told you, upload the checklist.';
+    const blame = 'You always ignore our requests.';
+    expect(rules(`${judgment} ${pressure}`)).toEqual(['pressure-wording', 'judgmental-framing']);
+    expect(rules(`${judgment} ${pressure} ${dismissal}`)).toEqual(['dismissive-request', 'pressure-wording']);
+    expect(rules(`${judgment} ${pressure} ${dismissal} ${blame}`)).toEqual(['sweeping-blame', 'dismissive-request']);
+    expect(rules(`${judgment} You should know better.`)).toEqual(['judgmental-framing']);
+    expect(rules(`${dismissal} Stop making excuses and send the list.`)).toEqual(['dismissive-request']);
+    expect(rules(`${pressure} Send the checklist, no excuses.`)).toEqual(['pressure-wording']);
+  });
+
+  it.each([
+    'This is not a good look.',
+    'As I already told you, please send the workspace list.',
+    'Please send the workspace list, no more excuses.',
+  ])('changes only the review question across intents for each addition: %s', text => {
+    const findings = intents.map(intent => checkTone(text, intent).findings[0]);
+    expect(new Set(findings.map(findingIdentity)).size).toBe(1);
+    expect(new Set(findings.map(finding => finding.prompt)).size).toBe(3);
+    expect(checkTone(text, 'direct')).toEqual(checkTone(text, 'direct'));
+  });
+});
+
 describe('conservative clean controls', () => {
   it.each([
     'Please share the admin list.',

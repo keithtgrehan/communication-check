@@ -6,11 +6,14 @@ import {
 
 /*
  * Bounded wording cues, not sentiment analysis or a judgment about the writer.
- * Only sentence/line-initial addressed statements and explicit requests qualify.
+ * Addressed statements, explicit requests and bounded evaluative clauses qualify.
  * Sweeping blame requires always/never plus one of the coordination actions below;
- * dismissal requires an explicit accusation followed by a request; pressure requires
- * a request ending in "no excuses" or "or else". Brevity, please, deadlines,
- * escalation, thanks and punctuation style are never sufficient cues.
+ * dismissal requires an explicit accusation or dismissive reminder followed by a
+ * request; pressure requires
+ * a request ending in "no excuses", "no more excuses" or "or else". Judgmental
+ * framing covers only "not a good look" and addressed "you should know better".
+ * Brevity, please, deadlines, escalation, thanks and punctuation style are never
+ * sufficient cues.
  *
  * We deliberately abstain on questions, supported negations/qualifications,
  * reported/hypothetical wording, and any unit containing quoted text. These are
@@ -20,12 +23,14 @@ import {
  * feelings: Direct asks for a specific action; Collaborative invites coordination;
  * Warm invites less impersonal framing without requiring gratitude or apology.
  */
-const PRIORITY: ToneRuleId[] = ['sweeping-blame', 'dismissive-request', 'pressure-wording'];
+const PRIORITY: ToneRuleId[] = ['sweeping-blame', 'dismissive-request', 'pressure-wording', 'judgmental-framing'];
 const ACTION = '(?:send|share|upload|complete|confirm|provide|reply|respond|review|read|check|finish|approve|return|submit)';
 const DISMISSAL = new RegExp(`^stop (?:making excuses|wasting (?:my|our) time) and (?:please )?${ACTION}\\b`, 'i');
 const REQUEST = new RegExp(`^(?:(?:please )?${ACTION}|you (?:must|need to|have to) ${ACTION}|i (?:need|expect) you to ${ACTION})\\b`, 'i');
 const SWEEPING = /^you (?:always (?:(?:ignore|disregard) (?:my|our|the) (?:requests?|emails?|messages?|questions?|instructions?|feedback)|miss (?:our |the )?(?:deadlines?|meetings?)|fail to (?:reply|respond|follow up|send|share|provide|complete))|never (?:(?:reply|respond)(?: to (?:my|our) (?:emails?|messages?|requests?|questions?)| at all|(?=[.!\s]*$))|(?:read|follow) (?:my|our|the) (?:instructions?|messages?|emails?)|listen to (?:me|us)))\b/i;
 const QUALIFIED = /\b(?:if|unless|except|perhaps|maybe|hypothetically|suppose|example|sample|template|phrase|wording|quoted?|allegedly|apparently|says?|said|claims?|claimed|untrue|inaccurate|without|not|cannot|can['’]t|don['’]t|doesn['’]t|didn['’]t|isn['’]t|aren['’]t|wasn['’]t|weren['’]t|wouldn['’]t|shouldn['’]t)\b/i;
+const REPORTED = /\b(?:reportedly|reported|wrote|writes|according to|told (?:me|us)|tell(?:s)? (?:me|us))\b/i;
+const SELF_REFLECTIVE = /\b(?:myself|ourselves|(?:my|our) (?:own )?(?:mistake|fault))\b/i;
 
 const COPY: Record<ToneRuleId, { title: string; explanation: string; prompts: Record<ToneIntent, string> }> = {
   'sweeping-blame': {
@@ -38,26 +43,51 @@ const COPY: Record<ToneRuleId, { title: string; explanation: string; prompts: Re
     },
   },
   'dismissive-request': {
-    title: 'An accusation within a request',
-    explanation: 'The accusation before the requested action may make the request read as dismissive.',
+    title: 'Wording before a request',
+    explanation: 'The wording before the requested action may make the request read as dismissive.',
     prompts: {
-      direct: 'Could the requested action stand on its own without the accusation?',
+      direct: 'Could the requested action stand on its own without this lead-in?',
       collaborative: 'Would asking about a blocker and agreeing a next step help with this request?',
-      warm: 'Would addressing the specific situation instead of the accusation fit your intended warmth?',
+      warm: 'Would focusing on the specific situation fit your intended warmth?',
     },
   },
   'pressure-wording': {
     title: 'Extra pressure around a request',
-    explanation: 'The added “no excuses” or “or else” wording may read as pressure beyond the requested action.',
+    explanation: 'The added “no excuses”, “no more excuses” or “or else” wording may read as pressure beyond the requested action.',
     prompts: {
       direct: 'Would stating the action and any necessary deadline or consequence directly be clearer?',
       collaborative: 'Would clarifying the dependency and a way to raise blockers help coordinate this request?',
       warm: 'Would leaving room for a reply about the situation fit your intended warmth?',
     },
   },
+  'judgmental-framing': {
+    title: 'Judgmental framing',
+    explanation: 'This wording may read as a judgment rather than a description of the specific situation.',
+    prompts: {
+      direct: 'Would naming the specific issue and requested action make this follow-up more precise?',
+      collaborative: 'Would describing the specific issue and a shared next step help coordinate this follow-up?',
+      warm: 'Would focusing on the specific situation instead of this judgment fit your intended warmth?',
+    },
+  },
 };
 
 interface Unit { start: number; end: number; text: string }
+
+function judgmentalCue(text: string): { negationStart?: number } | undefined {
+  if (SELF_REFLECTIVE.test(text)) return undefined;
+  if (/^you should know better(?:[.!]*$|,\s*\S| than to \S)/i.test(text)) return {};
+  // Require an evaluative clause boundary, so ordinary "look at"/"view of"
+  // descriptions and unlisted paraphrases do not qualify. A leading I/we clause
+  // is conservatively treated as self-reflection, not recipient-directed review.
+  const atStart = /^(?:(?:this|that|it)(?: is|['’]s) )?not a good look(?:[.!]*$|,\s*\S)/i.test(text);
+  const atEnd = !/^(?:i|we)\b/i.test(text)
+    && /^.+,\s*(?:(?:this|that|it)(?: is|['’]s) )?not a good look[.!]*$/i.test(text);
+  if (!atStart && !atEnd) return undefined;
+  // The selected cue alone may bypass "not". Every other qualification in the
+  // sentence still runs through the unchanged negation/qualification safeguard.
+  const cue = atStart ? /\bnot a good look\b/i.exec(text) : /\bnot a good look[.!]*$/i.exec(text);
+  return cue ? { negationStart: cue.index } : undefined;
+}
 
 /** Quotation ranges use unchanged UTF-16 positions, including unmatched openers.
  * Apostrophes between letters/digits are contractions, not quote delimiters.
@@ -116,13 +146,19 @@ export function checkTone(text: string, intent: ToneIntent): ToneCheckResult {
   const candidates: ToneFinding[] = [];
   for (const unit of units(masked)) {
     if (quoted.some(([start, end]) => start < unit.end && end > unit.start)
-      || /\?$/.test(unit.text) || QUALIFIED.test(unit.text)
+      || /\?[.!?]*$/.test(unit.text) || REPORTED.test(unit.text)
       || text.slice(unit.start, unit.end) !== unit.text) continue;
+    const reminder = /^as i already told you,\s*(.+)$/i.exec(unit.text);
+    const judgment = judgmentalCue(unit.text);
     const ruleId: ToneRuleId | undefined = SWEEPING.test(unit.text) ? 'sweeping-blame'
-      : DISMISSAL.test(unit.text) ? 'dismissive-request'
-        : REQUEST.test(unit.text) && /[,;—–]\s*(?:no excuses|or else)[.!]*$/i.test(unit.text) ? 'pressure-wording'
-          : undefined;
+      : DISMISSAL.test(unit.text) || (reminder && REQUEST.test(reminder[1])) ? 'dismissive-request'
+        : REQUEST.test(unit.text) && /[,;—–]\s*(?:no (?:more )?excuses|or else)[.!]*$/i.test(unit.text) ? 'pressure-wording'
+          : judgment ? 'judgmental-framing' : undefined;
     if (!ruleId) continue;
+    const negationStart = ruleId === 'judgmental-framing' ? judgment?.negationStart : undefined;
+    const qualificationText = negationStart === undefined ? unit.text
+      : unit.text.slice(0, negationStart) + '   ' + unit.text.slice(negationStart + 3);
+    if (QUALIFIED.test(qualificationText)) continue;
     const copy = COPY[ruleId];
     candidates.push({
       id: `${ruleId}:${unit.start}:${unit.end}`, ruleId,

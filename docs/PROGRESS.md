@@ -1,8 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: local Canvas3/tone/review delivered; independent review complete
-Status: 7 setup + 307 engine + 43 browser checks pass locally; hosted preview unchanged
+Milestone: bounded Tone cues correction delivered; independent review complete
+Status: 7 setup + 399 engine + 48 browser checks pass locally; hosted preview unchanged
+
+## September 16 first-review correction
+
+- Keith approved clearer Tone cues presentation, one fictional tone demo and finite judgmental/dismissive/pressure additions. Canonical branch resumed at 4813014, preserving the model-deferral README decision and prior PDF. Clarity implementation and historical evaluation records are unchanged.
+- Two Astra High workers implemented disjoint UI/engine changes. The lead passed 7 setup checks, 399 engine tests (225 clarity + 174 tone), production build/typecheck/source guards and all 48 browser checks. Existing runtime privacy/offline checks pass; no model, dependency, deployment or reserved evaluation was added.
+- Fresh Astra Extra High review found a mixed-question punctuation safeguard gap; the lead fixed it with six regressions. Reviewer independently passed 174 tone tests and 22 targeted browser checks and cleared the final implementation. This is engineering evidence, not general-language accuracy or human validation.
+- New desktop/390/320px screenshots and the refreshed four-page case-study PDF were visually inspected. The original PDF is retained in ignored local work storage. See TONE_CORRECTION.md and VERIFICATION.md for the finite policy, evidence and Keith's short usefulness review.
 
 ## September 16 follow-on
 
@@ -81,6 +88,7 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can review the local app at http://127.0.0.1:4173, screenshots and case study.
-This implementation slice is complete. A hosted update, publication or merge is
-separate work and was not performed. The historical detection gate remains failed.
+Keith can now refresh http://127.0.0.1:4173, try Tone to reconsider, his earlier
+wording and one ordinary follow-up, then report useful/missed/distracting prompts.
+Local implementation is complete. Hosting, publication and merge remain separate;
+the historical detection gate remains failed. No action was needed during the build.
