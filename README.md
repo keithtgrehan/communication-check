@@ -96,6 +96,20 @@ Automated Chromium viewport/zoom checks are not physical-device tests or a full
 accessibility certification. Fictional agent labels are engineering evidence,
 not real-world accuracy. Human sessions and pilots are outstanding.
 
+## Architecture decision: defer model-based review
+
+Communication Check uses local, deterministic checks to keep drafts in the browser
+and provide findings tied to exact wording.
+
+Browser-based AI could broaden language coverage, but would introduce model
+downloads, device-dependent performance and additional validation work. Cloud
+models would require changing the browser-only data boundary.
+
+For this portfolio release, I prioritised completing and demonstrating the existing
+workflow. Model-based review remains a future option if user feedback identifies a
+specific limitation worth addressing. No candidate model was benchmarked or
+rejected on measured performance grounds.
+
 ## Project and review materials
 
 - [Product brief](docs/PRODUCT_BRIEF.md) and [implementation plan](docs/IMPLEMENTATION_PLAN.md).
