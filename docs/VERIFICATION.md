@@ -623,3 +623,17 @@ Keep/Undo/style/history, current copy and refusal, emoji limits, empty runtime
 storage/network/logging and offline use. Six About/Video Axe scans and final
 enlarged text/zoom probes passed. The reported Video-counter wrapping was fixed
 and rechecked. Automated and agent review do not replace human usability testing.
+
+## September 16 Vercel delivery
+
+Keith accepted source `38d744d` and authorized deployment to Keith Grehan’s projects.
+Deployment `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7` is ready at
+https://communication-check.vercel.app. All **81 hosted Chromium checks pass**
+(1.3 minutes), covering the complete current workflow, nine scenarios, both lenses,
+information pages, clipboard denial, responsive/accessibility behavior and runtime
+network/storage/log/offline privacy. Six static assets match the local production
+build exactly, required security headers pass and eight source/config paths return
+404. See `VERCEL_HOSTED_VERIFICATION.json` for hashes and source revision.
+Only six built site assets and routing/header configuration were uploaded; the dry
+run excluded credentials and local metadata. The earlier Render evidence remains
+historical. No new detection evaluation, reliability claim or app-code change.
