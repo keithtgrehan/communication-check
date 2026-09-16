@@ -16,41 +16,54 @@ export function InfoPages({ page, headingRef }: { page: InfoPage; headingRef: Re
     <main className="info-page" aria-labelledby="info-title">
       <article>
         <header className="info-header">
-          <p className="panel-kicker">{page === 'about' ? 'The idea behind the review' : 'See the workflow'}</p>
           <h1 id="info-title" ref={headingRef} tabIndex={-1}>{page === 'about' ? 'About Communication Check' : 'Video Demo'}</h1>
-          <p className="info-lede">{page === 'about' ? 'A short pause between writing a customer follow-up and sending it.' : 'A closer look at reviewing a follow-up, one decision at a time.'}</p>
+          <p className="info-lede">{page === 'about' ? 'A second look at the email between a good conversation and a clear next step.' : 'See how a follow-up becomes a few clear decisions.'}</p>
         </header>
         {page === 'about' ? <>
           <section className="info-section" aria-labelledby="about-why">
-            <h2 id="about-why">Why it exists</h2>
-            <p>A follow-up can sound clear to its writer while leaving the customer unsure who acts next, what takes priority, or whether a promise is confirmed. Communication Check is a portfolio prototype for B2B SaaS account managers and customer-success managers writing onboarding follow-up emails.</p>
-            <p>It offers a second look at the next action, owner, timing, competing requests and commitments. Optional Tone cues highlights a few supported patterns of accusation, judgment, dismissal and pressure. You decide whether each prompt helps.</p>
+            <h2 id="about-why">Built for customer follow-ups</h2>
+            <p>After an onboarding conversation, there’s often a lot to put into one email: who’s doing what, what happens next and what still needs confirming. A message can feel clear to its writer while leaving the customer with questions.</p>
+            <p>Communication Check is a portfolio prototype for account managers and customer-success managers in B2B SaaS. It offers a few focused questions about your follow-up, tied to your own words. You decide whether they help.</p>
+          </section>
+          <section className="info-section" aria-labelledby="about-example">
+            <h2 id="about-example">From a sentence to a decision</h2>
+            <p className="example-caption">Fictional example · illustration of the workflow</p>
+            <div className="workflow-example">
+              <p className="evidence-label">From the draft</p>
+              <blockquote>We guarantee that the custom integration will be ready by Friday.</blockquote>
+              <div className="review-prompt"><span>A question to consider</span><p>Has the responsible person or team confirmed this commitment, including any conditions or dependencies?</p></div>
+              <p className="evidence-label decision-label">Your decision</p>
+              <p>Select the wording to edit it yourself, or keep it as written. The tool does not decide whether the commitment is correct.</p>
+            </div>
           </section>
           <section className="info-section" aria-labelledby="about-how">
-            <h2 id="about-how">Three steps, with you in control</h2>
+            <h2 id="about-how">How to use it</h2>
             <ol className="info-steps">
-              <li><strong>Paste or try a sample.</strong> Add your follow-up, or explore a fictional scenario through the same checks.</li>
-              <li><strong>Review the wording.</strong> See up to three clarity prompts and two tone cues, each tied to an exact quote. Direct, Collaborative or Warm changes the tone question, not detection.</li>
-              <li><strong>Make the call.</strong> Select wording to edit, or keep it as written with Undo. Recheck after edits, then copy your current draft.</li>
+              <li><strong>Add your follow-up.</strong> Paste your draft or try a fictional example.</li>
+              <li><strong>Take a second look.</strong> Review up to three clarity and commitment findings. Optional Tone cues offers up to two questions about a few specific wording patterns.</li>
+              <li><strong>Make the call.</strong> Select wording to edit, or keep it as written. You can undo a keep decision. After editing, run the checks again, then copy your current draft.</li>
             </ol>
           </section>
+          <section className="info-section" aria-labelledby="about-data">
+            <h2 id="about-data">What happens to your draft</h2>
+            <p>The checks run in your browser using local rules. No AI model reviews your message. Drafts and findings stay in page memory; reloading clears them. Nothing is automatically rewritten or sent.</p>
+          </section>
           <section className="info-section" aria-labelledby="about-limits">
-            <h2 id="about-limits">How the checks work</h2>
-            <p>Local rules run in your browser; no AI model reviews your draft. Drafts and findings stay in page memory, and reloading clears them. Nothing is automatically rewritten or sent.</p>
-            <p>The checks can miss nuance or flag appropriate wording. They do not verify facts, call context or agreements, or predict a recipient’s response. No flags is not approval. This prototype’s real-world usefulness remains unvalidated.</p>
+            <h2 id="about-limits">Where your judgment matters</h2>
+            <p>The checks can miss nuance or flag wording that is right for your situation. They don’t verify facts, meeting context or agreements, and they can’t predict how your customer will respond. No flags is not approval.</p>
+            <p>This prototype’s usefulness in day-to-day work has not yet been validated.</p>
           </section>
           <a className="primary-button info-action" href="#/">Try the checker <span aria-hidden="true">→</span></a>
         </> : <>
           <section className="video-placeholder" aria-labelledby="video-coming-soon">
-            <span className="video-placeholder-mark" aria-hidden="true">CC</span>
-            <h2 id="video-coming-soon">Walkthrough coming soon</h2>
-            <p>A short YouTube walkthrough will appear here when it’s ready.</p>
+            <h2 id="video-coming-soon">Video walkthrough coming soon</h2>
+            <p>The video isn’t available yet. You can follow the same steps in the checker now.</p>
           </section>
-          <section className="info-section" aria-labelledby="video-preview">
-            <h2 id="video-preview">What the walkthrough will show</h2>
-            <p>Follow a fictional customer email from sample review to exact quoted findings. See how to switch between clarity and tone, keep wording or select it to edit, then recheck and copy the draft.</p>
-            <p>You can explore that workflow yourself while the video is being prepared.</p>
-          </section>
+          <ol className="storyboard" aria-label="Walkthrough steps">
+            <li><span className="storyboard-number" aria-hidden="true">01</span><div><h2>Start with a fictional example</h2><p>Choose Promises to confirm, then select Try a sample review. The example replaces the current draft and runs both checks.</p></div></li>
+            <li><span className="storyboard-number" aria-hidden="true">02</span><div><h2>Read the wording in context</h2><p>The review quotes the exact passage and offers a question to consider. Switch between Clarity &amp; commitments and Tone cues to see the different checks.</p></div></li>
+            <li><span className="storyboard-number" aria-hidden="true">03</span><div><h2>Decide what to keep or change</h2><p>Keep as written leaves the draft unchanged. Edit this wording selects the passage for you to edit. After a change, run the checks again before copying your draft.</p></div></li>
+          </ol>
           <a className="primary-button info-action" href="#/">Try the checker <span aria-hidden="true">→</span></a>
         </>}
       </article>

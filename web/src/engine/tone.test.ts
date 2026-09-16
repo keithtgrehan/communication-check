@@ -399,9 +399,9 @@ describe('intent, identity, ordering and limits', () => {
     expect(results.map(result => result.findings.length)).toEqual([1, 1, 1]);
     const findings = results.map(result => result.findings[0]);
     expect(new Set(findings.map(findingIdentity)).size).toBe(1);
-    expect(findings[0].prompt).toBe('Would naming the specific missed action make this request more precise?');
-    expect(findings[1].prompt).toContain('a shared next step');
-    expect(findings[2].prompt).toContain('this specific occasion');
+    expect(findings[0].prompt).toBe('Could you name the specific missed action?');
+    expect(findings[1].prompt).toContain('a next step you can agree on');
+    expect(findings[2].prompt).toContain('this occasion');
     expect(new Set(findings.map(finding => finding.prompt)).size).toBe(3);
   });
 
@@ -551,7 +551,7 @@ describe('recipient-directed chasing and holding-up cues', () => {
       const text = `Please return the Juniper roster by Tuesday, ${ending}.`;
       const finding = checkTone(text, 'collaborative').findings[0];
       expect(finding.quote).toBe(text);
-      expect(finding.prompt).toBe('Could this wording dismiss a real blocker, and would inviting the customer to explain help?');
+      expect(finding.prompt).toBe('Could this wording overlook a real blocker? Would asking the customer to explain help?');
       expect(tonePromptFor(finding.ruleId, 'collaborative')).toBe(finding.prompt);
       expect(finding.prompt).not.toMatch(/Tuesday|Juniper|agreed/);
     }

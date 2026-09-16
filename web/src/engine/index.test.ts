@@ -586,14 +586,14 @@ describe('review questions for arbitrary commitments and next steps', () => {
   it('asks what is agreed and still pending without inventing a decision-maker', () => {
     const text = 'The suggested room layout is confirmed, although it is still a proposal.';
     const finding = checkDraft(text).findings.find(item => item.ruleId === 'agreement-wording');
-    expect(finding?.prompt).toBe('What is agreed, who still needs to decide, and does the next step depend on that decision?');
+    expect(finding?.prompt).toBe('What has been agreed, and who still needs to decide? Does the next step depend on that decision?');
     verifySpans(text);
   });
 
   it('invites ordering and dependency review without declaring multiple requests wrong', () => {
     const text = 'Please send the access roster.\nPlease upload the attendance file.\nPlease review the training plan.';
     const finding = checkDraft(text).findings.find(item => item.ruleId === 'competing-requests');
-    expect(finding?.prompt).toBe('Which task should happen first, and do any other tasks depend on it?');
+    expect(finding?.prompt).toBe('Which task should happen first, and do any others depend on it?');
     verifySpans(text);
   });
 });

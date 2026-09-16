@@ -1,4 +1,27 @@
-# Finding contract — version 7 (16 September 2026)
+# Finding contract — version 8 (16 September 2026)
+
+## Approved editorial design and copy refinement
+
+Keith authorized the supplied editorial implementation prompt and six additional
+safeguards. This supersedes earlier visual/copy instructions only: warm paper,
+white draft document, open review rail, sans headings, serif draft/evidence,
+compact start controls, clear sample-replacement notice and full copy-deck states.
+About gains a static fictional source/question/decision illustration; Video keeps
+an honest coming-soon notice with a static three-step walkthrough. Routes and
+all review/privacy behaviours below remain unchanged. No video network integration.
+
+Only COPY strings in engine/index.ts and engine/tone.ts may change. Before source
+edits, 39 existing public development/reviewer/demo drafts were captured across
+clarity and all three tone styles (156 results). Compare every non-copy field
+afterward, including IDs, rules, order, quotes, offsets and result metadata. No
+reserved material is accessed and no evaluation round is started. The nine demo
+texts remain unchanged. Preserve UTF-16 counting and explain emoji simply.
+
+Ownership: UI agent owns App.tsx, InfoPages.tsx and styles.css; copy agent owns
+the two engine COPY maps and their unit-test wording assertions; lead owns browser
+tests, baseline/captures, docs and integration. Fresh independent review follows.
+Leave the candidate local: no push, deployment, merge or task-message delivery
+as part of this user-approved implementation prompt.
 
 ## Approved About and Video Demo pages
 

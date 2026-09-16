@@ -593,3 +593,33 @@ enlarged text, direct entry/reload/history/focus, hidden-checker keyboard exclus
 retained draft/both Keep decisions/style, offline navigation and empty browser
 storage/cookies. It observed no navigation requests, browser errors or automated
 accessibility violations. This is engineering review, not a human usability session.
+
+## September 16 editorial design and language refinement
+
+The approved prompt and copy deck were implemented with six additional safeguards.
+Full `npm run validate` passes 7 setup checks, 451 engine tests, 10 scenario tests,
+81 browser checks, typecheck/build and source guards. This includes preserved
+before-interaction viewport assertions, all review states and clipboard failures,
+navigation/history, long-draft selection, enlarged text, contrast and runtime
+network/storage/offline checks. Only intended copy/selectors and the responsive
+boundary changed in existing assertions; acceptance conditions were retained.
+
+All 156 normalized results from 39 existing public drafts (including all nine
+scenarios) match the pre-edit c89ae39 baseline exactly. Independent source checks
+also found both engine files byte-identical outside their COPY declarations.
+The static About example matches a real exact quote/question. Limits still count
+UTF-16 units, now with an explanatory emoji note; the boundary is browser-tested.
+
+The current engine manifest is
+`bad47e3c5a6be1d98c9a179a7460d61f69ef300cde915fc514ce3da26c1a9a50`.
+Historical manifests and reports above have not been rewritten. See
+[editorial refinement evidence](EDITORIAL_REFINEMENT.md) and the linked real
+before/after captures. No reserved examples, new evaluation or hosted changes.
+
+Final independent Astra Extra High review found no unresolved actionable issue.
+It independently reproduced baseline equality from the baseline source and checked
+15 sample flows over five viewports, exact selection, both-tab failure/retry,
+Keep/Undo/style/history, current copy and refusal, emoji limits, empty runtime
+storage/network/logging and offline use. Six About/Video Axe scans and final
+enlarged text/zoom probes passed. The reported Video-counter wrapping was fixed
+and rechecked. Automated and agent review do not replace human usability testing.

@@ -1,10 +1,35 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { checkDraft } from '../../web/src/engine';
 
 const pages = [
   { hash: '#/about', title: 'About Communication Check' },
   { hash: '#/video-demo', title: 'Video Demo' },
 ];
+
+test('About illustration matches an actual check and Video is a static walkthrough', async ({ page }) => {
+  await page.goto('/#/about');
+  const quote = 'We guarantee that the custom integration will be ready by Friday.';
+  const finding = checkDraft(quote).findings[0];
+  expect(finding.ruleId).toBe('commitment-confirmation');
+  expect(quote.slice(finding.start, finding.end)).toBe(finding.quote);
+  await expect(page.getByRole('main').locator('blockquote')).toHaveText(finding.quote);
+  await expect(page.getByText(finding.prompt, { exact: true })).toBeVisible();
+  await expect(page.getByText(/Fictional example.*illustration of the workflow/i)).toBeVisible();
+  await expect(page.getByRole('main').getByRole('button')).toHaveCount(0);
+  await page.getByRole('navigation').getByRole('link', { name: 'Video Demo' }).click();
+  for (const text of ['Start with a fictional example', 'Read the wording in context', 'Decide what to keep or change']) {
+    await expect(page.getByRole('heading', { name: new RegExp(text) })).toBeVisible();
+  }
+  await expect(page.locator('iframe, video')).toHaveCount(0);
+  await expect(page.getByRole('main').getByRole('button')).toHaveCount(0);
+  await page.getByRole('link', { name: 'Try the checker', exact: true }).click();
+  const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
+  await editor.fill('A fictional draft to preserve.');
+  await page.getByRole('navigation').getByRole('link', { name: 'Video Demo' }).click();
+  await page.getByRole('link', { name: 'Try the checker', exact: true }).click();
+  await expect(editor).toHaveValue('A fictional draft to preserve.');
+});
 
 for (const width of [320, 382, 1440]) {
   for (const info of pages) {

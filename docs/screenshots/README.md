@@ -1,5 +1,13 @@
 # Portfolio screenshots
 
+## September 16 editorial refinement
+
+The [before/after comparison index](2026-09-16-editorial/README.md) links actual
+baseline and candidate screenshots. It includes desktop and narrow first visits,
+real reviews, kept states, About and Video. Source, capture context and validation
+are recorded in [editorial refinement evidence](../EDITORIAL_REFINEMENT.md).
+Earlier screenshot sets below remain historical references.
+
 ## September 16 information pages
 
 Real local captures of [About on desktop](2026-09-16-info-pages/about-1440.png),

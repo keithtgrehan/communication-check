@@ -10,27 +10,27 @@ interface Candidate { ruleId: RuleId; span: Span }
 const COPY: Record<RuleId, Pick<Finding, 'title' | 'explanation' | 'prompt'>> = {
   'action-owner': {
     title: 'Make the next step clear',
-    explanation: 'This next step leaves the action or the person responsible unclear.',
-    prompt: 'Name the person or team responsible and the specific action they should take.',
+    explanation: 'This wording may leave the action or the person responsible unclear.',
+    prompt: 'Who needs to do what next?',
   },
   'vague-timing': {
-    title: 'Clarify the timing',
-    explanation: 'A requested or dependent next step uses timing that could mean different things to each person.',
-    prompt: 'Would a specific date or an agreed trigger help the recipient know when to act?',
+    title: 'Make the timing clearer',
+    explanation: 'This timing could be read in different ways.',
+    prompt: 'Would a specific date or an agreed trigger make it clearer when to act?',
   },
   'competing-requests': {
-    title: 'Choose a first action',
-    explanation: 'Several requests appear together without an explicit first step.',
-    prompt: 'Which task should happen first, and do any other tasks depend on it?',
+    title: 'Choose the first action',
+    explanation: 'Several requests appear together without a clear first step.',
+    prompt: 'Which task should happen first, and do any others depend on it?',
   },
   'agreement-wording': {
-    title: 'Confirm what was agreed',
-    explanation: 'Agreement wording appears alongside an explicit proposal or a decision that is still pending.',
-    prompt: 'What is agreed, who still needs to decide, and does the next step depend on that decision?',
+    title: 'Check what has been agreed',
+    explanation: 'This passage includes agreement wording alongside a proposal or a decision that appears to be pending.',
+    prompt: 'What has been agreed, and who still needs to decide? Does the next step depend on that decision?',
   },
   'commitment-confirmation': {
-    title: 'Confirm this commitment',
-    explanation: 'This wording makes a definite delivery, pricing, or functionality commitment.',
+    title: 'Check this commitment',
+    explanation: 'This wording makes a definite promise about delivery, pricing or product functionality.',
     prompt: 'Has the responsible person or team confirmed this commitment, including any conditions or dependencies?',
   },
 };
