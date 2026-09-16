@@ -1,8 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: Accepted editorial candidate deployed and verified on Vercel
-Status: 7 setup + 451 engine + 10 scenario + 81 browser checks pass locally; all 81 browser checks also pass on Vercel
+Milestone: Bright Prism Review integrated; validated; Vercel preview preparation
+Status: 7 setup + 451 engine + 10 scenario + 90 browser checks pass locally; production build passes
+
+## September 16 bright Prism Review
+
+- Keith supplied the selected Lovable ZIP for integration with the existing app. Bright mint desk, original coral CC mark, white draft/pink review, filled tabs and safe desktop-only yellow detail are implemented.
+- Existing checker, samples, dependencies and memory-only state are unchanged. Lovable's reconstructed engine was not imported. About/Video share the identity; a separate fixture-only exploration preserves all three directions.
+- Fresh review found and closed exploration contrast, tablet clipping and mobile heading overlap. Expanded tests cover reviewed states, retained real draft/decisions, and decoration separation. See PRISM_REVIEW_INTEGRATION.md and screenshots/2026-09-16-prism/.
+- No main merge or production replacement. Preview preparation uses the existing Keith Grehan Vercel project and static build assets only. User's untracked output/ remains untouched.
 
 ## September 16 Vercel deployment
 
@@ -83,19 +90,7 @@ All ten reserved attempts failed the original target of at least 10/12 selected
 findings. Labels, matching criteria, thresholds and raw historical results remain
 unchanged. Full aggregate history: docs/EVALUATION.md.
 
-| Reserved attempt | Expected findings detected | Useful emissions | Clean-control flags |
-| --- | --- | --- | --- |
-| V1 | 9/12 | 9/10 | 1 |
-| V2 | 4/12 | 4/4 | 0 |
-| V3 | 6/12 | 6/6 | 0 |
-| V4 | 6/12 | 6/6 | 0 |
-| V5 | 7/12 | 7/7 | 0 |
-| V6 | 6/12 | 6/6 | 0 |
-| V7 | 6/12 | 6/6 | 0 |
-| V8 | 8/12 | 8/8 | 0 |
-| V9 | 5/12 | 5/5 | 0 |
-| V10 | 4/12 | 4/4 | 0 |
-
+All ten frozen results remain in `docs/EVALUATION.md`; the latest v10 detected 4/12 selected findings.
 
 - Latest v10 ran once on d1230d6 at 15:48:01 UTC after its prior independent freeze. All source/corpus/span/cap/error checks passed; the contract audit judged all twelve labels and four controls within scope. No relabelling or retry occurred.
 - Fixed development benchmarks pass 100/100 and 80/80. Consumed v1–v9 reaches 107/108 expected and 107/107 useful emissions, with zero flags across 36 clean controls. These are known-case results, not fresh generalisation evidence. Agent labels are not human validation.
@@ -110,6 +105,6 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith reviews the editorial candidate at http://127.0.0.1:4173/ and both information
-pages. YouTube integration awaits its URL. Push, Vercel deployment and merge await
-separate instructions; the historical detection gate remains failed.
+Finish the Prism preview verification and synchronize the existing implementation
+branch. Keith reviews the preview before any production replacement. YouTube
+integration still awaits its URL; historical detection limitations remain.

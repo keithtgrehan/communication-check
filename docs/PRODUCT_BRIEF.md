@@ -24,6 +24,17 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Selected Prism Review integration:** Keith supplied the Lovable export after
+selecting the bright Prism Review direction and requesting repository/Vercel
+delivery. Restore saturated mint, coral CC mark, white draft, pink review panel,
+filled tabs and wide composition. Keep yellow decoration clear of panels and hide
+it on mobile. Preserve the actual checker engine and all existing review/privacy
+behaviour; do not import Lovable's reconstructed rules. Retain the three-direction
+fixture study separately at `/#/exploration`. This supersedes the earlier muted
+editorial presentation, not its functional or privacy contract. Prepare the change
+on the existing implementation branch and a preview in the existing Vercel project.
+
+
 **Approved Vercel delivery:** Keith accepted the editorial candidate and authorized
 site deployment, explicitly selecting Keith Grehan’s projects. The accepted build
 is live at https://communication-check.vercel.app with hosted workflow, privacy,

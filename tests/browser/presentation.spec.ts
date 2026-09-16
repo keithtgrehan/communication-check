@@ -114,11 +114,12 @@ for (const width of [320, 390, 1024, 1440]) {
       const fg = composite(rgb(style.color), bg);
       const luminance = (colour: number[]) => colour.map(channel => channel / 255).map(channel => channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4).reduce((sum, channel, i) => sum + channel * [.2126, .7152, .0722][i], 0);
       const ratio = (a: number[], b: number[]) => (Math.max(luminance(a), luminance(b)) + .05) / (Math.min(luminance(a), luminance(b)) + .05);
-      return { text: ratio(fg, bg), border: ratio(rgb(style.borderTopColor), bg), outline: ratio(rgb(style.outlineColor), outside), outlineWidth: parseFloat(style.outlineWidth), outlineStyle: style.outlineStyle };
+      return { text: ratio(fg, bg), border: ratio(rgb(style.borderTopColor), bg), boundary: ratio(rgb(style.borderTopColor), outside), outline: ratio(rgb(style.outlineColor), outside), outlineWidth: parseFloat(style.outlineWidth), outlineStyle: style.outlineStyle };
     });
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-frame')).border).toBeGreaterThanOrEqual(3);
-    expect((await contrast('.sample-button')).border).toBeGreaterThanOrEqual(3);
+    // The sample action is filled: its boundary must contrast with the surrounding mint.
+    expect((await contrast('.sample-button')).boundary).toBeGreaterThanOrEqual(3);
     expect((await contrast('.editor-actions .secondary-button:not(.reset-button)')).text).toBeGreaterThanOrEqual(4.5);
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests. Stop making excuses and send the workspace list.');
     const primary = page.locator('.primary-button');
@@ -149,7 +150,12 @@ for (const width of [320, 390, 1024, 1440]) {
     await page.locator('.evidence-button:visible').hover();
     expect((await contrast('.evidence-button:visible')).text).toBeGreaterThanOrEqual(4.5);
     await expectAccessibleState(page, 'Tone hover and selected style');
-    const actions = await page.locator('.finding-actions:visible button').evaluateAll(buttons => buttons.map(button => ({ height: button.clientHeight, overflow: button.scrollWidth > button.clientWidth + 1, lines: button.clientHeight / parseFloat(getComputedStyle(button).lineHeight) })));
+    const actions = await page.locator('.finding-actions:visible button').evaluateAll(buttons => buttons.map(button => {
+      const style = getComputedStyle(button);
+      // Count text lines without treating vertical button padding as text.
+      const contentHeight = button.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+      return { height: button.clientHeight, overflow: button.scrollWidth > button.clientWidth + 1, lines: contentHeight / parseFloat(style.lineHeight) };
+    }));
     for (const action of actions) { expect(action.height).toBeGreaterThanOrEqual(42); expect(action.overflow).toBe(false); expect(action.lines).toBeLessThan(3); }
   });
 }

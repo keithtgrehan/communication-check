@@ -23,6 +23,18 @@ sans-serif headings and serif source quotations. Selection alone never replaces 
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
+## Bright Prism Review design
+
+The selected Lovable design is integrated into the existing checker: a bright mint
+workspace, coral CC mark, white draft and pink review panel. The real checker and
+its privacy behaviour are preserved. About and Video Demo share the updated identity;
+`/#/exploration` keeps the three original fixture-only concepts separate.
+
+Local validation passes 7 setup, 451 engine, 10 scenario and 90 browser checks,
+plus the production build. See [integration evidence](docs/PRISM_REVIEW_INTEGRATION.md)
+and [screenshots](docs/screenshots/2026-09-16-prism/README.md). The existing production
+site below remains on the previously approved editorial version until promotion.
+
 ## Current evidence
 
 The September 16 follow-on is implemented on

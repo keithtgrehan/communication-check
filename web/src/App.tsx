@@ -4,12 +4,14 @@ import { checkTone, tonePromptFor } from './engine/tone';
 import { MAX_DRAFT_LENGTH, findingIdentity, type ReviewFinding, type ReviewLens, type ReviewSnapshot, type ToneIntent, type ToneRuleId } from './engine/types';
 import { DEMO_DRAFTS } from './demos';
 import { InfoPages, type InfoPage } from './InfoPages';
+import { DesignExploration } from './DesignExploration';
 import './styles.css';
 
-type Page = 'checker' | InfoPage;
+type Page = 'checker' | InfoPage | 'exploration';
 function currentPage(): Page {
   if (window.location.hash === '#/about') return 'about';
   if (window.location.hash === '#/video-demo') return 'video-demo';
+  if (window.location.hash === '#/exploration') return 'exploration';
   return 'checker';
 }
 
@@ -28,7 +30,7 @@ function resultStatus(snapshot: ReviewSnapshot | null, lens: ReviewLens, errors:
 }
 
 function Mark() {
-  return <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M4 13.5L9 18.5L21.5 6M14 18.5L22 10.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+  return <svg width="28" height="28" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><path d="M18 8H12a7 7 0 0 0-7 7v10a7 7 0 0 0 7 7h6v-6h-5a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3h5V8Z" /><path d="M22 8h6a7 7 0 0 1 7 7v10a7 7 0 0 1-7 7h-6v-6h5a3 3 0 0 0 3-3v-6a3 3 0 0 0-3-3h-5V8Z" /></svg>;
 }
 
 export default function App() {
@@ -42,7 +44,24 @@ export default function App() {
     return () => window.removeEventListener('hashchange', navigate);
   }, []);
   useLayoutEffect(() => {
-    document.title = page === 'about' ? 'About Communication Check' : page === 'video-demo' ? 'Video Demo · Communication Check' : 'Communication Check — Review your customer follow-up';
+    const metadata = page === 'about'
+      ? { title: 'About Communication Check', description: 'Learn how Communication Check offers focused, browser-local questions about customer follow-up drafts.' }
+      : page === 'video-demo'
+        ? { title: 'Video Demo · Communication Check', description: 'Follow a short, static walkthrough of the Communication Check review workflow.' }
+        : page === 'exploration'
+          ? { title: 'Design exploration · Communication Check', description: 'Compare the three visual directions that informed the Communication Check prototype.' }
+          : { title: 'Communication Check — Review your customer follow-up', description: 'Review your customer onboarding follow-up for unclear next steps, commitments and limited tone cues. A small, browser-local writing check.' };
+    document.title = metadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', metadata.description);
+    for (const [property, content] of [['og:title', metadata.title], ['og:description', metadata.description]] as const) {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        document.head.append(tag);
+      }
+      tag.setAttribute('content', content);
+    }
     // Preserve the normal first-visit focus. Route changes, including browser
     // back/forward, announce the new page without unmounting the review desk.
     if (previousPage.current === page) return;
@@ -301,13 +320,15 @@ export default function App() {
         <section className="intro" aria-labelledby="page-title">
           <div><h1 id="page-title" ref={checkerHeading} tabIndex={-1}>Review your customer follow-up.</h1><p className="intro-description">A second look at next steps, commitments and wording. You decide what to change.</p></div>
         </section>
-        <section className="start-options" aria-label="Start a review">
-          <div className="sample-picker"><label htmlFor="sample-scenario">Fictional example</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.label}</option>)}</select></div>
-          <button className="sample-button" onClick={reviewSample} aria-describedby="sample-note">Try a sample review</button>
-          <p id="sample-note">Replaces your draft with the example and runs both checks.</p>
-        </section>
-        <p className="local-note">Drafts and findings stay in this page. Reloading clears them.</p>
-        <div className="lens-tabs" role="tablist" aria-label="Choose a review">
+        <section className="review-desk" aria-label="Communication review workspace">
+          <div className="review-desk-content">
+          <section className="start-options" aria-label="Start a review">
+            <div className="sample-picker"><label htmlFor="sample-scenario">Fictional example</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.label}</option>)}</select></div>
+            <button className="sample-button" onClick={reviewSample} aria-describedby="sample-note">Try a sample review</button>
+            <p id="sample-note">Replaces your draft with the example and runs both checks.</p>
+          </section>
+          <p className="local-note">Drafts and findings stay in this page. Reloading clears them.</p>
+          <div className="lens-tabs" role="tablist" aria-label="Choose a review">
           {LENSES.map(option => <button key={option.id} id={`tab-${option.id}`} role="tab" className="lens-tab" ref={element => { if (element) lensButtons.current.set(option.id, element); else lensButtons.current.delete(option.id); }} aria-selected={lens === option.id} aria-controls="review-panel" tabIndex={lens === option.id ? 0 : -1} onClick={() => switchLens(option.id)} onKeyDown={event => {
             if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
             event.preventDefault();
@@ -315,9 +336,9 @@ export default function App() {
             switchLens(next);
             lensButtons.current.get(next)?.focus();
           }}>{option.label}{option.id === 'tone' && <span className="optional-label">· Optional</span>}</button>)}
-        </div>
-        {lens === 'tone' && <p className="tone-scope">Looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. It won’t catch every tone issue.</p>}
-        <div className="workspace">
+          </div>
+          {lens === 'tone' && <p className="tone-scope">Looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. It won’t catch every tone issue.</p>}
+          <div className="workspace">
           <section className="editor-panel" aria-labelledby="draft-heading">
             <div className="panel-heading"><div><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2></div><button className="text-button paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Start with your draft <span aria-hidden="true">↘</span></button></div>
             <p className={selectedSample ? 'editor-description' : 'editor-description sr-only'} id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste or write your customer follow-up here.'}</p>
@@ -402,11 +423,15 @@ export default function App() {
             {lens === 'clarity' && result && result.findings.length > 0 && <p className="results-caveat">Facts and agreements haven’t been verified.</p>}
             <button className="text-button mobile-jump" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Back to draft ↑</button>
           </section>
-        </div>
+          </div>
+          </div>
+          <span className="workspace-orb" aria-hidden="true" />
+        </section>
         <p className={status.startsWith('Current draft copied') || status.startsWith('Clipboard') ? 'live-status' : 'live-status sr-only'} role="status" aria-live="polite" aria-atomic="true">{status}</p>
-        <footer className="page-footer"><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check looks for a limited set of wording patterns in customer onboarding follow-ups: unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments.</p><p>Tone cues looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. Choosing Direct, Collaborative or Warm changes the review questions, not which phrases are flagged.</p><p>The checks can miss issues or flag wording that works in your situation. They don’t verify facts, meeting context or agreements, and they can’t predict a customer’s response. No flags does not mean the draft is approved.</p><p>Your draft and findings stay in page memory. Reloading clears them. Copy draft puts your current wording on your clipboard; nothing is rewritten or sent automatically.</p><p>The examples are fictional. This is a portfolio prototype, and its usefulness in day-to-day work has not yet been validated.</p></div></details></footer>
+        <footer className="page-footer"><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check looks for a limited set of wording patterns in customer onboarding follow-ups: unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments.</p><p>Tone cues looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. Choosing Direct, Collaborative or Warm changes the review questions, not which phrases are flagged.</p><p>The checks can miss issues or flag wording that works in your situation. They don’t verify facts, meeting context or agreements, and they can’t predict a customer’s response. No flags does not mean the draft is approved.</p><p>Your draft and findings stay in page memory. Reloading clears them. Copy draft puts your current wording on your clipboard; nothing is rewritten or sent automatically.</p><p>The examples are fictional. This is a portfolio prototype, and its usefulness in day-to-day work has not yet been validated.</p></div></details><a className="exploration-link" href="#/exploration">Design exploration</a></footer>
       </main>
-      {page !== 'checker' && <InfoPages page={page} headingRef={infoHeading} />}
+      {(page === 'about' || page === 'video-demo') && <InfoPages page={page} headingRef={infoHeading} />}
+      {page === 'exploration' && <DesignExploration headingRef={infoHeading} />}
     </div>
   );
 }
