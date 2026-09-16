@@ -492,3 +492,43 @@ Final runtime source SHA-256:
 This is bounded engineering evidence, not general detection reliability, human
 validation, physical-device testing or accessibility certification. No deployment,
 merge, model, reserved evaluation round or publication occurred in this pass.
+
+## September 16 first-visit/scenario polish
+
+Baseline: canonical checkout, `codex/communication-check-tone-review`, `6f1e3ac`;
+only the existing output folder was untracked. Keith approved the first-use fix,
+compact scenario picker and restrained typography/surface/teal refinements.
+
+The explicit sample action runs the existing engine in its preferred lens;
+selection alone preserves the current draft and both review snapshots. Nine
+fictional scenarios demonstrate bounded existing rules, including a clean sample.
+No engine implementation, dependencies or historical evaluation data changed.
+
+Lead integrated validation: seven setup checks, 404 existing engine tests, ten
+scenario tests, build/typecheck/source guards and 65 browser tests passed.
+The suite covers first visits at 320×900, 382×1000 and 1440×900, real sample
+results and visible action buttons, picker inertness, both-lens invalidation,
+exact original evidence, Keep/Undo, style choices, clipboard/fallback, keyboard,
+contrast, responsive/enlarged views and runtime privacy/offline/reload behavior.
+
+Fresh Astra Extra High review independently passed 39 targeted browser checks
+and ten demo tests. Additional probes exercised all nine scenarios at 382×1000,
+1024×900 and 1440×900; both-lens state, style changes and copy; all-nine offline
+execution; no post-load requests/logs/storage writes; and reload clearing. Tiny
+action clipping on desktop and 320px was fixed and independently rechecked.
+Lead visual inspection additionally found native select text truncation at 200%
+content zoom; final refinement and evidence are recorded below.
+
+Final captures and the matching four-page PDF use fictional samples through the
+real production app. PDF text/bounds and all four rendered pages were inspected.
+Previous PDFs remain in ignored work storage. No deployment, main merge, Sources
+synchronization or publication occurred. Chromium/agent checks are not human
+usability, physical-device testing or evidence of general language accuracy.
+
+Final refinement: the picker now wraps before collapsing its selected text, and
+right padding accounts for the native disclosure arrow. Three added regressions
+measure all nine labels with an extra 20px native-arrow allowance at 320px normal,
+1440px/200% content zoom and 382px/doubled text. Independent review visually
+confirmed the full longest label at 28px text in the final production build,
+plus real scenario checking and exact evidence selection. Final suite: 65 browser
+checks; no remaining actionable review findings. Lead refreshed the captures/PDF.

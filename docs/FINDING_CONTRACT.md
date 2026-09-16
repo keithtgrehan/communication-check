@@ -1,4 +1,28 @@
-# Finding contract — version 4 (16 September 2026)
+# Finding contract — version 5 (16 September 2026)
+
+## Approved first-visit and scenario pass
+
+Keith approved a working sample review beside the invitation to paste, a compact
+scenario picker, warm off-white surfaces, white editor, sans-serif interface
+headings and muted teal selection/focus with charcoal primary actions. Serif is
+reserved for draft/evidence text. This supersedes the visual and sample-loading
+instructions below; detection rules and privacy boundaries are unchanged.
+
+- Picking a scenario alone never changes the draft or starts analysis. The explicit
+  Try a sample review action loads labelled fictional text, invalidates both old
+  snapshots, selects the sample's preferred lens and runs the real checker once.
+- Nine fictional scenarios use existing checks; verification of those examples
+  is not evidence of broader language coverage. Include a clean no-finding sample.
+- Blank first visit uses an honest paste instruction and explains disabled Check.
+  Starting actions must fit the narrow panel viewport. A sample check brings real
+  results/actions into view without manual searching; Edit/Keep/Undo stay intact.
+- Short initial guidance, with supporting examples and limitations on demand.
+  Preserve accessible controls, enlarged-text usability and memory-only handling.
+
+Ownership: UI worker owns App.tsx, styles.css and browser tests. Scenario worker
+owns demos.ts and its focused tests. Lead owns contract, docs, screenshots/PDF,
+integration and Git. Engine implementation/shared types remain unchanged.
+Fresh independent review follows integration.
 
 ## Approved review-desk polish after third review
 

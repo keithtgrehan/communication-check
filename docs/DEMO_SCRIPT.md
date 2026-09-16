@@ -15,7 +15,8 @@ next. I explored a short review step before the writer sends it.”
 
 ## 12–30 seconds — Show exact evidence
 
-Load **Promises to confirm**, select **Check draft**, then **Edit this wording**.
+Choose **Promises to confirm** in the scenario picker, select **Try a sample
+review**, then **Edit this wording**.
 
 “The prompt points to the original wording. It asks me to confirm a product
 commitment; it cannot know what was agreed in the meeting.”
@@ -31,7 +32,7 @@ copy the current draft. The product does not rewrite or send the email.”
 
 ## 48–60 seconds — Explain the empty result
 
-Load **Clear next steps** and check it.
+Choose **Clear next steps** and select **Try a sample review**.
 
 “No flags means these rules found nothing to highlight. It does not mean that
 the facts or agreements have been verified.”
@@ -44,7 +45,7 @@ usefulness has not yet been validated with customers.”
 
 ## Optional discussion after the demo
 
-Use **Tone to reconsider** for the bounded tone example, then **Check tone**.
+Choose **Tone to reconsider**, then **Try a sample review** for the bounded tone example.
 Explain the supported cues and show **Keep as written** and **Undo**. Intent
 changes the review question, not detection sensitivity. Use **Too many asks** for
 another clarity example. Keep the detailed evaluation history in the case study; functional

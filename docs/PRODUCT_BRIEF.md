@@ -24,6 +24,19 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Approved first-visit/scenario pass:** Keith approved an honest empty-editor
+prompt, a visible paste invitation and an explicit working sample-review action
+with a compact nine-scenario picker. Selection alone is inert; Try a sample review
+loads labelled fictional text and runs the existing checker in its preferred lens.
+Include a clean example. Apply warm off-white surfaces, white editor, sans-serif
+interface headings, selective serif draft text, muted teal selection/focus and
+charcoal primary actions. Keep guidance concise and expose details on demand.
+Verify narrow-panel first visit and desktop, including the complete sample flow
+without manual searching for results. These requirements supersede earlier visual
+and load-only demo instructions. No detector expansion, model, new evaluation,
+deployment, merge or publication is included. Refresh existing portfolio artifacts
+following local validation and independent review.
+
 **Approved polish after third review:** Keith asked Codex to implement the agreed
 Mockup Canvas visual direction: neutral paper, charcoal controls, serif headings,
 defined Draft / Review panels, compact toolbar and numbered review queue. Reduce

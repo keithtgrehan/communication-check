@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { checkDraft } from '../../web/src/engine';
-import { DEMO_DRAFTS, TONE_DEMO_ID } from '../../web/src/demos';
+import { DEMO_DRAFTS } from '../../web/src/demos';
 
 test('all clarity demos use real checks with exact evidence, including the clean result', async ({ page }) => {
   await page.goto('/');
-  for (const demo of DEMO_DRAFTS.filter(sample => sample.id !== TONE_DEMO_ID)) {
-    await page.getByRole('button', { name: demo.label, exact: false }).click();
+  for (const demo of DEMO_DRAFTS.filter(sample => sample.preferredLens === 'clarity')) {
+    await page.getByRole('combobox', { name: 'Fictional scenario' }).selectOption(demo.id);
+    await page.getByRole('button', { name: 'Try a sample review' }).click();
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveValue(demo.text);
-    await page.getByRole('button', { name: /^(Recheck|Check) draft$/ }).click();
     const expected = checkDraft(demo.text).findings;
     await expect(page.locator('.finding-card')).toHaveCount(expected.length);
     for (const finding of expected) {
@@ -142,17 +142,17 @@ for (const width of [320, 390, 879, 881, 1440]) {
   test(`keyboard flow, layout and accessibility at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('/');
-    const sample = page.getByRole('button', { name: /Promises to confirm/ });
+    const sample = page.getByRole('button', { name: 'Try a sample review' });
     await sample.focus();
     await page.keyboard.press('Enter');
     // Toolbar precedes the editor visually and in keyboard order.
-    const checkButton = page.getByRole('button', { name: 'Check draft', exact: true });
+    const checkButton = page.getByRole('button', { name: 'Recheck draft', exact: true });
     await checkButton.focus();
     await page.keyboard.press('Tab');
     await expect(page.getByRole('button', { name: 'Copy draft', exact: true })).toBeFocused();
     await page.keyboard.press('Shift+Tab');
     await expect(checkButton).toBeFocused();
-    const focusRing = await page.getByRole('button', { name: 'Check draft', exact: true }).evaluate(button => {
+    const focusRing = await page.getByRole('button', { name: 'Recheck draft', exact: true }).evaluate(button => {
       const style = getComputedStyle(button);
       return { style: style.outlineStyle, width: parseFloat(style.outlineWidth), color: style.outlineColor };
     });
@@ -179,8 +179,8 @@ test('desktop layout remains usable at 200 percent content zoom', async ({ page 
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto('/');
   await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
-  await page.getByRole('button', { name: /Promises to confirm/ }).click();
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

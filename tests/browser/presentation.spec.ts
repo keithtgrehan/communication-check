@@ -34,8 +34,8 @@ for (const width of [320, 390, 879, 881, 1440]) {
     const checkBounds = await page.locator('.primary-button').boundingBox();
     const draftBounds = await editor.boundingBox();
     expect.soft(checkBounds!.y + checkBounds!.height, 'Check action stays above the draft').toBeLessThanOrEqual(draftBounds!.y);
-    const examplesBounds = await page.locator('.sample-strip').boundingBox();
-    expect.soft(examplesBounds!.y, 'Examples follow both workspace panels').toBeGreaterThanOrEqual(Math.max(editorBounds!.y + editorBounds!.height, resultsBounds!.y + resultsBounds!.height));
+    const examplesBounds = await page.locator('.start-options').boundingBox();
+    expect.soft(examplesBounds!.y + examplesBounds!.height, 'Sample action precedes the workspace').toBeLessThanOrEqual(editorBounds!.y);
     await expect(page.locator('.finding-number')).toHaveText('01');
     if (width <= 879) {
       expect.soft(resultsBounds!.y, 'Stack the full editor and its actions before results').toBeGreaterThanOrEqual(editorBounds!.y + editorBounds!.height);
@@ -70,11 +70,9 @@ for (const width of [320, 881]) {
     await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
     await expectAccessibleState(page, 'Initial and disabled');
 
-    const example = page.getByRole('button', { name: /Promises to confirm/ });
+    const example = page.getByRole('button', { name: 'Try a sample review' });
     await example.click();
-    await expect(example).toHaveAttribute('aria-pressed', 'true');
     await expectAccessibleState(page, 'Selected example');
-    await page.getByRole('button', { name: 'Check draft', exact: true }).click();
     await page.getByRole('button', { name: 'Keep as written' }).click();
     await expect(page.getByRole('heading', { name: 'All shown findings reviewed' })).toBeVisible();
     await expectAccessibleState(page, 'All reviewed');
@@ -120,7 +118,7 @@ for (const width of [320, 390, 1024, 1440]) {
     });
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-frame')).border).toBeGreaterThanOrEqual(3);
-    expect((await contrast('.sample-button:first-child')).border).toBeGreaterThanOrEqual(3);
+    expect((await contrast('.sample-button')).border).toBeGreaterThanOrEqual(3);
     expect((await contrast('.editor-actions .secondary-button:not(.reset-button)')).text).toBeGreaterThanOrEqual(4.5);
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests. Stop making excuses and send the workspace list.');
     const primary = page.locator('.primary-button');
@@ -135,7 +133,7 @@ for (const width of [320, 390, 1024, 1440]) {
     expect(focus.outlineStyle).not.toBe('none');
     expect(focus.outline).toBeGreaterThanOrEqual(3);
     // Primary focus outline is outside the filled button, on the near-white editor.
-    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(52, 53, 48)');
+    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(55, 109, 105)');
     await page.getByRole('tab', { name: /Tone cues/ }).click();
     for (const label of ['Direct', 'Collaborative', 'Warm']) {
       const radio = page.getByRole('radio', { name: label, exact: true });

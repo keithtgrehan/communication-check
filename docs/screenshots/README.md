@@ -1,5 +1,20 @@
 # Portfolio screenshots
 
+## September 16 first-visit and scenario polish
+
+Real local production-build captures with fictional samples:
+[first visit at 382px](2026-09-16-first-visit/first-visit-382.png),
+[desktop start](2026-09-16-first-visit/first-visit-1440.png),
+[desktop clarity](2026-09-16-first-visit/clarity-1440-top.png),
+[382px tone result](2026-09-16-first-visit/tone-result-382.png),
+[320px tone result](2026-09-16-first-visit/tone-result-320.png),
+[desktop tone result](2026-09-16-first-visit/tone-result-1440.png),
+[kept state](2026-09-16-first-visit/kept-382.png) and
+[200% content zoom](2026-09-16-first-visit/first-visit-200percent.png).
+The capture flow asserts visible starting/sample actions, real results, Keep/Undo
+and exact-selection focus. Lead visually inspected desktop, narrow-panel and
+zoom captures. These are Chromium emulations, not physical-device or hosted evidence.
+
 ## September 16 review-desk polish
 
 Final local production-build captures use the actual checker and fictional demos:

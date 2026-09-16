@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { checkDraft } from './engine';
 import { checkTone, tonePromptFor } from './engine/tone';
 import { MAX_DRAFT_LENGTH, findingIdentity, type ReviewFinding, type ReviewLens, type ReviewSnapshot, type ToneIntent, type ToneRuleId } from './engine/types';
-import { DEMO_DRAFTS, TONE_DEMO_ID } from './demos';
+import { DEMO_DRAFTS } from './demos';
 import './styles.css';
 
 const LENSES = [{ id: 'clarity', label: 'Clarity & commitments' }, { id: 'tone', label: 'Tone cues' }] as const;
@@ -16,6 +16,7 @@ function Mark() {
 export default function App() {
   const [draft, setDraft] = useState('');
   const [sampleId, setSampleId] = useState<string | null>(null);
+  const [scenarioId, setScenarioId] = useState('promises-to-confirm');
   const [lens, setLens] = useState<ReviewLens>('clarity');
   const [intent, setIntent] = useState<ToneIntent>('collaborative');
   const [snapshots, setSnapshots] = useState(emptySnapshots);
@@ -30,8 +31,23 @@ export default function App() {
   const undoButtons = useRef(new Map<string, HTMLButtonElement>());
   const editButtons = useRef(new Map<string, HTMLButtonElement>());
   const lensButtons = useRef(new Map<ReviewLens, HTMLButtonElement>());
+  const reviewFocus = useRef(false);
   const decisionFocus = useRef<{ id: string; undo: boolean } | null>(null);
   useLayoutEffect(() => {
+    if (reviewFocus.current) {
+      reviewFocus.current = false;
+      resultsHeading.current?.focus({ preventScroll: true });
+      const narrow = window.matchMedia('(max-width: 880px)').matches;
+      resultsHeading.current?.scrollIntoView({ block: narrow ? 'start' : 'nearest', inline: 'nearest' });
+      if (!narrow && resultsHeading.current) {
+        const actions = resultsHeading.current.closest('section')?.querySelector('.is-expanded .finding-actions');
+        // Keep the heading and evidence in view too. Enlarged reviews may need
+        // natural scrolling; don't skip their explanation to reach the buttons.
+        if (actions && actions.getBoundingClientRect().bottom - resultsHeading.current.getBoundingClientRect().top <= window.innerHeight) {
+          actions.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        }
+      }
+    }
     const target = decisionFocus.current;
     if (!target) return;
     decisionFocus.current = null;
@@ -88,24 +104,37 @@ export default function App() {
 
   function runCheck() {
     if (!hasText || tooLong) return;
+    checkText(draftRef.current, lens, isCurrent(snapshot) ? snapshot : null);
+  }
+
+  function reviewSample() {
+    const sample = DEMO_DRAFTS.find(item => item.id === scenarioId);
+    if (!sample) return;
+    replaceDraft(sample.text, sample.id);
+    setLens(sample.preferredLens);
+    setNeedsRecheck({ clarity: false, tone: false });
+    checkText(sample.text, sample.preferredLens, null);
+  }
+
+  function checkText(text: string, targetLens: ReviewLens, previous: ReviewSnapshot | null) {
+    const checkedRevision = textRevision.current;
     setCheckError(null);
     try {
-      const checked = lens === 'clarity' ? checkDraft(draftRef.current) : checkTone(draftRef.current, intent);
-      const previous = isCurrent(snapshot) ? snapshot : null;
+      const checked = targetLens === 'clarity' ? checkDraft(text) : checkTone(text, intent);
       const identities = checked.findings.map(findingIdentity);
       const reviewedIds = previous?.reviewedIds.filter(id => identities.includes(id)) ?? [];
       const expandedId = previous?.expandedId && identities.includes(previous.expandedId)
         ? previous.expandedId : identities.find(id => !reviewedIds.includes(id)) ?? null;
-      setSnapshots(current => ({ ...current, [lens]: { textRevision: textRevision.current,
+      setSnapshots(current => ({ ...current, [targetLens]: { textRevision: checkedRevision,
         result: checked, reviewedIds, expandedId } }));
-      setNeedsRecheck(current => ({ ...current, [lens]: false }));
+      setNeedsRecheck(current => ({ ...current, [targetLens]: false }));
       setManualCopy(false);
-      setStatus(checked.findings.length ? `${checked.findings.length} ${lens === 'tone' ? (checked.findings.length === 1 ? 'tone cue' : 'tone cues') : (checked.findings.length === 1 ? 'check' : 'checks')} to consider. ${reviewedIds.length} reviewed.` : lens === 'tone' ? 'No tone cues flagged. This limited review cannot judge how your message will be received.' : 'No checks flagged this draft. Facts and agreements were not verified.');
-      resultsHeading.current?.focus();
+      setStatus(checked.findings.length ? `${checked.findings.length} ${targetLens === 'tone' ? (checked.findings.length === 1 ? 'tone cue' : 'tone cues') : (checked.findings.length === 1 ? 'check' : 'checks')} to consider. ${reviewedIds.length} reviewed.` : targetLens === 'tone' ? 'No tone cues flagged. This limited review cannot judge how your message will be received.' : 'No checks flagged this draft. Facts and agreements were not verified.');
+      reviewFocus.current = true;
     } catch {
-      setSnapshots(current => ({ ...current, [lens]: null }));
-      setNeedsRecheck(current => ({ ...current, [lens]: true }));
-      setCheckError(lens);
+      setSnapshots(current => ({ ...current, [targetLens]: null }));
+      setNeedsRecheck(current => ({ ...current, [targetLens]: true }));
+      setCheckError(targetLens);
       setStatus('Unable to check this draft. Your text is still here; try again.');
     }
   }
@@ -218,8 +247,14 @@ export default function App() {
       </header>
       <main>
         <section className="intro" aria-labelledby="page-title">
-          <div><p className="eyebrow">A calmer way to review</p><h1 id="page-title">Decide what deserves <span>another look.</span></h1></div>
-          <p className="intro-description">A focused review of your customer follow-up.<br /> Your words. Your decision.</p>
+          <div><h1 id="page-title">A second look before you send.</h1><p className="intro-description">Check your customer follow-up. Keep what works; edit what doesn’t.</p></div>
+        </section>
+        <section className="start-options" aria-label="Start a review">
+          <button className="paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Paste your draft <span aria-hidden="true">↘</span></button>
+          <span className="start-divider">or</span>
+          <div className="sample-picker"><label htmlFor="sample-scenario">Fictional scenario</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.label}</option>)}</select></div>
+          <button className="sample-button" onClick={reviewSample}>Try a sample review <span aria-hidden="true">→</span></button>
+          <p id="sample-note">Replaces your draft with the sample and checks it.</p>
         </section>
         <div className="lens-tabs" role="tablist" aria-label="Review lens">
           {LENSES.map(option => <button key={option.id} id={`tab-${option.id}`} role="tab" className="lens-tab" ref={element => { if (element) lensButtons.current.set(option.id, element); else lensButtons.current.delete(option.id); }} aria-selected={lens === option.id} aria-controls="review-panel" tabIndex={lens === option.id ? 0 : -1} onClick={() => switchLens(option.id)} onKeyDown={event => {
@@ -234,10 +269,11 @@ export default function App() {
         <div className="workspace">
           <section className="editor-panel" aria-labelledby="draft-heading">
             <div className="panel-heading"><div><p className="panel-kicker">01 / Draft</p><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2></div><span className="editable-note"><span aria-hidden="true">●</span> Editable</span></div>
-            <p className="editor-description" id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Shape the message in your own words.'}</p>
-            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong}>{checkLabel}<span aria-hidden="true">→</span></button><button className="secondary-button" aria-label="Copy draft" onClick={() => void copyDraft()} disabled={!hasText}>Copy</button><button className="secondary-button reset-button" aria-label="Clear draft" onClick={resetDraft} disabled={!draft}>Clear</button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
+            <p className="editor-description" id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste or write your follow-up below.'}</p>
+            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong} aria-describedby={!hasText ? 'check-help' : undefined}>{checkLabel}<span aria-hidden="true">→</span></button><button className="secondary-button" aria-label="Copy draft" onClick={() => void copyDraft()} disabled={!hasText}>Copy</button><button className="secondary-button reset-button" aria-label="Clear draft" onClick={resetDraft} disabled={!draft}>Clear</button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
+            {!hasText && <p id="check-help" className="check-help">Add a draft to check.</p>}
             <div className={`editor-frame ${tooLong ? 'has-error' : ''}`}>
-              <textarea id="draft" ref={editor} value={draft} onChange={event => replaceDraft(event.target.value)} placeholder={'Hi Jamie,\n\nThanks for your time today…'} aria-describedby={`draft-description draft-count${tooLong ? ' draft-limit' : ''}${manualCopy ? ' copy-help' : ''}`} aria-invalid={tooLong} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} name="follow-up-draft" />
+              <textarea id="draft" ref={editor} value={draft} onChange={event => replaceDraft(event.target.value)} placeholder="Paste your customer follow-up here…" aria-describedby={`draft-description draft-count${tooLong ? ' draft-limit' : ''}${manualCopy ? ' copy-help' : ''}`} aria-invalid={tooLong} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} name="follow-up-draft" />
               <div className="editor-meta"><span>Nothing is rewritten or sent</span><span id="draft-count" className={tooLong ? 'count-error' : ''}>{draft.length.toLocaleString()} / 12,000 characters</span></div>
             </div>
             {tooLong && <p id="draft-limit" className="inline-error" role="alert">Your full draft is still here. Remove {(draft.length - MAX_DRAFT_LENGTH).toLocaleString()} characters to check it; the limit is 12,000.</p>}
@@ -248,7 +284,7 @@ export default function App() {
             <div className="panel-heading"><div><p className="panel-kicker">02 / Review</p><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Checks to consider</h2></div>{result && result.findings.length > 0 && <span className="queue-count" aria-label={`${result.findings.length} findings`}>{result.findings.length}</span>}</div>
             <p className="results-description">{lens === 'clarity' ? 'Up to three things worth a closer look.' : 'Up to two specific wording cues to consider.'}</p>
             {lens === 'tone' && <fieldset className="intent-picker"><legend>How do you want to come across?</legend><div className="intent-options">{INTENTS.map(option => <label key={option} className={`intent-option ${intent === option ? 'selected' : ''}`}><input type="radio" name="tone-intent" value={option} checked={intent === option} onChange={() => chooseIntent(option)} /><span>{option[0].toUpperCase() + option.slice(1)}</span></label>)}</div><p>Changes the review question, not what gets flagged.</p></fieldset>}
-            {!result ? <div className="result-empty"><h3>{checkError === lens ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Review the current wording.' : lens === 'tone' ? 'Choose a style. Take a second look.' : 'A little distance from your draft.'}</h3><p>{checkError === lens ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Previous findings are cleared. Run the review when you’re ready.' : lens === 'tone' ? 'Select Check tone when you’re ready. Specific wording cues can help you consider how a request is framed.' : 'Run a check to see exact wording and a question to consider. Keep what works; edit what doesn’t.'}</p></div>
+            {!result ? <div className="result-empty"><h3>{checkError === lens ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Review the current wording.' : lens === 'tone' ? 'Choose a style. Take a second look.' : 'Your review will appear here.'}</h3><p>{checkError === lens ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Previous findings are cleared. Run the review when you’re ready.' : lens === 'tone' ? 'Select Check tone when you’re ready. Specific wording cues can help you consider how a request is framed.' : 'Paste a draft and check it, or try a fictional sample above.'}</p></div>
               : result.findings.length === 0 ? <div className="result-empty result-complete"><h3>{lens === 'tone' ? 'No tone cues flagged' : 'No checks flagged this draft'}</h3><p>{lens === 'tone' ? 'This limited wording review may miss nuance. It cannot judge how your message will be received. Give it your own final read.' : 'This rule-based review didn’t find wording to flag. Facts and agreements were not verified; give the draft your own final read.'}</p></div>
               : <>
                 <div className="review-progress"><div className="progress-segments" aria-hidden="true">{result.findings.map(finding => <span key={finding.id} className={snapshot!.reviewedIds.includes(findingIdentity(finding)) ? 'is-reviewed' : ''} />)}</div><div className="progress-labels"><span>{reviewedCount === result.findings.length ? 'Review complete' : 'Worth a closer look'}</span><span className="findings-count">{reviewedCount} of {result.findings.length} reviewed</span></div></div>
@@ -316,14 +352,6 @@ export default function App() {
             <button className="text-button mobile-jump" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Back to draft ↑</button>
           </section>
         </div>
-        <section className="sample-strip" aria-labelledby="sample-heading">
-          <h2 id="sample-heading">Try a fictional example</h2>
-          <div className="sample-options">{DEMO_DRAFTS.map(sample => <button key={sample.id} className={`sample-button ${sampleId === sample.id ? 'selected' : ''}`} aria-pressed={sampleId === sample.id} onClick={() => {
-            replaceDraft(sample.text, sample.id);
-            setLens(sample.id === TONE_DEMO_ID ? 'tone' : 'clarity');
-            if (sample.id === TONE_DEMO_ID) setStatus('Fictional tone example loaded. Select Check tone when you’re ready.');
-          }}>{sample.label}</button>)}</div>
-        </section>
         <p className={status.startsWith('Current draft copied') || status.startsWith('Clipboard') ? 'live-status' : 'live-status sr-only'} role="status" aria-live="polite" aria-atomic="true">{status}</p>
         <footer className="page-footer"><div className="local-note"><Mark /><span>Local review. Your draft stays in this page.</span></div><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check uses a small set of rules to look for unclear actions, vague timing, competing requests, agreement wording, and strong product commitments in customer onboarding follow-ups. Tone cues looks for a few patterns of accusation (“you always ignore our requests”), judgment (“not a good look”), dismissal (“as I already told you”) and extra pressure (“no excuses”). Your chosen style changes the review question, not what gets flagged.</p><p>It can miss issues or flag wording that is right for your situation. It cannot verify facts, meeting context, or agreements, or predict a recipient’s response. Examples are fictional; real-world usefulness has not been validated.</p><p>Copying puts the current draft on your clipboard. Nothing is rewritten or sent automatically.</p></div></details></footer>
       </main>

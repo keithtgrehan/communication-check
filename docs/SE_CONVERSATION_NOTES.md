@@ -70,8 +70,8 @@ new research or recruitment.
 
 ## Walkthrough preparation
 
-Use Promises to confirm → Check → Select in draft → edit the guarantee → Recheck
-→ Copy. Then show Clear next steps and explain its caveat. Practise with the
+Use Promises to confirm → Try a sample review → Edit this wording → edit the
+guarantee → Recheck → Copy. Then run Clear next steps and explain its caveat. Practise with the
 existing demo script after the final UI is verified. A recording is optional.
 
 The 11 September refresh passes 225 engine tests, seven setup checks and 28 local

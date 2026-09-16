@@ -17,20 +17,20 @@ not been validated.
 
 ## The experience
 
-Paste a draft or try one of four fictional examples, including a tone example.
+Paste a draft or run one of nine fictional scenarios. The sample action runs the
+real checker; selecting an option leaves the draft untouched.
 Clarity & commitments shows up to three prompts. Optional Tone cues shows up to
 two supported wording cues. Direct, Collaborative or Warm changes the review
-question, not which wording is flagged. Open a finding, select
-its exact wording to edit, or keep it as written. Keep marks Reviewed with Undo;
-unchanged rechecks preserve decisions. Style changes update the question instantly
-while keeping findings and decisions. Text edits clear both reviews. Copy always
-uses the current draft.
+question, not which wording is flagged. Select exact wording to edit, or keep it
+as written with Undo. Unchanged rechecks and style changes preserve decisions.
+Text edits clear both reviews. Copy always uses the current draft.
 
-Neutral paper, charcoal controls and editorial typography give the product a
-calm, focused feel. Defined Draft and Review panels pair a compact toolbar with
-a numbered review queue. The desktop layout places the draft beside its review. On smaller screens, the same sequence becomes a single column. Clear
-focus states, keyboard controls and precise evidence selection support the core
-workflow.
+Warm off-white surfaces, a white editor and sans-serif headings keep the interface
+clear. Serif draft text and muted teal selection provide restrained contrast.
+A compact starting area puts a working demonstration beside the paste invitation.
+Draft and Review sit side by side on desktop and stack in narrow panels; sample
+results move into view automatically. Keyboard controls and exact evidence
+selection support the review.
 
 The product asks the writer to confirm a commitment. It never claims to know what
 was agreed, assigns no score, and does not rewrite or send the email. Empty clarity
@@ -82,22 +82,20 @@ factual correctness or production-level accuracy.
 
 ## What was delivered
 
-The September 11 delivery includes a hosted preview, three interactive demos,
-portfolio screenshots, a walkthrough script and a documented rollback path.
-The September 16 local app adds optional tone review and keep/undo interactions.
-A first-review correction adds coverage guidance, a tone demo and bounded patterns.
-The third-review polish adopts a compact review desk and immediate style switching.
-The hosted preview is unchanged.
+The September 11 delivery includes a hosted preview, portfolio materials and a
+rollback path. The September 16 local app adds optional tone review, Keep/Undo
+and immediate style switching. The latest polish fixes first use and adds nine
+scenarios using unchanged detection rules. The hosted preview is unchanged.
 
 Fresh local validation on September 16 passes **404 engine tests** (225 existing
 clarity tests and 179 tone development tests), **seven setup/integrity checks**,
-build/typecheck/source guards and **51 browser checks**. Browser coverage includes
+**ten fictional-scenario tests**, build/typecheck/source guards and **65 browser checks**. Browser coverage includes
 both review lenses, editing, current-text clipboard/fallback, exact evidence,
 keyboard access, responsive layout and runtime privacy/offline behavior.
 [Local screenshots](screenshots/README.md) include 1440, 1024, 390 and 320px widths,
 evidence selection, enlarged text and 200% content zoom.
 
-Two Astra High workers implemented disjoint UI and tone changes; the lead
+Two Astra High workers handled interface and sample-library changes; the lead
 integrated and validated them. Independent final review is recorded in
 [verification](VERIFICATION.md). Automated browser and agent checks are not a full
 accessibility certification, physical-device testing or human usability study.

@@ -1,10 +1,15 @@
-import type { DemoDraft } from './engine/types';
+import type { DemoDraft as BaseDemoDraft, ReviewLens } from './engine/types';
+
+export interface DemoDraft extends BaseDemoDraft {
+  preferredLens: ReviewLens;
+}
 
 export const TONE_DEMO_ID = 'tone-to-reconsider';
 
 export const DEMO_DRAFTS: DemoDraft[] = [
   {
     id: 'clear-next-steps',
+    preferredLens: 'clarity',
     label: 'Clear next steps',
     description: 'A focused follow-up with an owner and a specific next step.',
     text: `Hi Maya,
@@ -20,6 +25,7 @@ Alex`,
   },
   {
     id: 'too-many-asks',
+    preferredLens: 'clarity',
     label: 'Too many asks',
     description: 'Several requests compete for the customer’s attention.',
     text: `Hi Jordan,
@@ -39,6 +45,7 @@ Casey`,
   },
   {
     id: 'promises-to-confirm',
+    preferredLens: 'clarity',
     label: 'Promises to confirm',
     description: 'A product commitment that deserves a second look.',
     text: `Hi Sam,
@@ -54,6 +61,7 @@ Morgan`,
   },
   {
     id: TONE_DEMO_ID,
+    preferredLens: 'tone',
     label: 'Tone to reconsider',
     description: 'Judgmental wording beside an ordinary request.',
     text: `Hi Riley,
@@ -66,5 +74,75 @@ Please send the workspace list by Thursday.
 
 Best,
 Morgan`,
+  },
+  {
+    id: 'kickoff-owner',
+    preferredLens: 'clarity',
+    label: 'Kickoff handoff',
+    description: 'A setup handoff leaves responsibility open.',
+    text: `Hi Avery,
+
+Thanks for joining the onboarding kickoff.
+
+Someone should send the workspace list.
+
+Best,
+Alex`,
+  },
+  {
+    id: 'blocked-import',
+    preferredLens: 'clarity',
+    label: 'Blocked data import',
+    description: 'An import depends on a request with vague timing.',
+    text: `Hi Priya,
+
+Thanks for walking through the data setup with me.
+
+Please send the sample data soon so we can start the import.
+
+Best,
+Casey`,
+  },
+  {
+    id: 'pending-rollout',
+    preferredLens: 'clarity',
+    label: 'Pending rollout decision',
+    description: 'Agreement wording sits beside an approval still pending.',
+    text: `Hi Jamie,
+
+Thanks for discussing the rollout plan today.
+
+As agreed, the phased rollout starts on Monday, although your approval is still pending.
+
+Best,
+Morgan`,
+  },
+  {
+    id: 'dismissive-chase',
+    preferredLens: 'tone',
+    label: 'Chasing a missing list',
+    description: 'A follow-up request refers dismissively to an earlier reminder.',
+    text: `Hi Taylor,
+
+The workspace list is the topic for our next setup session.
+
+As I already told you, please send the workspace list.
+
+Best,
+Alex`,
+  },
+  {
+    id: 'deadline-pressure',
+    preferredLens: 'tone',
+    label: 'Deadline pressure',
+    description: 'Pressure wording accompanies an ordinary deadline.',
+    text: `Hi Devon,
+
+Our next onboarding session covers workspace access.
+
+Please send the workspace list by Thursday, no more excuses.
+
+Best,
+Casey`,
   },
 ];

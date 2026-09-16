@@ -1,21 +1,19 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: review-desk polish delivered; independent review complete
-Status: 7 setup + 404 engine + 51 browser checks pass locally; hosted preview unchanged
+Milestone: first-visit/scenario polish delivered; independent review complete
+Status: 7 setup + 404 engine + 10 scenario + 65 browser checks pass locally; hosted preview unchanged
 
-## September 16 third-review polish
+## September 16 first-visit and scenario polish
 
-- Keith approved the Mockup Canvas design and immediate style switching after the third screenshot review. Neutral panels, compact Check/Copy/Clear toolbar, numbered review queue and concise help are implemented. Style changes update prompts without clearing findings, open rows or Keep/Undo; actual text edits still invalidate both lenses.
-- Two Astra High workers handled presentation and pure prompt-helper/tests in disjoint files; lead integrated state handling. Seven setup checks, 404 engine tests (225 clarity + 179 tone), build/typecheck/source guards and all 51 browser checks pass. Runtime privacy/offline, keyboard, mobile and enlarged views pass. Detection rules and historical evaluations are unchanged.
-- Final desktop/1024/390/320px, kept-state and zoom captures and the refreshed four-page PDF are ready. Fresh Astra Extra High review found an enlarged-text tab hit-target issue; lead fixed it with two regressions and reviewer confirmed the fix. No remaining material findings. Local-only delivery; hosted preview unchanged. Details: REVIEW_DESK_POLISH.md.
+- Keith approved the starting-experience fix, nine-scenario picker and restrained Intercom-inspired visual refinements. Explicit sample review now loads fictional text and runs the unchanged checker in its preferred lens; picking alone preserves the draft. The blank editor is honest, and actions/results are visible without manual hunting at narrow panel and desktop widths.
+- Astra High workers owned UI/browser and sample data/tests separately. Lead full validation passed 7 setup + 404 engine + 10 scenario + 65 browser checks, build/typecheck/source guards. Historical detection records and engine implementation are unchanged. First-visit, privacy/offline, clipboard, keyboard, exact selection, Keep/Undo, style switching and zoom remain covered.
+- Fresh Astra Extra High review passed 39 targeted browser + 10 scenario checks and independent all-nine scenario/state/offline/privacy probes. Small desktop/320px button clipping issues were fixed. Zoomed picker-label truncation was fixed with wrapping and native-arrow spacing, three regressions and independent visual confirmation. Screenshots and matching four-page PDF refreshed. See FIRST_VISIT_POLISH.md.
 
-## September 16 first-review correction
+## Earlier September 16 corrections
 
-- Keith approved clearer Tone cues presentation, one fictional tone demo and finite judgmental/dismissive/pressure additions. Canonical branch resumed at 4813014, preserving the model-deferral README decision and prior PDF. Clarity implementation and historical evaluation records are unchanged.
-- Two Astra High workers implemented disjoint UI/engine changes. The lead passed 7 setup checks, 399 engine tests (225 clarity + 174 tone), production build/typecheck/source guards and all 48 browser checks. Existing runtime privacy/offline checks pass; no model, dependency, deployment or reserved evaluation was added.
-- Fresh Astra Extra High review found a mixed-question punctuation safeguard gap; the lead fixed it with six regressions. Reviewer independently passed 174 tone tests and 22 targeted browser checks and cleared the final implementation. This is engineering evidence, not general-language accuracy or human validation.
-- New desktop/390/320px screenshots and the refreshed four-page case-study PDF were visually inspected. The original PDF is retained in ignored local work storage. See TONE_CORRECTION.md and VERIFICATION.md for the finite policy, evidence and Keith's short usefulness review.
+- Third review: approved Mockup Canvas desk styling and immediate tone-question changes preserving findings/Keep/Undo. Seven setup + 404 engine + 51 browser checks passed; independent review cleared the enlarged-text tab fix. Screenshots/PDF inspected. Details: REVIEW_DESK_POLISH.md.
+- First review: approved Tone cues guidance/demo and finite judgmental/dismissive/pressure patterns, with clarity and historical evaluations unchanged. Seven setup + 399 engine + 48 browser checks passed; independent review cleared punctuation safeguard fixes. Screenshots/PDF inspected. Details: TONE_CORRECTION.md.
 
 ## September 16 follow-on
 
@@ -92,6 +90,6 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can refresh the local review desk and check appearance and instant style
-switching; the matching PDF is ready. Hosting,
-publication and merge remain separate; the historical detection gate remains failed.
+Keith can refresh the local app and choose Try a sample review; the matching PDF
+is ready. Hosting, publication and merge remain separate; the historical detection
+gate remains failed.
