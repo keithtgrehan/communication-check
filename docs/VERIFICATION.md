@@ -593,3 +593,47 @@ enlarged text, direct entry/reload/history/focus, hidden-checker keyboard exclus
 retained draft/both Keep decisions/style, offline navigation and empty browser
 storage/cookies. It observed no navigation requests, browser errors or automated
 accessibility violations. This is engineering review, not a human usability session.
+
+## September 16 editorial design and language refinement
+
+The approved prompt and copy deck were implemented with six additional safeguards.
+Full `npm run validate` passes 7 setup checks, 451 engine tests, 10 scenario tests,
+81 browser checks, typecheck/build and source guards. This includes preserved
+before-interaction viewport assertions, all review states and clipboard failures,
+navigation/history, long-draft selection, enlarged text, contrast and runtime
+network/storage/offline checks. Only intended copy/selectors and the responsive
+boundary changed in existing assertions; acceptance conditions were retained.
+
+All 156 normalized results from 39 existing public drafts (including all nine
+scenarios) match the pre-edit c89ae39 baseline exactly. Independent source checks
+also found both engine files byte-identical outside their COPY declarations.
+The static About example matches a real exact quote/question. Limits still count
+UTF-16 units, now with an explanatory emoji note; the boundary is browser-tested.
+
+The current engine manifest is
+`bad47e3c5a6be1d98c9a179a7460d61f69ef300cde915fc514ce3da26c1a9a50`.
+Historical manifests and reports above have not been rewritten. See
+[editorial refinement evidence](EDITORIAL_REFINEMENT.md) and the linked real
+before/after captures. No reserved examples, new evaluation or hosted changes.
+
+Final independent Astra Extra High review found no unresolved actionable issue.
+It independently reproduced baseline equality from the baseline source and checked
+15 sample flows over five viewports, exact selection, both-tab failure/retry,
+Keep/Undo/style/history, current copy and refusal, emoji limits, empty runtime
+storage/network/logging and offline use. Six About/Video Axe scans and final
+enlarged text/zoom probes passed. The reported Video-counter wrapping was fixed
+and rechecked. Automated and agent review do not replace human usability testing.
+
+## September 16 Vercel delivery
+
+Keith accepted source `38d744d` and authorized deployment to Keith Grehan’s projects.
+Deployment `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7` is ready at
+https://communication-check.vercel.app. All **81 hosted Chromium checks pass**
+(1.3 minutes), covering the complete current workflow, nine scenarios, both lenses,
+information pages, clipboard denial, responsive/accessibility behavior and runtime
+network/storage/log/offline privacy. Six static assets match the local production
+build exactly, required security headers pass and eight source/config paths return
+404. See `VERCEL_HOSTED_VERIFICATION.json` for hashes and source revision.
+Only six built site assets and routing/header configuration were uploaded; the dry
+run excluded credentials and local metadata. The earlier Render evidence remains
+historical. No new detection evaluation, reliability claim or app-code change.

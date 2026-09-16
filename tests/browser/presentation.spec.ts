@@ -9,7 +9,7 @@ async function expectAccessibleState(page: Page, state: string) {
 
 // Readability, responsive behavior and contrast remain acceptance criteria
 // across presentation changes, including the editorial review desk.
-for (const width of [320, 390, 879, 881, 1440]) {
+for (const width of [320, 390, 999, 1001, 1440]) {
   test(`refresh layout, readable draft, touch targets and long quote wrapping at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
@@ -37,7 +37,7 @@ for (const width of [320, 390, 879, 881, 1440]) {
     const examplesBounds = await page.locator('.start-options').boundingBox();
     expect.soft(examplesBounds!.y + examplesBounds!.height, 'Sample action precedes the workspace').toBeLessThanOrEqual(editorBounds!.y);
     await expect(page.locator('.finding-number')).toHaveText('01');
-    if (width <= 879) {
+    if (width <= 999) {
       expect.soft(resultsBounds!.y, 'Stack the full editor and its actions before results').toBeGreaterThanOrEqual(editorBounds!.y + editorBounds!.height);
     } else {
       expect.soft(resultsBounds!.x, 'Desktop results sit beside the editor').toBeGreaterThanOrEqual(editorBounds!.x + editorBounds!.width);
@@ -58,7 +58,7 @@ for (const width of [320, 390, 879, 881, 1440]) {
   });
 }
 
-for (const width of [320, 881]) {
+for (const width of [320, 1001]) {
   test(`contrast and accessibility through secondary UI states at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.addInitScript(() => Object.defineProperty(navigator, 'clipboard', {
@@ -74,14 +74,14 @@ for (const width of [320, 881]) {
     await example.click();
     await expectAccessibleState(page, 'Selected example');
     await page.getByRole('button', { name: 'Keep as written' }).click();
-    await expect(page.getByRole('heading', { name: 'All shown findings reviewed' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'All shown findings in this tab reviewed' })).toBeVisible();
     await expectAccessibleState(page, 'All reviewed');
 
     await editor.fill('Hi Jamie, please send the administrator names by Tuesday.');
-    await expect(page.getByText('Review the current wording.')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Your draft has changed.', exact: true })).toBeVisible();
     await expectAccessibleState(page, 'Edited and stale');
     await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
-    await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'No wording flagged by these checks' })).toBeVisible();
     await expectAccessibleState(page, 'Clean result');
 
     await page.getByRole('button', { name: 'Copy draft', exact: true }).click();
@@ -145,7 +145,7 @@ for (const width of [320, 390, 1024, 1440]) {
       await radio.check();
       expect((await contrast('.intent-option.selected')).text).toBeGreaterThanOrEqual(4.5);
     }
-    await page.getByRole('button', { name: /^(Check tone|Review tone again)$/ }).click();
+    await page.getByRole('button', { name: /^(Check tone cues|Recheck tone cues)$/ }).click();
     await page.locator('.evidence-button:visible').hover();
     expect((await contrast('.evidence-button:visible')).text).toBeGreaterThanOrEqual(4.5);
     await expectAccessibleState(page, 'Tone hover and selected style');
@@ -164,7 +164,7 @@ test('200 percent text enlargement preserves tone controls and entire mobile flo
   });
   await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests.');
   await page.getByRole('tab', { name: /Tone cues/ }).click();
-  await page.getByRole('button', { name: 'Check tone', exact: true }).click();
+  await page.getByRole('button', { name: 'Check tone cues', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('button', { name: 'Edit this wording' }).click();

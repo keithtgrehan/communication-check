@@ -1,8 +1,21 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: Information pages reviewed; README and design-exploration handoff prepared for GitHub sync
-Status: 7 setup + 451 engine + 10 scenario + 77 browser checks pass locally; hosted preview unchanged
+Milestone: Accepted editorial candidate deployed and verified on Vercel
+Status: 7 setup + 451 engine + 10 scenario + 81 browser checks pass locally; all 81 browser checks also pass on Vercel
+
+## September 16 Vercel deployment
+
+- Keith accepted the candidate and selected Keith Grehan’s projects (`keith-grehans-projects`, Hobby). Live: https://communication-check.vercel.app; source 38d744d; deployment dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7.
+- All 81 hosted browser checks pass, including nine scenarios, both lenses, Edit/Keep/Undo, information pages, responsive/accessibility and runtime privacy/offline checks. Six assets match locally; security headers and eight source/config exclusions pass. See VERCEL_HOSTED_VERIFICATION.json and HOSTING.md.
+- Only static build assets/config uploaded. No repository push/merge occurred during deployment; no Git integration, paid upgrade, custom domain or unrelated project change. Older Render preview/evidence preserved. Keith confirmed the live site works and requested GitHub synchronization of the current branch. YouTube URL remains needed for the embed.
+
+## September 16 editorial refinement
+
+- Keith approved the design prompt, copy deck and six safeguards. White draft document/open review rail, compact controls, full plain-language states, real static About example and Video storyboard are implemented. Copy maps only; no detection or sample changes.
+- Before captures and 156 results from 39 public fixture/scenario drafts were frozen at c89ae39. Every non-copy result field matches; source outside the two COPY maps is byte-identical. No reserved evaluation. See EDITORIAL_REFINEMENT.md for hashes and evidence.
+- Full validation passes the counts above. Narrow/desktop screenshots inspected; enlarged-tab overflow and split storyboard counters fixed. Independent Astra Extra High review found no unresolved issue across 15 sample viewport flows, enlarged text, all review states and privacy. Original detection limitations remain.
+- This pass initially stayed local with no push/deployment/merge/task-message delivery. Keith subsequently accepted it and authorized the Vercel deployment recorded above; existing output files are preserved.
 
 ## September 16 information pages
 
@@ -97,6 +110,6 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can attach docs/DESIGN_EXPLORATION_HANDOFF.md to a new design chat and review
-the local pages. Supply the YouTube URL when ready. Vercel deployment follows
-local review; publication and merge remain separate. The historical detection gate remains failed.
+Keith reviews the editorial candidate at http://127.0.0.1:4173/ and both information
+pages. YouTube integration awaits its URL. Push, Vercel deployment and merge await
+separate instructions; the historical detection gate remains failed.

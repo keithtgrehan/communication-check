@@ -38,39 +38,39 @@ const SELF_REFLECTIVE = /\b(?:myself|ourselves|(?:my|our) (?:own )?(?:mistake|fa
 
 const COPY: Record<ToneRuleId, { title: string; explanation: string; prompts: Record<ToneIntent, string> }> = {
   'sweeping-blame': {
-    title: 'A sweeping statement',
-    explanation: '“Always” or “never” with this action may read as a broad accusation rather than a specific follow-up.',
+    title: 'A broad statement',
+    explanation: '“Always” or “never” here may sound like a general accusation rather than a comment on this situation.',
     prompts: {
-      direct: 'Would naming the specific missed action make this request more precise?',
-      collaborative: 'Would naming the specific missed action and a shared next step help coordinate the follow-up?',
-      warm: 'Would focusing on this specific occasion make the follow-up less impersonal?',
+      direct: 'Could you name the specific missed action?',
+      collaborative: 'Could you name the specific missed action and a next step you can agree on?',
+      warm: 'Would focusing on this occasion make the message feel less impersonal?',
     },
   },
   'dismissive-request': {
-    title: 'Wording before a request',
-    explanation: 'The wording before the requested action may make the request read as dismissive.',
+    title: 'The lead-in to this request',
+    explanation: 'The words before the request may sound dismissive.',
     prompts: {
-      direct: 'Could the requested action stand on its own without this lead-in?',
-      collaborative: 'Would asking about a blocker and agreeing a next step help with this request?',
-      warm: 'Would focusing on the specific situation fit your intended warmth?',
+      direct: 'Could you make the request without this lead-in?',
+      collaborative: 'Would it help to ask if anything is getting in the way and agree on a next step?',
+      warm: 'Could you focus on the situation and leave room for the customer’s perspective?',
     },
   },
   'pressure-wording': {
-    title: 'Extra pressure around a request',
-    explanation: 'The added “no excuses”, “no more excuses” or “or else” wording may read as pressure beyond the requested action.',
+    title: 'Extra pressure in this request',
+    explanation: 'Phrases such as “no excuses,” “no more excuses” or “or else” may add pressure beyond the action you’re asking for.',
     prompts: {
-      direct: 'Would stating the action and any necessary deadline or consequence directly be clearer?',
-      collaborative: 'Could this wording dismiss a real blocker, and would inviting the customer to explain help?',
-      warm: 'Would leaving room for a reply about the situation fit your intended warmth?',
+      direct: 'Could you state the action and any necessary deadline or consequence without this phrase?',
+      collaborative: 'Could this wording overlook a real blocker? Would asking the customer to explain help?',
+      warm: 'Would leaving room for the customer to explain the situation suit this follow-up?',
     },
   },
   'judgmental-framing': {
-    title: 'Judgmental framing',
-    explanation: 'This wording may read as a judgment rather than a description of the specific situation.',
+    title: 'Wording that may sound judgmental',
+    explanation: 'This wording may sound like a judgment rather than a description of what happened.',
     prompts: {
-      direct: 'Would naming the specific issue and requested action make this follow-up more precise?',
-      collaborative: 'Would describing the specific issue and a shared next step help coordinate this follow-up?',
-      warm: 'Would focusing on the specific situation instead of this judgment fit your intended warmth?',
+      direct: 'Could you name the specific issue and the action you need?',
+      collaborative: 'Could you describe the specific issue and a next step you can agree on?',
+      warm: 'Could you focus on the situation without making a judgment?',
     },
   },
 };

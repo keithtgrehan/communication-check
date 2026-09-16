@@ -9,8 +9,8 @@ const toneTab = (page: Page) => page.getByRole('tab', { name: /Tone cues/ });
 const clarityTab = (page: Page) => page.getByRole('tab', { name: 'Clarity & commitments' });
 const editorFor = (page: Page) => page.getByRole('textbox', { name: 'Your follow-up draft' });
 const runTone = async (page: Page) => {
-  await page.getByRole('button', { name: /^(Check tone|Review tone again)$/ }).click();
-  await expect(page.getByRole('heading', { name: 'Checks to consider' })).toBeFocused();
+  await page.getByRole('button', { name: /^(Check tone cues|Recheck tone cues)$/ }).click();
+  await expect(page.getByRole('heading', { name: 'Your review' })).toBeFocused();
 };
 
 for (const intent of ['direct', 'collaborative', 'warm'] as ToneIntent[]) {
@@ -62,9 +62,9 @@ test('lens switching and identical rechecks preserve independent keep decisions 
   await expect(editor).toHaveValue(mixedDraft);
   await clarityTab(page).click();
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
-  await page.getByRole('button', { name: 'Reset review decisions' }).click();
+  await page.getByRole('button', { name: 'Reset decisions in this tab' }).click();
   await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
-  await expect(page.getByRole('heading', { name: 'Checks to consider' })).toBeFocused();
+  await expect(page.getByRole('heading', { name: 'Your review' })).toBeFocused();
 });
 
 test('style changes preserve multi-finding identities, open row and decisions across keyboard changes, rechecks and lenses', async ({ page }) => {
@@ -133,7 +133,7 @@ test('style selection before a check or after a draft mutation never creates or 
   for (const intent of ['Direct', 'Warm', 'Collaborative']) {
     await page.getByRole('radio', { name: intent, exact: true }).check();
     await expect(page.locator('.finding-card')).toHaveCount(0);
-    await expect(page.getByRole('button', { name: 'Check tone', exact: true })).toBeEnabled();
+    await expect(page.getByRole('button', { name: 'Check tone cues', exact: true })).toBeEnabled();
     await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toHaveCount(0);
   }
   await runTone(page);
@@ -170,7 +170,7 @@ test('typing, cut, undo, example loads and clear invalidate both lenses and deci
   await editor.focus();
   await page.keyboard.press('End');
   await page.keyboard.type(' Added.');
-  await expect(page.getByRole('status')).toHaveText('Draft changed. Review again.');
+  await expect(page.getByRole('status')).toHaveText('Your draft has changed. Earlier findings have been cleared. Check the current wording when you’re ready.');
   await expectInvalid();
   await prepare();
   await editor.selectText();
@@ -198,7 +198,7 @@ test('typing, cut, undo, example loads and clear invalidate both lenses and deci
   await page.getByRole('button', { name: 'Clear draft' }).click();
   await expectInvalid();
   await expect(editor).toHaveValue('');
-  await expect(page.getByRole('button', { name: 'Check tone', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Check tone cues', exact: true })).toBeDisabled();
 });
 
 test('one expanded card, readable evidence actions and accessible tone keyboard navigation', async ({ page }) => {
@@ -252,27 +252,27 @@ test('tone clean states are limited, empty and oversized drafts are guarded, cop
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
   await toneTab(page).click();
-  await expect(page.getByRole('button', { name: 'Check tone', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Check tone cues', exact: true })).toBeDisabled();
   const editor = editorFor(page);
   await editor.fill('Please send the workspace list by Thursday. I will escalate the access issue if we miss the deadline.');
   await runTone(page);
   await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
-  await expect(page.locator('.result-empty').getByText(/cannot judge how your message will be received/)).toBeVisible();
+  await expect(page.locator('.result-empty').getByText(/can’t predict how your message will be received/)).toBeVisible();
   await expect(page.locator('.findings-count')).toHaveCount(0);
   for (const intent of ['Direct', 'Warm', 'Collaborative']) {
     await page.getByRole('radio', { name: intent, exact: true }).check();
     await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
-    await expect(page.locator('.result-empty')).toContainText('cannot judge how your message will be received');
+    await expect(page.locator('.result-empty')).toContainText('can’t predict how your message will be received');
     await expect(page.locator('.finding-card')).toHaveCount(0);
-    await expect(page.getByRole('button', { name: 'Review tone again' })).toBeEnabled();
+    await expect(page.getByRole('button', { name: 'Recheck tone cues' })).toBeEnabled();
   }
   await clarityTab(page).click();
-  await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'No wording flagged by these checks' })).toHaveCount(0);
   await toneTab(page).click();
   await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
   await editor.fill('x'.repeat(12001));
   await expect(editor).toHaveValue('x'.repeat(12001));
-  await expect(page.getByRole('button', { name: 'Review tone again' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Recheck tone cues' })).toBeDisabled();
   await editor.fill('Fresh current draft 👋');
   await page.getByRole('button', { name: 'Copy draft' }).click();
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('Fresh current draft 👋');
@@ -295,24 +295,24 @@ test('tone sample review explains coverage and matches ordinary checked input', 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
   const example = page.getByRole('button', { name: 'Try a sample review' });
-  await page.getByRole('combobox', { name: 'Fictional scenario' }).selectOption('tone-to-reconsider');
+  await page.getByRole('combobox', { name: 'Fictional example' }).selectOption('tone-to-reconsider');
   const editor = editorFor(page);
   await example.click();
   await expect(toneTab(page)).toHaveAttribute('aria-selected', 'true');
   await expect(page.locator('.tone-scope')).toBeVisible();
-  await expect(page.locator('.tone-scope')).toContainText('accusation, judgment, dismissal and pressure');
-  await expect(page.locator('.tone-scope')).toContainText('Coverage is limited.');
-  await expect(page.locator('.intent-picker')).toContainText('Changes the review question, not what gets flagged.');
+  await expect(page.locator('.tone-scope')).toContainText('blaming, dismissive, judgmental or pressuring');
+  await expect(page.locator('.tone-scope')).toContainText('It won’t catch every tone issue.');
+  await expect(page.locator('.intent-picker')).toContainText('Changes the questions you see, not your draft or which phrases are flagged.');
   const coverage = page.locator('.about-checks');
   await coverage.locator('summary').click();
   await expect(coverage).toHaveAttribute('open', '');
-  await expect(coverage.getByText(/not a good look/)).toBeVisible();
-  await expect(coverage.getByText(/It can miss issues/)).toBeVisible();
+  await expect(coverage.getByText(/Tone cues looks for a few phrases/)).toBeVisible();
+  await expect(coverage.getByText(/The checks can miss issues/)).toBeVisible();
   await coverage.locator('summary').click();
   await expect(page.locator('#draft-description')).toContainText('Fictional example');
-  await expect(page.getByRole('status')).toHaveText('1 tone cue to consider. 0 reviewed.');
+  await expect(page.getByRole('status')).toHaveText('1 finding to consider. 0 of 1 reviewed.');
   await page.evaluate(() => window.scrollTo(0, 0));
-  await expect(page.getByRole('button', { name: 'Review tone again', exact: true })).toBeInViewport({ ratio: 1 });
+  await expect(page.getByRole('button', { name: 'Recheck tone cues', exact: true })).toBeInViewport({ ratio: 1 });
   const text = await editor.inputValue();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   await expect(page.locator('blockquote:visible')).toHaveText('This is not a good look, we are still waiting for your workspace list.');
@@ -330,7 +330,7 @@ test('tone sample review explains coverage and matches ordinary checked input', 
   const quote = 'This is not a good look, we are still waiting for your workspace list.';
   expect(await editor.evaluate((field: HTMLTextAreaElement) => ({ start: field.selectionStart, end: field.selectionEnd, selected: field.value.slice(field.selectionStart, field.selectionEnd) }))).toEqual({ start: text.indexOf(quote), end: text.indexOf(quote) + quote.length, selected: quote });
 
-  await page.getByRole('combobox', { name: 'Fictional scenario' }).selectOption('tone-to-reconsider');
+  await page.getByRole('combobox', { name: 'Fictional example' }).selectOption('tone-to-reconsider');
   await example.click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   await editor.press('End');
@@ -366,7 +366,7 @@ test('a fictional follow-up selects only its current judgmental sentence and kee
   await expect(page.locator('.finding-card')).toHaveCount(0);
   await runTone(page);
   await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
-  await expect(page.locator('.result-empty')).toContainText('cannot judge how your message will be received');
+  await expect(page.locator('.result-empty')).toContainText('can’t predict how your message will be received');
   await expect(editor).toHaveValue(text.slice(0, start) + text.slice(start + quote.length));
 });
 

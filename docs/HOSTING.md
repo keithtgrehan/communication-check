@@ -1,6 +1,37 @@
 # Separate preview and rollback
 
-Status: monochrome portfolio preview is live and verified. Engine research is stopped for this delivery.
+Status: September 16 editorial candidate is deployed to Vercel. The older Render preview remains unchanged. Engine research is stopped for this delivery.
+
+## Vercel deployment — 2026-09-16
+
+Keith approved deployment and explicitly selected **Keith Grehan’s projects**
+(`keith-grehans-projects`, Hobby), rather than the different plugin account.
+
+- Current site: https://communication-check.vercel.app
+- Source: `38d744d`, branch `codex/communication-check-tone-review`.
+- Project: `communication-check`, `prj_NW3ec5feWa0ljV2AYyNb12psxi1K`.
+- Deployment: `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`.
+- Immutable URL: https://communication-check-be15ud6ic-keith-grehans-projects.vercel.app
+- Prebuilt static deployment: six reviewed `web/dist` files plus Build Output API
+  v3 configuration. The upload dry run excluded local credentials and metadata.
+- All 81 hosted browser checks pass, including workflow, information pages and runtime privacy.
+- Six hosted assets match the local build byte-for-byte; security headers and
+  eight source/config 404 checks pass. Evidence: `VERCEL_HOSTED_VERIFICATION.json`.
+- Private GitHub repository unchanged; no Git integration, push, merge, paid
+  upgrade, custom domain, analytics, backend or changes to unrelated projects.
+- Search indexing remains disabled. The portfolio prototype’s detection limits remain.
+
+For a future release, build in the canonical repository and copy only `web/dist/`
+contents into an isolated staging directory’s `.vercel/output/static/`. Copy
+`docs/VERCEL_OUTPUT_CONFIG.json` to `.vercel/output/config.json`. Explicitly link
+that staging directory to this project/account, inspect `vercel deploy --prebuilt
+--prod --dry --json`, then deploy with `--prebuilt --prod` after release approval.
+Never upload repository source or replace the older Render evidence. Verify the
+public alias with `PREVIEW_URL=https://communication-check.vercel.app npm run
+verify:hosted` and `npm run test:browser` with the same environment variable.
+Hash routes need no wildcard rewrite; missing source/config paths must remain 404.
+For rollback, promote a previously verified deployment from this project. This is
+its first deployment; the older Render URL remains a separate fallback.
 
 ## Verified hosting basis — 2026-09-10
 
@@ -123,7 +154,6 @@ Local fallback: `npm run build` then `npm run preview`, opening http://127.0.0.1
 - Allowance rechecked at 14:10 UTC: Hobby, 4/25 services, 2 MB/5 GB bandwidth, 0/500 pipeline minutes displayed and $0.00 pipeline charges. No plan, billing or domain changes.
 - The previous verified preview is dep-dahapitbedkc739s6990 at 6e17932; this is the current rollback target. Its detection gate also remained unmet.
 - This is an interim review preview: all seven fresh evaluations have failed the detection requirement, so engineering completion remains unclaimed.
-
 
 ## Previous portfolio preview — 10 September
 

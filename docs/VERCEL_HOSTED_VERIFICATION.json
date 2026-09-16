@@ -1,0 +1,89 @@
+{
+  "verifiedAt": "2026-09-16T17:01:49.613Z",
+  "origin": "https://communication-check.vercel.app",
+  "checkoutCommit": "38d744db8b20c7398b8eb2d2d62f4833d5cd7dc3",
+  "engineSha256": "3b0d3b6db195dbe697b98b57abe564a2fdcd56cc6c07dba62732af8e111c7196",
+  "engineManifest": {
+    "schemaVersion": 1,
+    "files": [
+      {
+        "path": "web/src/engine/active-text.ts",
+        "sha256": "5c062949c7f307b3708c0fa782a0f4a4c131cdb2c91606b07ca50caaa6a349a7"
+      },
+      {
+        "path": "web/src/engine/agreement.ts",
+        "sha256": "b12ac712cb00171160f34f17c25f6e74cee85923e693d30fbb9fb65c9edd2506"
+      },
+      {
+        "path": "web/src/engine/commitment.ts",
+        "sha256": "10277137dcbae8d6d8505f0bd63fba0fb2e27f45e319af1ae79c68945a6dbad9"
+      },
+      {
+        "path": "web/src/engine/grammar.ts",
+        "sha256": "c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398"
+      },
+      {
+        "path": "web/src/engine/index.ts",
+        "sha256": "3b0d3b6db195dbe697b98b57abe564a2fdcd56cc6c07dba62732af8e111c7196"
+      },
+      {
+        "path": "web/src/engine/outcomes.ts",
+        "sha256": "3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462"
+      },
+      {
+        "path": "web/src/engine/tone.ts",
+        "sha256": "86c106eeb09fced0023ec4ba120a8224fe3d0c7355bc46078d00a902a89aba87"
+      },
+      {
+        "path": "web/src/engine/types.ts",
+        "sha256": "99b53f7e3ca9dbd89f5c7ad77de94e7478e873f3cf28e95e88ede9d26b50f101"
+      }
+    ],
+    "sha256": "bad47e3c5a6be1d98c9a179a7460d61f69ef300cde915fc514ce3da26c1a9a50"
+  },
+  "assetCount": 6,
+  "assets": [
+    {
+      "path": "THIRD_PARTY_LICENSES.txt",
+      "bytes": 1278,
+      "sha256": "413817118e227691fd9e4f56d4bf32b628f99e1d4cc9088d89ee233e77b5d042"
+    },
+    {
+      "path": "assets/index-BThFI24p.css",
+      "bytes": 14797,
+      "sha256": "00989cf775779060d49e5564512d0c9d7fa4871c2a7f19668bc696c0f3f1b640"
+    },
+    {
+      "path": "assets/index-EFAt5TgG.js",
+      "bytes": 289156,
+      "sha256": "91de851fd6d70caa9a0387f793b50f8715e28bcff13cc79043fc948debfbfeb6"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 243,
+      "sha256": "09bd5db9c88142be5cd2c0f29b262fe9fdfde791f29279d161f017a66fd9b652"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1165,
+      "sha256": "7aabdb81a559b22a19b46f84cccdd9ffafed1394a005d836e8509459325379cd"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 26,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    }
+  ],
+  "excludedPathsReturned404": [
+    "/AGENTS.md",
+    "/package.json",
+    "/.git/config",
+    "/.env",
+    "/src/App.tsx",
+    "/src/engine/__fixtures__/development.ts",
+    "/reference/vibe-signal/web/src/App.jsx",
+    "/docs/PRODUCT_BRIEF.md"
+  ],
+  "responseHeadersPassed": true,
+  "note": "Static asset/header/source-exclusion evidence only; run the separate hosted browser suite for runtime privacy and workflow."
+}

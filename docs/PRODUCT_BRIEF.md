@@ -24,6 +24,27 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Approved Vercel delivery:** Keith accepted the editorial candidate and authorized
+site deployment, explicitly selecting Keith Grehan’s projects. The accepted build
+is live at https://communication-check.vercel.app with hosted workflow, privacy,
+asset and header verification. This supersedes the earlier local-only deployment
+boundary. Repository visibility, detection scope and no-spend constraints remain;
+no follow-on main merge or outreach was requested.
+
+**Approved editorial refinement:** Keith authorized the design implementation
+prompt and six safeguards after reviewing the design exploration. Refine the
+existing interface into a warm-paper editorial review desk with a white document,
+open annotation rail, concise start controls and complete plain-language state
+copy. Follow the supplied copy deck for interface, About, Video and finding copy;
+engine edits are limited to COPY strings. Keep all detection, evidence, review
+decisions, sample semantics and memory-only behaviour. Capture before/after
+screenshots and compare all non-copy results on existing public fixtures and nine
+scenarios. Preserve meaningful viewport assertions, explain emoji counting and
+verify the static About example against the real checker. Independent review and
+local validation precede user testing. No push, deployment, merge, new evaluation
+or task-message delivery in this pass. This supersedes prior presentation/copy
+directions, including the large Video placeholder, without expanding product scope.
+
 **Approved information pages:** Keith requested top-right links to About
 Communication Check and Video Demo. About succinctly adapts the case study and
 README into what the tool does, why, for whom and how. Video Demo reserves an
@@ -74,7 +95,6 @@ styling and intent-invalidation instructions. Preserve detection scope, exact
 selection, lens controls and memory-only handling. Verify locally with independent
 review, then refresh screenshots and the existing case-study PDF. No additional
 model, research, screen, subject field, deployment or publication is included.
-
 
 **Approved correction after Keith's first review:** rename the optional lens
 **Tone cues**, explain the finite supported checks upfront and clarify that

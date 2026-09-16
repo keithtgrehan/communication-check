@@ -1,6 +1,6 @@
 # Communication Check
 
-**Decide what deserves another look.**
+**Review your customer follow-up.**
 
 A portfolio prototype for B2B SaaS account managers and customer-success managers
 reviewing customer onboarding follow-ups. It helps you take a second look at
@@ -17,17 +17,22 @@ supported accusation, judgmental, dismissive and pressure wording. A chosen
 Direct, Collaborative or Warm preference changes the review question, not which
 wording is detected. Switching style updates checked prompts immediately and preserves
 review decisions. Choose a fictional scenario, then use **Try a sample review**
-to run both checks beside the invitation to paste. Warm surfaces, sans-serif headings and muted teal accents frame the
-white editor. Selection alone never replaces a draft. Edit this wording
+to run both checks beside the invitation to paste. The editorial refinement
+uses a white draft document and open review column on a warm paper canvas, with
+sans-serif headings and serif source quotations. Selection alone never replaces a draft. Edit this wording
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
 ## Current evidence
 
 The September 16 follow-on is implemented on
-`codex/communication-check-tone-review`; it has not been deployed. Fresh validation
+`codex/communication-check-tone-review` and deployed at
+[communication-check.vercel.app](https://communication-check.vercel.app). All 81
+hosted browser checks pass; six assets match the approved local build, with security
+headers and eight private-source exclusions verified. See
+[Vercel deployment evidence](docs/VERCEL_HOSTED_VERIFICATION.json). Fresh local validation
 passes 451 engine tests, seven setup checks, the production
-build/typecheck/source guards, 10 fictional-scenario tests and 77 browser checks. See [progress](docs/PROGRESS.md)
+build/typecheck/source guards, 10 fictional-scenario tests and 81 browser checks. See [progress](docs/PROGRESS.md)
 for the completed independent review and [local screenshots](docs/screenshots/README.md).
 
 The September 11 hosted version is a functional portfolio prototype. At delivery,
@@ -45,20 +50,23 @@ for this delivery. No production-reliability or human-validation claim is made.
 See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
 [PR #1](https://github.com/keithtgrehan/communication-check/pull/1) merged on
-September 11. The follow-on branch starts at main `b22bcfd`; deployment, another
-merge and public launch remain separate from local implementation. Vercel
-deployment is planned after Keith reviews the latest local pages.
+September 11. The follow-on branch starts at main `b22bcfd`. Keith accepted the
+local candidate and authorized the September 16 Vercel deployment to Keith Grehan’s
+projects. No follow-on merge or repository visibility change occurred.
 
 For the next design discussion, use the self-contained
 [design exploration handoff](docs/DESIGN_EXPLORATION_HANDOFF.md). It records the
-current interface, preferences, behaviour to preserve and an exploration brief;
-it does not authorise a redesign or deployment.
+pre-refinement interface, preferences, behaviour to preserve and exploration brief.
+Keith subsequently authorized the editorial direction and copy deck with additional
+safeguards. See [editorial refinement evidence](docs/EDITORIAL_REFINEMENT.md) for
+the local candidate; pushing, merging and deployment require a separate instruction.
 
 ## About and walkthrough
 
 The top-right navigation opens **About Communication Check** (`/#/about`) and
 **Video Demo** (`/#/video-demo`). About explains the audience, purpose, workflow
-and limits. Video Demo reserves a responsive space for the forthcoming YouTube
+and limits, with a labelled fictional illustration matching a real checker result.
+Video Demo offers a compact forthcoming-video notice and a static three-step
 walkthrough; no video or third-party player is loaded yet.
 
 Moving between these pages preserves the draft and review decisions in memory.
