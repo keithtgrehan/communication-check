@@ -1,3 +1,4 @@
+import { activeText } from './active-text';
 import { analyzeClause, hasExplicitDeadline, isRequestedAction, linkedDependency } from './grammar';
 import { agreementConcern } from './agreement';
 import { commitmentConcern } from './commitment';
@@ -20,17 +21,17 @@ const COPY: Record<RuleId, Pick<Finding, 'title' | 'explanation' | 'prompt'>> = 
   'competing-requests': {
     title: 'Choose a first action',
     explanation: 'Several requests appear together without an explicit first step.',
-    prompt: 'Make the first action clear, or put these requests in priority order.',
+    prompt: 'Which task should happen first, and do any other tasks depend on it?',
   },
   'agreement-wording': {
     title: 'Confirm what was agreed',
     explanation: 'Agreement wording appears alongside an explicit proposal or a decision that is still pending.',
-    prompt: 'Confirm whether this is agreed, or make the remaining proposal or approval clear.',
+    prompt: 'What is agreed, who still needs to decide, and does the next step depend on that decision?',
   },
   'commitment-confirmation': {
     title: 'Confirm this commitment',
     explanation: 'This wording makes a definite delivery, pricing, or functionality commitment.',
-    prompt: 'Confirm this commitment before sending.',
+    prompt: 'Has the responsible person or team confirmed this commitment, including any conditions or dependencies?',
   },
 };
 
@@ -43,43 +44,6 @@ function span(text: string, start: number, end: number): Span {
   while (start < end && /\s/.test(text[start])) start++;
   while (end > start && /\s/.test(text[end - 1])) end--;
   return { start, end, text: text.slice(start, end) };
-}
-
-/** Mask only recognised history/signature spans, retaining every UTF-16 position. */
-function activeText(text: string): { masked: string; excludedSections: number } {
-  const lines = [...text.matchAll(/[^\r\n]+/g)];
-  const exclusions: Array<[number, number]> = [];
-  for (let i = 0; i < lines.length; i++) {
-    const match = lines[i];
-    const line = match[0].trim();
-    const start = match.index;
-    if (/^>/.test(line)) {
-      exclusions.push([start, start + match[0].length]);
-      continue;
-    }
-    const replyHeader = /^On\s+.{1,250}\bwrote:\s*$/i.test(line)
-      || /^[-_]{2,}\s*(?:original|forwarded) message\s*[-_]{2,}$/i.test(line)
-      || /^Begin forwarded message:\s*$/i.test(line)
-      || (/^From:\s*\S/i.test(line) && lines.slice(i + 1, i + 5).some(next => /^(?:Sent|Date):/i.test(next[0].trim())));
-    const signatureDivider = /^--\s*$/.test(match[0]) || /^Sent from my\s+/i.test(line);
-    // Conventional valedictions only count if followed by a compact name/contact block.
-    const valediction = /^(?:thanks|thank you|best|best regards|kind regards|regards|cheers)[,!]?$/i.test(line);
-    const tail = valediction ? lines.slice(i + 1, i + 7).map(next => next[0].trim()) : [];
-    const name = tail[0] ?? '';
-    const signatureTail = valediction
-      && /^[\p{L}][\p{L}' .-]{1,50}$/u.test(name)
-      && tail.length <= 5 && tail.join('\n').length <= 250
-      && !tail.some(part => /[?!]|\b(?:please|will|should|must|need|guarantee|can you|could you)\b/i.test(part));
-    if (replyHeader || signatureDivider || signatureTail) {
-      exclusions.push([start, text.length]);
-      break;
-    }
-  }
-  let masked = text;
-  for (const [start, end] of exclusions) {
-    masked = masked.slice(0, start) + masked.slice(start, end).replace(/[^\r\n]/g, ' ') + masked.slice(end);
-  }
-  return { masked, excludedSections: exclusions.length };
 }
 
 /** Sentence punctuation is a boundary only before whitespace/end, so IDs, decimals and URLs survive. */

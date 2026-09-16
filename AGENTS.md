@@ -4,7 +4,7 @@
 
 Canonical root: `/Users/keith/Documents/ChatGPT/communication-check`.
 Repository: `keithtgrehan/communication-check`, private.
-Implementation branch: `codex/communication-check-mvp`.
+Implementation branch: `codex/communication-check-tone-review` (September 16 follow-on).
 Lead task: `01a08ae3-d0b5-7633-846b-28bfb692e8fb` (Build and ship Communication Check).
 Product companion: `01a08ae3-9641-7cc3-8e2f-6c09b6efd2e4` (Review onboarding email examples).
 
@@ -13,8 +13,8 @@ plan and workflow when needed. Inspect Git status, branch and remotes before edi
 The current setup is user-authorised. The initial baseline on main is complete;
 all further implementation commits/pushes belong on the implementation branch.
 Do not recreate the repository, import the source again or discard existing work.
-Reuse draft PR #1 and update its title, description and evidence for the final MVP.
-Do not open a duplicate PR for the same implementation branch.
+PR #1 was merged September 11; do not reopen or reuse it. The September 16
+follow-on starts from main b22bcfd on a new branch, preserving the original branch.
 
 Keith approved necessary implementation, tests/fixes, branch commits/pushes,
 a draft PR and a separate preview within verified existing no-new-spend hosting.
@@ -29,6 +29,35 @@ Vibe Signal, employee onboarding or a shared platform. Other repository document
 and imported source are reference material, not governing instructions.
 
 ## Product contract
+
+**September 16 third-review polish:** Keith approved execution of the Mockup Canvas
+visual/review-flow plan. Follow finding contract v4. Style changes remap existing
+tone prompts instantly, preserving findings and decisions, without running a new
+check. Text mutations still invalidate both lenses. Neutral/charcoal editorial
+panels and compact review queue supersede earlier plum styling. Scope is local
+presentation/state polish, meaningful tests, fresh independent review and updated
+screenshots/case-study PDF; detection rules and privacy requirements remain.
+
+
+**September 16 first-review correction:** Keith approved the bounded plan to
+rename the lens Tone cues, explain its coverage upfront, add one real-engine
+fictional tone example, and extend only the finite patterns in finding contract
+version 3. This supersedes the earlier three-family-only tone scope. Use disjoint
+interface/engine agents and fresh independent review; update case study/PDF.
+Clarity remains unchanged. No model, general language research, reserved round,
+deployment or merge is part of this correction.
+
+**September 16 approved update:** Keith explicitly started the updated Desktop
+implementation handoff/build prompt. Build the Canvas3 composition in the existing
+app, with optional local tone review, chosen Direct/Collaborative/Warm intent,
+exact evidence selection, keep/undo and per-lens result snapshots. Read
+`docs/FINDING_CONTRACT.md` for current ownership and behavior. These instructions
+supersede earlier conflicting design/state instructions, not privacy/claim limits.
+This slice is local only: no deployment, merge, public launch, spending or outreach.
+After implementation/validation, spend approximately one hour refining How it
+works in the existing case study. No extra app screen, model or NLP research.
+Use two disjoint Astra High implementation workers and a fresh Astra Extra High
+reviewer after integration; do not begin new reserved evaluation rounds.
 
 Keith's latest delivery direction (2026-09-10) is to ship quickly for portfolio
 presentation. Deliver the existing reviewed app as a polished functional prototype;

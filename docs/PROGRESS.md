@@ -1,21 +1,49 @@
 # Communication Check progress
 
-Updated: 2026-09-11
-Milestone: monochrome UI refresh deployed and verified
-Status: refreshed preview and portfolio package delivered
+Updated: 2026-09-16
+Milestone: Information pages reviewed; README and design-exploration handoff prepared for GitHub sync
+Status: 7 setup + 451 engine + 10 scenario + 77 browser checks pass locally; hosted preview unchanged
 
-## Current refresh checklist
+## September 16 information pages
 
-- [x] v0 direction reviewed — one proposal and one focused revision, using existing $5 monthly credit with v0 Mini. Only three fictional screenshots and design brief supplied; no purchase or repository connection.
-- [x] Presentation integrated — monochrome layout, 16px draft/body, 14px secondary text, 44px controls and 880px stacking; engine and original handlers preserved.
-- [x] Local checks and fresh independent review — 7 setup + 225 engine + 28 browser checks pass. Fresh Astra review found no material issues; focused checks at 320/880/881/1440px passed.
-- [x] Preview updated and verified — dep-dai10kbm8hqs73dnm68g, live 2026-09-11 14:29:50 UTC at 4931fe2f8968b0447c5e2872e520306aa0bb74b7; all 28 hosted checks pass.
-- [x] Portfolio materials ready — three verified hosted screenshots, Featured title/description/link/thumbnail, updated case study with all ten results, demo script and SE notes. Recording deferred.
+- Keith requested GitHub synchronization and a new-chat design exploration handoff. README now links to docs/DESIGN_EXPLORATION_HANDOFF.md; this is exploration guidance, not a redesign or deployment. Existing validated app code is unchanged in this documentation pass.
+- Keith requested About Communication Check and Video Demo in the top-right navigation. About concisely adapts the case-study PDF/README; Video Demo reserves a YouTube walkthrough space without loading a player. Both pages link to the private repository README with an access note.
+- Internal links, browser history and direct page entry work without hosting rewrites. Drafts, both reviews and Keep/Undo stay in memory across navigation; reload clears them. Inactive content is hidden from keyboard and assistive technology.
+- Full validation passes the counts above, including nine new navigation, layout, accessibility and privacy checks. Desktop/382/320px captures were visually inspected. Fresh independent Astra Extra High review found no actionable issues across layout, accessibility, history/focus, retained review state and offline/privacy checks.
+- Keith tests locally next, then intends to deploy via Vercel. No deployment or visibility change occurred. YouTube URL is still needed before wiring the actual embed.
 
-## Current delivery
+## September 16 expert-feedback integration
+
+- One senior CSM completed 21 overlapping workbook decisions and 12 comments. This is expert content feedback, not a usability session or accuracy benchmark. Usability remains 0/3; pilots 0/5.
+- Keith authorized fixing the observed gaps. Eight revised problem demos now produce useful findings in both lenses; the clean comparison remains unflagged. Two finite tone forms and four general question improvements preserve legitimate deadlines. Clarity detection and historical evaluation remain unchanged; its missing-list demo states the dependency in the request.
+- Explicit sample review checks both tabs for one draft revision, with independent failures/retries. Pasted checks remain manual; picker selection is inert. Keep/Undo, style-only questions and edit invalidation remain intact.
+- Full validation passes the counts above, build/typecheck/source guards and runtime privacy/offline checks. Fresh screenshots and the four-page case-study PDF were visually inspected. Fresh Astra Extra High review found no actionable issue: 27 dual-lens/style reviews, 48 boundary probes and independent mobile/state/offline checks passed. See FINDING_CONTRACT.md v6 and FIRST_VISIT_POLISH.md.
+
+## September 16 first-visit and scenario polish
+
+- Keith approved the starting-experience fix, nine-scenario picker and restrained Intercom-inspired visual refinements. Explicit sample review now loads fictional text and runs the unchanged checker in its preferred lens; picking alone preserves the draft. The blank editor is honest, and actions/results are visible without manual hunting at narrow panel and desktop widths.
+- Astra High workers owned UI/browser and sample data/tests separately. Lead full validation passed 7 setup + 404 engine + 10 scenario + 65 browser checks, build/typecheck/source guards. Historical detection records and engine implementation are unchanged. First-visit, privacy/offline, clipboard, keyboard, exact selection, Keep/Undo, style switching and zoom remain covered.
+- Fresh Astra Extra High review passed 39 targeted browser + 10 scenario checks and independent all-nine scenario/state/offline/privacy probes. Small desktop/320px button clipping issues were fixed. Zoomed picker-label truncation was fixed with wrapping and native-arrow spacing, three regressions and independent visual confirmation. Screenshots and matching four-page PDF refreshed. See FIRST_VISIT_POLISH.md.
+
+## Earlier September 16 corrections
+
+- Third review: approved Mockup Canvas desk styling and immediate tone-question changes preserving findings/Keep/Undo. Seven setup + 404 engine + 51 browser checks passed; independent review cleared the enlarged-text tab fix. Screenshots/PDF inspected. Details: REVIEW_DESK_POLISH.md.
+- First review: approved Tone cues guidance/demo and finite judgmental/dismissive/pressure patterns, with clarity and historical evaluations unchanged. Seven setup + 399 engine + 48 browser checks passed; independent review cleared punctuation safeguard fixes. Screenshots/PDF inspected. Details: TONE_CORRECTION.md.
+
+## September 16 follow-on
+
+- Two Astra High workers completed disjoint UI and tone changes. Lead integrated and ran npm run validate: 7 setup + 307 engine (225 clarity/82 tone) + 43 browser checks, production build/typecheck/source guards all pass. Real screenshots cover 1440/1024/390/320px, exact selection, mobile editor/results, enlarged text and 200% zoom. Fresh Astra Extra High final review found no actionable issues: 82 tone + 26 targeted browser checks, additional state/clipboard probes, and desktop/mobile/enlarged visual inspection passed. Review is bounded engineering evidence, not human validation.
+- Case-study How it works refinement is complete after validation: diagram/text fallback, 220-word explanation and verified fictional engine example. Source-to-quote behavior, limited context checks, AI-assisted development versus runtime, privacy and known limitations are explicit.
+
+- Keith explicitly started implementation using the latest Desktop implementation handoff/build prompt; these supersede conflicting earlier scope/workflow notes.
+- Verified canonical checkout/remote; reconciled main b22bcfd after PR #1 merged September 11, preserving the original branch. Follow-on uses codex/communication-check-tone-review. Branch guard was updated; main/wrong-repository/tag/deletion protections remain. Baseline setup/225 engine/28 browser checks passed.
+- Original follow-on scope was Canvas3 plus bounded local tone, exact selection, keep/undo and invalidation, followed by the approximately one-hour How it works refinement. No model, research, evaluation round, deployment, launch, merge or spending. See FINDING_CONTRACT.md for later approved changes.
+- Both Markdown briefs and the reference ZIP were added to ChatGPT Project Sources and verified after reload September 16. This is a dated source upload, not continuous synchronization.
+
+## September 11 hosted delivery (unchanged)
 
 - Canonical root: /Users/keith/Documents/ChatGPT/communication-check.
-- Private repository: https://github.com/keithtgrehan/communication-check. Branch: codex/communication-check-mvp. Existing draft PR #1: https://github.com/keithtgrehan/communication-check/pull/1; unmerged.
+- Private repository: https://github.com/keithtgrehan/communication-check. Branch: codex/communication-check-mvp. PR #1: https://github.com/keithtgrehan/communication-check/pull/1; merged September 11; follow-on branch above.
 - Working preview: https://communication-check-preview.onrender.com. Render deployment dep-dai10kbm8hqs73dnm68g, live 2026-09-11 at 14:29:50 UTC from checkout 4931fe2f8968b0447c5e2872e520306aa0bb74b7. Later delivery edits are documentation/screenshots only.
 - Static React/Vite editor: five check families, up to three exact quotes, dismissal, edit/recheck, current-text copy, reset and three fictional demos. No rewriting, sending, scores or factual/agreement verification.
 - Reviewed runtime from d1230d6d066bc4a8eef9aa08d7818c1404d09c04; complete six-module manifest 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125.
@@ -24,7 +52,7 @@ Status: refreshed preview and portfolio package delivered
 - Browser coverage includes exact evidence, editing/dismissal, clipboard success/denial, keyboard, 320/390/1440px layouts, 200% content zoom, runtime network/storage/log canaries, reload clearing and offline use. Automated checks are not physical-device testing or accessibility certification.
 - Portfolio case study, reusable project copy, desktop/mobile/clean screenshots, 75-second demo script, SE conversation notes, README, reuse ledger, third-party notices, human-validation protocol and rollback instructions are ready. The screenshots use fictional demos and were visually inspected. Six pinned inactive Vibe source blobs remain unchanged and excluded from runtime.
 
-## Explicit scope decision
+## Preserved portfolio/accuracy decision
 
 Keith asked to “put focus on shipping quickly, it just has to look good on portfolio”.
 The existing reviewed app is delivered as a functional portfolio prototype. The
@@ -63,12 +91,12 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 ## Workflow and boundaries
 
 - The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
-- ChatGPT project instructions are saved. The Sources snapshot remains dated 2026-09-10 16:28 UTC. The 11 September allowlisted brief/progress packet was delivered to the existing companion task, which completed its turn. Task delivery is not Sources synchronisation.
+- ChatGPT project instructions are saved. The original brief/progress Sources snapshot is dated 2026-09-10 16:28 UTC; the two new briefs and reference ZIP were added September 16. A September 16 baseline brief/progress packet was delivered to the existing companion task, whose acknowledgement turn completed. Task delivery is not Sources synchronization.
 - Refreshed 2026-09-11 14:27 UTC Render allowance: Hobby, 4/25 services, 8 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahdjffqj5pc73a9mhrg at 8a83afd. No billing, plan, domain or unrelated service changes.
-- Repository stays private and PR stays draft/unmerged. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
+- Repository stays private; PR #1 is merged. This follow-on remains unmerged; Keith authorized pushing the completed branch and README to GitHub. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
 
 ## Next action
 
-Keith reviews the preview and prepared Featured package. Publication requires
-separate approval. Recording is deferred; no further engine research or design
-round is started.
+Keith can attach docs/DESIGN_EXPLORATION_HANDOFF.md to a new design chat and review
+the local pages. Supply the YouTube URL when ready. Vercel deployment follows
+local review; publication and merge remain separate. The historical detection gate remains failed.

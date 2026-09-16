@@ -1,9 +1,11 @@
 # Communication Check
 
-**Make the next step clear.**
+**Decide what deserves another look.**
 
 A focused portfolio prototype for reviewing customer onboarding follow-up emails.
-[Try the working demo](https://communication-check-preview.onrender.com).
+[Try the September 11 hosted demo](https://communication-check-preview.onrender.com).
+The September 16 tone/review update described here is verified locally and has not
+been deployed to that preview.
 
 ## The problem
 
@@ -15,45 +17,88 @@ not been validated.
 
 ## The experience
 
-Paste a draft or try one of three fictional examples. Check it, inspect the exact
-wording behind each prompt, edit, recheck and copy. The interface limits results
-to three prompts so the review stays manageable. Every prompt can be dismissed;
-the writer keeps the decision.
+Paste a draft or run one of nine fictional scenarios. The sample action runs both
+real checks; selecting an option leaves the draft untouched.
+Clarity & commitments shows up to three prompts. Optional Tone cues shows up to
+two supported wording cues. Direct, Collaborative or Warm changes the review
+question, not which wording is flagged. Select exact wording to edit, or keep it
+as written with Undo. Unchanged rechecks and style changes preserve decisions.
+Text edits clear both reviews. Copy always uses the current draft.
 
-A warm white background, charcoal controls and restrained editorial typography give the
-product a calm, focused feel. The desktop layout places the draft beside its
-review. On smaller screens, the same sequence becomes a single column. Clear
-focus states, keyboard controls and precise evidence selection support the core
-workflow.
+Warm off-white surfaces, a white editor and sans-serif headings keep the interface
+clear. Serif draft text and muted teal selection provide restrained contrast.
+A compact starting area puts a working demonstration beside the paste invitation.
+Draft and Review sit side by side on desktop and stack in narrow panels; sample
+results move into view automatically. Keyboard controls and exact evidence
+selection support the review.
 
 The product asks the writer to confirm a commitment. It never claims to know what
-was agreed, assigns no score, and does not rewrite or send the email. An empty
-result explains that facts and agreements have not been verified.
+was agreed, assigns no score, and does not rewrite or send the email. Empty clarity
+results retain the facts/agreements caveat; empty tone results explain the limited
+coverage and inability to predict a recipient’s response.
 
-## The decisions behind it
+## How it works
 
-The app runs a deterministic TypeScript checker inside a static React interface.
-There is no remote model, account or backend. Drafts and findings stay in page
-memory, and editing immediately clears stale results. Explicit copy uses the
-current draft; reload clears the editor.
+```mermaid
+flowchart LR
+  A[Original text] --> B[Linguistic cues] --> C[Context checks]
+  C --> D[Exact quoted finding] --> E[Human decision]
+```
 
-This keeps the interaction inspectable and avoids sending drafts to a service.
-It also creates a clear tradeoff: the rules can miss unfamiliar wording and cannot
-recover the context of a customer call. The three examples use the same engine as
-pasted drafts; their results are not staged responses.
+Text equivalent: Original text → linguistic cues → context checks → exact quoted
+finding → human decision.
+
+Communication Check keeps the original draft and its character positions so a
+finding can select the exact wording, including repeated phrases and emoji.
+Local deterministic TypeScript rules recognize a bounded set of linguistic cues:
+for example, a definite product commitment or a bounded judgmental phrase.
+
+Context checks are limited rules and suppressions. They exclude recognized
+quoted history and signatures and handle supported qualifications; tone review
+also avoids quoted units and some conditional or reported wording. They do not
+understand a previous call, verify an agreement or establish how someone feels.
+The diagram is a conceptual guide, not the literal order of every engine step.
+
+A finding pairs an exact quote with a review prompt. Tone prompts reflect the
+writer’s chosen intent. The writer can keep the wording, undo that decision, or
+select it and edit; the app never rewrites or sends it.
+
+Local processing makes behavior inspectable and avoids a remote model or
+inference-service dependency. Runtime checks observed no draft-bearing network
+traffic, logs or browser persistence. Static assets still load from the host;
+explicit copy writes to the clipboard. AI assisted development, but no AI model
+runs when a draft is checked.
+
+Unfamiliar wording and nuance can be missed. Intent is a review preference, not
+a comprehensive tone judgment. Passing development checks does not establish
+factual correctness or production-level accuracy.
+
+**Verified fictional example** — local tone engine, Collaborative intent:
+
+- Input: “This is not a good look, we are still waiting for your workspace list. Please send the workspace list by Thursday.”
+- Exact emitted quote: “This is not a good look, we are still waiting for your workspace list.”
+- Review question: “Would describing the specific issue and a shared next step help coordinate this follow-up?”
+- Possible human decision: select the wording and describe the specific issue, then recheck; or keep it as written. Neither action verifies the underlying facts.
 
 ## What was delivered
 
-A responsive working preview, three interactive demos, reviewed implementation,
-desktop and mobile screenshots, a 75-second walkthrough script and a documented rollback
-path. Product direction and decisions were coordinated with Codex/Astra agents;
-this was an AI-assisted build.
+The September 11 delivery includes a hosted preview, portfolio materials and a
+rollback path. The September 16 local app adds optional tone review, Keep/Undo
+and immediate style switching. Expert feedback refined nine scenarios, review
+questions and two finite tone patterns. The hosted preview is unchanged.
 
-The reviewed implementation passes 225 engine tests, seven setup/integrity checks,
-and 28 local browser checks covering editing, clipboard, exact evidence, keyboard,
-responsive layout and runtime privacy behaviour. The same 28 checks pass on the hosted preview; six deployed assets match the
-reviewed local build. Automated browser checks are not a full
-accessibility certification or human usability study.
+Fresh local validation on September 16 passes **451 engine tests**,
+**seven setup/integrity checks**, **ten fictional-scenario tests**,
+build/typecheck/source guards and **68 browser checks**. Browser coverage includes
+both review lenses, editing, current-text clipboard/fallback, exact evidence,
+keyboard access, responsive layout and runtime privacy/offline behavior.
+[Local screenshots](screenshots/README.md) include 1440, 1024, 390 and 320px widths,
+evidence selection, enlarged text and 200% content zoom.
+
+Two Astra High workers handled interface and bounded rule changes; the lead
+integrated and validated them. Independent final review is recorded in
+[verification](VERIFICATION.md). Automated browser and agent checks are not a full
+accessibility certification, physical-device testing or human usability study.
 
 ## What I learned
 
@@ -62,12 +107,11 @@ ten reserved fictional evaluations missed the original detection target; the
 latest detected 4 of 12 selected issues, with no flags across its four clean
 controls. Those results remain visible in the evaluation report.
 
-I chose to ship the polished portfolio prototype and stop the deeper parser
-experiment for this delivery. The result demonstrates product scope, interaction
-design, browser-local implementation and an honest approach to validation. It is
-not presented as a reliable general-purpose writing assistant. Future product
-work would start with real user feedback and a deliberate decision about detection
-quality before expanding the scope.
+One senior customer-success manager reviewed the fictional examples. Her feedback
+improved ownership and dependency questions, preserved deadlines and replaced
+artificial accusations. Two finite tone additions and one clearer example
+addressed observed misses. This is expert content feedback, not live usability
+testing or evidence of general accuracy.
 
 ## Preserved evaluation history
 

@@ -37,3 +37,15 @@ focused revision using only three fictional screenshots and a minimal brief.
 Presentation was adapted to the existing React/Vite JSX and CSS; no generated
 scaffold, mock checker, handler code or dependency was imported. See
 [UI refresh provenance](UI_REFRESH.md) for the design-session link and validation.
+
+## 16 September Canvas3 follow-on
+
+Keith supplied `communication-check-handoff.zip` (SHA-256
+`feda4ec641a1f2c68c8019c3a3436d85a4806812583b8f0a4d12d924c0395c0a`),
+containing the Replit Triage/Warmth mockups, Website source and six fictional
+screenshots. Canvas3/Triage is the user-approved composition reference. Its
+fixture analysis, workspace/dependencies and broken mobile/contrast rules are
+not implementation requirements. The existing canonical app remains the host;
+review-state and tone code are implemented locally. No Replit scaffold, analysis
+handler, font or dependency is imported. The reference ZIP remains outside the
+runtime/source tree. Existing third-party runtime notices are unchanged.

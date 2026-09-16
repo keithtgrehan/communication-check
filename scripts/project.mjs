@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const HANDOFF_FILES = Object.freeze(['docs/PRODUCT_BRIEF.md', 'docs/PROGRESS.md']);
-const BRANCH = 'codex/communication-check-mvp';
+const BRANCH = 'codex/communication-check-tone-review';
 const REMOTE = 'https://github.com/keithtgrehan/communication-check.git';
 const DONOR_FILES = ['web/src/App.jsx', 'web/src/styles.css', 'web/src/resultViewModel.js', 'web/vite.config.js', 'web/package.json', 'web/index.html'];
 

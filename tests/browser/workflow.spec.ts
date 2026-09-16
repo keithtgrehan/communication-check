@@ -3,20 +3,27 @@ import AxeBuilder from '@axe-core/playwright';
 import { checkDraft } from '../../web/src/engine';
 import { DEMO_DRAFTS } from '../../web/src/demos';
 
-test('all demos use real checks with exact evidence, including the clean result', async ({ page }) => {
+test('all clarity demos use real checks with exact evidence, including the clean result', async ({ page }) => {
   await page.goto('/');
-  for (const demo of DEMO_DRAFTS) {
-    await page.getByRole('button', { name: demo.label, exact: false }).click();
+  for (const demo of DEMO_DRAFTS.filter(sample => sample.preferredLens === 'clarity')) {
+    await page.getByRole('combobox', { name: 'Fictional scenario' }).selectOption(demo.id);
+    await page.getByRole('button', { name: 'Try a sample review' }).click();
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveValue(demo.text);
-    await page.getByRole('button', { name: /^(Recheck|Check) draft$/ }).click();
     const expected = checkDraft(demo.text).findings;
     await expect(page.locator('.finding-card')).toHaveCount(expected.length);
-    for (const finding of expected) await expect(page.getByText(finding.quote, { exact: true })).toBeVisible();
+    for (const finding of expected) {
+      const card = page.locator('.finding-card').filter({ has: page.getByRole('button', { name: finding.title, exact: true }) });
+      const toggle = card.getByRole('button', { name: finding.title, exact: true });
+      if (await toggle.getAttribute('aria-expanded') !== 'true') await toggle.click();
+      await expect(card.locator('blockquote')).toHaveText(finding.quote);
+      await expect(card.locator('blockquote')).toBeVisible();
+      await expect(page.locator('.finding-toggle[aria-expanded="true"]')).toHaveCount(1);
+    }
     if (!expected.length) await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
   }
 });
 
-test('editing clears results; evidence selection, dismissal and recheck keep original text', async ({ page }) => {
+test('editing clears results; evidence selection, keep and recheck keep original text', async ({ page }) => {
   await page.goto('/');
   const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
   const draft = 'Hi Zoë 👋,\n\nWe guarantee the custom integration will be ready by Friday.\n\nBest,\nAlex';
@@ -24,16 +31,17 @@ test('editing clears results; evidence selection, dismissal and recheck keep ori
   await page.getByRole('button', { name: 'Check draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   const quote = await page.locator('.finding-card blockquote').innerText();
-  await page.getByRole('button', { name: 'Select in draft' }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
   await expect(editor).toBeFocused();
   expect(await editor.evaluate((element: HTMLTextAreaElement) => element.value.slice(element.selectionStart, element.selectionEnd))).toBe(quote);
-  await page.getByRole('button', { name: /^Dismiss / }).click();
-  await expect(page.getByRole('heading', { name: 'All findings dismissed' })).toBeVisible();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await expect(page.getByRole('heading', { name: 'All shown findings reviewed' })).toBeVisible();
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
+  await expect(page.getByRole('button', { name: /^Undo keep:/ })).toBeVisible();
   await editor.fill('Hi Zoë, please send the administrator names by Tuesday.');
   await expect(page.locator('.finding-card')).toHaveCount(0);
-  await expect(page.getByText('New wording, fresh look.')).toBeVisible();
+  await expect(page.getByText('Review the current wording.')).toBeVisible();
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
 });
@@ -103,6 +111,17 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
   await page.getByRole('button', { name: 'Copy draft', exact: true }).click();
+  // Exercise the new lens and decisions while offline with the same canary.
+  await editor.fill(`${canary}\nYou always ignore our requests.`);
+  await page.getByRole('tab', { name: /Tone cues/ }).click();
+  await page.getByRole('button', { name: /^(Check tone|Review tone again)$/ }).click();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.getByRole('button', { name: /^Undo keep:/ }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  await expect(editor).toBeFocused();
+  await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+  await expect(page.locator('.review-prompt:visible')).toContainText('specific occasion');
+  await expect(page.locator('.finding-card')).toHaveCount(1);
   const storage = await page.evaluate(async () => ({
     local: { ...localStorage }, session: { ...sessionStorage }, cookies: document.cookie,
     databases: await indexedDB.databases(), caches: await caches.keys(),
@@ -123,13 +142,17 @@ for (const width of [320, 390, 879, 881, 1440]) {
   test(`keyboard flow, layout and accessibility at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('/');
-    const sample = page.getByRole('button', { name: /Promises to confirm/ });
+    const sample = page.getByRole('button', { name: 'Try a sample review' });
     await sample.focus();
     await page.keyboard.press('Enter');
-    await page.getByRole('textbox', { name: 'Your follow-up draft' }).focus();
+    // Toolbar precedes the editor visually and in keyboard order.
+    const checkButton = page.getByRole('button', { name: 'Recheck draft', exact: true });
+    await checkButton.focus();
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeFocused();
-    const focusRing = await page.getByRole('button', { name: 'Check draft', exact: true }).evaluate(button => {
+    await expect(page.getByRole('button', { name: 'Copy draft', exact: true })).toBeFocused();
+    await page.keyboard.press('Shift+Tab');
+    await expect(checkButton).toBeFocused();
+    const focusRing = await page.getByRole('button', { name: 'Recheck draft', exact: true }).evaluate(button => {
       const style = getComputedStyle(button);
       return { style: style.outlineStyle, width: parseFloat(style.outlineWidth), color: style.outlineColor };
     });
@@ -139,10 +162,12 @@ for (const width of [320, 390, 879, 881, 1440]) {
     await page.keyboard.press('Enter');
     await expect(page.getByRole('heading', { name: 'Checks to consider' })).toBeFocused();
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('button', { name: 'Select in draft' })).toBeFocused();
+    await expect(page.locator('.finding-toggle')).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(page.getByRole('button', { name: 'Edit this wording' })).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toBeFocused();
-    await page.getByText('What this check can do', { exact: true }).click();
+    await page.getByText('What this checks', { exact: true }).click();
     await expect(page.getByText('Examples are fictional;', { exact: false })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
@@ -154,8 +179,8 @@ test('desktop layout remains usable at 200 percent content zoom', async ({ page 
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto('/');
   await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
-  await page.getByRole('button', { name: /Promises to confirm/ }).click();
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

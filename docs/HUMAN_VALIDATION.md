@@ -1,4 +1,4 @@
-# Human validation plan — not yet run
+# Human validation — expert feedback and planned usability work
 
 Keith recruits participants. No outreach has been sent, no participants are
 claimed, and the app has no feedback collection or telemetry.
@@ -40,6 +40,15 @@ market fit. Record contradictions and reasons to stop or narrow scope.
 
 ## Current status
 
-Usability sessions: 0/3. Pilot participants: 0/5. Actual feedback: none supplied.
+Expert content review: one senior customer-success manager completed all three
+tabs of the fictional-example workbook on September 16: 21 overlapping decisions
+(13 Keep, 8 Change) and 12 comments. Feedback supports clearer ownership/dependency
+questions, preserving legitimate deadlines and more realistic example context.
+This is qualitative review of examples and prompts, not 21 participants, an
+accuracy benchmark or observed use of the live interface. Her replacement wording
+was separately checked; three coverage gaps informed the approved bounded fixes.
+
+Usability sessions: 0/3. Pilot participants: 0/5. Neither has been run by this
+workbook review. Keep/Change reviewed the demonstration, not sending the email.
 Engineering delivery may finish while recruitment remains outstanding. Public
 release and commercial readiness require a separate decision by Keith.

@@ -568,3 +568,32 @@ describe('independent review: claimant scope, service heads and timing boundarie
     verifySpans(text);
   });
 });
+
+// Guidance stays reusable across delivery, pricing and functionality; it does
+// not infer an approval, date or customer dependency from the demonstration.
+describe('review questions for arbitrary commitments and next steps', () => {
+  it.each([
+    'We guarantee delivery of the audit connector by Tuesday.',
+    'We promised that you will not be charged for the additional seats.',
+    'The data-conversion service will convert every file.',
+  ])('asks about responsibility and conditions without inventing facts: %s', text => {
+    const finding = checkDraft(text).findings.find(item => item.ruleId === 'commitment-confirmation');
+    expect(finding?.prompt).toBe('Has the responsible person or team confirmed this commitment, including any conditions or dependencies?');
+    expect(finding?.prompt).not.toMatch(/Friday|Thursday|contact|approved/);
+    verifySpans(text);
+  });
+
+  it('asks what is agreed and still pending without inventing a decision-maker', () => {
+    const text = 'The suggested room layout is confirmed, although it is still a proposal.';
+    const finding = checkDraft(text).findings.find(item => item.ruleId === 'agreement-wording');
+    expect(finding?.prompt).toBe('What is agreed, who still needs to decide, and does the next step depend on that decision?');
+    verifySpans(text);
+  });
+
+  it('invites ordering and dependency review without declaring multiple requests wrong', () => {
+    const text = 'Please send the access roster.\nPlease upload the attendance file.\nPlease review the training plan.';
+    const finding = checkDraft(text).findings.find(item => item.ruleId === 'competing-requests');
+    expect(finding?.prompt).toBe('Which task should happen first, and do any other tasks depend on it?');
+    verifySpans(text);
+  });
+});

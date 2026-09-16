@@ -32,3 +32,30 @@ export interface DemoDraft {
 
 export const MAX_DRAFT_LENGTH = 12_000;
 export const MAX_FINDINGS = 3;
+
+export type ReviewLens = 'clarity' | 'tone';
+export type ToneIntent = 'direct' | 'collaborative' | 'warm';
+export type ToneRuleId = 'sweeping-blame' | 'dismissive-request' | 'pressure-wording' | 'judgmental-framing';
+export interface ToneFinding extends Omit<Finding, 'ruleId'> {
+  ruleId: ToneRuleId;
+}
+export interface ToneCheckResult extends Omit<CheckResult, 'findings'> {
+  findings: ToneFinding[];
+}
+export type ReviewFinding = Finding | ToneFinding;
+export interface ReviewResult extends Omit<CheckResult, 'findings'> {
+  findings: ReviewFinding[];
+}
+export const MAX_TONE_FINDINGS = 2;
+
+/** Decisions belong to a particular text snapshot, never a title or style alone. */
+export function findingIdentity(finding: ReviewFinding): string {
+  return JSON.stringify([finding.ruleId, finding.start, finding.end, finding.quote]);
+}
+
+export interface ReviewSnapshot {
+  textRevision: number;
+  result: ReviewResult;
+  reviewedIds: string[];
+  expandedId: string | null;
+}

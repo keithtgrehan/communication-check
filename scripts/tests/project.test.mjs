@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { buildHandoff, checkSnapshot, installGitHooks, ROOT, validatePush } from '../project.mjs';
 
-const branch = 'codex/communication-check-mvp';
+const branch = 'codex/communication-check-tone-review';
 const remote = 'https://github.com/keithtgrehan/communication-check.git';
 const metadata = { commit: 'abc123', branch, now: '2026-09-10T00:00:00Z' };
 const update = `refs/heads/${branch} ${'a'.repeat(40)} refs/heads/${branch} ${'b'.repeat(40)}\n`;
@@ -56,6 +56,8 @@ test('handoff refuses known credential material and symlink sources', t => {
 test('push guard permits the approved branch and refuses main, wrong repo, tags and deletion', () => {
   assert.doesNotThrow(() => validatePush('origin', remote, update));
   assert.throws(() => validatePush('origin', remote, update.replaceAll(branch, 'main')), /only/);
+  assert.throws(() => validatePush('origin', remote, update.replaceAll(branch, 'codex/communication-check-mvp')), /only/);
+  assert.throws(() => validatePush('origin', remote, update.replace(`refs/heads/${branch} ${'b'.repeat(40)}`, `refs/heads/main ${'b'.repeat(40)}`)), /only/);
   assert.throws(() => validatePush('origin', remote.replace('communication-check', 'vibe-signal'), update), /target/);
   assert.throws(() => validatePush('upstream', remote, update), /target/);
   assert.throws(() => validatePush('origin', remote, `refs/tags/v1 ${'a'.repeat(40)} refs/tags/v1 ${'0'.repeat(40)}`), /only/);

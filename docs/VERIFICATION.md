@@ -302,3 +302,294 @@ detection results remain unchanged; there were no new evaluation rounds.
 - All 28 hosted Chromium checks pass in 35.9 seconds: 320/390/879/881/1440px, 44px controls, long-quote wrapping, initial primary action at 1440×900, secondary states/keyboard/axe, 200% content zoom, all three real-engine demos, exact evidence at long-draft beginning/middle/end, editing, dismissal, current-copy/refusal, runtime canary network/storage/log checks, offline use and reload clearing.
 - Automated Chromium and agent inspection are not physical-device or assistive-technology testing, accessibility certification, general-language accuracy or human validation. No production-reliability claim is made.
 - Final hosted desktop/mobile/clean screenshots were captured after verification and visually inspected. The scripted guarantee edit, stale clearing, recheck and current-copy flow passed on the hosted candidate. Recording is deferred.
+
+
+## 16 September 2026 local tone/review follow-on
+
+Canonical root: `/Users/keith/Documents/ChatGPT/communication-check`. Verified
+remote: `https://github.com/keithtgrehan/communication-check.git`. Original clean
+checkout: `codex/communication-check-mvp` at `40d7c0b`. Fetched main
+`b22bcfd465dcc0489d21682a446af1321ce7d242`; GitHub confirms PR #1 merged September 11
+at 15:40:48 UTC. Main and the original checkout have identical file trees. Created
+`codex/communication-check-tone-review` from main; preserved the original branch.
+
+Initial `npm run validate` stopped at the old exact branch-name guard. Before
+product edits, the remaining baseline commands passed seven setup unit checks,
+225 engine tests, build/typecheck/source guards and 28 browser tests. The guard
+was updated to this specifically approved follow-on branch, retaining rejection
+of main, obsolete branch, wrong destination, tags and deletions. Existing masking
+was extracted verbatim into active-text.ts; all 225 clarity tests still pass.
+
+Lead integrated the two bounded Astra High workers (UI and tone) with disjoint
+ownership. On September 16, `npm run validate` exited 0: seven setup checks,
+307 engine tests (225 clarity + 82 fresh fictional tone tests), TypeScript and
+Vite build, source/build guards (12 runtime source files, six built assets) and
+43 Chromium browser tests (14.2 seconds in the lead run). `git diff --check`
+passes. No dependency changes, historical fixture reads or new reserved evaluation.
+
+New browser coverage includes both lenses, all three intents, one expanded card,
+keep/undo/reset and focus, same-input recheck preservation, lens-switch selection,
+text mutation including cut/undo and identical demo reload, intent change back to
+its starting value, exact repeated/emoji/history evidence, clean/limit states,
+late clipboard denial, computed enabled/disabled/hover/focus contrast, interactive
+boundaries, mobile action readability and enlarged text. Existing long-draft
+selection, clipboard and keyboard checks were retained. Testing found and fixed
+transient contrast during enabling and a deferred-focus race during rapid actions.
+
+The runtime privacy test exercises clarity and tone, intent changes, keep/undo,
+evidence selection, editing, copy and offline review. It observes no interaction
+requests after initial assets, no canary in requests/logs/URL, no application
+logs/errors and empty local/session storage, cookies, IndexedDB, caches and service
+worker registrations, including instrumented storage writes. Reload clears the
+draft and findings. Static asset requests and explicit clipboard behavior remain
+outside that privacy claim; extensions, OS services and all browser variants are
+not audited. Production CSP still blocks connections; no remote fonts were added.
+
+Real screenshots at 1440×900, 1024×768, 390×844 and 320×844 include mobile top,
+editor/results/full flow, selected evidence, doubled text and 200% content zoom.
+See `docs/screenshots/README.md`. They are local production-build captures, not
+hosted evidence or physical-device testing. The September 11 preview was neither
+deployed nor revalidated by this slice. Historical hosted reports remain intact.
+
+The case-study refinement began after integrated validation and stays within the
+approximately one-hour documentation allowance. It contains a compact conceptual
+diagram/text fallback, 220-word explanation and an actual fresh fictional tone
+example verified by engine tests. No rules were tuned to manufacture the example.
+Historical failure records, factual/accuracy limitations and local-only status remain.
+
+A fresh Astra Extra High reviewer, independent of both Astra High implementation
+workers, found no actionable issues in the integrated diff. It independently
+passed all 82 tone unit checks and 26 targeted browser checks, and exercised fresh
+probes at 320/880/881/1024px: reverse-order keep decisions, undo focus, unchanged
+rechecks, intent-only and edit/revert invalidation, compound-emoji/repeated
+selection and late clipboard success. It inspected 11 supplied screenshots and
+one fresh 881px capture. The case-study example matched actual engine output;
+local-only status and historical failures were retained. It edited no tracked
+files. This is bounded agent review, not general-language accuracy, human
+validation, physical-device testing or accessibility certification.
+
+Reviewed runtime: eight-module engine manifest SHA-256
+`5afb0add2b85f5152ea81e6d1997bc0553fecaab9e43462e1482f3e9509598ae`;
+App.tsx SHA-256 `b9ee78d872fa611fbd8271c7c9618fbb630aba561789645c8362913edde8d070`;
+styles.css SHA-256 `b7a42e30011b84aeb71d74d0b5e8eb842802a65c0f0c651369411c5eb0b4bdcc`.
+Only documentation/status recording and a trailing blank-line cleanup in the
+extracted helper changed after this review. Final branch and
+commit are reported in the delivery handoff; screenshot/runtime provenance is
+unchanged. No push, deployment, merge, launch, spending or outreach occurred.
+
+## 16 September first-review Tone cues correction
+
+Verified canonical branch `codex/communication-check-tone-review` at `4813014`
+before editing; only the existing PDF output directory was untracked. Preserved
+that commit's model-deferral decision. Keith authorized the finite correction
+in `TONE_CORRECTION.md` and finding contract v3. No model research, new dependency,
+reserved evaluation, hosting change, push or merge occurred.
+
+Two Astra High workers owned disjoint interface and engine files. The lead
+integrated the shared contract/type and docs. The new tone demo uses normal
+current-draft checking; the original three clarity demo texts and all clarity
+implementation modules remain unchanged. Demo loading selects its relevant lens
+without analysis. Intent changes review questions, never detection sensitivity.
+
+Final lead validation passed seven setup/integrity checks, all 399 engine tests
+(225 clarity + 174 tone), build/typecheck/source guards and all 48 Chromium
+browser checks (18.9 seconds in the final run). All 82 prior tone tests remain;
+92 additional development cases cover the finite extension and counterexamples.
+These include quotation, reporting, negation, ordinary look-at/view descriptions,
+self-reflection, mixed-punctuation questions, emoji, original spans and caps.
+No heldout accuracy or general language coverage claim is made.
+
+Five new browser cases verify explicit demo/input parity without fabricated
+results, the judgmental sentence with exact selection/keep/undo/recheck/edit,
+intent-invariant evidence with distinct questions, and normal pasted dismissal
+and pressure requests. Existing checks cover both lenses, keyboard, current copy
+and refusal, responsive and enlarged layouts, source integrity and runtime
+network/log/URL/storage/offline canaries. Final desktop primary action remains
+fully visible at 1440×900. The production privacy checks passed; this is bounded
+Chromium evidence, not an audit of extensions, OS services or all browsers.
+
+Fresh Astra Extra High review found one actual safeguard defect: a question
+ending in ?! bypassed suppression that checked only the final character. The
+lead fixed the terminal-punctuation check and added six regressions. The reviewer
+independently passed 174 tone tests and 22 targeted browser checks, plus separate
+punctuation probes across all intents, and cleared the final implementation.
+Final desktop/390/320 screenshots were visually inspected by lead and reviewer;
+no outstanding implementation findings. The reviewer did not review the final PDF.
+
+Lead regenerated the four-page case-study PDF with current counts, an actual
+new-rule example and a real interface screenshot, then rendered/inspected every
+page and checked text extraction and page bounds. All ten historical evaluation
+results remain. Original PDF retained locally in ignored work storage. PDF
+output is local, not a hosted publication or Project Sources synchronization.
+
+Reviewed final source SHA-256:
+- tone.ts: `810400683fa4ed570805216351c288181f0767b7733dd0695595ecb918263028`
+- App.tsx: `0a868aeab502873af19bb1a5f5e1223b500d99b9957e513162c9cbdf1604759c`
+- styles.css: `1ecdd2a93d180da36bb14ca7a54575fcfad2130f8c1b3c42da77d510b83f70c0`
+
+Keith's next action is the short usefulness review in TONE_CORRECTION.md. Automated
+checks and independent agent review do not establish human usefulness, broad
+semantic reliability, physical-device compatibility or accessibility certification.
+
+
+## 16 September third-review review-desk polish
+
+Keith approved execution of the review-desk plan after supplying the third review
+ZIP and Mockup Canvas PDF. The attachment is visual reference, not a feature brief.
+Baseline: `98d963c`, canonical private repository, existing follow-on branch
+`codex/communication-check-tone-review`. Existing PDF artifacts were preserved.
+
+Two bounded Astra High workers handled disjoint presentation and tone helper/test
+files. Lead integrated snapshot handling and shared types. Version 4 of the finding
+contract supersedes intent invalidation: style remaps existing prompts only,
+without running detection, clearing findings, moving the open row or forgetting
+Keep/Undo. Text revisions still invalidate both lenses. Tone rule conditions,
+priority, caps and exact original spans are unchanged.
+
+Final lead checks passed:
+
+- Seven setup/integrity checks and **404 engine tests** (225 clarity + 179 tone).
+- Production typecheck/build and source/build exclusion guards.
+- **51 browser tests**, rerun after shortening visible Copy/Clear labels while
+  preserving accessible names. Coverage includes style-before-check and
+  style-after-edit abstention, multi-finding identity/open-state/decision
+  preservation, no-flags checked state, lens switching, exact evidence,
+  edit/revert, current clipboard/fallback and review progression.
+- Keyboard/focus, automated accessibility and contrast, 320/390/879/881/1024/1440
+  layouts, long quote wrapping, doubled text and 200% content zoom.
+- Runtime canary observed no additional draft-bearing network requests, logs,
+  URLs, storage writes, cookies, databases, caches or service workers. Local
+  checking continued offline and reload cleared drafts/findings.
+
+Production screenshots in `screenshots/2026-09-16-review-desk/` show fictional
+examples processed by the actual checker. Lead inspected desktop, mobile,
+kept-after-style-change and zoom views. The four-page case-study PDF was refreshed
+with the neutral design, current state description, current counts and an actual
+local screenshot; every rendered page was visually checked and all ten historical
+failed evaluation results remain intact. A prior PDF copy is preserved in ignored
+local work storage. Hosted preview remains the September 11 release.
+
+Independent final review identified a narrow-screen enlarged-text tab overflow:
+the long Clarity label could intrude into the Tone tab click area. The lead allowed
+mobile tabs to wrap at their minimum content width and added 320/390px regressions
+that inspect text rectangles and actual hit targets, not only page overflow.
+All 51 browser checks pass on the corrected build (26 presentation/workflow and
+25 tone/evidence-scroll). Fresh Astra Extra High reviewer confirmed corrected 320/390px text containment
+and actual pointer targets, independently passed eight focused presentation checks
+including both regressions, and cleared the final candidate. The reviewer had
+independently passed all 49 pre-fix browser checks and 179 tone tests. Additional
+probes passed for all-collapsed and reviewed-open state preservation, exact
+selection after style change, Undo focus and editing invalidation. No remaining
+material findings. This was a read-only independent review.
+
+Final runtime source SHA-256:
+
+- web/src/App.tsx: `d78696a9c0c3a31054cb55f2109b54506102c39affa42c38774f0aebe78f8bbf`
+- web/src/styles.css: `ff48a61f21497151869d5efbc1e4bc5d46ea002f25de1416b238c9cd57d3319f`
+- web/src/engine/tone.ts: `6bea91cbcf1c8d37c080ef9666348b3d299c515035adde032cecbb73200e8a2b`
+- web/src/engine/types.ts: `99b53f7e3ca9dbd89f5c7ad77de94e7478e873f3cf28e95e88ede9d26b50f101`
+
+This is bounded engineering evidence, not general detection reliability, human
+validation, physical-device testing or accessibility certification. No deployment,
+merge, model, reserved evaluation round or publication occurred in this pass.
+
+## September 16 first-visit/scenario polish
+
+Baseline: canonical checkout, `codex/communication-check-tone-review`, `6f1e3ac`;
+only the existing output folder was untracked. Keith approved the first-use fix,
+compact scenario picker and restrained typography/surface/teal refinements.
+
+The explicit sample action runs the existing engine in its preferred lens;
+selection alone preserves the current draft and both review snapshots. Nine
+fictional scenarios demonstrate bounded existing rules, including a clean sample.
+No engine implementation, dependencies or historical evaluation data changed.
+
+Lead integrated validation: seven setup checks, 404 existing engine tests, ten
+scenario tests, build/typecheck/source guards and 65 browser tests passed.
+The suite covers first visits at 320×900, 382×1000 and 1440×900, real sample
+results and visible action buttons, picker inertness, both-lens invalidation,
+exact original evidence, Keep/Undo, style choices, clipboard/fallback, keyboard,
+contrast, responsive/enlarged views and runtime privacy/offline/reload behavior.
+
+Fresh Astra Extra High review independently passed 39 targeted browser checks
+and ten demo tests. Additional probes exercised all nine scenarios at 382×1000,
+1024×900 and 1440×900; both-lens state, style changes and copy; all-nine offline
+execution; no post-load requests/logs/storage writes; and reload clearing. Tiny
+action clipping on desktop and 320px was fixed and independently rechecked.
+Lead visual inspection additionally found native select text truncation at 200%
+content zoom; final refinement and evidence are recorded below.
+
+Final captures and the matching four-page PDF use fictional samples through the
+real production app. PDF text/bounds and all four rendered pages were inspected.
+Previous PDFs remain in ignored work storage. No deployment, main merge, Sources
+synchronization or publication occurred. Chromium/agent checks are not human
+usability, physical-device testing or evidence of general language accuracy.
+
+Final refinement: the picker now wraps before collapsing its selected text, and
+right padding accounts for the native disclosure arrow. Three added regressions
+measure all nine labels with an extra 20px native-arrow allowance at 320px normal,
+1440px/200% content zoom and 382px/doubled text. Independent review visually
+confirmed the full longest label at 28px text in the final production build,
+plus real scenario checking and exact evidence selection. Final suite: 65 browser
+checks; no remaining actionable review findings. Lead refreshed the captures/PDF.
+
+## September 16 completed expert-review integration
+
+Keith authorized fixes after a senior CSM completed the three-tab fictional-example
+workbook. All 21 decisions and 12 comments were reconciled; the workbook remained
+unchanged. Three replacement drafts exposed two unsupported tone phrases and one
+cross-sentence timing miss. Two finite tone families and one faithful combined
+request/dependency demo address these; clarity detection remains unchanged.
+Four general questions now ask about ownership, conditions, prioritization and
+possible blockers without inventing facts or penalizing ordinary deadlines.
+
+Full `npm run validate` passed: seven setup/integrity, 451 engine, ten scenario and
+68 browser tests, plus typecheck/build/source guards. Each of eight problematic
+demos has one useful finding per lens and the unchanged clean demo has none.
+Explicit sample loading now checks both lenses of one revision. Browser coverage
+includes both partial-check failure directions and retry preserving the other
+review, inert selection, Keep/Undo, style remapping, text invalidation, clipboard,
+keyboard, accessibility, narrow panels, enlarged text and runtime privacy/offline.
+
+Fresh independent Astra Extra High review found no actionable issue. It checked
+all nine texts against the implementation reference/workbook provenance, 27
+dual-lens/style results with exact spans, 48 independent finite-boundary probes,
+and 382/320px state/selection/offline behaviour. No requests or draft canary in
+local/session storage or cookies were observed in its bounded offline probe.
+
+Lead independently verified installed example text and 16 intended findings,
+inspected desktop/narrow/zoom captures and all four refreshed PDF pages. Capture
+paths are in screenshots/README.md. Source workbook SHA256 remained
+32eba05a04db6d82686f3e791778c7db0629a983387e3319f7cd6225e3c954b5.
+This is one qualitative expert content review, not 21 participants or a live
+usability study. Usability remains 0/3 and pilots 0/5. Historical detection failures,
+sample-word suppression and finite/cross-sentence limits remain documented.
+No hosting update, main merge, publication or model integration occurred.
+
+## September 16 About and Video Demo pages
+
+Keith requested two top-right information pages before a later Vercel deployment.
+About adapts the supplied case-study PDF and README into a concise audience,
+purpose, workflow and limitations explanation. Video Demo has an honest responsive
+placeholder for a forthcoming YouTube walkthrough. No video URL was supplied;
+no iframe, external thumbnail or third-party player is loaded. Both pages link
+to the repository README and state that repository access is required.
+
+Full `npm run validate` passed: 7 setup checks, 451 engine tests, 10 scenario tests,
+77 browser checks, typecheck/build and source guards. The nine new browser checks
+cover direct links at 320/382/1440px, one accessible main, active navigation,
+keyboard focus, Back/Forward, draft and both-lens Keep preservation, reload clearing,
+200% text and no navigation-triggered requests or browser persistence. Existing
+first-visit, editor, privacy/offline and review-state checks pass unchanged.
+
+Lead inspected fresh About/Video/desktop-navigation captures listed in
+screenshots/README.md. The supplied PDF was used as reference and not overwritten.
+No engine, CSP, hosting policy, deployment or repository visibility change occurred.
+Actual YouTube embedding awaits the URL and its own bounded runtime verification.
+
+Fresh independent Astra Extra High review found no actionable findings. It checked
+copy against the README/case study/contract, all six page/viewport combinations,
+enlarged text, direct entry/reload/history/focus, hidden-checker keyboard exclusion,
+retained draft/both Keep decisions/style, offline navigation and empty browser
+storage/cookies. It observed no navigation requests, browser errors or automated
+accessibility violations. This is engineering review, not a human usability session.
