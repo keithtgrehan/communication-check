@@ -11,12 +11,19 @@ test('all demos use real checks with exact evidence, including the clean result'
     await page.getByRole('button', { name: /^(Recheck|Check) draft$/ }).click();
     const expected = checkDraft(demo.text).findings;
     await expect(page.locator('.finding-card')).toHaveCount(expected.length);
-    for (const finding of expected) await expect(page.getByText(finding.quote, { exact: true })).toBeVisible();
+    for (const finding of expected) {
+      const card = page.locator('.finding-card').filter({ has: page.getByRole('button', { name: finding.title, exact: true }) });
+      const toggle = card.getByRole('button', { name: finding.title, exact: true });
+      if (await toggle.getAttribute('aria-expanded') !== 'true') await toggle.click();
+      await expect(card.locator('blockquote')).toHaveText(finding.quote);
+      await expect(card.locator('blockquote')).toBeVisible();
+      await expect(page.locator('.finding-toggle[aria-expanded="true"]')).toHaveCount(1);
+    }
     if (!expected.length) await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
   }
 });
 
-test('editing clears results; evidence selection, dismissal and recheck keep original text', async ({ page }) => {
+test('editing clears results; evidence selection, keep and recheck keep original text', async ({ page }) => {
   await page.goto('/');
   const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
   const draft = 'Hi Zoë 👋,\n\nWe guarantee the custom integration will be ready by Friday.\n\nBest,\nAlex';
@@ -24,16 +31,17 @@ test('editing clears results; evidence selection, dismissal and recheck keep ori
   await page.getByRole('button', { name: 'Check draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   const quote = await page.locator('.finding-card blockquote').innerText();
-  await page.getByRole('button', { name: 'Select in draft' }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
   await expect(editor).toBeFocused();
   expect(await editor.evaluate((element: HTMLTextAreaElement) => element.value.slice(element.selectionStart, element.selectionEnd))).toBe(quote);
-  await page.getByRole('button', { name: /^Dismiss / }).click();
-  await expect(page.getByRole('heading', { name: 'All findings dismissed' })).toBeVisible();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await expect(page.getByRole('heading', { name: 'All shown findings reviewed' })).toBeVisible();
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
+  await expect(page.getByRole('button', { name: /^Undo keep:/ })).toBeVisible();
   await editor.fill('Hi Zoë, please send the administrator names by Tuesday.');
   await expect(page.locator('.finding-card')).toHaveCount(0);
-  await expect(page.getByText('New wording, fresh look.')).toBeVisible();
+  await expect(page.getByText('Review the current wording.')).toBeVisible();
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
 });
@@ -103,6 +111,17 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'No checks flagged this draft' })).toBeVisible();
   await page.getByRole('button', { name: 'Copy draft', exact: true }).click();
+  // Exercise the new lens and decisions while offline with the same canary.
+  await editor.fill(`${canary}\nYou always ignore our requests.`);
+  await page.getByRole('tab', { name: /Tone & warmth/ }).click();
+  await page.getByRole('button', { name: /^(Check tone|Review tone again)$/ }).click();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.getByRole('button', { name: /^Undo keep:/ }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  await expect(editor).toBeFocused();
+  await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+  await page.getByRole('button', { name: 'Review tone again' }).click();
+  await expect(page.locator('.finding-card')).toHaveCount(1);
   const storage = await page.evaluate(async () => ({
     local: { ...localStorage }, session: { ...sessionStorage }, cookies: document.cookie,
     databases: await indexedDB.databases(), caches: await caches.keys(),
@@ -139,7 +158,9 @@ for (const width of [320, 390, 879, 881, 1440]) {
     await page.keyboard.press('Enter');
     await expect(page.getByRole('heading', { name: 'Checks to consider' })).toBeFocused();
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('button', { name: 'Select in draft' })).toBeFocused();
+    await expect(page.locator('.finding-toggle')).toBeFocused();
+    await page.keyboard.press('Tab');
+    await expect(page.getByRole('button', { name: 'Edit this wording' })).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toBeFocused();
     await page.getByText('What this check can do', { exact: true }).click();

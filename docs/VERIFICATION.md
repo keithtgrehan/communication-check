@@ -302,3 +302,77 @@ detection results remain unchanged; there were no new evaluation rounds.
 - All 28 hosted Chromium checks pass in 35.9 seconds: 320/390/879/881/1440px, 44px controls, long-quote wrapping, initial primary action at 1440×900, secondary states/keyboard/axe, 200% content zoom, all three real-engine demos, exact evidence at long-draft beginning/middle/end, editing, dismissal, current-copy/refusal, runtime canary network/storage/log checks, offline use and reload clearing.
 - Automated Chromium and agent inspection are not physical-device or assistive-technology testing, accessibility certification, general-language accuracy or human validation. No production-reliability claim is made.
 - Final hosted desktop/mobile/clean screenshots were captured after verification and visually inspected. The scripted guarantee edit, stale clearing, recheck and current-copy flow passed on the hosted candidate. Recording is deferred.
+
+
+## 16 September 2026 local tone/review follow-on
+
+Canonical root: `/Users/keith/Documents/ChatGPT/communication-check`. Verified
+remote: `https://github.com/keithtgrehan/communication-check.git`. Original clean
+checkout: `codex/communication-check-mvp` at `40d7c0b`. Fetched main
+`b22bcfd465dcc0489d21682a446af1321ce7d242`; GitHub confirms PR #1 merged September 11
+at 15:40:48 UTC. Main and the original checkout have identical file trees. Created
+`codex/communication-check-tone-review` from main; preserved the original branch.
+
+Initial `npm run validate` stopped at the old exact branch-name guard. Before
+product edits, the remaining baseline commands passed seven setup unit checks,
+225 engine tests, build/typecheck/source guards and 28 browser tests. The guard
+was updated to this specifically approved follow-on branch, retaining rejection
+of main, obsolete branch, wrong destination, tags and deletions. Existing masking
+was extracted verbatim into active-text.ts; all 225 clarity tests still pass.
+
+Lead integrated the two bounded Astra High workers (UI and tone) with disjoint
+ownership. On September 16, `npm run validate` exited 0: seven setup checks,
+307 engine tests (225 clarity + 82 fresh fictional tone tests), TypeScript and
+Vite build, source/build guards (12 runtime source files, six built assets) and
+43 Chromium browser tests (14.2 seconds in the lead run). `git diff --check`
+passes. No dependency changes, historical fixture reads or new reserved evaluation.
+
+New browser coverage includes both lenses, all three intents, one expanded card,
+keep/undo/reset and focus, same-input recheck preservation, lens-switch selection,
+text mutation including cut/undo and identical demo reload, intent change back to
+its starting value, exact repeated/emoji/history evidence, clean/limit states,
+late clipboard denial, computed enabled/disabled/hover/focus contrast, interactive
+boundaries, mobile action readability and enlarged text. Existing long-draft
+selection, clipboard and keyboard checks were retained. Testing found and fixed
+transient contrast during enabling and a deferred-focus race during rapid actions.
+
+The runtime privacy test exercises clarity and tone, intent changes, keep/undo,
+evidence selection, editing, copy and offline review. It observes no interaction
+requests after initial assets, no canary in requests/logs/URL, no application
+logs/errors and empty local/session storage, cookies, IndexedDB, caches and service
+worker registrations, including instrumented storage writes. Reload clears the
+draft and findings. Static asset requests and explicit clipboard behavior remain
+outside that privacy claim; extensions, OS services and all browser variants are
+not audited. Production CSP still blocks connections; no remote fonts were added.
+
+Real screenshots at 1440×900, 1024×768, 390×844 and 320×844 include mobile top,
+editor/results/full flow, selected evidence, doubled text and 200% content zoom.
+See `docs/screenshots/README.md`. They are local production-build captures, not
+hosted evidence or physical-device testing. The September 11 preview was neither
+deployed nor revalidated by this slice. Historical hosted reports remain intact.
+
+The case-study refinement began after integrated validation and stays within the
+approximately one-hour documentation allowance. It contains a compact conceptual
+diagram/text fallback, 220-word explanation and an actual fresh fictional tone
+example verified by engine tests. No rules were tuned to manufacture the example.
+Historical failure records, factual/accuracy limitations and local-only status remain.
+
+A fresh Astra Extra High reviewer, independent of both Astra High implementation
+workers, found no actionable issues in the integrated diff. It independently
+passed all 82 tone unit checks and 26 targeted browser checks, and exercised fresh
+probes at 320/880/881/1024px: reverse-order keep decisions, undo focus, unchanged
+rechecks, intent-only and edit/revert invalidation, compound-emoji/repeated
+selection and late clipboard success. It inspected 11 supplied screenshots and
+one fresh 881px capture. The case-study example matched actual engine output;
+local-only status and historical failures were retained. It edited no tracked
+files. This is bounded agent review, not general-language accuracy, human
+validation, physical-device testing or accessibility certification.
+
+Reviewed runtime: eight-module engine manifest SHA-256
+`5afb0add2b85f5152ea81e6d1997bc0553fecaab9e43462e1482f3e9509598ae`;
+App.tsx SHA-256 `b9ee78d872fa611fbd8271c7c9618fbb630aba561789645c8362913edde8d070`;
+styles.css SHA-256 `b7a42e30011b84aeb71d74d0b5e8eb842802a65c0f0c651369411c5eb0b4bdcc`.
+Only documentation/status recording and a trailing blank-line cleanup in the
+extracted helper changed after this review. Final branch and
+commit are reported in the delivery handoff; screenshot/runtime provenance is
+unchanged. No push, deployment, merge, launch, spending or outreach occurred.

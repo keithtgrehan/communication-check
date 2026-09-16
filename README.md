@@ -1,23 +1,32 @@
 # Communication Check
 
-**Check your customer follow-up before you send it.**
+**A clearer message. Still your voice.**
 
 A private portfolio MVP for B2B SaaS account managers and customer-success managers
 reviewing customer onboarding follow-up emails. Paste a draft or choose one of
 three fictional examples, check exact wording, edit, recheck and copy.
 
-The app provides up to three review prompts for unclear ownership, vague timing,
-competing requests, agreement wording and strong product commitments. You decide
-whether to use or dismiss each prompt. It does not verify facts or agreements,
-rewrite the draft, assign a score or send email.
+Clarity & commitments provides up to three review prompts for unclear ownership,
+vague timing, competing requests, agreement wording and strong product commitments.
+The September 16 local update adds optional Tone & warmth: up to two wording cues
+with a chosen Direct, Collaborative or Warm review preference. Edit this wording
+selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
+the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
 ## Current evidence
 
-This is a functional portfolio prototype. The reviewed implementation passes
+The September 16 follow-on is implemented locally on
+`codex/communication-check-tone-review`; it has not been deployed. Fresh validation
+passes 307 engine tests (225 clarity + 82 tone), seven setup checks, the production
+build/typecheck/source guards and 43 browser tests. See [progress](docs/PROGRESS.md)
+for the completed independent review and [local screenshots](docs/screenshots/README.md).
+
+The September 11 hosted version is a functional portfolio prototype. At delivery,
+that reviewed implementation passed
 225 engine tests, seven setup/integrity checks, build/typecheck and 28 local browser
 checks. The [working preview](https://communication-check-preview.onrender.com)
-now serves that reviewed version. All 28 hosted browser checks pass, and all six
-assets match the local build. Portfolio delivery is ready; see the
+serves the September 11 version. Its 28 hosted checks passed and all six assets
+matched its local build at that verification. See the
 [case study](docs/CASE_STUDY.md) and [portfolio copy](docs/PORTFOLIO_COPY.md).
 
 Detection remains experimental: the latest reserved fictional set detected 4/12
@@ -26,8 +35,9 @@ shipping the polished prototype; the deeper parser experiment has been cancelled
 for this delivery. No production-reliability or human-validation claim is made.
 See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
-The [existing draft PR](https://github.com/keithtgrehan/communication-check/pull/1)
-stays on `codex/communication-check-mvp`; no merge or public launch is authorised.
+[PR #1](https://github.com/keithtgrehan/communication-check/pull/1) merged on
+September 11. The follow-on branch starts at main `b22bcfd`; deployment, another
+merge and public launch are outside this implementation slice.
 
 ## Run locally
 

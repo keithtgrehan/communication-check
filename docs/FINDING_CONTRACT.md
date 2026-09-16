@@ -1,4 +1,73 @@
-# Finding contract — version 1
+# Finding contract — version 2 (16 September 2026)
+
+## Current follow-on contract and ownership
+
+The approved September 16 implementation handoff/build prompt supersede older
+review-state and workflow instructions below. The original clarity rules remain
+unchanged. Lead owns this document, shared types, active-text helper, existing
+engine entry point, configuration, documentation and Git.
+
+- UI worker owns `web/src/App.tsx`, `web/src/styles.css` and the four browser suites
+  `workflow.spec.ts`, `presentation.spec.ts`, `evidence-scroll.spec.ts`,
+  `tone-review.spec.ts`. No engine/shared-type edits.
+- Tone worker owns only `web/src/engine/tone.ts` and `tone.test.ts`.
+- A fresh reviewer reviews the integrated candidate without initially editing.
+
+`checkTone(text, intent): ToneCheckResult` is exported by `engine/tone.ts`.
+Intent is `direct | collaborative | warm` (UI default: collaborative). It is a
+pure bounded wording-cue review with a separate cap of two, the same 12,000 UTF-16
+limit/RangeError/blank behavior as clarity and the shared `activeText` masking
+helper. Rule IDs: sweeping-blame, dismissive-request, pressure-wording. Both
+result shapes contain findings, checkedCharacters and excludedSections.
+
+The shared `ReviewFinding` union preserves title/explanation/prompt and exact
+original start/end/quote fields. Every action validates the snapshot and
+`draft.slice(start, end) === quote`. `findingIdentity` includes rule, start, end
+and quote; no identity depends on display order or title. Engine IDs remain
+deterministic. UTF-16 positions include emoji and repeated wording correctly.
+
+One editor owns text and a monotonically increasing text revision. Each lens
+owns a nullable ReviewSnapshot: textRevision, intentRevision (null for clarity),
+result, reviewedIds and expandedId. UI may store these fields equivalently in
+separate state, but must preserve this ownership. Text mutation increments text
+revision and invalidates both snapshots/decisions immediately, including loading
+an example and clearing. Intent change increments intent revision and invalidates
+tone only. Lens switching performs no analysis and preserves valid snapshots,
+decisions and editor selection where practical. Explicit checks use current text.
+Rechecking identical text/intent retains keep decisions by findingIdentity.
+
+Only one finding is expanded in the active lens. Edit this wording selects and
+scrolls the exact range; it neither rewrites nor marks Reviewed. Keep as written
+marks Reviewed in the current snapshot; Undo restores pending state with a
+predictable focus target. Never claim Fixed/Resolved, 0/0 achievement, exhaustive
+coverage or factual verification. Copy uses current text and keeps the existing
+manual-copy fallback. Empty tone states explicitly retain coverage limitations.
+
+No new reserved evaluation is part of this slice; only fresh fictional tone
+development cases. Historical evaluation records remain unchanged.
+
+## Bounded tone policy
+
+Tone only considers addressed statements or explicit requests at a sentence/line
+start. Sweeping blame combines always/never with a short list of negative
+coordination actions; dismissive requests combine an explicit accusation with a
+requested action; pressure wording combines a request with no excuses/or else.
+Brevity, please, ordinary deadlines, legitimate escalation, gratitude and missing
+exclamation marks alone are never concerns. Priority is blame, dismissal, pressure,
+with at most one per family and two shown in total.
+
+The same concern may appear for all three intents. Direct prompts focus on the
+specific action; Collaborative prompts invite coordination or a shared next step;
+Warm prompts invite more situational/personal framing. None requires gratitude,
+apology or invented facts. Intent is the writer's preference, not inferred mood.
+
+Recognized history/signatures retain the existing mask and offsets. Tone adds
+conservative abstention for quoted units, questions and supported negative,
+conditional/reported wording. These are finite safeguards: unfamiliar wording,
+sarcasm, cross-sentence context and unknown quotation formats remain limitations.
+Unit tests are development evidence only, not a new evaluation or accuracy claim.
+
+## Preserved clarity engine contract
 
 `web/src/engine/types.ts` is shared and owned by the lead. The engine exports
 `checkDraft(text: string): CheckResult` from `web/src/engine/index.ts`.
@@ -25,16 +94,12 @@ checklists, ordinary conversational timing, and negated/qualified commitments.
 An ordinary promise to send meeting notes is not a risky product commitment.
 Use conservative evidence and abstain when a useful flag cannot be grounded.
 
-Interface imports checkDraft and types. Demos are exported as `DEMO_DRAFTS` from
-`web/src/demos.ts` and must invoke the same engine. Every edit clears old results
-and dismissal state. Recheck replaces results; copy uses current text. Long input
-is retained for editing with a clear limit message; do not silently truncate it.
-Findings can be dismissed and original evidence selected in the editor.
-
-Reserved evaluation labels/matching criteria are frozen before implementation.
-The independent evaluator works outside repository/shared sources and returns only
-aggregate results until evaluation is complete. The engine agent owns 18 fictional
-development fixtures; the interface agent owns the three distinct visible demos.
+Interface imports checkDraft, checkTone and shared types. Demos are exported as
+`DEMO_DRAFTS` from `web/src/demos.ts` and invoke the same engine as arbitrary drafts.
+Long input is retained with a clear limit message rather than silently truncated.
+Current selection, keep/undo, invalidation and recheck behavior is specified above.
+The previous dismissal/recheck semantics are superseded. Original development
+fixtures and all historical reserved labels/matching criteria remain unchanged.
 
 Timing clarification, 2026-09-10: the earlier "requested/dependent" wording
 was broader than the authoritative product brief. This description and the

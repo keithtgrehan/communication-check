@@ -21,7 +21,7 @@ for (const { width, zoom } of [{ width: 320, zoom: 1 }, { width: 1440, zoom: 1 }
         await editor.evaluate((field: HTMLTextAreaElement, scroll) => {
           field.scrollTop = scroll === 'top' ? 0 : field.scrollHeight;
         }, initialScroll);
-        await page.getByRole('button', { name: 'Select in draft' }).click();
+        await page.getByRole('button', { name: 'Edit this wording' }).click();
         await expect(editor).toBeFocused();
         await expect(editor).toBeInViewport({ ratio: 0.95 });
         expect(await editor.evaluate((field: HTMLTextAreaElement) => ({
@@ -34,7 +34,7 @@ for (const { width, zoom } of [{ width: 320, zoom: 1 }, { width: 1440, zoom: 1 }
         // Native caret navigation reveals an offscreen endpoint. If selection is
         // already visible, collapsing it to either endpoint needs no scrolling.
         for (const key of ['ArrowLeft', 'ArrowRight']) {
-          if (key === 'ArrowRight') await page.getByRole('button', { name: 'Select in draft' }).click();
+          if (key === 'ArrowRight') await page.getByRole('button', { name: 'Edit this wording' }).click();
           const selectedScroll = await editor.evaluate((field: HTMLTextAreaElement) => field.scrollTop);
           await page.keyboard.press(key);
           await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));

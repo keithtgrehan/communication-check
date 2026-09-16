@@ -22,7 +22,36 @@ two focused v0 revisions; verify locally, independently and on the existing prev
 before final screenshots. Prepare LinkedIn Featured and Solutions Engineering
 materials; publication and outreach remain separate, unapproved actions.
 
-## Frozen MVP
+## Approved follow-on — 16 September 2026
+
+Keith explicitly authorized implementation using the latest
+COMMUNICATION_CHECK_IMPLEMENTATION_HANDOFF.md and COMMUNICATION_CHECK_CODEX_BUILD_PROMPT.md
+in `/Users/keith/Desktop/Shipping MVPs MD Sept 16th/`. This decision supersedes
+conflicting earlier plans. The Replit ZIP is design evidence, not a replacement
+application or authority for backend/model/rewrite features.
+
+Use the Canvas3 composition: warm paper, near-white editor, charcoal text and
+restrained plum on actions, selection and focus. Headline: “A clearer message.
+Still your voice.” Keep one shared draft, initial Clarity & commitments and
+optional Tone & warmth. Tone uses local deterministic wording cues with intended
+styles Direct, Collaborative (default) and Warm. It is an explicit review action,
+not continuous analysis or a general tone judgment. Preserve the clarity engine.
+
+Each finding shows exact original evidence, a tentative interpretation and a review
+prompt. Edit this wording focuses/selects its range without rewriting. Keep as
+written marks Reviewed with Undo. Preserve valid decisions on lens switching and
+unchanged rechecks. Every text mutation clears both snapshots/decisions; intent
+changes clear tone only. Keep the clarity cap of three and separate tone cap of
+two; avoid scores, universal all-clears and claims of exhaustive coverage.
+
+This delivery is a reviewable local change with fresh checks, desktop/mobile
+screenshots and independent review. The existing hosted preview remains unchanged.
+After implementation/validation, refine How it works in the existing case study
+for approximately one hour: one diagram/text fallback, brief explanation and a
+real fictional engine example. No new app screen, model, NLP research, dataset
+programme, deployment, publication, merge or spending is included.
+
+## Existing clarity MVP (preserved except review decisions above)
 
 Choose a fictional example or paste a draft → check → inspect useful findings → edit → recheck → copy. Provide three fictional demos that use the same checker as user drafts. Show up to three useful findings; each quotes exact original wording, explains the concern plainly, offers an actionable review prompt, and can be dismissed.
 
@@ -54,7 +83,7 @@ Prepare a protocol for three usability users and five repeat-use pilots while en
 
 - Repository: `keithtgrehan/communication-check` (private).
 - Local root: `/Users/keith/Documents/ChatGPT/communication-check`.
-- Implementation branch: `codex/communication-check-mvp`.
+- Implementation branch: `codex/communication-check-tone-review`; PR #1 merged September 11.
 - Source baseline: Vibe Signal `000ba0685f961e253b0d34c0b02539ac897356e9`; retain source/licence attribution for actual reused components.
 - Keep Vibe Signal, RCR, Synapse Atlas and other projects separate and untouched.
 - Later connection to document only: RCR approved commitments → writer's draft → Communication Check. Do not build a shared platform.

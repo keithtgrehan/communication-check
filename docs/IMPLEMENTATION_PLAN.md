@@ -1,5 +1,20 @@
 # Communication Check implementation plan
 
+## Current override — 16 September 2026
+
+Keith explicitly started the approved Canvas3 and local tone/review update.
+`docs/PRODUCT_BRIEF.md` and `docs/FINDING_CONTRACT.md` record the current scope,
+contracts and file ownership. The Desktop implementation handoff/build prompt
+supersede conflicting historical instructions below. PR #1 is merged; work from
+main b22bcfd on `codex/communication-check-tone-review`. Two disjoint Astra High
+workers implement UI and tone; a fresh Astra Extra High reviewer inspects the
+integrated result. Preserve clarity behavior and historical failed evaluations.
+This slice delivers local code, checks/screenshots, review and a bounded one-hour
+How it works case-study refinement. No deployment, merge, new research, model,
+extra app screen, public launch, outreach or paid commitment. Historical hosting
+and evaluation milestones below are not repeated as requirements for this slice.
+
+
 ## Current delivery override — 2026-09-10
 
 Keith explicitly redirected the work: “put focus on shipping quickly, it just has

@@ -1,75 +1,111 @@
-import { useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { checkDraft } from './engine';
-import { MAX_DRAFT_LENGTH, type CheckResult, type Finding } from './engine/types';
+import { checkTone } from './engine/tone';
+import { MAX_DRAFT_LENGTH, findingIdentity, type ReviewFinding, type ReviewLens, type ReviewSnapshot, type ToneIntent } from './engine/types';
 import { DEMO_DRAFTS } from './demos';
 import './styles.css';
 
-function Mark({ small = false }: { small?: boolean }) {
-  return (
-    <svg width={small ? 20 : 26} height={small ? 20 : 26} viewBox="0 0 26 26" fill="none" aria-hidden="true">
-      <path d="M4 13.5L9 18.5L21.5 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M14 18.5L22 10.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-    </svg>
-  );
-}
+const LENSES = [{ id: 'clarity', label: 'Clarity & commitments' }, { id: 'tone', label: 'Tone & warmth' }] as const;
+const INTENTS: ToneIntent[] = ['direct', 'collaborative', 'warm'];
+const emptySnapshots = (): Record<ReviewLens, ReviewSnapshot | null> => ({ clarity: null, tone: null });
 
-function Arrow() {
-  return <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9H15M10 4L15 9L10 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+function Mark() {
+  return <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M4 13.5L9 18.5L21.5 6M14 18.5L22 10.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 }
 
 export default function App() {
   const [draft, setDraft] = useState('');
   const [sampleId, setSampleId] = useState<string | null>(null);
-  const [result, setResult] = useState<CheckResult | null>(null);
-  const [dismissed, setDismissed] = useState<string[]>([]);
-  const [needsRecheck, setNeedsRecheck] = useState(false);
+  const [lens, setLens] = useState<ReviewLens>('clarity');
+  const [intent, setIntent] = useState<ToneIntent>('collaborative');
+  const [snapshots, setSnapshots] = useState(emptySnapshots);
+  const [needsRecheck, setNeedsRecheck] = useState({ clarity: false, tone: false });
   const [status, setStatus] = useState('');
   const [manualCopy, setManualCopy] = useState(false);
-  const [checkError, setCheckError] = useState(false);
+  const [checkError, setCheckError] = useState<ReviewLens | null>(null);
   const editor = useRef<HTMLTextAreaElement>(null);
   const resultsHeading = useRef<HTMLHeadingElement>(null);
   const draftRef = useRef(draft);
+  const textRevision = useRef(0);
+  const intentRevision = useRef(0);
+  const undoButtons = useRef(new Map<string, HTMLButtonElement>());
+  const editButtons = useRef(new Map<string, HTMLButtonElement>());
+  const lensButtons = useRef(new Map<ReviewLens, HTMLButtonElement>());
+  const decisionFocus = useRef<{ id: string; undo: boolean } | null>(null);
+  useLayoutEffect(() => {
+    const target = decisionFocus.current;
+    if (!target) return;
+    decisionFocus.current = null;
+    (target.undo ? editButtons : undoButtons).current.get(target.id)?.focus();
+  }, [snapshots]);
   const tooLong = draft.length > MAX_DRAFT_LENGTH;
   const hasText = draft.trim().length > 0;
-  const visibleFindings = result?.findings.filter((finding) => !dismissed.includes(finding.id)) ?? [];
+  const snapshot = snapshots[lens];
+  const result = snapshot?.result;
+  const reviewedCount = snapshot?.reviewedIds.length ?? 0;
   const selectedSample = DEMO_DRAFTS.find((sample) => sample.id === sampleId);
+  const checkLabel = lens === 'tone' ? (snapshot || needsRecheck.tone ? 'Review tone again' : 'Check tone') : (snapshot || needsRecheck.clarity ? 'Recheck draft' : 'Check draft');
+
+  function isCurrent(current: ReviewSnapshot | null, currentLens = lens) {
+    return current !== null && current.textRevision === textRevision.current &&
+      (currentLens === 'clarity' || current.intentRevision === intentRevision.current);
+  }
+
+  function validFinding(finding: ReviewFinding) {
+    return isCurrent(snapshot) && draftRef.current.slice(finding.start, finding.end) === finding.quote &&
+      snapshot!.result.findings.some(item => findingIdentity(item) === findingIdentity(finding));
+  }
 
   function replaceDraft(text: string, selectedId: string | null = null) {
-    const wasChecked = result !== null || needsRecheck;
+    const wasChecked = snapshots.clarity !== null || snapshots.tone !== null || needsRecheck.clarity || needsRecheck.tone;
+    textRevision.current += 1;
     draftRef.current = text;
     setDraft(text);
     setSampleId(selectedId);
-    setResult(null);
-    setDismissed([]);
-    setNeedsRecheck(wasChecked && text.trim().length > 0);
+    setSnapshots(emptySnapshots());
+    setNeedsRecheck({ clarity: wasChecked && !!text.trim(), tone: wasChecked && !!text.trim() });
     setManualCopy(false);
-    setCheckError(false);
-    setStatus(wasChecked && text.trim() ? 'Draft changed. Recheck to review the current wording.' : '');
+    setCheckError(null);
+    setStatus(wasChecked && text.trim() ? 'Draft changed. Review again.' : '');
+  }
+
+  function chooseIntent(next: ToneIntent) {
+    if (next === intent) return;
+    intentRevision.current += 1;
+    setIntent(next);
+    setSnapshots(current => ({ ...current, tone: null }));
+    setNeedsRecheck(current => ({ ...current, tone: true }));
+    setCheckError(null);
+    setStatus('Intended style changed. Review tone again with this preference.');
   }
 
   function runCheck() {
     if (!hasText || tooLong) return;
-    setCheckError(false);
+    setCheckError(null);
     try {
-      const checked = checkDraft(draft);
-      setResult(checked);
-      setDismissed([]);
-      setNeedsRecheck(false);
+      const checked = lens === 'clarity' ? checkDraft(draftRef.current) : checkTone(draftRef.current, intent);
+      const previous = isCurrent(snapshot) ? snapshot : null;
+      const identities = checked.findings.map(findingIdentity);
+      const reviewedIds = previous?.reviewedIds.filter(id => identities.includes(id)) ?? [];
+      const expandedId = previous?.expandedId && identities.includes(previous.expandedId)
+        ? previous.expandedId : identities.find(id => !reviewedIds.includes(id)) ?? null;
+      setSnapshots(current => ({ ...current, [lens]: { textRevision: textRevision.current,
+        intentRevision: lens === 'tone' ? intentRevision.current : null, result: checked, reviewedIds, expandedId } }));
+      setNeedsRecheck(current => ({ ...current, [lens]: false }));
       setManualCopy(false);
-      setStatus(checked.findings.length ? `${checked.findings.length} ${checked.findings.length === 1 ? 'check' : 'checks'} to consider.` : 'No checks flagged this draft. Facts and agreements were not verified.');
-      requestAnimationFrame(() => resultsHeading.current?.focus());
+      setStatus(checked.findings.length ? `${checked.findings.length} ${lens === 'tone' ? (checked.findings.length === 1 ? 'tone cue' : 'tone cues') : (checked.findings.length === 1 ? 'check' : 'checks')} to consider. ${reviewedIds.length} reviewed.` : lens === 'tone' ? 'No tone cues flagged. This limited review cannot judge how your message will be received.' : 'No checks flagged this draft. Facts and agreements were not verified.');
+      resultsHeading.current?.focus();
     } catch {
-      setResult(null);
-      setDismissed([]);
-      setNeedsRecheck(true);
-      setCheckError(true);
+      setSnapshots(current => ({ ...current, [lens]: null }));
+      setNeedsRecheck(current => ({ ...current, [lens]: true }));
+      setCheckError(lens);
       setStatus('Unable to check this draft. Your text is still here; try again.');
     }
   }
 
-  function selectEvidence(finding: Finding) {
+  function selectEvidence(finding: ReviewFinding) {
     const field = editor.current;
-    if (!field) return;
+    if (!field || !validFinding(finding) || field.value.slice(finding.start, finding.end) !== finding.quote) return;
 
     // A textarea exposes selection offsets but no text rectangles. Measure its
     // wrapping briefly in memory, then remove the measuring element immediately.
@@ -111,23 +147,43 @@ export default function App() {
     setStatus('Quoted wording selected in your draft. Edit it if a change would help.');
   }
 
-  function dismissFinding(finding: Finding) {
-    setDismissed((ids) => [...ids, finding.id]);
-    setStatus(`Dismissed: ${finding.title}. Rechecking will review the draft again.`);
-    requestAnimationFrame(() => resultsHeading.current?.focus());
+
+  function toggleFinding(finding: ReviewFinding) {
+    if (!validFinding(finding)) return;
+    const id = findingIdentity(finding);
+    setSnapshots(current => ({ ...current, [lens]: { ...snapshot!, expandedId: snapshot!.expandedId === id ? null : id } }));
+  }
+
+  function keepFinding(finding: ReviewFinding, undo = false) {
+    if (!validFinding(finding)) return;
+    const id = findingIdentity(finding);
+    decisionFocus.current = { id, undo };
+    setSnapshots(current => ({ ...current, [lens]: { ...snapshot!,
+      reviewedIds: undo ? snapshot!.reviewedIds.filter(item => item !== id) : [...new Set([...snapshot!.reviewedIds, id])],
+      expandedId: undo ? id : snapshot!.result.findings.map(findingIdentity).find(item => item !== id && !snapshot!.reviewedIds.includes(item)) ?? null,
+    } }));
+    setStatus(undo ? `Review restored: ${finding.title}.` : `Reviewed: ${finding.title}. Your wording is unchanged.`);
+  }
+
+  function resetReview() {
+    if (!isCurrent(snapshot)) return;
+    setSnapshots(current => ({ ...current, [lens]: { ...snapshot!, reviewedIds: [], expandedId: snapshot!.result.findings[0] ? findingIdentity(snapshot!.result.findings[0]) : null } }));
+    setStatus('Review decisions reset for this lens. Your wording is unchanged.');
+    resultsHeading.current?.focus();
   }
 
   async function copyDraft() {
     const currentText = draftRef.current;
+    const copiedRevision = textRevision.current;
     if (!currentText.trim()) return;
     try {
       await navigator.clipboard.writeText(currentText);
-      if (currentText === draftRef.current) {
+      if (copiedRevision === textRevision.current) {
         setManualCopy(false);
         setStatus('Current draft copied.');
       }
     } catch {
-      if (currentText !== draftRef.current) return;
+      if (copiedRevision !== textRevision.current) return;
       editor.current?.focus();
       editor.current?.select();
       setManualCopy(true);
@@ -137,9 +193,14 @@ export default function App() {
 
   function resetDraft() {
     replaceDraft('');
-    setNeedsRecheck(false);
+    setNeedsRecheck({ clarity: false, tone: false });
     setStatus('Draft cleared.');
     editor.current?.focus();
+  }
+
+  function switchLens(next: ReviewLens) {
+    setLens(next);
+    setStatus('');
   }
 
   return (
@@ -148,93 +209,110 @@ export default function App() {
         <div className="brand"><span className="brand-mark"><Mark /></span><span>Communication Check</span></div>
         <span className="header-note">Customer follow-up review</span>
       </header>
-
       <main>
         <section className="intro" aria-labelledby="page-title">
-          <h1 id="page-title">Make the next step <span>clear.</span></h1>
-          <p className="intro-description">Review your customer follow-up before you send.</p>
+          <h1 id="page-title">A clearer message. <span>Still your voice.</span></h1>
+          <p className="intro-description">A second look at your customer follow-up. <br />You decide what deserves a change.</p>
         </section>
-
         <section className="sample-strip" aria-labelledby="sample-heading">
           <h2 id="sample-heading">Try a fictional example</h2>
-          <div className="sample-options">
-            {DEMO_DRAFTS.map((sample) => (
-              <button key={sample.id} className={`sample-button ${sampleId === sample.id ? 'selected' : ''}`} aria-pressed={sampleId === sample.id} onClick={() => replaceDraft(sample.text, sample.id)}>
-                {sample.label}
-              </button>
-            ))}
-          </div>
+          <div className="sample-options">{DEMO_DRAFTS.map(sample => <button key={sample.id} className={`sample-button ${sampleId === sample.id ? 'selected' : ''}`} aria-pressed={sampleId === sample.id} onClick={() => replaceDraft(sample.text, sample.id)}>{sample.label}</button>)}</div>
         </section>
-
+        <div className="lens-tabs" role="tablist" aria-label="Review lens">
+          {LENSES.map(option => <button key={option.id} id={`tab-${option.id}`} role="tab" className="lens-tab" ref={element => { if (element) lensButtons.current.set(option.id, element); else lensButtons.current.delete(option.id); }} aria-selected={lens === option.id} aria-controls="review-panel" tabIndex={lens === option.id ? 0 : -1} onClick={() => switchLens(option.id)} onKeyDown={event => {
+            if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            const next = event.key === 'Home' ? 'clarity' : event.key === 'End' ? 'tone' : option.id === 'clarity' ? 'tone' : 'clarity';
+            switchLens(next);
+            lensButtons.current.get(next)?.focus();
+          }}>{option.label}{option.id === 'tone' && <span className="optional-label">Optional</span>}</button>)}
+        </div>
         <div className="workspace">
           <section className="editor-panel" aria-labelledby="draft-heading">
-            <div className="panel-heading">
-              <h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2>
-              <button className="text-button reset-button" onClick={resetDraft} disabled={!draft}>Clear draft</button>
-            </div>
-            <p className="editor-description" id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste the email you’re planning to send. You can edit it here.'}</p>
+            <div className="panel-heading"><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2><button className="text-button reset-button" onClick={resetDraft} disabled={!draft}>Clear draft</button></div>
+            <p className="editor-description" id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste your email. Make any changes in your own words.'}</p>
             <div className={`editor-frame ${tooLong ? 'has-error' : ''}`}>
-              <textarea
-                id="draft"
-                ref={editor}
-                value={draft}
-                onChange={(event) => replaceDraft(event.target.value)}
-                placeholder={'Hi Jamie,\n\nThanks for your time today…'}
-                aria-describedby={`draft-description draft-count${tooLong ? ' draft-limit' : ''}${manualCopy ? ' copy-help' : ''}`}
-                aria-invalid={tooLong}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="off"
-                spellCheck={false}
-                name="follow-up-draft"
-              />
-              <div className="editor-meta"><span>Nothing is sent automatically</span><span id="draft-count" className={tooLong ? 'count-error' : ''}>{draft.length.toLocaleString()} / 12,000 characters</span></div>
+              <textarea id="draft" ref={editor} value={draft} onChange={event => replaceDraft(event.target.value)} placeholder={'Hi Jamie,\n\nThanks for your time today…'} aria-describedby={`draft-description draft-count${tooLong ? ' draft-limit' : ''}${manualCopy ? ' copy-help' : ''}`} aria-invalid={tooLong} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} name="follow-up-draft" />
+              <div className="editor-meta"><span>Your words, your decision</span><span id="draft-count" className={tooLong ? 'count-error' : ''}>{draft.length.toLocaleString()} / 12,000 characters</span></div>
             </div>
             {tooLong && <p id="draft-limit" className="inline-error" role="alert">Your full draft is still here. Remove {(draft.length - MAX_DRAFT_LENGTH).toLocaleString()} characters to check it; the limit is 12,000.</p>}
             {manualCopy && <p id="copy-help" className="copy-help">Your draft is selected. Press <kbd>Ctrl</kbd> + <kbd>C</kbd> or <kbd>⌘</kbd> + <kbd>C</kbd> to copy it manually.</p>}
-            <div className="editor-actions">
-              <button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong}>{needsRecheck || result ? 'Recheck draft' : 'Check draft'}<Arrow /></button>
-              <button className="secondary-button" onClick={() => void copyDraft()} disabled={!hasText}><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="8" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.4" /><path d="M10 3V2.5A1.5 1.5 0 0 0 8.5 1H3.5A1.5 1.5 0 0 0 2 2.5V9a1.5 1.5 0 0 0 1.5 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg>Copy draft</button>
-            </div>
-            <p className="editor-footnote">Your wording stays yours. Review, edit, and copy when you’re ready.</p>
+            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong}>{checkLabel}<span aria-hidden="true">→</span></button><button className="secondary-button" onClick={() => void copyDraft()} disabled={!hasText}>Copy draft</button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
+            <p className="editor-footnote">Nothing is rewritten or sent automatically.</p>
           </section>
-
-          <section className={`results-panel ${result ? 'has-results' : ''}`} aria-labelledby="results-heading">
-            <div className="panel-heading">
-              <h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Checks to consider</h2>
-              {result && visibleFindings.length > 0 && <span className="findings-count" aria-label={`${visibleFindings.length} visible findings`}>{visibleFindings.length}</span>}
-            </div>
-            <p className="results-description">Up to three things worth a closer look.</p>
-            {!result ? (
-              <div className="result-empty">
-                <h3>{checkError ? 'This check couldn’t finish.' : needsRecheck ? 'New wording, fresh look.' : 'A clearer follow-up starts here.'}</h3>
-                <p>{checkError ? 'Your draft is still in the editor. Select Recheck draft to try again.' : needsRecheck ? 'Your draft changed, so the previous findings have been cleared. Recheck to review this version.' : 'Add a draft and run a check. You’ll see the exact wording to review, with a prompt to help you decide.'}</p>
-              </div>
-            ) : result.findings.length === 0 ? (
-              <div className="result-empty result-complete"><h3>No checks flagged this draft</h3><p>This rule-based review didn’t find wording to flag. Facts and agreements were not verified; give the draft your own final read.</p></div>
-            ) : visibleFindings.length === 0 ? (
-              <div className="result-empty result-complete"><h3>All findings dismissed</h3><p>You’ve set aside these prompts. Facts and agreements were not verified. Recheck anytime to see the findings again.</p></div>
-            ) : (
-              <div className="findings-list">
-                {visibleFindings.map((finding, index) => (
-                  <article className="finding-card" key={finding.id} aria-labelledby={`title-${finding.id}`}>
-                    <div className="finding-title"><span className="finding-number" aria-hidden="true">{index + 1}</span><h3 id={`title-${finding.id}`}>{finding.title}</h3></div>
-                    <blockquote>{finding.quote}</blockquote>
-                    <p className="finding-explanation">{finding.explanation}</p>
-                    <div className="review-prompt"><span>Ask yourself</span><p>{finding.prompt}</p></div>
-                    <div className="finding-actions"><button className="text-button evidence-button" onClick={() => selectEvidence(finding)}>Select in draft <span aria-hidden="true">↗</span></button><button className="text-button dismiss-button" onClick={() => dismissFinding(finding)} aria-label={`Dismiss ${finding.title}`}>Dismiss</button></div>
-                  </article>
-                ))}
-                <p className="results-caveat">Prompts for your judgment. Facts and agreements were not verified.</p>
-              </div>
-            )}
+          <section id="review-panel" role="tabpanel" aria-labelledby={`tab-${lens}`} className={`results-panel ${result ? 'has-results' : ''}`}>
+            <div className="panel-heading"><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Checks to consider</h2>{result && result.findings.length > 0 && <span className="findings-count">{reviewedCount} of {result.findings.length} reviewed</span>}</div>
+            <p className="results-description">{lens === 'clarity' ? 'Up to three things worth a closer look.' : 'Up to two wording cues, guided by your intended style.'}</p>
+            {lens === 'tone' && <fieldset className="intent-picker"><legend>How do you want to come across?</legend><div className="intent-options">{INTENTS.map(option => <label key={option} className={`intent-option ${intent === option ? 'selected' : ''}`}><input type="radio" name="tone-intent" value={option} checked={intent === option} onChange={() => chooseIntent(option)} /><span>{option[0].toUpperCase() + option.slice(1)}</span></label>)}</div><p>Your preference, not a judgment about you.</p></fieldset>}
+            {!result ? <div className="result-empty"><h3>{checkError === lens ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Review the current wording.' : lens === 'tone' ? 'Choose a style. Take a second look.' : 'A little distance from your draft.'}</h3><p>{checkError === lens ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Previous findings are cleared. Run the review when you’re ready.' : lens === 'tone' ? 'Select Check tone when you’re ready. Specific wording cues can help you consider how a request is framed.' : 'Run a check to see exact wording and a question to consider. Keep what works; edit what doesn’t.'}</p></div>
+              : result.findings.length === 0 ? <div className="result-empty result-complete"><h3>{lens === 'tone' ? 'No tone cues flagged' : 'No checks flagged this draft'}</h3><p>{lens === 'tone' ? 'This limited wording review may miss nuance. It cannot judge how your message will be received. Give it your own final read.' : 'This rule-based review didn’t find wording to flag. Facts and agreements were not verified; give the draft your own final read.'}</p></div>
+              : <>
+                {reviewedCount === result.findings.length && <div className="reviewed-summary"><h3>All shown findings reviewed</h3><p>Your wording is unchanged. You can undo any decision.</p></div>}
+                <div className="findings-list">{result.findings.map(finding => {
+                  const id = findingIdentity(finding);
+                  const reviewed = snapshot!.reviewedIds.includes(id);
+                  const expanded = snapshot!.expandedId === id;
+                  const valid = validFinding(finding);
+                  return (
+                    <article
+                      className={`finding-card ${expanded ? 'is-expanded' : ''} ${reviewed ? 'is-reviewed' : ''}`}
+                      key={id}
+                      aria-labelledby={`title-${finding.id}`}
+                    >
+                      <h3 id={`title-${finding.id}`} className="finding-title">
+                        <button
+                          className="finding-toggle"
+                          aria-expanded={expanded}
+                          aria-controls={`detail-${finding.id}`}
+                          disabled={!valid}
+                          onClick={() => toggleFinding(finding)}
+                        >
+                          <span>{finding.title}</span>
+                          <span aria-hidden="true">{expanded ? '−' : '+'}</span>
+                        </button>
+                      </h3>
+                      {!expanded && !reviewed && <p className="quote-preview">“{finding.quote}”</p>}
+                      {reviewed && (
+                        <div className="reviewed-row">
+                          <span>Reviewed · kept as written</span>
+                          <button
+                            className="text-button undo-button"
+                            ref={element => { if (element) undoButtons.current.set(id, element); else undoButtons.current.delete(id); }}
+                            disabled={!valid}
+                            onClick={() => keepFinding(finding, true)}
+                            aria-label={`Undo keep: ${finding.title}`}
+                          >Undo</button>
+                        </div>
+                      )}
+                      <div id={`detail-${finding.id}`} className="finding-detail" hidden={!expanded}>
+                        <blockquote>{finding.quote}</blockquote>
+                        <p className="finding-explanation">{finding.explanation}</p>
+                        <div className="review-prompt"><span>Consider</span><p>{finding.prompt}</p></div>
+                        <div className="finding-actions">
+                          <button
+                            className="secondary-button evidence-button"
+                            ref={element => { if (element) editButtons.current.set(id, element); else editButtons.current.delete(id); }}
+                            disabled={!valid}
+                            onClick={() => selectEvidence(finding)}
+                          >Edit this wording <span aria-hidden="true">↗</span></button>
+                          {!reviewed && (
+                            <button className="secondary-button keep-button" disabled={!valid} onClick={() => keepFinding(finding)}>
+                              Keep as written
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}</div>
+                {reviewedCount > 0 && <button className="text-button reset-review" onClick={resetReview}>Reset review decisions</button>}
+              </>}
+            <p className="results-caveat">{lens === 'tone' ? 'A limited review of wording, not a complete tone assessment.' : 'Prompts for your judgment. Facts and agreements are not verified.'}</p>
+            <button className="text-button mobile-jump" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Back to draft ↑</button>
           </section>
         </div>
         <p className="live-status" role="status" aria-live="polite" aria-atomic="true">{status}</p>
-        <footer className="page-footer">
-          <div className="local-note"><svg width="16" height="18" viewBox="0 0 16 18" fill="none" aria-hidden="true"><path d="M8 1L14 3.5V8C14 12 11.5 15 8 17C4.5 15 2 12 2 8V3.5L8 1Z" stroke="currentColor" strokeWidth="1.25" /><path d="M5 8.5L7 10.5L11 6.5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg><span>Local, rule-based review. No account needed.</span></div>
-          <details className="about-checks"><summary>What this check can do</summary><div><p>Communication Check uses a small set of rules to look for unclear actions, vague timing, competing requests, agreement wording, and strong product commitments in customer onboarding follow-ups.</p><p>It can miss issues or flag wording that is right for your situation. It cannot verify facts, meeting context, or agreements. Examples are fictional; real-world usefulness has not been validated.</p><p>Drafts and findings are held in this page’s memory. The checker does not save them, use a remote model, or send email. Copying puts the current draft on your clipboard.</p></div></details>
-        </footer>
+        <footer className="page-footer"><div className="local-note"><Mark /><span>Local review. Your draft stays in this page.</span></div><details className="about-checks"><summary>What this check can do</summary><div><p>Communication Check uses a small set of rules to look for unclear actions, vague timing, competing requests, agreement wording, and strong product commitments in customer onboarding follow-ups. Optional tone review looks for a few specific wording cues using your chosen style.</p><p>It can miss issues or flag wording that is right for your situation. It cannot verify facts, meeting context, or agreements, or predict a recipient’s response. Examples are fictional; real-world usefulness has not been validated.</p><p>Drafts and findings are held in this page’s memory. The checker does not save them, use a remote model, or send email. Copying puts the current draft on your clipboard.</p></div></details></footer>
       </main>
     </div>
   );
