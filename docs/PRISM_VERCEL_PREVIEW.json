@@ -1,0 +1,77 @@
+{
+  "verifiedAt": "2026-09-16T18:47:21.346533+00:00",
+  "url": "https://communication-check-8799zgk0e-keith-grehans-projects.vercel.app",
+  "deploymentId": "dpl_8XaTp3oXVdk5F2RcHBYhuGor6BXf",
+  "sourceCommit": "666e5ce",
+  "target": "preview",
+  "authentication": "Existing Vercel deployment protection retained; verified using authenticated CLI requests.",
+  "assets": [
+    {
+      "path": "THIRD_PARTY_LICENSES.txt",
+      "sha256": "413817118e227691fd9e4f56d4bf32b628f99e1d4cc9088d89ee233e77b5d042"
+    },
+    {
+      "path": "assets/index-Bws1ZbTa.css",
+      "sha256": "801b9141924e4cce2224312b11fe007c7e1caa732f56aab63641f6394c9ee333"
+    },
+    {
+      "path": "assets/index-XlNEg2ps.js",
+      "sha256": "9912f16835f669b4a7cb792a8196e76373a493850ddfea0f948da1635d71e5d0"
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "c39430203f777a7d1af15662b996711336a4dd8777e7b9d9f83958341f5b3502"
+    },
+    {
+      "path": "index.html",
+      "sha256": "713a26fe0b9c9ddd0674cb427d566a6af6e71c2b044bd5aa26dd02094cad1885"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    }
+  ],
+  "headers": {
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    "x-frame-options": "DENY",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "no-referrer",
+    "x-robots-tag": "noindex, nofollow",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()"
+  },
+  "excludedPaths": [
+    {
+      "path": "/src/App.tsx",
+      "status": 404
+    },
+    {
+      "path": "/package.json",
+      "status": 404
+    },
+    {
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    },
+    {
+      "path": "/docs/PRODUCT_BRIEF.md",
+      "status": 404
+    },
+    {
+      "path": "/reference/vibe-signal/web/src/App.jsx",
+      "status": 404
+    },
+    {
+      "path": "/web/src/engine/index.ts",
+      "status": 404
+    },
+    {
+      "path": "/evaluation/holdout/example.txt",
+      "status": 404
+    }
+  ],
+  "browserChecks": "90 local Chromium checks passed; hosted verification checks exact assets, security headers and excluded paths."
+}

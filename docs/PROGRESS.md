@@ -1,15 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: Bright Prism Review integrated; validated; Vercel preview preparation
-Status: 7 setup + 451 engine + 10 scenario + 90 browser checks pass locally; production build passes
+Milestone: Bright Prism Review integrated and verified on a Vercel preview
+Status: 7 setup + 451 engine + 10 scenario + 90 browser checks pass locally; production build passes; six hosted assets/headers and eight exclusions verified
 
 ## September 16 bright Prism Review
 
 - Keith supplied the selected Lovable ZIP for integration with the existing app. Bright mint desk, original coral CC mark, white draft/pink review, filled tabs and safe desktop-only yellow detail are implemented.
 - Existing checker, samples, dependencies and memory-only state are unchanged. Lovable's reconstructed engine was not imported. About/Video share the identity; a separate fixture-only exploration preserves all three directions.
 - Fresh review found and closed exploration contrast, tablet clipping and mobile heading overlap. Expanded tests cover reviewed states, retained real draft/decisions, and decoration separation. See PRISM_REVIEW_INTEGRATION.md and screenshots/2026-09-16-prism/.
-- No main merge or production replacement. Preview preparation uses the existing Keith Grehan Vercel project and static build assets only. User's untracked output/ remains untouched.
+- Verified preview: https://communication-check-8799zgk0e-keith-grehans-projects.vercel.app (source `666e5ce`). Six assets match, six security headers and eight exclusions pass authenticated checks. Preview toolbar disabled; deployment protection retained. No main merge/production replacement; user output/ untouched.
 
 ## September 16 Vercel deployment
 
@@ -105,6 +105,5 @@ All ten frozen results remain in `docs/EVALUATION.md`; the latest v10 detected 4
 
 ## Next action
 
-Finish the Prism preview verification and synchronize the existing implementation
-branch. Keith reviews the preview before any production replacement. YouTube
-integration still awaits its URL; historical detection limitations remain.
+Keith reviews the verified Prism preview before any production replacement.
+YouTube integration still awaits its URL; historical detection limitations remain.

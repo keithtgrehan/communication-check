@@ -2,6 +2,18 @@
 
 Status: September 16 editorial candidate is deployed to Vercel. The older Render preview remains unchanged. Engine research is stopped for this delivery.
 
+## Prism Review preview — 2026-09-16
+
+- Preview: https://communication-check-8799zgk0e-keith-grehans-projects.vercel.app
+- Source: `666e5ce`; deployment: `dpl_8XaTp3oXVdk5F2RcHBYhuGor6BXf`.
+- Same project and account below, preview target only. Production alias unchanged.
+- Six assets match the local build; six headers and eight excluded paths verified
+  through authenticated CLI requests. See `PRISM_VERCEL_PREVIEW.json`.
+- Preview deployment protection is retained. Project preview feedback is disabled
+  (`enablePreviewFeedback: false`) to prevent provider toolbar injection.
+- No account-wide setting, production feedback setting, billing, domain or other
+  project change. Local build passed all 90 browser checks.
+
 ## Vercel deployment — 2026-09-16
 
 Keith approved deployment and explicitly selected **Keith Grehan’s projects**

@@ -54,5 +54,22 @@ No dependencies, remote fonts, telemetry or backend services are added.
 - Automated checks are not physical-device testing, accessibility certification or
   evidence of real-world detection accuracy. Original detection limits remain.
 
-Vercel preview deployment is the next delivery step. Existing production and Render
-deployments remain unchanged.
+## Vercel preview
+
+[Open the verified Prism preview](https://communication-check-8799zgk0e-keith-grehans-projects.vercel.app).
+
+- Existing project/account: `communication-check`, Keith Grehan’s projects.
+- Source: `666e5ce`; deployment: `dpl_8XaTp3oXVdk5F2RcHBYhuGor6BXf`.
+- All six hosted assets match the tested build byte-for-byte. Six security headers
+  and eight excluded source/configuration paths pass authenticated checks.
+- Existing Vercel deployment protection is retained; viewing may require sign-in.
+- Vercel preview feedback injection was disabled for this project so the hosted
+  page matches the tested app and loads no provider toolbar. Production feedback,
+  account-wide settings, billing, domains and other projects were not changed.
+- Only six static build files and the existing routing/security configuration were
+  uploaded; credentials and local metadata were excluded by the upload dry run.
+- Evidence: [PRISM_VERCEL_PREVIEW.json](PRISM_VERCEL_PREVIEW.json).
+- The 90 browser checks ran locally. Hosted verification covers exact assets,
+  headers and excluded paths; it is not claimed as a second hosted browser run.
+
+Existing production and Render deployments remain unchanged. No merge to main.
