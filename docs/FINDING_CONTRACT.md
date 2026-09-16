@@ -1,4 +1,35 @@
-# Finding contract — version 5 (16 September 2026)
+# Finding contract — version 6 (16 September 2026)
+
+## Approved expert-review integration
+
+Keith explicitly authorized fixing the three gaps found in the completed expert
+workbook and incorporating its useful guidance. This section supersedes earlier
+unchanged-detection and preferred-lens-only sample instructions.
+
+- Eight problematic fictional demos illustrate one useful concern per lens; the
+  clean comparison remains unflagged in both. These are curated development
+  examples, never a requirement to flag every pasted draft or accuracy evidence.
+- Add only two finite tone forms: I/we shouldn't (or should not) have to chase /
+  keep chasing you / your team, as a complete sentence; and I/we need you to stop
+  holding this/things up and [please] a supported request action. Reuse judgmental
+  and dismissive categories. Exempt only the first cue's intrinsic negation span;
+  quotation, history, reporting, questions and other qualifications still exclude.
+- Preserve clarity detection; combine the missing-list request and its explicit
+  mapping dependency in the demo. Do not add cross-sentence semantic inference.
+  The existing broad tone suppression for the word sample remains a limitation.
+- Improve general commitment, prioritization, agreement and Collaborative pressure
+  questions without inventing dates, dependencies, approval or recipient feelings.
+- Explicit Try a sample review loads one revision and checks both lenses with the
+  real engines; preferred lens opens first. Picker selection alone stays inert.
+  Pasted drafts retain explicit checks. Handle each failed check honestly and keep
+  the visible result/status aligned; edits invalidate both snapshots and decisions.
+- Preserve exact evidence, caps, Keep/Undo, style-only prompt changes and privacy.
+
+Ownership: engine worker owns tone/index implementation and their tests; interface
+worker owns App and assigned browser suites; lead owns demos, contract/docs,
+integration and Git. Independent final review follows the integrated candidate.
+One expert workbook review is qualitative content feedback, separate from live
+usability and pilot counts. Historical detection evidence remains unchanged.
 
 ## Approved first-visit and scenario pass
 

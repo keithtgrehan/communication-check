@@ -8,6 +8,16 @@ import './styles.css';
 const LENSES = [{ id: 'clarity', label: 'Clarity & commitments' }, { id: 'tone', label: 'Tone cues' }] as const;
 const INTENTS: ToneIntent[] = ['direct', 'collaborative', 'warm'];
 const emptySnapshots = (): Record<ReviewLens, ReviewSnapshot | null> => ({ clarity: null, tone: null });
+const emptyErrors = (): Record<ReviewLens, boolean> => ({ clarity: false, tone: false });
+const lensName = (lens: ReviewLens) => lens === 'clarity' ? 'Clarity & commitments' : 'Tone cues';
+function resultStatus(snapshot: ReviewSnapshot | null, lens: ReviewLens, errors: Record<ReviewLens, boolean>) {
+  if (errors[lens]) return `${lensName(lens)} check couldn’t finish. Your draft is still here; try again.`;
+  if (!snapshot) return `${lensName(lens)} has not been checked.`;
+  const count = snapshot.result.findings.length;
+  const summary = count ? `${count} ${lens === 'tone' ? (count === 1 ? 'tone cue' : 'tone cues') : (count === 1 ? 'check' : 'checks')} to consider. ${snapshot.reviewedIds.length} reviewed.` : lens === 'tone' ? 'No tone cues flagged. This limited review cannot judge how your message will be received.' : 'No checks flagged this draft. Facts and agreements were not verified.';
+  const other = lens === 'clarity' ? 'tone' : 'clarity';
+  return errors[other] ? `${summary} ${lensName(other)} check couldn’t finish. Open that tab to try again.` : summary;
+}
 
 function Mark() {
   return <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M4 13.5L9 18.5L21.5 6M14 18.5L22 10.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
@@ -23,7 +33,7 @@ export default function App() {
   const [needsRecheck, setNeedsRecheck] = useState({ clarity: false, tone: false });
   const [status, setStatus] = useState('');
   const [manualCopy, setManualCopy] = useState(false);
-  const [checkError, setCheckError] = useState<ReviewLens | null>(null);
+  const [checkErrors, setCheckErrors] = useState(emptyErrors);
   const editor = useRef<HTMLTextAreaElement>(null);
   const resultsHeading = useRef<HTMLHeadingElement>(null);
   const draftRef = useRef(draft);
@@ -79,7 +89,7 @@ export default function App() {
     setSnapshots(emptySnapshots());
     setNeedsRecheck({ clarity: wasChecked && !!text.trim(), tone: wasChecked && !!text.trim() });
     setManualCopy(false);
-    setCheckError(null);
+    setCheckErrors(emptyErrors());
     setStatus(wasChecked && text.trim() ? 'Draft changed. Review again.' : '');
   }
 
@@ -102,41 +112,54 @@ export default function App() {
       : 'Review style selected. Check tone when you’re ready.');
   }
 
+  function checkedSnapshot(text: string, targetLens: ReviewLens, previous: ReviewSnapshot | null, revision: number): ReviewSnapshot {
+    const checked = targetLens === 'clarity' ? checkDraft(text) : checkTone(text, intent);
+    const identities = checked.findings.map(findingIdentity);
+    const reviewedIds = previous?.reviewedIds.filter(id => identities.includes(id)) ?? [];
+    const expandedId = previous?.expandedId && identities.includes(previous.expandedId)
+      ? previous.expandedId : identities.find(id => !reviewedIds.includes(id)) ?? null;
+    return { textRevision: revision, result: checked, reviewedIds, expandedId };
+  }
+
   function runCheck() {
     if (!hasText || tooLong) return;
-    checkText(draftRef.current, lens, isCurrent(snapshot) ? snapshot : null);
+    const errors = { ...checkErrors, [lens]: false };
+    let next: ReviewSnapshot | null = null;
+    try {
+      next = checkedSnapshot(draftRef.current, lens, isCurrent(snapshot) ? snapshot : null, textRevision.current);
+    } catch {
+      errors[lens] = true;
+    }
+    setSnapshots(current => ({ ...current, [lens]: next }));
+    setCheckErrors(errors);
+    setNeedsRecheck(current => ({ ...current, [lens]: errors[lens] }));
+    setManualCopy(false);
+    setStatus(resultStatus(next, lens, errors));
+    reviewFocus.current = true;
   }
 
   function reviewSample() {
     const sample = DEMO_DRAFTS.find(item => item.id === scenarioId);
     if (!sample) return;
     replaceDraft(sample.text, sample.id);
-    setLens(sample.preferredLens);
-    setNeedsRecheck({ clarity: false, tone: false });
-    checkText(sample.text, sample.preferredLens, null);
-  }
-
-  function checkText(text: string, targetLens: ReviewLens, previous: ReviewSnapshot | null) {
-    const checkedRevision = textRevision.current;
-    setCheckError(null);
-    try {
-      const checked = targetLens === 'clarity' ? checkDraft(text) : checkTone(text, intent);
-      const identities = checked.findings.map(findingIdentity);
-      const reviewedIds = previous?.reviewedIds.filter(id => identities.includes(id)) ?? [];
-      const expandedId = previous?.expandedId && identities.includes(previous.expandedId)
-        ? previous.expandedId : identities.find(id => !reviewedIds.includes(id)) ?? null;
-      setSnapshots(current => ({ ...current, [targetLens]: { textRevision: checkedRevision,
-        result: checked, reviewedIds, expandedId } }));
-      setNeedsRecheck(current => ({ ...current, [targetLens]: false }));
-      setManualCopy(false);
-      setStatus(checked.findings.length ? `${checked.findings.length} ${targetLens === 'tone' ? (checked.findings.length === 1 ? 'tone cue' : 'tone cues') : (checked.findings.length === 1 ? 'check' : 'checks')} to consider. ${reviewedIds.length} reviewed.` : targetLens === 'tone' ? 'No tone cues flagged. This limited review cannot judge how your message will be received.' : 'No checks flagged this draft. Facts and agreements were not verified.');
-      reviewFocus.current = true;
-    } catch {
-      setSnapshots(current => ({ ...current, [targetLens]: null }));
-      setNeedsRecheck(current => ({ ...current, [targetLens]: true }));
-      setCheckError(targetLens);
-      setStatus('Unable to check this draft. Your text is still here; try again.');
+    const revision = textRevision.current;
+    const next = emptySnapshots();
+    const errors = emptyErrors();
+    // Both explicit checks use the replacement text and one revision. A failure
+    // in either lens must neither erase the other result nor pretend it passed.
+    for (const targetLens of ['clarity', 'tone'] as const) {
+      try {
+        next[targetLens] = checkedSnapshot(sample.text, targetLens, null, revision);
+      } catch {
+        errors[targetLens] = true;
+      }
     }
+    setLens(sample.preferredLens);
+    setSnapshots(next);
+    setCheckErrors(errors);
+    setNeedsRecheck({ ...errors });
+    setStatus(resultStatus(next[sample.preferredLens], sample.preferredLens, errors));
+    reviewFocus.current = true;
   }
 
   function selectEvidence(finding: ReviewFinding) {
@@ -236,7 +259,7 @@ export default function App() {
 
   function switchLens(next: ReviewLens) {
     setLens(next);
-    setStatus('');
+    setStatus(resultStatus(isCurrent(snapshots[next]) ? snapshots[next] : null, next, checkErrors));
   }
 
   return (
@@ -254,7 +277,7 @@ export default function App() {
           <span className="start-divider">or</span>
           <div className="sample-picker"><label htmlFor="sample-scenario">Fictional scenario</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.label}</option>)}</select></div>
           <button className="sample-button" onClick={reviewSample}>Try a sample review <span aria-hidden="true">→</span></button>
-          <p id="sample-note">Replaces your draft with the sample and checks it.</p>
+          <p id="sample-note">Replaces your draft with the sample and checks both tabs.</p>
         </section>
         <div className="lens-tabs" role="tablist" aria-label="Review lens">
           {LENSES.map(option => <button key={option.id} id={`tab-${option.id}`} role="tab" className="lens-tab" ref={element => { if (element) lensButtons.current.set(option.id, element); else lensButtons.current.delete(option.id); }} aria-selected={lens === option.id} aria-controls="review-panel" tabIndex={lens === option.id ? 0 : -1} onClick={() => switchLens(option.id)} onKeyDown={event => {
@@ -284,7 +307,8 @@ export default function App() {
             <div className="panel-heading"><div><p className="panel-kicker">02 / Review</p><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Checks to consider</h2></div>{result && result.findings.length > 0 && <span className="queue-count" aria-label={`${result.findings.length} findings`}>{result.findings.length}</span>}</div>
             <p className="results-description">{lens === 'clarity' ? 'Up to three things worth a closer look.' : 'Up to two specific wording cues to consider.'}</p>
             {lens === 'tone' && <fieldset className="intent-picker"><legend>How do you want to come across?</legend><div className="intent-options">{INTENTS.map(option => <label key={option} className={`intent-option ${intent === option ? 'selected' : ''}`}><input type="radio" name="tone-intent" value={option} checked={intent === option} onChange={() => chooseIntent(option)} /><span>{option[0].toUpperCase() + option.slice(1)}</span></label>)}</div><p>Changes the review question, not what gets flagged.</p></fieldset>}
-            {!result ? <div className="result-empty"><h3>{checkError === lens ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Review the current wording.' : lens === 'tone' ? 'Choose a style. Take a second look.' : 'Your review will appear here.'}</h3><p>{checkError === lens ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Previous findings are cleared. Run the review when you’re ready.' : lens === 'tone' ? 'Select Check tone when you’re ready. Specific wording cues can help you consider how a request is framed.' : 'Paste a draft and check it, or try a fictional sample above.'}</p></div>
+            {result && checkErrors[lens === 'clarity' ? 'tone' : 'clarity'] && <p className="inline-error" role="alert">{lensName(lens === 'clarity' ? 'tone' : 'clarity')} check couldn’t finish. Open that tab to try again.</p>}
+            {!result ? <div className="result-empty"><h3>{checkErrors[lens] ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Review the current wording.' : lens === 'tone' ? 'Choose a style. Take a second look.' : 'Your review will appear here.'}</h3><p>{checkErrors[lens] ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Previous findings are cleared. Run the review when you’re ready.' : lens === 'tone' ? 'Select Check tone when you’re ready. Specific wording cues can help you consider how a request is framed.' : hasText ? 'Your draft is ready. Select Check draft to review clarity and commitments.' : 'Paste a draft and check it, or try a fictional sample above.'}</p></div>
               : result.findings.length === 0 ? <div className="result-empty result-complete"><h3>{lens === 'tone' ? 'No tone cues flagged' : 'No checks flagged this draft'}</h3><p>{lens === 'tone' ? 'This limited wording review may miss nuance. It cannot judge how your message will be received. Give it your own final read.' : 'This rule-based review didn’t find wording to flag. Facts and agreements were not verified; give the draft your own final read.'}</p></div>
               : <>
                 <div className="review-progress"><div className="progress-segments" aria-hidden="true">{result.findings.map(finding => <span key={finding.id} className={snapshot!.reviewedIds.includes(findingIdentity(finding)) ? 'is-reviewed' : ''} />)}</div><div className="progress-labels"><span>{reviewedCount === result.findings.length ? 'Review complete' : 'Worth a closer look'}</span><span className="findings-count">{reviewedCount} of {result.findings.length} reviewed</span></div></div>

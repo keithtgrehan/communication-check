@@ -187,7 +187,7 @@ test('typing, cut, undo, example loads and clear invalidate both lenses and deci
   await example.click();
   await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
   await toneTab(page).click();
-  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
   await clarityTab(page).click();
   await page.getByRole('button', { name: 'Recheck draft' }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();

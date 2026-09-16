@@ -1,5 +1,25 @@
 # First-visit and scenario polish — 16 September 2026
 
+## Completed expert-review follow-on
+
+The completed senior-CSM workbook prompted a bounded follow-on: eight revised
+problem examples demonstrate both lenses, one clean comparison remains unflagged,
+and two finite tone patterns cover the more natural replacement wording. Review
+questions now address commitment ownership/dependencies and dismissive pressure.
+Explicit Try a sample review checks both lenses of the same loaded revision;
+the preferred lens opens first and the other is ready on tab switch. Picker
+selection remains inert. Failed checks are tracked per lens and can be retried
+without discarding the other result or its Keep decision. Loaded but unchecked
+text receives an accurate invitation to check, rather than to paste again.
+
+Full validation: 7 setup, 451 engine, 10 scenario and 68 browser checks pass,
+including exact evidence, both snapshots, partial failure/retry, style changes,
+Keep/Undo, editing, narrow panels, enlarged text and runtime privacy/offline use.
+Fresh Astra Extra High review found no actionable issue: 27 dual-lens/style
+reviews, 48 boundary probes and independent mobile/state/offline checks passed.
+Lead visually inspected desktop, narrow-panel, zoom and the refreshed four-page
+PDF. The sections below preserve the earlier first-visit baseline.
+
 ## Approved change
 
 The blank editor previously displayed a realistic-looking email placeholder,

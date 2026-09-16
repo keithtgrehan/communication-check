@@ -30,7 +30,7 @@ Alex`,
     description: 'Several requests compete for the customer’s attention.',
     text: `Hi Jordan,
 
-Thanks for joining the onboarding session today. Here are the things we need to move forward.
+Thanks for today's onboarding check-in. We're still waiting on the roster and sample data requested last week. We shouldn't have to keep chasing your team.
 
 Please send your team roster.
 Please upload your sample data.
@@ -54,7 +54,7 @@ It was helpful to hear how your team plans to use the reporting workspace.
 
 We guarantee that the custom integration will be ready by Friday.
 
-Please send the name of your technical contact by Wednesday, 16 September so I can include them in the setup discussion.
+Please send the name of your technical contact by Wednesday, 16 September so I can include them in the setup discussion, no more excuses.
 
 Best,
 Morgan`,
@@ -72,6 +72,8 @@ This is not a good look, we are still waiting for your workspace list.
 
 Please send the workspace list by Thursday.
 
+Someone should confirm the next setup session.
+
 Best,
 Morgan`,
   },
@@ -86,6 +88,8 @@ Thanks for joining the onboarding kickoff.
 
 Someone should send the workspace list.
 
+As I already told you, please confirm your administrator names.
+
 Best,
 Alex`,
   },
@@ -97,6 +101,8 @@ Alex`,
     text: `Hi Priya,
 
 Thanks for walking through the data setup with me.
+
+This is not a good look, we are still waiting for your data.
 
 Please send the sample data soon so we can start the import.
 
@@ -112,7 +118,7 @@ Casey`,
 
 Thanks for discussing the rollout plan today.
 
-As agreed, the phased rollout starts on Monday, although your approval is still pending.
+As agreed, the phased rollout starts on Monday, although your approval is still pending. We need you to stop holding this up and confirm the rollout decision.
 
 Best,
 Morgan`,
@@ -126,7 +132,7 @@ Morgan`,
 
 The workspace list is the topic for our next setup session.
 
-As I already told you, please send the workspace list.
+As I already told you, please send the workspace list soon so we can map each data file to the correct destination before the import.
 
 Best,
 Alex`,
@@ -141,6 +147,8 @@ Alex`,
 Our next onboarding session covers workspace access.
 
 Please send the workspace list by Thursday, no more excuses.
+
+We guarantee that the workspace integration will be ready by Friday.
 
 Best,
 Casey`,

@@ -447,3 +447,113 @@ describe('intent, identity, ordering and limits', () => {
     expect(checkTone('Please share the sandbox ID.', 'direct').findings).toEqual([]);
   });
 });
+
+// Expert-review follow-on: finite addressed constructions, not general blame detection.
+describe('recipient-directed chasing and holding-up cues', () => {
+  const chasing = "We shouldn't have to keep chasing your team.";
+  const holding = 'We need you to stop holding this up and confirm the rollout decision.';
+
+  it.each(['I', 'We'])('supports only the enumerated chasing forms with subject %s', subject => {
+    for (const negation of ["shouldn't", 'shouldn’t', 'should not']) {
+      for (const action of ['chase', 'keep chasing']) {
+        for (const recipient of ['you', 'your team']) {
+          const text = `${subject} ${negation} have to ${action} ${recipient}!`;
+          for (const intent of intents) expect(rules(text, intent)).toEqual(['judgmental-framing']);
+          verifyEvidence(text);
+        }
+      }
+    }
+  });
+
+  it.each([
+    'We need you to stop holding this up and confirm the rollout decision.',
+    'I need you to stop holding things up and please upload the 🧩 evidence bundle.',
+    'WE NEED YOU TO STOP HOLDING THIS UP AND REVIEW RECORD 739!',
+    'I need you to stop holding this up and share the café team roster.',
+  ])('requires the addressed lead-in and a coordination action: %s', text => {
+    for (const intent of intents) expect(rules(text, intent)).toEqual(['dismissive-request']);
+    verifyEvidence(text);
+  });
+
+  it.each([
+    'We should have to keep chasing your team.',
+    "We shouldn't have to keep chasing leads.",
+    "We shouldn't have to chase your team out of the room.",
+    "We shouldn't have to keep chasing your teammate.",
+    "We shouldn't have to keep chasing your team around the park.",
+    "We shouldn't have to keep chasing your team, but that is not true.",
+    "We shouldn't have to keep chasing your team, if the upload worked.",
+    "We shouldn't have to keep chasing your team, apparently.",
+    "We shouldn't have to keep chasing your team, said the manager.",
+    "We shouldn't have to keep chasing your team, we cannot do that.",
+    "We shouldn't have to keep chasing your team?!",
+    'We should not have to keep chasing your team, unless access is blocked.',
+    'We should not have to not chase your team.',
+    'If needed, we should not have to chase you.',
+    'We need you to stop holding this ladder up and confirm the footing.',
+    'We need you to stop holding things and confirm the decision.',
+    'We need you to keep holding this up and confirm the decision.',
+    'We need you to stop holding this up and balance the shelf.',
+    'We need you to stop holding this up and confirmation is required.',
+    'We need you to stop holding this up and not confirm the decision.',
+    'We need you to stop holding this up and confirm the decision if ready.',
+    'We need you to stop holding this up and confirm the decision, but that is not true.',
+    'We need you to stop holding this up and confirm the decision, said the manager.',
+    'We need you to stop holding this up and confirm the decision, according to the manager.',
+    'We need you to stop holding this up and confirm the decision?!',
+    'Please confirm the rollout decision by Monday.',
+    'The rollout is blocked until you approve it.',
+    'Could you explain what is preventing approval?',
+    'We are chasing your team for the files.',
+  ])('retains ordinary usage, qualification, negation and unlisted boundaries: %s', text => {
+    for (const intent of intents) expect(rules(text, intent)).toEqual([]);
+  });
+
+  it.each([chasing, holding])('retains quotation, reporting and history exclusions for %s', cue => {
+    for (const text of [
+      `“${cue}”`, `"${cue}"`, `'${cue}'`, `‘${cue}’`, `\`${cue}\``,
+      `The example is “${cue}”`, `“Example:\n${cue}\n”`, `"Example:\n${cue}`,
+      `\`\`\`text\n${cue}\n\`\`\``, `~~~\n${cue}\n~~~`,
+      `> ${cue}`, `On Monday, Riley wrote:\n${cue}`, `-- \nAlex\n${cue}`,
+      `The manager said: ${cue}`, `The template reads: ${cue}`,
+    ]) expect(rules(text)).toEqual([]);
+  });
+
+  it.each([chasing, holding])('preserves original spans, identities and style-only prompts for %s', cue => {
+    const text = `🪴 Notes for Zoë\r\n> ${cue}\r\n\r\n  • ${cue}\n${cue}`;
+    const findings = intents.map(intent => checkTone(text, intent).findings[0]);
+    expect(new Set(findings.map(findingIdentity)).size).toBe(1);
+    expect(new Set(findings.map(finding => finding.prompt)).size).toBe(3);
+    for (const [index, finding] of findings.entries()) {
+      expect(finding.start).toBe(text.indexOf(cue, text.indexOf(cue) + cue.length));
+      expect(finding.quote).toBe(cue);
+      expect(tonePromptFor(finding.ruleId, intents[index])).toBe(finding.prompt);
+    }
+    verifyEvidence(text);
+  });
+
+  it('retains family priority, deduplication and the two-finding cap', () => {
+    expect(rules(`${chasing}\n${holding}`)).toEqual(['dismissive-request', 'judgmental-framing']);
+    expect(rules(`${chasing}\nYou should know better.`)).toEqual(['judgmental-framing']);
+    expect(rules(`${holding}\nAs I already told you, please send the roster.`)).toEqual(['dismissive-request']);
+    expect(rules(`${chasing}\n${holding}\nYou always ignore our requests.`)).toEqual(['sweeping-blame', 'dismissive-request']);
+  });
+
+  it('retains the sample-word limitation within a unit but not across sentences', () => {
+    expect(rules('We need you to stop holding this up and upload the data.')).toEqual(['dismissive-request']);
+    expect(rules('We need you to stop holding this up and upload the sample data.')).toEqual([]);
+    expect(rules(`We are waiting for the sample data. ${chasing}`)).toEqual(['judgmental-framing']);
+    expect(rules('As I already told you, please send the sample.')).toEqual([]);
+  });
+
+  it('uses the general blocker question for pressure while preserving deadline evidence', () => {
+    for (const ending of ['no excuses', 'no more excuses', 'or else']) {
+      const text = `Please return the Juniper roster by Tuesday, ${ending}.`;
+      const finding = checkTone(text, 'collaborative').findings[0];
+      expect(finding.quote).toBe(text);
+      expect(finding.prompt).toBe('Could this wording dismiss a real blocker, and would inviting the customer to explain help?');
+      expect(tonePromptFor(finding.ruleId, 'collaborative')).toBe(finding.prompt);
+      expect(finding.prompt).not.toMatch(/Tuesday|Juniper|agreed/);
+    }
+  });
+});

@@ -1,8 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: first-visit/scenario polish delivered; independent review complete
-Status: 7 setup + 404 engine + 10 scenario + 65 browser checks pass locally; hosted preview unchanged
+Milestone: completed expert feedback integrated; independent final review complete
+Status: 7 setup + 451 engine + 10 scenario + 68 browser checks pass locally; hosted preview unchanged
+
+## September 16 expert-feedback integration
+
+- One senior CSM completed 21 overlapping workbook decisions and 12 comments. This is expert content feedback, not a usability session or accuracy benchmark. Usability remains 0/3; pilots 0/5.
+- Keith authorized fixing the observed gaps. Eight revised problem demos now produce useful findings in both lenses; the clean comparison remains unflagged. Two finite tone forms and four general question improvements preserve legitimate deadlines. Clarity detection and historical evaluation remain unchanged; its missing-list demo states the dependency in the request.
+- Explicit sample review checks both tabs for one draft revision, with independent failures/retries. Pasted checks remain manual; picker selection is inert. Keep/Undo, style-only questions and edit invalidation remain intact.
+- Full validation passes the counts above, build/typecheck/source guards and runtime privacy/offline checks. Fresh screenshots and the four-page case-study PDF were visually inspected. Fresh Astra Extra High review found no actionable issue: 27 dual-lens/style reviews, 48 boundary probes and independent mobile/state/offline checks passed. See FINDING_CONTRACT.md v6 and FIRST_VISIT_POLISH.md.
 
 ## September 16 first-visit and scenario polish
 
@@ -90,6 +97,6 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can refresh the local app and choose Try a sample review; the matching PDF
-is ready. Hosting, publication and merge remain separate; the historical detection
-gate remains failed.
+Keith can refresh the local app and spend about ten minutes reviewing revised
+examples in both tabs. No more spreadsheet entry is needed. Hosting, publication
+and merge remain separate; the historical detection gate remains failed.

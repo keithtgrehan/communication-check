@@ -83,9 +83,16 @@ test('every scenario uses its real engine and the current revision; selection al
       await expect(page.locator('.result-empty')).toContainText('Facts and agreements were not verified');
     }
     await page.getByRole('tab', { name: demo.preferredLens === 'tone' ? 'Clarity & commitments' : /Tone cues/ }).click();
-    await expect(page.locator('.finding-card')).toHaveCount(0);
-    await expect(page.locator('.findings-count')).toHaveCount(0);
-    await expect(page.getByRole('button', { name: demo.preferredLens === 'tone' ? 'Check draft' : 'Check tone', exact: true })).toBeEnabled();
+    const other = (demo.preferredLens === 'tone' ? checkDraft(demo.text) : checkTone(demo.text, 'collaborative')).findings;
+    await expect(page.locator('.finding-card')).toHaveCount(other.length);
+    await expect(page.getByRole('button', { name: demo.preferredLens === 'tone' ? 'Recheck draft' : 'Review tone again', exact: true })).toBeEnabled();
+    if (other.length) {
+      await expect(page.locator('blockquote:visible')).toHaveText(other[0].quote);
+      await expect(page.locator('.review-prompt > p:visible')).toHaveText(other[0].prompt);
+      await expect(page.getByRole('status')).toContainText(demo.preferredLens === 'tone' ? '1 check to consider' : '1 tone cue to consider');
+    } else {
+      await expect(page.getByRole('heading', { name: demo.preferredLens === 'tone' ? 'No checks flagged this draft' : 'No tone cues flagged' })).toBeVisible();
+    }
   }
 });
 
@@ -142,5 +149,74 @@ for (const { width, zoom, textScale } of [{ width: 320, zoom: 1, textScale: 1 },
       expect(measurement.textWidth, sample.label).toBeLessThanOrEqual(measurement.availableWidth);
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+}
+
+test('sample snapshots preserve independent decisions and style, while edits invalidate both', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#sample-note')).toContainText('checks both tabs');
+  const editor = page.getByRole('textbox');
+  await editor.fill('A manually pasted draft.');
+  await expect(page.locator('.result-empty')).toContainText('Your draft is ready. Select Check draft');
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.getByRole('tab', { name: /Tone cues/ }).click();
+  await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
+  const quote = await page.locator('blockquote:visible').innerText();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+  await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
+  await page.getByRole('button', { name: 'Review tone again' }).click();
+  await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
+  await page.getByRole('button', { name: /^Undo keep:/ }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).click();
+  expect(await editor.evaluate((field: HTMLTextAreaElement) => field.value.slice(field.selectionStart, field.selectionEnd))).toBe(quote);
+  await page.getByRole('tab', { name: 'Clarity & commitments' }).click();
+  await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
+  await editor.fill('Changed current text.');
+  for (const name of [/Tone cues/, 'Clarity & commitments']) {
+    await page.getByRole('tab', { name }).click();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.locator('.result-empty')).toContainText('Previous findings are cleared');
+  }
+});
+
+for (const failedLens of ['clarity', 'tone'] as const) {
+  test(`a failed sample ${failedLens} check retains the other result and can be retried`, async ({ page }) => {
+    // Throw at an existing lens-specific parsing operation. No production test
+    // hook or replacement result is added; the other engine executes normally.
+    await page.addInitScript(failedLens => {
+      const original = String.prototype.matchAll;
+      const fault = { enabled: true };
+      (window as unknown as { sampleFault: { enabled: boolean } }).sampleFault = fault;
+      String.prototype.matchAll = function(regexp: RegExp) {
+        const clarityStops = /[.!?](?:[”"']?)(?=\s|$)/g;
+        if (fault.enabled && (failedLens === 'tone' ? regexp.source.startsWith('```') : regexp.source === clarityStops.source)) throw new Error('Simulated checker failure');
+        return original.call(this, regexp);
+      };
+    }, failedLens);
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Try a sample review' }).click();
+    await expect(page.getByRole('tab', { name: 'Clarity & commitments' })).toHaveAttribute('aria-selected', 'true');
+    await expect(page.getByRole('status')).toContainText(`${failedLens === 'tone' ? 'Tone cues' : 'Clarity & commitments'} check couldn’t finish`);
+    if (failedLens === 'tone') {
+      await expect(page.locator('.finding-card')).toHaveCount(1);
+      await expect(page.getByRole('alert')).toContainText('Tone cues check couldn’t finish');
+    }
+    await page.getByRole('tab', { name: failedLens === 'tone' ? /Tone cues/ : 'Clarity & commitments' }).click();
+    await expect(page.locator('.result-empty')).toContainText('This check couldn’t finish.');
+    await expect(page.locator('.result-complete')).toHaveCount(0);
+    await page.getByRole('tab', { name: failedLens === 'tone' ? 'Clarity & commitments' : /Tone cues/ }).click();
+    await expect(page.locator('.finding-card')).toHaveCount(1);
+    await page.getByRole('button', { name: 'Keep as written' }).click();
+    await page.evaluate(() => { (window as unknown as { sampleFault: { enabled: boolean } }).sampleFault.enabled = false; });
+    await page.getByRole('tab', { name: failedLens === 'tone' ? /Tone cues/ : 'Clarity & commitments' }).click();
+    await page.getByRole('button', { name: failedLens === 'tone' ? 'Review tone again' : 'Recheck draft', exact: true }).click();
+    await expect(page.locator('.finding-card')).toHaveCount(1);
+    await expect(page.getByRole('status')).not.toContainText('couldn’t finish');
+    await expect(page.getByRole('alert')).toHaveCount(0);
+    await page.getByRole('tab', { name: failedLens === 'tone' ? 'Clarity & commitments' : /Tone cues/ }).click();
+    await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
   });
 }

@@ -1,5 +1,16 @@
 # Portfolio screenshots
 
+## September 16 expert-review integration
+
+Fresh local production-build captures after the completed CSM feedback fixes:
+[desktop clarity](2026-09-16-expert-review/clarity-1440-top.png),
+[382px sample result](2026-09-16-expert-review/sample-result-382.png),
+[320px tone](2026-09-16-expert-review/tone-result-320.png),
+[382px kept state](2026-09-16-expert-review/kept-382.png), and
+[200% content zoom](2026-09-16-expert-review/first-visit-200percent.png).
+Both checks now run on explicit sample review. These fictional examples use the
+actual engines; captures are local Chromium emulations, not hosted evidence.
+
 ## September 16 first-visit and scenario polish
 
 Real local production-build captures with fictional samples:

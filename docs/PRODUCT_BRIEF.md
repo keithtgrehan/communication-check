@@ -24,6 +24,21 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Approved completed-review fixes:** Keith authorized integrating useful feedback
+from one senior-CSM workbook review and fixing its three demonstrated coverage gaps.
+Use eight realistic problem demos with meaningful findings in both lenses and one
+unchanged clean control. Improve general questions about commitment ownership,
+conditions, priority, approval and dismissive pressure; legitimate deadlines remain
+acceptable. Add only finite recipient-directed chasing complaints and holding-up
+request lead-ins, with quotation/negation/ordinary-usage safeguards. Combine the
+missing-list request and mapping dependency without expanding clarity detection.
+Explicit sample review now checks both lenses of the same fictional draft, opening
+the preferred tab; picker selection stays inert and pasted drafts retain manual
+checks. This supersedes older preferred-lens-only and unchanged-tone instructions.
+Finding contract v6 specifies boundaries. Record expert content feedback separately
+from usability/pilot evidence. No model, new parser, reserved evaluation, deployment,
+publication or merge is authorized by this pass.
+
 **Approved first-visit/scenario pass:** Keith approved an honest empty-editor
 prompt, a visible paste invitation and an explicit working sample-review action
 with a compact nine-scenario picker. Selection alone is inert; Try a sample review
@@ -104,7 +119,7 @@ Conservative checks cover:
 
 Suppress findings for clear owners, legitimate deadlines, ordered checklists, harmless conversational timing, negation and qualifications where appropriate. Length alone is not overload. Respect signatures and quoted history without shifting evidence offsets.
 
-Never invent dates, owners, promises, agreements, or facts. Without supporting context, say “Confirm this commitment before sending.” Do not claim a statement is false or unauthorised. No overall score or numeric confidence. An empty result says “No checks flagged this draft” and explains that facts and agreements were not verified.
+Never invent dates, owners, promises, agreements, or facts. Ask whether the responsible person or team confirmed a commitment and its conditions or dependencies; do not claim it is false or unauthorised. No overall score or numeric confidence. An empty result says “No checks flagged this draft” and explains that facts and agreements were not verified.
 
 ## Architecture and data handling
 

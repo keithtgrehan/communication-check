@@ -21,17 +21,17 @@ const COPY: Record<RuleId, Pick<Finding, 'title' | 'explanation' | 'prompt'>> = 
   'competing-requests': {
     title: 'Choose a first action',
     explanation: 'Several requests appear together without an explicit first step.',
-    prompt: 'Make the first action clear, or put these requests in priority order.',
+    prompt: 'Which task should happen first, and do any other tasks depend on it?',
   },
   'agreement-wording': {
     title: 'Confirm what was agreed',
     explanation: 'Agreement wording appears alongside an explicit proposal or a decision that is still pending.',
-    prompt: 'Confirm whether this is agreed, or make the remaining proposal or approval clear.',
+    prompt: 'What is agreed, who still needs to decide, and does the next step depend on that decision?',
   },
   'commitment-confirmation': {
     title: 'Confirm this commitment',
     explanation: 'This wording makes a definite delivery, pricing, or functionality commitment.',
-    prompt: 'Confirm this commitment before sending.',
+    prompt: 'Has the responsible person or team confirmed this commitment, including any conditions or dependencies?',
   },
 };
 

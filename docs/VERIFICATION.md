@@ -532,3 +532,36 @@ measure all nine labels with an extra 20px native-arrow allowance at 320px norma
 confirmed the full longest label at 28px text in the final production build,
 plus real scenario checking and exact evidence selection. Final suite: 65 browser
 checks; no remaining actionable review findings. Lead refreshed the captures/PDF.
+
+## September 16 completed expert-review integration
+
+Keith authorized fixes after a senior CSM completed the three-tab fictional-example
+workbook. All 21 decisions and 12 comments were reconciled; the workbook remained
+unchanged. Three replacement drafts exposed two unsupported tone phrases and one
+cross-sentence timing miss. Two finite tone families and one faithful combined
+request/dependency demo address these; clarity detection remains unchanged.
+Four general questions now ask about ownership, conditions, prioritization and
+possible blockers without inventing facts or penalizing ordinary deadlines.
+
+Full `npm run validate` passed: seven setup/integrity, 451 engine, ten scenario and
+68 browser tests, plus typecheck/build/source guards. Each of eight problematic
+demos has one useful finding per lens and the unchanged clean demo has none.
+Explicit sample loading now checks both lenses of one revision. Browser coverage
+includes both partial-check failure directions and retry preserving the other
+review, inert selection, Keep/Undo, style remapping, text invalidation, clipboard,
+keyboard, accessibility, narrow panels, enlarged text and runtime privacy/offline.
+
+Fresh independent Astra Extra High review found no actionable issue. It checked
+all nine texts against the implementation reference/workbook provenance, 27
+dual-lens/style results with exact spans, 48 independent finite-boundary probes,
+and 382/320px state/selection/offline behaviour. No requests or draft canary in
+local/session storage or cookies were observed in its bounded offline probe.
+
+Lead independently verified installed example text and 16 intended findings,
+inspected desktop/narrow/zoom captures and all four refreshed PDF pages. Capture
+paths are in screenshots/README.md. Source workbook SHA256 remained
+32eba05a04db6d82686f3e791778c7db0629a983387e3319f7cd6225e3c954b5.
+This is one qualitative expert content review, not 21 participants or a live
+usability study. Usability remains 0/3 and pilots 0/5. Historical detection failures,
+sample-word suppression and finite/cross-sentence limits remain documented.
+No hosting update, main merge, publication or model integration occurred.

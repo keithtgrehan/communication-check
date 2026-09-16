@@ -17,8 +17,8 @@ not been validated.
 
 ## The experience
 
-Paste a draft or run one of nine fictional scenarios. The sample action runs the
-real checker; selecting an option leaves the draft untouched.
+Paste a draft or run one of nine fictional scenarios. The sample action runs both
+real checks; selecting an option leaves the draft untouched.
 Clarity & commitments shows up to three prompts. Optional Tone cues shows up to
 two supported wording cues. Direct, Collaborative or Warm changes the review
 question, not which wording is flagged. Select exact wording to edit, or keep it
@@ -84,18 +84,18 @@ factual correctness or production-level accuracy.
 
 The September 11 delivery includes a hosted preview, portfolio materials and a
 rollback path. The September 16 local app adds optional tone review, Keep/Undo
-and immediate style switching. The latest polish fixes first use and adds nine
-scenarios using unchanged detection rules. The hosted preview is unchanged.
+and immediate style switching. Expert feedback refined nine scenarios, review
+questions and two finite tone patterns. The hosted preview is unchanged.
 
-Fresh local validation on September 16 passes **404 engine tests** (225 existing
-clarity tests and 179 tone development tests), **seven setup/integrity checks**,
-**ten fictional-scenario tests**, build/typecheck/source guards and **65 browser checks**. Browser coverage includes
+Fresh local validation on September 16 passes **451 engine tests**,
+**seven setup/integrity checks**, **ten fictional-scenario tests**,
+build/typecheck/source guards and **68 browser checks**. Browser coverage includes
 both review lenses, editing, current-text clipboard/fallback, exact evidence,
 keyboard access, responsive layout and runtime privacy/offline behavior.
 [Local screenshots](screenshots/README.md) include 1440, 1024, 390 and 320px widths,
 evidence selection, enlarged text and 200% content zoom.
 
-Two Astra High workers handled interface and sample-library changes; the lead
+Two Astra High workers handled interface and bounded rule changes; the lead
 integrated and validated them. Independent final review is recorded in
 [verification](VERIFICATION.md). Automated browser and agent checks are not a full
 accessibility certification, physical-device testing or human usability study.
@@ -107,11 +107,11 @@ ten reserved fictional evaluations missed the original detection target; the
 latest detected 4 of 12 selected issues, with no flags across its four clean
 controls. Those results remain visible in the evaluation report.
 
-I chose to ship a bounded portfolio prototype. My first hands-on review exposed
-that none of the clarity demos demonstrated tone and ordinary judgmental wording
-was missed. The correction makes coverage explicit, adds a tone example and
-extends a few local patterns. It does not establish broad reliability. Further
-expansion needs real user feedback and a deliberate decision about detection quality.
+One senior customer-success manager reviewed the fictional examples. Her feedback
+improved ownership and dependency questions, preserved deadlines and replaced
+artificial accusations. Two finite tone additions and one clearer example
+addressed observed misses. This is expert content feedback, not live usability
+testing or evidence of general accuracy.
 
 ## Preserved evaluation history
 

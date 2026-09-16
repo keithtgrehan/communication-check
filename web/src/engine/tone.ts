@@ -11,7 +11,9 @@ import {
  * dismissal requires an explicit accusation or dismissive reminder followed by a
  * request; pressure requires
  * a request ending in "no excuses", "no more excuses" or "or else". Judgmental
- * framing covers only "not a good look" and addressed "you should know better".
+ * framing covers "not a good look", addressed "you should know better", and
+ * complete I/we complaints about having to chase you/your team. Dismissal also
+ * covers I/we demands to stop "holding this/things up" and take a listed action.
  * Brevity, please, deadlines, escalation, thanks and punctuation style are never
  * sufficient cues.
  *
@@ -26,6 +28,8 @@ import {
 const PRIORITY: ToneRuleId[] = ['sweeping-blame', 'dismissive-request', 'pressure-wording', 'judgmental-framing'];
 const ACTION = '(?:send|share|upload|complete|confirm|provide|reply|respond|review|read|check|finish|approve|return|submit)';
 const DISMISSAL = new RegExp(`^stop (?:making excuses|wasting (?:my|our) time) and (?:please )?${ACTION}\\b`, 'i');
+const HOLDING_UP_REQUEST = new RegExp(`^(?:i|we) need you to stop holding (?:this|things) up and (?:please )?${ACTION}\\b`, 'i');
+const CHASING_COMPLAINT = /^(?:i|we) (shouldn['’]t|should not) have to (?:chase|keep chasing) (?:you|your team)[.!]*$/i;
 const REQUEST = new RegExp(`^(?:(?:please )?${ACTION}|you (?:must|need to|have to) ${ACTION}|i (?:need|expect) you to ${ACTION})\\b`, 'i');
 const SWEEPING = /^you (?:always (?:(?:ignore|disregard) (?:my|our|the) (?:requests?|emails?|messages?|questions?|instructions?|feedback)|miss (?:our |the )?(?:deadlines?|meetings?)|fail to (?:reply|respond|follow up|send|share|provide|complete))|never (?:(?:reply|respond)(?: to (?:my|our) (?:emails?|messages?|requests?|questions?)| at all|(?=[.!\s]*$))|(?:read|follow) (?:my|our|the) (?:instructions?|messages?|emails?)|listen to (?:me|us)))\b/i;
 const QUALIFIED = /\b(?:if|unless|except|perhaps|maybe|hypothetically|suppose|example|sample|template|phrase|wording|quoted?|allegedly|apparently|says?|said|claims?|claimed|untrue|inaccurate|without|not|cannot|can['’]t|don['’]t|doesn['’]t|didn['’]t|isn['’]t|aren['’]t|wasn['’]t|weren['’]t|wouldn['’]t|shouldn['’]t)\b/i;
@@ -56,7 +60,7 @@ const COPY: Record<ToneRuleId, { title: string; explanation: string; prompts: Re
     explanation: 'The added “no excuses”, “no more excuses” or “or else” wording may read as pressure beyond the requested action.',
     prompts: {
       direct: 'Would stating the action and any necessary deadline or consequence directly be clearer?',
-      collaborative: 'Would clarifying the dependency and a way to raise blockers help coordinate this request?',
+      collaborative: 'Could this wording dismiss a real blocker, and would inviting the customer to explain help?',
       warm: 'Would leaving room for a reply about the situation fit your intended warmth?',
     },
   },
@@ -78,8 +82,13 @@ export function tonePromptFor(ruleId: ToneRuleId, intent: ToneIntent): string {
 
 interface Unit { start: number; end: number; text: string }
 
-function judgmentalCue(text: string): { negationStart?: number } | undefined {
+function judgmentalCue(text: string): { cueNegation?: { start: number; end: number } } | undefined {
   if (SELF_REFLECTIVE.test(text)) return undefined;
+  const chasing = CHASING_COMPLAINT.exec(text);
+  if (chasing) {
+    const start = text.indexOf(chasing[1]);
+    return { cueNegation: { start, end: start + chasing[1].length } };
+  }
   if (/^you should know better(?:[.!]*$|,\s*\S| than to \S)/i.test(text)) return {};
   // Require an evaluative clause boundary, so ordinary "look at"/"view of"
   // descriptions and unlisted paraphrases do not qualify. A leading I/we clause
@@ -91,7 +100,7 @@ function judgmentalCue(text: string): { negationStart?: number } | undefined {
   // The selected cue alone may bypass "not". Every other qualification in the
   // sentence still runs through the unchanged negation/qualification safeguard.
   const cue = atStart ? /\bnot a good look\b/i.exec(text) : /\bnot a good look[.!]*$/i.exec(text);
-  return cue ? { negationStart: cue.index } : undefined;
+  return cue ? { cueNegation: { start: cue.index, end: cue.index + 3 } } : undefined;
 }
 
 /** Quotation ranges use unchanged UTF-16 positions, including unmatched openers.
@@ -156,13 +165,15 @@ export function checkTone(text: string, intent: ToneIntent): ToneCheckResult {
     const reminder = /^as i already told you,\s*(.+)$/i.exec(unit.text);
     const judgment = judgmentalCue(unit.text);
     const ruleId: ToneRuleId | undefined = SWEEPING.test(unit.text) ? 'sweeping-blame'
-      : DISMISSAL.test(unit.text) || (reminder && REQUEST.test(reminder[1])) ? 'dismissive-request'
+      : DISMISSAL.test(unit.text) || HOLDING_UP_REQUEST.test(unit.text) || (reminder && REQUEST.test(reminder[1])) ? 'dismissive-request'
         : REQUEST.test(unit.text) && /[,;—–]\s*(?:no (?:more )?excuses|or else)[.!]*$/i.test(unit.text) ? 'pressure-wording'
           : judgment ? 'judgmental-framing' : undefined;
     if (!ruleId) continue;
-    const negationStart = ruleId === 'judgmental-framing' ? judgment?.negationStart : undefined;
-    const qualificationText = negationStart === undefined ? unit.text
-      : unit.text.slice(0, negationStart) + '   ' + unit.text.slice(negationStart + 3);
+    // Exempt only the negation within an exact approved cue. Other qualifiers
+    // retain their normal meaning; evidence always uses untouched original text.
+    const cueNegation = ruleId === 'judgmental-framing' ? judgment?.cueNegation : undefined;
+    const qualificationText = cueNegation === undefined ? unit.text
+      : unit.text.slice(0, cueNegation.start) + ' ' + unit.text.slice(cueNegation.end);
     if (QUALIFIED.test(qualificationText)) continue;
     const copy = COPY[ruleId];
     candidates.push({
