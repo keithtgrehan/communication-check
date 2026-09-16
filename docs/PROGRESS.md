@@ -1,8 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: Accepted editorial candidate deployed and verified on Vercel
+Milestone: Accepted live editorial version frozen; future work forked
 Status: 7 setup + 451 engine + 10 scenario + 81 browser checks pass locally; all 81 browser checks also pass on Vercel
+
+## Frozen live decision
+
+- Keith confirmed the live editorial version is final for now: https://communication-check.vercel.app/.
+- Frozen baseline: `codex/frozen-vercel-2026-09-16` at `1463832`; deployed app source `38d744d`. All six live hashes reverified. No deployment changed.
+- Future work is forked to `codex/communication-check-next`; the Prism work stays preserved on `codex/communication-check-tone-review` at `2527641`.
+- See FROZEN_BASELINE.md. Production replacement, frozen-branch updates and main merge need explicit approval. No additional product changes are underway.
 
 ## September 16 Vercel deployment
 

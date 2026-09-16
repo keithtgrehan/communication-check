@@ -23,6 +23,14 @@ sans-serif headings and serif source quotations. Selection alone never replaces 
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
+## Frozen live version
+
+Use **[Communication Check](https://communication-check.vercel.app/)**.
+The accepted version is frozen on `codex/frozen-vercel-2026-09-16` at `1463832`.
+All subsequent work starts on the forked `codex/communication-check-next` branch;
+production changes require explicit approval. The Prism alternative is preserved
+separately. See [freeze record](docs/FROZEN_BASELINE.md).
+
 ## Current evidence
 
 The September 16 follow-on is implemented on

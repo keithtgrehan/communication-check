@@ -22,6 +22,15 @@ two focused v0 revisions; verify locally, independently and on the existing prev
 before final screenshots. Prepare LinkedIn Featured and Solutions Engineering
 materials; publication and outreach remain separate, unapproved actions.
 
+## Frozen live decision — 16 September 2026
+
+Keith chose https://communication-check.vercel.app/ and froze the accepted editorial
+version. Baseline branch: `codex/frozen-vercel-2026-09-16` at `1463832`, with the same
+web source as deployed `38d744d`. All subsequent work goes on the forked
+`codex/communication-check-next` branch. Preserve the Prism alternative on the old
+branch. No production replacement or main merge without explicit approval.
+This supersedes previous implementation-branch/presentation directions.
+
 ## Approved follow-on — 16 September 2026
 
 **Approved Vercel delivery:** Keith accepted the editorial candidate and authorized

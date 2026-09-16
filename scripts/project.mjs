@@ -6,7 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const HANDOFF_FILES = Object.freeze(['docs/PRODUCT_BRIEF.md', 'docs/PROGRESS.md']);
-const BRANCH = 'codex/communication-check-tone-review';
+const BRANCH = 'codex/communication-check-next';
+const FROZEN_REF = 'refs/heads/codex/frozen-vercel-2026-09-16';
+const FROZEN_COMMIT = '146383228c99437ad4958b981d230c3b59d747b8';
 const REMOTE = 'https://github.com/keithtgrehan/communication-check.git';
 const DONOR_FILES = ['web/src/App.jsx', 'web/src/styles.css', 'web/src/resultViewModel.js', 'web/vite.config.js', 'web/package.json', 'web/index.html'];
 
@@ -40,8 +42,10 @@ export function validatePush(remoteName, remoteUrl, input) {
   for (const line of input.trim().split('\n').filter(Boolean)) {
     const parts = line.trim().split(/\s+/);
     if (parts.length !== 4) throw new Error('Push refused: malformed ref update.');
-    const [localRef, localSha, remoteRef] = parts;
+    const [localRef, localSha, remoteRef, remoteSha] = parts;
     if (localRef === '(delete)' || /^0+$/.test(localSha)) throw new Error('Push refused: branch deletion is outside the approved workflow.');
+    // Allow only initial publication of the exact approved baseline; never update it.
+    if (localRef === FROZEN_REF && remoteRef === FROZEN_REF && localSha === FROZEN_COMMIT && /^0+$/.test(remoteSha)) continue;
     if (localRef !== `refs/heads/${BRANCH}` || remoteRef !== `refs/heads/${BRANCH}`) throw new Error(`Push refused: only ${BRANCH} is authorised after baseline setup.`);
   }
 }
