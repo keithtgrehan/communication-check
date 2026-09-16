@@ -24,6 +24,17 @@ materials; publication and outreach remain separate, unapproved actions.
 
 ## Approved follow-on — 16 September 2026
 
+**Approved information pages:** Keith requested top-right links to About
+Communication Check and Video Demo. About succinctly adapts the case study and
+README into what the tool does, why, for whom and how. Video Demo reserves an
+honest responsive space for a future YouTube walkthrough; no video URL has been
+supplied and no third-party player loads yet. Both pages link to the repository
+README, with its private-access requirement clear. Preserve checker state in
+memory across internal navigation, accessible history/focus and current styling.
+This explicitly supersedes the earlier no-additional-screen restriction for these
+two pages only. Keith tests locally first; Vercel deployment is a later step.
+No deployment, visibility change, model or engine expansion is part of this pass.
+
 **Approved completed-review fixes:** Keith authorized integrating useful feedback
 from one senior-CSM workbook review and fixing its three demonstrated coverage gaps.
 Use eight realistic problem demos with meaningful findings in both lenses and one

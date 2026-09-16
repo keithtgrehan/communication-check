@@ -565,3 +565,31 @@ This is one qualitative expert content review, not 21 participants or a live
 usability study. Usability remains 0/3 and pilots 0/5. Historical detection failures,
 sample-word suppression and finite/cross-sentence limits remain documented.
 No hosting update, main merge, publication or model integration occurred.
+
+## September 16 About and Video Demo pages
+
+Keith requested two top-right information pages before a later Vercel deployment.
+About adapts the supplied case-study PDF and README into a concise audience,
+purpose, workflow and limitations explanation. Video Demo has an honest responsive
+placeholder for a forthcoming YouTube walkthrough. No video URL was supplied;
+no iframe, external thumbnail or third-party player is loaded. Both pages link
+to the repository README and state that repository access is required.
+
+Full `npm run validate` passed: 7 setup checks, 451 engine tests, 10 scenario tests,
+77 browser checks, typecheck/build and source guards. The nine new browser checks
+cover direct links at 320/382/1440px, one accessible main, active navigation,
+keyboard focus, Back/Forward, draft and both-lens Keep preservation, reload clearing,
+200% text and no navigation-triggered requests or browser persistence. Existing
+first-visit, editor, privacy/offline and review-state checks pass unchanged.
+
+Lead inspected fresh About/Video/desktop-navigation captures listed in
+screenshots/README.md. The supplied PDF was used as reference and not overwritten.
+No engine, CSP, hosting policy, deployment or repository visibility change occurred.
+Actual YouTube embedding awaits the URL and its own bounded runtime verification.
+
+Fresh independent Astra Extra High review found no actionable findings. It checked
+copy against the README/case study/contract, all six page/viewport combinations,
+enlarged text, direct entry/reload/history/focus, hidden-checker keyboard exclusion,
+retained draft/both Keep decisions/style, offline navigation and empty browser
+storage/cookies. It observed no navigation requests, browser errors or automated
+accessibility violations. This is engineering review, not a human usability session.

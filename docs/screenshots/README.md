@@ -1,5 +1,15 @@
 # Portfolio screenshots
 
+## September 16 information pages
+
+Real local captures of [About on desktop](2026-09-16-info-pages/about-1440.png),
+[About at 320px](2026-09-16-info-pages/about-320.png),
+[Video Demo on desktop](2026-09-16-info-pages/video-demo-1440.png),
+[Video Demo at 382px](2026-09-16-info-pages/video-demo-382.png), and
+[checker navigation](2026-09-16-info-pages/checker-navigation.png).
+Lead inspected the readable layouts and truthful forthcoming-video placeholder.
+No YouTube content or external thumbnail loads in this version.
+
 ## September 16 expert-review integration
 
 Fresh local production-build captures after the completed CSM feedback fixes:

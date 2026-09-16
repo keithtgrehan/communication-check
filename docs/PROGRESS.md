@@ -1,8 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: completed expert feedback integrated; independent final review complete
-Status: 7 setup + 451 engine + 10 scenario + 68 browser checks pass locally; hosted preview unchanged
+Milestone: About and Video Demo pages implemented and independently reviewed
+Status: 7 setup + 451 engine + 10 scenario + 77 browser checks pass locally; hosted preview unchanged
+
+## September 16 information pages
+
+- Keith requested About Communication Check and Video Demo in the top-right navigation. About concisely adapts the case-study PDF/README; Video Demo reserves a YouTube walkthrough space without loading a player. Both pages link to the private repository README with an access note.
+- Internal links, browser history and direct page entry work without hosting rewrites. Drafts, both reviews and Keep/Undo stay in memory across navigation; reload clears them. Inactive content is hidden from keyboard and assistive technology.
+- Full validation passes the counts above, including nine new navigation, layout, accessibility and privacy checks. Desktop/382/320px captures were visually inspected. Fresh independent Astra Extra High review found no actionable issues across layout, accessibility, history/focus, retained review state and offline/privacy checks.
+- Keith tests locally next, then intends to deploy via Vercel. No deployment or visibility change occurred. YouTube URL is still needed before wiring the actual embed.
 
 ## September 16 expert-feedback integration
 
@@ -31,14 +38,6 @@ Status: 7 setup + 451 engine + 10 scenario + 68 browser checks pass locally; hos
 - Verified canonical checkout/remote; reconciled main b22bcfd after PR #1 merged September 11, preserving the original branch. Follow-on uses codex/communication-check-tone-review. Branch guard was updated; main/wrong-repository/tag/deletion protections remain. Baseline setup/225 engine/28 browser checks passed.
 - Original follow-on scope was Canvas3 plus bounded local tone, exact selection, keep/undo and invalidation, followed by the approximately one-hour How it works refinement. No model, research, evaluation round, deployment, launch, merge or spending. See FINDING_CONTRACT.md for later approved changes.
 - Both Markdown briefs and the reference ZIP were added to ChatGPT Project Sources and verified after reload September 16. This is a dated source upload, not continuous synchronization.
-
-## September 11 delivered baseline
-
-- [x] v0 direction reviewed — one proposal and one focused revision, using existing $5 monthly credit with v0 Mini. Only three fictional screenshots and design brief supplied; no purchase or repository connection.
-- [x] Presentation integrated — monochrome layout, 16px draft/body, 14px secondary text, 44px controls and 880px stacking; engine and original handlers preserved.
-- [x] Local checks and fresh independent review — 7 setup + 225 engine + 28 browser checks pass. Fresh Astra review found no material issues; focused checks at 320/880/881/1440px passed.
-- [x] Preview updated and verified — dep-dai10kbm8hqs73dnm68g, live 2026-09-11 14:29:50 UTC at 4931fe2f8968b0447c5e2872e520306aa0bb74b7; all 28 hosted checks pass.
-- [x] Portfolio materials ready — three verified hosted screenshots, Featured title/description/link/thumbnail, updated case study with all ten results, demo script and SE notes. Recording deferred.
 
 ## September 11 hosted delivery (unchanged)
 
@@ -97,6 +96,6 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 
 ## Next action
 
-Keith can refresh the local app and spend about ten minutes reviewing revised
-examples in both tabs. No more spreadsheet entry is needed. Hosting, publication
-and merge remain separate; the historical detection gate remains failed.
+Keith can review About and Video Demo from the top-right links, then return to
+his draft. Supply the YouTube URL when ready. Vercel deployment follows his local
+review; publication and merge remain separate. The historical detection gate remains failed.

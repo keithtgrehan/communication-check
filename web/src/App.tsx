@@ -1,9 +1,17 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { checkDraft } from './engine';
 import { checkTone, tonePromptFor } from './engine/tone';
 import { MAX_DRAFT_LENGTH, findingIdentity, type ReviewFinding, type ReviewLens, type ReviewSnapshot, type ToneIntent, type ToneRuleId } from './engine/types';
 import { DEMO_DRAFTS } from './demos';
+import { InfoPages, type InfoPage } from './InfoPages';
 import './styles.css';
+
+type Page = 'checker' | InfoPage;
+function currentPage(): Page {
+  if (window.location.hash === '#/about') return 'about';
+  if (window.location.hash === '#/video-demo') return 'video-demo';
+  return 'checker';
+}
 
 const LENSES = [{ id: 'clarity', label: 'Clarity & commitments' }, { id: 'tone', label: 'Tone cues' }] as const;
 const INTENTS: ToneIntent[] = ['direct', 'collaborative', 'warm'];
@@ -24,6 +32,24 @@ function Mark() {
 }
 
 export default function App() {
+  const [page, setPage] = useState(currentPage);
+  const previousPage = useRef(page);
+  const checkerHeading = useRef<HTMLHeadingElement>(null);
+  const infoHeading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    const navigate = () => setPage(currentPage());
+    window.addEventListener('hashchange', navigate);
+    return () => window.removeEventListener('hashchange', navigate);
+  }, []);
+  useLayoutEffect(() => {
+    document.title = page === 'about' ? 'About Communication Check' : page === 'video-demo' ? 'Video Demo · Communication Check' : 'Communication Check — Review your customer follow-up';
+    // Preserve the normal first-visit focus. Route changes, including browser
+    // back/forward, announce the new page without unmounting the review desk.
+    if (previousPage.current === page) return;
+    previousPage.current = page;
+    (page === 'checker' ? checkerHeading : infoHeading).current?.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }, [page]);
   const [draft, setDraft] = useState('');
   const [sampleId, setSampleId] = useState<string | null>(null);
   const [scenarioId, setScenarioId] = useState('promises-to-confirm');
@@ -265,12 +291,15 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="site-header">
-        <div className="brand"><span className="brand-mark"><Mark /></span><span>Communication Check</span></div>
-        <span className="header-note">Review desk <span aria-hidden="true">·</span> Local preview</span>
+        <a className="brand" href="#/" aria-current={page === 'checker' ? 'page' : undefined}><span className="brand-mark"><Mark /></span><span>Communication Check</span></a>
+        <nav className="site-nav" aria-label="Main navigation">
+          <a href="#/about" aria-current={page === 'about' ? 'page' : undefined}>About Communication Check</a>
+          <a href="#/video-demo" aria-current={page === 'video-demo' ? 'page' : undefined}>Video Demo</a>
+        </nav>
       </header>
-      <main>
+      <main hidden={page !== 'checker'}>
         <section className="intro" aria-labelledby="page-title">
-          <div><h1 id="page-title">A second look before you send.</h1><p className="intro-description">Check your customer follow-up. Keep what works; edit what doesn’t.</p></div>
+          <div><h1 id="page-title" ref={checkerHeading} tabIndex={-1}>A second look before you send.</h1><p className="intro-description">Check your customer follow-up. Keep what works; edit what doesn’t.</p></div>
         </section>
         <section className="start-options" aria-label="Start a review">
           <button className="paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Paste your draft <span aria-hidden="true">↘</span></button>
@@ -379,6 +408,7 @@ export default function App() {
         <p className={status.startsWith('Current draft copied') || status.startsWith('Clipboard') ? 'live-status' : 'live-status sr-only'} role="status" aria-live="polite" aria-atomic="true">{status}</p>
         <footer className="page-footer"><div className="local-note"><Mark /><span>Local review. Your draft stays in this page.</span></div><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check uses a small set of rules to look for unclear actions, vague timing, competing requests, agreement wording, and strong product commitments in customer onboarding follow-ups. Tone cues looks for a few patterns of accusation (“you always ignore our requests”), judgment (“not a good look”), dismissal (“as I already told you”) and extra pressure (“no excuses”). Your chosen style changes the review question, not what gets flagged.</p><p>It can miss issues or flag wording that is right for your situation. It cannot verify facts, meeting context, or agreements, or predict a recipient’s response. Examples are fictional; real-world usefulness has not been validated.</p><p>Copying puts the current draft on your clipboard. Nothing is rewritten or sent automatically.</p></div></details></footer>
       </main>
+      {page !== 'checker' && <InfoPages page={page} headingRef={infoHeading} />}
     </div>
   );
 }

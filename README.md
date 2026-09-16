@@ -2,9 +2,13 @@
 
 **Decide what deserves another look.**
 
-A private portfolio MVP for B2B SaaS account managers and customer-success managers
-reviewing customer onboarding follow-up emails. Paste a draft or choose one of
-nine fictional scenarios, check exact wording, edit, recheck and copy.
+A portfolio prototype for B2B SaaS account managers and customer-success managers
+reviewing customer onboarding follow-ups. It helps you take a second look at
+unclear next steps, commitments and a limited set of tone cues before sending.
+
+Paste your draft or try a fictional sample. Each finding quotes the exact wording
+and asks a practical review question. Edit the text, or keep it with an option to
+undo. You decide what to change; nothing is rewritten or sent automatically.
 
 Clarity & commitments provides up to three review prompts for unclear ownership,
 vague timing, competing requests, agreement wording and strong product commitments.
@@ -12,7 +16,7 @@ The September 16 local update adds optional Tone cues: up to two findings for
 supported accusation, judgmental, dismissive and pressure wording. A chosen
 Direct, Collaborative or Warm preference changes the review question, not which
 wording is detected. Switching style updates checked prompts immediately and preserves
-review decisions. A compact picker runs a real sample review beside the invitation
+review decisions. A compact picker runs both checks on a real sample beside the invitation
 to paste. Warm surfaces, sans-serif headings and muted teal accents frame the
 white editor. Selection alone never replaces a draft. Edit this wording
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
@@ -22,8 +26,8 @@ the decision. The app does not verify facts/agreements, rewrite, score or send e
 
 The September 16 follow-on is implemented locally on
 `codex/communication-check-tone-review`; it has not been deployed. Fresh validation
-passes 404 engine tests (225 clarity + 179 tone), seven setup checks, the production
-build/typecheck/source guards, 10 fictional-scenario tests and 65 browser tests. See [progress](docs/PROGRESS.md)
+passes 451 engine tests, seven setup checks, the production
+build/typecheck/source guards, 10 fictional-scenario tests and 77 browser checks. See [progress](docs/PROGRESS.md)
 for the completed independent review and [local screenshots](docs/screenshots/README.md).
 
 The September 11 hosted version is a functional portfolio prototype. At delivery,
@@ -42,7 +46,20 @@ See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 [verification](docs/VERIFICATION.md) for the current evidence and its limits.
 [PR #1](https://github.com/keithtgrehan/communication-check/pull/1) merged on
 September 11. The follow-on branch starts at main `b22bcfd`; deployment, another
-merge and public launch are outside this implementation slice.
+merge and public launch remain separate from local implementation. Vercel
+deployment is planned after Keith reviews the latest local pages.
+
+## About and walkthrough
+
+The top-right navigation opens **About Communication Check** (`/#/about`) and
+**Video Demo** (`/#/video-demo`). About explains the audience, purpose, workflow
+and limits. Video Demo reserves a responsive space for the forthcoming YouTube
+walkthrough; no video or third-party player is loaded yet.
+
+Moving between these pages preserves the draft and review decisions in memory.
+Reloading clears them. Both pages link to this README. The repository is currently
+private, so visitors need repository access to follow that link. Page navigation
+uses URL fragments and needs no hosting rewrite or additional routing dependency.
 
 ## Run locally
 

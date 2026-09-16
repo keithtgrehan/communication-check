@@ -1,4 +1,22 @@
-# Finding contract — version 6 (16 September 2026)
+# Finding contract — version 7 (16 September 2026)
+
+## Approved About and Video Demo pages
+
+Add top-right links to /#/about and /#/video-demo, with /#/ returning to the
+checker. Keep draft, both review snapshots, style and Keep/Undo decisions only
+in memory while navigating. Browser history and direct links must work. Only the
+active page is visible or exposed to assistive technology; navigation moves focus
+to its heading and sets its document title. Initial checker focus remains intact.
+
+About summarizes the case study/README accurately and concisely. Video Demo shows
+an honest placeholder until the user supplies a YouTube URL, without an iframe,
+external thumbnail, network request or fabricated play control. Both pages link
+to the repository README and explain that private repository access is required.
+The user reviews locally before a separate Vercel deployment step. No detection,
+privacy-policy relaxation or deployment change is included.
+
+Ownership: interface agent owns App, styles and InfoPages; lead owns new browser
+checks, docs and integration; fresh independent review follows validation.
 
 ## Approved expert-review integration
 
