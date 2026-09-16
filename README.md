@@ -12,19 +12,19 @@ undo. You decide what to change; nothing is rewritten or sent automatically.
 
 Clarity & commitments provides up to three review prompts for unclear ownership,
 vague timing, competing requests, agreement wording and strong product commitments.
-The September 16 local update adds optional Tone cues: up to two findings for
+The September 16 update adds optional Tone cues: up to two findings for
 supported accusation, judgmental, dismissive and pressure wording. A chosen
 Direct, Collaborative or Warm preference changes the review question, not which
 wording is detected. Switching style updates checked prompts immediately and preserves
-review decisions. A compact picker runs both checks on a real sample beside the invitation
-to paste. Warm surfaces, sans-serif headings and muted teal accents frame the
+review decisions. Choose a fictional scenario, then use **Try a sample review**
+to run both checks beside the invitation to paste. Warm surfaces, sans-serif headings and muted teal accents frame the
 white editor. Selection alone never replaces a draft. Edit this wording
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
 ## Current evidence
 
-The September 16 follow-on is implemented locally on
+The September 16 follow-on is implemented on
 `codex/communication-check-tone-review`; it has not been deployed. Fresh validation
 passes 451 engine tests, seven setup checks, the production
 build/typecheck/source guards, 10 fictional-scenario tests and 77 browser checks. See [progress](docs/PROGRESS.md)
@@ -48,6 +48,11 @@ See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
 September 11. The follow-on branch starts at main `b22bcfd`; deployment, another
 merge and public launch remain separate from local implementation. Vercel
 deployment is planned after Keith reviews the latest local pages.
+
+For the next design discussion, use the self-contained
+[design exploration handoff](docs/DESIGN_EXPLORATION_HANDOFF.md). It records the
+current interface, preferences, behaviour to preserve and an exploration brief;
+it does not authorise a redesign or deployment.
 
 ## About and walkthrough
 

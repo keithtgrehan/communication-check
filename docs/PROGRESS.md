@@ -1,11 +1,12 @@
 # Communication Check progress
 
 Updated: 2026-09-16
-Milestone: About and Video Demo pages implemented and independently reviewed
+Milestone: Information pages reviewed; README and design-exploration handoff prepared for GitHub sync
 Status: 7 setup + 451 engine + 10 scenario + 77 browser checks pass locally; hosted preview unchanged
 
 ## September 16 information pages
 
+- Keith requested GitHub synchronization and a new-chat design exploration handoff. README now links to docs/DESIGN_EXPLORATION_HANDOFF.md; this is exploration guidance, not a redesign or deployment. Existing validated app code is unchanged in this documentation pass.
 - Keith requested About Communication Check and Video Demo in the top-right navigation. About concisely adapts the case-study PDF/README; Video Demo reserves a YouTube walkthrough space without loading a player. Both pages link to the private repository README with an access note.
 - Internal links, browser history and direct page entry work without hosting rewrites. Drafts, both reviews and Keep/Undo stay in memory across navigation; reload clears them. Inactive content is hidden from keyboard and assistive technology.
 - Full validation passes the counts above, including nine new navigation, layout, accessibility and privacy checks. Desktop/382/320px captures were visually inspected. Fresh independent Astra Extra High review found no actionable issues across layout, accessibility, history/focus, retained review state and offline/privacy checks.
@@ -92,10 +93,10 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 - The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
 - ChatGPT project instructions are saved. The original brief/progress Sources snapshot is dated 2026-09-10 16:28 UTC; the two new briefs and reference ZIP were added September 16. A September 16 baseline brief/progress packet was delivered to the existing companion task, whose acknowledgement turn completed. Task delivery is not Sources synchronization.
 - Refreshed 2026-09-11 14:27 UTC Render allowance: Hobby, 4/25 services, 8 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahdjffqj5pc73a9mhrg at 8a83afd. No billing, plan, domain or unrelated service changes.
-- Repository stays private; PR #1 is merged. This follow-on is local and unmerged. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
+- Repository stays private; PR #1 is merged. This follow-on remains unmerged; Keith authorized pushing the completed branch and README to GitHub. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
 
 ## Next action
 
-Keith can review About and Video Demo from the top-right links, then return to
-his draft. Supply the YouTube URL when ready. Vercel deployment follows his local
-review; publication and merge remain separate. The historical detection gate remains failed.
+Keith can attach docs/DESIGN_EXPLORATION_HANDOFF.md to a new design chat and review
+the local pages. Supply the YouTube URL when ready. Vercel deployment follows
+local review; publication and merge remain separate. The historical detection gate remains failed.
