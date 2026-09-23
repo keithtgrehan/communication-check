@@ -1,8 +1,25 @@
 # Communication Check progress
 
-Updated: 2026-09-16
-Milestone: Accepted live editorial version frozen; future work forked
-Status: 7 setup + 451 engine + 10 scenario + 81 browser checks pass locally; all 81 browser checks also pass on Vercel
+Updated: 2026-09-23
+Milestone: Verified CRM demonstration and authorized private-repository update
+Status: Real retrieval and new-note save verified through the unchanged live checker with manual copy/paste. Earlier portfolio package preserved. Recorded September 16 validation: 7 setup + 451 engine + 10 scenario + 81 local and 81 hosted browser checks.
+
+## September 23 local CRM demonstration
+
+- Keith authorized one fictional demo, waived further fictional-record confirmations, and entered the HubSpot credential directly into local n8n. n8n 2.40.5 is pinned, bound to 127.0.0.1:5678, with a signed-in-only save form. No app code, deployment, commit/push, schedule or sending changes.
+- Real source retrieval, checker finding/edit/recheck, exact 297-character clipboard paste, one new reviewed-note write, correct contact association and unchanged source verified. Saved wording matches after normalizing browser-form CRLF line endings. The static workflow review found no actionable blockers; it was separate from lead-run API verification.
+- Sanitized workflows, start/stop helpers, evidence and a three-minute walkthrough are in `/Users/keith/Documents/Codex/2026-09-23/communication-check-plan/demo/`. HubSpot and local n8n retain fictional content; the complete demo is not browser-only or a native checker integration. No technical blocker remains; spoken rehearsal/recording is pending.
+
+- Keith subsequently requested a Git repository update. Completed portfolio documentation/assets and a sanitized demo copy in `docs/demo/hubspot-n8n/` are included on the existing working branch. Credentials and unrelated local review outputs are excluded; no main merge, deployment or public publication is authorized.
+
+## September 17 portfolio packaging
+
+- Keith authorized the independently reviewed packaging plan, with no app changes, publishing or deployment. At the packaging milestone, branch/HEAD was codex/communication-check-next at b6942a8; starting dirty state was only pre-existing untracked output/.
+- Read-only GitHub checks: repository private; PR #2/#3 merged September 16; main b508df3 shares web tree b1c1ae8 with canonical, frozen 1463832 and deployed 38d744d. Prism alternative preserved. No Git mutations.
+- All six live asset hashes matched the September 16 manifest again. Bounded live desktop/390px checks passed: exact evidence, Keep/Undo, question-only Warm change, both edit invalidations, separate rechecks and 297-character current-text copy. Full hosted/privacy suite and build were not rerun.
+- Earlier September 17 assessment passed 461 Vitest tests, TypeScript no-emit and selected integrity checks; these are separate from the packaging smoke check.
+- Current links, case study, portfolio drafts, contribution statement, four-minute/75-second scripts and SE notes updated. Two September 16 editorial images reused with dates; a new live qualified clean-result capture added. Dated exports: output/portfolio-package-2026-09-17/; older outputs preserved.
+- Four-page PDF and all three images visually inspected; links, exact samples/copy lengths, source/export parity and unchanged-scope hashes pass. Fresh independent Astra Extra High package review approved with no actionable findings; page-one comprehension check passed. Keith confirmed his exact contribution statement on September 17; the PDF and package now reflect it. His spoken rehearsal remains pending. No recording, publication, outreach or new customer validation.
 
 ## Frozen live decision
 
@@ -30,7 +47,7 @@ Status: 7 setup + 451 engine + 10 scenario + 81 browser checks pass locally; all
 - Keith requested About Communication Check and Video Demo in the top-right navigation. About concisely adapts the case-study PDF/README; Video Demo reserves a YouTube walkthrough space without loading a player. Both pages link to the private repository README with an access note.
 - Internal links, browser history and direct page entry work without hosting rewrites. Drafts, both reviews and Keep/Undo stay in memory across navigation; reload clears them. Inactive content is hidden from keyboard and assistive technology.
 - Full validation passes the counts above, including nine new navigation, layout, accessibility and privacy checks. Desktop/382/320px captures were visually inspected. Fresh independent Astra Extra High review found no actionable issues across layout, accessibility, history/focus, retained review state and offline/privacy checks.
-- Keith tests locally next, then intends to deploy via Vercel. No deployment or visibility change occurred. YouTube URL is still needed before wiring the actual embed.
+- At this historical milestone, local user testing preceded deployment; the later accepted Vercel delivery is recorded above. No visibility change occurred. YouTube integration remains deferred.
 
 ## September 16 expert-feedback integration
 
@@ -113,10 +130,9 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 - The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
 - ChatGPT project instructions are saved. The original brief/progress Sources snapshot is dated 2026-09-10 16:28 UTC; the two new briefs and reference ZIP were added September 16. A September 16 baseline brief/progress packet was delivered to the existing companion task, whose acknowledgement turn completed. Task delivery is not Sources synchronization.
 - Refreshed 2026-09-11 14:27 UTC Render allowance: Hobby, 4/25 services, 8 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahdjffqj5pc73a9mhrg at 8a83afd. No billing, plan, domain or unrelated service changes.
-- Repository stays private; PR #1 is merged. This follow-on remains unmerged; Keith authorized pushing the completed branch and README to GitHub. No separate portfolio website, public product launch, paid commitment or external outreach has been published.
+- Repository stays private. PR #1/#2/#3 are merged, as rechecked September 17. No further commit/push/merge is included in this package. No separate portfolio website, paid commitment or external outreach was created by this pass.
 
 ## Next action
 
-Keith reviews the editorial candidate at http://127.0.0.1:4173/ and both information
-pages. YouTube integration awaits its URL. Push, Vercel deployment and merge await
-separate instructions; the historical detection gate remains failed.
+Keith rehearses the three-minute CRM walkthrough (or existing four-minute standalone demo) using his confirmed contribution statement. Publication or any frozen-app change requires
+separate instructions. The historical detection gate remains failed.

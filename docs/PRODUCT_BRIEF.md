@@ -31,7 +31,30 @@ web source as deployed `38d744d`. All subsequent work goes on the forked
 branch. No production replacement or main merge without explicit approval.
 This supersedes previous implementation-branch/presentation directions.
 
-## Approved follow-on — 16 September 2026
+## Current demo and repository update — 23 September 2026
+
+Keith authorized a minimal fictional HubSpot + local n8n demo with intentional
+manual copy/paste through the unchanged checker. Real retrieval and a new-note
+save passed. HubSpot and n8n retain the fictional payloads; the standalone app’s
+browser-memory contract is unchanged. Credentials remain outside Git.
+Keith then requested the repository update, authorizing commit/push of the
+completed portfolio documentation and sanitized demo package on
+`codex/communication-check-next`. No main merge, deployment, visibility change,
+email sending or public portfolio publication is part of this update.
+See [demo instructions](demo/hubspot-n8n/README.md) and PROGRESS.md.
+
+## Historical portfolio packaging — 17 September 2026
+
+Keith approved implementation of the portfolio packaging plan after independent
+senior-PM review. Update only the allowlisted documentation, selected screenshots
+and standalone exports around the frozen app. No app/source/config changes,
+deployment, publication, Git commit/push/merge, new research or outreach are part
+of this pass. Keith confirmed the contribution wording on 17 September 2026.
+The four-minute demo is prepared; his spoken rehearsal remains pending.
+Technical checks do not complete a human rehearsal. Older implementation directives below are historical records and
+do not reopen product work. Current evidence belongs in PROGRESS.md.
+
+## Historical approved follow-on — 16 September 2026
 
 **Approved Vercel delivery:** Keith accepted the editorial candidate and authorized
 site deployment, explicitly selecting Keith Grehan’s projects. The accepted build
@@ -159,7 +182,7 @@ Conservative checks cover:
 
 Suppress findings for clear owners, legitimate deadlines, ordered checklists, harmless conversational timing, negation and qualifications where appropriate. Length alone is not overload. Respect signatures and quoted history without shifting evidence offsets.
 
-Never invent dates, owners, promises, agreements, or facts. Ask whether the responsible person or team confirmed a commitment and its conditions or dependencies; do not claim it is false or unauthorised. No overall score or numeric confidence. An empty result says “No checks flagged this draft” and explains that facts and agreements were not verified.
+Never invent dates, owners, promises, agreements, or facts. Ask whether the responsible person or team confirmed a commitment and its conditions or dependencies; do not claim it is false or unauthorised. No overall score or numeric confidence. An empty clarity result says “No wording flagged by these checks” and explains that facts and agreements were not verified.
 
 ## Architecture and data handling
 
@@ -177,7 +200,7 @@ Prepare a protocol for three usability users and five repeat-use pilots while en
 
 - Repository: `keithtgrehan/communication-check` (private).
 - Local root: `/Users/keith/Documents/ChatGPT/communication-check`.
-- Implementation branch: `codex/communication-check-tone-review`; PR #1 merged September 11.
+- Current work branch: `codex/communication-check-next`; frozen baseline above. PR #1 merged September 11; PR #2 and #3 merged September 16 (GitHub rechecked September 17). The old tone-review branch preserves the Prism alternative.
 - Source baseline: Vibe Signal `000ba0685f961e253b0d34c0b02539ac897356e9`; retain source/licence attribution for actual reused components.
 - Keep Vibe Signal, RCR, Synapse Atlas and other projects separate and untouched.
 - Later connection to document only: RCR approved commitments → writer's draft → Communication Check. Do not build a shared platform.

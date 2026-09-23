@@ -1,85 +1,58 @@
 # Communication Check — Solutions Engineering conversation notes
 
-Prepared for Keith Grehan, 11 September 2026. This is a discussion aid, not a claim
-of customer validation, a HubSpot integration or independently writing every line.
-Use your own words and demonstrate only behaviours you can explain.
+Prepared 17 September 2026. Use the [frozen live app](https://communication-check.vercel.app/) and the standalone case study. These are presentation notes, not evidence of a customer implementation or seniority.
 
-## A 30-second introduction
+## Thirty-second introduction
 
-“I explored a small problem in customer onboarding: a follow-up email can leave
-ownership or commitments unclear. Communication Check lets a writer inspect a few
-prompts tied to exact wording, edit and copy the draft. I directed the product
-scope and an AI-assisted build. It runs locally in the browser, with no runtime
-AI model. It is a portfolio prototype; language coverage and customer usefulness
-are not proven.”
+“Communication Check explores a small customer-onboarding problem: a follow-up can leave ownership unclear or include a promise that needs confirmation. The writer reviews exact quotes and questions, keeps or edits the wording, then rechecks and copies. I directed the product scope and an AI-assisted build; agents implemented and ran documented checks. It is a working portfolio prototype with local rules, limited language coverage and unvalidated customer usefulness.”
 
-## Three decisions to demonstrate
+The first-person summary reflects the contribution statement Keith confirmed on 17 September 2026.
 
-1. **Exact evidence.** A finding quotes the original draft. Select in draft reveals
-   that same text, so the writer can inspect the basis of the prompt.
-2. **Writer control.** Editing clears stale findings. Recheck reviews the current
-   text; Copy copies that text. There is no rewrite or send action.
-3. **Browser-local processing.** React manages the interface; a deterministic
-   TypeScript function returns findings. Drafts and findings stay in page memory.
+## What to demonstrate
+
+1. **Evidence and control:** **Edit this wording** selects the exact quote. **Keep as written** records a decision; **Undo** reverses it without rewriting.
+2. **State correctness:** edits invalidate both lenses. Rechecks are separate; Copy uses the current draft. Style changes update tone questions while preserving valid findings and decisions.
+3. **Architecture:** React holds page-memory state; finite TypeScript rules produce exact quotes and questions. Vite builds static assets hosted on Vercel. There is no checking backend or runtime AI model.
 
 ## Questions and grounded answers
 
-**Who is it for?** B2B SaaS account managers and customer-success managers writing
-customer onboarding follow-ups. The proposed benefit is clearer next steps; it
-has not been measured with customers.
+**Who is it for, and what improved?** B2B SaaS AMs and CSMs reviewing onboarding follow-ups. The demonstration completes a review and a presenter-supplied revision. Clearer handoffs are a hypothesis; no saved-time, retention, revenue or risk-reduction result was measured.
 
-**How does the technical flow work?** The editor passes its unchanged string to
-checkDraft. The result contains up to three findings with exact start/end offsets,
-quoted text and review prompts. React displays these; the writer chooses what to
-change. The engine is not a remote service.
+**What was your contribution?** “I set the product direction, audience, scope and presentation priorities and directed the AI-assisted build. Codex/Astra agents implemented the application and ran the documented engineering checks.” Keith confirmed this wording on 17 September 2026. Add personal coding, testing or research only when you can substantiate it.
 
-**Why local rules?** They make this prototype inspectable and avoid transmitting
-drafts to a model provider. The tradeoff is limited coverage of unfamiliar wording
-and no understanding of what actually happened in a customer meeting.
+**How does it work?** The unchanged source string and original offsets support exact evidence selection. Clarity returns up to three prompts; Tone cues up to two. Limited patterns and suppressions recognize some qualifications, quotes and signatures. They do not understand the whole conversation. Direct/Collaborative/Warm adjusts question wording, not detection sensitivity.
 
-**What supports the privacy statement?** The production app has no remote model,
-analytics or draft persistence. Automated browser checks inspect network traffic,
-URLs, logs and storage with fictional canaries, and check reload clearing/offline
-behaviour. Static page requests still reach the host. Explicit Copy writes to the
-OS clipboard, which can follow the user's clipboard-sync settings.
+**Why local rules instead of an LLM?** They make this bounded prototype inspectable and avoid remote inference or model downloads. The cost is limited coverage and nuance. Local and cloud models were deferred, not benchmarked and rejected. A useful future comparison would need a specific user problem and separate approval.
 
-**Why do passing tests coexist with poor detection?** Functional and regression
-tests check known behaviours. They do not prove performance on new language.
-All ten reserved fictional evaluations missed the original detection target;
-the latest detected 4 of 12 selected issues. That small result is not an estimate
-of real-world accuracy. The failure history remains in the evaluation report.
+**What does “stays in the browser” mean?** Drafts and findings remain in page memory. The host receives static page requests. Explicit Copy writes to the OS clipboard, which may follow the user's clipboard-sync settings. Reload clears state; checks work offline after assets load. This is not an installed offline app or a promise about every browser extension/device.
 
-**What was your contribution?** “I chose the audience and workflow, set boundaries,
-prioritised a focused portfolio prototype, and directed the design refresh.
-Codex/Astra agents implemented the code and performed documented engineering
-checks.” Add personal testing or review only if you actually did it; distinguish
-it from automated and agent review.
+**What evidence supports privacy?** The 16 September 81-check hosted record includes fictional runtime network, URL, log, storage, reload and offline checks. The six live assets matched that manifest again on 17 September. This package's bounded smoke check did not rerun the complete privacy-canary suite.
 
-**How is this relevant to an SE conversation?** It provides a concrete way to
-explain a customer problem, demonstrate a workflow, discuss architecture and
-tradeoffs, and handle limitations honestly. It is supporting evidence for those
-skills, not proof of seniority or a completed customer implementation.
+**Why do passing tests coexist with weak detection?** Regression tests check known behaviors. All ten original reserved fictional evaluations missed the target; the latest detected 4/12 selected issues. Those small sets are not estimates of real-world accuracy. No flags is not approval of facts, agreements or recipient response.
 
-**Does it integrate with HubSpot?** No. It is a standalone browser-local prototype.
-Do not suggest it uses HubSpot APIs or that HubSpot endorses it.
+**What did the CSM review prove?** One senior CSM gave 21 overlapping workbook decisions and 12 comments on fictional example content. That informed bounded sample/question fixes. It was not an observed usability session, pilot or benchmark. The records still show 0/3 usability sessions and 0/5 repeat-use pilots.
 
-**What would you test next?** Whether target users find the prompts useful enough
-to return to the workflow, and whether a different detection approach would be
-justified. No sessions or pilots have been completed. This refresh does not start
-new research or recruitment.
+**What is the SE relevance?** It gives me a concrete customer problem to explain, a workflow to demonstrate and architectural tradeoffs and objections to discuss honestly. It does not prove enterprise deployment, integration expertise or a job level.
 
-## Walkthrough preparation
+**What is the RevOps relevance?** Thinking about handoff quality, owners and commitment dependencies. The September 23 fictional demo additionally shows real HubSpot note retrieval/writeback through local n8n, with manual copy/paste into the checker. It does not demonstrate native app integration, customer deployment, pipeline analytics or a production revenue system. No vendor endorsement is implied.
 
-Use Promises to confirm → Try a sample review → Edit this wording → edit the
-guarantee → Recheck → Copy. Then run Clear next steps and explain its caveat. Practise with the
-existing demo script after the final UI is verified. A recording is optional.
+**Was everything built from scratch?** No such claim. Agents wrote the product implementation. Six Vibe Signal source files remain inactive references; v0 and Replit/Canvas references informed presentation without importing their generated scaffold or analysis handler. React, React DOM and Scheduler retain their notices. See the reuse ledger for details.
 
-The 11 September refresh passes 225 engine tests, seven setup checks and 28 local
-plus 28 hosted browser checks. Fresh independent review found no material issues;
-six deployed assets match the reviewed build. These are engineering results,
-not evidence of broad language accuracy or customer usefulness.
+**What about CRM privacy?** The standalone checker retains drafts in page memory; the separate n8n/HubSpot demo stores fictional content in CRM notes and local execution history. The complete workflow is not browser-only. See the [three-minute CRM walkthrough](demo/hubspot-n8n/README.md).
 
-## Publication boundary
+**What next?** Learn whether real AMs/CSMs find the review step useful enough to return to it. Do not claim sessions, pilots or comparative model testing have happened.
 
-Featured copy and conversation notes are prepared assets. No LinkedIn post,
-video upload, customer outreach or recruiter message has been sent by this session.
+## Evidence to keep available, not recite
+
+- **16 September record:** 451 engine + 10 scenario tests, seven setup checks, build/typecheck/source guards, 81 local and 81 hosted Chromium checks.
+- **Earlier 17 September assessment:** 461 Vitest tests, no-emit TypeScript and selected integrity rechecks.
+- **17 September packaging:** six live hashes, desktop/390px flow, Keep/Undo, exact selection, style change, invalidation, separate rechecks and current-text copy.
+- All ten original reserved evaluations failed; V10 4/12. One expert content review; no completed usability sessions or pilots.
+
+These dates and scopes matter. The package is not a fresh full test-suite or production-reliability claim.
+
+## Preparation and status
+
+Use the four-minute script for the full story and the 75-second version for a short introduction. Rehearse the no-flags caveat and the LLM objection. The technical flow has been checked; Keith's contribution is confirmed; his spoken rehearsal remains pending.
+
+Materials are prepared locally. No publishing, deployment, Git commit/push/merge, recording, upload or outreach occurred in this packaging pass.
