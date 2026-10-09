@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { checkDraft } from './engine';
 import { checkTone, tonePromptFor } from './engine/tone';
 import { MAX_DRAFT_LENGTH, findingIdentity, type ReviewFinding, type ReviewLens, type ReviewSnapshot, type ToneIntent, type ToneRuleId } from './engine/types';
-import { DEMO_DRAFTS } from './demos';
+import { PORTFOLIO_DEMO_DRAFTS as DEMO_DRAFTS, PRIMARY_DEMO_ID } from './demos';
 import { InfoPages, type InfoPage } from './InfoPages';
 import './styles.css';
 
@@ -42,7 +42,7 @@ export default function App() {
     return () => window.removeEventListener('hashchange', navigate);
   }, []);
   useLayoutEffect(() => {
-    document.title = page === 'about' ? 'About Communication Check' : page === 'video-demo' ? 'Video Demo · Communication Check' : 'Communication Check — Review your customer follow-up';
+    document.title = page === 'about' ? 'About Communication Check' : page === 'video-demo' ? 'Video Demo · Communication Check' : 'Communication Check | Clearer customer follow-ups';
     // Preserve the normal first-visit focus. Route changes, including browser
     // back/forward, announce the new page without unmounting the review desk.
     if (previousPage.current === page) return;
@@ -52,7 +52,7 @@ export default function App() {
   }, [page]);
   const [draft, setDraft] = useState('');
   const [sampleId, setSampleId] = useState<string | null>(null);
-  const [scenarioId, setScenarioId] = useState('promises-to-confirm');
+  const [scenarioId, setScenarioId] = useState(PRIMARY_DEMO_ID);
   const [lens, setLens] = useState<ReviewLens>('clarity');
   const [intent, setIntent] = useState<ToneIntent>('collaborative');
   const [snapshots, setSnapshots] = useState(emptySnapshots);
@@ -95,7 +95,7 @@ export default function App() {
   const result = snapshot?.result;
   const reviewedCount = snapshot?.reviewedIds.length ?? 0;
   const selectedSample = DEMO_DRAFTS.find((sample) => sample.id === sampleId);
-  const checkLabel = lens === 'tone' ? (snapshot || needsRecheck.tone ? 'Recheck tone cues' : 'Check tone cues') : (snapshot || needsRecheck.clarity ? 'Recheck draft' : 'Check draft');
+  const checkLabel = lens === 'tone' ? (snapshot || needsRecheck.tone ? 'Recheck tone cues' : 'Check tone cues') : (snapshot || needsRecheck.clarity ? 'Recheck draft' : 'Check my draft');
 
   function isCurrent(current: ReviewSnapshot | null) {
     return current !== null && current.textRevision === textRevision.current;
@@ -167,6 +167,9 @@ export default function App() {
   function reviewSample() {
     const sample = DEMO_DRAFTS.find(item => item.id === scenarioId);
     if (!sample) return;
+    // Only untouched examples can be replaced without asking. User-authored or
+    // edited text, including whitespace edits, is preserved when cancelled.
+    if (draftRef.current.trim() && !selectedSample && !window.confirm('Replace your current draft with this fictional example? Your current wording will be cleared.')) return;
     replaceDraft(sample.text, sample.id);
     const revision = textRevision.current;
     const next = emptySnapshots();
@@ -293,20 +296,20 @@ export default function App() {
       <header className="site-header">
         <a className="brand" href="#/" aria-current={page === 'checker' ? 'page' : undefined}><span className="brand-mark"><Mark /></span><span>Communication Check</span></a>
         <nav className="site-nav" aria-label="Main navigation">
-          <a href="#/about" aria-current={page === 'about' ? 'page' : undefined}>About Communication Check</a>
+          <a href="#/about" aria-current={page === 'about' ? 'page' : undefined} aria-label="About Communication Check">About this project</a>
           <a href="#/video-demo" aria-current={page === 'video-demo' ? 'page' : undefined}>Video Demo</a>
         </nav>
       </header>
       <main hidden={page !== 'checker'}>
         <section className="intro" aria-labelledby="page-title">
-          <div><h1 id="page-title" ref={checkerHeading} tabIndex={-1}>Review your customer follow-up.</h1><p className="intro-description">A second look at next steps, commitments and wording. You decide what to change.</p></div>
+          <div><p className="eyebrow">FOR SALES &amp; PARTNER TEAMS</p><h1 id="page-title" ref={checkerHeading} tabIndex={-1}>Send a clearer customer follow-up.</h1><p className="intro-description">Check next steps, commitments and wording before you hit send. You decide what to change.</p></div>
         </section>
         <section className="start-options" aria-label="Start a review">
-          <div className="sample-picker"><label htmlFor="sample-scenario">Fictional example</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.label}</option>)}</select></div>
-          <button className="sample-button" onClick={reviewSample} aria-describedby="sample-note">Try a sample review</button>
-          <p id="sample-note">Replaces your draft with the example and runs both checks.</p>
+          <div className="sample-picker"><label htmlFor="sample-scenario">Fictional example</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.id === 'partner-co-selling' ? 'Partner handoff' : sample.id === 'discovery-follow-up' ? 'Discovery call' : sample.label}</option>)}</select></div>
+          <button className="sample-button" onClick={reviewSample} aria-describedby="sample-note">Try an example <span aria-hidden="true">↗</span></button>
+          <p id="sample-note">Runs both checks. We’ll ask before replacing your own draft.</p>
         </section>
-        <p className="local-note">Drafts and findings stay in this page. Reloading clears them.</p>
+        <p className="local-note"><span aria-hidden="true">◌</span> No sign-in. Drafts stay in this page; reloading clears them.</p>
         <div className="lens-tabs" role="tablist" aria-label="Choose a review">
           {LENSES.map(option => <button key={option.id} id={`tab-${option.id}`} role="tab" className="lens-tab" ref={element => { if (element) lensButtons.current.set(option.id, element); else lensButtons.current.delete(option.id); }} aria-selected={lens === option.id} aria-controls="review-panel" tabIndex={lens === option.id ? 0 : -1} onClick={() => switchLens(option.id)} onKeyDown={event => {
             if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
@@ -319,9 +322,9 @@ export default function App() {
         {lens === 'tone' && <p className="tone-scope">Looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. It won’t catch every tone issue.</p>}
         <div className="workspace">
           <section className="editor-panel" aria-labelledby="draft-heading">
-            <div className="panel-heading"><div><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2></div><button className="text-button paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Start with your draft <span aria-hidden="true">↘</span></button></div>
+            <div className="panel-heading"><div><p className="step-label">01 · YOUR MESSAGE</p><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2></div><button className="text-button paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Start with your draft <span aria-hidden="true">↘</span></button></div>
             <p className={selectedSample ? 'editor-description' : 'editor-description sr-only'} id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste or write your customer follow-up here.'}</p>
-            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong} aria-describedby={!hasText ? 'check-help' : undefined}>{checkLabel}</button><button className="secondary-button" aria-label="Copy draft" onClick={() => void copyDraft()} disabled={!hasText}>Copy draft</button><button className="text-button reset-button" aria-label="Clear draft" onClick={resetDraft} disabled={!draft}>Clear draft</button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
+            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong} aria-describedby={!hasText ? 'check-help' : undefined}>{checkLabel}</button><button className="secondary-button" aria-label="Copy draft" onClick={() => void copyDraft()} disabled={!hasText}>Copy draft</button><button className="text-button reset-button" aria-label="Clear draft" onClick={resetDraft} disabled={!draft}>Clear<span className="clear-word"> draft</span></button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
             {!hasText && <p id="check-help" className="check-help sr-only">Add a draft to begin.</p>}
             <div className={`editor-frame ${tooLong ? 'has-error' : ''}`}>
               <textarea id="draft" ref={editor} value={draft} onChange={event => replaceDraft(event.target.value)} placeholder="Paste your customer follow-up here…" aria-describedby={`draft-description draft-count draft-count-help${tooLong ? ' draft-limit' : ''}${manualCopy ? ' copy-help' : ''}`} aria-invalid={tooLong} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} name="follow-up-draft" />
@@ -332,10 +335,10 @@ export default function App() {
 
           </section>
           <section id="review-panel" role="tabpanel" aria-labelledby={`tab-${lens}`} className={`results-panel ${result ? 'has-results' : ''}`}>
-            <div className="panel-heading"><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Your review</h2></div>
+            <div className="panel-heading"><div><p className="step-label">02 · YOUR DECISIONS</p><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Your review</h2></div><span className="review-badge">{result ? `${result.findings.length} to consider` : 'Ready when you are'}</span></div>
             {lens === 'tone' && <fieldset className="intent-picker"><legend>How should the review questions sound?</legend><div className="intent-options">{INTENTS.map(option => <label key={option} className={`intent-option ${intent === option ? 'selected' : ''}`}><input type="radio" name="tone-intent" value={option} checked={intent === option} onChange={() => chooseIntent(option)} /><span>{option[0].toUpperCase() + option.slice(1)}</span></label>)}</div><p>Changes the questions you see, not your draft or which phrases are flagged.</p></fieldset>}
             {result && checkErrors[lens === 'clarity' ? 'tone' : 'clarity'] && <p className="inline-error" role="alert">The {lensName(lens === 'clarity' ? 'tone' : 'clarity')} check couldn’t finish. Open that tab to try again.</p>}
-            {!result ? <div className="result-empty"><h3>{checkErrors[lens] ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Your draft has changed.' : lens === 'tone' ? 'Take a look at the wording.' : hasText ? 'Ready for a second look?' : 'Your review will appear here.'}</h3><p>{checkErrors[lens] ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Earlier findings have been cleared. Check the current wording when you’re ready.' : lens === 'tone' ? 'Select Check tone cues to look for a few phrases worth reconsidering.' : hasText ? 'Select Check draft to review next steps and commitments.' : 'Paste a draft and select Check draft, or try a fictional example.'}</p></div>
+            {!result ? <div className="result-empty"><span className="empty-mark" aria-hidden="true"><Mark /></span><h3>{checkErrors[lens] ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Your draft has changed.' : lens === 'tone' ? 'Take a look at the wording.' : hasText ? 'Ready for a second look?' : 'Your review will appear here.'}</h3><p>{checkErrors[lens] ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Earlier findings have been cleared. Check the current wording when you’re ready.' : lens === 'tone' ? 'Select Check tone cues to look for a few phrases worth reconsidering.' : hasText ? 'Select Check my draft to review next steps and commitments.' : 'Paste a draft and select Check my draft, or try a fictional example.'}</p></div>
               : result.findings.length === 0 ? <div className="result-empty result-complete"><h3>{lens === 'tone' ? 'No tone cues flagged' : 'No wording flagged by these checks'}</h3><p>{lens === 'tone' ? 'These checks cover a few wording patterns. They can miss nuance and can’t predict how your message will be received. Give it your own final read.' : 'The checks may still miss something. Facts and agreements haven’t been verified, so give the draft your own final read.'}</p></div>
               : <>
                 <div className="review-progress"><div className="progress-segments" aria-hidden="true">{result.findings.map(finding => <span key={finding.id} className={snapshot!.reviewedIds.includes(findingIdentity(finding)) ? 'is-reviewed' : ''} />)}</div><div className="progress-labels"><span className="findings-count">{reviewedCount} of {result.findings.length} reviewed</span></div></div>
@@ -404,7 +407,7 @@ export default function App() {
           </section>
         </div>
         <p className={status.startsWith('Current draft copied') || status.startsWith('Clipboard') ? 'live-status' : 'live-status sr-only'} role="status" aria-live="polite" aria-atomic="true">{status}</p>
-        <footer className="page-footer"><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check looks for a limited set of wording patterns in customer onboarding follow-ups: unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments.</p><p>Tone cues looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. Choosing Direct, Collaborative or Warm changes the review questions, not which phrases are flagged.</p><p>The checks can miss issues or flag wording that works in your situation. They don’t verify facts, meeting context or agreements, and they can’t predict a customer’s response. No flags does not mean the draft is approved.</p><p>Your draft and findings stay in page memory. Reloading clears them. Copy draft puts your current wording on your clipboard; nothing is rewritten or sent automatically.</p><p>The examples are fictional. This is a portfolio prototype, and its usefulness in day-to-day work has not yet been validated.</p></div></details></footer>
+        <footer className="page-footer"><div className="how-it-works"><h2>How it works</h2><p>Local, rule-based checks point to exact wording. Review the question, edit it yourself or keep it as written.</p><span>You stay in control. Nothing is rewritten or sent.</span></div><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check looks for a limited set of wording patterns in customer follow-ups: unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments.</p><p>Tone cues looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. Choosing Direct, Collaborative or Warm changes the review questions, not which phrases are flagged.</p><p>The checks can miss issues or flag wording that works in your situation. They don’t verify facts, meeting context or agreements, and they can’t predict a customer’s response. No flags does not mean the draft is approved.</p><p>Your draft and findings stay in page memory. Reloading clears them. Copy draft puts your current wording on your clipboard; nothing is rewritten or sent automatically.</p><p>The examples are fictional. This is a portfolio prototype, and its usefulness in day-to-day work has not yet been validated.</p></div></details></footer>
       </main>
       {page !== 'checker' && <InfoPages page={page} headingRef={infoHeading} />}
     </div>

@@ -2,19 +2,25 @@
 
 Prepared 17 September 2026. Unpublished copy. Keith confirmed the contribution wording on 17 September 2026.
 
-## Title
+## Current Featured copy — prepared 9 October 2026
 
-Communication Check | Customer follow-up review prototype
+Title: **Communication Check | Clearer customer follow-ups**
 
-## Card / LinkedIn Featured description
+A practical prototype for reviewing customer follow-ups before sending them. It flags some unclear next steps, ambiguous commitments and wording that may need attention, helping salespeople decide what to change.
 
-Communication Check is a working portfolio prototype for B2B SaaS account managers and customer-success managers reviewing onboarding follow-ups. It ties limited clarity and tone prompts to exact wording, lets the writer keep or edit, then recheck and copy. Checking runs locally in the browser with no runtime AI model. Language coverage is limited; customer usefulness and business impact have not been validated.
+I set the product direction, audience, scope and presentation priorities and directed the AI-assisted build, drawing on my experience in SaaS sales and partner coaching. Codex/Astra agents implemented the application and ran the documented engineering checks.
 
-## Destination
+The checks are rule-based, and the writer decides what to change. Open the demo and try a fictional customer follow-up.
 
-[Try Communication Check](https://communication-check.vercel.app/)
+## Destination and verification
 
-Use the existing frozen live app as the primary destination, accompanied by the standalone case-study PDF. The source repository is private; do not use it as a recruiter's primary link.
+[Communication Check](https://communication-check.vercel.app/) remains the frozen public destination. The October candidate is a separately reviewed preview until Keith approves production replacement. Do not describe the new design or share card as live before that release.
+
+On October 9 LinkedIn Post Inspector reported the current production URL blocked by robots.txt. The candidate allows LinkedInBot and includes initial-HTML Open Graph tags plus a 1200 × 630 image of the real interface. Check PROGRESS.md for the completed verification and release status.
+
+After an authorised production release: open [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/), enter the public URL above, click Inspect and confirm the intended title, description and image. Then in LinkedIn Featured, add the same link, verify the preview and enabled Save action, save only if desired, and open the Featured item to confirm its destination. Inspector success alone does not prove Featured works.
+
+The source repository is private; do not use it as a recruiter's primary link. Nothing has been posted to LinkedIn by this work.
 
 ## LinkedIn draft — not posted
 

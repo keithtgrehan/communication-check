@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-09",
+  "origin": "https://communication-check-d5fyjbmk7-keith-grehans-projects.vercel.app",
+  "authenticated": true,
+  "passed": [
+    "example through real check",
+    "exact selected wording",
+    "keep/undo",
+    "editing invalidation",
+    "offline recheck",
+    "current clipboard",
+    "no canary in requests",
+    "no browser errors",
+    "empty storage/cookies/caches/workers",
+    "reload clears text",
+    "390px overflow and visible evidence action"
+  ],
+  "note": "Authenticated preview smoke, separate from the full 85 local browser tests. Not LinkedIn or unauthenticated public verification."
+}

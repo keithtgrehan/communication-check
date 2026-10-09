@@ -2,6 +2,23 @@
 
 **Check your customer follow-up before you send it.**
 
+## Current authorised milestone — 9 October 2026
+
+Keith requested implementation of the LinkedIn preview and visual redesign handover.
+Priorities: diagnose LinkedIn fetching with Post Inspector; serve initial-HTML share
+metadata and a real-interface preview image; substantially improve the opening view,
+commercial examples and desktop/mobile review flow. The audience now includes SaaS
+sales and partner-facing teams, with recruiters viewing the portfolio demonstration.
+Use three fictional discovery/partner/renewal scenarios and a clear comparison through
+the existing engines. Preserve all detection, review-state and memory-only boundaries.
+No new evaluation rounds, accounts, model service or integrations. Keep the approved
+contribution statement and avoid claims of adoption, measured impact or reliability.
+Work on `codex/communication-check-next`; a separate existing no-new-spend preview
+is allowed. The frozen production URL still requires a specific release instruction
+before replacement. No LinkedIn profile edits, outreach, domain or DNS changes.
+Finish with tested preview, screenshots, accurate LinkedIn verification status and
+ready-to-use Featured copy. Optional video/research/case-study work is not a gate.
+
 ## Purpose and priorities
 
 Build a credible portfolio product first, test usefulness with real users second, and explore low-maintenance revenue only after repeat usefulness. The first audience is B2B SaaS account managers and customer-success managers writing onboarding follow-up emails.

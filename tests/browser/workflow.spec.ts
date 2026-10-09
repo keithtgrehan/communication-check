@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { checkDraft } from '../../web/src/engine';
-import { DEMO_DRAFTS } from '../../web/src/demos';
+import { PORTFOLIO_DEMO_DRAFTS as DEMO_DRAFTS } from '../../web/src/demos';
 
 test('all clarity demos use real checks with exact evidence, including the clean result', async ({ page }) => {
   await page.goto('/');
   for (const demo of DEMO_DRAFTS.filter(sample => sample.preferredLens === 'clarity')) {
     await page.getByRole('combobox', { name: 'Fictional example' }).selectOption(demo.id);
-    await page.getByRole('button', { name: 'Try a sample review' }).click();
+    await page.getByRole('button', { name: 'Try an example' }).click();
     await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveValue(demo.text);
     const expected = checkDraft(demo.text).findings;
     await expect(page.locator('.finding-card')).toHaveCount(expected.length);
@@ -28,7 +28,7 @@ test('editing clears results; evidence selection, keep and recheck keep original
   const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
   const draft = 'Hi Zoë 👋,\n\nWe guarantee the custom integration will be ready by Friday.\n\nBest,\nAlex';
   await editor.fill(draft);
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   const quote = await page.locator('.finding-card blockquote').innerText();
   await page.getByRole('button', { name: 'Edit this wording' }).click();
@@ -51,7 +51,7 @@ test('copy uses current edits and reset clears the page', async ({ page, context
   await page.goto('/');
   const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
   await editor.fill('Original fictional draft.');
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
   await editor.fill('Edited current draft — Zoë 👋.');
   await page.getByRole('button', { name: 'Copy draft', exact: true }).click();
   await expect(page.getByRole('status')).toHaveText('Current draft copied.');
@@ -60,7 +60,7 @@ test('copy uses current edits and reset clears the page', async ({ page, context
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('Edited current draft — Zoë 👋.');
   await page.getByRole('button', { name: 'Clear draft' }).click();
   await expect(editor).toHaveValue('');
-  await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
   await expect(page.getByRole('button', { name: 'Copy draft', exact: true })).toBeDisabled();
 });
 
@@ -85,9 +85,9 @@ test('oversize and empty drafts are handled without truncation', async ({ page }
   await expect(editor).toHaveValue(long);
   await expect(editor).toHaveAttribute('aria-invalid', 'true');
   await expect(page.getByRole('alert')).toContainText('Your full draft is still here');
-  await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
   await editor.fill(' \n\t');
-  await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
 });
 
 test('emoji length help matches the preserved input-counting boundary', async ({ page }) => {
@@ -97,10 +97,10 @@ test('emoji length help matches the preserved input-counting boundary', async ({
   await editor.fill(atLimit);
   await expect(editor).toHaveValue(atLimit);
   await expect(page.locator('#draft-count')).toContainText('12,000 / 12,000');
-  await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeEnabled();
   await editor.fill(atLimit + 'x');
   await expect(editor).toHaveValue(atLimit + 'x');
-  await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
   await expect(page.getByRole('alert')).toContainText('Remove 1 character');
   await expect(page.getByText('Some characters, including emoji, count as more than one.', { exact: true })).toBeVisible();
 });
@@ -124,7 +124,7 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   const initialRequests = requests.length;
   const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
   await editor.fill(`${canary}\nWe guarantee the custom integration will be ready by Friday.`);
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
   await context.setOffline(true);
   await editor.fill(`${canary}\nPlease send your administrator names by Tuesday.`);
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
@@ -161,7 +161,7 @@ for (const width of [320, 390, 999, 1001, 1440]) {
   test(`keyboard flow, layout and accessibility at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto('/');
-    const sample = page.getByRole('button', { name: 'Try a sample review' });
+    const sample = page.getByRole('button', { name: 'Try an example' });
     await sample.focus();
     await page.keyboard.press('Enter');
     // Toolbar precedes the editor visually and in keyboard order.
@@ -198,7 +198,7 @@ test('desktop layout remains usable at 200 percent content zoom', async ({ page 
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto('/');
   await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
-  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('button', { name: 'Try an example' }).click();
   await page.getByRole('button', { name: 'Recheck draft', exact: true }).click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

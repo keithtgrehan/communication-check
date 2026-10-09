@@ -1,4 +1,23 @@
-# Finding contract — version 8 (16 September 2026)
+# Finding contract — version 9 (9 October 2026)
+
+## October 9 LinkedIn and commercial-example redesign
+
+The current request authorises a visual/share-preview improvement to the existing
+prototype. Detection rules, exact spans, caps, qualified empty results, Keep/Undo,
+lens snapshots and text-mutation invalidation remain unchanged. Historical nine
+samples are retained as regression examples; four primary portfolio samples cover
+partner co-selling, discovery, renewal and a clear comparison. All run real checks.
+An explicit sample action confirms replacement before discarding user-edited text.
+The heading and actions use the handover's clearer customer-follow-up framing.
+
+Ownership for this pass: interface worker owns App.tsx, InfoPages.tsx, styles.css
+and existing browser suites; example worker owns demos.ts/demos.test.ts. Lead owns
+metadata, robots, social image, hosting configuration, new share tests, docs and Git.
+Fresh independent review follows integration. A separate preview is allowed within
+the verified existing free hosting plan; production replacement remains gated.
+LinkedInBot may fetch static pages/assets while generic crawling remains disallowed;
+noindex and runtime CSP/privacy protections remain. Metadata fixes alone do not
+establish a working LinkedIn Featured flow.
 
 ## Approved editorial design and copy refinement
 

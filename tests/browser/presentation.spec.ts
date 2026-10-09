@@ -15,7 +15,7 @@ for (const width of [320, 390, 999, 1001, 1440]) {
     await page.goto('/');
     const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
     await editor.fill(`We guarantee the custom integration ${'for the fictional customer workspace '.repeat(8)}${'Reference'.repeat(24)} will be ready by Friday.`);
-    const check = page.getByRole('button', { name: 'Check draft', exact: true });
+    const check = page.getByRole('button', { name: 'Check my draft', exact: true });
     if (width === 1440) {
       // Filling an offscreen editor may scroll it into view. Measure the actual
       // starting viewport rather than accepting that automatic scroll.
@@ -67,10 +67,10 @@ for (const width of [320, 1001]) {
     }));
     await page.goto('/');
     const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
-    await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
+    await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
     await expectAccessibleState(page, 'Initial and disabled');
 
-    const example = page.getByRole('button', { name: 'Try a sample review' });
+    const example = page.getByRole('button', { name: 'Try an example' });
     await example.click();
     await expectAccessibleState(page, 'Selected example');
     await page.getByRole('button', { name: 'Keep as written' }).click();
@@ -114,11 +114,13 @@ for (const width of [320, 390, 1024, 1440]) {
       const fg = composite(rgb(style.color), bg);
       const luminance = (colour: number[]) => colour.map(channel => channel / 255).map(channel => channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4).reduce((sum, channel, i) => sum + channel * [.2126, .7152, .0722][i], 0);
       const ratio = (a: number[], b: number[]) => (Math.max(luminance(a), luminance(b)) + .05) / (Math.min(luminance(a), luminance(b)) + .05);
-      return { text: ratio(fg, bg), border: ratio(rgb(style.borderTopColor), bg), outline: ratio(rgb(style.outlineColor), outside), outlineWidth: parseFloat(style.outlineWidth), outlineStyle: style.outlineStyle };
+      return { text: ratio(fg, bg), border: ratio(rgb(style.borderTopColor), bg), boundary: ratio(bg, outside), outline: ratio(rgb(style.outlineColor), outside), outlineWidth: parseFloat(style.outlineWidth), outlineStyle: style.outlineStyle };
     });
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-frame')).border).toBeGreaterThanOrEqual(3);
-    expect((await contrast('.sample-button')).border).toBeGreaterThanOrEqual(3);
+    // The filled example button is distinguished by its surface against the surrounding strip.
+    expect((await contrast('.sample-button')).boundary).toBeGreaterThanOrEqual(3);
+    expect((await contrast('.sample-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-actions .secondary-button:not(.reset-button)')).text).toBeGreaterThanOrEqual(4.5);
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests. Stop making excuses and send the workspace list.');
     const primary = page.locator('.primary-button');

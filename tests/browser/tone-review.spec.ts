@@ -39,7 +39,7 @@ test('lens switching and identical rechecks preserve independent keep decisions 
   await page.goto('/');
   const editor = editorFor(page);
   await editor.fill(mixedDraft);
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
   const clarity = checkDraft(mixedDraft).findings;
   expect(clarity).toHaveLength(1);
   await page.getByRole('button', { name: 'Edit this wording' }).click();
@@ -72,7 +72,7 @@ test('style changes preserve multi-finding identities, open row and decisions ac
   await page.goto('/');
   const editor = editorFor(page);
   await editor.fill(draft);
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await toneTab(page).click();
   await runTone(page);
@@ -154,7 +154,7 @@ test('typing, cut, undo, example loads and clear invalidate both lenses and deci
   const prepare = async () => {
     await editor.fill(mixedDraft);
     await clarityTab(page).click();
-    await page.getByRole('button', { name: /^(Check|Recheck) draft$/ }).click();
+    await page.getByRole('button', { name: /^(Check my draft|Recheck draft)$/ }).click();
     await page.getByRole('button', { name: 'Keep as written' }).click();
     await toneTab(page).click();
     await runTone(page);
@@ -183,7 +183,9 @@ test('typing, cut, undo, example loads and clear invalidate both lenses and deci
   await expect(editor).not.toHaveValue('');
   await expectInvalid();
   await prepare();
-  const example = page.getByRole('button', { name: 'Try a sample review' });
+  const example = page.getByRole('button', { name: 'Try an example' });
+  await page.getByRole('combobox').selectOption('renewal-discussion');
+  page.once('dialog', dialog => dialog.accept());
   await example.click();
   await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
   await toneTab(page).click();
@@ -294,10 +296,11 @@ test('late clipboard refusal cannot select a replacement draft', async ({ page }
 test('tone sample review explains coverage and matches ordinary checked input', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
-  const example = page.getByRole('button', { name: 'Try a sample review' });
-  await page.getByRole('combobox', { name: 'Fictional example' }).selectOption('tone-to-reconsider');
+  const example = page.getByRole('button', { name: 'Try an example' });
+  await page.getByRole('combobox', { name: 'Fictional example' }).selectOption('renewal-discussion');
   const editor = editorFor(page);
   await example.click();
+  await toneTab(page).click();
   await expect(toneTab(page)).toHaveAttribute('aria-selected', 'true');
   await expect(page.locator('.tone-scope')).toBeVisible();
   await expect(page.locator('.tone-scope')).toContainText('blaming, dismissive, judgmental or pressuring');
@@ -315,7 +318,7 @@ test('tone sample review explains coverage and matches ordinary checked input', 
   await expect(page.getByRole('button', { name: 'Recheck tone cues', exact: true })).toBeInViewport({ ratio: 1 });
   const text = await editor.inputValue();
   await expect(page.locator('.finding-card')).toHaveCount(1);
-  await expect(page.locator('blockquote:visible')).toHaveText('This is not a good look, we are still waiting for your workspace list.');
+  await expect(page.locator('blockquote:visible')).toHaveText('As I already told you, please confirm the renewal decision.');
   const exampleFinding = await page.locator('.finding-card').innerText();
 
   await page.reload();
@@ -327,10 +330,11 @@ test('tone sample review explains coverage and matches ordinary checked input', 
   await expect(page.locator('.finding-card')).toHaveCount(1);
   await expect(page.locator('.finding-card')).toHaveText(exampleFinding, { useInnerText: true });
   await page.getByRole('button', { name: 'Edit this wording' }).click();
-  const quote = 'This is not a good look, we are still waiting for your workspace list.';
+  const quote = 'As I already told you, please confirm the renewal decision.';
   expect(await editor.evaluate((field: HTMLTextAreaElement) => ({ start: field.selectionStart, end: field.selectionEnd, selected: field.value.slice(field.selectionStart, field.selectionEnd) }))).toEqual({ start: text.indexOf(quote), end: text.indexOf(quote) + quote.length, selected: quote });
 
-  await page.getByRole('combobox', { name: 'Fictional example' }).selectOption('tone-to-reconsider');
+  await page.getByRole('combobox', { name: 'Fictional example' }).selectOption('renewal-discussion');
+  page.once('dialog', dialog => dialog.accept());
   await example.click();
   await expect(page.locator('.finding-card')).toHaveCount(1);
   await editor.press('End');

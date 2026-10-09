@@ -154,3 +154,72 @@ Best,
 Casey`,
   },
 ];
+
+export const PRIMARY_DEMO_ID = 'partner-co-selling';
+
+// Curated fictional portfolio examples use the same checks as a pasted draft.
+// Keep the earlier examples above unchanged for legacy and regression coverage.
+export const PORTFOLIO_DEMO_DRAFTS: DemoDraft[] = [
+  {
+    id: PRIMARY_DEMO_ID,
+    preferredLens: 'clarity',
+    label: 'Partner co-selling handoff',
+    description: 'A vendor, partner and customer leave the next step unassigned.',
+    text: `Hi Maya and Jordan,
+
+Thanks for the joint call. Maya, your partner team will lead the commercial discussion; our vendor team will cover the product demo. Jordan will bring the customer's operations team.
+
+Someone should send the meeting invite.
+
+Best,
+Alex`,
+  },
+  {
+    id: 'discovery-follow-up',
+    preferredLens: 'clarity',
+    label: 'Discovery-call follow-up',
+    description: 'The proposed demo depends on a customer request with vague timing.',
+    text: `Hi Priya,
+
+Thanks for explaining how your sales team tracks partner referrals.
+
+Please send the reporting requirements soon so we can prepare the demo.
+
+I'll bring our solutions consultant to the next call.
+
+Best,
+Casey`,
+  },
+  {
+    id: 'renewal-discussion',
+    preferredLens: 'clarity',
+    label: 'Renewal discussion',
+    description: 'A pending renewal is presented as agreed, with a pointed reminder.',
+    text: `Hi Sam,
+
+Thanks for discussing the renewal options.
+
+As agreed, the renewal includes the analytics add-on, although your approval is still pending.
+
+As I already told you, please confirm the renewal decision.
+
+Best,
+Morgan`,
+  },
+  {
+    id: 'clear-commercial-follow-up',
+    preferredLens: 'clarity',
+    label: 'Clear follow-up',
+    description: 'A comparison with named owners and a specific next step.',
+    text: `Hi Maya and Jordan,
+
+Thanks for the joint call.
+
+Maya, please send the customer meeting invite by Tuesday, 13 October. Our vendor team will demonstrate the reporting workflow; your partner team will lead the commercial discussion. Jordan will bring the customer's operations team.
+
+The pricing proposal is still subject to your review and approval.
+
+Best,
+Alex`,
+  },
+];

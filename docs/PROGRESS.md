@@ -1,113 +1,48 @@
 # Communication Check progress
 
-Updated: 2026-09-23
-Milestone: Verified CRM demonstration and authorized private-repository update
-Status: Real retrieval and new-note save verified through the unchanged live checker with manual copy/paste. Earlier portfolio package preserved. Recorded September 16 validation: 7 setup + 451 engine + 10 scenario + 81 local and 81 hosted browser checks.
+Updated: 2026-10-09
+Milestone: LinkedIn fetch repair and commercial portfolio redesign
+Status: Candidate implemented; full local verification passed. Separate Vercel preview ready. Fresh independent review approved the candidate; authenticated hosted checks pass. Production remains frozen.
 
-## September 23 local CRM demonstration
+## October 9 candidate
 
-- Keith authorized one fictional demo, waived further fictional-record confirmations, and entered the HubSpot credential directly into local n8n. n8n 2.40.5 is pinned, bound to 127.0.0.1:5678, with a signed-in-only save form. No app code, deployment, commit/push, schedule or sending changes.
-- Real source retrieval, checker finding/edit/recheck, exact 297-character clipboard paste, one new reviewed-note write, correct contact association and unchanged source verified. Saved wording matches after normalizing browser-form CRLF line endings. The static workflow review found no actionable blockers; it was separate from lead-run API verification.
-- Sanitized workflows, start/stop helpers, evidence and a three-minute walkthrough are in `/Users/keith/Documents/Codex/2026-09-23/communication-check-plan/demo/`. HubSpot and local n8n retain fictional content; the complete demo is not browser-only or a native checker integration. No technical blocker remains; spoken rehearsal/recording is pending.
+- Keith requested implementation of the October 9 handover, prioritising LinkedIn loading and visual redesign. Work stays on `codex/communication-check-next`; engine rules, evidence spans and historical evaluations are unchanged.
+- Actual LinkedIn Post Inspector reported: the current public URL cannot be re-scraped because robots.txt blocks it. Normal and simulated LinkedInBot GETs returned 200 HTML, which alone did not establish LinkedIn access. Initial HTML lacked Open Graph metadata and a preview image.
+- Candidate allows LinkedInBot specifically, retaining generic crawler disallow, noindex and all runtime security/privacy protections. Initial HTML now has title, description, canonical and complete OG metadata. A 1200 × 630 PNG uses the real fictional-example interface; favicon matches the design.
+- Warm white/teal redesign clarifies the opening task, example action, editor and finding cards. Three fictional partner/discovery/renewal samples and one clear comparison use existing engines. Previous nine examples remain unchanged in source regression coverage. Replacing user-edited text requires explicit confirmation.
+- About retains Keith's approved contribution wording. Featured copy and post-release Inspector/Featured instructions are in PORTFOLIO_COPY.md. No LinkedIn profile changes, outreach, recording, new research or commercial-impact claims.
+- Local verification: 8 setup/integrity tests, 466 engine/example tests, typecheck/build/source guards and 85 browser checks pass. Includes initial HTML/image/crawler configuration, first visit, all samples, replacement cancel/accept, both lenses, exact selection, Keep/Undo, copy, navigation, keyboard, automated axe, 320–1440px layouts, enlarged text and 200% zoom.
+- Runtime canary verifies no draft-bearing network/log/URL/storage writes, offline checks and reload clearing. Mobile emulation and automated accessibility checks are not physical-device testing or certification.
+- Before/after desktop/mobile/narrow screenshots inspected in `output/linkedin-redesign-2026-10-09/`; public card is `web/public/social-preview.png`. No existing unrelated output files were modified.
+- Identical locked dependencies were restored after cloud placeholders blocked local runners; original dependency directory preserved under ignored `work/node_modules-cloud-20261009/`. No dependency-version change.
+- Separate preview: https://communication-check-d5fyjbmk7-keith-grehans-projects.vercel.app/ (dpl_JACdSLnDLRaWvrK7gx6RnrSKdLbU). Only the static build/config uploaded to verified existing Keith Grehan's projects / Hobby; no new paid service, domain or repository integration. Existing Vercel preview authentication remains enabled.
+- Fresh independent Astra Extra High review found no actionable defects; five viewport flows, keyboard/enlarged text, three axe states and metadata/image checks passed. Hosted authentication used existing short-lived Vercel credentials: all seven static assets match the local build, security headers and eight source/config exclusions pass. Actual hosted example/edit/Keep/Undo/copy, offline and privacy smoke plus 390px layout pass. Anonymous preview requests redirect to Vercel sign-in; this is not public crawler verification.
+- Production canonical/image addresses intentionally target https://communication-check.vercel.app/ for the eventual approved release. The candidate is not yet live there. LinkedIn Post Inspector success, Featured preview/Save and the final Featured link remain pending after release; do not report “LinkedIn fixed”.
 
-- Keith subsequently requested a Git repository update. Completed portfolio documentation/assets and a sanitized demo copy in `docs/demo/hubspot-n8n/` are included on the existing working branch. Credentials and unrelated local review outputs are excluded; no main merge, deployment or public publication is authorized.
+## Frozen production and branches
 
-## September 17 portfolio packaging
+- Public URL: https://communication-check.vercel.app/. Frozen branch `codex/frozen-vercel-2026-09-16` at `1463832`; deployed source `38d744d`, production deployment dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7.
+- Work branch `codex/communication-check-next`; Prism alternative preserved on `codex/communication-check-tone-review` at `2527641`. See FROZEN_BASELINE.md. No main merge, frozen-branch update, production replacement, repository visibility change or domain change without explicit approval.
+- Repository remains private: https://github.com/keithtgrehan/communication-check. PR #1/#2/#3 were merged, last checked September 17; none reused.
 
-- Keith authorized the independently reviewed packaging plan, with no app changes, publishing or deployment. At the packaging milestone, branch/HEAD was codex/communication-check-next at b6942a8; starting dirty state was only pre-existing untracked output/.
-- Read-only GitHub checks: repository private; PR #2/#3 merged September 16; main b508df3 shares web tree b1c1ae8 with canonical, frozen 1463832 and deployed 38d744d. Prism alternative preserved. No Git mutations.
-- All six live asset hashes matched the September 16 manifest again. Bounded live desktop/390px checks passed: exact evidence, Keep/Undo, question-only Warm change, both edit invalidations, separate rechecks and 297-character current-text copy. Full hosted/privacy suite and build were not rerun.
-- Earlier September 17 assessment passed 461 Vitest tests, TypeScript no-emit and selected integrity checks; these are separate from the packaging smoke check.
-- Current links, case study, portfolio drafts, contribution statement, four-minute/75-second scripts and SE notes updated. Two September 16 editorial images reused with dates; a new live qualified clean-result capture added. Dated exports: output/portfolio-package-2026-09-17/; older outputs preserved.
-- Four-page PDF and all three images visually inspected; links, exact samples/copy lengths, source/export parity and unchanged-scope hashes pass. Fresh independent Astra Extra High package review approved with no actionable findings; page-one comprehension check passed. Keith confirmed his exact contribution statement on September 17; the PDF and package now reflect it. His spoken rehearsal remains pending. No recording, publication, outreach or new customer validation.
+## September 23 CRM demonstration (preserved)
 
-## Frozen live decision
+- One fictional HubSpot + local n8n 2.40.5 demo verified real retrieval, checker finding/edit/recheck, exact 297-character clipboard paste and one new reviewed-note write with correct contact association and unchanged source. Credentials remain outside Git.
+- Manual copy/paste through unchanged checker; HubSpot/n8n retain fictional payloads. The complete demo is not browser-only or a native integration. Sanitised workflows/instructions in `docs/demo/hubspot-n8n/`; source demonstration under `/Users/keith/Documents/Codex/2026-09-23/communication-check-plan/demo/`.
+- Keith authorised the subsequent repository update, committed at 4dc4ee5. Spoken rehearsal/recording remains pending; it is not required for this design milestone.
 
-- Keith confirmed the live editorial version is final for now: https://communication-check.vercel.app/.
-- Frozen baseline: `codex/frozen-vercel-2026-09-16` at `1463832`; deployed app source `38d744d`. All six live hashes reverified. No deployment changed.
-- Future work is forked to `codex/communication-check-next`; the Prism work stays preserved on `codex/communication-check-tone-review` at `2527641`.
-- See FROZEN_BASELINE.md. Production replacement, frozen-branch updates and main merge need explicit approval. No additional product changes are underway.
+## Earlier portfolio and delivery evidence
 
-## September 16 Vercel deployment
+- September 17 package: approved contribution statement, case study, Featured drafts, four-minute/75-second scripts, SE notes and four-page PDF. Source/export parity and visual checks passed; fresh independent Astra review found no actionable issue. No posting or customer validation. Outputs remain in `output/portfolio-package-2026-09-17/`.
+- September 16 accepted Vercel delivery: 451 engine + 10 scenario + 81 local and 81 hosted browser checks, build/typecheck, six matching assets, security headers and eight source exclusions. See VERCEL_HOSTED_VERIFICATION.json and HOSTING.md. Earlier 156-result non-copy parity checks and independent reviews are documented in EDITORIAL_REFINEMENT.md, FIRST_VISIT_POLISH.md, REVIEW_DESK_POLISH.md and TONE_CORRECTION.md.
+- September 16 introduced information pages, finite tone corrections, independent lens snapshots and review decisions. One senior CSM's 21 workbook decisions/12 comments were expert content feedback, not usability or accuracy validation. No new evaluation round followed portfolio delivery.
+- September 11 Render delivery remains documented in HOSTED_VERIFICATION.json and VERIFICATION.md: 225 engine, 28 local/hosted browser checks and six matching assets. Existing Render preview https://communication-check-preview.onrender.com; no hosting changes in this pass.
 
-- Keith accepted the candidate and selected Keith Grehan’s projects (`keith-grehans-projects`, Hobby). Live: https://communication-check.vercel.app; source 38d744d; deployment dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7.
-- All 81 hosted browser checks pass, including nine scenarios, both lenses, Edit/Keep/Undo, information pages, responsive/accessibility and runtime privacy/offline checks. Six assets match locally; security headers and eight source/config exclusions pass. See VERCEL_HOSTED_VERIFICATION.json and HOSTING.md.
-- Only static build assets/config uploaded. No repository push/merge occurred during deployment; no Git integration, paid upgrade, custom domain or unrelated project change. Older Render preview/evidence preserved. Keith confirmed the live site works and requested GitHub synchronization of the current branch. YouTube URL remains needed for the embed.
+## Detection limitations and human evidence
 
-## September 16 editorial refinement
+Keith prioritised a polished functional portfolio prototype. The original detection target remains failed and is not represented as production reliability, customer benefit or human validation. Semantic-parser research and further reserved rounds remain stopped; no v11 is authorised. Full history: EVALUATION.md.
 
-- Keith approved the design prompt, copy deck and six safeguards. White draft document/open review rail, compact controls, full plain-language states, real static About example and Video storyboard are implemented. Copy maps only; no detection or sample changes.
-- Before captures and 156 results from 39 public fixture/scenario drafts were frozen at c89ae39. Every non-copy result field matches; source outside the two COPY maps is byte-identical. No reserved evaluation. See EDITORIAL_REFINEMENT.md for hashes and evidence.
-- Full validation passes the counts above. Narrow/desktop screenshots inspected; enlarged-tab overflow and split storyboard counters fixed. Independent Astra Extra High review found no unresolved issue across 15 sample viewport flows, enlarged text, all review states and privacy. Original detection limitations remain.
-- This pass initially stayed local with no push/deployment/merge/task-message delivery. Keith subsequently accepted it and authorized the Vercel deployment recorded above; existing output files are preserved.
-
-## September 16 information pages
-
-- Keith requested GitHub synchronization and a new-chat design exploration handoff. README now links to docs/DESIGN_EXPLORATION_HANDOFF.md; this is exploration guidance, not a redesign or deployment. Existing validated app code is unchanged in this documentation pass.
-- Keith requested About Communication Check and Video Demo in the top-right navigation. About concisely adapts the case-study PDF/README; Video Demo reserves a YouTube walkthrough space without loading a player. Both pages link to the private repository README with an access note.
-- Internal links, browser history and direct page entry work without hosting rewrites. Drafts, both reviews and Keep/Undo stay in memory across navigation; reload clears them. Inactive content is hidden from keyboard and assistive technology.
-- Full validation passes the counts above, including nine new navigation, layout, accessibility and privacy checks. Desktop/382/320px captures were visually inspected. Fresh independent Astra Extra High review found no actionable issues across layout, accessibility, history/focus, retained review state and offline/privacy checks.
-- At this historical milestone, local user testing preceded deployment; the later accepted Vercel delivery is recorded above. No visibility change occurred. YouTube integration remains deferred.
-
-## September 16 expert-feedback integration
-
-- One senior CSM completed 21 overlapping workbook decisions and 12 comments. This is expert content feedback, not a usability session or accuracy benchmark. Usability remains 0/3; pilots 0/5.
-- Keith authorized fixing the observed gaps. Eight revised problem demos now produce useful findings in both lenses; the clean comparison remains unflagged. Two finite tone forms and four general question improvements preserve legitimate deadlines. Clarity detection and historical evaluation remain unchanged; its missing-list demo states the dependency in the request.
-- Explicit sample review checks both tabs for one draft revision, with independent failures/retries. Pasted checks remain manual; picker selection is inert. Keep/Undo, style-only questions and edit invalidation remain intact.
-- Full validation passes the counts above, build/typecheck/source guards and runtime privacy/offline checks. Fresh screenshots and the four-page case-study PDF were visually inspected. Fresh Astra Extra High review found no actionable issue: 27 dual-lens/style reviews, 48 boundary probes and independent mobile/state/offline checks passed. See FINDING_CONTRACT.md v6 and FIRST_VISIT_POLISH.md.
-
-## September 16 first-visit and scenario polish
-
-- Keith approved the starting-experience fix, nine-scenario picker and restrained Intercom-inspired visual refinements. Explicit sample review now loads fictional text and runs the unchanged checker in its preferred lens; picking alone preserves the draft. The blank editor is honest, and actions/results are visible without manual hunting at narrow panel and desktop widths.
-- Astra High workers owned UI/browser and sample data/tests separately. Lead full validation passed 7 setup + 404 engine + 10 scenario + 65 browser checks, build/typecheck/source guards. Historical detection records and engine implementation are unchanged. First-visit, privacy/offline, clipboard, keyboard, exact selection, Keep/Undo, style switching and zoom remain covered.
-- Fresh Astra Extra High review passed 39 targeted browser + 10 scenario checks and independent all-nine scenario/state/offline/privacy probes. Small desktop/320px button clipping issues were fixed. Zoomed picker-label truncation was fixed with wrapping and native-arrow spacing, three regressions and independent visual confirmation. Screenshots and matching four-page PDF refreshed. See FIRST_VISIT_POLISH.md.
-
-## Earlier September 16 corrections
-
-- Third review: approved Mockup Canvas desk styling and immediate tone-question changes preserving findings/Keep/Undo. Seven setup + 404 engine + 51 browser checks passed; independent review cleared the enlarged-text tab fix. Screenshots/PDF inspected. Details: REVIEW_DESK_POLISH.md.
-- First review: approved Tone cues guidance/demo and finite judgmental/dismissive/pressure patterns, with clarity and historical evaluations unchanged. Seven setup + 399 engine + 48 browser checks passed; independent review cleared punctuation safeguard fixes. Screenshots/PDF inspected. Details: TONE_CORRECTION.md.
-
-## September 16 follow-on
-
-- Two Astra High workers completed disjoint UI and tone changes. Lead integrated and ran npm run validate: 7 setup + 307 engine (225 clarity/82 tone) + 43 browser checks, production build/typecheck/source guards all pass. Real screenshots cover 1440/1024/390/320px, exact selection, mobile editor/results, enlarged text and 200% zoom. Fresh Astra Extra High final review found no actionable issues: 82 tone + 26 targeted browser checks, additional state/clipboard probes, and desktop/mobile/enlarged visual inspection passed. Review is bounded engineering evidence, not human validation.
-- Case-study How it works refinement is complete after validation: diagram/text fallback, 220-word explanation and verified fictional engine example. Source-to-quote behavior, limited context checks, AI-assisted development versus runtime, privacy and known limitations are explicit.
-
-- Keith explicitly started implementation using the latest Desktop implementation handoff/build prompt; these supersede conflicting earlier scope/workflow notes.
-- Verified canonical checkout/remote; reconciled main b22bcfd after PR #1 merged September 11, preserving the original branch. Follow-on uses codex/communication-check-tone-review. Branch guard was updated; main/wrong-repository/tag/deletion protections remain. Baseline setup/225 engine/28 browser checks passed.
-- Original follow-on scope was Canvas3 plus bounded local tone, exact selection, keep/undo and invalidation, followed by the approximately one-hour How it works refinement. No model, research, evaluation round, deployment, launch, merge or spending. See FINDING_CONTRACT.md for later approved changes.
-- Both Markdown briefs and the reference ZIP were added to ChatGPT Project Sources and verified after reload September 16. This is a dated source upload, not continuous synchronization.
-
-## September 11 hosted delivery (unchanged)
-
-- Canonical root: /Users/keith/Documents/ChatGPT/communication-check.
-- Private repository: https://github.com/keithtgrehan/communication-check. Branch: codex/communication-check-mvp. PR #1: https://github.com/keithtgrehan/communication-check/pull/1; merged September 11; follow-on branch above.
-- Working preview: https://communication-check-preview.onrender.com. Render deployment dep-dai10kbm8hqs73dnm68g, live 2026-09-11 at 14:29:50 UTC from checkout 4931fe2f8968b0447c5e2872e520306aa0bb74b7. Later delivery edits are documentation/screenshots only.
-- Static React/Vite editor: five check families, up to three exact quotes, dismissal, edit/recheck, current-text copy, reset and three fictional demos. No rewriting, sending, scores or factual/agreement verification.
-- Reviewed runtime from d1230d6d066bc4a8eef9aa08d7818c1404d09c04; complete six-module manifest 6ad12d972791a07b8113294ad85a55b226d1eb9bce4b5690b20452c3e2ff0125.
-- Seven setup/integrity tests, 225 public engine tests, build/typecheck and 28 local browser checks pass. Independent review cleared five original regressions and 20 focused probes. Original 18 development fixtures are unchanged.
-- All 28 hosted Chromium checks pass. Six assets match the local build byte-for-byte; six response headers and eight source/config exclusions pass. See docs/HOSTED_VERIFICATION.json and docs/VERIFICATION.md.
-- Browser coverage includes exact evidence, editing/dismissal, clipboard success/denial, keyboard, 320/390/1440px layouts, 200% content zoom, runtime network/storage/log canaries, reload clearing and offline use. Automated checks are not physical-device testing or accessibility certification.
-- Portfolio case study, reusable project copy, desktop/mobile/clean screenshots, 75-second demo script, SE conversation notes, README, reuse ledger, third-party notices, human-validation protocol and rollback instructions are ready. The screenshots use fictional demos and were visually inspected. Six pinned inactive Vibe source blobs remain unchanged and excluded from runtime.
-
-## Preserved portfolio/accuracy decision
-
-Keith asked to “put focus on shipping quickly, it just has to look good on portfolio”.
-The existing reviewed app is delivered as a functional portfolio prototype. The
-original detection requirement remains unmet; it is no longer a gate for this
-explicitly revised delivery. Do not represent this as passing the original goal's
-full accuracy requirement, production reliability, customer benefit or human validation.
-
-The deeper semantic experiment and further evaluation rounds are stopped. No
-prototype implementation or 60-case challenge creation/freeze/execution occurred.
-No v11 is authorised. Keep the failure history for future product-readiness work.
-
-## Detection evidence retained
-
-All ten reserved attempts failed the original target of at least 10/12 selected
-findings. Labels, matching criteria, thresholds and raw historical results remain
-unchanged. Full aggregate history: docs/EVALUATION.md.
-
-| Reserved attempt | Expected findings detected | Useful emissions | Clean-control flags |
+| Reserved attempt | Expected detected | Useful emissions | Clean-control flags |
 | --- | --- | --- | --- |
 | V1 | 9/12 | 9/10 | 1 |
 | V2 | 4/12 | 4/4 | 0 |
@@ -120,19 +55,10 @@ unchanged. Full aggregate history: docs/EVALUATION.md.
 | V9 | 5/12 | 5/5 | 0 |
 | V10 | 4/12 | 4/4 | 0 |
 
+- V10 ran once on d1230d6 after independent freeze. Original labels/thresholds remain unchanged. Known development benchmark passes and consumed-example passes are regression evidence, not new generalisation evidence. Agent labels are not human validation.
+- Human usability: 0/3; pilots: 0/5. Reserved material remains outside normal handoffs/shared sources. No outreach or fabricated feedback.
 
-- Latest v10 ran once on d1230d6 at 15:48:01 UTC after its prior independent freeze. All source/corpus/span/cap/error checks passed; the contract audit judged all twelve labels and four controls within scope. No relabelling or retry occurred.
-- Fixed development benchmarks pass 100/100 and 80/80. Consumed v1–v9 reaches 107/108 expected and 107/107 useful emissions, with zero flags across 36 clean controls. These are known-case results, not fresh generalisation evidence. Agent labels are not human validation.
-- Reserved material and private diagnostics remain outside shared sources and handoffs. Human usability: 0/3; pilots: 0/5. No outreach or fabricated feedback.
+## Handoff and next action
 
-## Workflow and boundaries
-
-- The lead is associated with the correct local project; use the canonical root explicitly. Native app self-control restrictions remain in place.
-- ChatGPT project instructions are saved. The original brief/progress Sources snapshot is dated 2026-09-10 16:28 UTC; the two new briefs and reference ZIP were added September 16. A September 16 baseline brief/progress packet was delivered to the existing companion task, whose acknowledgement turn completed. Task delivery is not Sources synchronization.
-- Refreshed 2026-09-11 14:27 UTC Render allowance: Hobby, 4/25 services, 8 MB/5 GB bandwidth, 0/500 pipeline minutes displayed, $0.00 preview/pipeline charges. Auto-deploy is off; rollback target is dep-dahdjffqj5pc73a9mhrg at 8a83afd. No billing, plan, domain or unrelated service changes.
-- Repository stays private. PR #1/#2/#3 are merged, as rechecked September 17. No further commit/push/merge is included in this package. No separate portfolio website, paid commitment or external outreach was created by this pass.
-
-## Next action
-
-Keith rehearses the three-minute CRM walkthrough (or existing four-minute standalone demo) using his confirmed contribution statement. Publication or any frozen-app change requires
-separate instructions. The historical detection gate remains failed.
+- Milestone handoff exports only PRODUCT_BRIEF.md and this progress file. Task-message delivery is not Project Sources synchronisation; historical Sources copies remain dated.
+- Keith reviews the concrete candidate and approves production replacement if desired. After release, rerun actual Post Inspector and verify the Featured preview/Save flow. No additional product feature is required.

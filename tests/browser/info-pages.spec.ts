@@ -55,7 +55,8 @@ for (const width of [320, 382, 1440]) {
 
 test('navigation and browser history preserve the draft, both reviews and Keep decisions', async ({ page }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('combobox').selectOption('renewal-discussion');
+  await page.getByRole('button', { name: 'Try an example' }).click();
   const draft = await page.getByRole('textbox', { name: 'Your follow-up draft' }).inputValue();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await page.getByRole('tab', { name: /Tone cues/ }).click();

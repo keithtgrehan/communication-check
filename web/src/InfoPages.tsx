@@ -22,9 +22,10 @@ export function InfoPages({ page, headingRef }: { page: InfoPage; headingRef: Re
         {page === 'about' ? <>
           <section className="info-section" aria-labelledby="about-why">
             <h2 id="about-why">Built for customer follow-ups</h2>
-            <p>After an onboarding conversation, there’s often a lot to put into one email: who’s doing what, what happens next and what still needs confirming. A message can feel clear to its writer while leaving the customer with questions.</p>
-            <p>Communication Check is a portfolio prototype for account managers and customer-success managers in B2B SaaS. It offers a few focused questions about your follow-up, tied to your own words. You decide whether they help.</p>
+            <p>After a discovery call, partner handoff or renewal discussion, there’s often a lot to put into one email: who’s doing what, what happens next and what still needs confirming. A message can feel clear to its writer while leaving the customer with questions.</p>
+            <p>Communication Check is a portfolio prototype for salespeople and partner-facing commercial teams in B2B SaaS. It offers a few focused questions about your follow-up, tied to your own words. You decide whether they help.</p>
           </section>
+          <section className="info-section" aria-labelledby="about-keith"><h2 id="about-keith">About this project</h2><p>Keith Grehan drew on his experience in SaaS sales and partner coaching. He set the product direction, audience, scope and presentation priorities and directed the AI-assisted build. Codex/Astra agents implemented the application and ran the documented engineering checks.</p><p>The message checks themselves are rule-based. This is a portfolio demonstration, with no claims of commercial adoption or measured customer outcomes.</p></section>
           <section className="info-section" aria-labelledby="about-example">
             <h2 id="about-example">From a sentence to a decision</h2>
             <p className="example-caption">Fictional example · illustration of the workflow</p>
@@ -60,7 +61,7 @@ export function InfoPages({ page, headingRef }: { page: InfoPage; headingRef: Re
             <p>The video isn’t available yet. You can follow the same steps in the checker now.</p>
           </section>
           <ol className="storyboard" aria-label="Walkthrough steps">
-            <li><span className="storyboard-number" aria-hidden="true">01</span><div><h2>Start with a fictional example</h2><p>Choose Promises to confirm, then select Try a sample review. The example replaces the current draft and runs both checks.</p></div></li>
+            <li><span className="storyboard-number" aria-hidden="true">01</span><div><h2>Start with a fictional example</h2><p>Choose Partner handoff, then select Try an example. Both checks run on the fictional message. If you have entered your own draft, you’ll be asked before replacing it.</p></div></li>
             <li><span className="storyboard-number" aria-hidden="true">02</span><div><h2>Read the wording in context</h2><p>The review quotes the exact passage and offers a question to consider. Switch between Clarity &amp; commitments and Tone cues to see the different checks.</p></div></li>
             <li><span className="storyboard-number" aria-hidden="true">03</span><div><h2>Decide what to keep or change</h2><p>Keep as written leaves the draft unchanged. Edit this wording selects the passage for you to edit. After a change, run the checks again before copying your draft.</p></div></li>
           </ol>
