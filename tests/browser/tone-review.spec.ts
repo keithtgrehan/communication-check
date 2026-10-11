@@ -19,6 +19,7 @@ for (const intent of ['direct', 'collaborative', 'warm'] as ToneIntent[]) {
     await editorFor(page).fill(mixedDraft);
     await expect(clarityTab(page)).toHaveAttribute('aria-selected', 'true');
     await toneTab(page).click();
+    await page.locator('.question-style summary').click();
     await expect(page.getByRole('radio', { name: 'Collaborative' })).toBeChecked();
     await expect(page.locator('.finding-card')).toHaveCount(0);
     await page.getByRole('radio', { name: intent, exact: false }).check();
@@ -86,6 +87,7 @@ test('style changes preserve multi-finding identities, open row and decisions ac
   await expect(toggles.nth(1)).toHaveAttribute('aria-expanded', 'true');
   await expect(page.locator('.findings-count')).toHaveText('1 of 2 reviewed');
 
+  await page.locator('.question-style summary').click();
   await page.getByRole('radio', { name: 'Collaborative', exact: true }).focus();
   for (const intent of ['warm', 'direct', 'collaborative'] as ToneIntent[]) {
     await page.keyboard.press('ArrowRight');
@@ -113,6 +115,7 @@ test('style changes preserve multi-finding identities, open row and decisions ac
   await toneTab(page).click();
   await expect(toggles.nth(1)).toHaveAttribute('aria-expanded', 'true');
   await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.locator('.question-style summary').click();
   await page.getByRole('radio', { name: 'Direct', exact: true }).check();
   await expect(page.locator('.findings-count')).toHaveText('2 of 2 reviewed');
   await expect(page.locator('.finding-toggle[aria-expanded="true"]')).toHaveCount(0);
@@ -130,6 +133,7 @@ test('style selection before a check or after a draft mutation never creates or 
   const editor = editorFor(page);
   await editor.fill(mixedDraft);
   await toneTab(page).click();
+  await page.locator('.question-style summary').click();
   for (const intent of ['Direct', 'Warm', 'Collaborative']) {
     await page.getByRole('radio', { name: intent, exact: true }).check();
     await expect(page.locator('.finding-card')).toHaveCount(0);
@@ -261,6 +265,7 @@ test('tone clean states are limited, empty and oversized drafts are guarded, cop
   await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
   await expect(page.locator('.result-empty').getByText(/can’t predict how your message will be received/)).toBeVisible();
   await expect(page.locator('.findings-count')).toHaveCount(0);
+  await page.locator('.question-style summary').click();
   for (const intent of ['Direct', 'Warm', 'Collaborative']) {
     await page.getByRole('radio', { name: intent, exact: true }).check();
     await expect(page.getByRole('heading', { name: 'No tone cues flagged' })).toBeVisible();
@@ -383,6 +388,7 @@ test('style immediately changes the question while the same judgmental wording s
   await runTone(page);
   const prompts: string[] = [];
   const titles: string[] = [];
+  await page.locator('.question-style summary').click();
   for (const intent of ['Direct', 'Collaborative', 'Warm']) {
     await page.getByRole('radio', { name: intent, exact: true }).check();
     await expect(page.locator('.finding-card')).toHaveCount(1);

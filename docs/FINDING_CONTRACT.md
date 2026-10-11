@@ -1,4 +1,25 @@
-# Finding contract — version 9 (9 October 2026)
+# Finding contract — version 10 (11 October 2026)
+
+## October 11 approved Margin desk preview
+
+Keith selected Margin desk from the design exploration and authorized implementation
+as a separate preview. Use warm paper, a white source document, open annotation
+margin, blue evidence brackets and serif draft/quotes. Keep the introduction and
+fictional-example controls compact. A clearly labelled static fictional illustration
+may appear beside a blank editor on desktop only; hide it when text is entered and
+on mobile. Real findings always come from the unchanged engines.
+
+Preserve the native textarea, exact selection, both lens snapshots, Keep/Undo,
+text-mutation invalidation, sample confirmation, copy fallback and navigation.
+Question style is a disclosure; changing it only remaps existing tone questions.
+Stack draft before review at the existing 1000px breakpoint, retaining focus/scroll
+behavior. Add one self-hosted notebook photo below the workspace beside How it works;
+no third-party runtime image request, telemetry, font or new persistence.
+
+Interface worker owns App.tsx, styles.css, necessary InfoPages.tsx presentation and
+browser tests. Lead owns asset/licence, static-build guards, metadata, hosting,
+documentation and Git. Fresh independent review follows integration. No engine
+change, reserved evaluation, production replacement, main merge or new spending.
 
 ## October 9 LinkedIn and commercial-example redesign
 

@@ -1,0 +1,247 @@
+[
+  {
+    "width": 1440,
+    "blank": {
+      "overflow": false,
+      "editorHeight": 336,
+      "illustrationVisible": true,
+      "primaryBounds": {
+        "x": 124,
+        "y": 781.09375,
+        "width": 131.015625,
+        "height": 44,
+        "top": 781.09375,
+        "right": 255.015625,
+        "bottom": 825.09375,
+        "left": 124
+      }
+    },
+    "blankAxe": [],
+    "toneAxe": [],
+    "selection": {
+      "quote": "Someone should send the meeting invite.",
+      "start": 205,
+      "end": 244,
+      "focused": true
+    },
+    "toneSelection": {
+      "quote": "You always ignore our requests.",
+      "start": 11,
+      "end": 42
+    },
+    "end": {
+      "overflow": false,
+      "photo": {
+        "src": "http://127.0.0.1:4175/review-notebook.webp",
+        "naturalWidth": 1200,
+        "rect": {
+          "x": 180,
+          "y": 836.203125,
+          "width": 360,
+          "height": 450,
+          "top": 836.203125,
+          "right": 540,
+          "bottom": 1286.203125,
+          "left": 180
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "blank": {
+      "overflow": false,
+      "editorHeight": 336,
+      "illustrationVisible": true,
+      "primaryBounds": {
+        "x": 44,
+        "y": 781.09375,
+        "width": 131.015625,
+        "height": 44,
+        "top": 781.09375,
+        "right": 175.015625,
+        "bottom": 825.09375,
+        "left": 44
+      }
+    },
+    "blankAxe": [],
+    "toneAxe": [],
+    "selection": {
+      "quote": "Someone should send the meeting invite.",
+      "start": 205,
+      "end": 244,
+      "focused": true
+    },
+    "toneSelection": {
+      "quote": "You always ignore our requests.",
+      "start": 11,
+      "end": 42
+    },
+    "end": {
+      "overflow": false,
+      "photo": {
+        "src": "http://127.0.0.1:4175/review-notebook.webp",
+        "naturalWidth": 1200,
+        "rect": {
+          "x": 24,
+          "y": 859.453125,
+          "width": 360,
+          "height": 450,
+          "top": 859.453125,
+          "right": 384,
+          "bottom": 1309.453125,
+          "left": 24
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 768,
+    "blank": {
+      "overflow": false,
+      "editorHeight": 280,
+      "illustrationVisible": false,
+      "primaryBounds": {
+        "x": 44,
+        "y": 754.59375,
+        "width": 131.015625,
+        "height": 44,
+        "top": 754.59375,
+        "right": 175.015625,
+        "bottom": 798.59375,
+        "left": 44
+      }
+    },
+    "blankAxe": [],
+    "toneAxe": [],
+    "selection": {
+      "quote": "Someone should send the meeting invite.",
+      "start": 205,
+      "end": 244,
+      "focused": true
+    },
+    "toneSelection": {
+      "quote": "You always ignore our requests.",
+      "start": 11,
+      "end": 42
+    },
+    "end": {
+      "overflow": false,
+      "photo": {
+        "src": "http://127.0.0.1:4175/review-notebook.webp",
+        "naturalWidth": 1200,
+        "rect": {
+          "x": 20,
+          "y": 1452.859375,
+          "width": 247.515625,
+          "height": 309.390625,
+          "top": 1452.859375,
+          "right": 267.515625,
+          "bottom": 1762.25,
+          "left": 20
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "blank": {
+      "overflow": false,
+      "editorHeight": 240,
+      "illustrationVisible": false,
+      "primaryBounds": {
+        "x": 36,
+        "y": 846.734375,
+        "width": 123.015625,
+        "height": 44,
+        "top": 846.734375,
+        "right": 159.015625,
+        "bottom": 890.734375,
+        "left": 36
+      }
+    },
+    "blankAxe": [],
+    "toneAxe": [],
+    "selection": {
+      "quote": "Someone should send the meeting invite.",
+      "start": 205,
+      "end": 244,
+      "focused": true
+    },
+    "toneSelection": {
+      "quote": "You always ignore our requests.",
+      "start": 11,
+      "end": 42
+    },
+    "end": {
+      "overflow": false,
+      "photo": {
+        "src": "http://127.0.0.1:4175/review-notebook.webp",
+        "naturalWidth": 1200,
+        "rect": {
+          "x": 20,
+          "y": 1386.921875,
+          "width": 350,
+          "height": 262.5,
+          "top": 1386.921875,
+          "right": 370,
+          "bottom": 1649.421875,
+          "left": 20
+        }
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 320,
+    "blank": {
+      "overflow": false,
+      "editorHeight": 240,
+      "illustrationVisible": false,
+      "primaryBounds": {
+        "x": 36,
+        "y": 887.359375,
+        "width": 112.703125,
+        "height": 44,
+        "top": 887.359375,
+        "right": 148.703125,
+        "bottom": 931.359375,
+        "left": 36
+      }
+    },
+    "blankAxe": [],
+    "toneAxe": [],
+    "selection": {
+      "quote": "Someone should send the meeting invite.",
+      "start": 205,
+      "end": 244,
+      "focused": true
+    },
+    "toneSelection": {
+      "quote": "You always ignore our requests.",
+      "start": 11,
+      "end": 42
+    },
+    "end": {
+      "overflow": false,
+      "photo": {
+        "src": "http://127.0.0.1:4175/review-notebook.webp",
+        "naturalWidth": 1200,
+        "rect": {
+          "x": 20,
+          "y": 1514.546875,
+          "width": 280,
+          "height": 210,
+          "top": 1514.546875,
+          "right": 300,
+          "bottom": 1724.546875,
+          "left": 20
+        }
+      }
+    },
+    "errors": []
+  }
+]

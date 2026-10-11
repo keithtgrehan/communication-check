@@ -1,5 +1,12 @@
 Communication Check runtime dependency notices
 
+Photography: "Hands Writing in Notebook" by Kaboompics.com, Pexels photo 5386483.
+Source: https://www.pexels.com/photo/hands-writing-in-notebook-5386483/
+Licence: https://www.pexels.com/license/
+Downloaded 2026-10-11 and compressed locally as review-notebook.webp.
+Pexels permits free use and modification; attribution is not required.
+The photograph illustrates the writing process and implies no endorsement.
+
 React 19.3.0, React DOM 19.3.0, Scheduler 0.28.0
 https://github.com/facebook/react
 All three packages carry the following identical licence:

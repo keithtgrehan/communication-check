@@ -138,6 +138,7 @@ test('draft canary stays out of network, logs, URLs and storage; offline check w
   await page.getByRole('button', { name: /^Undo keep:/ }).click();
   await page.getByRole('button', { name: 'Edit this wording' }).click();
   await expect(editor).toBeFocused();
+  await page.locator('.question-style summary').click();
   await page.getByRole('radio', { name: 'Warm', exact: true }).check();
   await expect(page.locator('.review-prompt:visible')).toContainText('this occasion');
   await expect(page.locator('.finding-card')).toHaveCount(1);

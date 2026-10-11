@@ -2,6 +2,27 @@
 
 Status: September 16 editorial candidate is deployed to Vercel. The older Render preview remains unchanged. Engine research is stopped for this delivery.
 
+## Separate Margin desk preview — 2026-10-11
+
+Keith authorized a separate preview of the selected Margin desk design. Preview:
+https://communication-check-ohmijlpkn-keith-grehans-projects.vercel.app/
+(`dpl_Ba1opf78DTfJx1MPNLiGhTw2xpzC`). Project/account remain Communication Check,
+`prj_NW3ec5feWa0ljV2AYyNb12psxi1K`, Keith Grehan's projects, active Hobby.
+Only eight static assets and Build Output v3 config were uploaded from the isolated
+`work/vercel-preview-2026-10-11` package. Source, credentials and Git metadata were
+excluded. No production flag, alias, hosting policy, plan or integration change.
+
+Eight exact hosted hashes, security headers, eight excluded paths and WebP MIME
+passed. Authenticated hosted editing, exact selection, Keep/Undo, clipboard,
+offline review, privacy canary, empty storage/reload and mobile/photo smoke passed.
+Evidence: `output/margin-desk-2026-10-11/hosted-assets.json` and `hosted-flow.json`.
+Existing short-lived project credentials were used only in process and for the
+preview origin; no token was saved in these reports. Anonymous access redirects
+to Vercel login. The public alias was checked before and after and remains frozen
+at `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. This preview is not a production release or
+public LinkedIn crawler verification. Local verification: 91 browser checks,
+466 engine/example tests, eight setup checks and fresh independent review passed.
+
 ## Vercel deployment — 2026-09-16
 
 Keith approved deployment and explicitly selected **Keith Grehan’s projects**

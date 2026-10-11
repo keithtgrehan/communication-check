@@ -60,6 +60,7 @@ test('navigation and browser history preserve the draft, both reviews and Keep d
   const draft = await page.getByRole('textbox', { name: 'Your follow-up draft' }).inputValue();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await page.getByRole('tab', { name: /Tone cues/ }).click();
+  await page.locator('.question-style summary').click();
   await page.getByRole('radio', { name: 'Warm', exact: true }).check();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   const nav = page.getByRole('navigation');

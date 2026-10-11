@@ -188,6 +188,7 @@ test('sample snapshots preserve independent decisions and style, while edits inv
   await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
   const quote = await page.locator('blockquote:visible').innerText();
   await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.locator('.question-style summary').click();
   await page.getByRole('radio', { name: 'Warm', exact: true }).check();
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
   await page.getByRole('button', { name: 'Recheck tone cues' }).click();
@@ -280,3 +281,51 @@ test('trying an example protects a user draft and its decisions until replacemen
   await expect(editor).toHaveValue(edited);
   await expect(page.locator('.finding-card')).toHaveCount(0);
 });
+
+for (const width of [320, 390, 768, 1000, 1024, 1440]) {
+  test(`fictional proof stays separate from real reviews and the supporting photo follows the desk at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
+    const illustration = page.locator('.fictional-review');
+    if (width > 1000) {
+      await expect(illustration).toBeVisible();
+      await expect(illustration).toContainText('Fictional illustration');
+      const demo = DEMO_DRAFTS.find(item => item.id === 'partner-co-selling')!;
+      const finding = checkDraft(demo.text).findings[0];
+      await expect(illustration.locator('blockquote')).toHaveText(finding.quote);
+      await expect(illustration.getByRole('heading')).toHaveText(finding.prompt);
+    } else {
+      await expect(illustration).toBeHidden();
+    }
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
+    await editor.fill('My own unchecked wording.');
+    await expect(illustration).toHaveCount(0);
+    await expect(page.getByRole('heading', { name: 'Ready to check your draft.' })).toBeVisible();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await page.getByRole('tab', { name: /Tone cues/ }).click();
+    const disclosure = page.locator('.question-style');
+    await expect(disclosure).not.toHaveAttribute('open', '');
+    await disclosure.locator('summary').focus();
+    await page.keyboard.press('Enter');
+    await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Check tone cues', exact: true })).toBeEnabled();
+    await expect(editor).toHaveValue('My own unchecked wording.');
+
+    const photo = page.locator('.review-photo img');
+    const desk = await page.locator('.workspace').boundingBox();
+    const section = await page.locator('.how-it-works').boundingBox();
+    expect(section!.y).toBeGreaterThanOrEqual(desk!.y + desk!.height);
+    await expect(photo).toHaveAttribute('loading', 'lazy');
+    await expect(photo).toHaveAttribute('width', '1200');
+    await expect(photo).toHaveAttribute('height', '1800');
+    await photo.scrollIntoViewIfNeeded();
+    await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 1200 && img.naturalHeight === 1800)).toBe(true);
+    expect(await photo.evaluate((img: HTMLImageElement) => new URL(img.currentSrc).origin === location.origin)).toBe(true);
+    const dimensions = await photo.boundingBox();
+    expect(dimensions!.width / dimensions!.height).toBeCloseTo(width <= 700 ? 4 / 3 : 4 / 5, 2);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+}

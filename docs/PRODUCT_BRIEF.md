@@ -2,7 +2,20 @@
 
 **Check your customer follow-up before you send it.**
 
-## Current authorised milestone — 9 October 2026
+## Current authorised milestone — 11 October 2026
+
+Keith selected the Margin desk direction and authorized implementation as a separate
+preview. Apply the approved warm-paper/white-document/open-review-margin design,
+blue evidence accents, serif draft and quotes, compact opening/example controls and
+accessible mobile flow. Include one locally hosted Kaboompics/Pexels notebook photo
+beside a lower How it works section. Use a clearly fictional first-visit illustration
+only on a blank desktop editor; real checks and all review/privacy behavior remain.
+Verify desktop/mobile, keyboard, exact evidence, snapshots, copy, offline/privacy,
+build integrity and a separate authenticated preview, with fresh independent review.
+This is presentation work: no engine expansion, reserved research, new service,
+production replacement or main merge. Optional case-study/video work is not a gate.
+
+## Previous authorised milestone — 9 October 2026
 
 Keith requested implementation of the LinkedIn preview and visual redesign handover.
 Priorities: diagnose LinkedIn fetching with Post Inspector; serve initial-HTML share

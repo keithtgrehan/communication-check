@@ -2,7 +2,7 @@
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-const destination = resolve('work/vercel-preview-2026-10-09');
+const destination = resolve('work/vercel-preview-2026-10-11');
 mkdirSync(`${destination}/.vercel/output`, { recursive: true });
 rmSync(`${destination}/.vercel/output/static`, { recursive: true, force: true });
 cpSync('web/dist', `${destination}/.vercel/output/static`, { recursive: true });

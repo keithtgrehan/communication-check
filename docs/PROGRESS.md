@@ -1,8 +1,18 @@
 # Communication Check progress
 
-Updated: 2026-10-09
-Milestone: LinkedIn fetch repair and commercial portfolio redesign
-Status: Candidate implemented; full local verification passed. Separate Vercel preview ready. Fresh independent review approved the candidate; authenticated hosted checks pass. Production remains frozen.
+Updated: 2026-10-11
+Milestone: Margin desk implementation and separate preview
+Status: Implemented, independently reviewed and verified locally and on a separate Vercel preview. Production remains frozen.
+
+## October 11 Margin desk candidate
+
+- Keith selected Margin desk and authorized implementation as a preview. White source document, open review margin, blue exact-evidence accents, serif draft/quotes and compact entry controls now follow the approved direction.
+- Desktop blank state shows a clearly fictional quote/question illustration. It disappears on text entry and is omitted on mobile. Tone question style is a keyboard-accessible disclosure; existing snapshots, exact selection, Keep/Undo, copy, sample confirmation and navigation remain intact.
+- One Kaboompics/Pexels notebook photo is compressed to 60 KB, self-hosted, lazy-loaded and credited beside the lower explanation. Phone crop is 4:3; desktop/tablet is 4:5. No external runtime image/font request or detector change.
+- Same locked dependencies were restored to a non-cloud cache after offloaded files stalled tests. Earlier directories remain preserved under ignored work; no package/version change.
+- Validation so far: 8 setup checks, 466 engine/example checks, typecheck/build and source guards pass. All 91 browser checks pass (85 existing plus six new presentation checks), including privacy/offline, keyboard/axe, exact selection, lens state, sample confirmation, 320–1440px layouts and enlarged text. Fresh independent Astra Extra High review found no actionable defects, independently exercising five widths, exact spans, three-finding progression, keyboard, clipboard fallback, zoom/enlarged text and runtime privacy; ten axe scans found zero violations. These are Chromium checks, not physical-device or human validation.
+- Desktop/390px/320px empty and review screenshots inspected in `output/margin-desk-2026-10-11/`; social card refreshed from the actual fictional review. No horizontal overflow in measured captures.
+- Separate preview: https://communication-check-ohmijlpkn-keith-grehans-projects.vercel.app/ (`dpl_Ba1opf78DTfJx1MPNLiGhTw2xpzC`). Existing Communication Check project in Keith Grehan's projects, active Hobby. Only eight static assets plus config uploaded; Vercel preview authentication retained. All eight hosted assets match the reviewed build; security headers, eight source exclusions and WebP MIME pass. Authenticated hosted example/edit/Keep/Undo/copy, offline, canary privacy, reload clearing, 390px flow and image loading pass. Anonymous access redirects to Vercel sign-in. Production deployment ID was rechecked unchanged.
 
 ## October 9 candidate
 
@@ -61,4 +71,4 @@ Keith prioritised a polished functional portfolio prototype. The original detect
 ## Handoff and next action
 
 - Milestone handoff exports only PRODUCT_BRIEF.md and this progress file. Task-message delivery is not Project Sources synchronisation; historical Sources copies remain dated.
-- Keith reviews the concrete candidate and approves production replacement if desired. After release, rerun actual Post Inspector and verify the Featured preview/Save flow. No additional product feature is required.
+- Keith can review the Margin desk preview, using Vercel sign-in if prompted. Production replacement remains a separate decision; actual Post Inspector/Featured verification follows only an approved release.

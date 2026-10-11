@@ -33,7 +33,7 @@ for (const width of [320, 390, 999, 1001, 1440]) {
     expect(resultsBounds).not.toBeNull();
     const checkBounds = await page.locator('.primary-button').boundingBox();
     const draftBounds = await editor.boundingBox();
-    expect.soft(checkBounds!.y + checkBounds!.height, 'Check action stays above the draft').toBeLessThanOrEqual(draftBounds!.y);
+    expect.soft(checkBounds!.y, 'Check action follows the editable source').toBeGreaterThanOrEqual(draftBounds!.y + draftBounds!.height);
     const examplesBounds = await page.locator('.start-options').boundingBox();
     expect.soft(examplesBounds!.y + examplesBounds!.height, 'Sample action precedes the workspace').toBeLessThanOrEqual(editorBounds!.y);
     await expect(page.locator('.finding-number')).toHaveText('01');
@@ -135,8 +135,9 @@ for (const width of [320, 390, 1024, 1440]) {
     expect(focus.outlineStyle).not.toBe('none');
     expect(focus.outline).toBeGreaterThanOrEqual(3);
     // Primary focus outline is outside the filled button, on the near-white editor.
-    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(55, 109, 105)');
+    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(52, 77, 190)');
     await page.getByRole('tab', { name: /Tone cues/ }).click();
+    await page.locator('.question-style summary').click();
     for (const label of ['Direct', 'Collaborative', 'Warm']) {
       const radio = page.getByRole('radio', { name: label, exact: true });
       const target = radio.locator('..');

@@ -26,6 +26,7 @@ for (const file of paths(dist)) {
   const bytes = Buffer.from(await response.arrayBuffer());
   assert.equal(digest(bytes), digest(readFileSync(file)), `Published asset differs from the reviewed local build: ${path}`);
   if (path.endsWith('.png')) assert(response.headers.get('content-type')?.includes('image/png'), 'Incorrect PNG content type.');
+  if (path.endsWith('.webp')) assert(response.headers.get('content-type')?.includes('image/webp'), 'Incorrect WebP content type.');
   if (path === 'index.html') {
     assert(response.headers.get('content-security-policy')?.includes("connect-src 'none'"), 'Missing connection-blocking HTTP CSP.');
     assert(response.headers.get('content-security-policy')?.includes("frame-ancestors 'none'"), 'Missing frame policy.');
