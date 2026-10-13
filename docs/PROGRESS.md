@@ -4,6 +4,12 @@ Updated: 2026-10-13
 Milestone: HubSpot–n8n explanation added to Video Demo and deployed
 Status: Production READY at https://communication-check.vercel.app/; source `049bbcd`.
 
+## October 13 interviewer README
+
+- Rewrote README for public portfolio review: customer problem, working demo, Keith's confirmed product-direction contribution, design trade-offs, separate fictional CRM demonstration and evidence links. Kept evaluation history linked and all application code unchanged.
+- Checked README links/anchors and whitespace; verified the public landing page responds with the expected title. Fresh independent Astra review found no source-review blockers. Existing release test counts are attributed to their records, not rerun for this documentation edit.
+- Keith explicitly made this repository public earlier in this chat. README changes are prepared on `codex/interviewer-readme` for review; merging to main and any deployment remain separate actions.
+
 ## October 13 Video Demo copy release
 
 - Keith explicitly authorised this small production update. Added the supplied HubSpot–n8n copy beneath the existing video placeholder using existing monochrome styles; no video exists, and “coming soon” remains. App diff is 17 added lines in InfoPages.tsx; no checker, engine, CSS, dependency or CRM connection changes.
@@ -64,7 +70,7 @@ Status: Production READY at https://communication-check.vercel.app/; source `049
 
 - Public URL now serves the approved October 13 release above. Rollback branch `codex/frozen-vercel-2026-09-16` stays at `1463832`; baseline app source `38d744d`, previous deployment `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`.
 - Work branch `codex/communication-check-next`; Prism alternative preserved on `codex/communication-check-tone-review` at `2527641`. See FROZEN_BASELINE.md. No main merge, frozen-branch update, production replacement, repository visibility change or domain change without explicit approval.
-- Repository remains private: https://github.com/keithtgrehan/communication-check. PR #1/#2/#3 were merged, last checked September 17; none reused.
+- Repository is public following Keith's explicit visibility instruction on October 13. URL: https://github.com/keithtgrehan/communication-check. Historical PR #1/#2/#3 remain preserved.
 
 ## September 23 CRM demonstration (preserved)
 
