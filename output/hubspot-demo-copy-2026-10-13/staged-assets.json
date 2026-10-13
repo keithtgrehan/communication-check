@@ -1,0 +1,41 @@
+{
+  "deployment": "dpl_5K7chhzUrhfsBF9RRoihoGM8HVTp",
+  "sourceCommit": "049bbcd",
+  "authenticatedAccess": "Vercel CLI curl",
+  "assets": [
+    {
+      "path": "THIRD_PARTY_LICENSES.txt",
+      "sha256": "beb926cccb9b3a84a69ea4c20ec90860621ecd9b9e1bd1bd9d546a5f35cd190e"
+    },
+    {
+      "path": "assets/index-BWtxfLdD.js",
+      "sha256": "4c3035f3b843f95328abc881955a4e53779527b66e9c0eceb73a7bbc4c2be47b"
+    },
+    {
+      "path": "assets/index-DrNWNpWX.css",
+      "sha256": "da1272d4872faea7ed2a598c19a7d474921e31935cc48c60967a13e0855f5331"
+    },
+    {
+      "path": "favicon.svg",
+      "sha256": "31958603d3842324e83b36d3326076fb28201049fe1a36e27dd436c780fecea6"
+    },
+    {
+      "path": "index.html",
+      "sha256": "0f3edd1c5bb783d91977103e7d599c7b83ec25090ce857d31e3151cc18d2d700"
+    },
+    {
+      "path": "review-notebook.webp",
+      "sha256": "32511e8fd26898b7f9b698265cce0c973247e45e8e3550967c104a567dfbb5d8"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "839e1a778ed56ca6ff61040298abf4fadb8b42cdeb9197ef1abc671911531288"
+    },
+    {
+      "path": "social-preview.png",
+      "sha256": "45c847c9221f37e833ed7c5c3d65a46e84b03add8dfceff07d4ddc5742f2d674"
+    }
+  ],
+  "verifiedAt": "2026-10-13T19:35:30.957Z",
+  "note": "Browser OIDC rejected with 403; no staged browser pass claimed. Public verification follows promotion."
+}

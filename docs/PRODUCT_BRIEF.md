@@ -4,6 +4,10 @@
 
 ## Current authorised milestone — 13 October 2026
 
+**Video Demo update released:** Keith authorised the supplied manual HubSpot–n8n
+explanation and production deployment. Source `049bbcd` is live; existing video
+“coming soon” status and checker workflow remain unchanged. See PROGRESS.md.
+
 **Latest refinement:** Keep the workspace layout and make all app states monochrome,
 with readable contrast and visible keyboard focus. Restore all nine original
 examples in their verified order, followed by the four current commercial examples
@@ -16,7 +20,7 @@ Keith subsequently explicitly approved replacing the main Vercel site with this
 reviewed candidate. Production staging/promotion and rollback to the preserved
 baseline are authorised; main-branch merge and new spending remain unapproved.
 
-**Released:** https://communication-check.vercel.app/ now serves the approved
+**Earlier monochrome release:** https://communication-check.vercel.app/ served the approved
 candidate from `ffba4d1`, deployment `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`.
 All 13 examples and focused public workflow/privacy checks passed. The frozen
 September deployment and Prism experiment remain preserved. See PROGRESS.md and

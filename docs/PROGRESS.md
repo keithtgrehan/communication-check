@@ -1,8 +1,14 @@
 # Communication Check progress
 
 Updated: 2026-10-13
-Milestone: Live monochrome release backed up to GitHub; development moved to a local-only folder
-Status: Production READY; verified local checkout at `/Users/keith/Developer/communication-check`.
+Milestone: HubSpot–n8n explanation added to Video Demo and deployed
+Status: Production READY at https://communication-check.vercel.app/; source `049bbcd`.
+
+## October 13 Video Demo copy release
+
+- Keith explicitly authorised this small production update. Added the supplied HubSpot–n8n copy beneath the existing video placeholder using existing monochrome styles; no video exists, and “coming soon” remains. App diff is 17 added lines in InfoPages.tsx; no checker, engine, CSS, dependency or CRM connection changes.
+- Verified: 8 setup checks, typecheck/build/source guards, 26 local information/presentation browser checks and 11 public information-page browser checks. Exact copy, no CRM/local links, zero axe violations, no overflow at 1440/390/320px and doubled text; desktop/mobile screenshots inspected. Navigation retains draft/reviews/decisions; no navigation requests or storage persistence. Fresh independent Astra Extra High review found no actionable defects. Chromium emulation, not physical-device testing.
+- Source `049bbcd`, deployment `dpl_5K7chhzUrhfsBF9RRoihoGM8HVTp` promoted READY on the existing active Hobby project. Eight staged assets matched through authenticated CLI; staged browser OIDC returned 403, so no staged browser pass is claimed. Public verification passed eight asset hashes, security headers and eight source/config 404s. Evidence: `output/hubspot-demo-copy-2026-10-13/`. Previous October release `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ` is the immediate rollback target; frozen September deployment/branch and Prism remain preserved. No main merge, access-policy change or new spending.
 
 ## October 13 approved production release
 
@@ -96,4 +102,4 @@ Keith prioritised a polished functional portfolio prototype. The original detect
 ## Handoff and next action
 
 - Milestone handoff exports only PRODUCT_BRIEF.md and this progress file. Task-message delivery is not Project Sources synchronisation; historical Sources copies remain dated.
-- Next action: continue development from the new local-only root on `codex/communication-check-next`. The live site is unchanged. Optional LinkedIn Post Inspector/Featured verification remains unperformed.
+- Next action: review the live Video Demo explanation. Recording remains optional and unavailable; LinkedIn Post Inspector/Featured verification remains separate.

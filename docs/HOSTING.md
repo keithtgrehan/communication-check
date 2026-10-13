@@ -2,6 +2,16 @@
 
 Status: October 13 monochrome/all-13-example release is live on the existing Vercel URL. The September deployment is preserved for rollback; older Render preview remains unchanged. Engine research is stopped.
 
+## Video Demo content release — 13 October 2026
+
+- Explicit user production authorisation; source `049bbcd` on the continuation branch.
+- Live: https://communication-check.vercel.app/, READY deployment `dpl_5K7chhzUrhfsBF9RRoihoGM8HVTp`.
+- Immutable URL: https://communication-check-9m943f2m1-keith-grehans-projects.vercel.app.
+- Same project/team verified, active Hobby. Only eight static assets and output config (466,732 bytes) uploaded; no remote build, plan change, new service or access-policy change.
+- Staged with `--prebuilt --prod --skip-domain`; all eight assets matched through authenticated `vercel curl`, then promoted. Staged OIDC browser access returned 403; no staged browser pass claimed.
+- Public verification: eight exact asset hashes, security headers, eight source/config 404s; all 11 information-page browser tests; exact new copy, axe and normal/doubled-text layout at 1440/390/320px; desktop/mobile screenshots inspected. Evidence in `output/hubspot-demo-copy-2026-10-13/`.
+- Immediate prior-production rollback target is now `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ` (October monochrome release). The older September deployment and frozen/Prism branches remain preserved. Historical procedures below describe prior releases; use the immediate prior target for this release if rollback is needed.
+
 ## Approved production release — 13 October 2026
 
 Keith explicitly approved: “approving change to main site get it live”. This
