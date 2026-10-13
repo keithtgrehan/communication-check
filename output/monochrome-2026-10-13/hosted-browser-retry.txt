@@ -1,0 +1,37 @@
+Vercel CLI 59.0.0 (Node.js 22.23.1)
+Retrieving project…
+Downloading `development` environment variables
+
+Running 23 tests using 1 worker
+
+(node:14852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 [authenticated-chromium] › work/monochrome-hosted-suite/tests/tone-review.spec.ts:155:1 › typing, cut, undo, example loads and clear invalidate both lenses and decisions (1.0m)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [authenticated-chromium] › work/monochrome-hosted-suite/tests/tone-review.spec.ts:155:1 › typing, cut, undo, example loads and clear invalidate both lenses and decisions
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.fill: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('textbox', { name: 'Your follow-up draft' })
+
+
+      157 |   const editor = editorFor(page);
+      158 |   const prepare = async () => {
+    > 159 |     await editor.fill(mixedDraft);
+          |                  ^
+      160 |     await clarityTab(page).click();
+      161 |     await page.getByRole('button', { name: /^(Check my draft|Recheck draft)$/ }).click();
+      162 |     await page.getByRole('button', { name: 'Keep as written' }).click();
+        at prepare (/Users/keith/Documents/ChatGPT/communication-check/work/monochrome-hosted-suite/tests/tone-review.spec.ts:159:18)
+        at /Users/keith/Documents/ChatGPT/communication-check/work/monochrome-hosted-suite/tests/tone-review.spec.ts:173:9
+
+    Error Context: work/monochrome-hosted-suite/results/tone-review-typing-cut-und-bd8c2-e-both-lenses-and-decisions-authenticated-chromium/error-context.md
+
+  1 failed
+    [authenticated-chromium] › work/monochrome-hosted-suite/tests/tone-review.spec.ts:155:1 › typing, cut, undo, example loads and clear invalidate both lenses and decisions
+  22 did not run
+  1 error was not a part of any test, see above for details

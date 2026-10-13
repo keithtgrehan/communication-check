@@ -1,0 +1,16 @@
+
+> communication-check-workspace@0.0.0 test
+> vitest run
+
+
+ RUN  v5.0.0 /Users/keith/Documents/ChatGPT/communication-check
+
+
+ Test Files  3 passed (3)
+      Tests  466 passed (466)
+   Start at  17:02:44
+   Duration  22.18s (transform 99%, tests 1%)
+
+  Transform  transforming modules took 31.11s · 99% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns

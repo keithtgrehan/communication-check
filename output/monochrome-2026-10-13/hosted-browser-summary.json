@@ -1,0 +1,13 @@
+{
+  "deployment": "dpl_7Xe8WwvHcVLYjx2mqidQQ4HD4MCq",
+  "passed": 71,
+  "total": 94,
+  "remaining": 23,
+  "complete": false,
+  "blocker": "Vercel Security Checkpoint Code 21 on browser navigation before application load",
+  "retry": "One paused single-worker retry stopped after first repeated checkpoint",
+  "localBrowserChecks": 94,
+  "localPassed": 94,
+  "configurationChanges": false,
+  "credentialsPersisted": false
+}

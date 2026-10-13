@@ -1,15 +1,15 @@
 # Communication Check progress
 
 Updated: 2026-10-13
-Milestone: Monochrome workspace and complete catalog, separate Vercel preview
-Status: Preview READY; 71 hosted checks passed, remaining automation blocked by Vercel security checkpoint. Production remains frozen.
+Milestone: Approved monochrome workspace and complete catalog live on Vercel
+Status: Production READY at the existing public URL; focused public workflow/privacy checks passed.
 
-## October 13 authorised Vercel preview
+## October 13 approved production release
 
-- Keith authorised the separate preview. READY: https://communication-check-6vs6k4cvr-keith-grehans-projects.vercel.app/ (`dpl_7Xe8WwvHcVLYjx2mqidQQ4HD4MCq`). Existing Communication Check project in Keith Grehan's projects, active Hobby. Only eight static assets plus config uploaded after dry-run exclusion review; current rebuilt assets are byte-identical to the reviewed local candidate. No remote build or paid feature used.
-- Eight hosted asset hashes, security headers, image MIME and eight source/config 404s pass. Inspected hosted desktop/mobile screenshots. Authenticated browser run passed 71 checks, including all 13 samples, keyboard, contrast, responsive/enlarged text, replacement protection and tone state. Vercel Security Checkpoint Code 21 then blocked navigation before the remaining checks could reach the app; bulk run stopped. One slower retry hit the same checkpoint and stopped. Full hosted validation is not claimed; all 94 local tests still passed before deployment.
-- Existing project OIDC used only in process, scoped to the preview origin; no auth traces or saved browser state. Preview still redirects anonymous visitors to Vercel SSO. Public alias verified unchanged before/after at frozen deployment `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. No commit/push, merge, protection-policy change, production move or spending. Billing usage API returned 404; numerical allowance is not claimed.
-- Source is the reviewed uncommitted continuation-branch working tree, not HEAD alone. Deployment/source/build evidence and hosted screenshots in `output/monochrome-2026-10-13/`. Production plan remains gated in HOSTING.md.
+- Keith explicitly approved replacing the main site with the reviewed candidate. Live: https://communication-check.vercel.app/, source `ffba4d1`, deployment `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`. Exact reviewed static assets staged READY, staged HTML matched, then promoted; public alias independently verified. Existing project/account remains active Hobby, no remote build or paid feature. No Git main merge or branch push.
+- All eight public assets match the reviewed build; security headers, image MIME and eight source/config exclusions pass (`production-assets.json`). Public Chromium smoke passed all 13 labels/order and real sample checks, inert selection, preferred lenses/both snapshots, exact evidence, Keep/Undo, tone-style decision retention, editing invalidation, current clipboard, offline checking, empty runtime storage and reload clearing. Fictional canary absent from network/log/URL. Desktop/390px screenshots inspected; no mobile overflow; navigation preserves draft. Evidence: `output/monochrome-2026-10-13/production-flow.json` and production screenshots.
+- Preview `dpl_7Xe8WwvHcVLYjx2mqidQQ4HD4MCq` had eight matching assets/headers/source exclusions and 71 browser checks pass; Vercel checkpoint blocked the remaining 23. No full hosted-suite pass is claimed. All 94 local browser checks passed. Focused public smoke subsequently passed without authentication or security-policy changes. Billing usage API returned 404; numerical allowance is not claimed.
+- Frozen rollback deployment `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7` and frozen/Prism branch refs remain intact. See HOSTING.md for release and rollback details. LinkedIn Post Inspector/Featured verification remains separate and unperformed after release.
 
 ## October 13 monochrome and complete catalog
 
@@ -17,7 +17,7 @@ Status: Preview READY; 71 hosted checks passed, remaining automation blocked by 
 - Git source `38d744d` verifies the original nine labels/order/text/preferred lenses; `0639498` replaced the visible catalog with four commercial examples. Keith explicitly chose all 13: original nine first, then current four. Current partner default and two shortened commercial labels remain. Both original catalogs and engine files are unchanged; only catalog wiring changed.
 - Verification: 8 setup checks, 466 engine/example tests, final typecheck/build/source guards and all 94 Chromium browser checks pass. Includes all 13 examples in both lenses, original order, keyboard type-ahead/Tab/Enter, inert selection, draft protection, exact spans, review decisions, tone styles, copy, offline and runtime memory-only/privacy checks. Contrast, all-state monochrome scan, 320–1440px layout and 200% text/zoom pass. Initial arrow-key test assumed unsupported headless OS-menu behavior; replaced with verified native type-ahead, then full suite passed.
 - Inspected desktop/390px/320px empty/review captures and refreshed neutral share card. Screenshots, layout measurements and source/asset integrity evidence: `output/monochrome-2026-10-13/`. Chromium emulation is not physical-device testing or human validation.
-- Vercel plan in HOSTING.md specifies authenticated existing-project preview, acceptance checks, candidate-specific production approval, staged production verification and frozen-deployment rollback, including Hobby eligibility. No deployment, alias move, main merge, spending, commit or push occurred. Frozen and Prism branch refs remain intact.
+- Vercel plan in HOSTING.md specifies authenticated existing-project preview, acceptance checks, candidate-specific production approval, staged production verification and frozen-deployment rollback, including Hobby eligibility. That local pass made no deployment or Git publication; the later approved release is recorded above. Frozen and Prism branch refs remain intact.
 - Fresh independent Astra Extra High review found no actionable defects. Independently verified all 13 options, original text parity, historical tone flows, exact selection/Keep/Undo/styles, replacement cancel/accept, 382px doubled labels, 320px rendering and three clean axe scans; reviewed hosting approval/rollback plan. Local candidate http://127.0.0.1:4175/.
 
 ## October 13 application workspace
@@ -53,9 +53,9 @@ Status: Preview READY; 71 hosted checks passed, remaining automation blocked by 
 - Fresh independent Astra Extra High review found no actionable defects; five viewport flows, keyboard/enlarged text, three axe states and metadata/image checks passed. Hosted authentication used existing short-lived Vercel credentials: all seven static assets match the local build, security headers and eight source/config exclusions pass. Actual hosted example/edit/Keep/Undo/copy, offline and privacy smoke plus 390px layout pass. Anonymous preview requests redirect to Vercel sign-in; this is not public crawler verification.
 - Production canonical/image addresses intentionally target https://communication-check.vercel.app/ for the eventual approved release. The candidate is not yet live there. LinkedIn Post Inspector success, Featured preview/Save and the final Featured link remain pending after release; do not report “LinkedIn fixed”.
 
-## Frozen production and branches
+## Preserved baseline and branches
 
-- Public URL: https://communication-check.vercel.app/. Frozen branch `codex/frozen-vercel-2026-09-16` at `1463832`; deployed source `38d744d`, production deployment dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7.
+- Public URL now serves the approved October 13 release above. Rollback branch `codex/frozen-vercel-2026-09-16` stays at `1463832`; baseline app source `38d744d`, previous deployment `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`.
 - Work branch `codex/communication-check-next`; Prism alternative preserved on `codex/communication-check-tone-review` at `2527641`. See FROZEN_BASELINE.md. No main merge, frozen-branch update, production replacement, repository visibility change or domain change without explicit approval.
 - Repository remains private: https://github.com/keithtgrehan/communication-check. PR #1/#2/#3 were merged, last checked September 17; none reused.
 
@@ -95,4 +95,4 @@ Keith prioritised a polished functional portfolio prototype. The original detect
 ## Handoff and next action
 
 - Milestone handoff exports only PRODUCT_BRIEF.md and this progress file. Task-message delivery is not Project Sources synchronisation; historical Sources copies remain dated.
-- Next action: Keith reviews the authenticated monochrome preview. Remaining hosted automated checks need normal access restored after Vercel’s checkpoint; production remains gated by candidate-specific approval in HOSTING.md. Actual LinkedIn verification follows only an approved release.
+- Next action: use the updated public site. The optional portfolio follow-up is actual LinkedIn Post Inspector/Featured verification; it has not been performed as part of this release.

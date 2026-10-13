@@ -1,7 +1,10 @@
 # Frozen live baseline
 
 Keith confirmed on 2026-09-16 that https://communication-check.vercel.app/ is the
-version to keep. Production is frozen; no deployment changed during this freeze.
+version to keep. This baseline remained live until Keith explicitly approved the
+October 13 monochrome release (`ffba4d1`, deployment
+`dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`). The baseline below is preserved for rollback;
+its branch and deployment have not been changed.
 
 - Frozen Git branch: `codex/frozen-vercel-2026-09-16`.
 - Baseline commit: `146383228c99437ad4958b981d230c3b59d747b8` (includes deployment records).

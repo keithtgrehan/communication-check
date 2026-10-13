@@ -1,0 +1,32 @@
+{
+  "id": "dpl_7Xe8WwvHcVLYjx2mqidQQ4HD4MCq",
+  "url": "communication-check-6vs6k4cvr-keith-grehans-projects.vercel.app",
+  "name": "communication-check",
+  "projectId": "prj_NW3ec5feWa0ljV2AYyNb12psxi1K",
+  "readyState": "READY",
+  "target": null,
+  "createdAt": 1791910681036,
+  "buildingAt": 1791910681036,
+  "ready": 1791910681036,
+  "builds": [],
+  "alias": [],
+  "checkoutCommit": "d350dc42e0cf004ab10bccd043607e991440fd20",
+  "source": "Reviewed uncommitted working tree on codex/communication-check-next; asset identity in hosted-assets.json",
+  "staticPrebuilt": true,
+  "buildServerUsed": false,
+  "productionBefore": "dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7",
+  "productionAfter": "dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7",
+  "plan": "active Hobby",
+  "billingUsageQuery": "CLI returned Costs not found (404); numerical remaining usage not verified. No paid feature, plan or billing change. Static prebuilt upload only.",
+  "anonymousPreview": "302 to Vercel SSO",
+  "uploadBytes": 465377,
+  "sourceHashes": {
+    "web/src/App.tsx": "c4fe5c7e7f90890f608797933620081bef67fd5ef76698f212c1d695fcd6ebe7",
+    "web/src/styles.css": "cc13fb165cf189c7a9fdb6a356fa8e10255b76aaf4e81421075af96fb75f3744",
+    "web/src/demos.ts": "1cf401c2035ff7a3d7b3337818e16d13b19b62fa90c7c81089d207b311c37c90",
+    "web/index.html": "8b66be7c1b83a94314d447e91757a896a85d45b8080489722bafa8e68312afd4",
+    "web/public/favicon.svg": "31958603d3842324e83b36d3326076fb28201049fe1a36e27dd436c780fecea6",
+    "web/public/social-preview.png": "45c847c9221f37e833ed7c5c3d65a46e84b03add8dfceff07d4ddc5742f2d674",
+    "docs/VERCEL_OUTPUT_CONFIG.json": "2a2d3062ca0d250500b7c744f36c9ce6f852f490782bd0239b7d5389c509e60c"
+  }
+}

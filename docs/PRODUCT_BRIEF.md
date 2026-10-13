@@ -16,6 +16,12 @@ Keith subsequently explicitly approved replacing the main Vercel site with this
 reviewed candidate. Production staging/promotion and rollback to the preserved
 baseline are authorised; main-branch merge and new spending remain unapproved.
 
+**Released:** https://communication-check.vercel.app/ now serves the approved
+candidate from `ffba4d1`, deployment `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`.
+All 13 examples and focused public workflow/privacy checks passed. The frozen
+September deployment and Prism experiment remain preserved. See PROGRESS.md and
+HOSTING.md for release evidence and remaining verification limits.
+
 
 Keith rejected the near-identical Replit design variations and requested a
 substantial professional SaaS redesign. Replace the editorial presentation with
@@ -25,7 +31,8 @@ and stock-photo section from the checker. Finish a working local desktop/mobile
 candidate with relevant functional/privacy/accessibility checks, screenshots and
 independent review. This supersedes the prior paper/serif/photo design direction.
 Preserve all engine, evidence, review-state and memory-only behaviour. No new
-service, product expansion, production replacement or main merge.
+service or product expansion. Production replacement was separately approved above;
+main merge remains outside scope.
 
 ## Previous authorised milestone — 11 October 2026
 

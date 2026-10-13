@@ -1,6 +1,37 @@
 # Separate preview and rollback
 
-Status: September 16 editorial candidate is deployed to Vercel. The older Render preview remains unchanged. Engine research is stopped for this delivery.
+Status: October 13 monochrome/all-13-example release is live on the existing Vercel URL. The September deployment is preserved for rollback; older Render preview remains unchanged. Engine research is stopped.
+
+## Approved production release — 13 October 2026
+
+Keith explicitly approved: “approving change to main site get it live”. This
+satisfied the candidate-specific release gate below; no further confirmation was
+required. Source `ffba4d1`, branch `codex/communication-check-next`.
+
+- Public URL: https://communication-check.vercel.app/
+- Deployment: `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`, READY, production.
+- Immutable URL: https://communication-check-kzmh5fnls-keith-grehans-projects.vercel.app
+- Same project `prj_NW3ec5feWa0ljV2AYyNb12psxi1K` / Keith Grehan's projects,
+  verified active Hobby. Reviewed package byte-identical to the preview; staged
+  with `--prebuilt --prod --skip-domain`, authenticated staged HTML matched, then
+  promoted. Public alias independently verified at this deployment.
+- All eight public assets match the reviewed build; security headers, image MIME
+  and eight source/config 404s pass. Evidence: `output/monochrome-2026-10-13/production-assets.json`.
+- Anonymous public Chromium smoke passed all 13 examples, both lenses, exact
+  selection, Keep/Undo, style retention, edit invalidation, current clipboard,
+  offline use, runtime canary privacy, empty storage/reload clearing and mobile
+  navigation. Desktop/mobile screenshots inspected. Evidence:
+  `output/monochrome-2026-10-13/production-flow.json` and production screenshots.
+- This focused production check is separate from the previous preview suite:
+  71 preview checks passed, 23 were blocked by Vercel's checkpoint. All 94 local
+  tests passed. No protection-policy change or claim of a full hosted-suite pass.
+- Rollback target remains the previous production deployment
+  `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. Use the rollback procedure below and recheck
+  frozen asset hashes and workflow. Do not create an intervening production
+  deployment or move the preserved Git refs. No Git main merge, new plan, paid
+  feature, remote build, domain change or source upload occurred.
+- LinkedIn Post Inspector and Featured preview verification remain unperformed
+  after this release; successful HTML/metadata checks do not establish that result.
 
 ## Monochrome preview — 13 October 2026
 
@@ -34,15 +65,14 @@ metadata checks do not prove anonymous crawler/LinkedIn access.
 
 Production alias was verified before and after deployment at frozen
 `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. No Git commit/push, merge or frozen/Prism ref
-change occurred. Production still needs explicit candidate-specific approval below;
-identify this immutable preview and the recorded source/build hashes, then record
-its release commit before any approved production staging.
+change occurred during that preview step. Keith subsequently approved the exact
+candidate; release commit and production result are recorded above.
 
 ## Proposed monochrome release — 13 October 2026
 
-**Production plan remains unexecuted.** The separately authorised Preview step is
-recorded above. Production staging, promotion and rollback commands below have not
-been run. Existing project/account identity was reverified October 13.
+**Release plan executed after explicit approval.** Preview, production staging and
+promotion are recorded above. Rollback was not needed. The original plan below
+is retained with the preview checkpoint limitation documented in the release record.
 
 1. **Prepare a separate preview after Keith authorises it.** Recheck the existing
    `communication-check` project (`prj_NW3ec5feWa0ljV2AYyNb12psxi1K`) in
@@ -66,7 +96,8 @@ been run. Existing project/account identity was reverified October 13.
    Use existing `verify:hosted` and browser suites with authenticated preview
    access; never persist bypass credentials in reports. Keith reviews the rendered
    monochrome candidate. Stop if allowance, project identity or validation fails.
-3. **Obtain explicit production approval, naming the candidate.** Required wording:
+3. **Obtain explicit production approval, naming the candidate.** Satisfied by
+   Keith’s October 13 approval above. The proposed wording was:
    “I approve replacing https://communication-check.vercel.app/ with the reviewed
    monochrome candidate at [preview URL], commit [SHA], including staging it for
    production and moving the production alias after verification. Use only the

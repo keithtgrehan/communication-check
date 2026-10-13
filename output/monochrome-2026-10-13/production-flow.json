@@ -1,0 +1,25 @@
+{
+  "origin": "https://communication-check.vercel.app",
+  "verifiedAt": "2026-10-13T17:22:03.901Z",
+  "authenticated": false,
+  "passed": [
+    "public page",
+    "all 13 labels/order",
+    "inert selector",
+    "all 13 real sample checks",
+    "preferred lenses and both snapshots",
+    "exact evidence",
+    "keep/undo",
+    "style preserves decisions",
+    "edit invalidation",
+    "offline check",
+    "current clipboard",
+    "no canary in network/log/URL",
+    "empty storage/cookies/caches/workers",
+    "reload clearing",
+    "desktop/mobile screenshots",
+    "no mobile overflow",
+    "navigation preserves draft"
+  ],
+  "note": "Focused real production smoke, not a repeat of all 94 local tests."
+}
