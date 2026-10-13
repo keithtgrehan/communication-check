@@ -118,8 +118,9 @@ for (const width of [320, 390, 1024, 1440]) {
     });
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-frame')).border).toBeGreaterThanOrEqual(3);
-    // The filled example button is distinguished by its surface against the surrounding strip.
-    expect((await contrast('.sample-button')).boundary).toBeGreaterThanOrEqual(3);
+    // The example action must be identifiable by its surface or border.
+    const sampleContrast = await contrast('.sample-button');
+    expect(Math.max(sampleContrast.boundary, sampleContrast.border)).toBeGreaterThanOrEqual(3);
     expect((await contrast('.sample-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-actions .secondary-button:not(.reset-button)')).text).toBeGreaterThanOrEqual(4.5);
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests. Stop making excuses and send the workspace list.');
@@ -134,8 +135,6 @@ for (const width of [320, 390, 1024, 1440]) {
     expect(focus.outlineWidth).toBeGreaterThanOrEqual(2);
     expect(focus.outlineStyle).not.toBe('none');
     expect(focus.outline).toBeGreaterThanOrEqual(3);
-    // Primary focus outline is outside the filled button, on the near-white editor.
-    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(52, 77, 190)');
     await page.getByRole('tab', { name: /Tone cues/ }).click();
     await page.locator('.question-style summary').click();
     for (const label of ['Direct', 'Collaborative', 'Warm']) {
@@ -212,3 +211,44 @@ for (const width of [320, 390]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
+
+test('rendered controls, states and informational pages use a monochrome palette', async ({ page }) => {
+  await page.goto('/');
+  const expectNeutral = async (state: string) => {
+    const coloured = await page.evaluate(() => {
+      const mismatches: string[] = [];
+      for (const element of document.querySelectorAll<HTMLElement>('body *')) {
+        if (!element.getClientRects().length || getComputedStyle(element).visibility === 'hidden') continue;
+        const style = getComputedStyle(element);
+        for (const property of ['color', 'backgroundColor', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'outlineColor', 'boxShadow', 'accentColor', 'fill', 'stroke'] as const) {
+          for (const match of style[property].matchAll(/rgba?\(([^)]+)\)/g)) {
+            const [r, g, b, alpha = 1] = match[1].split(/[,\s]+/).map(Number);
+            if (alpha && (r !== g || g !== b)) mismatches.push(`${element.tagName}.${element.className} ${property}: ${match[0]}`);
+          }
+        }
+      }
+      return mismatches;
+    });
+    expect(coloured, state).toEqual([]);
+  };
+  await expectNeutral('Empty / disabled');
+  await page.getByRole('combobox').focus();
+  await expectNeutral('Picker focus');
+  await page.getByRole('button', { name: 'Try an example' }).hover();
+  await expectNeutral('Example hover');
+  await page.getByRole('button', { name: 'Try an example' }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).hover();
+  await expectNeutral('Finding / action hover');
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await expectNeutral('Reviewed');
+  await page.getByRole('tab', { name: /Tone cues/ }).click();
+  await page.locator('.question-style summary').click();
+  await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+  await expectNeutral('Tone tab / selected radio');
+  await page.getByRole('textbox').fill('x'.repeat(12001));
+  await expectNeutral('Over-limit error');
+  for (const name of ['About this project', 'Video Demo']) {
+    await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name, exact: true }).click();
+    await expectNeutral(name);
+  }
+});

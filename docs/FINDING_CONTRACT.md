@@ -1,4 +1,35 @@
-# Finding contract — version 10 (11 October 2026)
+# Finding contract — version 12 (13 October 2026)
+
+## October 13 monochrome and complete examples
+
+Current scope is local implementation and validation only. Keep the existing
+workspace layout and all review/privacy behavior. Use neutral black, charcoal,
+grey and white for every app state, focus ring, control and icon. Restore the
+verified historical example catalog without changing its text or preferred lens;
+Keith chose all 13: the original nine in verified order followed by the four
+current commercial examples, retaining their current labels and default selection.
+
+Ownership: monochrome worker owns only web/src/styles.css,
+web/public/favicon.svg and web/index.html theme-color. Lead owns App.tsx,
+demos catalog wiring, browser tests, documentation and integration. No engine,
+dependency, production or hosting mutation. Fresh independent review follows.
+
+## October 13 professional workspace redesign
+
+Keith rejected the visually similar Replit directions and requested a substantial
+professional SaaS redesign. Replace the editorial/marketing presentation with a
+compact application shell, functional navigation, sans-serif draft typography,
+clear toolbar hierarchy and a structured review panel. Remove the oversized hero
+and stock-photo explanation from the checker. These presentation decisions
+supersede the October 11 paper/serif/photo requirements below.
+
+Preserve engines, exact spans, native textarea, lens snapshots, Keep/Undo,
+invalidation, sample replacement confirmation, copy fallback and memory-only
+privacy. No new product features, services or production replacement.
+Finish with a local working candidate, desktop/mobile captures, relevant tests
+and a fresh independent review. UI worker owns App.tsx, styles.css and necessary
+InfoPages.tsx presentation; lead owns tests, docs and integration. Engine files,
+dependencies and frozen production remain untouched.
 
 ## October 11 approved Margin desk preview
 

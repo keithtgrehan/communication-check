@@ -223,3 +223,7 @@ Best,
 Alex`,
   },
 ];
+
+// Restore the frozen baseline's nine examples in their original order, followed
+// by the four October 9 commercial examples. Keep both source catalogs intact.
+export const ALL_DEMO_DRAFTS: DemoDraft[] = [...DEMO_DRAFTS, ...PORTFOLIO_DEMO_DRAFTS];

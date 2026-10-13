@@ -2,7 +2,32 @@
 
 **Check your customer follow-up before you send it.**
 
-## Current authorised milestone — 11 October 2026
+## Current authorised milestone — 13 October 2026
+
+**Latest refinement:** Keep the workspace layout and make all app states monochrome,
+with readable contrast and visible keyboard focus. Restore all nine original
+examples in their verified order, followed by the four current commercial examples
+(Keith chose all 13). Preserve labels, text, preferred lenses, dual checks and draft
+replacement confirmation. Complete local functional/privacy/accessibility checks,
+desktop/mobile screenshots, independent review and a concrete existing-Vercel
+update plan. The initial request authorised local implementation only. Keith then
+authorised a separate authenticated Vercel preview of the reviewed candidate.
+Keith subsequently explicitly approved replacing the main Vercel site with this
+reviewed candidate. Production staging/promotion and rollback to the preserved
+baseline are authorised; main-branch merge and new spending remain unapproved.
+
+
+Keith rejected the near-identical Replit design variations and requested a
+substantial professional SaaS redesign. Replace the editorial presentation with
+a compact application workspace: functional navigation, clear toolbar hierarchy,
+sans-serif draft text and a structured review panel. Remove the oversized hero
+and stock-photo section from the checker. Finish a working local desktop/mobile
+candidate with relevant functional/privacy/accessibility checks, screenshots and
+independent review. This supersedes the prior paper/serif/photo design direction.
+Preserve all engine, evidence, review-state and memory-only behaviour. No new
+service, product expansion, production replacement or main merge.
+
+## Previous authorised milestone — 11 October 2026
 
 Keith selected the Margin desk direction and authorized implementation as a separate
 preview. Apply the approved warm-paper/white-document/open-review-margin design,

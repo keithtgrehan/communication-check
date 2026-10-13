@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { checkDraft } from '../../web/src/engine';
 import { checkTone } from '../../web/src/engine/tone';
-import { PORTFOLIO_DEMO_DRAFTS as DEMO_DRAFTS } from '../../web/src/demos';
+import { ALL_DEMO_DRAFTS as DEMO_DRAFTS, PRIMARY_DEMO_ID } from '../../web/src/demos';
 
 for (const width of [320, 382]) {
   test(`practical ${width} by 844 first visit exposes the draft entry and both starting paths`, async ({ page }) => {
@@ -34,7 +34,7 @@ for (const { width, height } of [{ width: 320, height: 900 }, { width: 382, heig
       await expect(page.getByText('Add a draft to begin.', { exact: true })).toBeVisible();
       await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
       await expect(picker).toHaveValue('partner-co-selling');
-      await expect(picker.locator('option')).toHaveCount(4);
+      await expect(picker.locator('option')).toHaveCount(13);
       // These assertions happen before interactions that could scroll the page.
       expect(await page.evaluate(() => scrollY)).toBe(0);
       await expect(page.getByText('Runs both checks. We’ll ask before replacing your own draft.', { exact: true })).toBeInViewport({ ratio: 1 });
@@ -263,7 +263,7 @@ test('trying an example protects a user draft and its decisions until replacemen
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
   page.once('dialog', dialog => dialog.accept());
   await page.getByRole('button', { name: 'Try an example' }).click();
-  await expect(editor).toHaveValue(DEMO_DRAFTS[0].text);
+  await expect(editor).toHaveValue(DEMO_DRAFTS.find(demo => demo.id === PRIMARY_DEMO_ID)!.text);
   await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
   // Switching between untouched examples does not discard user-authored text.
   const unexpectedDialogs: string[] = [];
@@ -274,7 +274,7 @@ test('trying an example protects a user draft and its decisions until replacemen
   await expect(page.getByRole('heading', { name: 'No wording flagged by these checks' })).toBeVisible();
   expect(unexpectedDialogs).toEqual([]);
   page.off('dialog', rejectUnexpected);
-  const edited = `${DEMO_DRAFTS[3].text}\nMy own extra wording.`;
+  const edited = `${DEMO_DRAFTS.find(demo => demo.id === 'clear-commercial-follow-up')!.text}\nMy own extra wording.`;
   await editor.fill(edited);
   page.once('dialog', dialog => dialog.dismiss());
   await page.getByRole('button', { name: 'Try an example' }).click();
@@ -283,25 +283,17 @@ test('trying an example protects a user draft and its decisions until replacemen
 });
 
 for (const width of [320, 390, 768, 1000, 1024, 1440]) {
-  test(`fictional proof stays separate from real reviews and the supporting photo follows the desk at ${width}px`, async ({ page }) => {
+  test(`workspace keeps draft entry, honest empty state and navigation usable at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
     const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
-    const illustration = page.locator('.fictional-review');
-    if (width > 1000) {
-      await expect(illustration).toBeVisible();
-      await expect(illustration).toContainText('Fictional illustration');
-      const demo = DEMO_DRAFTS.find(item => item.id === 'partner-co-selling')!;
-      const finding = checkDraft(demo.text).findings[0];
-      await expect(illustration.locator('blockquote')).toHaveText(finding.quote);
-      await expect(illustration.getByRole('heading')).toHaveText(finding.prompt);
-    } else {
-      await expect(illustration).toBeHidden();
-    }
+    await expect(page.getByRole('heading', { name: 'Your review', exact: true })).toBeVisible();
     await expect(page.locator('.finding-card')).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
+    await expect(page.locator('.how-it-works, .review-photo, .fictional-review')).toHaveCount(0);
+    const entry = await editor.boundingBox();
+    expect(entry!.y + 26).toBeLessThan(900);
     await editor.fill('My own unchecked wording.');
-    await expect(illustration).toHaveCount(0);
     await expect(page.getByRole('heading', { name: 'Ready to check your draft.' })).toBeVisible();
     await expect(page.locator('.finding-card')).toHaveCount(0);
     await page.getByRole('tab', { name: /Tone cues/ }).click();
@@ -313,19 +305,34 @@ for (const width of [320, 390, 768, 1000, 1024, 1440]) {
     await expect(page.locator('.finding-card')).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Check tone cues', exact: true })).toBeEnabled();
     await expect(editor).toHaveValue('My own unchecked wording.');
-
-    const photo = page.locator('.review-photo img');
-    const desk = await page.locator('.workspace').boundingBox();
-    const section = await page.locator('.how-it-works').boundingBox();
-    expect(section!.y).toBeGreaterThanOrEqual(desk!.y + desk!.height);
-    await expect(photo).toHaveAttribute('loading', 'lazy');
-    await expect(photo).toHaveAttribute('width', '1200');
-    await expect(photo).toHaveAttribute('height', '1800');
-    await photo.scrollIntoViewIfNeeded();
-    await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 1200 && img.naturalHeight === 1800)).toBe(true);
-    expect(await photo.evaluate((img: HTMLImageElement) => new URL(img.currentSrc).origin === location.origin)).toBe(true);
-    const dimensions = await photo.boundingBox();
-    expect(dimensions!.width / dimensions!.height).toBeCloseTo(width <= 700 ? 4 / 3 : 4 / 5, 2);
+    await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'About this project', exact: true }).click();
+    await expect(page.getByRole('heading', { level: 1, name: 'About Communication Check' })).toBeFocused();
+    await page.getByRole('link', { name: 'Communication Check home', exact: true }).click();
+    await expect(editor).toHaveValue('My own unchecked wording.');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
+
+test('restored catalog keeps the verified labels and order, and keyboard selection is inert', async ({ page }) => {
+  await page.goto('/');
+  const picker = page.getByRole('combobox', { name: 'Fictional example' });
+  await expect(picker.locator('option')).toHaveText([
+    'Clear next steps', 'Too many asks', 'Promises to confirm', 'Tone to reconsider',
+    'Kickoff handoff', 'Blocked data import', 'Pending rollout decision',
+    'Chasing a missing list', 'Deadline pressure', 'Partner handoff',
+    'Discovery call', 'Renewal discussion', 'Clear follow-up',
+  ]);
+  await picker.focus();
+  // Native select type-ahead works without relying on an OS popup in headless mode.
+  await page.keyboard.type('tone');
+  await expect(picker).toHaveValue('tone-to-reconsider');
+  await expect(page.getByRole('textbox')).toHaveValue('');
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await picker.press('Tab');
+  const action = page.getByRole('button', { name: 'Try an example' });
+  await expect(action).toBeFocused();
+  await action.press('Enter');
+  await expect(page.getByRole('tab', { name: /Tone cues/ })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByRole('textbox')).toHaveValue(DEMO_DRAFTS.find(demo => demo.id === 'tone-to-reconsider')!.text);
+  await expect(page.getByRole('heading', { name: 'Your review' })).toBeFocused();
+});

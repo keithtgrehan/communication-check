@@ -3,9 +3,22 @@ import AxeBuilder from '@axe-core/playwright';
 import { checkDraft } from '../../web/src/engine';
 
 const pages = [
-  { hash: '#/about', title: 'About Communication Check' },
-  { hash: '#/video-demo', title: 'Video Demo' },
+  { hash: '#/about', title: 'About Communication Check', navName: 'About this project' },
+  { hash: '#/video-demo', title: 'Video Demo', navName: 'Video Demo' },
 ];
+
+test('skip link bypasses persistent navigation on each page without changing the route', async ({ page }) => {
+  for (const route of [{ hash: '#/', title: 'Review your follow-up' }, ...pages]) {
+    await page.goto(`/${route.hash}`);
+    // A hash-only navigation retains focus; reload to test fresh keyboard entry.
+    await page.reload();
+    await page.keyboard.press('Tab');
+    await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('heading', { level: 1, name: route.title, exact: true })).toBeFocused();
+    expect(new URL(page.url()).hash).toBe(route.hash);
+  }
+});
 
 test('About illustration matches an actual check and Video is a static walkthrough', async ({ page }) => {
   await page.goto('/#/about');
@@ -41,7 +54,7 @@ for (const width of [320, 382, 1440]) {
       await expect(page.getByRole('main')).toHaveCount(1);
       await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveCount(0);
       const nav = page.getByRole('navigation');
-      await expect(nav.getByRole('link', { name: info.title, exact: true })).toHaveAttribute('aria-current', 'page');
+      await expect(nav.getByRole('link', { name: info.navName, exact: true })).toHaveAttribute('aria-current', 'page');
       const readme = page.getByRole('link', { name: /readme/i });
       await expect(readme).toHaveAttribute('href', 'https://github.com/keithtgrehan/communication-check#readme');
       await expect(readme).toHaveAttribute('rel', /noreferrer/);
@@ -64,7 +77,7 @@ test('navigation and browser history preserve the draft, both reviews and Keep d
   await page.getByRole('radio', { name: 'Warm', exact: true }).check();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   const nav = page.getByRole('navigation');
-  await nav.getByRole('link', { name: 'About Communication Check', exact: true }).focus();
+  await nav.getByRole('link', { name: 'About this project', exact: true }).focus();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { level: 1, name: 'About Communication Check', exact: true })).toBeFocused();
   await nav.getByRole('link', { name: 'Video Demo', exact: true }).click();
@@ -73,7 +86,7 @@ test('navigation and browser history preserve the draft, both reviews and Keep d
   await expect(page.getByRole('heading', { level: 1, name: 'About Communication Check', exact: true })).toBeFocused();
   await page.goForward();
   await expect(page.getByRole('heading', { level: 1, name: 'Video Demo', exact: true })).toBeFocused();
-  await page.getByRole('link', { name: 'Communication Check', exact: true }).click();
+  await page.getByRole('link', { name: 'Communication Check home', exact: true }).click();
   await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveValue(draft);
   await expect(page.getByRole('radio', { name: 'Warm', exact: true })).toBeChecked();
   await expect(page.getByRole('button', { name: /^Undo keep:/ })).toBeVisible();
@@ -91,7 +104,7 @@ test('information navigation loads no third-party content and does not persist a
   const requests: string[] = [];
   page.on('request', request => requests.push(request.url()));
   for (const info of pages) {
-    await page.getByRole('navigation').getByRole('link', { name: info.title, exact: true }).click();
+    await page.getByRole('navigation').getByRole('link', { name: info.navName, exact: true }).click();
     await expect(page.getByRole('heading', { level: 1, name: info.title })).toBeVisible();
     expect(page.url()).not.toContain('FICTIONAL_INFO_NAV');
   }
@@ -100,7 +113,7 @@ test('information navigation loads no third-party content and does not persist a
     .toEqual({ local: {}, session: {}, cookies: '' });
   await page.reload();
   await expect(page.getByRole('heading', { level: 1, name: 'Video Demo', exact: true })).toBeVisible();
-  await page.getByRole('link', { name: 'Communication Check', exact: true }).click();
+  await page.getByRole('link', { name: 'Communication Check home', exact: true }).click();
   await expect(page.getByRole('textbox', { name: 'Your follow-up draft' })).toHaveValue('');
 });
 
@@ -113,7 +126,7 @@ test('navigation and information text remain usable at 200 percent text size', a
     }
   });
   for (const info of pages) {
-    await page.getByRole('navigation').getByRole('link', { name: info.title, exact: true }).click();
+    await page.getByRole('navigation').getByRole('link', { name: info.navName, exact: true }).click();
     await expect(page.getByRole('heading', { level: 1, name: info.title })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
     await expect(page.getByRole('link', { name: /readme/i })).toBeVisible();

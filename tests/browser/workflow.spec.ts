@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { checkDraft } from '../../web/src/engine';
-import { PORTFOLIO_DEMO_DRAFTS as DEMO_DRAFTS } from '../../web/src/demos';
+import { ALL_DEMO_DRAFTS as DEMO_DRAFTS } from '../../web/src/demos';
 
 test('all clarity demos use real checks with exact evidence, including the clean result', async ({ page }) => {
   await page.goto('/');
