@@ -1,11 +1,12 @@
 # Communication Check progress
 
 Updated: 2026-10-13
-Milestone: Approved monochrome workspace and complete catalog live on Vercel
-Status: Production READY at the existing public URL; focused public workflow/privacy checks passed.
+Milestone: Live monochrome release backed up to GitHub; development moved to a local-only folder
+Status: Production READY; verified local checkout at `/Users/keith/Developer/communication-check`.
 
 ## October 13 approved production release
 
+- Keith authorised commit/push, relocation and removal of the original after verification. Release/evidence commit `a43ffb1` is on GitHub. New canonical root: `/Users/keith/Developer/communication-check`; old path is only a compatibility symlink. All 5,850 files, 17 symlinks and permissions verified (no cache exclusions); original moved to recoverable `~/.Trash/communication-check-original-2026-10-13`. All Git refs preserved, Git integrity passes, four linked worktrees repaired with unchanged HEAD/status. New-root checks: 8 setup, 466 engine/example, typecheck/build and 94 browser tests pass; eight build hashes match production. Evidence: `output/monochrome-2026-10-13/local-migration.json`. No main merge or redeploy.
 - Keith explicitly approved replacing the main site with the reviewed candidate. Live: https://communication-check.vercel.app/, source `ffba4d1`, deployment `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`. Exact reviewed static assets staged READY, staged HTML matched, then promoted; public alias independently verified. Existing project/account remains active Hobby, no remote build or paid feature. No Git main merge or branch push.
 - All eight public assets match the reviewed build; security headers, image MIME and eight source/config exclusions pass (`production-assets.json`). Public Chromium smoke passed all 13 labels/order and real sample checks, inert selection, preferred lenses/both snapshots, exact evidence, Keep/Undo, tone-style decision retention, editing invalidation, current clipboard, offline checking, empty runtime storage and reload clearing. Fictional canary absent from network/log/URL. Desktop/390px screenshots inspected; no mobile overflow; navigation preserves draft. Evidence: `output/monochrome-2026-10-13/production-flow.json` and production screenshots.
 - Preview `dpl_7Xe8WwvHcVLYjx2mqidQQ4HD4MCq` had eight matching assets/headers/source exclusions and 71 browser checks pass; Vercel checkpoint blocked the remaining 23. No full hosted-suite pass is claimed. All 94 local browser checks passed. Focused public smoke subsequently passed without authentication or security-policy changes. Billing usage API returned 404; numerical allowance is not claimed.
@@ -95,4 +96,4 @@ Keith prioritised a polished functional portfolio prototype. The original detect
 ## Handoff and next action
 
 - Milestone handoff exports only PRODUCT_BRIEF.md and this progress file. Task-message delivery is not Project Sources synchronisation; historical Sources copies remain dated.
-- Next action: use the updated public site. The optional portfolio follow-up is actual LinkedIn Post Inspector/Featured verification; it has not been performed as part of this release.
+- Next action: continue development from the new local-only root on `codex/communication-check-next`. The live site is unchanged. Optional LinkedIn Post Inspector/Featured verification remains unperformed.

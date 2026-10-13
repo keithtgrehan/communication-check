@@ -261,7 +261,7 @@ Prepare a protocol for three usability users and five repeat-use pilots while en
 ## Source of truth and boundaries
 
 - Repository: `keithtgrehan/communication-check` (private).
-- Local root: `/Users/keith/Documents/ChatGPT/communication-check`.
+- Local root: `/Users/keith/Developer/communication-check`.
 - Current work branch: `codex/communication-check-next`; frozen baseline above. PR #1 merged September 11; PR #2 and #3 merged September 16 (GitHub rechecked September 17). The old tone-review branch preserves the Prism alternative.
 - Source baseline: Vibe Signal `000ba0685f961e253b0d34c0b02539ac897356e9`; retain source/licence attribution for actual reused components.
 - Keep Vibe Signal, RCR, Synapse Atlas and other projects separate and untouched.

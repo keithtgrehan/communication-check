@@ -1,0 +1,49 @@
+{
+  "source": "/Users/keith/Documents/ChatGPT/communication-check",
+  "destination": "/Users/keith/Developer/communication-check",
+  "verifiedAtEpoch": 1791915200.4660952,
+  "regularFiles": 5850,
+  "symlinks": 17,
+  "directories": 1023,
+  "bytes": 419812828,
+  "checks": [
+    "Complete path inventory",
+    "Source metadata stable since copy",
+    "Source bytes hashed during copy",
+    "Destination SHA256 re-read",
+    "File and directory permissions",
+    "Symlink targets",
+    "Byte counts and file modification times"
+  ],
+  "cutover": {
+    "source": "/Users/keith/Documents/ChatGPT/communication-check",
+    "destination": "/Users/keith/Developer/communication-check",
+    "originalNowInTrash": "/Users/keith/.Trash/communication-check-original-2026-10-13",
+    "oldPathIsCompatibilitySymlink": true,
+    "allFilesCopied": true,
+    "excludedCaches": [],
+    "completedAtEpoch": 1791915335.008985
+  },
+  "githubReleaseCommit": "a43ffb13bac37baf06be46b4906c3f6442a32f68",
+  "branch": "codex/communication-check-next",
+  "frozenBranchCommit": "146383228c99437ad4958b981d230c3b59d747b8",
+  "prismBranchCommit": "2527641f35fa23d9eeeacb53b46eb53e87b6a21a",
+  "allGitRefsMatchedAtCopy": true,
+  "gitFsckPassed": true,
+  "linkedWorktreesRepaired": 4,
+  "linkedWorktreeHeadsAndStatusPreserved": true,
+  "setupTestsPassed": 8,
+  "engineExampleTestsPassed": 466,
+  "browserTestsPassed": 94,
+  "browserTestDurationSeconds": 34,
+  "typecheckAndBuildPassed": true,
+  "releasedAssetHashesMatched": 8,
+  "productionChanged": false,
+  "mainMerged": false,
+  "notes": [
+    "All ignored and untracked files copied, including archived dependencies.",
+    "node_modules retains its existing external cache symlink.",
+    "Original in recoverable Trash; old Documents path is a compatibility symlink only.",
+    "Copy equality verified before intentional new-root build and documentation updates."
+  ]
+}

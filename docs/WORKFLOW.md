@@ -17,7 +17,7 @@ and evaluation milestones below are not repeated as requirements for this slice.
 
 ## One project, one build lead
 
-Use the local Codex project rooted at `/Users/keith/Documents/ChatGPT/communication-check` for implementation. Keep the existing lead conversation and its accepted plan. The private GitHub repository and its documentation are the authoritative project state; a sidebar name is not proof that files or memory synchronise across apps.
+Use the local Codex project rooted at `/Users/keith/Developer/communication-check` for implementation. Keep the existing lead conversation and its accepted plan. The private GitHub repository and its documentation are the authoritative project state; a sidebar name is not proof that files or memory synchronise across apps.
 
 Use the ChatGPT Communication Check project for product decisions, positioning, interview synthesis and portfolio writing. Keep “Review onboarding email examples” for fictional examples and critique. Do not ask separate chats to independently implement the same product.
 

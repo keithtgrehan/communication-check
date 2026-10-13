@@ -184,7 +184,7 @@ rejected on measured performance grounds.
 - [Finding contract](docs/FINDING_CONTRACT.md), [reuse ledger](docs/REUSE_LEDGER.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
 - [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [four-minute and 75-second demo scripts](docs/DEMO_SCRIPT.md), [SE conversation notes](docs/SE_CONVERSATION_NOTES.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
 
-The authoritative root is `/Users/keith/Documents/ChatGPT/communication-check`.
+The authoritative root is `/Users/keith/Developer/communication-check`.
 `reference/vibe-signal/` contains six audited inactive source blobs; it is not
 part of the application. New product source, demos and fixtures were written
 independently. No public product licence has been selected.

@@ -24,7 +24,11 @@ implementation-branch and deployment directions below.
 
 ## Start and authority
 
-Canonical root: `/Users/keith/Documents/ChatGPT/communication-check`.
+Canonical root: `/Users/keith/Developer/communication-check`.
+Keith approved migration here on 2026-10-13. The former Documents path is only
+a compatibility symlink for existing chats; use this local-only root for future
+work. The fully verified original is recoverable in Trash. Linked worktrees were
+repaired and retain their prior HEADs and local changes.
 Repository: `keithtgrehan/communication-check`, private.
 Implementation branch: `codex/communication-check-next` (forked from the frozen live baseline).
 Lead task: `01a08ae3-d0b5-7633-846b-28bfb692e8fb` (Build and ship Communication Check).
