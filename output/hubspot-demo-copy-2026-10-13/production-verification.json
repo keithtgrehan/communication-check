@@ -1,0 +1,30 @@
+{
+  "origin": "https://communication-check.vercel.app",
+  "measurements": [
+    {
+      "width": 1440,
+      "copy": true,
+      "videoUnavailable": true,
+      "noOverflow": true,
+      "axeViolations": 0,
+      "doubledTextNoOverflow": true
+    },
+    {
+      "width": 390,
+      "copy": true,
+      "videoUnavailable": true,
+      "noOverflow": true,
+      "axeViolations": 0,
+      "doubledTextNoOverflow": true
+    },
+    {
+      "width": 320,
+      "copy": true,
+      "videoUnavailable": true,
+      "noOverflow": true,
+      "axeViolations": 0,
+      "doubledTextNoOverflow": true
+    }
+  ],
+  "verifiedAt": "2026-10-13T19:35:49.951Z"
+}

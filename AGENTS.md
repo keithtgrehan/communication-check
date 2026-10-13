@@ -2,12 +2,13 @@
 
 ## Approved production update — 2026-10-13
 
-Keith explicitly approved the reviewed monochrome/all-13-example candidate for
-the main site. Release source `ffba4d1` on `codex/communication-check-next` is live
-at https://communication-check.vercel.app/, deployment
-`dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`. This supersedes the September production freeze
-for this release only. Keep the frozen baseline and Prism branches intact;
-the former production deployment remains the rollback target. No main merge,
+Keith explicitly approved the monochrome/all-13-example release, then the small
+HubSpot–n8n Video Demo copy update. Source `049bbcd` on
+`codex/communication-check-next` is live at https://communication-check.vercel.app/,
+deployment `dpl_5K7chhzUrhfsBF9RRoihoGM8HVTp`. This supersedes the September freeze
+for these releases only. Keep the frozen baseline and Prism branches intact.
+The previous October deployment `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ` is the immediate
+rollback target; the September deployment remains preserved. No main merge,
 new spending or further release is authorised by this completed approval.
 
 ## Frozen production decision — 2026-09-16

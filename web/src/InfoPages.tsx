@@ -60,6 +60,23 @@ export function InfoPages({ page, headingRef }: { page: InfoPage; headingRef: Re
             <h2 id="video-coming-soon">Video walkthrough coming soon</h2>
             <p>The video isn’t available yet. You can follow the same steps in the checker now.</p>
           </section>
+          <section className="info-section" aria-labelledby="hubspot-demo-title">
+            <h2 id="hubspot-demo-title">From HubSpot draft to reviewed note</h2>
+            <p>See a fictional customer follow-up retrieved from HubSpot through n8n, reviewed in Communication Check, and saved back to HubSpot as a new note.</p>
+          </section>
+          <section className="info-section" aria-labelledby="hubspot-demo-steps">
+            <h2 id="hubspot-demo-steps">How it works</h2>
+            <ol className="info-steps">
+              <li>Retrieve the draft using n8n.</li>
+              <li>Copy it into Communication Check, review the prompts, and edit the wording.</li>
+              <li>Copy the revision into the n8n save form to create a separate HubSpot note.</li>
+            </ol>
+            <p>You control the wording and each transfer. Nothing is automatically rewritten or emailed.</p>
+          </section>
+          <section className="info-section" aria-labelledby="hubspot-demo-about">
+            <h2 id="hubspot-demo-about">About this demo</h2>
+            <p>n8n connects to HubSpot; Communication Check itself has no direct CRM connection. The checker processes your draft in the browser. HubSpot and n8n process and retain the text used in the demo.</p>
+          </section>
           <ol className="storyboard" aria-label="Walkthrough steps">
             <li><span className="storyboard-number" aria-hidden="true">01</span><div><h2>Start with a fictional example</h2><p>Choose Partner handoff, then select Try an example. Both checks run on the fictional message. If you have entered your own draft, you’ll be asked before replacing it.</p></div></li>
             <li><span className="storyboard-number" aria-hidden="true">02</span><div><h2>Read the wording in context</h2><p>The review quotes the exact passage and offers a question to consider. Switch between Clarity &amp; commitments and Tone cues to see the different checks.</p></div></li>
