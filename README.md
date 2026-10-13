@@ -1,201 +1,145 @@
 # Communication Check
 
-**Review your customer follow-up.**
+**A focused review of customer follow-ups before they are sent.**
 
-A portfolio prototype for B2B SaaS account managers and customer-success managers
-reviewing customer onboarding follow-ups. It helps you take a second look at
-unclear next steps, commitments and a limited set of tone cues before sending.
+After a discovery call, partner handoff or renewal discussion, a follow-up needs to
+make the next step clear: who owns it, when it happens and what still needs approval.
+Communication Check turns selected wording into practical questions for the writer
+to consider. It is a working portfolio prototype for B2B SaaS sales, account and
+partner-facing teams, directed by Keith Grehan.
 
-Paste your draft or try a fictional sample. Each finding quotes the exact wording
-and asks a practical review question. Edit the text, or keep it with an option to
-undo. You decide what to change; nothing is rewritten or sent automatically.
+**[Open the live demo](https://communication-check.vercel.app/)** — no sign-in required.
 
-Clarity & commitments provides up to three review prompts for unclear ownership,
-vague timing, competing requests, agreement wording and strong product commitments.
-The September 16 update adds optional Tone cues: up to two findings for
-supported accusation, judgmental, dismissive and pressure wording. A chosen
-Direct, Collaborative or Warm preference changes the review question, not which
-wording is detected. Switching style updates checked prompts immediately and preserves
-review decisions. Choose a fictional scenario, then use **Try a sample review**
-to run both checks beside the invitation to paste. The editorial refinement
-uses a white draft document and open review column on a warm paper canvas, with
-sans-serif headings and serif source quotations. Selection alone never replaces a draft. Edit this wording
-selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
-the decision. The app does not verify facts/agreements, rewrite, score or send email.
+## Try it in two minutes
 
-## Frozen live version
+1. Leave **Partner handoff** selected and click **Try an example**. Both checks run
+   on a fictional message using the same rules as a pasted draft.
+2. Read the finding for “Someone should send the meeting invite.” The question,
+   “Who needs to do what next?”, connects the wording to a familiar co-selling issue.
+3. Select **Edit this wording** to highlight the exact passage. Assign an owner
+   yourself, then **Recheck draft**. Alternatively, **Keep as written** records your
+   decision without changing the message; **Undo** reverses it.
+4. Try **Renewal discussion** and switch between **Clarity & commitments** and
+   **Tone cues**. Finish with **Copy draft** to copy your current wording.
 
-Use **[Communication Check](https://communication-check.vercel.app/)**.
-The accepted version is frozen on `codex/frozen-vercel-2026-09-16` at `1463832`.
-All subsequent work starts on the forked `codex/communication-check-next` branch;
-production changes require explicit approval. The Prism alternative is preserved
-separately. See [freeze record](docs/FROZEN_BASELINE.md).
+The catalogue has 13 fictional examples, including discovery, partner handoffs,
+renewals, onboarding dependencies and clear follow-ups. Selecting an example alone
+leaves your draft untouched; loading one asks before replacing your own wording.
 
-## Current evidence — 23 September 2026
+## What works
 
-The frozen editorial app is live at [communication-check.vercel.app](https://communication-check.vercel.app/).
-Deployed source is `38d744d`; the frozen branch is `codex/frozen-vercel-2026-09-16`
-at `1463832`. Current documentation work uses `codex/communication-check-next`, starting at
-`b6942a8`; its tracked web source matches the deployed and frozen versions.
-The Prism alternative remains on `codex/communication-check-tone-review`.
+| Capability | What the reviewer can see |
+| --- | --- |
+| Clarity & commitments | Up to three findings for supported patterns involving unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments. |
+| Optional Tone cues | Up to two findings for a limited set of blaming, dismissive, judgmental or pressuring phrases. |
+| Exact evidence | Each finding quotes the original wording and offers a focused review question; editing selects that passage in the draft. |
+| Writer decisions | Keep/Undo tracks reviewed wording. The writer makes every edit; the app never rewrites or sends a message. |
+| Question styles | Direct, Collaborative and Warm change the tone-review questions immediately, preserving findings and decisions. They do not change detection sensitivity. |
+| Current-text review | Each lens retains its own results. Editing clears both reviews so old findings cannot appear to describe new wording. Copy always uses the current draft. |
+| Browser workspace | A responsive monochrome interface, keyboard controls and navigation that retains the draft during the session. |
+| Local checking | Drafts and findings stay in page memory. Reloading clears them; checks work offline once the app's assets have loaded. |
 
-The **16 September verification record** reports 451 engine tests, 10 scenario
-tests, seven setup checks, build/typecheck/source guards and 81 local browser
-checks; all 81 hosted Chromium checks passed too. See
-[Vercel evidence](docs/VERCEL_HOSTED_VERIFICATION.json) and [progress](docs/PROGRESS.md).
-The earlier **17 September assessment** reran 461 Vitest tests, TypeScript no-emit
-and selected integrity checks. This **17 September packaging pass** rechecked all
-six live asset hashes and the bounded desktop/390px demo workflow. It did not
-rebuild the app or rerun the complete hosted/privacy suite.
+## Keith's contribution
 
-[The case study](docs/CASE_STUDY.md), [portfolio copy](docs/PORTFOLIO_COPY.md),
-[four-minute and 75-second demo scripts](docs/DEMO_SCRIPT.md) and
-[selected screenshots](docs/screenshots/README.md) now describe the frozen version.
-The standalone PDF and selected exports are prepared locally in
-`output/portfolio-package-2026-09-17/`. Keith confirmed the contribution wording on 17 September;
-the spoken rehearsal remains pending. Nothing was published or
-deployed by the packaging pass.
+> I set the product direction, audience, scope and presentation priorities and
+> directed the AI-assisted build. Codex/Astra agents implemented the application
+> and ran the documented engineering checks.
 
-Detection remains experimental: all ten original reserved fictional evaluations
-missed the target, and V10 detected 4/12 selected issues. Known-case passes do not
-establish general language accuracy. One expert reviewed fictional workbook
-content; completed usability sessions remain 0/3 and repeat-use pilots 0/5.
-See [evaluation](docs/EVALUATION.md) for preserved methods and aggregate results.
+Keith drew on his experience in SaaS sales and partner coaching to define the
+problem and shape a demonstrable workflow. The project offers concrete discussion
+points for senior commercial roles: clarifying ownership across vendor, partner
+and customer teams; separating a proposal from an agreement; and checking the
+conditions behind a product promise.
 
-Read-only GitHub checks on 17 September confirmed the repository is private,
-[PR #1](https://github.com/keithtgrehan/communication-check/pull/1) merged September 11,
-and [PR #2](https://github.com/keithtgrehan/communication-check/pull/2) and
-[PR #3](https://github.com/keithtgrehan/communication-check/pull/3) merged September 16.
-GitHub main was `b508df3`, with the same tracked web tree as the frozen app.
-No Git mutation was performed for this package.
+The contribution is product direction and delivery through AI-assisted development.
+**The running checker uses deterministic TypeScript rules, not an AI model.**
+The [confirmed contribution statement](docs/PORTFOLIO_COPY.md#confirmed-contribution-statement)
+records the attribution used throughout the portfolio.
 
-The [September 11 Render preview](https://communication-check-preview.onrender.com/)
-and [its verification](docs/HOSTED_VERIFICATION.json) are historical.
-The [design exploration handoff](docs/DESIGN_EXPLORATION_HANDOFF.md) is also a
-historical input; the subsequently accepted editorial direction is documented in
-[editorial refinement evidence](docs/EDITORIAL_REFINEMENT.md). Neither is a new
-implementation instruction. The frozen Vercel link is the portfolio destination.
+## Why this scope
 
-## HubSpot + local n8n demonstration — 23 September
+| Decision | Reason |
+| --- | --- |
+| Focus on the follow-up | A small, recognisable commercial task makes the product easy to explain and demonstrate from start to finish. |
+| Ask questions tied to exact quotes | The writer can inspect the evidence and supply the meeting context the tool does not have. |
+| Keep findings short and bounded | A few review decisions keep the workflow manageable; there is no overall score implying a complete assessment. |
+| Keep editing and sending with the writer | Ownership, approvals and commitments remain human decisions. |
+| Use local rules and session memory | The standalone checker needs no account, checking service or draft database. Behaviour is inspectable, with deliberately limited language coverage. |
+| Defer model-based review | Completing the focused workflow took priority. A local model would add downloads and device-dependent behaviour; a cloud model would change the data boundary. Neither was comparatively benchmarked. |
+| Demonstrate the CRM handoff separately | A small HubSpot/n8n example shows retrieval and writeback while preserving the checker's simple, standalone design. |
 
-A real fictional CRM demonstration is verified: n8n loads a HubSpot source note,
-the presenter manually reviews/edits/rechecks in the unchanged checker, and a
-local authenticated form saves a new note labelled “reviewed draft — not sent”.
-HubSpot readback confirmed the correct contact, revised wording and unchanged
-source. No email is sent. The bridge into the checker is manual.
+## HubSpot + n8n demonstration
 
-[Demo setup, three-minute walkthrough and sanitized workflow exports](docs/demo/hubspot-n8n/README.md)
-are included. HubSpot and local n8n history retain fictional content; the complete
-CRM workflow is not browser-only. Credentials stay outside Git. This adds no
-backend, import/save buttons or deployment to the frozen application.
+A separate demonstration uses a fictional contact and a real CRM workflow:
 
-The next portfolio step is Keith’s rehearsal and recording. Video upload, adding
-its link to the frozen site, and public portfolio publication remain separate
-steps. User testing is future product validation, not a blocker for this demo.
+**HubSpot source note → n8n retrieval → manual review in Communication Check →
+n8n save form → new HubSpot note.**
 
-## About and walkthrough
+The presenter copies the draft into the checker, edits and rechecks it, then copies
+the revision into a local authenticated form. The result is a separate note labelled
+“reviewed draft — not sent”. The recorded verification confirmed the revised text,
+correct contact association and unchanged source note. No email is sent.
 
-The top-right navigation opens **About Communication Check** (`/#/about`) and
-**Video Demo** (`/#/video-demo`). About explains the audience, purpose, workflow
-and limits, with a labelled fictional illustration matching a real checker result.
-Video Demo offers a compact forthcoming-video notice and a static three-step
-walkthrough; no video or third-party player is loaded yet.
+n8n connects to HubSpot; Communication Check has no direct CRM connection. HubSpot
+and local n8n retain the fictional demo content, so this complete workflow has a
+different data boundary from the standalone checker. The
+[setup, walkthrough and sanitised exports](docs/demo/hubspot-n8n/README.md) explain
+that boundary. The live **Video Demo** page describes the flow; a recording is not
+yet available.
 
-Moving between these pages preserves the draft and review decisions in memory.
-Reloading clears them. Both pages link to this README. The repository is currently
-private, so visitors need repository access to follow that link. Page navigation
-uses URL fragments and needs no hosting rewrite or additional routing dependency.
+## Evidence and scope
+
+The [13 October release record](docs/PROGRESS.md) documents 466 engine/example tests,
+eight setup checks, build/type checks and 94 local Chromium browser checks for the
+monochrome release, followed by focused public workflow checks. The subsequent
+information-page update has its own recorded verification. These records cover
+implemented behaviour; they do not establish general language accuracy or measured
+customer impact.
+
+The checker is a second look at selected wording, with the writer supplying context
+and making the decision. Its rule coverage is deliberately limited. See the
+[finding contract](docs/FINDING_CONTRACT.md), [evaluation record](docs/EVALUATION.md)
+and [release evidence](docs/PROGRESS.md) for methods and scope.
+
+The standalone app uses page memory with no remote model, draft database or
+analytics. Hosting still receives ordinary page requests; copying uses the OS
+clipboard and its settings. The separate CRM demonstration retains fictional data
+in HubSpot and local n8n.
 
 ## Run locally
 
-Use Node 22.23.1 (recorded in `.node-version`) and npm. From this checkout:
+Use Node **22.23.1** (see `.node-version`) and npm:
 
 ```sh
 npm ci
+npm run dev
+```
+
+For the production build and preview:
+
+```sh
 npm run build
 npm run preview
 ```
 
-Open http://127.0.0.1:4173. For development, use `npm run dev` instead. Development
-mode permits Vite's local update connection; privacy acceptance is run against the
-production build served by `npm run preview`, with connections blocked by policy.
-
-## Verify
+Open [the local preview](http://127.0.0.1:4173). Production privacy checks use this
+preview; development mode also uses Vite's local update connection.
 
 ```sh
 npx playwright install chromium
 npm run validate
-npm audit --audit-level=low
 ```
 
-`validate` runs repository/setup and engine-integrity tests, engine unit tests, TypeScript/build
-checks, source/bundle guards and the Chromium browser suite. On a Linux machine
-without browser system dependencies use `npx playwright install --with-deps chromium`.
-To verify a hosted candidate after building the matching checkout:
+`validate` runs setup/integrity checks, engine tests, TypeScript/build checks,
+source/bundle guards and the Chromium browser suite. Tests use fictional data.
 
-```sh
-PREVIEW_URL=https://YOUR_VERIFIED_PREVIEW_HOST npm run verify:hosted
-PREVIEW_URL=https://YOUR_VERIFIED_PREVIEW_HOST npm run test:browser
-```
+## Further reading
 
-The browser suite uses only fictional canaries and reports under ignored local
-folders. Reserved evaluation material is outside project sources and ordinary
-handoffs. It is not required for normal developer tests. Its frozen methodology,
-all heldout attempts and aggregate outcomes are recorded separately.
+- [Product brief](docs/PRODUCT_BRIEF.md) — audience, product contract and scope.
+- [Current progress](docs/PROGRESS.md) — latest release and verification evidence.
+- [September case study](docs/CASE_STUDY.md) — original workflow and architecture decisions; its screenshots predate the current workspace.
+- [CRM demo](docs/demo/hubspot-n8n/README.md) — the separate HubSpot/n8n walkthrough.
+- [Reuse ledger](docs/REUSE_LEDGER.md) and [third-party notices](THIRD_PARTY_NOTICES.md) — attribution and dependency notices.
 
-## Privacy and limitations
-
-Drafts and findings stay in page memory. There is no remote model, API, analytics,
-feedback collection or draft persistence. Production policy blocks connections;
-runtime checks inspect requests, logs, URLs and storage. The host still receives
-ordinary static page requests. Copy explicitly writes the current text to the OS
-clipboard, which may follow the user's own clipboard-sync settings. Reload clears
-the editor. Offline checking works after the assets are loaded; there is no
-installed offline application or service worker.
-
-Rules are English wording patterns. They can miss unfamiliar phrasing and unknown
-quote/signature formats or flag wording that is appropriate in context. The app
-recognises some, not every, quoted-history format. It cannot know the call's facts
-or approvals. No flags is not an endorsement. The 12,000-character limit uses
-UTF-16 units; emoji can count as two. Oversize text is retained for editing.
-
-Automated Chromium viewport/zoom checks are not physical-device tests or a full
-accessibility certification. Fictional agent labels are engineering evidence,
-not real-world accuracy. Human sessions and pilots are outstanding.
-
-## Architecture decision: defer model-based review
-
-Communication Check uses local, deterministic checks to keep drafts in the browser
-and provide findings tied to exact wording.
-
-Browser-based AI could broaden language coverage, but would introduce model
-downloads, device-dependent performance and additional validation work. Cloud
-models would require changing the browser-only data boundary.
-
-For this portfolio release, I prioritised completing and demonstrating the existing
-workflow. Model-based review remains a future option if user feedback identifies a
-specific limitation worth addressing. No candidate model was benchmarked or
-rejected on measured performance grounds.
-
-## Project and review materials
-
-- [Product brief](docs/PRODUCT_BRIEF.md) and [implementation plan](docs/IMPLEMENTATION_PLAN.md).
-- [Working instructions](AGENTS.md), [GPT/Codex workflow](docs/WORKFLOW.md) and [goal prompt](docs/GOAL_PROMPT.md).
-- [Finding contract](docs/FINDING_CONTRACT.md), [reuse ledger](docs/REUSE_LEDGER.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
-- [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [four-minute and 75-second demo scripts](docs/DEMO_SCRIPT.md), [SE conversation notes](docs/SE_CONVERSATION_NOTES.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
-
-The authoritative root is `/Users/keith/Developer/communication-check`.
-`reference/vibe-signal/` contains six audited inactive source blobs; it is not
-part of the application. New product source, demos and fixtures were written
-independently. No public product licence has been selected.
-
-## Milestone handoffs
-
-`npm run setup` installs repository-local hooks while preserving existing hooks.
-Each local commit refreshes `.handoff/CHATGPT_CONTEXT.md` from exactly the brief and
-sanitised progress. `npm run handoff` also refreshes it; generation sends nothing.
-At verified milestones the lead sends that packet to the existing product-companion
-task. The one-time ChatGPT project instructions and initial source were saved;
-Project Sources are dated copies, not continuous synchronisation. Prefer current
-GitHub brief/progress reads when available. Never upload the whole repository or
-reserved examples into shared project context.
+The live demo is the primary portfolio destination; this public repository provides
+the supporting code, product decisions and review evidence.
