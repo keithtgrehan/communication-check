@@ -1,0 +1,168 @@
+{
+  "id": "ccDemoSave20260923",
+  "name": "Communication Check — Save reviewed draft",
+  "nodes": [
+    {
+      "id": "2d6cef67-0199-5975-889e-07e1f126a70c",
+      "name": "Save reviewed draft form",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "authentication": "n8nUserAuth",
+        "requireExecuteAccess": true,
+        "formTitle": "Save reviewed draft",
+        "formDescription": "Fictional Communication Check demo. Paste the current draft copied from the checker. Submitting creates a NEW note on Sam — Communication Check Demo (fictional). The original stays unchanged. No email is sent. Submit once; check HubSpot before retrying an uncertain result.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Reviewed draft",
+              "fieldName": "revisedText",
+              "fieldType": "textarea",
+              "requiredField": true,
+              "placeholder": "Paste the revised fictional draft here"
+            }
+          ]
+        },
+        "responseMode": "lastNode",
+        "options": {
+          "path": "communication-check-save",
+          "buttonLabel": "Save reviewed draft to HubSpot",
+          "appendAttribution": false,
+          "includeUserInOutput": false,
+          "respondWithOptions": {
+            "values": {
+              "respondWith": "text",
+              "formSubmittedText": "HubSpot confirmed the new note was created. No email was sent. Open the fictional Sam contact in HubSpot to inspect the result."
+            }
+          }
+        }
+      },
+      "webhookId": "cc-demo-save-20260923"
+    },
+    {
+      "id": "6f95eae2-ec0a-5b01-bc05-e9edd62f4c44",
+      "name": "Create reviewed note",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        250,
+        0
+      ],
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "hubspotAppToken",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({properties:{hs_timestamp:$now.toISO(),hs_note_body:'Communication Check — reviewed draft — not sent\\n\\n'+$json.revisedText+'\\n\\nFictional portfolio demonstration. Wording reviewed; facts and agreements not verified. No email sent.'},associations:[{to:{id:'874499304647'},types:[{associationCategory:'HUBSPOT_DEFINED',associationTypeId:202}]}]}) }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "hubspotAppToken": {
+          "name": "Communication Check demo — HubSpot"
+        }
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "ff5c6783-477e-57d4-99b9-731627d41cc7",
+      "name": "Saved note receipt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "28bd0493-843c-4806-9f37-56a3fa6767c3",
+              "name": "noteId",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "9733991b-8de4-4e0d-afa2-be79be20c5d3",
+              "name": "contact",
+              "value": "https://app.hubspot.com/contacts/146011304/record/0-1/874499304647?utm_source=communication-check&utm_medium=demo",
+              "type": "string"
+            },
+            {
+              "id": "4e182533-fb26-4079-a777-eff3f6e3c210",
+              "name": "result",
+              "value": "New reviewed draft note created. Original unchanged. No email sent.",
+              "type": "string"
+            },
+            {
+              "id": "a6b24b06-ca53-4952-9bdc-714180d671ef",
+              "name": "savedBody",
+              "value": "={{ $json.properties.hs_note_body }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "0c32ed44-2ca6-5f17-943a-18fb2eadb3b2",
+      "name": "Save once",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -260
+      ],
+      "parameters": {
+        "content": "## Save reviewed draft\nThe form submission explicitly creates one NEW HubSpot note associated with the fixed fictional contact.\n\nAuthenticated local n8n users only. No automatic retries. If a request times out, inspect HubSpot before submitting again. Fictional sample text remains in local execution history.",
+        "height": 220,
+        "width": 730
+      }
+    }
+  ],
+  "connections": {
+    "Save reviewed draft form": {
+      "main": [
+        [
+          {
+            "node": "Create reviewed note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create reviewed note": {
+      "main": [
+        [
+          {
+            "node": "Saved note receipt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveManualExecutions": true,
+    "saveDataSuccessExecution": "all",
+    "saveDataErrorExecution": "all",
+    "executionTimeout": 60
+  },
+  "versionId": "4669a026-1091-4c90-91d6-df2437ab0f01",
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

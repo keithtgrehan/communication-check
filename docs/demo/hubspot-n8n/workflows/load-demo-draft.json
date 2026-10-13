@@ -1,0 +1,153 @@
+{
+  "id": "ccDemoLoad20260923",
+  "name": "Communication Check — Load demo draft",
+  "nodes": [
+    {
+      "id": "ab976536-1754-559e-817c-d1d92bc79d85",
+      "name": "Run to load source",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "48d9efe6-85a8-5097-9639-21d0416f4757",
+      "name": "Read source note",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        250,
+        0
+      ],
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "hubspotAppToken",
+        "method": "GET",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes/521461752010",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "properties",
+              "value": "hs_note_body"
+            },
+            {
+              "name": "associations",
+              "value": "contacts"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "hubspotAppToken": {
+          "name": "Communication Check demo — HubSpot"
+        }
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "e28e88ab-1a43-50ec-936f-7bef20741456",
+      "name": "Copy draft into Communication Check",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a87f4a95-538b-4053-94b2-01c02c791c07",
+              "name": "draftText",
+              "value": "={{ $json.properties.hs_note_body.replace(/^CC DEMO — source draft\\n\\n/, '') }}",
+              "type": "string"
+            },
+            {
+              "id": "150109ae-5701-461b-85a1-d86641c8dd29",
+              "name": "checker",
+              "value": "https://communication-check.vercel.app/",
+              "type": "string"
+            },
+            {
+              "id": "d154bb38-2a18-41e7-ab56-d5713de06cfe",
+              "name": "sourceNoteId",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "aada3ede-3bf0-4b4a-8d8b-4990cca3aff3",
+              "name": "contact",
+              "value": "https://app.hubspot.com/contacts/146011304/record/0-1/874499304647?utm_source=communication-check&utm_medium=demo",
+              "type": "string"
+            },
+            {
+              "id": "95e7943f-73af-4409-8f5f-e728c4e1a9ab",
+              "name": "nextStep",
+              "value": "Copy only draftText into the checker. Review, edit, recheck, then copy the revised draft into the local Save reviewed draft form.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "c38a56ab-0b26-5162-921e-1c3765dcba0e",
+      "name": "About this demo",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -260
+      ],
+      "parameters": {
+        "content": "## Load demo draft\nReal HubSpot read, one fictional source note. Run once, then open the final step and copy only draftText. The handoff to the checker is manual. No email is sent.\n\nSelect the saved HubSpot credential in the HTTP step before running.",
+        "height": 220,
+        "width": 730
+      }
+    }
+  ],
+  "connections": {
+    "Run to load source": {
+      "main": [
+        [
+          {
+            "node": "Read source note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read source note": {
+      "main": [
+        [
+          {
+            "node": "Copy draft into Communication Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveManualExecutions": true,
+    "saveDataSuccessExecution": "all",
+    "saveDataErrorExecution": "all",
+    "executionTimeout": 60
+  },
+  "versionId": "a652167c-d9ff-47cc-822a-8d9cef4ae444",
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

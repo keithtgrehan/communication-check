@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-11",
+  "origin": "https://communication-check-ohmijlpkn-keith-grehans-projects.vercel.app",
+  "authenticated": true,
+  "passed": [
+    "real example check",
+    "exact selection",
+    "keep/undo",
+    "editing invalidation",
+    "offline recheck",
+    "current clipboard",
+    "no canary requests",
+    "no browser errors",
+    "empty storage/cookies/caches/workers",
+    "reload clears",
+    "390px flow",
+    "self-hosted image"
+  ],
+  "note": "Authenticated hosted smoke; separate full local browser suite. Not physical-device, LinkedIn or anonymous public verification."
+}

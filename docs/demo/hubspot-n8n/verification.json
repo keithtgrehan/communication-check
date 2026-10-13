@@ -1,0 +1,51 @@
+{
+  "updatedAt": "2026-09-23T12:30:47.068347+00:00",
+  "status": "verified_working_demo",
+  "n8nVersion": "2.40.5",
+  "imageDigest": "sha256:9f693fd5565539efd5e75ad168526c8041a6af516d9e50bc4d9cb1c9c5031523",
+  "bind": "127.0.0.1:5678",
+  "health": "ok",
+  "workflowImports": 2,
+  "workflowsActive": {
+    "load": false,
+    "save": true
+  },
+  "hubspotAccountId": 146011304,
+  "fixtureApproval": "approved; fictional-demo confirmations waived",
+  "crmRecordsCreated": true,
+  "n8nHubspotReadVerified": true,
+  "n8nHubspotWriteVerified": true,
+  "checkerSmoke": {
+    "sourceCharacters": 303,
+    "expectedCommitmentFindingObserved": true,
+    "editInvalidatedFinding": true,
+    "revisionCharacters": 297,
+    "revisionQualifiedNoFlagsObserved": true,
+    "copySuccessMessageObserved": true,
+    "clipboardEquality": "passed: 297 characters copied from live checker and pasted into local form; matched approved revision before submitting",
+    "sourceFromRealN8nRead": true
+  },
+  "sourceAndDeploymentChanged": false,
+  "contactId": "874499304647",
+  "sourceNoteId": "521461752010",
+  "sourceNoteReadbackViaConnector": true,
+  "sourceAssociationViaConnector": true,
+  "hubspotOnboardingFlagBlockedConnectorOperations": false,
+  "ownerAccountSetupVerified": true,
+  "independentConfigurationReview": {
+    "result": "No actionable blockers",
+    "scope": "Static workflow/configuration review against installed n8n 2.40.5 schemas and response handling",
+    "realApiExecutionVerified": false
+  },
+  "reviewedNoteId": "521477778648",
+  "sourceUnchangedByteForByte": true,
+  "reviewedTextEquality": "Exact wording and line breaks after CRLF-to-LF normalization; browser form uses CRLF.",
+  "associatedContactId": "874499304647",
+  "associatedNoteCount": 2,
+  "saveSuccessShownAfterHubspotResponse": true,
+  "credentialTestPassed": true,
+  "anonymousFormGet": "HTTP 302 to n8n authorization; login required",
+  "emailSending": "No email endpoint or sending node; one notes POST only",
+  "exports": "Sanitized native exports; no secrets or execution data; inactive on import",
+  "realApiWriteCount": 1
+}

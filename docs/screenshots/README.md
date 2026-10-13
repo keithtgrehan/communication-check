@@ -1,5 +1,22 @@
 # Portfolio screenshots
 
+## Current portfolio selection — 17 September 2026
+
+- Primary: [desktop commitment review](2026-09-16-editorial/after/clarity-1440x900.png), 1440×900.
+- Supporting: [mobile tone review](2026-09-16-editorial/after/tone-382x844.png), scrolled to the result at 382×844.
+- New: [qualified clean result](2026-09-17-portfolio/clean-result.png), a 560×205 capture of the live review panel after separately rechecking the 297-character fictional revision in [the script](../DEMO_SCRIPT.md).
+
+The first two are unaltered **16 September local editorial captures**, inspected
+against the live frozen controls/copy on 17 September. They are not new hosted
+captures. The clean image was captured **17 September from the frozen Vercel app**;
+the browser supplied JPEG pixels, re-encoded losslessly to PNG without retouching
+or resizing. All three were individually visually inspected. No customer data or
+synthetic interface is used. Current files are copied into
+`output/portfolio-package-2026-09-17/`; historical images below remain untouched.
+
+The live 390px sample/result journey also passed a bounded visual smoke check.
+Browser emulations do not establish physical-device usability or accessibility certification.
+
 ## September 16 editorial refinement
 
 The [before/after comparison index](2026-09-16-editorial/README.md) links actual

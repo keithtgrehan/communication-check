@@ -1,0 +1,6 @@
+2026-10-09 — Actual LinkedIn Post Inspector via user's Chrome
+Inspected URL: https://communication-check.vercel.app/
+Displayed: We cannot display a preview for this URL.
+Ingestion feedback: We did not re-scrape https://communication-check.vercel.app/ because the URL or one of its redirects is blocked by rules set in robots.txt file ofits URL domain.
+Normal GET and simulated LinkedInBot GET: HTTP 200 text/html, same body. robots.txt: User-agent: * / Disallow: /. Initial HTML had no OG tags or social image.
+No Featured edit/save performed. Production unchanged; candidate verification cannot establish production or Featured success before authorised release.

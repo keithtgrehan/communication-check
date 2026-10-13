@@ -14,7 +14,7 @@ for (const { width, zoom } of [{ width: 320, zoom: 1 }, { width: 1440, zoom: 1 }
       const after = position === 'end' ? '' : paragraph.repeat(position === 'middle' ? 23 : 45);
       const draft = `${before}${promise}\n\n${after}`;
       await editor.fill(draft);
-      await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+      await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
       await expect(page.locator('.finding-card')).toHaveCount(1);
 
       for (const initialScroll of ['top', 'bottom'] as const) {

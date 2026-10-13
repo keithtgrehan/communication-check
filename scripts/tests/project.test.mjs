@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import test from 'node:test';
 import { buildHandoff, checkSnapshot, installGitHooks, ROOT, validatePush } from '../project.mjs';
 
-const branch = 'codex/communication-check-tone-review';
+const branch = 'codex/communication-check-next';
 const remote = 'https://github.com/keithtgrehan/communication-check.git';
 const metadata = { commit: 'abc123', branch, now: '2026-09-10T00:00:00Z' };
 const update = `refs/heads/${branch} ${'a'.repeat(40)} refs/heads/${branch} ${'b'.repeat(40)}\n`;
@@ -91,4 +91,13 @@ test('hook installation preserves all existing hooks and is repeatable in a fres
   installGitHooks(root);
   installGitHooks(root);
   assert.equal(run(['config', '--local', '--get', 'core.hooksPath']), '.githooks');
+});
+
+test('frozen baseline permits exact initial publication only', () => {
+  const ref = 'refs/heads/codex/frozen-vercel-2026-09-16';
+  const sha = '146383228c99437ad4958b981d230c3b59d747b8';
+  assert.doesNotThrow(() => validatePush('origin', remote, `${ref} ${sha} ${ref} ${'0'.repeat(40)}`));
+  assert.throws(() => validatePush('origin', remote, `${ref} ${sha} ${ref} ${sha}`), /only/);
+  assert.throws(() => validatePush('origin', remote, `${ref} ${'a'.repeat(40)} ${ref} ${'0'.repeat(40)}`), /only/);
+  assert.throws(() => validatePush('origin', remote, update.replaceAll(branch, 'codex/communication-check-tone-review')), /only/);
 });

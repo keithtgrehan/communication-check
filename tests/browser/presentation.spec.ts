@@ -15,7 +15,7 @@ for (const width of [320, 390, 999, 1001, 1440]) {
     await page.goto('/');
     const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
     await editor.fill(`We guarantee the custom integration ${'for the fictional customer workspace '.repeat(8)}${'Reference'.repeat(24)} will be ready by Friday.`);
-    const check = page.getByRole('button', { name: 'Check draft', exact: true });
+    const check = page.getByRole('button', { name: 'Check my draft', exact: true });
     if (width === 1440) {
       // Filling an offscreen editor may scroll it into view. Measure the actual
       // starting viewport rather than accepting that automatic scroll.
@@ -33,7 +33,7 @@ for (const width of [320, 390, 999, 1001, 1440]) {
     expect(resultsBounds).not.toBeNull();
     const checkBounds = await page.locator('.primary-button').boundingBox();
     const draftBounds = await editor.boundingBox();
-    expect.soft(checkBounds!.y + checkBounds!.height, 'Check action stays above the draft').toBeLessThanOrEqual(draftBounds!.y);
+    expect.soft(checkBounds!.y, 'Check action follows the editable source').toBeGreaterThanOrEqual(draftBounds!.y + draftBounds!.height);
     const examplesBounds = await page.locator('.start-options').boundingBox();
     expect.soft(examplesBounds!.y + examplesBounds!.height, 'Sample action precedes the workspace').toBeLessThanOrEqual(editorBounds!.y);
     await expect(page.locator('.finding-number')).toHaveText('01');
@@ -67,10 +67,10 @@ for (const width of [320, 1001]) {
     }));
     await page.goto('/');
     const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
-    await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
+    await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
     await expectAccessibleState(page, 'Initial and disabled');
 
-    const example = page.getByRole('button', { name: 'Try a sample review' });
+    const example = page.getByRole('button', { name: 'Try an example' });
     await example.click();
     await expectAccessibleState(page, 'Selected example');
     await page.getByRole('button', { name: 'Keep as written' }).click();
@@ -114,11 +114,14 @@ for (const width of [320, 390, 1024, 1440]) {
       const fg = composite(rgb(style.color), bg);
       const luminance = (colour: number[]) => colour.map(channel => channel / 255).map(channel => channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4).reduce((sum, channel, i) => sum + channel * [.2126, .7152, .0722][i], 0);
       const ratio = (a: number[], b: number[]) => (Math.max(luminance(a), luminance(b)) + .05) / (Math.min(luminance(a), luminance(b)) + .05);
-      return { text: ratio(fg, bg), border: ratio(rgb(style.borderTopColor), bg), outline: ratio(rgb(style.outlineColor), outside), outlineWidth: parseFloat(style.outlineWidth), outlineStyle: style.outlineStyle };
+      return { text: ratio(fg, bg), border: ratio(rgb(style.borderTopColor), bg), boundary: ratio(bg, outside), outline: ratio(rgb(style.outlineColor), outside), outlineWidth: parseFloat(style.outlineWidth), outlineStyle: style.outlineStyle };
     });
     expect((await contrast('.primary-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-frame')).border).toBeGreaterThanOrEqual(3);
-    expect((await contrast('.sample-button')).border).toBeGreaterThanOrEqual(3);
+    // The example action must be identifiable by its surface or border.
+    const sampleContrast = await contrast('.sample-button');
+    expect(Math.max(sampleContrast.boundary, sampleContrast.border)).toBeGreaterThanOrEqual(3);
+    expect((await contrast('.sample-button')).text).toBeGreaterThanOrEqual(4.5);
     expect((await contrast('.editor-actions .secondary-button:not(.reset-button)')).text).toBeGreaterThanOrEqual(4.5);
     await page.getByRole('textbox', { name: 'Your follow-up draft' }).fill('You always ignore our requests. Stop making excuses and send the workspace list.');
     const primary = page.locator('.primary-button');
@@ -132,9 +135,8 @@ for (const width of [320, 390, 1024, 1440]) {
     expect(focus.outlineWidth).toBeGreaterThanOrEqual(2);
     expect(focus.outlineStyle).not.toBe('none');
     expect(focus.outline).toBeGreaterThanOrEqual(3);
-    // Primary focus outline is outside the filled button, on the near-white editor.
-    expect(await primary.evaluate(button => getComputedStyle(button).outlineColor)).toBe('rgb(55, 109, 105)');
     await page.getByRole('tab', { name: /Tone cues/ }).click();
+    await page.locator('.question-style summary').click();
     for (const label of ['Direct', 'Collaborative', 'Warm']) {
       const radio = page.getByRole('radio', { name: label, exact: true });
       const target = radio.locator('..');
@@ -209,3 +211,44 @@ for (const width of [320, 390]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
+
+test('rendered controls, states and informational pages use a monochrome palette', async ({ page }) => {
+  await page.goto('/');
+  const expectNeutral = async (state: string) => {
+    const coloured = await page.evaluate(() => {
+      const mismatches: string[] = [];
+      for (const element of document.querySelectorAll<HTMLElement>('body *')) {
+        if (!element.getClientRects().length || getComputedStyle(element).visibility === 'hidden') continue;
+        const style = getComputedStyle(element);
+        for (const property of ['color', 'backgroundColor', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'outlineColor', 'boxShadow', 'accentColor', 'fill', 'stroke'] as const) {
+          for (const match of style[property].matchAll(/rgba?\(([^)]+)\)/g)) {
+            const [r, g, b, alpha = 1] = match[1].split(/[,\s]+/).map(Number);
+            if (alpha && (r !== g || g !== b)) mismatches.push(`${element.tagName}.${element.className} ${property}: ${match[0]}`);
+          }
+        }
+      }
+      return mismatches;
+    });
+    expect(coloured, state).toEqual([]);
+  };
+  await expectNeutral('Empty / disabled');
+  await page.getByRole('combobox').focus();
+  await expectNeutral('Picker focus');
+  await page.getByRole('button', { name: 'Try an example' }).hover();
+  await expectNeutral('Example hover');
+  await page.getByRole('button', { name: 'Try an example' }).click();
+  await page.getByRole('button', { name: 'Edit this wording' }).hover();
+  await expectNeutral('Finding / action hover');
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  await expectNeutral('Reviewed');
+  await page.getByRole('tab', { name: /Tone cues/ }).click();
+  await page.locator('.question-style summary').click();
+  await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+  await expectNeutral('Tone tab / selected radio');
+  await page.getByRole('textbox').fill('x'.repeat(12001));
+  await expectNeutral('Over-limit error');
+  for (const name of ['About this project', 'Video Demo']) {
+    await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name, exact: true }).click();
+    await expectNeutral(name);
+  }
+});

@@ -23,43 +23,75 @@ sans-serif headings and serif source quotations. Selection alone never replaces 
 selects the exact text; Keep as written marks Reviewed with Undo. The writer keeps
 the decision. The app does not verify facts/agreements, rewrite, score or send email.
 
-## Current evidence
+## Frozen live version
 
-The September 16 follow-on is implemented on
-`codex/communication-check-tone-review` and deployed at
-[communication-check.vercel.app](https://communication-check.vercel.app). All 81
-hosted browser checks pass; six assets match the approved local build, with security
-headers and eight private-source exclusions verified. See
-[Vercel deployment evidence](docs/VERCEL_HOSTED_VERIFICATION.json). Fresh local validation
-passes 451 engine tests, seven setup checks, the production
-build/typecheck/source guards, 10 fictional-scenario tests and 81 browser checks. See [progress](docs/PROGRESS.md)
-for the completed independent review and [local screenshots](docs/screenshots/README.md).
+Use **[Communication Check](https://communication-check.vercel.app/)**.
+The accepted version is frozen on `codex/frozen-vercel-2026-09-16` at `1463832`.
+All subsequent work starts on the forked `codex/communication-check-next` branch;
+production changes require explicit approval. The Prism alternative is preserved
+separately. See [freeze record](docs/FROZEN_BASELINE.md).
 
-The September 11 hosted version is a functional portfolio prototype. At delivery,
-that reviewed implementation passed
-225 engine tests, seven setup/integrity checks, build/typecheck and 28 local browser
-checks. The [working preview](https://communication-check-preview.onrender.com)
-serves the September 11 version. Its 28 hosted checks passed and all six assets
-matched its local build at that verification. See the
-[case study](docs/CASE_STUDY.md) and [portfolio copy](docs/PORTFOLIO_COPY.md).
+## Current evidence — 23 September 2026
 
-Detection remains experimental: the latest reserved fictional set detected 4/12
-selected issues, and all ten attempts missed the original target. Keith prioritised
-shipping the polished prototype; the deeper parser experiment has been cancelled
-for this delivery. No production-reliability or human-validation claim is made.
-See [progress](docs/PROGRESS.md), [evaluation](docs/EVALUATION.md) and
-[verification](docs/VERIFICATION.md) for the current evidence and its limits.
-[PR #1](https://github.com/keithtgrehan/communication-check/pull/1) merged on
-September 11. The follow-on branch starts at main `b22bcfd`. Keith accepted the
-local candidate and authorized the September 16 Vercel deployment to Keith Grehan’s
-projects. No follow-on merge or repository visibility change occurred.
+The frozen editorial app is live at [communication-check.vercel.app](https://communication-check.vercel.app/).
+Deployed source is `38d744d`; the frozen branch is `codex/frozen-vercel-2026-09-16`
+at `1463832`. Current documentation work uses `codex/communication-check-next`, starting at
+`b6942a8`; its tracked web source matches the deployed and frozen versions.
+The Prism alternative remains on `codex/communication-check-tone-review`.
 
-For the next design discussion, use the self-contained
-[design exploration handoff](docs/DESIGN_EXPLORATION_HANDOFF.md). It records the
-pre-refinement interface, preferences, behaviour to preserve and exploration brief.
-Keith subsequently authorized the editorial direction and copy deck with additional
-safeguards. See [editorial refinement evidence](docs/EDITORIAL_REFINEMENT.md) for
-the local candidate; pushing, merging and deployment require a separate instruction.
+The **16 September verification record** reports 451 engine tests, 10 scenario
+tests, seven setup checks, build/typecheck/source guards and 81 local browser
+checks; all 81 hosted Chromium checks passed too. See
+[Vercel evidence](docs/VERCEL_HOSTED_VERIFICATION.json) and [progress](docs/PROGRESS.md).
+The earlier **17 September assessment** reran 461 Vitest tests, TypeScript no-emit
+and selected integrity checks. This **17 September packaging pass** rechecked all
+six live asset hashes and the bounded desktop/390px demo workflow. It did not
+rebuild the app or rerun the complete hosted/privacy suite.
+
+[The case study](docs/CASE_STUDY.md), [portfolio copy](docs/PORTFOLIO_COPY.md),
+[four-minute and 75-second demo scripts](docs/DEMO_SCRIPT.md) and
+[selected screenshots](docs/screenshots/README.md) now describe the frozen version.
+The standalone PDF and selected exports are prepared locally in
+`output/portfolio-package-2026-09-17/`. Keith confirmed the contribution wording on 17 September;
+the spoken rehearsal remains pending. Nothing was published or
+deployed by the packaging pass.
+
+Detection remains experimental: all ten original reserved fictional evaluations
+missed the target, and V10 detected 4/12 selected issues. Known-case passes do not
+establish general language accuracy. One expert reviewed fictional workbook
+content; completed usability sessions remain 0/3 and repeat-use pilots 0/5.
+See [evaluation](docs/EVALUATION.md) for preserved methods and aggregate results.
+
+Read-only GitHub checks on 17 September confirmed the repository is private,
+[PR #1](https://github.com/keithtgrehan/communication-check/pull/1) merged September 11,
+and [PR #2](https://github.com/keithtgrehan/communication-check/pull/2) and
+[PR #3](https://github.com/keithtgrehan/communication-check/pull/3) merged September 16.
+GitHub main was `b508df3`, with the same tracked web tree as the frozen app.
+No Git mutation was performed for this package.
+
+The [September 11 Render preview](https://communication-check-preview.onrender.com/)
+and [its verification](docs/HOSTED_VERIFICATION.json) are historical.
+The [design exploration handoff](docs/DESIGN_EXPLORATION_HANDOFF.md) is also a
+historical input; the subsequently accepted editorial direction is documented in
+[editorial refinement evidence](docs/EDITORIAL_REFINEMENT.md). Neither is a new
+implementation instruction. The frozen Vercel link is the portfolio destination.
+
+## HubSpot + local n8n demonstration — 23 September
+
+A real fictional CRM demonstration is verified: n8n loads a HubSpot source note,
+the presenter manually reviews/edits/rechecks in the unchanged checker, and a
+local authenticated form saves a new note labelled “reviewed draft — not sent”.
+HubSpot readback confirmed the correct contact, revised wording and unchanged
+source. No email is sent. The bridge into the checker is manual.
+
+[Demo setup, three-minute walkthrough and sanitized workflow exports](docs/demo/hubspot-n8n/README.md)
+are included. HubSpot and local n8n history retain fictional content; the complete
+CRM workflow is not browser-only. Credentials stay outside Git. This adds no
+backend, import/save buttons or deployment to the frozen application.
+
+The next portfolio step is Keith’s rehearsal and recording. Video upload, adding
+its link to the frozen site, and public portfolio publication remain separate
+steps. User testing is future product validation, not a blocker for this demo.
 
 ## About and walkthrough
 
@@ -150,9 +182,9 @@ rejected on measured performance grounds.
 - [Product brief](docs/PRODUCT_BRIEF.md) and [implementation plan](docs/IMPLEMENTATION_PLAN.md).
 - [Working instructions](AGENTS.md), [GPT/Codex workflow](docs/WORKFLOW.md) and [goal prompt](docs/GOAL_PROMPT.md).
 - [Finding contract](docs/FINDING_CONTRACT.md), [reuse ledger](docs/REUSE_LEDGER.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
-- [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [75-second demo script](docs/DEMO_SCRIPT.md), [SE conversation notes](docs/SE_CONVERSATION_NOTES.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
+- [Screenshots](docs/screenshots/README.md), [case study](docs/CASE_STUDY.md), [four-minute and 75-second demo scripts](docs/DEMO_SCRIPT.md), [SE conversation notes](docs/SE_CONVERSATION_NOTES.md), [human validation protocol](docs/HUMAN_VALIDATION.md) and [hosting/rollback](docs/HOSTING.md).
 
-The authoritative root is `/Users/keith/Documents/ChatGPT/communication-check`.
+The authoritative root is `/Users/keith/Developer/communication-check`.
 `reference/vibe-signal/` contains six audited inactive source blobs; it is not
 part of the application. New product source, demos and fixtures were written
 independently. No public product licence has been selected.

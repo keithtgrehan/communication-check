@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { checkDraft } from '../../web/src/engine';
 import { checkTone } from '../../web/src/engine/tone';
-import { DEMO_DRAFTS } from '../../web/src/demos';
+import { ALL_DEMO_DRAFTS as DEMO_DRAFTS, PRIMARY_DEMO_ID } from '../../web/src/demos';
 
 for (const width of [320, 382]) {
   test(`practical ${width} by 844 first visit exposes the draft entry and both starting paths`, async ({ page }) => {
@@ -9,9 +9,9 @@ for (const width of [320, 382]) {
     await page.goto('/');
     expect(await page.evaluate(() => scrollY)).toBe(0);
     await expect(page.getByRole('combobox', { name: 'Fictional example' })).toBeInViewport({ ratio: 1 });
-    await expect(page.getByRole('button', { name: 'Try a sample review' })).toBeInViewport({ ratio: 1 });
+    await expect(page.getByRole('button', { name: 'Try an example' })).toBeInViewport({ ratio: 1 });
     await expect(page.getByRole('button', { name: 'Start with your draft' })).toBeInViewport({ ratio: 1 });
-    await expect(page.getByText('Replaces your draft with the example and runs both checks.', { exact: true })).toBeInViewport({ ratio: 1 });
+    await expect(page.getByText('Runs both checks. We’ll ask before replacing your own draft.', { exact: true })).toBeInViewport({ ratio: 1 });
     // Measure before focusing/clicking; those operations could conceal an offscreen input.
     const entry = await page.getByRole('textbox', { name: 'Your follow-up draft' }).boundingBox();
     expect(entry).not.toBeNull();
@@ -22,22 +22,22 @@ for (const width of [320, 382]) {
 }
 
 for (const { width, height } of [{ width: 320, height: 900 }, { width: 382, height: 1000 }, { width: 1440, height: 900 }]) {
-  for (const id of ['promises-to-confirm', 'tone-to-reconsider', 'deadline-pressure']) {
+  for (const id of ['partner-co-selling', 'discovery-follow-up', 'renewal-discussion']) {
     test(`first visit reaches a real ${id} review without hunting at ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height });
       await page.goto('/');
       const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
       const picker = page.getByRole('combobox', { name: 'Fictional example' });
-      const sample = page.getByRole('button', { name: 'Try a sample review' });
+      const sample = page.getByRole('button', { name: 'Try an example' });
       await expect(editor).toHaveValue('');
       await expect(editor).toHaveAttribute('placeholder', 'Paste your customer follow-up here…');
       await expect(page.getByText('Add a draft to begin.', { exact: true })).toBeVisible();
-      await expect(page.getByRole('button', { name: 'Check draft', exact: true })).toBeDisabled();
-      await expect(picker).toHaveValue('promises-to-confirm');
-      await expect(picker.locator('option')).toHaveCount(9);
+      await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
+      await expect(picker).toHaveValue('partner-co-selling');
+      await expect(picker.locator('option')).toHaveCount(13);
       // These assertions happen before interactions that could scroll the page.
       expect(await page.evaluate(() => scrollY)).toBe(0);
-      await expect(page.getByText('Replaces your draft with the example and runs both checks.', { exact: true })).toBeInViewport({ ratio: 1 });
+      await expect(page.getByText('Runs both checks. We’ll ask before replacing your own draft.', { exact: true })).toBeInViewport({ ratio: 1 });
       await expect(picker).toBeInViewport({ ratio: 1 });
       await expect(sample).toBeInViewport({ ratio: 1 });
       await expect(page.getByRole('button', { name: 'Start with your draft' })).toBeInViewport({ ratio: 1 });
@@ -72,22 +72,23 @@ for (const { width, height } of [{ width: 320, height: 900 }, { width: 382, heig
 test('every scenario uses its real engine and the current revision; selection alone preserves both reviews', async ({ page }) => {
   await page.goto('/');
   const picker = page.getByRole('combobox', { name: 'Fictional example' });
-  const sample = page.getByRole('button', { name: 'Try a sample review' });
+  const sample = page.getByRole('button', { name: 'Try an example' });
   const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
   const mixed = 'You always ignore our requests. We guarantee the custom integration will be ready by Friday.';
   await editor.fill(mixed);
-  await page.getByRole('button', { name: 'Check draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await page.getByRole('tab', { name: /Tone cues/ }).click();
   await page.getByRole('button', { name: 'Check tone cues', exact: true }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();
-  await picker.selectOption('deadline-pressure');
+  await picker.selectOption('renewal-discussion');
   await expect(editor).toHaveValue(mixed);
-  await expect(page.getByText('Replaces your draft with the example and runs both checks.', { exact: true })).toBeVisible();
+  await expect(page.getByText('Runs both checks. We’ll ask before replacing your own draft.', { exact: true })).toBeVisible();
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
   await page.getByRole('tab', { name: 'Clarity & commitments' }).click();
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
 
+  page.once('dialog', dialog => dialog.accept());
   for (const demo of DEMO_DRAFTS) {
     await picker.selectOption(demo.id);
     await sample.click();
@@ -124,14 +125,14 @@ test('sample controls and result actions remain usable with doubled text', async
     const sizes = elements.map(element => parseFloat(getComputedStyle(element).fontSize) * 2);
     elements.forEach((element, index) => { element.style.fontSize = `${sizes[index]}px`; });
   });
-  for (const control of [page.getByRole('combobox'), page.getByRole('button', { name: 'Start with your draft' }), page.getByRole('button', { name: 'Try a sample review' })]) {
+  for (const control of [page.getByRole('combobox'), page.getByRole('button', { name: 'Start with your draft' }), page.getByRole('button', { name: 'Try an example' })]) {
     const bounds = await control.boundingBox();
     expect(bounds!.width).toBeGreaterThanOrEqual(44);
     expect(bounds!.height).toBeGreaterThanOrEqual(44);
     expect(await control.evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
   }
-  await page.getByRole('combobox').selectOption('tone-to-reconsider');
-  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('combobox').selectOption('renewal-discussion');
+  await page.getByRole('button', { name: 'Try an example' }).click();
   await expect(page.getByRole('heading', { name: 'Your review' })).toBeFocused();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await page.getByRole('button', { name: /^Undo keep:/ }).click();
@@ -174,17 +175,20 @@ for (const { width, zoom, textScale } of [{ width: 320, zoom: 1, textScale: 1 },
 
 test('sample snapshots preserve independent decisions and style, while edits invalidate both', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#sample-note')).toContainText('runs both checks');
+  await expect(page.locator('#sample-note')).toContainText('Runs both checks');
   const editor = page.getByRole('textbox');
   await editor.fill('A manually pasted draft.');
-  await expect(page.locator('.result-empty')).toContainText('Select Check draft to review next steps and commitments.');
+  await expect(page.locator('.result-empty')).toContainText('Select Check my draft to review next steps and commitments.');
   await expect(page.locator('.finding-card')).toHaveCount(0);
-  await page.getByRole('button', { name: 'Try a sample review' }).click();
+  await page.getByRole('combobox').selectOption('renewal-discussion');
+  page.once('dialog', dialog => dialog.accept());
+  await page.getByRole('button', { name: 'Try an example' }).click();
   await page.getByRole('button', { name: 'Keep as written' }).click();
   await page.getByRole('tab', { name: /Tone cues/ }).click();
   await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
   const quote = await page.locator('blockquote:visible').innerText();
   await page.getByRole('button', { name: 'Keep as written' }).click();
+  await page.locator('.question-style summary').click();
   await page.getByRole('radio', { name: 'Warm', exact: true }).check();
   await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
   await page.getByRole('button', { name: 'Recheck tone cues' }).click();
@@ -217,7 +221,8 @@ for (const failedLens of ['clarity', 'tone'] as const) {
       };
     }, failedLens);
     await page.goto('/');
-    await page.getByRole('button', { name: 'Try a sample review' }).click();
+    await page.getByRole('combobox').selectOption('renewal-discussion');
+    await page.getByRole('button', { name: 'Try an example' }).click();
     await expect(page.getByRole('tab', { name: 'Clarity & commitments' })).toHaveAttribute('aria-selected', 'true');
     await expect(page.getByRole('status')).toContainText(`${failedLens === 'tone' ? 'Tone cues' : 'Clarity & commitments'} check couldn’t finish`);
     if (failedLens === 'tone') {
@@ -240,3 +245,94 @@ for (const failedLens of ['clarity', 'tone'] as const) {
     await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
   });
 }
+
+test('trying an example protects a user draft and its decisions until replacement is confirmed', async ({ page }) => {
+  await page.goto('/');
+  const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
+  const original = 'We guarantee the custom integration will be ready by Friday.';
+  await editor.fill(original);
+  await page.getByRole('button', { name: 'Check my draft', exact: true }).click();
+  await page.getByRole('button', { name: 'Keep as written' }).click();
+  page.once('dialog', async dialog => {
+    expect(dialog.type()).toBe('confirm');
+    expect(dialog.message()).toContain('Replace your current draft');
+    await dialog.dismiss();
+  });
+  await page.getByRole('button', { name: 'Try an example' }).click();
+  await expect(editor).toHaveValue(original);
+  await expect(page.locator('.findings-count')).toHaveText('1 of 1 reviewed');
+  page.once('dialog', dialog => dialog.accept());
+  await page.getByRole('button', { name: 'Try an example' }).click();
+  await expect(editor).toHaveValue(DEMO_DRAFTS.find(demo => demo.id === PRIMARY_DEMO_ID)!.text);
+  await expect(page.locator('.findings-count')).toHaveText('0 of 1 reviewed');
+  // Switching between untouched examples does not discard user-authored text.
+  const unexpectedDialogs: string[] = [];
+  const rejectUnexpected = async (dialog: import('@playwright/test').Dialog) => { unexpectedDialogs.push(dialog.message()); await dialog.dismiss(); };
+  page.on('dialog', rejectUnexpected);
+  await page.getByRole('combobox').selectOption('clear-commercial-follow-up');
+  await page.getByRole('button', { name: 'Try an example' }).click();
+  await expect(page.getByRole('heading', { name: 'No wording flagged by these checks' })).toBeVisible();
+  expect(unexpectedDialogs).toEqual([]);
+  page.off('dialog', rejectUnexpected);
+  const edited = `${DEMO_DRAFTS.find(demo => demo.id === 'clear-commercial-follow-up')!.text}\nMy own extra wording.`;
+  await editor.fill(edited);
+  page.once('dialog', dialog => dialog.dismiss());
+  await page.getByRole('button', { name: 'Try an example' }).click();
+  await expect(editor).toHaveValue(edited);
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+});
+
+for (const width of [320, 390, 768, 1000, 1024, 1440]) {
+  test(`workspace keeps draft entry, honest empty state and navigation usable at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    const editor = page.getByRole('textbox', { name: 'Your follow-up draft' });
+    await expect(page.getByRole('heading', { name: 'Your review', exact: true })).toBeVisible();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Check my draft', exact: true })).toBeDisabled();
+    await expect(page.locator('.how-it-works, .review-photo, .fictional-review')).toHaveCount(0);
+    const entry = await editor.boundingBox();
+    expect(entry!.y + 26).toBeLessThan(900);
+    await editor.fill('My own unchecked wording.');
+    await expect(page.getByRole('heading', { name: 'Ready to check your draft.' })).toBeVisible();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await page.getByRole('tab', { name: /Tone cues/ }).click();
+    const disclosure = page.locator('.question-style');
+    await expect(disclosure).not.toHaveAttribute('open', '');
+    await disclosure.locator('summary').focus();
+    await page.keyboard.press('Enter');
+    await page.getByRole('radio', { name: 'Warm', exact: true }).check();
+    await expect(page.locator('.finding-card')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Check tone cues', exact: true })).toBeEnabled();
+    await expect(editor).toHaveValue('My own unchecked wording.');
+    await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'About this project', exact: true }).click();
+    await expect(page.getByRole('heading', { level: 1, name: 'About Communication Check' })).toBeFocused();
+    await page.getByRole('link', { name: 'Communication Check home', exact: true }).click();
+    await expect(editor).toHaveValue('My own unchecked wording.');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+}
+
+test('restored catalog keeps the verified labels and order, and keyboard selection is inert', async ({ page }) => {
+  await page.goto('/');
+  const picker = page.getByRole('combobox', { name: 'Fictional example' });
+  await expect(picker.locator('option')).toHaveText([
+    'Clear next steps', 'Too many asks', 'Promises to confirm', 'Tone to reconsider',
+    'Kickoff handoff', 'Blocked data import', 'Pending rollout decision',
+    'Chasing a missing list', 'Deadline pressure', 'Partner handoff',
+    'Discovery call', 'Renewal discussion', 'Clear follow-up',
+  ]);
+  await picker.focus();
+  // Native select type-ahead works without relying on an OS popup in headless mode.
+  await page.keyboard.type('tone');
+  await expect(picker).toHaveValue('tone-to-reconsider');
+  await expect(page.getByRole('textbox')).toHaveValue('');
+  await expect(page.locator('.finding-card')).toHaveCount(0);
+  await picker.press('Tab');
+  const action = page.getByRole('button', { name: 'Try an example' });
+  await expect(action).toBeFocused();
+  await action.press('Enter');
+  await expect(page.getByRole('tab', { name: /Tone cues/ })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByRole('textbox')).toHaveValue(DEMO_DRAFTS.find(demo => demo.id === 'tone-to-reconsider')!.text);
+  await expect(page.getByRole('heading', { name: 'Your review' })).toBeFocused();
+});

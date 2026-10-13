@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { checkDraft } from './engine';
 import { checkTone, tonePromptFor } from './engine/tone';
 import { MAX_DRAFT_LENGTH, findingIdentity, type ReviewFinding, type ReviewLens, type ReviewSnapshot, type ToneIntent, type ToneRuleId } from './engine/types';
-import { DEMO_DRAFTS } from './demos';
+import { ALL_DEMO_DRAFTS as DEMO_DRAFTS, PRIMARY_DEMO_ID } from './demos';
 import { InfoPages, type InfoPage } from './InfoPages';
 import './styles.css';
 
@@ -27,6 +27,19 @@ function resultStatus(snapshot: ReviewSnapshot | null, lens: ReviewLens, errors:
   return errors[other] ? `${summary} The ${lensName(other)} check couldn’t finish. Open that tab to try again.` : summary;
 }
 
+type IconName = 'check' | 'info' | 'video' | 'lock' | 'copy' | 'review';
+function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
+  const paths: Record<IconName, React.ReactNode> = {
+    check: <><path d="M9 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" /><path d="m9 12 3 3L21 6" /></>,
+    info: <><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7h.01" /></>,
+    video: <><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m10 9 5 3-5 3Z" /></>,
+    lock: <><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" /></>,
+    copy: <><rect x="8" y="8" width="12" height="13" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></>,
+    review: <><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" /><path d="M9 8h6M9 12h6M9 16h3" /></>,
+  };
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
+}
+
 function Mark() {
   return <svg width="22" height="22" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M4 13.5L9 18.5L21.5 6M14 18.5L22 10.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 }
@@ -42,7 +55,7 @@ export default function App() {
     return () => window.removeEventListener('hashchange', navigate);
   }, []);
   useLayoutEffect(() => {
-    document.title = page === 'about' ? 'About Communication Check' : page === 'video-demo' ? 'Video Demo · Communication Check' : 'Communication Check — Review your customer follow-up';
+    document.title = page === 'about' ? 'About Communication Check' : page === 'video-demo' ? 'Video Demo · Communication Check' : 'Communication Check | Clearer customer follow-ups';
     // Preserve the normal first-visit focus. Route changes, including browser
     // back/forward, announce the new page without unmounting the review desk.
     if (previousPage.current === page) return;
@@ -52,7 +65,7 @@ export default function App() {
   }, [page]);
   const [draft, setDraft] = useState('');
   const [sampleId, setSampleId] = useState<string | null>(null);
-  const [scenarioId, setScenarioId] = useState('promises-to-confirm');
+  const [scenarioId, setScenarioId] = useState(PRIMARY_DEMO_ID);
   const [lens, setLens] = useState<ReviewLens>('clarity');
   const [intent, setIntent] = useState<ToneIntent>('collaborative');
   const [snapshots, setSnapshots] = useState(emptySnapshots);
@@ -95,7 +108,7 @@ export default function App() {
   const result = snapshot?.result;
   const reviewedCount = snapshot?.reviewedIds.length ?? 0;
   const selectedSample = DEMO_DRAFTS.find((sample) => sample.id === sampleId);
-  const checkLabel = lens === 'tone' ? (snapshot || needsRecheck.tone ? 'Recheck tone cues' : 'Check tone cues') : (snapshot || needsRecheck.clarity ? 'Recheck draft' : 'Check draft');
+  const checkLabel = lens === 'tone' ? (snapshot || needsRecheck.tone ? 'Recheck tone cues' : 'Check tone cues') : (snapshot || needsRecheck.clarity ? 'Recheck draft' : 'Check my draft');
 
   function isCurrent(current: ReviewSnapshot | null) {
     return current !== null && current.textRevision === textRevision.current;
@@ -167,6 +180,9 @@ export default function App() {
   function reviewSample() {
     const sample = DEMO_DRAFTS.find(item => item.id === scenarioId);
     if (!sample) return;
+    // Only untouched examples can be replaced without asking. User-authored or
+    // edited text, including whitespace edits, is preserved when cancelled.
+    if (draftRef.current.trim() && !selectedSample && !window.confirm('Replace your current draft with this fictional example? Your current wording will be cleared.')) return;
     replaceDraft(sample.text, sample.id);
     const revision = textRevision.current;
     const next = emptySnapshots();
@@ -289,24 +305,35 @@ export default function App() {
   }
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${page === 'checker' ? 'is-checker' : ''}`}>
       <header className="site-header">
-        <a className="brand" href="#/" aria-current={page === 'checker' ? 'page' : undefined}><span className="brand-mark"><Mark /></span><span>Communication Check</span></a>
+      <a className="skip-link" href={page === 'checker' ? '#/' : `#/${page}`} onClick={event => {
+        event.preventDefault();
+        const heading = (page === 'checker' ? checkerHeading : infoHeading).current;
+        heading?.focus();
+        heading?.scrollIntoView({ block: 'start' });
+      }}>Skip to content</a>
+        <a className="brand" href="#/" aria-label="Communication Check home"><span className="brand-mark"><Mark /></span><span>Communication<br className="brand-break" /> Check</span></a>
+        <div className="nav-label">WORKSPACE</div>
         <nav className="site-nav" aria-label="Main navigation">
-          <a href="#/about" aria-current={page === 'about' ? 'page' : undefined}>About Communication Check</a>
-          <a href="#/video-demo" aria-current={page === 'video-demo' ? 'page' : undefined}>Video Demo</a>
+          <a href="#/" aria-current={page === 'checker' ? 'page' : undefined}><Icon name="check" />Checker</a>
+          <a href="#/about" aria-current={page === 'about' ? 'page' : undefined}><Icon name="info" />About this project</a>
+          <a href="#/video-demo" aria-current={page === 'video-demo' ? 'page' : undefined}><Icon name="video" />Video Demo</a>
         </nav>
+        <div className="sidebar-note"><span className="sidebar-note-title"><Icon name="lock" size={16} />Private by design</span><p>Your draft stays in this page. Reloading clears it.</p><span className="sidebar-prototype">Portfolio prototype</span></div>
       </header>
-      <main hidden={page !== 'checker'}>
+      <div className="app-content">
+      <section className="workspace-topbar" aria-label="Workspace location"><span>Workspace <span className="breadcrumb-divider" aria-hidden="true">/</span> <strong>{page === 'checker' ? 'Follow-up checker' : page === 'about' ? 'About this project' : 'Video Demo'}</strong></span><span className="local-badge"><Icon name="lock" size={14} /> Runs in your browser</span></section>
+      <main className="checker-page" hidden={page !== 'checker'}>
         <section className="intro" aria-labelledby="page-title">
-          <div><h1 id="page-title" ref={checkerHeading} tabIndex={-1}>Review your customer follow-up.</h1><p className="intro-description">A second look at next steps, commitments and wording. You decide what to change.</p></div>
+          <div><h1 id="page-title" ref={checkerHeading} tabIndex={-1}>Review your follow-up</h1><p className="intro-description">A focused check of next steps, commitments and wording. You make the final call.</p></div>
         </section>
-        <section className="start-options" aria-label="Start a review">
-          <div className="sample-picker"><label htmlFor="sample-scenario">Fictional example</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.label}</option>)}</select></div>
-          <button className="sample-button" onClick={reviewSample} aria-describedby="sample-note">Try a sample review</button>
-          <p id="sample-note">Replaces your draft with the example and runs both checks.</p>
+        <section className={`start-options ${hasText ? 'has-draft' : ''}`} aria-label="Start a review">
+          <div className="sample-picker"><label htmlFor="sample-scenario"><Icon name="review" />Fictional example</label><select id="sample-scenario" value={scenarioId} onChange={event => setScenarioId(event.target.value)} aria-describedby="sample-note">{DEMO_DRAFTS.map(sample => <option key={sample.id} value={sample.id}>{sample.id === 'partner-co-selling' ? 'Partner handoff' : sample.id === 'discovery-follow-up' ? 'Discovery call' : sample.label}</option>)}</select></div>
+          <button className="sample-button" onClick={reviewSample} aria-describedby="sample-note">Try an example <span aria-hidden="true">→</span></button>
+          <p id="sample-note">Runs both checks. We’ll ask before replacing your own draft.</p>
         </section>
-        <p className="local-note">Drafts and findings stay in this page. Reloading clears them.</p>
+        <div className="workspace-card">
         <div className="lens-tabs" role="tablist" aria-label="Choose a review">
           {LENSES.map(option => <button key={option.id} id={`tab-${option.id}`} role="tab" className="lens-tab" ref={element => { if (element) lensButtons.current.set(option.id, element); else lensButtons.current.delete(option.id); }} aria-selected={lens === option.id} aria-controls="review-panel" tabIndex={lens === option.id ? 0 : -1} onClick={() => switchLens(option.id)} onKeyDown={event => {
             if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
@@ -319,23 +346,23 @@ export default function App() {
         {lens === 'tone' && <p className="tone-scope">Looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. It won’t catch every tone issue.</p>}
         <div className="workspace">
           <section className="editor-panel" aria-labelledby="draft-heading">
-            <div className="panel-heading"><div><h2 id="draft-heading"><label htmlFor="draft">Your follow-up draft</label></h2></div><button className="text-button paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Start with your draft <span aria-hidden="true">↘</span></button></div>
-            <p className={selectedSample ? 'editor-description' : 'editor-description sr-only'} id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste or write your customer follow-up here.'}</p>
-            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong} aria-describedby={!hasText ? 'check-help' : undefined}>{checkLabel}</button><button className="secondary-button" aria-label="Copy draft" onClick={() => void copyDraft()} disabled={!hasText}>Copy draft</button><button className="text-button reset-button" aria-label="Clear draft" onClick={resetDraft} disabled={!draft}>Clear draft</button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
+            <div className="panel-heading"><h2 id="draft-heading"><Icon name="review" /><label htmlFor="draft">Your follow-up draft</label></h2><button className="text-button paste-button" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Start with your draft <span aria-hidden="true">↘</span></button></div>
+            <p className="editor-description" id="draft-description">{selectedSample ? `Fictional example · ${selectedSample.description}` : 'Paste or write your customer follow-up here.'}</p>
             {!hasText && <p id="check-help" className="check-help sr-only">Add a draft to begin.</p>}
             <div className={`editor-frame ${tooLong ? 'has-error' : ''}`}>
               <textarea id="draft" ref={editor} value={draft} onChange={event => replaceDraft(event.target.value)} placeholder="Paste your customer follow-up here…" aria-describedby={`draft-description draft-count draft-count-help${tooLong ? ' draft-limit' : ''}${manualCopy ? ' copy-help' : ''}`} aria-invalid={tooLong} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck={false} name="follow-up-draft" />
-              <div className="editor-meta"><span>Nothing is rewritten or sent.</span><span id="draft-count" className={tooLong ? 'count-error' : ''}>{draft.length.toLocaleString()} / 12,000 characters</span><span id="draft-count-help" className="count-help">Some characters, including emoji, count as more than one.</span></div>
             </div>
+            <div className="editor-actions"><button className="primary-button" onClick={runCheck} disabled={!hasText || tooLong} aria-describedby={!hasText ? 'check-help' : undefined}>{checkLabel}</button><button className="secondary-button" aria-label="Copy draft" onClick={() => void copyDraft()} disabled={!hasText}><Icon name="copy" size={16} />Copy draft</button><button className="text-button reset-button" aria-label="Clear draft" onClick={resetDraft} disabled={!draft}>Clear<span className="clear-word"> draft</span></button>{result && <button className="text-button mobile-jump" onClick={() => { resultsHeading.current?.focus(); resultsHeading.current?.scrollIntoView({ block: 'start' }); }}>Go to review ↓</button>}</div>
+            <div className="editor-meta"><span>Nothing is rewritten or sent.</span><span id="draft-count" className={tooLong ? 'count-error' : ''}>{draft.length.toLocaleString()} / 12,000 characters</span><span id="draft-count-help" className="count-help sr-only">Some characters, including emoji, count as more than one.</span></div>
             {tooLong && <p id="draft-limit" className="inline-error" role="alert"><strong>This draft is over the limit.</strong> Your full draft is still here. Remove {(draft.length - MAX_DRAFT_LENGTH).toLocaleString()} {draft.length - MAX_DRAFT_LENGTH === 1 ? 'character' : 'characters'} to check it. The limit is 12,000.</p>}
             {manualCopy && <p id="copy-help" className="copy-help">Your draft is selected. Press <kbd>Ctrl</kbd> + <kbd>C</kbd> or <kbd>⌘</kbd> + <kbd>C</kbd> to copy it manually.</p>}
 
           </section>
           <section id="review-panel" role="tabpanel" aria-labelledby={`tab-${lens}`} className={`results-panel ${result ? 'has-results' : ''}`}>
-            <div className="panel-heading"><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Your review</h2></div>
-            {lens === 'tone' && <fieldset className="intent-picker"><legend>How should the review questions sound?</legend><div className="intent-options">{INTENTS.map(option => <label key={option} className={`intent-option ${intent === option ? 'selected' : ''}`}><input type="radio" name="tone-intent" value={option} checked={intent === option} onChange={() => chooseIntent(option)} /><span>{option[0].toUpperCase() + option.slice(1)}</span></label>)}</div><p>Changes the questions you see, not your draft or which phrases are flagged.</p></fieldset>}
+            <div className="panel-heading"><h2 id="results-heading" tabIndex={-1} ref={resultsHeading}>Your review</h2>{result && <span className="review-badge">{result.findings.length} to consider</span>}</div>
+            {lens === 'tone' && <details className="question-style"><summary>Question style <span>· {intent[0].toUpperCase() + intent.slice(1)}</span></summary><fieldset className="intent-picker"><legend>How should the review questions sound?</legend><div className="intent-options">{INTENTS.map(option => <label key={option} className={`intent-option ${intent === option ? 'selected' : ''}`}><input type="radio" name="tone-intent" value={option} checked={intent === option} onChange={() => chooseIntent(option)} /><span>{option[0].toUpperCase() + option.slice(1)}</span></label>)}</div><p>Changes the questions you see, not your draft or which phrases are flagged.</p></fieldset></details>}
             {result && checkErrors[lens === 'clarity' ? 'tone' : 'clarity'] && <p className="inline-error" role="alert">The {lensName(lens === 'clarity' ? 'tone' : 'clarity')} check couldn’t finish. Open that tab to try again.</p>}
-            {!result ? <div className="result-empty"><h3>{checkErrors[lens] ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Your draft has changed.' : lens === 'tone' ? 'Take a look at the wording.' : hasText ? 'Ready for a second look?' : 'Your review will appear here.'}</h3><p>{checkErrors[lens] ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Earlier findings have been cleared. Check the current wording when you’re ready.' : lens === 'tone' ? 'Select Check tone cues to look for a few phrases worth reconsidering.' : hasText ? 'Select Check draft to review next steps and commitments.' : 'Paste a draft and select Check draft, or try a fictional example.'}</p></div>
+            {!result ? <div className="result-empty"><span className="empty-annotation" aria-hidden="true"><Icon name="review" size={28} /></span><h3>{checkErrors[lens] ? 'This check couldn’t finish.' : needsRecheck[lens] ? 'Your draft has changed.' : lens === 'tone' ? 'Take a look at the wording.' : hasText ? 'Ready to check your draft.' : 'Your review will appear here.'}</h3><p>{checkErrors[lens] ? `Your draft is still in the editor. Select ${checkLabel} to try again.` : needsRecheck[lens] ? 'Earlier findings have been cleared. Check the current wording when you’re ready.' : lens === 'tone' ? 'Select Check tone cues to look for a few phrases worth reconsidering.' : hasText ? 'Select Check my draft to review next steps and commitments.' : 'Paste a draft and select Check my draft, or try a fictional example.'}</p>{!hasText && !checkErrors[lens] && <ol className="empty-review-steps"><li><span>1</span>Find the exact wording</li><li><span>2</span>Consider a focused question</li><li><span>3</span>Edit it yourself or keep it</li></ol>}</div>
               : result.findings.length === 0 ? <div className="result-empty result-complete"><h3>{lens === 'tone' ? 'No tone cues flagged' : 'No wording flagged by these checks'}</h3><p>{lens === 'tone' ? 'These checks cover a few wording patterns. They can miss nuance and can’t predict how your message will be received. Give it your own final read.' : 'The checks may still miss something. Facts and agreements haven’t been verified, so give the draft your own final read.'}</p></div>
               : <>
                 <div className="review-progress"><div className="progress-segments" aria-hidden="true">{result.findings.map(finding => <span key={finding.id} className={snapshot!.reviewedIds.includes(findingIdentity(finding)) ? 'is-reviewed' : ''} />)}</div><div className="progress-labels"><span className="findings-count">{reviewedCount} of {result.findings.length} reviewed</span></div></div>
@@ -377,7 +404,7 @@ export default function App() {
                         </div>
                       )}
                       <div id={`detail-${finding.id}`} className="finding-detail" hidden={!expanded}>
-                        <p className="evidence-label">From your draft</p><blockquote>{finding.quote}</blockquote>
+                        <p className="evidence-label">From your draft · exact wording</p><blockquote><mark>{finding.quote}</mark></blockquote>
                         <p className="finding-explanation">{finding.explanation}</p>
                         <div className="review-prompt"><span>A question to consider</span><p>{finding.prompt}</p></div>
                         <div className="finding-actions">
@@ -403,10 +430,12 @@ export default function App() {
             <button className="text-button mobile-jump" onClick={() => { editor.current?.focus(); editor.current?.scrollIntoView({ block: 'center' }); }}>Back to draft ↑</button>
           </section>
         </div>
+        </div>
         <p className={status.startsWith('Current draft copied') || status.startsWith('Clipboard') ? 'live-status' : 'live-status sr-only'} role="status" aria-live="polite" aria-atomic="true">{status}</p>
-        <footer className="page-footer"><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check looks for a limited set of wording patterns in customer onboarding follow-ups: unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments.</p><p>Tone cues looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. Choosing Direct, Collaborative or Warm changes the review questions, not which phrases are flagged.</p><p>The checks can miss issues or flag wording that works in your situation. They don’t verify facts, meeting context or agreements, and they can’t predict a customer’s response. No flags does not mean the draft is approved.</p><p>Your draft and findings stay in page memory. Reloading clears them. Copy draft puts your current wording on your clipboard; nothing is rewritten or sent automatically.</p><p>The examples are fictional. This is a portfolio prototype, and its usefulness in day-to-day work has not yet been validated.</p></div></details></footer>
+        <footer className="page-footer"><div><p className="local-note">No sign-in. Drafts and findings stay in this page; reloading clears them.</p><p className="prototype-note">A portfolio prototype. Your judgment comes first.</p></div><details className="about-checks"><summary>What this checks</summary><div><p>Communication Check looks for a limited set of wording patterns in customer follow-ups: unclear actions or owners, vague timing, competing requests, agreement wording and strong product commitments.</p><p>Tone cues looks for a few phrases that may sound blaming, dismissive, judgmental or pressuring. Choosing Direct, Collaborative or Warm changes the review questions, not which phrases are flagged.</p><p>The checks can miss issues or flag wording that works in your situation. They don’t verify facts, meeting context or agreements, and they can’t predict a customer’s response. No flags does not mean the draft is approved.</p><p>Your draft and findings stay in page memory. Reloading clears them. Copy draft puts your current wording on your clipboard; nothing is rewritten or sent automatically.</p><p>The examples are fictional. This is a portfolio prototype, and its usefulness in day-to-day work has not yet been validated.</p></div></details></footer>
       </main>
       {page !== 'checker' && <InfoPages page={page} headingRef={infoHeading} />}
+      </div>
     </div>
   );
 }

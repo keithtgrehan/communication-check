@@ -21,7 +21,7 @@ const dist = resolve(root, 'web/dist');
 const built = files(dist);
 assert(built.some(path => path.endsWith('.js')) && built.some(path => path.endsWith('.css')), 'Missing JS/CSS assets.');
 for (const path of built) {
-  assert(/\.(html|js|css|svg|txt)$/.test(path), `Unexpected published artifact: ${path}`);
+  assert(/\.(html|js|css|svg|png|txt)$/.test(path) || relative(dist, path) === 'review-notebook.webp', `Unexpected published artifact: ${path}`);
   const contents = readFileSync(path, 'utf8');
   assert(!/vibe-signal\.onrender\.com|api\.openai\.com|googletagmanager\.com|VERCEL_TOKEN|BEGIN PRIVATE KEY/.test(contents), `Unexpected upstream or secret marker in ${path}`);
   assert(!/\.test\.[tj]s|__fixtures__|reference\/vibe-signal/.test(contents), `Test or reference material in ${path}`);
@@ -29,5 +29,6 @@ for (const path of built) {
 const html = readFileSync(join(dist, 'index.html'), 'utf8');
 assert(html.includes("connect-src 'none'"), 'Missing strict production connection policy.');
 assert(html.includes('noindex, nofollow'), 'Preview must not invite indexing.');
-assert(!/<(?:script|link)[^>]+(?:src|href)=["']https?:/.test(html), 'External runtime resource in HTML.');
+const runtimeHtml = html.replace(/<link\s+rel="canonical"\s+href="https:\/\/communication-check\.vercel\.app\/"\s*\/>/, '');
+assert(!/<(?:script|link)[^>]+(?:src|href)=["']https?:/.test(runtimeHtml), 'External runtime resource in HTML.');
 console.log(`Source/build regression guards passed (${sourceFiles.length} source files, ${built.length} published assets). Runtime privacy still requires browser verification.`);

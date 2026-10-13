@@ -2,6 +2,68 @@
 
 **Check your customer follow-up before you send it.**
 
+## Current authorised milestone — 13 October 2026
+
+**Latest refinement:** Keep the workspace layout and make all app states monochrome,
+with readable contrast and visible keyboard focus. Restore all nine original
+examples in their verified order, followed by the four current commercial examples
+(Keith chose all 13). Preserve labels, text, preferred lenses, dual checks and draft
+replacement confirmation. Complete local functional/privacy/accessibility checks,
+desktop/mobile screenshots, independent review and a concrete existing-Vercel
+update plan. The initial request authorised local implementation only. Keith then
+authorised a separate authenticated Vercel preview of the reviewed candidate.
+Keith subsequently explicitly approved replacing the main Vercel site with this
+reviewed candidate. Production staging/promotion and rollback to the preserved
+baseline are authorised; main-branch merge and new spending remain unapproved.
+
+**Released:** https://communication-check.vercel.app/ now serves the approved
+candidate from `ffba4d1`, deployment `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`.
+All 13 examples and focused public workflow/privacy checks passed. The frozen
+September deployment and Prism experiment remain preserved. See PROGRESS.md and
+HOSTING.md for release evidence and remaining verification limits.
+
+
+Keith rejected the near-identical Replit design variations and requested a
+substantial professional SaaS redesign. Replace the editorial presentation with
+a compact application workspace: functional navigation, clear toolbar hierarchy,
+sans-serif draft text and a structured review panel. Remove the oversized hero
+and stock-photo section from the checker. Finish a working local desktop/mobile
+candidate with relevant functional/privacy/accessibility checks, screenshots and
+independent review. This supersedes the prior paper/serif/photo design direction.
+Preserve all engine, evidence, review-state and memory-only behaviour. No new
+service or product expansion. Production replacement was separately approved above;
+main merge remains outside scope.
+
+## Previous authorised milestone — 11 October 2026
+
+Keith selected the Margin desk direction and authorized implementation as a separate
+preview. Apply the approved warm-paper/white-document/open-review-margin design,
+blue evidence accents, serif draft and quotes, compact opening/example controls and
+accessible mobile flow. Include one locally hosted Kaboompics/Pexels notebook photo
+beside a lower How it works section. Use a clearly fictional first-visit illustration
+only on a blank desktop editor; real checks and all review/privacy behavior remain.
+Verify desktop/mobile, keyboard, exact evidence, snapshots, copy, offline/privacy,
+build integrity and a separate authenticated preview, with fresh independent review.
+This is presentation work: no engine expansion, reserved research, new service,
+production replacement or main merge. Optional case-study/video work is not a gate.
+
+## Previous authorised milestone — 9 October 2026
+
+Keith requested implementation of the LinkedIn preview and visual redesign handover.
+Priorities: diagnose LinkedIn fetching with Post Inspector; serve initial-HTML share
+metadata and a real-interface preview image; substantially improve the opening view,
+commercial examples and desktop/mobile review flow. The audience now includes SaaS
+sales and partner-facing teams, with recruiters viewing the portfolio demonstration.
+Use three fictional discovery/partner/renewal scenarios and a clear comparison through
+the existing engines. Preserve all detection, review-state and memory-only boundaries.
+No new evaluation rounds, accounts, model service or integrations. Keep the approved
+contribution statement and avoid claims of adoption, measured impact or reliability.
+Work on `codex/communication-check-next`; a separate existing no-new-spend preview
+is allowed. The frozen production URL still requires a specific release instruction
+before replacement. No LinkedIn profile edits, outreach, domain or DNS changes.
+Finish with tested preview, screenshots, accurate LinkedIn verification status and
+ready-to-use Featured copy. Optional video/research/case-study work is not a gate.
+
 ## Purpose and priorities
 
 Build a credible portfolio product first, test usefulness with real users second, and explore low-maintenance revenue only after repeat usefulness. The first audience is B2B SaaS account managers and customer-success managers writing onboarding follow-up emails.
@@ -22,7 +84,39 @@ two focused v0 revisions; verify locally, independently and on the existing prev
 before final screenshots. Prepare LinkedIn Featured and Solutions Engineering
 materials; publication and outreach remain separate, unapproved actions.
 
-## Approved follow-on — 16 September 2026
+## Frozen live decision — 16 September 2026
+
+Keith chose https://communication-check.vercel.app/ and froze the accepted editorial
+version. Baseline branch: `codex/frozen-vercel-2026-09-16` at `1463832`, with the same
+web source as deployed `38d744d`. All subsequent work goes on the forked
+`codex/communication-check-next` branch. Preserve the Prism alternative on the old
+branch. No production replacement or main merge without explicit approval.
+This supersedes previous implementation-branch/presentation directions.
+
+## Current demo and repository update — 23 September 2026
+
+Keith authorized a minimal fictional HubSpot + local n8n demo with intentional
+manual copy/paste through the unchanged checker. Real retrieval and a new-note
+save passed. HubSpot and n8n retain the fictional payloads; the standalone app’s
+browser-memory contract is unchanged. Credentials remain outside Git.
+Keith then requested the repository update, authorizing commit/push of the
+completed portfolio documentation and sanitized demo package on
+`codex/communication-check-next`. No main merge, deployment, visibility change,
+email sending or public portfolio publication is part of this update.
+See [demo instructions](demo/hubspot-n8n/README.md) and PROGRESS.md.
+
+## Historical portfolio packaging — 17 September 2026
+
+Keith approved implementation of the portfolio packaging plan after independent
+senior-PM review. Update only the allowlisted documentation, selected screenshots
+and standalone exports around the frozen app. No app/source/config changes,
+deployment, publication, Git commit/push/merge, new research or outreach are part
+of this pass. Keith confirmed the contribution wording on 17 September 2026.
+The four-minute demo is prepared; his spoken rehearsal remains pending.
+Technical checks do not complete a human rehearsal. Older implementation directives below are historical records and
+do not reopen product work. Current evidence belongs in PROGRESS.md.
+
+## Historical approved follow-on — 16 September 2026
 
 **Approved Vercel delivery:** Keith accepted the editorial candidate and authorized
 site deployment, explicitly selecting Keith Grehan’s projects. The accepted build
@@ -150,7 +244,7 @@ Conservative checks cover:
 
 Suppress findings for clear owners, legitimate deadlines, ordered checklists, harmless conversational timing, negation and qualifications where appropriate. Length alone is not overload. Respect signatures and quoted history without shifting evidence offsets.
 
-Never invent dates, owners, promises, agreements, or facts. Ask whether the responsible person or team confirmed a commitment and its conditions or dependencies; do not claim it is false or unauthorised. No overall score or numeric confidence. An empty result says “No checks flagged this draft” and explains that facts and agreements were not verified.
+Never invent dates, owners, promises, agreements, or facts. Ask whether the responsible person or team confirmed a commitment and its conditions or dependencies; do not claim it is false or unauthorised. No overall score or numeric confidence. An empty clarity result says “No wording flagged by these checks” and explains that facts and agreements were not verified.
 
 ## Architecture and data handling
 
@@ -167,8 +261,8 @@ Prepare a protocol for three usability users and five repeat-use pilots while en
 ## Source of truth and boundaries
 
 - Repository: `keithtgrehan/communication-check` (private).
-- Local root: `/Users/keith/Documents/ChatGPT/communication-check`.
-- Implementation branch: `codex/communication-check-tone-review`; PR #1 merged September 11.
+- Local root: `/Users/keith/Developer/communication-check`.
+- Current work branch: `codex/communication-check-next`; frozen baseline above. PR #1 merged September 11; PR #2 and #3 merged September 16 (GitHub rechecked September 17). The old tone-review branch preserves the Prism alternative.
 - Source baseline: Vibe Signal `000ba0685f961e253b0d34c0b02539ac897356e9`; retain source/licence attribution for actual reused components.
 - Keep Vibe Signal, RCR, Synapse Atlas and other projects separate and untouched.
 - Later connection to document only: RCR approved commitments → writer's draft → Communication Check. Do not build a shared platform.

@@ -1,4 +1,75 @@
-# Finding contract — version 8 (16 September 2026)
+# Finding contract — version 12 (13 October 2026)
+
+## October 13 monochrome and complete examples
+
+Current scope is local implementation and validation only. Keep the existing
+workspace layout and all review/privacy behavior. Use neutral black, charcoal,
+grey and white for every app state, focus ring, control and icon. Restore the
+verified historical example catalog without changing its text or preferred lens;
+Keith chose all 13: the original nine in verified order followed by the four
+current commercial examples, retaining their current labels and default selection.
+
+Ownership: monochrome worker owns only web/src/styles.css,
+web/public/favicon.svg and web/index.html theme-color. Lead owns App.tsx,
+demos catalog wiring, browser tests, documentation and integration. No engine,
+dependency, production or hosting mutation. Fresh independent review follows.
+
+## October 13 professional workspace redesign
+
+Keith rejected the visually similar Replit directions and requested a substantial
+professional SaaS redesign. Replace the editorial/marketing presentation with a
+compact application shell, functional navigation, sans-serif draft typography,
+clear toolbar hierarchy and a structured review panel. Remove the oversized hero
+and stock-photo explanation from the checker. These presentation decisions
+supersede the October 11 paper/serif/photo requirements below.
+
+Preserve engines, exact spans, native textarea, lens snapshots, Keep/Undo,
+invalidation, sample replacement confirmation, copy fallback and memory-only
+privacy. No new product features, services or production replacement.
+Finish with a local working candidate, desktop/mobile captures, relevant tests
+and a fresh independent review. UI worker owns App.tsx, styles.css and necessary
+InfoPages.tsx presentation; lead owns tests, docs and integration. Engine files,
+dependencies and frozen production remain untouched.
+
+## October 11 approved Margin desk preview
+
+Keith selected Margin desk from the design exploration and authorized implementation
+as a separate preview. Use warm paper, a white source document, open annotation
+margin, blue evidence brackets and serif draft/quotes. Keep the introduction and
+fictional-example controls compact. A clearly labelled static fictional illustration
+may appear beside a blank editor on desktop only; hide it when text is entered and
+on mobile. Real findings always come from the unchanged engines.
+
+Preserve the native textarea, exact selection, both lens snapshots, Keep/Undo,
+text-mutation invalidation, sample confirmation, copy fallback and navigation.
+Question style is a disclosure; changing it only remaps existing tone questions.
+Stack draft before review at the existing 1000px breakpoint, retaining focus/scroll
+behavior. Add one self-hosted notebook photo below the workspace beside How it works;
+no third-party runtime image request, telemetry, font or new persistence.
+
+Interface worker owns App.tsx, styles.css, necessary InfoPages.tsx presentation and
+browser tests. Lead owns asset/licence, static-build guards, metadata, hosting,
+documentation and Git. Fresh independent review follows integration. No engine
+change, reserved evaluation, production replacement, main merge or new spending.
+
+## October 9 LinkedIn and commercial-example redesign
+
+The current request authorises a visual/share-preview improvement to the existing
+prototype. Detection rules, exact spans, caps, qualified empty results, Keep/Undo,
+lens snapshots and text-mutation invalidation remain unchanged. Historical nine
+samples are retained as regression examples; four primary portfolio samples cover
+partner co-selling, discovery, renewal and a clear comparison. All run real checks.
+An explicit sample action confirms replacement before discarding user-edited text.
+The heading and actions use the handover's clearer customer-follow-up framing.
+
+Ownership for this pass: interface worker owns App.tsx, InfoPages.tsx, styles.css
+and existing browser suites; example worker owns demos.ts/demos.test.ts. Lead owns
+metadata, robots, social image, hosting configuration, new share tests, docs and Git.
+Fresh independent review follows integration. A separate preview is allowed within
+the verified existing free hosting plan; production replacement remains gated.
+LinkedInBot may fetch static pages/assets while generic crawling remains disallowed;
+noindex and runtime CSP/privacy protections remain. Metadata fixes alone do not
+establish a working LinkedIn Featured flow.
 
 ## Approved editorial design and copy refinement
 

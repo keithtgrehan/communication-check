@@ -1,0 +1,95 @@
+{
+  "verifiedAt": "2026-10-09T13:32:02.450Z",
+  "origin": "https://communication-check-d5fyjbmk7-keith-grehans-projects.vercel.app",
+  "authenticatedPreview": true,
+  "checkoutCommit": "4dc4ee508f391b8e22df90e8a3f5570ae1a782ce",
+  "engineSha256": "3b0d3b6db195dbe697b98b57abe564a2fdcd56cc6c07dba62732af8e111c7196",
+  "engineManifest": {
+    "schemaVersion": 1,
+    "files": [
+      {
+        "path": "web/src/engine/active-text.ts",
+        "sha256": "5c062949c7f307b3708c0fa782a0f4a4c131cdb2c91606b07ca50caaa6a349a7"
+      },
+      {
+        "path": "web/src/engine/agreement.ts",
+        "sha256": "b12ac712cb00171160f34f17c25f6e74cee85923e693d30fbb9fb65c9edd2506"
+      },
+      {
+        "path": "web/src/engine/commitment.ts",
+        "sha256": "10277137dcbae8d6d8505f0bd63fba0fb2e27f45e319af1ae79c68945a6dbad9"
+      },
+      {
+        "path": "web/src/engine/grammar.ts",
+        "sha256": "c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398"
+      },
+      {
+        "path": "web/src/engine/index.ts",
+        "sha256": "3b0d3b6db195dbe697b98b57abe564a2fdcd56cc6c07dba62732af8e111c7196"
+      },
+      {
+        "path": "web/src/engine/outcomes.ts",
+        "sha256": "3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462"
+      },
+      {
+        "path": "web/src/engine/tone.ts",
+        "sha256": "86c106eeb09fced0023ec4ba120a8224fe3d0c7355bc46078d00a902a89aba87"
+      },
+      {
+        "path": "web/src/engine/types.ts",
+        "sha256": "99b53f7e3ca9dbd89f5c7ad77de94e7478e873f3cf28e95e88ede9d26b50f101"
+      }
+    ],
+    "sha256": "bad47e3c5a6be1d98c9a179a7460d61f69ef300cde915fc514ce3da26c1a9a50"
+  },
+  "assetCount": 7,
+  "assets": [
+    {
+      "path": "THIRD_PARTY_LICENSES.txt",
+      "bytes": 1278,
+      "sha256": "413817118e227691fd9e4f56d4bf32b628f99e1d4cc9088d89ee233e77b5d042"
+    },
+    {
+      "path": "assets/index-BDO21Icg.js",
+      "bytes": 289184,
+      "sha256": "78fefd8aabf26283fc272f1226d4d53d794424b3557cda9ee08f55e365dbdbfc"
+    },
+    {
+      "path": "assets/index-DvFoL3E6.css",
+      "bytes": 16149,
+      "sha256": "9a983806bf8ea140be02c6b5307d0f1bc9e1b30d37a1eec14933ea6916e26a73"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 243,
+      "sha256": "48121ddffa7f857b7e760fac16ab9156964d88c43b1b6bd73247a577e25876da"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2139,
+      "sha256": "1f420f6ba56ba3c1d4e4f413ee7070c46493205c054af97c5651446e363cd23b"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 60,
+      "sha256": "839e1a778ed56ca6ff61040298abf4fadb8b42cdeb9197ef1abc671911531288"
+    },
+    {
+      "path": "social-preview.png",
+      "bytes": 95557,
+      "sha256": "08f76be26cd6325b041e7d8882591b42893f3430e0617daafd70fe07a8cbc21b"
+    }
+  ],
+  "excludedPathsReturned404": [
+    "/AGENTS.md",
+    "/package.json",
+    "/.git/config",
+    "/.env",
+    "/src/App.tsx",
+    "/src/engine/__fixtures__/development.ts",
+    "/reference/vibe-signal/web/src/App.jsx",
+    "/docs/PRODUCT_BRIEF.md"
+  ],
+  "responseHeadersPassed": true,
+  "note": "Authenticated candidate verification of exact working-build assets; checkoutCommit records the pre-candidate base, not a clean build revision. Full 85-browser suite ran locally; hosted smoke is separate. No LinkedIn/Featured success claimed."
+}

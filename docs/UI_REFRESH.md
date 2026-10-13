@@ -72,3 +72,27 @@ Recording is deferred. Nothing has been posted to LinkedIn or sent as outreach.
 The existing product-companion task received the allowlisted brief/progress packet
 and completed its turn. No new task was created. ChatGPT Project Sources still
 contains its dated 10 September copy; task delivery does not replace that source.
+
+
+## October 9, 2026 — commercial portfolio redesign
+
+The handover's two priorities are implemented on the next branch: LinkedIn fetch
+repair and a clearer working interface. The warm-white/teal design gives the
+example action more prominence, separates the draft and decisions visually and
+stacks the workflow at narrow widths. Four visible fictional examples cover a
+partner handoff, discovery, renewal and a qualified clear comparison. User-edited
+text is protected by replacement confirmation; detection rules are unchanged.
+
+Before/after captures: `output/linkedin-redesign-2026-10-09/` (desktop, mobile and
+320px opening/review, plus About). The actual partner finding is used in the
+1200 × 630 social card at `web/public/social-preview.png`. These are fictional
+example captures, not customer outcomes. The previous case-study PDF is preserved
+as a dated September deliverable; refreshing it is outside this bounded milestone.
+
+All 85 integrated local browser checks and fresh independent Astra Extra High
+review passed, including keyboard, automated axe, enlarged text, exact evidence,
+review continuity, replacement cancel/accept and runtime privacy. Hosted smoke
+passed using existing Vercel authentication; seven assets match the local build.
+Production remains frozen. Actual LinkedIn Inspector identified robots.txt as a
+blocker on the old public URL; candidate Inspector/Featured success is pending
+authorised production release. See PROGRESS.md for preview and release status.

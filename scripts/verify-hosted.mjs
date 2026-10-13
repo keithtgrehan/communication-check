@@ -11,16 +11,22 @@ const origin = new URL(process.env.PREVIEW_URL || '');
 assert(origin.protocol === 'https:' && !origin.username && !origin.password && !origin.search && !origin.hash, 'Use a clean HTTPS preview origin.');
 assert(origin.pathname === '/', 'Use the preview origin without a path.');
 const dist = join(root, 'web/dist');
+// Existing same-project preview authentication only; never print or persist it.
+const headers = process.env.VERCEL_OIDC_TOKEN
+  ? { 'x-vercel-trusted-oidc-idp-token': process.env.VERCEL_OIDC_TOKEN }
+  : {};
 const paths = directory => readdirSync(directory, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? paths(join(directory, entry.name)) : [join(directory, entry.name)]);
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 const assets = [];
 for (const file of paths(dist)) {
   const path = relative(dist, file).split('\\').join('/');
   const url = new URL(path === 'index.html' ? '/' : path, origin);
-  const response = await fetch(url, { signal: AbortSignal.timeout(30000), redirect: 'error' });
+  const response = await fetch(url, { headers, signal: AbortSignal.timeout(30000), redirect: 'error' });
   assert.equal(response.status, 200, `Missing published asset ${path}`);
   const bytes = Buffer.from(await response.arrayBuffer());
   assert.equal(digest(bytes), digest(readFileSync(file)), `Published asset differs from the reviewed local build: ${path}`);
+  if (path.endsWith('.png')) assert(response.headers.get('content-type')?.includes('image/png'), 'Incorrect PNG content type.');
+  if (path.endsWith('.webp')) assert(response.headers.get('content-type')?.includes('image/webp'), 'Incorrect WebP content type.');
   if (path === 'index.html') {
     assert(response.headers.get('content-security-policy')?.includes("connect-src 'none'"), 'Missing connection-blocking HTTP CSP.');
     assert(response.headers.get('content-security-policy')?.includes("frame-ancestors 'none'"), 'Missing frame policy.');
@@ -34,12 +40,14 @@ for (const file of paths(dist)) {
 }
 const excludedPaths = ['/AGENTS.md', '/package.json', '/.git/config', '/.env', '/src/App.tsx', '/src/engine/__fixtures__/development.ts', '/reference/vibe-signal/web/src/App.jsx', '/docs/PRODUCT_BRIEF.md'];
 for (const path of excludedPaths) {
-  const response = await fetch(new URL(path, origin), { signal: AbortSignal.timeout(30000), redirect: 'error' });
+  const response = await fetch(new URL(path, origin), { headers, signal: AbortSignal.timeout(30000), redirect: 'error' });
   assert.equal(response.status, 404, `Unexpected published source/config path: ${path}`);
 }
 const report = {
   verifiedAt: new Date().toISOString(),
   origin: origin.origin,
+  authenticatedPreview: Boolean(process.env.VERCEL_OIDC_TOKEN),
+  buildSource: 'Current working build; checkoutCommit is repository HEAD at verification time.',
   checkoutCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
   engineSha256: digest(execFileSync('git', ['show', 'HEAD:web/src/engine/index.ts'], { cwd: root })),
   engineManifest: getEngineManifest({ root, revision: 'HEAD' }),

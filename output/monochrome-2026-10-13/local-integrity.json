@@ -1,0 +1,20 @@
+{
+  "historical_examples_byte_identical": true,
+  "engine_files_unchanged_from_head": true,
+  "historical_catalog_source": "38d744d",
+  "catalog_replacement_commit": "0639498",
+  "user_choice": "Keep all 13 examples",
+  "source_branch": "codex/communication-check-next",
+  "frozen_ref": "146383228c99437ad4958b981d230c3b59d747b8",
+  "prism_ref": "2527641f35fa23d9eeeacb53b46eb53e87b6a21a",
+  "assets": {
+    "THIRD_PARTY_LICENSES.txt": "beb926cccb9b3a84a69ea4c20ec90860621ecd9b9e1bd1bd9d546a5f35cd190e",
+    "assets/index-Bme8Uqjx.js": "cb8267405cd83da03e4f53f946e9bff20bfdd023f5202c9db8020ccb992f62a6",
+    "assets/index-DrNWNpWX.css": "da1272d4872faea7ed2a598c19a7d474921e31935cc48c60967a13e0855f5331",
+    "favicon.svg": "31958603d3842324e83b36d3326076fb28201049fe1a36e27dd436c780fecea6",
+    "index.html": "184bd5fa2b56af7ed6dcfa0f1b64d0f8b791a16dbf85d5dba325b2eb266b603c",
+    "review-notebook.webp": "32511e8fd26898b7f9b698265cce0c973247e45e8e3550967c104a567dfbb5d8",
+    "robots.txt": "839e1a778ed56ca6ff61040298abf4fadb8b42cdeb9197ef1abc671911531288",
+    "social-preview.png": "45c847c9221f37e833ed7c5c3d65a46e84b03add8dfceff07d4ddc5742f2d674"
+  }
+}

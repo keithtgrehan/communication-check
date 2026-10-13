@@ -1,6 +1,156 @@
 # Separate preview and rollback
 
-Status: September 16 editorial candidate is deployed to Vercel. The older Render preview remains unchanged. Engine research is stopped for this delivery.
+Status: October 13 monochrome/all-13-example release is live on the existing Vercel URL. The September deployment is preserved for rollback; older Render preview remains unchanged. Engine research is stopped.
+
+## Approved production release — 13 October 2026
+
+Keith explicitly approved: “approving change to main site get it live”. This
+satisfied the candidate-specific release gate below; no further confirmation was
+required. Source `ffba4d1`, branch `codex/communication-check-next`.
+
+- Public URL: https://communication-check.vercel.app/
+- Deployment: `dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`, READY, production.
+- Immutable URL: https://communication-check-kzmh5fnls-keith-grehans-projects.vercel.app
+- Same project `prj_NW3ec5feWa0ljV2AYyNb12psxi1K` / Keith Grehan's projects,
+  verified active Hobby. Reviewed package byte-identical to the preview; staged
+  with `--prebuilt --prod --skip-domain`, authenticated staged HTML matched, then
+  promoted. Public alias independently verified at this deployment.
+- All eight public assets match the reviewed build; security headers, image MIME
+  and eight source/config 404s pass. Evidence: `output/monochrome-2026-10-13/production-assets.json`.
+- Anonymous public Chromium smoke passed all 13 examples, both lenses, exact
+  selection, Keep/Undo, style retention, edit invalidation, current clipboard,
+  offline use, runtime canary privacy, empty storage/reload clearing and mobile
+  navigation. Desktop/mobile screenshots inspected. Evidence:
+  `output/monochrome-2026-10-13/production-flow.json` and production screenshots.
+- This focused production check is separate from the previous preview suite:
+  71 preview checks passed, 23 were blocked by Vercel's checkpoint. All 94 local
+  tests passed. No protection-policy change or claim of a full hosted-suite pass.
+- Rollback target remains the previous production deployment
+  `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. Use the rollback procedure below and recheck
+  frozen asset hashes and workflow. Do not create an intervening production
+  deployment or move the preserved Git refs. No Git main merge, new plan, paid
+  feature, remote build, domain change or source upload occurred.
+- LinkedIn Post Inspector and Featured preview verification remain unperformed
+  after this release; successful HTML/metadata checks do not establish that result.
+
+## Monochrome preview — 13 October 2026
+
+Keith authorised the separate preview after reviewing the local milestone.
+Preview: https://communication-check-6vs6k4cvr-keith-grehans-projects.vercel.app/
+(`dpl_7Xe8WwvHcVLYjx2mqidQQ4HD4MCq`, READY). Existing project/account unchanged.
+The reviewed uncommitted working tree on `codex/communication-check-next` was
+rebuilt and matched all eight previously reviewed asset hashes byte-for-byte.
+`output/monochrome-2026-10-13/deployment.json` records checkout HEAD separately
+from the actual uncommitted source hashes; HEAD alone is not this candidate.
+
+Only eight static assets and Build Output v3 config (465,377 bytes) were uploaded
+from `work/vercel-preview-2026-10-13`; local linkage, source, Git metadata and
+credentials were excluded by the inspected dry-run manifest. Explicit Preview
+target, no production flags or alias moves. Prebuilt static output used no remote
+build. The CLI verified active Hobby; billing usage returned “Costs not found”
+(404), so numerical remaining allowance is not claimed. No paid feature, billing,
+plan, Git integration or protection changes. Hobby static limits do not authorise
+a paid upgrade if reached: see [Hobby limits](https://vercel.com/docs/plans/hobby).
+
+Eight exact hosted hashes, HTTP security headers, image MIME and eight excluded
+source/config 404 checks passed. Hosted desktop/mobile screenshots inspected.
+The authenticated hosted suite passed 71 checks, then Vercel Security Checkpoint
+Code 21 blocked new browser navigation. The bulk run was stopped; one slower
+single-worker retry after a pause hit the same checkpoint and stopped at its first
+failure. The remaining 23 hosted cases are not verified, including the full hosted
+runtime privacy canary. All 94 local cases passed before deployment. Authentication uses
+existing short-lived project OIDC in memory, scoped to the preview origin, with
+traces/video disabled. Anonymous access redirects to Vercel SSO. These authenticated
+metadata checks do not prove anonymous crawler/LinkedIn access.
+
+Production alias was verified before and after deployment at frozen
+`dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. No Git commit/push, merge or frozen/Prism ref
+change occurred during that preview step. Keith subsequently approved the exact
+candidate; release commit and production result are recorded above.
+
+## Proposed monochrome release — 13 October 2026
+
+**Release plan executed after explicit approval.** Preview, production staging and
+promotion are recorded above. Rollback was not needed. The original plan below
+is retained with the preview checkpoint limitation documented in the release record.
+
+1. **Prepare a separate preview after Keith authorises it.** Recheck the existing
+   `communication-check` project (`prj_NW3ec5feWa0ljV2AYyNb12psxi1K`) in
+   `keith-grehans-projects` (`team_YKDt6rh9Hs4SZSTB3uzQaXmG`), current allowance and
+   authentication. Record the reviewed continuation-branch commit and asset hashes.
+   Build locally; use the existing Build Output v3 packaging approach from
+   `scripts/prepare-vercel-preview.mjs`, with a fresh dated staging directory so
+   October 11 evidence is preserved. Copy only `web/dist` and
+   `docs/VERCEL_OUTPUT_CONFIG.json`, plus local project linkage; inspect the upload
+   manifest for source, credentials, tests and Git exclusions. Run
+   `vercel deploy --prebuilt --scope keith-grehans-projects` from that isolated
+   package, without `--prod` or `--public`. Retain preview authentication. Record
+   its immutable URL/deployment ID and verify the production alias still points
+   to the frozen deployment.
+2. **Accept that exact preview.** Compare all hosted assets to the reviewed build;
+   check security headers, `connect-src 'none'`, noindex and excluded-path 404s.
+   Exercise all 13 options and original labels/order, preferred-lens/dual checks,
+   inert selection, replacement cancel/accept, exact evidence, Keep/Undo, tone
+   styles, editing invalidation, copy/fallback and navigation. Run desktop/mobile,
+   keyboard/focus/contrast, offline and runtime network/storage/log/URL checks.
+   Use existing `verify:hosted` and browser suites with authenticated preview
+   access; never persist bypass credentials in reports. Keith reviews the rendered
+   monochrome candidate. Stop if allowance, project identity or validation fails.
+3. **Obtain explicit production approval, naming the candidate.** Satisfied by
+   Keith’s October 13 approval above. The proposed wording was:
+   “I approve replacing https://communication-check.vercel.app/ with the reviewed
+   monochrome candidate at [preview URL], commit [SHA], including staging it for
+   production and moving the production alias after verification. Use only the
+   existing project within its current allowance. If release checks fail, restore
+   frozen deployment dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7.” This does not authorise a
+   main merge, new paid service, domain, visibility change or outreach.
+4. **Release only after that approval.** Deploy the identical accepted static
+   package with `vercel deploy --prebuilt --prod --skip-domain --scope
+   keith-grehans-projects`. Verify the staged production deployment's hashes and
+   smoke/privacy checks, then `vercel promote <verified-production-deployment-id>
+   --scope keith-grehans-projects`. Recheck the public alias, assets, headers and
+   functional/privacy flows. Production staging avoids assuming that promoting a
+   Preview deployment preserves its build: Vercel documents that preview promotion
+   creates a new production deployment. LinkedIn Post Inspector remains a separate
+   post-release verification; metadata alone is not a successful crawler check.
+5. **Rollback if release checks fail.** Verify the prior production deployment is
+   the frozen `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7` (immutable URL
+   `https://communication-check-be15ud6ic-keith-grehans-projects.vercel.app`), then
+   run `vercel rollback dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7 --scope
+   keith-grehans-projects`. Recheck the alias and six frozen asset hashes against
+   `VERCEL_HOSTED_VERIFICATION.json`, plus the original smoke/privacy flow. Hobby
+   allows rollback only to the previous production deployment, so verify
+   eligibility before release and avoid intervening production releases. If the
+   target is unavailable/ineligible, stop: do not upgrade or silently redeploy an
+   alternative. The preserved branch `codex/frozen-vercel-2026-09-16` at `1463832`
+   (app source `38d744d`) remains the recovery source for a separately approved
+   rebuild. Keep the frozen and Prism branches intact.
+
+CLI behavior checked against official Vercel documentation on October 13:
+[deploy/prebuilt/staging](https://vercel.com/docs/cli/deploy),
+[promote](https://vercel.com/docs/cli/promote),
+[rollback and Hobby limit](https://vercel.com/docs/cli/rollback).
+
+## Separate Margin desk preview — 2026-10-11
+
+Keith authorized a separate preview of the selected Margin desk design. Preview:
+https://communication-check-ohmijlpkn-keith-grehans-projects.vercel.app/
+(`dpl_Ba1opf78DTfJx1MPNLiGhTw2xpzC`). Project/account remain Communication Check,
+`prj_NW3ec5feWa0ljV2AYyNb12psxi1K`, Keith Grehan's projects, active Hobby.
+Only eight static assets and Build Output v3 config were uploaded from the isolated
+`work/vercel-preview-2026-10-11` package. Source, credentials and Git metadata were
+excluded. No production flag, alias, hosting policy, plan or integration change.
+
+Eight exact hosted hashes, security headers, eight excluded paths and WebP MIME
+passed. Authenticated hosted editing, exact selection, Keep/Undo, clipboard,
+offline review, privacy canary, empty storage/reload and mobile/photo smoke passed.
+Evidence: `output/margin-desk-2026-10-11/hosted-assets.json` and `hosted-flow.json`.
+Existing short-lived project credentials were used only in process and for the
+preview origin; no token was saved in these reports. Anonymous access redirects
+to Vercel login. The public alias was checked before and after and remains frozen
+at `dpl_FcNybgbtMpiRx8A6gQVrsUUF6HK7`. This preview is not a production release or
+public LinkedIn crawler verification. Local verification: 91 browser checks,
+466 engine/example tests, eight setup checks and fresh independent review passed.
 
 ## Vercel deployment — 2026-09-16
 

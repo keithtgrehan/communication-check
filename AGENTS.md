@@ -1,10 +1,36 @@
 # Communication Check working instructions
 
+## Approved production update — 2026-10-13
+
+Keith explicitly approved the reviewed monochrome/all-13-example candidate for
+the main site. Release source `ffba4d1` on `codex/communication-check-next` is live
+at https://communication-check.vercel.app/, deployment
+`dpl_FKXFku3G4FyNkykStfjFtFXELKiQ`. This supersedes the September production freeze
+for this release only. Keep the frozen baseline and Prism branches intact;
+the former production deployment remains the rollback target. No main merge,
+new spending or further release is authorised by this completed approval.
+
+## Frozen production decision — 2026-09-16
+
+Keith chose https://communication-check.vercel.app/ and froze that version.
+The frozen branch is `codex/frozen-vercel-2026-09-16` at `1463832`;
+its application source is the deployed `38d744d` (identical web tree).
+All subsequent changes belong on `codex/communication-check-next` or an explicitly
+approved branch forked from the frozen baseline. Do not change the frozen branch,
+main, production alias or deployment without a new explicit instruction.
+The Prism experiment remains preserved on `codex/communication-check-tone-review`
+at `2527641`; do not promote it or discard it. This decision supersedes older
+implementation-branch and deployment directions below.
+
 ## Start and authority
 
-Canonical root: `/Users/keith/Documents/ChatGPT/communication-check`.
+Canonical root: `/Users/keith/Developer/communication-check`.
+Keith approved migration here on 2026-10-13. The former Documents path is only
+a compatibility symlink for existing chats; use this local-only root for future
+work. The fully verified original is recoverable in Trash. Linked worktrees were
+repaired and retain their prior HEADs and local changes.
 Repository: `keithtgrehan/communication-check`, private.
-Implementation branch: `codex/communication-check-tone-review` (September 16 follow-on).
+Implementation branch: `codex/communication-check-next` (forked from the frozen live baseline).
 Lead task: `01a08ae3-d0b5-7633-846b-28bfb692e8fb` (Build and ship Communication Check).
 Product companion: `01a08ae3-9641-7cc3-8e2f-6c09b6efd2e4` (Review onboarding email examples).
 
