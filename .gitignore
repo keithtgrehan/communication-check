@@ -17,3 +17,16 @@ work/
 private/
 evaluation/holdout/
 !evaluation/holdout/.gitkeep
+
+# Public source publication: retain private evaluation/reviewer material locally.
+/experiments/**/*.log
+/experiments/active-learning/automation/runs/*/data/final-author-*
+/experiments/active-learning/automation/runs/*/data/prepared.json
+/experiments/active-learning/automation/runs/*/prepared.json
+/experiments/active-learning/automation/runs/*/annotations/synthetic-references.json
+/experiments/active-learning/automation/runs/*/annotations/*-final.json
+/experiments/active-learning/automation/runs/*/jobs/*-final.*
+/experiments/active-learning/automation/runs/*/report.json
+/output/reviewer-feedback-2026-09-16/
+/output/hr-review-2026-09-18/qa/render*/
+/output/pdf/communication-check-case-study.pdf

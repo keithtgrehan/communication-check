@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "al-p180",
+      "text": "We will not deliver the ceremonial drum harnesses this Friday. They remain dismantled while the leather workshop assesses the damaged shoulder straps."
+    },
+    {
+      "id": "al-p272",
+      "text": "The rangeland adviser said her team would supply the pasture rotation chart on Wednesday. I have preserved her statement in the cooperative's meeting notes."
+    },
+    {
+      "id": "al-p281",
+      "text": "I will deliver the custom brass door pull prototypes to the furniture maker on Monday morning."
+    },
+    {
+      "id": "al-p293",
+      "text": "Our freight terminal team will deliver the completed oversized sculpture handling plan to the rigging supervisor tomorrow."
+    }
+  ],
+  "sampleAgreementIds": [
+    "al-p272",
+    "al-p180",
+    "al-p293",
+    "al-p281"
+  ],
+  "status": "human review pending"
+}

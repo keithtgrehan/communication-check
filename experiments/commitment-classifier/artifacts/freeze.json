@@ -1,0 +1,21 @@
+{
+  "threshold": 0.65,
+  "files": {
+    "train.py": "04a8db6c96c7ebb8db9988472d0c789035c928e230305b77becf9a8ba1979583",
+    "inference.mjs": "d52ae14d00d0a0680ea04252a8a17fd6c1e890f25ba7c2d90d71799999eaa9d2",
+    "runner.mjs": "b9d9a4859980d2e21b5e1200a9467862a0c5ce81288cd2bdbab3cad841b8d18f",
+    "data/train-dev.json": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468",
+    "artifacts/model.json": "618678e5c9437e090bdcd0f0ebadd80b695306c979927032509bdcc04288d8be",
+    "artifacts/model.mjs": "0be760373d1980a65a956040bf327a1321771d114070cd6decf38eaa67774c85",
+    "web/src/engine/active-text.ts": "5c062949c7f307b3708c0fa782a0f4a4c131cdb2c91606b07ca50caaa6a349a7",
+    "web/src/engine/agreement.ts": "b12ac712cb00171160f34f17c25f6e74cee85923e693d30fbb9fb65c9edd2506",
+    "web/src/engine/commitment.ts": "10277137dcbae8d6d8505f0bd63fba0fb2e27f45e319af1ae79c68945a6dbad9",
+    "web/src/engine/grammar.ts": "c74c1ab0aa85b55e97d5c628e9badd0b164011abe1ec5dd39135775af6d78398",
+    "web/src/engine/index.ts": "3b0d3b6db195dbe697b98b57abe564a2fdcd56cc6c07dba62732af8e111c7196",
+    "web/src/engine/outcomes.ts": "3e3e25902468fbbca63fcc44f9a8f40b32f21e4705f0697b0ffd93083b0bc462",
+    "web/src/engine/tone.ts": "86c106eeb09fced0023ec4ba120a8224fe3d0c7355bc46078d00a902a89aba87",
+    "web/src/engine/types.ts": "99b53f7e3ca9dbd89f5c7ad77de94e7478e873f3cf28e95e88ede9d26b50f101"
+  },
+  "bundleSha256": "5c4f9073d7953f9b6ca233562eedc73c208eadb97c29ab1511fea6b87020ddd3",
+  "excludes": "UI, documentation and tests; model/inference/evaluation implementation frozen before independent test."
+}

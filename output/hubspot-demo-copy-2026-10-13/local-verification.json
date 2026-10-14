@@ -1,0 +1,30 @@
+{
+  "origin": "http://127.0.0.1:4173",
+  "measurements": [
+    {
+      "width": 1440,
+      "copy": true,
+      "videoUnavailable": true,
+      "noOverflow": true,
+      "axeViolations": 0,
+      "doubledTextNoOverflow": true
+    },
+    {
+      "width": 390,
+      "copy": true,
+      "videoUnavailable": true,
+      "noOverflow": true,
+      "axeViolations": 0,
+      "doubledTextNoOverflow": true
+    },
+    {
+      "width": 320,
+      "copy": true,
+      "videoUnavailable": true,
+      "noOverflow": true,
+      "axeViolations": 0,
+      "doubledTextNoOverflow": true
+    }
+  ],
+  "verifiedAt": "2026-10-13T19:33:48.621Z"
+}

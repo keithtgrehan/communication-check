@@ -1,0 +1,472 @@
+{
+  "author": {
+    "actorId": "fictional-author-8f26d0ac-7b94-4e35-b012-96cfea431d87",
+    "model": "GPT-6 (Codex)"
+  },
+  "examples": [
+    {
+      "evidence": [
+        "I will send you the accession packets for the dune-grass seeds tomorrow."
+      ],
+      "group": "auto-train-seed-bank",
+      "id": "auto-train-seed-bank-1",
+      "rationale": "The author directly commits to future delivery of concrete accession packets without a condition.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "I will send you the accession packets for the dune-grass seeds tomorrow."
+    },
+    {
+      "evidence": [
+        "The donor wrote, \"I will send the accession envelopes on Thursday.\"",
+        "I am recording her words here"
+      ],
+      "group": "auto-train-seed-bank",
+      "id": "auto-train-seed-bank-2",
+      "rationale": "The delivery promise belongs to the quoted donor. The curator records it without making a new delivery assertion.",
+      "referenceCategory": "reported",
+      "referenceLabel": 0,
+      "text": "The donor wrote, \"I will send the accession envelopes on Thursday.\" I am recording her words here so the intake desk knows what she said."
+    },
+    {
+      "evidence": [
+        "Yesterday I dispatched the accession packets for all twelve meadow collections."
+      ],
+      "group": "auto-train-seed-bank",
+      "id": "auto-train-seed-bank-3",
+      "rationale": "The dispatch is explicitly completed in the past; no future delivery is asserted.",
+      "referenceCategory": "other",
+      "referenceLabel": 0,
+      "text": "Yesterday I dispatched the accession packets for all twelve meadow collections. Their tracking slips are attached to the intake log."
+    },
+    {
+      "evidence": [
+        "The donor's earlier dispatch covered the seed jars only.",
+        "You will receive the matching accession envelopes from our curation team by noon tomorrow."
+      ],
+      "group": "auto-train-seed-bank",
+      "id": "auto-train-seed-bank-4",
+      "rationale": "The author distinguishes a past donor action from an unconditional assurance of future receipt from the author's team.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "The donor's earlier dispatch covered the seed jars only. You will receive the matching accession envelopes from our curation team by noon tomorrow."
+    },
+    {
+      "evidence": [
+        "At Monday's inspection, I will hand you the acoustic certificate for bell B17."
+      ],
+      "group": "auto-train-bell-foundry",
+      "id": "auto-train-bell-foundry-1",
+      "rationale": "The engineer directly asserts a definite future handover of a specified certificate.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "At Monday's inspection, I will hand you the acoustic certificate for bell B17."
+    },
+    {
+      "evidence": [
+        "If the bronze has cooled enough for the resonance test, we will deliver the acoustic certificate on Tuesday."
+      ],
+      "group": "auto-train-bell-foundry",
+      "id": "auto-train-bell-foundry-2",
+      "rationale": "Delivery explicitly depends on sufficient cooling for testing.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "If the bronze has cooled enough for the resonance test, we will deliver the acoustic certificate on Tuesday. The cooling rate is still uncertain."
+    },
+    {
+      "evidence": [
+        "I will send its acoustic certificate when the casting is cool enough to test."
+      ],
+      "group": "auto-train-bell-foundry",
+      "id": "auto-train-bell-foundry-3",
+      "rationale": "The when-clause states a prerequisite for delivery, so the future wording is conditional.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "The bell is still in the cooling pit. I will send its acoustic certificate when the casting is cool enough to test."
+    },
+    {
+      "evidence": [
+        "The cooling delay concerns the new bell.",
+        "For the tested bell, our team will be handing over the signed acoustic certificate at 10 tomorrow."
+      ],
+      "group": "auto-train-bell-foundry",
+      "id": "auto-train-bell-foundry-4",
+      "rationale": "The scheduled future-progressive handover is unconditional. The cooling delay explicitly concerns a different bell.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "The cooling delay concerns the new bell. For the tested bell, our team will be handing over the signed acoustic certificate at 10 tomorrow."
+    },
+    {
+      "evidence": [
+        "I will not deliver the restoration cue sheets tomorrow",
+        "that earlier assurance was a mistake."
+      ],
+      "group": "auto-train-film-restoration",
+      "id": "auto-train-film-restoration-1",
+      "rationale": "The author negates the future delivery and withdraws the earlier assurance without replacing it.",
+      "referenceCategory": "other",
+      "referenceLabel": 0,
+      "text": "I will not deliver the restoration cue sheets tomorrow; that earlier assurance was a mistake."
+    },
+    {
+      "evidence": [
+        "My earlier note incorrectly promised both reels.",
+        "I will send the completed cue sheet for reel one on Friday."
+      ],
+      "group": "auto-train-film-restoration",
+      "id": "auto-train-film-restoration-2",
+      "rationale": "The correction narrows the promised work, and the author makes a new unconditional commitment for reel one.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "My earlier note incorrectly promised both reels. I will send the completed cue sheet for reel one on Friday. Reel two has no delivery date."
+    },
+    {
+      "evidence": [
+        "I can promise that you will receive the corrected cue sheets tomorrow.",
+        "My retraction concerned the restored picture master."
+      ],
+      "group": "auto-train-film-restoration",
+      "id": "auto-train-film-restoration-3",
+      "rationale": "Can promise introduces an explicit assurance, and the retraction is scoped to a different work item.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "To correct the record: I can promise that you will receive the corrected cue sheets tomorrow. My retraction concerned the restored picture master."
+    },
+    {
+      "evidence": [
+        "I previously wrote, \"We will deliver the cue sheets on Monday.\"",
+        "Please disregard that assurance; we now hope to send them later in the week."
+      ],
+      "group": "auto-train-film-restoration",
+      "id": "auto-train-film-restoration-4",
+      "rationale": "The quoted past promise is expressly withdrawn. The replacement delivery statement expresses hope rather than assurance.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "I previously wrote, \"We will deliver the cue sheets on Monday.\" Please disregard that assurance; we now hope to send them later in the week."
+    },
+    {
+      "evidence": [
+        "Could you send me the annotated cave-survey plates before the archive meeting?"
+      ],
+      "group": "auto-train-cave-survey",
+      "id": "auto-train-cave-survey-1",
+      "rationale": "The archivist asks the recipient to deliver an item and makes no author-owned delivery commitment.",
+      "referenceCategory": "request",
+      "referenceLabel": 0,
+      "text": "Could you send me the annotated cave-survey plates before the archive meeting?"
+    },
+    {
+      "evidence": [
+        "The expedition cartographer expects her team to deliver the eastern-chamber plates next week.",
+        "That is her forecast"
+      ],
+      "group": "auto-train-cave-survey",
+      "id": "auto-train-cave-survey-2",
+      "rationale": "The delivery forecast is explicitly attributed to the cartographer rather than asserted as the archivist's commitment.",
+      "referenceCategory": "reported",
+      "referenceLabel": 0,
+      "text": "The expedition cartographer expects her team to deliver the eastern-chamber plates next week. That is her forecast, copied into my archive notes."
+    },
+    {
+      "evidence": [
+        "You asked for the entrance map.",
+        "I will send you the final cartographic plate tomorrow morning."
+      ],
+      "group": "auto-train-cave-survey",
+      "id": "auto-train-cave-survey-3",
+      "rationale": "After recalling the recipient's request, the author directly commits to a definite future map delivery.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "You asked for the entrance map. I will send you the final cartographic plate tomorrow morning."
+    },
+    {
+      "evidence": [
+        "Our archive team will deliver the western-passage map plates to you at Friday's briefing"
+      ],
+      "group": "auto-train-cave-survey",
+      "id": "auto-train-cave-survey-4",
+      "rationale": "The author unconditionally asserts future delivery by their own team. The cartographer's separate forecast does not qualify that assertion.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "Our archive team will deliver the western-passage map plates to you at Friday's briefing; the cartographer's forecast concerns the separate eastern survey."
+    },
+    {
+      "evidence": [
+        "Please enter the display-case numbers on the textile condition cards and return them to me."
+      ],
+      "group": "auto-train-textile-museum",
+      "id": "auto-train-textile-museum-1",
+      "rationale": "The passage requests recipient actions rather than asserting author delivery.",
+      "referenceCategory": "request",
+      "referenceLabel": 0,
+      "text": "Please enter the display-case numbers on the textile condition cards and return them to me."
+    },
+    {
+      "evidence": [
+        "I repaired the split hem yesterday and handed the revised condition card to the registrar."
+      ],
+      "group": "auto-train-textile-museum",
+      "id": "auto-train-textile-museum-2",
+      "rationale": "Both the repair and the handover are completed past actions.",
+      "referenceCategory": "other",
+      "referenceLabel": 0,
+      "text": "I repaired the split hem yesterday and handed the revised condition card to the registrar. The treatment entry now includes the thread specification."
+    },
+    {
+      "evidence": [
+        "You will receive the completed tapestry condition cards from me by Thursday afternoon."
+      ],
+      "group": "auto-train-textile-museum",
+      "id": "auto-train-textile-museum-3",
+      "rationale": "The author assures future receipt of specified documents without a condition.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "You will receive the completed tapestry condition cards from me by Thursday afternoon."
+    },
+    {
+      "evidence": [
+        "The sleeve repairs are finished.",
+        "Our conservation team will send you the matching condition cards tomorrow"
+      ],
+      "group": "auto-train-textile-museum",
+      "id": "auto-train-textile-museum-4",
+      "rationale": "The completed repair supplies context for a separate, unconditional future document-sharing commitment by the author's team.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "The sleeve repairs are finished. Our conservation team will send you the matching condition cards tomorrow, and the cards will include the treatment photographs."
+    },
+    {
+      "evidence": [
+        "I can export the piano's voicing records as a PDF.",
+        "That describes the workshop software's capability"
+      ],
+      "group": "auto-train-piano-workshop",
+      "id": "auto-train-piano-workshop-1",
+      "rationale": "The passage states capability and explicitly gives no delivery date or promise.",
+      "referenceCategory": "other",
+      "referenceLabel": 0,
+      "text": "I can export the piano's voicing records as a PDF. That describes the workshop software's capability; I have not set a delivery date."
+    },
+    {
+      "evidence": [
+        "I intend to send you the voicing records on Wednesday."
+      ],
+      "group": "auto-train-piano-workshop",
+      "id": "auto-train-piano-workshop-2",
+      "rationale": "An intention to deliver does not establish an assured future delivery.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "I intend to send you the voicing records on Wednesday."
+    },
+    {
+      "evidence": [
+        "I can promise that I will deliver the voicing records tomorrow."
+      ],
+      "group": "auto-train-piano-workshop",
+      "id": "auto-train-piano-workshop-3",
+      "rationale": "The wording explicitly promises delivery. Uncertainty about the recipient's assessment does not qualify the promised handover.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "You may find my tonal annotations conservative. Still, I can promise that I will deliver the voicing records tomorrow."
+    },
+    {
+      "evidence": [
+        "Our plan is to send the concert piano's voicing log at noon on Friday.",
+        "To be explicit, we will do so."
+      ],
+      "group": "auto-train-piano-workshop",
+      "id": "auto-train-piano-workshop-4",
+      "rationale": "The final explicit assurance resolves the earlier plan wording into an unconditional delivery commitment.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "Our plan is to send the concert piano's voicing log at noon on Friday. To be explicit, we will do so."
+    },
+    {
+      "evidence": [
+        "I will deliver the regatta course sketches before the opening briefing."
+      ],
+      "group": "auto-train-kite-regatta",
+      "id": "auto-train-kite-regatta-1",
+      "rationale": "Before the briefing specifies a deadline, not a dependency, for an unconditional delivery assertion.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "I will deliver the regatta course sketches before the opening briefing."
+    },
+    {
+      "evidence": [
+        "We will send the course sketches when the wind survey is ready."
+      ],
+      "group": "auto-train-kite-regatta",
+      "id": "auto-train-kite-regatta-2",
+      "rationale": "Readiness of the wind survey is an explicit delivery dependency.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "We will send the course sketches when the wind survey is ready. The survey team has not finished its measurements."
+    },
+    {
+      "evidence": [
+        "Before the first kite launches, you will have the printed course sketches from our organising team."
+      ],
+      "group": "auto-train-kite-regatta",
+      "id": "auto-train-kite-regatta-3",
+      "rationale": "The author assures receipt from their team by an event-based deadline with no stated condition.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "Before the first kite launches, you will have the printed course sketches from our organising team. Each sheet includes the recovery lane."
+    },
+    {
+      "evidence": [
+        "If the wind survey is ready tonight, I will get you the course sketches before tomorrow's launch."
+      ],
+      "group": "auto-train-kite-regatta",
+      "id": "auto-train-kite-regatta-4",
+      "rationale": "Although the passage gives a before-event deadline, the entire delivery assertion is governed by an explicit condition.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "If the wind survey is ready tonight, I will get you the course sketches before tomorrow's launch."
+    },
+    {
+      "evidence": [
+        "Mara, the grower, told me, \"We will send the graft ledger on Monday.\"",
+        "Her 'we' refers to the nursery staff."
+      ],
+      "group": "auto-train-orchard-coop",
+      "id": "auto-train-orchard-coop-1",
+      "rationale": "The promise is attributed to the grower and her nursery team, not newly asserted by the coordinator.",
+      "referenceCategory": "reported",
+      "referenceLabel": 0,
+      "text": "Mara, the grower, told me, \"We will send the graft ledger on Monday.\" Her 'we' refers to the nursery staff."
+    },
+    {
+      "evidence": [
+        "My coordination team owns the consolidated graft ledger.",
+        "We will deliver it to you on Monday."
+      ],
+      "group": "auto-train-orchard-coop",
+      "id": "auto-train-orchard-coop-2",
+      "rationale": "The first sentence resolves we to the author's team and it to the ledger; the second makes an unconditional future delivery assertion.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "My coordination team owns the consolidated graft ledger. We will deliver it to you on Monday."
+    },
+    {
+      "evidence": [
+        "She says she will deliver it on Thursday.",
+        "I have only copied that statement into the cooperative's notes."
+      ],
+      "group": "auto-train-orchard-coop",
+      "id": "auto-train-orchard-coop-3",
+      "rationale": "She refers to the grower, and the coordinator explicitly presents the delivery statement as a report.",
+      "referenceCategory": "reported",
+      "referenceLabel": 0,
+      "text": "The grower has a separate ledger for her pear grafts. She says she will deliver it on Thursday. I have only copied that statement into the cooperative's notes."
+    },
+    {
+      "evidence": [
+        "The grower hopes to finish her orchard ledger next month.",
+        "I will send you our completed cooperative graft ledger tomorrow."
+      ],
+      "group": "auto-train-orchard-coop",
+      "id": "auto-train-orchard-coop-4",
+      "rationale": "The grower's tentative timeline concerns her separate ledger. The author directly and unconditionally commits to sending the cooperative ledger.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "The grower hopes to finish her orchard ledger next month. I will send you our completed cooperative graft ledger tomorrow."
+    },
+    {
+      "evidence": [
+        "I delivered the community radio tape inventory last Tuesday."
+      ],
+      "group": "auto-train-radio-archive",
+      "id": "auto-train-radio-archive-1",
+      "rationale": "The delivery occurred in the completed past.",
+      "referenceCategory": "other",
+      "referenceLabel": 0,
+      "text": "I delivered the community radio tape inventory last Tuesday."
+    },
+    {
+      "evidence": [
+        "At 9 tomorrow morning, we will be handing over the updated tape inventory to the station librarian."
+      ],
+      "group": "auto-train-radio-archive",
+      "id": "auto-train-radio-archive-2",
+      "rationale": "Scheduled future-progressive wording directly asserts a definite handover by the author's team.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "At 9 tomorrow morning, we will be handing over the updated tape inventory to the station librarian."
+    },
+    {
+      "evidence": [
+        "Last winter I promised to send the tape inventory by the end of that week.",
+        "I am recounting the old arrangement here."
+      ],
+      "group": "auto-train-radio-archive",
+      "id": "auto-train-radio-archive-3",
+      "rationale": "The author recalls a historical promise rather than making a fresh future commitment.",
+      "referenceCategory": "reported",
+      "referenceLabel": 0,
+      "text": "Last winter I promised to send the tape inventory by the end of that week. I am recounting the old arrangement here."
+    },
+    {
+      "evidence": [
+        "The inventory I sent in June covered only interview tapes.",
+        "I will deliver the music-tape inventory this Friday."
+      ],
+      "group": "auto-train-radio-archive",
+      "id": "auto-train-radio-archive-4",
+      "rationale": "A completed delivery provides context, while the author separately commits to an unconditional future delivery of another inventory.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "The inventory I sent in June covered only interview tapes. I will deliver the music-tape inventory this Friday."
+    },
+    {
+      "evidence": [
+        "I withdraw my promise to send the granite catalogue tomorrow.",
+        "I will send you the limestone sample catalogue tomorrow."
+      ],
+      "group": "auto-train-stone-quarry",
+      "id": "auto-train-stone-quarry-1",
+      "rationale": "The withdrawal concerns granite only. A distinct, unconditional future delivery assertion remains for the limestone catalogue.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "I withdraw my promise to send the granite catalogue tomorrow. I will send you the limestone sample catalogue tomorrow."
+    },
+    {
+      "evidence": [
+        "If the quarry manager approves the sample list, I will send both catalogues on Friday.",
+        "Without that approval, neither will be sent."
+      ],
+      "group": "auto-train-stone-quarry",
+      "id": "auto-train-stone-quarry-2",
+      "rationale": "Approval explicitly governs both deliveries; no unconditional commitment survives.",
+      "referenceCategory": "qualified_delivery",
+      "referenceLabel": 0,
+      "text": "If the quarry manager approves the sample list, I will send both catalogues on Friday. Without that approval, neither will be sent."
+    },
+    {
+      "evidence": [
+        "You will receive the sandstone sample catalogue from our estimating team by noon Monday.",
+        "The slate catalogue is no longer promised for that date."
+      ],
+      "group": "auto-train-stone-quarry",
+      "id": "auto-train-stone-quarry-3",
+      "rationale": "The author assures receipt of the sandstone catalogue. The subsequent withdrawal applies only to slate and does not negate sandstone delivery.",
+      "referenceCategory": "firm_delivery",
+      "referenceLabel": 1,
+      "text": "You will receive the sandstone sample catalogue from our estimating team by noon Monday. The slate catalogue is no longer promised for that date."
+    },
+    {
+      "evidence": [
+        "Friday's handover: I will send the limestone catalogue; the granite catalogue will follow if the sample review passes.",
+        "That condition applies to the catalogue delivery."
+      ],
+      "group": "auto-train-stone-quarry",
+      "id": "auto-train-stone-quarry-4",
+      "rationale": "The first sentence appears to promise limestone unconditionally and make granite conditional. The final singular reference to the catalogue delivery leaves unresolved whether the condition also qualifies limestone. The passage cannot reliably be assigned a binary label.",
+      "referenceCategory": "ambiguous",
+      "referenceLabel": null,
+      "text": "Friday's handover: I will send the limestone catalogue; the granite catalogue will follow if the sample review passes. That condition applies to the catalogue delivery."
+    }
+  ],
+  "schemaVersion": 1,
+  "syntheticOnly": true
+}

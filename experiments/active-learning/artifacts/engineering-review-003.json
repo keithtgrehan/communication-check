@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "summary": "The final reason-code fix clears the remaining freeze/start blocker. No material consequential defect found.",
+  "findings": [],
+  "verification": [
+    "Reviewed all six adapter failure codes, actual mocked adapter paths, and worker-to-terminal/report propagation.",
+    "Two focused contract tests passed. In-memory checks confirmed all six codes override misleading messages and unknown codes/messages are omitted.",
+    "Seven mocked adapter tests and the terminal/report propagation test were blocked by sandbox temporary-directory restrictions; their source was inspected. Full suite was not rerun.",
+    "No edits, fitting, generation, or raw old/heldout fixture access."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "configuredEffort": "high",
+    "configuredModel": "gpt-6-astra",
+    "ephemeral": true,
+    "exitCode": 0,
+    "finishedAt": 1791980916.278492,
+    "inheritedConversation": false,
+    "launchError": null,
+    "noToolsRequired": true,
+    "runnerVersion": "0.162.1",
+    "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+    "sessionId": "01a13a60-6ee7-7711-a34c-bc80f823450d",
+    "startedAt": 1791980759.4688718,
+    "timedOut": false,
+    "toolTypes": []
+  },
+  "output": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/runs/auto-001/data/train-author-raw.json",
+  "promptSha256": "16594ffb2d45814fd563581cde270dc7935e02a1e354565ad959cdf987ee8f5e",
+  "schemaSha256": "02bf7ae647b14a6d09f46df473e0f048f9ffebb116c31ddaa0bbde7176d6c3ac",
+  "sha256": "eb21b31275540807232203af14d3070ca02da554e590dd6b57a559591d2f8113"
+}

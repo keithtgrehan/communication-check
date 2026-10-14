@@ -1,0 +1,139 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "additionalProperties": false,
+      "properties": {
+        "actorId": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorId",
+        "model"
+      ],
+      "type": "object"
+    },
+    "examples": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "group": {
+            "enum": [
+              "auto-dev-lichen-atlas",
+              "auto-dev-marionette",
+              "auto-dev-canal-lock",
+              "auto-dev-meteorite",
+              "auto-dev-braille-score",
+              "auto-dev-salt-marsh",
+              "auto-dev-tram-depot"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "enum": [
+              "auto-dev-lichen-atlas-1",
+              "auto-dev-lichen-atlas-2",
+              "auto-dev-lichen-atlas-3",
+              "auto-dev-lichen-atlas-4",
+              "auto-dev-marionette-1",
+              "auto-dev-marionette-2",
+              "auto-dev-marionette-3",
+              "auto-dev-marionette-4",
+              "auto-dev-canal-lock-1",
+              "auto-dev-canal-lock-2",
+              "auto-dev-canal-lock-3",
+              "auto-dev-canal-lock-4",
+              "auto-dev-meteorite-1",
+              "auto-dev-meteorite-2",
+              "auto-dev-meteorite-3",
+              "auto-dev-meteorite-4",
+              "auto-dev-braille-score-1",
+              "auto-dev-braille-score-2",
+              "auto-dev-braille-score-3",
+              "auto-dev-braille-score-4",
+              "auto-dev-salt-marsh-1",
+              "auto-dev-salt-marsh-2",
+              "auto-dev-salt-marsh-3",
+              "auto-dev-salt-marsh-4",
+              "auto-dev-tram-depot-1",
+              "auto-dev-tram-depot-2",
+              "auto-dev-tram-depot-3",
+              "auto-dev-tram-depot-4"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "referenceCategory": {
+            "enum": [
+              "firm_delivery",
+              "qualified_delivery",
+              "request",
+              "reported",
+              "other",
+              "ambiguous"
+            ],
+            "type": "string"
+          },
+          "referenceLabel": {
+            "enum": [
+              0,
+              1,
+              null
+            ],
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "group",
+          "text",
+          "referenceLabel",
+          "referenceCategory",
+          "evidence",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 28,
+      "minItems": 28,
+      "type": "array"
+    },
+    "schemaVersion": {
+      "enum": [
+        1
+      ],
+      "type": "integer"
+    },
+    "syntheticOnly": {
+      "enum": [
+        true
+      ],
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "author",
+    "syntheticOnly",
+    "examples"
+  ],
+  "type": "object"
+}

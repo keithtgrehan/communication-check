@@ -1,0 +1,24 @@
+{
+  "bundleSha256": "2f9bd0c1aa976fd7b5ac0f4c4c79fe18a11608e5765aec13ba85f2f60c11b313",
+  "files": {
+    "accepted.json": "44cf6a0a09e22dcea5defc23b9d6c4b2db450c884e7b7c93d5b8e80610f10b0a",
+    "acquisition-freeze.json": "a27381a38a207db83b69e663199f2a3a840148e65d730749245815d8396a08bd",
+    "data.json": "9867f17d4c33fa7ec6b872e1fef23f6042ae94a71858e7cffcb1f3947d1b291e",
+    "human-review-answers.json": "21cd0a2f11c171c69adb760b6580f8b3aa9f1b4016ca0ae6d596326413df8fc7",
+    "human-review-text.json": "54c720445c38c533d80368ad5e4bf0f522334c55620973ae1c121843fe3b6eeb",
+    "human-review.md": "72489097731f51f22fba901d309bb0718d2d4d2d8fc4bbf54ee7d433e548debc",
+    "prepared.json": "2884740a151cf1ad77760765c19225a6edec1b1d5d35fa4a7e18f4e527c2d628",
+    "quarantine.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reviewer-annotation.json": "6c634f5b6ade2d6bf75a479939aef04b2cfa5ef32e6acb901be1fbcae8d9c211",
+    "reviewer-mapping.json": "661336ce0638569525334a659894ef2630fec3b0e78f2ccb2a7da0d1177d4223",
+    "reviewer-packet.json": "951bb24e058d0a4ce9a424d917f97f0078f5e4da88f807f5ceadc1f1d82f716d",
+    "reviewer-prompt.txt": "07ff77239f12ffcf9c0362b3859600d6ed402bb7cb4504492ded1504957948b1",
+    "scores.json": "b14a6b461b24b2c4ee3c5b1785e4c29f1afe1634274bcae49cc71e270dd97992",
+    "selected.json": "5c54aa594d168be759cd832cd8f2e4e95edc0e73454575f46b3fc83bc2984f1b",
+    "selection.json": "397d9dec004638c72f0406cf08347d248cbcde5e974c7519e514a4220bda63e6",
+    "teacher-annotation.json": "69871b565f2f1a9307f35f0cddb1e270b5a1502907c99250d1648d2b5b19850a",
+    "teacher-mapping.json": "fbe716b0866da247459f860ed7373005696017e9a1a8d26b531d4043795c19ec",
+    "teacher-packet.json": "eb54772fcc57507cf9586f94bd5ea6e2daac063fda4d489569029b519bde8126",
+    "teacher-prompt.txt": "a20646d6551cfcf29cd2757370e3d04a19ddad7bcc8f2d33bf3435aa27511fab"
+  }
+}

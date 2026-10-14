@@ -1,0 +1,454 @@
+{
+  "alwaysNegative": {
+    "accuracy": 0.5,
+    "f1": 0.0,
+    "falsePositiveRate": 0.0,
+    "fn": 30,
+    "fp": 0,
+    "n": 60,
+    "precision": null,
+    "recall": 0.0,
+    "tn": 30,
+    "tp": 0
+  },
+  "bundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+  "coverage": {
+    "admitted": 60,
+    "maxTokens": 26,
+    "maxUtf16Units": 123,
+    "reasons": {
+      "character_limit": 0,
+      "empty": 0,
+      "token_limit": 0
+    },
+    "rejected": 0,
+    "total": 60
+  },
+  "dataSha256": "55e564e23f665f0d82f3c607037fbe8a1d987788f34ed4f04fef7f2a65e204b1",
+  "metricDenominator": 60,
+  "originalDenominator": 60,
+  "overlapAudit": {
+    "groupOverlaps": 0,
+    "normalizedTextDuplicates": 0
+  },
+  "primaryDecision": "Research criteria are exploratory, not a deployment or reliability gate.",
+  "results": {
+    "A": {
+      "amortizedMillisecondsPerPassage": 1.0893958334539398,
+      "batchInferenceSeconds": 0.06536375000723638,
+      "categories": {
+        "firm_delivery": {
+          "accuracy": 0.9,
+          "f1": 0.9473684210526315,
+          "falsePositiveRate": null,
+          "fn": 3,
+          "fp": 0,
+          "n": 30,
+          "precision": 1.0,
+          "recall": 0.9,
+          "tn": 0,
+          "tp": 27
+        },
+        "other": {
+          "accuracy": 0.5,
+          "f1": 0.0,
+          "falsePositiveRate": 0.5,
+          "fn": 0,
+          "fp": 3,
+          "n": 6,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 3,
+          "tp": 0
+        },
+        "qualified_delivery": {
+          "accuracy": 0.75,
+          "f1": 0.0,
+          "falsePositiveRate": 0.25,
+          "fn": 0,
+          "fp": 2,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 6,
+          "tp": 0
+        },
+        "reported": {
+          "accuracy": 0.5,
+          "f1": 0.0,
+          "falsePositiveRate": 0.5,
+          "fn": 0,
+          "fp": 4,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 4,
+          "tp": 0
+        },
+        "request": {
+          "accuracy": 0.75,
+          "f1": 0.0,
+          "falsePositiveRate": 0.25,
+          "fn": 0,
+          "fp": 2,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 6,
+          "tp": 0
+        }
+      },
+      "devGatePassed": false,
+      "metrics": {
+        "accuracy": 0.7666666666666667,
+        "f1": 0.7941176470588235,
+        "falsePositiveRate": 0.36666666666666664,
+        "fn": 3,
+        "fp": 11,
+        "n": 60,
+        "precision": 0.7105263157894737,
+        "recall": 0.9,
+        "tn": 19,
+        "tp": 27
+      },
+      "modelLoadSeconds": 0.0005236249999143183,
+      "primary": true,
+      "researchGatePassed": false,
+      "threshold": 0.5
+    },
+    "B": {
+      "amortizedMillisecondsPerPassage": 1.2084958332707174,
+      "batchInferenceSeconds": 0.07250974999624304,
+      "categories": {
+        "firm_delivery": {
+          "accuracy": 0.8,
+          "f1": 0.8888888888888888,
+          "falsePositiveRate": null,
+          "fn": 6,
+          "fp": 0,
+          "n": 30,
+          "precision": 1.0,
+          "recall": 0.8,
+          "tn": 0,
+          "tp": 24
+        },
+        "other": {
+          "accuracy": 0.6666666666666666,
+          "f1": 0.0,
+          "falsePositiveRate": 0.3333333333333333,
+          "fn": 0,
+          "fp": 2,
+          "n": 6,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 4,
+          "tp": 0
+        },
+        "qualified_delivery": {
+          "accuracy": 0.5,
+          "f1": 0.0,
+          "falsePositiveRate": 0.5,
+          "fn": 0,
+          "fp": 4,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 4,
+          "tp": 0
+        },
+        "reported": {
+          "accuracy": 1.0,
+          "f1": 0,
+          "falsePositiveRate": 0.0,
+          "fn": 0,
+          "fp": 0,
+          "n": 8,
+          "precision": null,
+          "recall": null,
+          "tn": 8,
+          "tp": 0
+        },
+        "request": {
+          "accuracy": 0.75,
+          "f1": 0.0,
+          "falsePositiveRate": 0.25,
+          "fn": 0,
+          "fp": 2,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 6,
+          "tp": 0
+        }
+      },
+      "devGatePassed": false,
+      "metrics": {
+        "accuracy": 0.7666666666666667,
+        "f1": 0.7741935483870968,
+        "falsePositiveRate": 0.26666666666666666,
+        "fn": 6,
+        "fp": 8,
+        "n": 60,
+        "precision": 0.75,
+        "recall": 0.8,
+        "tn": 22,
+        "tp": 24
+      },
+      "modelLoadSeconds": 1.7988783750042785,
+      "primary": true,
+      "researchGatePassed": false,
+      "threshold": 0.5
+    },
+    "C42": {
+      "amortizedMillisecondsPerPassage": 2.3335729162984835,
+      "batchInferenceSeconds": 0.14001437497790903,
+      "categories": {
+        "firm_delivery": {
+          "accuracy": 0.9,
+          "f1": 0.9473684210526315,
+          "falsePositiveRate": null,
+          "fn": 3,
+          "fp": 0,
+          "n": 30,
+          "precision": 1.0,
+          "recall": 0.9,
+          "tn": 0,
+          "tp": 27
+        },
+        "other": {
+          "accuracy": 0.6666666666666666,
+          "f1": 0.0,
+          "falsePositiveRate": 0.3333333333333333,
+          "fn": 0,
+          "fp": 2,
+          "n": 6,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 4,
+          "tp": 0
+        },
+        "qualified_delivery": {
+          "accuracy": 0.625,
+          "f1": 0.0,
+          "falsePositiveRate": 0.375,
+          "fn": 0,
+          "fp": 3,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 5,
+          "tp": 0
+        },
+        "reported": {
+          "accuracy": 1.0,
+          "f1": 0,
+          "falsePositiveRate": 0.0,
+          "fn": 0,
+          "fp": 0,
+          "n": 8,
+          "precision": null,
+          "recall": null,
+          "tn": 8,
+          "tp": 0
+        },
+        "request": {
+          "accuracy": 0.875,
+          "f1": 0.0,
+          "falsePositiveRate": 0.125,
+          "fn": 0,
+          "fp": 1,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 7,
+          "tp": 0
+        }
+      },
+      "devGatePassed": false,
+      "metrics": {
+        "accuracy": 0.85,
+        "f1": 0.8571428571428571,
+        "falsePositiveRate": 0.2,
+        "fn": 3,
+        "fp": 6,
+        "n": 60,
+        "precision": 0.8181818181818182,
+        "recall": 0.9,
+        "tn": 24,
+        "tp": 27
+      },
+      "modelLoadSeconds": 0.056161708023864776,
+      "primary": true,
+      "researchGatePassed": false,
+      "threshold": 0.5
+    },
+    "C43": {
+      "amortizedMillisecondsPerPassage": 2.3941840166420056,
+      "batchInferenceSeconds": 0.14365104099852033,
+      "categories": {
+        "firm_delivery": {
+          "accuracy": 0.8,
+          "f1": 0.8888888888888888,
+          "falsePositiveRate": null,
+          "fn": 6,
+          "fp": 0,
+          "n": 30,
+          "precision": 1.0,
+          "recall": 0.8,
+          "tn": 0,
+          "tp": 24
+        },
+        "other": {
+          "accuracy": 0.6666666666666666,
+          "f1": 0.0,
+          "falsePositiveRate": 0.3333333333333333,
+          "fn": 0,
+          "fp": 2,
+          "n": 6,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 4,
+          "tp": 0
+        },
+        "qualified_delivery": {
+          "accuracy": 0.625,
+          "f1": 0.0,
+          "falsePositiveRate": 0.375,
+          "fn": 0,
+          "fp": 3,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 5,
+          "tp": 0
+        },
+        "reported": {
+          "accuracy": 1.0,
+          "f1": 0,
+          "falsePositiveRate": 0.0,
+          "fn": 0,
+          "fp": 0,
+          "n": 8,
+          "precision": null,
+          "recall": null,
+          "tn": 8,
+          "tp": 0
+        },
+        "request": {
+          "accuracy": 0.75,
+          "f1": 0.0,
+          "falsePositiveRate": 0.25,
+          "fn": 0,
+          "fp": 2,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 6,
+          "tp": 0
+        }
+      },
+      "devGatePassed": false,
+      "metrics": {
+        "accuracy": 0.7833333333333333,
+        "f1": 0.7868852459016393,
+        "falsePositiveRate": 0.23333333333333334,
+        "fn": 6,
+        "fp": 7,
+        "n": 60,
+        "precision": 0.7741935483870968,
+        "recall": 0.8,
+        "tn": 23,
+        "tp": 24
+      },
+      "modelLoadSeconds": 0.054255333001492545,
+      "primary": false,
+      "researchGatePassed": false,
+      "threshold": 0.5
+    },
+    "C44": {
+      "amortizedMillisecondsPerPassage": 2.157620132978385,
+      "batchInferenceSeconds": 0.12945720797870308,
+      "categories": {
+        "firm_delivery": {
+          "accuracy": 0.9,
+          "f1": 0.9473684210526315,
+          "falsePositiveRate": null,
+          "fn": 3,
+          "fp": 0,
+          "n": 30,
+          "precision": 1.0,
+          "recall": 0.9,
+          "tn": 0,
+          "tp": 27
+        },
+        "other": {
+          "accuracy": 0.6666666666666666,
+          "f1": 0.0,
+          "falsePositiveRate": 0.3333333333333333,
+          "fn": 0,
+          "fp": 2,
+          "n": 6,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 4,
+          "tp": 0
+        },
+        "qualified_delivery": {
+          "accuracy": 0.625,
+          "f1": 0.0,
+          "falsePositiveRate": 0.375,
+          "fn": 0,
+          "fp": 3,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 5,
+          "tp": 0
+        },
+        "reported": {
+          "accuracy": 1.0,
+          "f1": 0,
+          "falsePositiveRate": 0.0,
+          "fn": 0,
+          "fp": 0,
+          "n": 8,
+          "precision": null,
+          "recall": null,
+          "tn": 8,
+          "tp": 0
+        },
+        "request": {
+          "accuracy": 0.75,
+          "f1": 0.0,
+          "falsePositiveRate": 0.25,
+          "fn": 0,
+          "fp": 2,
+          "n": 8,
+          "precision": 0.0,
+          "recall": null,
+          "tn": 6,
+          "tp": 0
+        }
+      },
+      "devGatePassed": false,
+      "metrics": {
+        "accuracy": 0.8333333333333334,
+        "f1": 0.84375,
+        "falsePositiveRate": 0.23333333333333334,
+        "fn": 3,
+        "fp": 7,
+        "n": 60,
+        "precision": 0.7941176470588235,
+        "recall": 0.9,
+        "tn": 23,
+        "tp": 27
+      },
+      "modelLoadSeconds": 0.04376058399793692,
+      "primary": false,
+      "researchGatePassed": false,
+      "threshold": 0.5
+    }
+  },
+  "scope": "Independent synthetic author-labelled wording classification; no human validation or product integration claim.",
+  "seedPolicy": "C42 primary. C43/C44 are robustness only, all reported; no test-selected seed."
+}

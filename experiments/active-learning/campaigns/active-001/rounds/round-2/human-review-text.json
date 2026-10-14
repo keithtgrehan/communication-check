@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "al-p011",
+      "text": "I should have the boiler inspection certificate ready tomorrow, assuming the pressure gauge passes its calibration check."
+    },
+    {
+      "id": "al-p050",
+      "text": "The revised sheet separates starter refreshments from final dough mixing. Our bakery team will place printed copies at every mixing station this evening."
+    },
+    {
+      "id": "al-p067",
+      "text": "Please deliver the bound harbor fender replacement drawings to the marine contractor before Wednesday's site meeting."
+    },
+    {
+      "id": "al-p070",
+      "text": "The atlas now has reinforced endpapers. I will deliver the repaired volume and its protective slipcase to the map room on Friday afternoon."
+    }
+  ],
+  "sampleAgreementIds": [
+    "al-p067",
+    "al-p011",
+    "al-p050",
+    "al-p070"
+  ],
+  "status": "human review pending"
+}

@@ -1,0 +1,72 @@
+{
+  "newTrainingRows": 120,
+  "originalRecords": 150,
+  "passed": true,
+  "rounds": [
+    {
+      "accepted": 40,
+      "categoryCounts": {
+        "firm_delivery": 20,
+        "other": 3,
+        "qualified_delivery": 9,
+        "reported": 5,
+        "request": 3
+      },
+      "changedTensors": 101,
+      "humanAgreementSample": 4,
+      "reloadError": 0.0,
+      "round": "round-1",
+      "routes": {
+        "disagreement": 5,
+        "random": 2,
+        "uncertainty": 3
+      },
+      "steps": 50,
+      "trainingRows": 160
+    },
+    {
+      "accepted": 40,
+      "categoryCounts": {
+        "firm_delivery": 20,
+        "other": 5,
+        "qualified_delivery": 4,
+        "reported": 3,
+        "request": 8
+      },
+      "changedTensors": 101,
+      "humanAgreementSample": 4,
+      "reloadError": 0.0,
+      "round": "round-2",
+      "routes": {
+        "disagreement": 5,
+        "random": 2,
+        "uncertainty": 3
+      },
+      "steps": 50,
+      "trainingRows": 200
+    },
+    {
+      "accepted": 40,
+      "categoryCounts": {
+        "firm_delivery": 20,
+        "other": 5,
+        "qualified_delivery": 5,
+        "reported": 5,
+        "request": 5
+      },
+      "changedTensors": 101,
+      "humanAgreementSample": 4,
+      "reloadError": 0.0,
+      "round": "round-3",
+      "routes": {
+        "disagreement": 5,
+        "random": 2,
+        "uncertainty": 3
+      },
+      "steps": 50,
+      "trainingRows": 240
+    }
+  ],
+  "timestamp": 1791965059.81888,
+  "uniqueAcquiredFamilies": 30
+}

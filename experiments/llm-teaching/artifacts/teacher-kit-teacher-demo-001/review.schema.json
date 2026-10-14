@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "batchId": {
+      "type": "string"
+    },
+    "batchSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "enum": [
+              "firm_delivery",
+              "qualified_delivery",
+              "request",
+              "reported",
+              "other",
+              "ambiguous"
+            ]
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "enum": [
+              0,
+              1,
+              null
+            ]
+          },
+          "rationale": {
+            "maxLength": 1200,
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "clear",
+              "ambiguous",
+              "rejected"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "label",
+          "category",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 40,
+      "minItems": 8,
+      "type": "array"
+    },
+    "packetSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "reviewer": {
+      "additionalProperties": false,
+      "properties": {
+        "actorId": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "model": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorId",
+        "model"
+      ],
+      "type": "object"
+    },
+    "schemaVersion": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "batchId",
+    "batchSha256",
+    "packetSha256",
+    "reviewer",
+    "decisions"
+  ],
+  "type": "object"
+}

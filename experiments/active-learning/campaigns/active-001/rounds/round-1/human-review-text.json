@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "al-p006",
+      "text": "I have organized the nursery observations by coral species. You will receive my completed attachment survey before the conservation briefing."
+    },
+    {
+      "id": "al-p025",
+      "text": "I will give the geometry class a complete set of paper folding proof cards on Wednesday."
+    },
+    {
+      "id": "al-p080",
+      "text": "The sound recordist wrote that she would deliver the underwater library on Tuesday. Her message also mentioned an accompanying cue list."
+    },
+    {
+      "id": "al-p215",
+      "text": "The inspection contractor stated that her team would deliver the conveyor belt wear atlas on Friday."
+    }
+  ],
+  "sampleAgreementIds": [
+    "al-p215",
+    "al-p080",
+    "al-p025",
+    "al-p006"
+  ],
+  "status": "human review pending"
+}

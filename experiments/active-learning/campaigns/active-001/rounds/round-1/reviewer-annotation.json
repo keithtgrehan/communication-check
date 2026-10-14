@@ -1,0 +1,410 @@
+{
+  "actor": {
+    "actorId": "round-1-active-001-reviewer",
+    "model": "gpt-6-astra"
+  },
+  "decisions": [
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will upload the proof cards and answer sheet before Wednesday's lesson."
+      ],
+      "id": "item_19c863e28e9328da607db9e4",
+      "label": 1,
+      "rationale": "The author unconditionally asserts future upload of concrete materials before a deadline.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "I am planning to bring the woodland costume patterns tomorrow, but a late fitting could push delivery back."
+      ],
+      "id": "item_4a670b8126e84643c3f145d3",
+      "label": 0,
+      "rationale": "Delivery is a plan explicitly subject to delay.",
+      "status": "clear"
+    },
+    {
+      "category": "reported",
+      "evidence": [
+        "I am passing on her promise from the inspection meeting."
+      ],
+      "id": "item_8178c77aa2a2bf59c8618e6a",
+      "label": 0,
+      "rationale": "The author relays the supervisor's promise without making a new assurance.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will supply the planetarium presenter with the finished lunar eclipse narration script by Wednesday noon."
+      ],
+      "id": "item_302e0eecaf33012d37b1fa23",
+      "label": 1,
+      "rationale": "The author directly commits to supplying a finished script by a deadline.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "We may deliver the sculpted turtle egg replicas Tuesday if the flexible casting material cures without surface defects."
+      ],
+      "id": "item_7046aa05114bd4578e25e0ca",
+      "label": 0,
+      "rationale": "Delivery is tentative and depends on successful curing.",
+      "status": "clear"
+    },
+    {
+      "category": "request",
+      "evidence": [
+        "Please prepare a set of paper folding proof cards for the geometry class."
+      ],
+      "id": "item_cca55b7e06ee53dd7fc377ff",
+      "label": 0,
+      "rationale": "The passage asks the recipient to prepare materials.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will provide the plant engineer with the completed atlas and location index on Friday."
+      ],
+      "id": "item_f85695273e68af7ac7e62eea",
+      "label": 1,
+      "rationale": "The author unconditionally asserts future provision of the completed atlas and index.",
+      "status": "clear"
+    },
+    {
+      "category": "reported",
+      "evidence": [
+        "The inspection contractor stated that her team would deliver the conveyor belt wear atlas on Friday."
+      ],
+      "id": "item_0d4601bc3b89fca462bb9b14",
+      "label": 0,
+      "rationale": "Delivery is attributed to a contractor's statement.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "I might finish the lunar eclipse narration by Wednesday if the animation team settles the sequence length today."
+      ],
+      "id": "item_4e1c75531897bc6e44d5f9f4",
+      "label": 0,
+      "rationale": "Completion is tentative and conditional on the animation team's decision.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our machine shop will deliver the stainless steel valve test fixture to the assembly bench tomorrow."
+      ],
+      "id": "item_d5b7469986e1fa0a5d239ef1",
+      "label": 1,
+      "rationale": "The author directly asserts unconditional future delivery by their machine shop.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will deliver the signed centrifuge balance report to the equipment custodian by four today."
+      ],
+      "id": "item_2ef40e99e10403e4153c2818",
+      "label": 1,
+      "rationale": "The author commits to delivering a signed report by a specified time.",
+      "status": "clear"
+    },
+    {
+      "category": "other",
+      "evidence": [
+        "We are not delivering a conveyor belt wear atlas this Friday."
+      ],
+      "id": "item_8ef17bbab428178347d6f23e",
+      "label": 0,
+      "rationale": "The author explicitly negates future delivery.",
+      "status": "clear"
+    },
+    {
+      "category": "reported",
+      "evidence": [
+        "The restoration supervisor said her crew would provide the coral attachment survey on Friday."
+      ],
+      "id": "item_6a542bdd6cfc09c9462d757a",
+      "label": 0,
+      "rationale": "The passage recalls the supervisor's timetable rather than asserting a new commitment.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "You will receive my completed attachment survey before the conservation briefing."
+      ],
+      "id": "item_540947430b0e27f6c4f059d1",
+      "label": 1,
+      "rationale": "The author assures receipt of a completed survey before an event deadline.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "We aim to provide the coral attachment survey by Friday, although rough water may delay the final measurements."
+      ],
+      "id": "item_d8e208ec230447efefe1a99c",
+      "label": 0,
+      "rationale": "Delivery is aspirational with an explicit possible delay.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will deliver the grain store's completed trap count chart and location sketch tomorrow morning."
+      ],
+      "id": "item_d45cb8d3bfecd94f8bba6527",
+      "label": 1,
+      "rationale": "The author directly commits to delivering the completed chart and sketch.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our audio crew will deliver the edited underwater sound library to the aquarium education team on Tuesday."
+      ],
+      "id": "item_21c4dd33a12f268d12ba2133",
+      "label": 1,
+      "rationale": "The author asserts definite future delivery by their audio crew.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "We expect to provide the grain store's moth trap chart tomorrow if all collection envelopes reach the counting room."
+      ],
+      "id": "item_bce748adc0900be83ade6667",
+      "label": 0,
+      "rationale": "Provision is an expectation conditional on receiving collection envelopes.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will deliver the leatherback turtle exhibit's finished sculpted egg replicas to the nature center on Tuesday."
+      ],
+      "id": "item_edf8dd6dd043ce583ffaa1be",
+      "label": 1,
+      "rationale": "The author unconditionally commits to future delivery of finished replicas.",
+      "status": "clear"
+    },
+    {
+      "category": "other",
+      "evidence": [
+        "I will not supply a new lunar eclipse narration script this week."
+      ],
+      "id": "item_fad4a2f29a6e60c00f1a0eb1",
+      "label": 0,
+      "rationale": "Future supply of a new script is explicitly negated.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our design team will deliver the full pattern set and cutting layouts to wardrobe tomorrow morning."
+      ],
+      "id": "item_957c6b750832505e79458152",
+      "label": 1,
+      "rationale": "The author asserts definite delivery of patterns and layouts by their design team.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "I hope to finish the paper folding proof cards before Wednesday, but the diagrams still need checking."
+      ],
+      "id": "item_c2635d02c3ef5606747dc16d",
+      "label": 0,
+      "rationale": "Completion is expressed as a hope, with checking still outstanding.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will give the geometry class a complete set of paper folding proof cards on Wednesday."
+      ],
+      "id": "item_cbd006d12ec30bc456f3f5d0",
+      "label": 1,
+      "rationale": "The author directly asserts future provision of a complete card set.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our exhibit workshop will supply the nature center with the complete replica set on Tuesday afternoon."
+      ],
+      "id": "item_a3455958120dca02d59861db",
+      "label": 1,
+      "rationale": "The author unconditionally asserts future supply of the complete replica set by their workshop.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our pest monitoring team will provide the grain store manager with the completed moth trap count chart tomorrow."
+      ],
+      "id": "item_59889e430c24e4c731db477c",
+      "label": 1,
+      "rationale": "The author directly asserts that their team will provide a completed chart tomorrow.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will bring the finished woodland costume patterns to the theatre wardrobe room tomorrow at ten."
+      ],
+      "id": "item_021038bca703d6d80c916f89",
+      "label": 1,
+      "rationale": "The author commits to bringing finished patterns at a specified future time.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "We anticipate sending the centrifuge rotor balance report this afternoon, subject to a repeat measurement on one carrier."
+      ],
+      "id": "item_5575a0bad47eae9ab07cca9a",
+      "label": 0,
+      "rationale": "Sending is anticipated and explicitly subject to a repeat measurement.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "The valve test fixture should reach the assembly bench tomorrow unless the stainless steel stock arrives late."
+      ],
+      "id": "item_00e0a07878264d68d648c76a",
+      "label": 0,
+      "rationale": "Arrival is expected rather than assured and includes an explicit exception.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will send the aquarium educators the edited recordings and cue list on Tuesday."
+      ],
+      "id": "item_9416cc4389ed596511bb1268",
+      "label": 1,
+      "rationale": "The author commits to sending edited recordings and a cue list on Tuesday.",
+      "status": "clear"
+    },
+    {
+      "category": "request",
+      "evidence": [
+        "Please deliver the finished turtle egg replicas to the nature center on Tuesday."
+      ],
+      "id": "item_e99d2d10685e65b7d3834d5d",
+      "label": 0,
+      "rationale": "The passage asks the recipient to deliver and pack replicas.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "I will bring the finished fixture and its dimensional inspection sheet to the assembly bench tomorrow morning."
+      ],
+      "id": "item_20e5cf52e280514f19a524e9",
+      "label": 1,
+      "rationale": "The author unconditionally commits to bringing a finished fixture and inspection sheet.",
+      "status": "clear"
+    },
+    {
+      "category": "qualified_delivery",
+      "evidence": [
+        "I expect the underwater sound library to be ready Tuesday, although several recordings still need noise reduction."
+      ],
+      "id": "item_3bd9c9bf53afb647ec3bfaf9",
+      "label": 0,
+      "rationale": "Readiness is an expectation with processing still outstanding.",
+      "status": "clear"
+    },
+    {
+      "category": "other",
+      "evidence": [
+        "I delivered the pattern set and cutting layouts at ten this morning."
+      ],
+      "id": "item_9b4090365ea8ba1f0dcb52eb",
+      "label": 0,
+      "rationale": "The passage describes delivery already completed in the past.",
+      "status": "clear"
+    },
+    {
+      "category": "reported",
+      "evidence": [
+        "The sound recordist wrote that she would deliver the underwater library on Tuesday."
+      ],
+      "id": "item_839d04c2db316a845e42b1f8",
+      "label": 0,
+      "rationale": "The delivery assertion is attributed to the sound recordist's written message.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our laboratory team will send the centrifuge rotor balance report to the equipment custodian this afternoon."
+      ],
+      "id": "item_2577882b75904b2ce76492f2",
+      "label": 1,
+      "rationale": "The author directly asserts future sending of the report by their laboratory team.",
+      "status": "clear"
+    },
+    {
+      "category": "request",
+      "evidence": [
+        "Please bring the stainless steel valve test fixture to the assembly bench tomorrow."
+      ],
+      "id": "item_0a5ad3d721bf7a150fdaa3e9",
+      "label": 0,
+      "rationale": "The passage directs the recipient to bring the fixture and accompanying sheet.",
+      "status": "clear"
+    },
+    {
+      "category": "reported",
+      "evidence": [
+        "The laboratory manager said the rotor balance report would arrive this afternoon."
+      ],
+      "id": "item_2230da2a2574d698d817ebf1",
+      "label": 0,
+      "rationale": "The passage reports the laboratory manager's statement about arrival.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our mineral processing team will deliver the completed conveyor belt wear atlas to the plant engineer on Friday."
+      ],
+      "id": "item_2955b0ff1d3cb74e5ad6d9cd",
+      "label": 1,
+      "rationale": "The author unconditionally asserts future delivery of the completed atlas by their team.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our writing team will deliver the final eclipse script and pronunciation notes to the presenter on Wednesday."
+      ],
+      "id": "item_57f820ffa9207bbbb378763c",
+      "label": 1,
+      "rationale": "The author directly commits their writing team to delivering a final script and notes.",
+      "status": "clear"
+    },
+    {
+      "category": "firm_delivery",
+      "evidence": [
+        "Our restoration crew will provide the reef nursery with a complete coral attachment survey by Friday."
+      ],
+      "id": "item_bad82c5870a8a0f6f1c24fe0",
+      "label": 1,
+      "rationale": "The author asserts definite provision of a complete survey by their restoration crew.",
+      "status": "clear"
+    }
+  ],
+  "packetSha256": "287fbf687a711d707cabda6bdccea6204b5519f80ee3692e1a98d100f4078af8",
+  "schemaVersion": 2
+}

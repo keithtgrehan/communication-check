@@ -1,0 +1,108 @@
+{
+  "finalEvaluation": "not performed: insufficient reference coverage",
+  "finalIntegrityVerified": true,
+  "goalOutcome": "bounded protocol complete; final scoring not permitted by coverage; human audit remains pending as authorized",
+  "handoff": {
+    "acknowledgement": "Received. Improvement was observed on DEV only; final scoring stopped because reference coverage was insufficient. Human review remains pending, with no model promotion or further work authorised.",
+    "boundedWait": "turnCompleted; no error; idle",
+    "deliveredHandoffSha256": "392949d3f9641aac5d15b3964c772e8adb9f2d55d966b08c2a1fbc13db9bf3a6",
+    "sendSucceeded": true,
+    "sourceAllowlist": [
+      "docs/PRODUCT_BRIEF.md",
+      "docs/PROGRESS.md"
+    ],
+    "taskMessageOnly": true,
+    "threadId": "01a08ae3-9641-7cc3-8e2f-6c09b6efd2e4",
+    "timestamp": 1791965924.8605812,
+    "turnId": "01a1397d-4b15-7d33-8c74-54b7af17c48e"
+  },
+  "independentResultReview": {
+    "approved": true,
+    "sha256": "925814fdc46401b42c731ccf2c6d1aeb9d4e6d463c1c8da2273aa211c114565a"
+  },
+  "integrity": true,
+  "requirements": [
+    {
+      "evidence": "pool/raw.json, pool/eligible.json, pool/semantic-audit.json; 300/75 and balanced lengths verified",
+      "requirement": "Pool diversity and contrasts",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "round selection manifests and actual-lineage-verification.json; tests cover quotas, ties and shortages",
+      "requirement": "Acquisition disagreement/uncertainty/random; no reuse",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "packet/mapping/annotation manifests, actor-provenance.json; pure tests cover ambiguity and invalid evidence",
+      "requirement": "Blind independent labels, evidence, family quarantine",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "12 training agreements; private final audit 44 exclusions +8 agreements; pending explicitly permitted",
+      "requirement": "Human dispute/agreement review",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "exact lineage audit; 178 protected hashes; encoder67 and teaching30 manifests",
+      "requirement": "Original data and prior models preserved",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "all round reports:50steps,101changed,CPUdevices,zero parity;3attempt markers",
+      "requirement": "Three fixed CPU fits and meaningful updates",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "19thresholds each report, selection hash and timestamp before private author started",
+      "requirement": "DEV selection separate from final",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "120authored,11families excluded,76remaining; private bundle frozen",
+      "requirement": "One fresh final reference and no replacement",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "final-coverage.json, sealedterminal, absent consumed marker/finalreport, no final worker ticket",
+      "requirement": "Final coverage stop/no predictions",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "conditionally not run: frozen coverage failed; no invented results or pass",
+      "requirement": "Final metrics/bootstrap/gate",
+      "status": "not run as required by failed coverage gate"
+    },
+    {
+      "evidence": "93testspre-freeze, actualhashchecks, three attempts, measured time/bytes",
+      "requirement": "Integrity/replay/limits",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "engineering003 clearance plus fresh result-review.json approved, no material findings; independently recomputed228thresholds and verified hashes",
+      "requirement": "Independent review",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "README,DESIGN,AUDIT_REPORT,machine audit,lineage,human packets,provenance",
+      "requirement": "Deliverables/reproducibility",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "PRODUCT_BRIEF/PROGRESS/IMPLEMENTATION_PLAN updated; npm run handoff; authorized delivery and acknowledgement in handoff-delivery.json",
+      "requirement": "Project records/handoff",
+      "status": "verified endpoint"
+    },
+    {
+      "evidence": "protected app/source hashes; no deployment or publication; fictional data; historical raw fixtures not read",
+      "requirement": "No app/deploy/spend/customer/oldheldout use",
+      "status": "verified endpoint"
+    }
+  ],
+  "resourceEvidence": {
+    "artifactBytes": 279182038,
+    "fitAttempts": 3,
+    "seconds": 1282.7601137161255
+  },
+  "reviewAndHandoffPending": false,
+  "timestamp": 1791965925.4058392
+}

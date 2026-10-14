@@ -1,0 +1,43 @@
+{
+  "datasetVersion": "encoder-comparison-v1",
+  "source": "experiments/commitment-classifier/data/train-dev.json",
+  "sourceSha256": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468",
+  "copiedDataSha256": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468",
+  "originalAuthorshipDate": "2026-10-13",
+  "auditDate": "2026-10-14",
+  "author": "Product Manager AI agent (/root/product_manager)",
+  "modelProvenance": "Astra agent requested by repository workflow; exact runtime model identifier is not independently exposed to this agent. Do not treat this field as verified model telemetry.",
+  "generation": "150 newly fictional AI-authored passages written in the earlier local experiment; no external dataset or customer content. This pass copies them unchanged.",
+  "labelSource": "AI author labels; audited by the same PM role, not independently human-adjudicated",
+  "counts": {
+    "train": {
+      "firm_delivery": 60,
+      "qualified_delivery": 15,
+      "request": 15,
+      "reported": 15,
+      "other": 15
+    },
+    "dev": {
+      "firm_delivery": 15,
+      "qualified_delivery": 4,
+      "request": 4,
+      "reported": 4,
+      "other": 3
+    }
+  },
+  "groupCounts": {
+    "train": 15,
+    "dev": 5
+  },
+  "rubric": "rubric.md",
+  "splitAudit": "audit.json",
+  "splitDecision": "Preserve all 150 texts, labels, scenario groups and 120/30 split. Broad grammatical family overlap is disclosed, not treated as absence of leakage by group-ID checks. No semantic-template-independence claim.",
+  "limitations": [
+    "50/50 class prevalence is artificial.",
+    "Scenario groups are disjoint; common grammatical constructions, promise verbs and natural-language phrasing occur across splits.",
+    "The same AI role authored and audited these labels. There is no human validation.",
+    "Broad delivery assertions include ordinary document promises intentionally suppressed by the current app. This comparison cannot demonstrate improved useful product findings.",
+    "Historical or new private evaluation texts were not read by this data author.",
+    "Group and duplicate checks do not establish semantic independence."
+  ]
+}

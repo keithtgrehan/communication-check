@@ -1,0 +1,21 @@
+:root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #202124; background: #f5f5f4; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 850px; margin: 48px auto; padding: 0 24px 48px; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); letter-spacing: -.04em; line-height: 1.15; margin: 10px 0 18px; }
+h2 { font-size: 1.15rem; margin-top: 0; } h3 { font-size: .85rem; }
+p { line-height: 1.65; } .eyebrow { text-transform: uppercase; letter-spacing: .13em; font-size: .72rem; font-weight: 700; color: #575757; }
+.intro { max-width: 660px; } .notice { padding: 16px 20px; border: 1px solid #c7c7c7; border-radius: 8px; background: #ececeb; line-height: 1.6; font-size: .9rem; } .outcome { margin-top: 12px; border-left: 4px solid #444; }
+section { background: white; border: 1px solid #d0d0d0; border-radius: 10px; padding: 24px; margin-top: 22px; }
+label { display: block; margin-bottom: 8px; font-size: .9rem; font-weight: 600; }
+#input-help { color: #525252; font-size: .9rem; }
+textarea { display: block; width: 100%; border: 1px solid #818181; border-radius: 6px; padding: 14px; font: inherit; line-height: 1.6; resize: vertical; }
+button { cursor: pointer; border: 1px solid #8a8a8a; border-radius: 6px; background: white; color: #242424; padding: 10px 14px; font: inherit; font-size: .88rem; min-height: 42px; }
+button:hover { background: #ededed; } button:disabled { cursor: default; opacity: .5; }
+button:focus-visible,textarea:focus-visible,summary:focus-visible { outline: 3px solid #262626; outline-offset: 3px; }
+#classify { background: #252525; border-color: #252525; color: white; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+#count { font-size: .8rem; color: #595959; }.samples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+blockquote { margin: 12px 0 20px; padding: 12px 18px; border-left: 3px solid #686868; background: #f6f6f6; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+#status,details { color: #505050; font-size: .88rem; } summary { cursor: pointer; font-weight: 600; padding: 10px 0; }
+[hidden] { display: none !important; } @media(max-width: 480px) { main { margin-top: 24px; padding: 0 16px 30px; } section { padding: 18px; } }

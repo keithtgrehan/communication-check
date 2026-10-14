@@ -1,0 +1,53 @@
+{
+  "contractTestsPassed": 13,
+  "dependencyCheck": "pip check passed",
+  "trainingAdmission": {
+    "admitted": 150,
+    "maxTokens": 21,
+    "maxUtf16Units": 95,
+    "reasons": {
+      "character_limit": 0,
+      "empty": 0,
+      "token_limit": 0
+    },
+    "rejected": 0,
+    "total": 150
+  },
+  "successfulTrainingDevice": "CPU; arguments, accelerator and actual parameters asserted CPU before fitting",
+  "headRandomState": 42,
+  "setfitSuccessfulSteps": {
+    "C42": 50,
+    "C43": 50,
+    "C44": 50
+  },
+  "adaptationEvidence": {
+    "C42": {
+      "changedParameterTensors": 101,
+      "maximumAbsoluteParameterChange": 0.00046063587069511414,
+      "optimizationSteps": 50,
+      "totalParameterTensors": 103
+    },
+    "C43": {
+      "changedParameterTensors": 101,
+      "maximumAbsoluteParameterChange": 0.0004302375018596649,
+      "optimizationSteps": 50,
+      "totalParameterTensors": 103
+    },
+    "C44": {
+      "changedParameterTensors": 101,
+      "maximumAbsoluteParameterChange": 0.00041734427213668823,
+      "optimizationSteps": 50,
+      "totalParameterTensors": 103
+    }
+  },
+  "allSavedReloadScoreDeltas": {
+    "A": 0.0,
+    "B": 0.0,
+    "C42": 0.0,
+    "C43": 0.0,
+    "C44": 0.0
+  },
+  "failedSetupAttempts": "Retained and documented in setup-notes.json; initial50MPSupdates aborted beforeCdev/export, secondCPU/MPSmismatch0updates, separate1stepTRAIN-onlyCPUconfirmation discarded. Successful50CPUupdates perseed reported separately.",
+  "heldoutAccess": "No independent test examples accessed by implementation agent; no evaluation invoked.",
+  "sourceRuntimeScope": "No application code, dependency or browser runtime integration. No network-disabled claim here; lead owns independent OS-network-denied checks."
+}

@@ -1,0 +1,5 @@
+# Existing environment used for this experiment; needed only for retraining.
+# Python 3.11.3. No packages were installed during the experiment.
+numpy==1.26.4
+scipy==1.17.0
+scikit-learn==1.8.0

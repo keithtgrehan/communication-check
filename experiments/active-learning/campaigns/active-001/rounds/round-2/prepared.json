@@ -1,0 +1,25 @@
+{
+  "accepted": 40,
+  "acceptedByRoute": {
+    "disagreement": 20,
+    "random": 8,
+    "uncertainty": 12
+  },
+  "devRows": 30,
+  "parents": [
+    {
+      "bundleSha256": "864bd1f6a07ad39f7dd594a660293ccf3699d53be244d3389afdf804b0f34c56",
+      "roundId": "round-1"
+    }
+  ],
+  "quarantined": 0,
+  "quarantinedByRoute": {
+    "disagreement": 0,
+    "random": 0,
+    "uncertainty": 0
+  },
+  "ready": true,
+  "roundId": "round-2",
+  "roundNumber": 2,
+  "trainingRows": 200
+}

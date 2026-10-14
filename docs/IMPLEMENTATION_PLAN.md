@@ -1,5 +1,120 @@
 # Communication Check implementation plan
 
+## Approved automated wording comparison — 14 October 2026
+
+The user explicitly authorised a fully automated local extension in
+`experiments/active-learning/automation/`. The frozen protocol, exact launch command
+and source/licence audit live there. Finish line: automatic data preparation and
+schema/evidence-validated teacher/reviewer labels; at most one eligible SetFit fit;
+pinned C42/DeBERTa/ModernBERT comparison; separate native published-label benchmark;
+machine annotations, honest terminal report and integrity checks. Unresolved training
+families are quarantined automatically. No human authoring, labelling or adjudication
+gate, dashboard prerequisite, production integration, deployment or paid service.
+The earlier human audit remains unperformed. Prior campaign states and consumed
+heldouts are preserved; all hypotheses, selection rules and limits precede scoring.
+
+## Approved bounded active learning — 14 October 2026
+
+Keith accepted `experiments/active-learning/DESIGN.md` and explicitly authorised
+its local implementation, fictional pool, independent AI labelling, up to three
+CPU training attempts and one fresh final evaluation if the fixed gates permit.
+Original 120 TRAIN/30 DEV and all earlier experiments remain unchanged. The new
+sibling controller passed engineering clearance and executed all three fits. The
+protocol stopped before final scoring when only 76 references survived overlap
+exclusions. See `experiments/active-learning/artifacts/AUDIT_REPORT.md`; DEV gain
+is observed, independent final performance inconclusive, human review pending.
+No source changes after experimental start, replacement rounds, historical heldout
+access, app integration, deployment, spending or customer data. Human audit may
+remain pending and must be reported as such. Detailed stop/completion rules are
+in the accepted design; an unsuccessful or protocol-stopped result is reportable.
+
+## LLM teaching workflow — 14 October 2026
+
+The preceding completed milestone created a way for an LLM to train the local classifier.
+The completed comparison below is preserved. The bounded follow-on in
+`experiments/llm-teaching/DESIGN.md` uses Codex as teacher, a separate blind label
+reviewer, whole-family quarantine, immutable training snapshots and one fixed local
+SetFit candidate. The original development rows stay unchanged; this is development
+iteration, not another independent test. No consumed heldout access or promotion.
+Finish with a demonstrated real teaching batch/review/training/report, reusable
+Codex instructions, local prediction, integrity/privacy checks and final review.
+An inferior model still demonstrates a working process and must be reported honestly.
+Completed: 40 real teacher proposals, 36 accepted and four family-quarantined;
+one saved CPU candidate trained on 156 rows. Original 30 DEV rows unchanged.
+Candidate TP10/FP2 versus baseline TP10/FP1; both fail the development target.
+Twelve workflow tests and OS-network-blocked predictions passed; earlier artifacts
+remain unchanged. Final reviews approve the reusable workflow, reject promotion.
+
+## Approved encoder comparison — 14 October 2026
+
+Keith authorised the three-way local comparison in
+`experiments/encoder-comparison/DESIGN.md`: lexical TF-IDF, frozen MiniLM and
+SetFit-adapted MiniLM (seeds 42/43/44), using the same audited data and operating
+policy. Both product and lead engineering design reviews approved before training.
+PM owns the data audit; engineer owns isolated Python implementation; independent
+reviewer owns fresh private synthetic evaluation; lead integrates and reviews.
+Finish with saved models, reproducible commands, one frozen aggregate comparison,
+offline verification and an honest result. No app/UI/export/deployment changes.
+The earlier failed experiment and historical heldouts remain preserved.
+Completed: all five candidates saved, 13 contract tests and OS-network-blocked
+inference passed; one frozen 60-case comparison completed. All development and
+research gates failed. C42 primary: TP27 / FP6 / TN24 / FN3; TF-IDF: 27/11/19/3.
+Full all-seed results and limitations are in the runbook. Both final reviews approve
+research delivery and reject integration. No post-test source/model tuning.
+
+## Approved local classifier experiment — 13 October 2026
+
+Keith requested a plan from product and engineering agents, approval by senior
+product and engineering reviewers, then implementation within approximately 30
+minutes. This explicitly reopens one bounded learning experiment; historical
+evaluation results and the live checker remain unchanged. Start: 21:46 UTC.
+
+**Finish line:** a reproducible trained classifier, a separate local browser lab,
+one frozen blind synthetic comparison, and an honest continue/stop conclusion.
+The task is classification of an author's unqualified prospective delivery wording,
+not proof that a promise is wrong, agreed, authorised or worth changing.
+
+- Binary target: `firm_delivery` versus `other`. Retain negative categories for
+  qualified wording, requests, reported/quoted wording and other text. Input is one
+  passage of at most 2,000 UTF-16 code units; evidence is the entire original input,
+  not a learned token-level explanation. Mixed/ambiguous challenges are separate
+  from primary metrics. Only invalid input abstains; no semantic abstention claim.
+- Data: 120 training and 30 development fictional, AI-authored/labelled examples,
+  with disjoint scenario families and explicit provenance. No customer data,
+  historical heldout access, public-corpus ingestion or external LLM API calls.
+- Model: training-only word unigram/bigram TF-IDF and balanced logistic regression
+  with fixed settings/seed. Export vocabulary, IDF and weights for local JavaScript
+  inference. No dependency changes or pretrained downloads in this experiment.
+- Development threshold: candidates 0.50 through 0.90 in 0.05 increments; require
+  precision >= 0.90, maximise recall, then prefer the larger threshold. If none
+  qualifies, use 0.90 and explicitly record a failed development gate. Scores are
+  uncalibrated and must not be presented as correctness probabilities.
+- Freeze model, threshold and implementation hashes before a single independently
+  authored synthetic test. Evaluator-only fixtures live outside the repository;
+  only aggregates return to implementers. Separation is procedural, not a sandbox.
+  No tuning on those results or repeated claim of an untouched test.
+- Compare against the unchanged `checkDraft` commitment-confirmation output on
+  identical inputs and an always-negative baseline. The existing checker has a
+  broader task; publish confusion counts, precision/recall and negative-category
+  errors without implying a whole-product accuracy comparison.
+- Provisional criterion for considering a later human-labelled study: >=90% firm
+  precision, >=70% recall and no firm emissions on requests/reported text. These
+  are experiment decisions, not production acceptance or statistical guarantees.
+  No integration into the shipped checker even if the criterion passes.
+- Verify deterministic training, Python/JavaScript parity, input limits/Unicode,
+  schema/split integrity, local browser workflow, offline operation and no input in
+  network/logs/storage. Existing application checks must remain passing.
+
+**Review decisions:** senior product reviewer approved the scope and evidence
+boundaries. Lead, acting as senior engineering reviewer, approved the implementation
+plan with the baseline, ambiguity and freeze conditions above before implementation.
+The tool allows four agent threads including the lead, so the four roles are the
+product manager, senior engineer, senior product reviewer and lead engineering
+reviewer. The engineer owns all experiment implementation; PM owns train/dev data;
+product reviewer owns blind fixtures; lead owns project records and code review.
+All work is local on `codex/communication-check-next`; no deployment, merge,
+spending, runtime LLM connection or changes to the frozen/Prism branches.
+
 ## Current override — 16 September 2026
 
 Keith explicitly started the approved Canvas3 and local tone/review update.

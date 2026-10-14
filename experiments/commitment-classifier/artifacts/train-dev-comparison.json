@@ -1,0 +1,243 @@
+{
+  "scope": "Synthetic author-labelled wording classification; not real-user validation, finding usefulness, truth or risk.",
+  "baselineCaveat": "Actual unchanged checkDraft commitment-confirmation finding targets product delivery, pricing and capability concerns and deliberately suppresses routine notes/document handoffs. This experiment labels all author-owned future work-item delivery. Baseline disagreement includes task mismatch and cannot establish improvement to the live checker.",
+  "evidenceUnit": "Whole supplied bounded passage, not learned span localization.",
+  "dataSha256": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468",
+  "modelSha256": "618678e5c9437e090bdcd0f0ebadd80b695306c979927032509bdcc04288d8be",
+  "n": 150,
+  "threshold": 0.65,
+  "devGatePassed": true,
+  "splitAudit": {
+    "normalizedTextDuplicates": 150,
+    "groupOverlaps": 150,
+    "duplicateEvaluationTexts": 0
+  },
+  "learned": {
+    "n": 150,
+    "tp": 6,
+    "fp": 0,
+    "tn": 75,
+    "fn": 69,
+    "precision": 1,
+    "recall": 0.08,
+    "f1": 0.14814814814814814,
+    "accuracy": 0.54,
+    "falsePositiveRate": 0
+  },
+  "existingRules": {
+    "n": 150,
+    "tp": 1,
+    "fp": 0,
+    "tn": 75,
+    "fn": 74,
+    "precision": 1,
+    "recall": 0.013333333333333334,
+    "f1": 0.02631578947368421,
+    "accuracy": 0.5066666666666667,
+    "falsePositiveRate": 0
+  },
+  "alwaysNegative": {
+    "n": 150,
+    "tp": 0,
+    "fp": 0,
+    "tn": 75,
+    "fn": 75,
+    "precision": null,
+    "recall": 0,
+    "f1": 0,
+    "accuracy": 0.5,
+    "falsePositiveRate": 0
+  },
+  "splits": {
+    "dev": {
+      "learned": {
+        "n": 30,
+        "tp": 1,
+        "fp": 0,
+        "tn": 15,
+        "fn": 14,
+        "precision": 1,
+        "recall": 0.06666666666666667,
+        "f1": 0.125,
+        "accuracy": 0.5333333333333333,
+        "falsePositiveRate": 0
+      },
+      "existingRules": {
+        "n": 30,
+        "tp": 0,
+        "fp": 0,
+        "tn": 15,
+        "fn": 15,
+        "precision": null,
+        "recall": 0,
+        "f1": 0,
+        "accuracy": 0.5,
+        "falsePositiveRate": 0
+      }
+    },
+    "train": {
+      "learned": {
+        "n": 120,
+        "tp": 5,
+        "fp": 0,
+        "tn": 60,
+        "fn": 55,
+        "precision": 1,
+        "recall": 0.08333333333333333,
+        "f1": 0.15384615384615385,
+        "accuracy": 0.5416666666666666,
+        "falsePositiveRate": 0
+      },
+      "existingRules": {
+        "n": 120,
+        "tp": 1,
+        "fp": 0,
+        "tn": 60,
+        "fn": 59,
+        "precision": 1,
+        "recall": 0.016666666666666666,
+        "f1": 0.03278688524590164,
+        "accuracy": 0.5083333333333333,
+        "falsePositiveRate": 0
+      }
+    }
+  },
+  "categories": {
+    "firm_delivery": {
+      "learned": {
+        "n": 75,
+        "tp": 6,
+        "fp": 0,
+        "tn": 0,
+        "fn": 69,
+        "precision": 1,
+        "recall": 0.08,
+        "f1": 0.14814814814814814,
+        "accuracy": 0.08,
+        "falsePositiveRate": null
+      },
+      "existingRules": {
+        "n": 75,
+        "tp": 1,
+        "fp": 0,
+        "tn": 0,
+        "fn": 74,
+        "precision": 1,
+        "recall": 0.013333333333333334,
+        "f1": 0.02631578947368421,
+        "accuracy": 0.013333333333333334,
+        "falsePositiveRate": null
+      }
+    },
+    "other": {
+      "learned": {
+        "n": 18,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      },
+      "existingRules": {
+        "n": 18,
+        "tp": 0,
+        "fp": 0,
+        "tn": 18,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      }
+    },
+    "qualified_delivery": {
+      "learned": {
+        "n": 19,
+        "tp": 0,
+        "fp": 0,
+        "tn": 19,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      },
+      "existingRules": {
+        "n": 19,
+        "tp": 0,
+        "fp": 0,
+        "tn": 19,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      }
+    },
+    "reported": {
+      "learned": {
+        "n": 19,
+        "tp": 0,
+        "fp": 0,
+        "tn": 19,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      },
+      "existingRules": {
+        "n": 19,
+        "tp": 0,
+        "fp": 0,
+        "tn": 19,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      }
+    },
+    "request": {
+      "learned": {
+        "n": 19,
+        "tp": 0,
+        "fp": 0,
+        "tn": 19,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      },
+      "existingRules": {
+        "n": 19,
+        "tp": 0,
+        "fp": 0,
+        "tn": 19,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": 0,
+        "accuracy": 1,
+        "falsePositiveRate": 0
+      }
+    }
+  },
+  "disagreement": {
+    "learnedOnly": 6,
+    "rulesOnly": 1,
+    "learnedCorrectRulesWrong": 6,
+    "rulesCorrectLearnedWrong": 1
+  }
+}

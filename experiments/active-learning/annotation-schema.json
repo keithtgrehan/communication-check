@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "enum": [
+        2
+      ]
+    },
+    "packetSha256": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "actorId": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorId",
+        "model"
+      ],
+      "additionalProperties": false
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "clear",
+              "ambiguous"
+            ]
+          },
+          "label": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              0,
+              1,
+              null
+            ]
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "firm_delivery",
+              "qualified_delivery",
+              "request",
+              "reported",
+              "other",
+              "ambiguous"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "label",
+          "category",
+          "rationale",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "packetSha256",
+    "actor",
+    "decisions"
+  ],
+  "additionalProperties": false
+}

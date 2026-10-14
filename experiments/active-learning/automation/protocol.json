@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "name": "automatic-wording-comparison-001",
+  "target": "author-owned unqualified future delivery of a concrete work item; not useful product warnings",
+  "seed": 42,
+  "synthetic": {
+    "trainRows": 40,
+    "devRows": 28,
+    "finalRows": 56,
+    "familySize": 4,
+    "nearDuplicateJaccard": 0.85
+  },
+  "thresholdSelection": "Fresh synthetic DEV only. Grid .05 through .95 by .05; require precision>=.90 and recall>=.70 and coverage>=.90; maximize recall, precision, threshold. Otherwise .50 diagnostic. No abstention band, only invalid/oversize input abstentions.",
+  "winner": "Report all candidates once on all fresh FINAL rows. Diagnostic winner maximizes F1 then precision then fewer FP then fixed order C42,setfit-auto,deberta,modernbert. Improvement requires strictly higher F1 than C42 and no additional FP, all protocol integrity checks passing, and candidate DEV gate passing. No production promotion. Ambiguous author references remain in outputs but outside binary denominator; report their predictions separately.",
+  "teacher": {
+    "runner": "../run_agent.py",
+    "model": "gpt-6-astra",
+    "reviewerModel": "gpt-6-astra",
+    "sharedModelFamily": true,
+    "note": "Existing configured actor infrastructure exposes Astra only; no separately configured model-family service. Distinct sessions with same-family bias; AI agreement is not confidence or human gold."
+  },
+  "training": {
+    "maxPasses": 1,
+    "minimumAdditions": 8,
+    "minimumPerClass": 4,
+    "minimumFamilies": 2,
+    "lineage": "original120 TRAIN plus new fully agreed synthetic families only; original30 DEV retained solely for legacy adapter diagnostics; no external or old active-learning additions",
+    "recipe": {
+      "seed": 42,
+      "classifierHeadSeed": 42,
+      "batchSize": 16,
+      "pairIterations": 5,
+      "bodySteps": 50,
+      "learningRate": 2e-05
+    }
+  },
+  "models": {
+    "C42": {
+      "revision": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "license": "apache-2.0"
+    },
+    "deberta": {
+      "id": "MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c",
+      "revision": "bddf8c5411c34ac3565e16e04384fd68b2618dda",
+      "license": "mit"
+    },
+    "modernbert": {
+      "id": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "license": "apache-2.0",
+      "restriction": "Research inference only; mixed original training-data licences, no commercial distillation lineage."
+    }
+  },
+  "publishedBenchmark": {
+    "source": "ML-Promise",
+    "split": "original English test",
+    "selection": "first64 ascending sha256 canonical source ID + full text; no label-stratification",
+    "maxRows": 64,
+    "threshold": 0.5,
+    "hypothesis": "This passage states a company principle, commitment, or strategy related to environmental, social, or governance criteria.",
+    "task": "published Promise Identification Yes/No; never target firm_delivery",
+    "license": "CC-BY-NC-SA-4.0",
+    "trainingEligible": false,
+    "url": "https://drive.usercontent.google.com/download?id=1TonLbkuKLCrpsv7HMZdnS5oTFn7FREid&export=download&confirm=t"
+  },
+  "mailEx": {
+    "revision": "57507a458ce157378300d982914d7528448a381d",
+    "use": "availability/schema/provenance assessment only; event taxonomy not a firm-delivery label; no automatic target transfer"
+  },
+  "limits": {
+    "totalSeconds": 3600,
+    "actorSeconds": 600,
+    "modelSeconds": 600,
+    "downloadSeconds": 600,
+    "peakProcessTreeBytes": 12884901888,
+    "artifactBytes": 5000000000,
+    "externalFileBytes": 100000000,
+    "cpuThreads": 4
+  },
+  "failures": "No user adjudication, no regeneration, no automatic retry. Quarantine unresolved TRAIN families. Keep difficult DEV/FINAL rows; overlap invalidates target comparison, never remove rows based on model disagreement. Preserve failed runs and emit terminal report.",
+  "replication": "Run IDs immutable. Later repeats of same dataset are replication, never fresh evidence. Existing historical heldouts not read or reused. Pretrained-model contamination unknown.",
+  "privacy": "Only generated synthetic passages go to existing Codex actors. External data processed locally. Model inference/training OS network-denied; downloads separate. No product integration, deployment or new paid service."
+}

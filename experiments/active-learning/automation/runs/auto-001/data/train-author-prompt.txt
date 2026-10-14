@@ -1,0 +1,40 @@
+You are a fresh fictional data author. Do not use tools or external text. Return only schema-compliant JSON. Use a unique actorId and model identity. Author exactly four English passages for each assigned family, using exact assigned IDs. These are entirely fictional work-item communications, not real people or customer drafts. Each family must contain at least one positive and one negative reference; vary syntax, sentence order, speaker attribution and discourse, not just noun substitution. Use a mixture of single and multi-sentence passages, at most 2000 UTF-16 units each. Do not force genuinely ambiguous cases into binary labels: use null/ambiguous, retain them with exact evidence and a rationale. All difficult FINAL cases remain in the set. Provide exact nonempty evidence quotes and reference rationale for every passage. Do not seek human labels. Follow the rubric, not perceived risk or politeness.
+SPLIT: train
+RUBRIC:
+# Shared wording-classification rubric v1
+
+Unit: one English passage, at most 2,000 UTF-16 code units. Binary classification
+of the supplied passage, not evidence-span extraction or email-level correctness.
+
+Positive (`label=1`, `firm_delivery`): the author directly asserts that they or
+their team will deliver a concrete work item in the future, with no stated
+condition or uncertainty. Explicit promises, guarantees, definite future delivery,
+scheduled future-progressive delivery and assured recipient receipt count.
+Ordinary document-sharing promises count even where the product suppresses them.
+
+Negative (`label=0`): `qualified_delivery` for conditional, tentative, estimated,
+aspirational or planned-but-unassured delivery; `request` for asking the recipient
+to act; `reported` for quoted, attributed or recalled assertions instead of a new
+author assertion; `other` for negated, hypothetical, completed-past or descriptive
+content. A quoted promise inside a report does not inherit a positive label.
+
+Precedence: determine author/attribution and temporal scope, then negation and
+conditions, then whether concrete delivery is asserted. An explicit assurance
+counts even where wording contains 'can promise'; bare capability does not.
+An intention or expectation alone is qualified; an explicit final 'we will do so'
+assurance can resolve earlier schedule wording within an otherwise clear passage.
+A stated action before an event is a deadline; 'when the source data is ready' is
+a delivery dependency. Do not assume unstated conditions or approval.
+
+Genuinely mixed/ambiguous examples belong outside primary binary scoring and are
+not silently forced into training labels. This audit identified no exclusions
+necessary among the 150 supplied development passages. That is AI author judgment,
+not a claim of human inter-annotator agreement.
+
+Positive never means incorrect, risky, unapproved, untrue, feasible or helpful to
+flag. Negative never means the email is safe or contains no other problem. This
+is the shared exploratory target for all compared models; useful review prompts
+require a separately defined, human-reviewed product target.
+
+ASSIGNED_SCENARIOS:
+[{"group": "auto-train-seed-bank", "domain": "Seed-bank accession envelopes", "discourse": "A curator distinguishes promised accession packets from a donor quotation and a past dispatch.", "tags": ["attribution", "past_action"], "ids": ["auto-train-seed-bank-1", "auto-train-seed-bank-2", "auto-train-seed-bank-3", "auto-train-seed-bank-4"]}, {"group": "auto-train-bell-foundry", "domain": "Bell-foundry acoustic certificates", "discourse": "A foundry engineer separates an unconditional certificate handover from cooling-dependent delivery.", "tags": ["conditional_delivery"], "ids": ["auto-train-bell-foundry-1", "auto-train-bell-foundry-2", "auto-train-bell-foundry-3", "auto-train-bell-foundry-4"]}, {"group": "auto-train-film-restoration", "domain": "Silent-film restoration cue sheets", "discourse": "A restorer corrects a mistaken earlier assurance; distinguish negated scope from a new definite handover.", "tags": ["negation", "explicit_assurance"], "ids": ["auto-train-film-restoration-1", "auto-train-film-restoration-2", "auto-train-film-restoration-3", "auto-train-film-restoration-4"]}, {"group": "auto-train-cave-survey", "domain": "Cave-survey cartographic plates", "discourse": "An expedition archivist answers a request, reports someone else\u2019s forecast, and owns a future map delivery.", "tags": ["request", "attribution"], "ids": ["auto-train-cave-survey-1", "auto-train-cave-survey-2", "auto-train-cave-survey-3", "auto-train-cave-survey-4"]}, {"group": "auto-train-textile-museum", "domain": "Textile conservation condition cards", "discourse": "An exhibit conservator contrasts recipient tasks, completed repairs, and assured receipt of condition cards.", "tags": ["request", "past_action"], "ids": ["auto-train-textile-museum-1", "auto-train-textile-museum-2", "auto-train-textile-museum-3", "auto-train-textile-museum-4"]}, {"group": "auto-train-piano-workshop", "domain": "Piano workshop voicing records", "discourse": "A craftsperson distinguishes capability and intention from an explicit promise despite cautious surrounding wording.", "tags": ["explicit_assurance"], "ids": ["auto-train-piano-workshop-1", "auto-train-piano-workshop-2", "auto-train-piano-workshop-3", "auto-train-piano-workshop-4"]}, {"group": "auto-train-kite-regatta", "domain": "Kite-regatta course sketches", "discourse": "An organiser uses before-event deadlines and when-ready dependencies with different consequences for assurance.", "tags": ["conditional_delivery"], "ids": ["auto-train-kite-regatta-1", "auto-train-kite-regatta-2", "auto-train-kite-regatta-3", "auto-train-kite-regatta-4"]}, {"group": "auto-train-orchard-coop", "domain": "Heritage orchard graft ledgers", "discourse": "A coordinator handles pronoun ownership across sentences and distinguishes their delivery from a grower\u2019s claim.", "tags": ["attribution"], "ids": ["auto-train-orchard-coop-1", "auto-train-orchard-coop-2", "auto-train-orchard-coop-3", "auto-train-orchard-coop-4"]}, {"group": "auto-train-radio-archive", "domain": "Community radio tape inventories", "discourse": "An archivist discusses an old delivery and a scheduled future-progressive inventory handover.", "tags": ["past_action"], "ids": ["auto-train-radio-archive-1", "auto-train-radio-archive-2", "auto-train-radio-archive-3", "auto-train-radio-archive-4"]}, {"group": "auto-train-stone-quarry", "domain": "Stone-quarry sample catalogues", "discourse": "An estimator withdraws one catalogue commitment but makes another, contrasted with a wholly conditional offer.", "tags": ["negation", "mixed"], "ids": ["auto-train-stone-quarry-1", "auto-train-stone-quarry-2", "auto-train-stone-quarry-3", "auto-train-stone-quarry-4"]}]

@@ -1,0 +1,8 @@
+{
+  "runId": "teacher-demo-001",
+  "preparedSha256": "b2bbd3e372f0bfaf11ffabf8b64fa40bbe5b95ae00dfd5924ba0fab4aad4fbbe",
+  "leadEngineeringApproval": "Root independently reviewed source, reran 12 tests, verified preserved original150 rows, and approved this exact prepared hash before training.",
+  "independentProductApproval": "senior_product_reviewer independently verified aggregate preparation and frozen review, then approved this exact prepared hash before training.",
+  "execution": "One fixed seed42,50-step CPU candidate under /usr/bin/sandbox-exec (version1)(allow default)(deny network*).",
+  "recordedAtUtc": "2026-10-13T22:43:18.413386+00:00"
+}

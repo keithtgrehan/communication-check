@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "packetSha256": "cd1ec935405187caa247762cb18d82923fef037b9c13ed4d3bddb9f21fa2b86d",
+  "actor": {
+    "actorId": "annotator_6d983f24-1b75-4e9a-a608-3fc274e95b12",
+    "model": "GPT-6"
+  },
+  "decisions": [
+    {
+      "id": "item_5353848c282651ae3adf651d",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "The author asks the recipient to complete and return cards.",
+      "evidence": ["Please enter the display-case numbers on the textile condition cards and return them to me."]
+    },
+    {
+      "id": "item_63a8e871ec510a60d7e8d2b2",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author directly promises future delivery without qualification.",
+      "evidence": ["I will send you the accession packets for the dune-grass seeds tomorrow."]
+    },
+    {
+      "id": "item_99a7df1e0ae762a2ca025ca7",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "The earlier promise is withdrawn; the current delivery statement expresses hope.",
+      "evidence": ["Please disregard that assurance; we now hope to send them later in the week."]
+    },
+    {
+      "id": "item_7bd8a7fcbc459c3d194e42a5",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "Scheduled future-progressive wording asserts a definite handover.",
+      "evidence": ["At 9 tomorrow morning, we will be handing over the updated tape inventory to the station librarian."]
+    },
+    {
+      "id": "item_b8c9925104be5841f8e448e8",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "Delivery occurred in the completed past.",
+      "evidence": ["I delivered the community radio tape inventory last Tuesday."]
+    },
+    {
+      "id": "item_6f835908118628d642207b56",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Delivery depends on the casting becoming testable.",
+      "evidence": ["I will send its acoustic certificate when the casting is cool enough to test."]
+    },
+    {
+      "id": "item_272c4b67d4220074d9745be0",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author makes a firm promise about a separate ledger.",
+      "evidence": ["I will send you our completed cooperative graft ledger tomorrow."]
+    },
+    {
+      "id": "item_2411fe8cf58e3b7f2661bc28",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "An explicit promise assures receipt; the retraction concerns another item.",
+      "evidence": ["I can promise that you will receive the corrected cue sheets tomorrow.", "My retraction concerned the restored picture master."]
+    },
+    {
+      "id": "item_6672b75c95fabd0f6ff2baa0",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The author recalls an old promise without renewing it.",
+      "evidence": ["Last winter I promised to send the tape inventory by the end of that week.", "I am recounting the old arrangement here."]
+    },
+    {
+      "id": "item_866bac939268e8c29f0f3ed4",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author assures future receipt of concrete work.",
+      "evidence": ["You will receive the completed tapestry condition cards from me by Thursday afternoon."]
+    },
+    {
+      "id": "item_b0513011a24ad7e3f85efe2a",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "The passage describes completed work and existing documentation.",
+      "evidence": ["I repaired the split hem yesterday and handed the revised condition card to the registrar."]
+    },
+    {
+      "id": "item_cd99fe936e688ee9ff60315b",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "Receipt is assured before an event that serves as a deadline.",
+      "evidence": ["Before the first kite launches, you will have the printed course sketches from our organising team."]
+    },
+    {
+      "id": "item_427536ca5d0a2ad02a2862a3",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "The author requests delivery from the recipient.",
+      "evidence": ["Could you send me the annotated cave-survey plates before the archive meeting?"]
+    },
+    {
+      "id": "item_7f09d48ab03b3b39cefe8d57",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The limestone delivery is firmly promised independently of the granite retraction.",
+      "evidence": ["I withdraw my promise to send the granite catalogue tomorrow.", "I will send you the limestone sample catalogue tomorrow."]
+    },
+    {
+      "id": "item_30c5d3df3fcabae5782d0673",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The forecast is attributed to the cartographer, not newly asserted by the author.",
+      "evidence": ["The expedition cartographer expects her team to deliver the eastern-chamber plates next week.", "That is her forecast, copied into my archive notes."]
+    },
+    {
+      "id": "item_c7a01be5bde6126054248fd9",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The promise is quoted from the grower and concerns her staff.",
+      "evidence": ["Mara, the grower, told me, \"We will send the graft ledger on Monday.\"", "Her 'we' refers to the nursery staff."]
+    },
+    {
+      "id": "item_7426c4e45e9a0b6adb76776a",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Both deliveries explicitly depend on approval.",
+      "evidence": ["If the quarry manager approves the sample list, I will send both catalogues on Friday.", "Without that approval, neither will be sent."]
+    },
+    {
+      "id": "item_20e40d8fe7d0d15eadbbade0",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "Dispatch is described as already completed.",
+      "evidence": ["Yesterday I dispatched the accession packets for all twelve meadow collections."]
+    },
+    {
+      "id": "item_4e9553de68b2012a967129bd",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "The statement describes capability without committing to delivery.",
+      "evidence": ["I can export the piano's voicing records as a PDF.", "That describes the workshop software's capability; I have not set a delivery date."]
+    },
+    {
+      "id": "item_eae7b81554c0dab1c53b140d",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Delivery depends on survey readiness.",
+      "evidence": ["If the wind survey is ready tonight, I will get you the course sketches before tomorrow's launch."]
+    },
+    {
+      "id": "item_2c33229831b801ccfb82a9df",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "An intention alone does not assure delivery.",
+      "evidence": ["I intend to send you the voicing records on Wednesday."]
+    },
+    {
+      "id": "item_fc85e7be291289e9c829f7fb",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author directly commits to a future inventory delivery.",
+      "evidence": ["I will deliver the music-tape inventory this Friday."]
+    },
+    {
+      "id": "item_389d8fd5f6f97d9fe697d056",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Survey readiness is an unresolved delivery dependency.",
+      "evidence": ["We will send the course sketches when the wind survey is ready.", "The survey team has not finished its measurements."]
+    },
+    {
+      "id": "item_3198df5f673b6a1ebb2c90e3",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author asserts a definite handover at a scheduled event.",
+      "evidence": ["At Monday's inspection, I will hand you the acoustic certificate for bell B17."]
+    },
+    {
+      "id": "item_fd3c891c06d24675722d46da",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author's team firmly commits to delivery; the forecast concerns separate work.",
+      "evidence": ["Our archive team will deliver the western-passage map plates to you at Friday's briefing; the cartographer's forecast concerns the separate eastern survey."]
+    },
+    {
+      "id": "item_1ba6d330e1683a04c37d1b71",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The corrected statement firmly promises the reel-one cue sheet.",
+      "evidence": ["I will send the completed cue sheet for reel one on Friday."]
+    },
+    {
+      "id": "item_0e07b326cb6ece53fa838da6",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "Sandstone catalogue receipt is assured independently of the slate retraction.",
+      "evidence": ["You will receive the sandstone sample catalogue from our estimating team by noon Monday.", "The slate catalogue is no longer promised for that date."]
+    },
+    {
+      "id": "item_86988586f793abc4e6310a8c",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The briefing supplies a deadline for unconditional delivery.",
+      "evidence": ["I will deliver the regatta course sketches before the opening briefing."]
+    },
+    {
+      "id": "item_d3b46319c9dd034f15809052",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The final explicit assurance resolves the earlier plan wording.",
+      "evidence": ["Our plan is to send the concert piano's voicing log at noon on Friday.", "To be explicit, we will do so."]
+    },
+    {
+      "id": "item_7982e4ff53dff2b368c2f886",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "The author explicitly negates delivery and retracts the assurance.",
+      "evidence": ["I will not deliver the restoration cue sheets tomorrow; that earlier assurance was a mistake."]
+    },
+    {
+      "id": "item_3904c794bc8231126f77d8f9",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author's team assures future receipt of the envelopes.",
+      "evidence": ["You will receive the matching accession envelopes from our curation team by noon tomorrow."]
+    },
+    {
+      "id": "item_cdaf980f5b2f0634d3f3f84c",
+      "status": "ambiguous",
+      "label": null,
+      "category": "ambiguous",
+      "rationale": "The final reference to catalogue delivery leaves unresolved whether the condition covers only granite or also the initially firm limestone delivery.",
+      "evidence": ["Friday's handover: I will send the limestone catalogue; the granite catalogue will follow if the sample review passes.", "That condition applies to the catalogue delivery."]
+    },
+    {
+      "id": "item_ba2d940dc0f954ae4c8635fb",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author's team directly commits to delivering its concrete ledger.",
+      "evidence": ["My coordination team owns the consolidated graft ledger.", "We will deliver it to you on Monday."]
+    },
+    {
+      "id": "item_80ea4212f68d100ee43455f2",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The author records the donor's promise without adopting it.",
+      "evidence": ["The donor wrote, \"I will send the accession envelopes on Thursday.\"", "I am recording her words here so the intake desk knows what she said."]
+    },
+    {
+      "id": "item_df872fa4a3ea4cab37596b60",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author makes a new unconditional delivery commitment.",
+      "evidence": ["I will send you the final cartographic plate tomorrow morning."]
+    },
+    {
+      "id": "item_db948048a4cce3458f50251c",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "A scheduled handover is assured for the tested bell, separate from the cooling delay.",
+      "evidence": ["For the tested bell, our team will be handing over the signed acoustic certificate at 10 tomorrow."]
+    },
+    {
+      "id": "item_7489fdec86daab7e653aea24",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The explicit promise assures delivery despite possible disagreement about the annotations.",
+      "evidence": ["Still, I can promise that I will deliver the voicing records tomorrow."]
+    },
+    {
+      "id": "item_4628277d800dd7c058fff99f",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The delivery assertion belongs to the grower and is merely copied by the author.",
+      "evidence": ["She says she will deliver it on Thursday.", "I have only copied that statement into the cooperative's notes."]
+    },
+    {
+      "id": "item_8e16200c03c15cca19e7bb92",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author's team unconditionally promises future delivery of condition cards.",
+      "evidence": ["Our conservation team will send you the matching condition cards tomorrow, and the cards will include the treatment photographs."]
+    },
+    {
+      "id": "item_944342aedb49faab6c72acba",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Delivery explicitly depends on uncertain cooling progress.",
+      "evidence": ["If the bronze has cooled enough for the resonance test, we will deliver the acoustic certificate on Tuesday.", "The cooling rate is still uncertain."]
+    }
+  ]
+}

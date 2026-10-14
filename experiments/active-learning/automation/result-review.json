@@ -1,0 +1,252 @@
+{
+  "conclusion": "No candidate establishes improvement. C42 and the new compact model tie final aggregate F1/precision/recall/FP; the fixed tie-break selects C42. ModernBERT trades one fewer false positive for one fewer true positive and lower F1; DeBERTa has low recall. Compact DEV success did not carry to final.",
+  "decision": "cleared_for_local_research_delivery",
+  "limitations": [
+    "AI synthetic references are not human gold; author and reviewer sessions share one model family.",
+    "The primary final denominator is 52 binary references in 14 assigned scenario families, with four ambiguous author references retained separately. This is not customer-population accuracy or a statistical superiority result.",
+    "Scenario-tag slices describe assigned family challenges, not independently confirmed per-passage linguistic phenomena.",
+    "The native benchmark is a fixed 64-row sample of the 400-row author-hosted release, not reproduction of the paper's reported 200-row English test split.",
+    "DeBERTa covers 47/64 and ModernBERT 44/64 native rows; 13 and 16 positive abstentions respectively are included in recall denominators. Reported FN counts exclude abstentions, which have separate fields.",
+    "Pretrained-model contamination and training-data rights are not independently resolved by checkpoint hashes; ModernBERT and restricted external data remain research-only.",
+    "The earlier human audit remains unperformed and is not a gate for this authorised automated milestone."
+  ],
+  "materialFindings": [],
+  "nextAction": "Deliver the frozen comparison with its no-improvement conclusion and limitations. Preserve this run; no final-error tuning, new training round or product integration is implied.",
+  "publishedBenchmark": {
+    "deberta": {
+      "characterLimitAbstentions": 3,
+      "metrics": {
+        "abstainedNegative": 4,
+        "abstainedPositive": 13,
+        "abstentions": 17,
+        "coverage": 0.734375,
+        "f1": 0.4067796610169492,
+        "falsePositiveRate": 0.19047619047619047,
+        "fn": 18,
+        "fp": 4,
+        "n": 64,
+        "precision": 0.75,
+        "recall": 0.27906976744186046,
+        "selectiveRecall": 0.4,
+        "tn": 13,
+        "tp": 12
+      },
+      "tokenLimitAbstentions": 14
+    },
+    "hashSelectionIndependentlyRecomputed": true,
+    "modernbert": {
+      "characterLimitAbstentions": 3,
+      "metrics": {
+        "abstainedNegative": 4,
+        "abstainedPositive": 16,
+        "abstentions": 20,
+        "coverage": 0.6875,
+        "f1": 0.35714285714285715,
+        "falsePositiveRate": 0.14285714285714285,
+        "fn": 17,
+        "fp": 3,
+        "n": 64,
+        "precision": 0.7692307692307693,
+        "recall": 0.23255813953488372,
+        "selectiveRecall": 0.37037037037037035,
+        "tn": 14,
+        "tp": 10
+      },
+      "tokenLimitAbstentions": 17
+    },
+    "rawSha256": "94d60d386c772bb06681336c5351673de87e57f8b6d045a29ad9b1f1f0361d0d",
+    "sampleNo": 21,
+    "sampleRows": 64,
+    "sampleYes": 43,
+    "sourceLabelMappingVerified": true,
+    "sourceRows": 400,
+    "task": "Native ML-Promise Promise Identification, separate ESG task",
+    "trainingEligible": false
+  },
+  "reviewedAt": "2026-10-14T12:44:59.475818+00:00",
+  "reviewerRole": "Independent read-only result reviewer; no implementation ownership, new fitting, inference, relabelling or prompt tuning in this review.",
+  "runBundleSha256": "8758ec17cb83cade28e6761de02395c069a5d71c42f335e20f0b61b0c002cfdd",
+  "runId": "auto-001",
+  "schemaVersion": 1,
+  "scope": "Engineering integrity and faithful reporting of the frozen automated experiment; not human label validation, customer usefulness, production readiness or model promotion.",
+  "targetResults": {
+    "C42": {
+      "ambiguityDiagnostics": {
+        "abstentions": 0,
+        "n": 4,
+        "negative": 1,
+        "positive": 3
+      },
+      "devGatePassed": false,
+      "final": {
+        "abstainedNegative": 0,
+        "abstainedPositive": 0,
+        "abstentions": 0,
+        "coverage": 1.0,
+        "f1": 0.6341463414634146,
+        "falsePositiveRate": 0.1111111111111111,
+        "fn": 12,
+        "fp": 3,
+        "n": 52,
+        "precision": 0.8125,
+        "recall": 0.52,
+        "selectiveRecall": 0.52,
+        "tn": 24,
+        "tp": 13
+      },
+      "threshold": 0.5
+    },
+    "deberta": {
+      "ambiguityDiagnostics": {
+        "abstentions": 0,
+        "n": 4,
+        "negative": 4,
+        "positive": 0
+      },
+      "devGatePassed": false,
+      "final": {
+        "abstainedNegative": 0,
+        "abstainedPositive": 0,
+        "abstentions": 0,
+        "coverage": 1.0,
+        "f1": 0.26666666666666666,
+        "falsePositiveRate": 0.037037037037037035,
+        "fn": 21,
+        "fp": 1,
+        "n": 52,
+        "precision": 0.8,
+        "recall": 0.16,
+        "selectiveRecall": 0.16,
+        "tn": 26,
+        "tp": 4
+      },
+      "threshold": 0.5
+    },
+    "modernbert": {
+      "ambiguityDiagnostics": {
+        "abstentions": 0,
+        "n": 4,
+        "negative": 3,
+        "positive": 1
+      },
+      "devGatePassed": false,
+      "final": {
+        "abstainedNegative": 0,
+        "abstainedPositive": 0,
+        "abstentions": 0,
+        "coverage": 1.0,
+        "f1": 0.6153846153846154,
+        "falsePositiveRate": 0.07407407407407407,
+        "fn": 13,
+        "fp": 2,
+        "n": 52,
+        "precision": 0.8571428571428571,
+        "recall": 0.48,
+        "selectiveRecall": 0.48,
+        "tn": 25,
+        "tp": 12
+      },
+      "threshold": 0.5
+    },
+    "setfit-auto": {
+      "ambiguityDiagnostics": {
+        "abstentions": 0,
+        "n": 4,
+        "negative": 1,
+        "positive": 3
+      },
+      "devGatePassed": true,
+      "final": {
+        "abstainedNegative": 0,
+        "abstainedPositive": 0,
+        "abstentions": 0,
+        "coverage": 1.0,
+        "f1": 0.6341463414634146,
+        "falsePositiveRate": 0.1111111111111111,
+        "fn": 12,
+        "fp": 3,
+        "n": 52,
+        "precision": 0.8125,
+        "recall": 0.52,
+        "selectiveRecall": 0.52,
+        "tn": 24,
+        "tp": 13
+      },
+      "threshold": 0.55
+    }
+  },
+  "verification": {
+    "actors": {
+      "distinctActualSessions": 5,
+      "distinctDeclaredActorIds": 5,
+      "sameConfiguredModelFamily": "gpt-6-astra",
+      "schemaAndExactEvidenceValidated": true,
+      "sessionIdsConfirmedInRunnerLogs": true,
+      "unexpectedTools": 0
+    },
+    "annotations": {
+      "allClassifierEvidenceAndRationaleNull": true,
+      "authorAndAnnotatorExportParity": true,
+      "noSelectedNativePassageOutsideRestrictedArea": true
+    },
+    "data": {
+      "acceptedTrainAdditions": 36,
+      "allFinalRowsRetained": true,
+      "authoredTrain": 40,
+      "externalRowsInTraining": 0,
+      "fittedRows": 156,
+      "freshDev": 28,
+      "freshDevAmbiguous": 1,
+      "freshDevBinary": 27,
+      "freshFinal": 56,
+      "freshFinalAmbiguous": 4,
+      "freshFinalNegative": 27,
+      "freshFinalPositive": 25,
+      "legacyDevDiagnosticOnly": 30,
+      "originalTrain": 120,
+      "overlapAuditRecomputed": true
+    },
+    "metrics": "Independently recomputed 19-point DEV threshold curves, chosen thresholds, DEV and FINAL binary/category/scenario-tag/ambiguity/failure breakdowns, pairwise agreement, and both native PI benchmark assessments from saved scores. All exactly match.",
+    "modelIntegrity": {
+      "compactFiles": 12,
+      "debertaFiles": 9,
+      "devFinalProvenanceEqual": true,
+      "exactFileSetsVerified": true,
+      "modernbertFiles": 7,
+      "preFinalSelectionFreezeVerified": true
+    },
+    "quarantine": {
+      "cause": "Both teacher and reviewer marked item 4 ambiguous; the whole four-passage family was quarantined. All original decisions remain preserved.",
+      "group": "auto-train-stone-quarry",
+      "rows": 4
+    },
+    "resources": {
+      "allDeclaredLimitsRespected": true,
+      "maximumWatchedArtifactBytes": 777914117,
+      "networkDeniedModelJobs": 11,
+      "peakProcessTreeBytes": 1435795456,
+      "successfulJobs": 18,
+      "wallSeconds": 836.3762109279633
+    },
+    "runManifest": {
+      "bundleMapHashVerified": true,
+      "everyListedFileVerified": true,
+      "exactRunFileSetVerified": true,
+      "files": 168
+    },
+    "sourceAndPriorIntegrity": {
+      "allHashesVerified": true,
+      "encoderBundleFiles": 67,
+      "protectedPriorFiles": 438,
+      "sourceFiles": 15,
+      "teachingBundleFiles": 30
+    },
+    "training": {
+      "changedParameterTensors": 101,
+      "headMaxError": 0.0,
+      "passes": 1,
+      "savedReloadMaxError": 0.0,
+      "successfulCpuSteps": 50
+    }
+  }
+}

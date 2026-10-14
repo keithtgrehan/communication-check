@@ -2,7 +2,71 @@
 
 **Check your customer follow-up before you send it.**
 
-## Current authorised milestone — 13 October 2026
+## Current authorised milestone — automated classification, 14 October 2026
+
+Keith authorised a bounded automatic wording-classification workflow extending the
+existing encoder, teaching and active-learning implementations. No user-supplied
+examples, human labels, adjudication or human-review packets are completion gates.
+Compare preserved C42, DeBERTa zero-shot and compatible ModernBERT; one compact
+retraining pass if enough eligible synthetic data agrees. Published-label benchmarks,
+synthetic references and model agreement remain separate. Non-commercial external
+data is research-only and never enters training. Preserve all historical results,
+including the old human audit as unperformed. This is not warning-usefulness validation.
+Local implementation/experiment only; no deployment, production integration or new
+paid service. Runbook: `experiments/active-learning/automation/README.md`; observed
+results and verification are recorded in PROGRESS.md.
+
+## Previous authorised milestone — 14 October 2026
+
+**Bounded active learning:** Three fixed local SetFit rounds completed on independently
+AI-labelled fictional examples. Rounds 1/2 failed DEV; Round 3 passed DEV at 91.7%
+precision/73.3% recall, versus C42 90.9%/66.7%. Its model/threshold were frozen before
+fresh final authoring. Scenario-reuse exclusions left 76 of 120 references, below
+fixed coverage, so the protocol stopped before final predictions. Independent final
+performance is inconclusive; no research reliability gate is established.
+Full evidence: `experiments/active-learning/artifacts/AUDIT_REPORT.md`. Human audit
+is pending; independent result review passed and the aggregate handoff was acknowledged. Original data/models,
+prior results and production remain intact. No integration or release authority.
+
+## Completed teaching workflow — 14 October 2026
+
+**Reusable LLM teaching:** The previous milestone delivered a working Codex teacher →
+independent label review → local SetFit training workflow in
+`experiments/llm-teaching/README.md`. One real 40-example batch yielded 36 accepted
+TRAIN additions and four quarantined family members. The candidate trained locally
+on 156 rows; all original TRAIN/DEV records were preserved. On the same 30 DEV rows,
+it detected 10/15 positives with two false positives versus the baseline's one.
+Both fail the development target; this round did not improve quality. The workflow
+is reusable, not an automatic improvement/promotion system. Labels are AI judgments;
+no fresh test was run or historical heldout reused. Prediction and training passed
+with networking blocked. No app/release changes. The best next product step remains
+human review of useful feedback rather than repeated synthetic tuning.
+
+## Completed comparison — 14 October 2026
+
+**Local encoder comparison:** Keith authorised an isolated comparison of TF-IDF,
+frozen MiniLM and SetFit-adapted MiniLM on the same audited fictional development
+data, with a fresh independent synthetic evaluation. The concrete design passed
+product and engineering review before training. This is wording-recognition
+research, not useful-finding validation. No app changes, browser export, deployment,
+paid compute or model publication. The completed frozen synthetic comparison found
+C42 detected 27/30 positives with 6/30 false positives versus TF-IDF 27/30 with 11/30.
+C42 precision 81.8% remains below target; all development/research gates failed.
+All three SetFit seeds trained locally and were reported. Product and engineering
+reviews approve the research package, reject integration. Prior artifacts and
+historical heldouts remain preserved. Runbook: experiments/encoder-comparison/README.md.
+See PROGRESS.md for validation and the next human rubric-review decision.
+
+## Previous authorised milestone — 13 October 2026
+
+**Local classifier research:** Keith authorised a four-role plan/review/build pass
+of up to 30 minutes to investigate learned commitment-wording recognition without
+runtime LLM calls. The approved plan is in IMPLEMENTATION_PLAN.md. The isolated
+training/evaluation package and browser lab are implemented; the candidate failed
+its research criterion and must not be integrated into the shipped checker.
+Fictional agent-labelled data is exploratory evidence,
+not human validation. This narrowly supersedes the prior research stop; historical
+heldouts, the production app and its privacy contract remain preserved.
 
 **Video Demo update released:** Keith authorised the supplied manual HubSpot–n8n
 explanation and production deployment. Source `049bbcd` is live; existing video

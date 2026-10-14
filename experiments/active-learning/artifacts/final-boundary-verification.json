@@ -1,0 +1,11 @@
+{
+  "candidateFrozenBeforeFinalAuthoring": true,
+  "finalWorkerRequests": 0,
+  "noFinalEvaluationMarker": true,
+  "passed": true,
+  "rawFinalPassageLeakFiles": [],
+  "scope": "full final passage strings in new package text artifacts; no claim about external system retention",
+  "sharedTextFilesScanned": 247,
+  "trainingHumanSamples": "all three size4 with both labels",
+  "trainingWorkerRequests": 3
+}

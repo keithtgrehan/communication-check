@@ -1,0 +1,22 @@
+{
+  "initialDependencyFix": "Pinned pyarrow19.0.1 and pandas2.2.3 before fitting because latest pyarrow26 required NumPy2 despite successful dependency resolution.",
+  "firstTrainingAttempt": {
+    "issue": "SetFit internal trainer selected MPS despite CPU model load; parameter-device verification failed after50 encoderupdates and before C development scoring/export.",
+    "retained": "A/B artifacts under ignored attempts/mps-device-mismatch/models. No C artifact was exported.",
+    "resolution": "Force underlying supported use_cpu=True at inner trainer construction and assert actual CPU device before fitting. All recipes,data,seeds and thresholds unchanged; refit on specified CPU."
+  },
+  "secondTrainingAttempt": {
+    "issue": "Underlying training args and parameters CPU but Accelerate device remained MPS; failed embedding forward with Placeholder storage has not been allocated on MPS device. TRAIN-only diagnostic confirmed zero completed updates.",
+    "resolution": "ACCELERATE_USE_CPU=true before imports plus explicit assertions for underlying arguments, accelerator and actual model parameter devices. Preserve A/B outputs; no C development evaluation or export."
+  },
+  "cpuConfirmationSmoke": {
+    "source": "Two TRAIN rows only, one per class; separate in-memory model never reused for candidate fitting.",
+    "completedOptimizationSteps": 1,
+    "devices": {
+      "arguments": "cpu",
+      "accelerator": "cpu",
+      "parameters": "cpu"
+    },
+    "recipeChanges": "None; full candidates restart immutable pretrained checkpoint and declared seeds."
+  }
+}

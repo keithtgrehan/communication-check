@@ -1,0 +1,1 @@
+Independently label every packet.json item using only rubric.md. Use review.schema.json and the exact hashes in binding.json. Do not open the proposal file or infer family groupings. Save and hash one complete review before comparison. Your actorId must differ from the teacher. State requested-versus-verified model provenance honestly.

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-14",
+  "run": "auto-001",
+  "newTests": 42,
+  "existingTests": {
+    "activeLearning": 93,
+    "llmTeaching": 12,
+    "encoderComparison": 13
+  },
+  "totalUniqueTests": 160,
+  "dependencyChecks": {
+    "existingSetFit": "passed",
+    "isolatedNli": "passed"
+  },
+  "actualWorkflowStatus": "completed",
+  "networkControl": {
+    "allowedLoopbackControl": true,
+    "deniedControl": true
+  },
+  "integrity": {
+    "baselineBundlesVerified": true,
+    "protectedFilesVerified": 438,
+    "sourcesVerified": 15
+  },
+  "runManifest": "8758ec17cb83cade28e6761de02395c069a5d71c42f335e20f0b61b0c002cfdd",
+  "metricReproduction": "pipeline verify passed",
+  "sourceChangedAfterRunStart": false,
+  "appOrProductionChanged": false,
+  "historicalHumanAudit": "unperformed; not a gate",
+  "limitsReview": "Independent reviewer exercised model tamper, live storage kill and expired deadline controls before run.",
+  "independentResultReview": "cleared; result-review.json / result-review.md"
+}

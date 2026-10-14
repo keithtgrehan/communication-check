@@ -1,0 +1,23 @@
+{
+  "frozenFilesVerified": 14,
+  "deterministicRetrain": true,
+  "modelSha256": "618678e5c9437e090bdcd0f0ebadd80b695306c979927032509bdcc04288d8be",
+  "bundleSha256": "5c4f9073d7953f9b6ca233562eedc73c208eadb97c29ab1511fea6b87020ddd3",
+  "independentCodeReview": "Lead acting as senior engineering reviewer; classifier implementation owned by separate agent.",
+  "scope": "Research software delivery only; failed model acceptance, no app integration.",
+  "existingApplicationChecks": {
+    "setup": 8,
+    "unit": 466,
+    "browser": 94,
+    "typecheck": true,
+    "buildAndSourceGuards": true
+  },
+  "additionalIndependentChecks": {
+    "cancelReplacementPreservesText": true,
+    "acceptReplacementLoadsExampleWithoutClassifying": true,
+    "keyboardClassifyAndSelection": true,
+    "clearResetsInput": true,
+    "cookiesEmpty": true,
+    "desktopMobileScreenshotsInspected": true
+  }
+}

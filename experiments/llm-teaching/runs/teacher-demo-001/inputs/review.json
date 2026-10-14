@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "batchId": "teacher-demo-001",
+  "batchSha256": "e4a6b748580595083a6b949a6cf86f568c1743eced2037fb6d917a0298d7cca5",
+  "packetSha256": "3955391be854112053e51520a73a4c9b47c714443667e348201b0265baa70461",
+  "reviewer": {
+    "actorId": "senior_product_reviewer",
+    "model": "Codex AI agent; requested gpt-6-astra, actual runtime identifier not independently verified"
+  },
+  "decisions": [
+    {
+      "id": "review_9fea601d25a1f7895ced",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author directly asserts future delivery of a concrete draft without a qualification."
+    },
+    {
+      "id": "review_66ac5150199804235f39",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation directly undertakes to supply a concrete log in a future period."
+    },
+    {
+      "id": "review_95f39bb26916f1f791f4",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "This asks the recipient to make a register available; it is not the author promising delivery."
+    },
+    {
+      "id": "review_1a1e8b8fb14ff73afaa8",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author explicitly guarantees that an author-owned work item will reach the recipient by a future deadline."
+    },
+    {
+      "id": "review_99df03215bd67ac31446",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation gives an explicit assurance of future sharing of a concrete draft."
+    },
+    {
+      "id": "review_0c7072593973c1121967",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The sentence attributes the delivery statement to another person and her team."
+    },
+    {
+      "id": "review_516fa6a8102dd0024682",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation identifies its engineering team as the owner of an unqualified future delivery."
+    },
+    {
+      "id": "review_45ad8affd8f650786017",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The delivery assertion occurs inside an earlier message quoted by the customer, not a current author undertaking."
+    },
+    {
+      "id": "review_ce375bbbfabfd849a5a7",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author states a definite plan to hand over a concrete runbook at a future meeting."
+    },
+    {
+      "id": "review_60dc28e60b5ccfe8610b",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation expressly commits its finance team to delivering a concrete sheet tomorrow."
+    },
+    {
+      "id": "review_ae98fa20fdd8f2ac171c",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation directly asserts a future package handover; the call specifies timing rather than a delivery condition."
+    },
+    {
+      "id": "review_5821a6e64de50deb60f9",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The passive construction explicitly assigns future delivery of the runbook to the author team."
+    },
+    {
+      "id": "review_879afc698337892327c1",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Calling the arrival an estimate qualifies the prospective delivery rather than asserting it firmly."
+    },
+    {
+      "id": "review_8b2cd8506e3172118942",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "Present-progressive wording with tomorrow states an unqualified future delivery by the author organisation."
+    },
+    {
+      "id": "review_0883f077fbc3bed355ff",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "This explicitly negates the author organisation sending the agenda; it does not state a delivery intention."
+    },
+    {
+      "id": "review_9e025a0f8276e3a71b84",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The prospective delivery is quoted from a forwarded note, not adopted as a current author promise."
+    },
+    {
+      "id": "review_d2c1bd47806adc5b88e8",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "The question asks the recipient organisation to supply its log."
+    },
+    {
+      "id": "review_f2255c7a18962b432b01",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author explicitly promises that a concrete summary will be received from the author organisation before an event."
+    },
+    {
+      "id": "review_4af600f9bbfe78be469a",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "The author asks the recipient to send a worksheet."
+    },
+    {
+      "id": "review_4401ee4e54229bdd91d4",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author team is explicitly the source of a concrete glossary going out at a future time."
+    },
+    {
+      "id": "review_f2115bd5ec82005f3da5",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author asserts future sharing of a complete agenda; the fronted event phrase sets the deadline."
+    },
+    {
+      "id": "review_8cc87c55c8f6384894f3",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author directly undertakes to deliver the sheet to the recipient inbox by a future deadline."
+    },
+    {
+      "id": "review_d077cc0503960fa8d7ae",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "This describes a diary record of an earlier promise, rather than making a current delivery assertion."
+    },
+    {
+      "id": "review_ab6e5e5cd6a97e18b969",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "The sentence describes a completed delivery, not a prospective one."
+    },
+    {
+      "id": "review_9d57e56b9907f48ff121",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "The author explicitly withholds a firm promise about future delivery. It leaves delivery uncertain rather than asserting that no delivery will happen."
+    },
+    {
+      "id": "review_febe2560bb523f23aa0d",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "Counterfactual ownership describes a hypothetical action rather than a current future delivery plan or undertaking."
+    },
+    {
+      "id": "review_f9b42d8425235f625f16",
+      "status": "clear",
+      "label": 0,
+      "category": "reported",
+      "rationale": "The sentence reports an earlier promise recorded in account history."
+    },
+    {
+      "id": "review_35b0ff3ed3f8e75835da",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Future upload is expressly conditional on translator sign-off."
+    },
+    {
+      "id": "review_6f6d726f51e6fedeab94",
+      "status": "clear",
+      "label": 0,
+      "category": "other",
+      "rationale": "The handover is described as already completed before a past call."
+    },
+    {
+      "id": "review_a6821c8563b65ae34384",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation explicitly commits to future provision of a concrete register."
+    },
+    {
+      "id": "review_dc2e7f4477b754ee9651",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author unconditionally states that the completed register will be made available tomorrow."
+    },
+    {
+      "id": "review_5e6f97a234209282ceb4",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "This requests a glossary upload from the recipient team."
+    },
+    {
+      "id": "review_6e937ce4cedd82dd32f3",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author explicitly promises a future glossary upload."
+    },
+    {
+      "id": "review_d7222b19d0d2d0b37fa6",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "The author describes an aim rather than an unqualified commitment to deliver the sheet."
+    },
+    {
+      "id": "review_9fe1392a867f6bb85a9a",
+      "status": "clear",
+      "label": 0,
+      "category": "request",
+      "rationale": "This is an imperative asking the recipient to deliver a sheet."
+    },
+    {
+      "id": "review_c61b42ed3336df0e723e",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "Delivery remains pending a billing review, which makes the undertaking conditional."
+    },
+    {
+      "id": "review_6cd378bd71cdbca468bf",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The recipient is told that a concrete package will arrive from the author at a future time."
+    },
+    {
+      "id": "review_bfaa9515553c919fa5f1",
+      "status": "clear",
+      "label": 0,
+      "category": "qualified_delivery",
+      "rationale": "The author organisation states an expectation, which is tentative rather than an unqualified delivery assertion."
+    },
+    {
+      "id": "review_50089abdc3618ac35dc6",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author organisation explicitly undertakes to send a concrete worksheet tomorrow."
+    },
+    {
+      "id": "review_bd19f22c0f3e7c02009c",
+      "status": "clear",
+      "label": 1,
+      "category": "firm_delivery",
+      "rationale": "The author explicitly identifies themselves as the source of a concrete future worksheet delivery."
+    }
+  ]
+}

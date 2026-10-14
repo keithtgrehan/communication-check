@@ -1,0 +1,58 @@
+{
+  "verifiedAtUtc": "2026-10-13T22:24:21Z",
+  "checks": [
+    {
+      "candidate": "A",
+      "offlinePredictionPassed": true,
+      "inputNotEchoed": true
+    },
+    {
+      "candidate": "B",
+      "offlinePredictionPassed": true,
+      "inputNotEchoed": true
+    },
+    {
+      "candidate": "C42",
+      "offlinePredictionPassed": true,
+      "inputNotEchoed": true
+    },
+    {
+      "candidate": "C43",
+      "offlinePredictionPassed": true,
+      "inputNotEchoed": true
+    },
+    {
+      "candidate": "C44",
+      "offlinePredictionPassed": true,
+      "inputNotEchoed": true
+    },
+    {
+      "rejection": "empty",
+      "passed": true
+    },
+    {
+      "rejection": "tokens",
+      "passed": true
+    },
+    {
+      "rejection": "utf16",
+      "passed": true
+    }
+  ],
+  "artifactFilesUnchangedByPrediction": 86,
+  "noCanaryInArtifactText": true,
+  "protectedOriginalFilesUnchanged": 55,
+  "osNetworkPolicy": "(version 1)(allow default)(deny network*)",
+  "networkDenialWitness": "Separate socket connect rejected with PermissionError errno 1",
+  "realTokenizerBoundary": {
+    "acceptedIncludingSpecials": 256,
+    "rejectedIncludingSpecials": 257
+  },
+  "applicationChecks": {
+    "setupTests": 8,
+    "unitTests": 466,
+    "typecheckBuildSourceGuards": "passed",
+    "browserTests": "not rerun; application source unchanged"
+  },
+  "limitations": "Checks apply to these local commands and inspected files, not arbitrary host software. No human validation."
+}

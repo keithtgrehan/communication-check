@@ -1,0 +1,11 @@
+{
+  "tests": {
+    "count": 93,
+    "passed": true,
+    "command": "experiments/encoder-comparison/.venv/bin/python -B -m unittest discover -s experiments/active-learning/tests -q"
+  },
+  "dependencies": "pip check: No broken requirements found.",
+  "sandbox": "require_network_denial passed under actual macOS sandbox for inbound and outbound; connection positive/negative controls in preflight-runtime.json",
+  "experimentStarted": false,
+  "timestamp": 1791963935.231402
+}

@@ -1,0 +1,367 @@
+{
+  "exampleIds": [
+    "al-p005",
+    "al-p006",
+    "al-p007",
+    "al-p008",
+    "al-p025",
+    "al-p026",
+    "al-p027",
+    "al-p028",
+    "al-p029",
+    "al-p030",
+    "al-p031",
+    "al-p032",
+    "al-p057",
+    "al-p058",
+    "al-p059",
+    "al-p060",
+    "al-p077",
+    "al-p078",
+    "al-p079",
+    "al-p080",
+    "al-p097",
+    "al-p098",
+    "al-p099",
+    "al-p100",
+    "al-p105",
+    "al-p106",
+    "al-p107",
+    "al-p108",
+    "al-p213",
+    "al-p214",
+    "al-p215",
+    "al-p216",
+    "al-p221",
+    "al-p222",
+    "al-p223",
+    "al-p224",
+    "al-p241",
+    "al-p242",
+    "al-p243",
+    "al-p244"
+  ],
+  "fallbackUncertaintyFamilies": 0,
+  "groups": {
+    "al-g002": "random",
+    "al-g007": "disagreement",
+    "al-g008": "disagreement",
+    "al-g015": "uncertainty",
+    "al-g020": "uncertainty",
+    "al-g025": "disagreement",
+    "al-g027": "disagreement",
+    "al-g054": "uncertainty",
+    "al-g056": "disagreement",
+    "al-g061": "random"
+  },
+  "poolHash": "6958d2bcf43a8f05bfe2ad9a1f5164cc2d2872f060cd95705a5a6455a1e95b79",
+  "roundNumber": 1,
+  "scoringCandidate": "C42",
+  "stats": {
+    "al-g001": {
+      "disagreements": 3,
+      "distance": 0.014483112012265154
+    },
+    "al-g002": {
+      "disagreements": 1,
+      "distance": 0.017402002899805313
+    },
+    "al-g003": {
+      "disagreements": 2,
+      "distance": 0.022249537055329838
+    },
+    "al-g004": {
+      "disagreements": 1,
+      "distance": 0.04904212573801514
+    },
+    "al-g005": {
+      "disagreements": 2,
+      "distance": 0.004007552291172778
+    },
+    "al-g006": {
+      "disagreements": 2,
+      "distance": 0.056874642868401715
+    },
+    "al-g007": {
+      "disagreements": 3,
+      "distance": 0.00249828604658231
+    },
+    "al-g008": {
+      "disagreements": 3,
+      "distance": 0.0034843168471478947
+    },
+    "al-g009": {
+      "disagreements": 1,
+      "distance": 0.02044950089576958
+    },
+    "al-g010": {
+      "disagreements": 0,
+      "distance": 0.014629428774410869
+    },
+    "al-g011": {
+      "disagreements": 1,
+      "distance": 0.03833548214298238
+    },
+    "al-g012": {
+      "disagreements": 1,
+      "distance": 0.06300582094416779
+    },
+    "al-g013": {
+      "disagreements": 2,
+      "distance": 0.02795947814804456
+    },
+    "al-g014": {
+      "disagreements": 2,
+      "distance": 0.05492603192273898
+    },
+    "al-g015": {
+      "disagreements": 0,
+      "distance": 0.003025903233359717
+    },
+    "al-g016": {
+      "disagreements": 1,
+      "distance": 0.07213413397303814
+    },
+    "al-g017": {
+      "disagreements": 2,
+      "distance": 0.04301342309237871
+    },
+    "al-g018": {
+      "disagreements": 3,
+      "distance": 0.04049246699080972
+    },
+    "al-g019": {
+      "disagreements": 2,
+      "distance": 0.005462437704007228
+    },
+    "al-g020": {
+      "disagreements": 1,
+      "distance": 0.0012779466470567158
+    },
+    "al-g021": {
+      "disagreements": 1,
+      "distance": 0.06111751130912879
+    },
+    "al-g022": {
+      "disagreements": 2,
+      "distance": 0.004647598761561178
+    },
+    "al-g023": {
+      "disagreements": 1,
+      "distance": 0.10566416712612486
+    },
+    "al-g024": {
+      "disagreements": 0,
+      "distance": 0.06865635601385256
+    },
+    "al-g025": {
+      "disagreements": 3,
+      "distance": 0.047202862231050524
+    },
+    "al-g026": {
+      "disagreements": 2,
+      "distance": 0.0450088082557083
+    },
+    "al-g027": {
+      "disagreements": 3,
+      "distance": 0.0302220406863683
+    },
+    "al-g028": {
+      "disagreements": 1,
+      "distance": 0.030772730805732174
+    },
+    "al-g029": {
+      "disagreements": 1,
+      "distance": 0.05885653171376587
+    },
+    "al-g030": {
+      "disagreements": 2,
+      "distance": 0.04214853763687032
+    },
+    "al-g031": {
+      "disagreements": 1,
+      "distance": 0.009513421697177726
+    },
+    "al-g032": {
+      "disagreements": 2,
+      "distance": 0.00445051223253079
+    },
+    "al-g033": {
+      "disagreements": 0,
+      "distance": 0.004044618610061224
+    },
+    "al-g034": {
+      "disagreements": 1,
+      "distance": 0.028136356425383813
+    },
+    "al-g035": {
+      "disagreements": 2,
+      "distance": 0.1068264136379457
+    },
+    "al-g036": {
+      "disagreements": 1,
+      "distance": 0.021378267758875635
+    },
+    "al-g037": {
+      "disagreements": 2,
+      "distance": 0.006846728098818977
+    },
+    "al-g038": {
+      "disagreements": 2,
+      "distance": 0.05239548860388438
+    },
+    "al-g039": {
+      "disagreements": 1,
+      "distance": 0.030683562677189802
+    },
+    "al-g040": {
+      "disagreements": 1,
+      "distance": 0.004247800064253626
+    },
+    "al-g041": {
+      "disagreements": 0,
+      "distance": 0.007300553542439969
+    },
+    "al-g042": {
+      "disagreements": 1,
+      "distance": 0.09048432612140789
+    },
+    "al-g043": {
+      "disagreements": 1,
+      "distance": 0.003503749871346329
+    },
+    "al-g044": {
+      "disagreements": 1,
+      "distance": 0.02978932164103426
+    },
+    "al-g045": {
+      "disagreements": 1,
+      "distance": 0.028153936225920217
+    },
+    "al-g046": {
+      "disagreements": 0,
+      "distance": 0.026480238690438918
+    },
+    "al-g047": {
+      "disagreements": 1,
+      "distance": 0.0310117102385985
+    },
+    "al-g048": {
+      "disagreements": 1,
+      "distance": 0.13026033611727827
+    },
+    "al-g049": {
+      "disagreements": 2,
+      "distance": 0.04082829372686414
+    },
+    "al-g050": {
+      "disagreements": 2,
+      "distance": 0.035044429973402624
+    },
+    "al-g051": {
+      "disagreements": 2,
+      "distance": 0.022576385944538924
+    },
+    "al-g052": {
+      "disagreements": 1,
+      "distance": 0.09618343369027815
+    },
+    "al-g053": {
+      "disagreements": 1,
+      "distance": 0.01514469354353809
+    },
+    "al-g054": {
+      "disagreements": 1,
+      "distance": 0.001771462926334122
+    },
+    "al-g055": {
+      "disagreements": 1,
+      "distance": 0.014580712304533616
+    },
+    "al-g056": {
+      "disagreements": 3,
+      "distance": 0.0017294932982924172
+    },
+    "al-g057": {
+      "disagreements": 2,
+      "distance": 0.05948558021597028
+    },
+    "al-g058": {
+      "disagreements": 2,
+      "distance": 0.010428186390547323
+    },
+    "al-g059": {
+      "disagreements": 0,
+      "distance": 0.019388351809184745
+    },
+    "al-g060": {
+      "disagreements": 1,
+      "distance": 0.012585741767437209
+    },
+    "al-g061": {
+      "disagreements": 2,
+      "distance": 0.014880619607521628
+    },
+    "al-g062": {
+      "disagreements": 2,
+      "distance": 0.020730912057368267
+    },
+    "al-g063": {
+      "disagreements": 1,
+      "distance": 0.010046254507749652
+    },
+    "al-g064": {
+      "disagreements": 0,
+      "distance": 0.022071247487535806
+    },
+    "al-g065": {
+      "disagreements": 2,
+      "distance": 0.01239733078150873
+    },
+    "al-g066": {
+      "disagreements": 2,
+      "distance": 0.012171366704058051
+    },
+    "al-g067": {
+      "disagreements": 2,
+      "distance": 0.0031983304974015914
+    },
+    "al-g068": {
+      "disagreements": 2,
+      "distance": 0.009149901239125902
+    },
+    "al-g069": {
+      "disagreements": 2,
+      "distance": 0.02190358969244066
+    },
+    "al-g070": {
+      "disagreements": 2,
+      "distance": 0.06546773591296823
+    },
+    "al-g071": {
+      "disagreements": 1,
+      "distance": 0.005107196941754655
+    },
+    "al-g072": {
+      "disagreements": 2,
+      "distance": 0.030361404788748825
+    },
+    "al-g073": {
+      "disagreements": 2,
+      "distance": 0.021794720708306847
+    },
+    "al-g074": {
+      "disagreements": 1,
+      "distance": 0.02716157213857462
+    },
+    "al-g075": {
+      "disagreements": 1,
+      "distance": 0.06295861874757591
+    }
+  },
+  "thresholds": {
+    "A": 0.5,
+    "B": 0.5,
+    "current": 0.5
+  }
+}

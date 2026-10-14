@@ -1,0 +1,12 @@
+{
+  "campaign": "/Users/keith/Developer/communication-check/experiments/active-learning/campaigns/active-001",
+  "campaignSha256": "e1b9d9c7225557d2914dd1044d9057719251b59c8ee1dfaeba9b5b47922e489a",
+  "deadline": 1791965302.979958,
+  "jobId": "train-1791964702979874000",
+  "operation": "train",
+  "output": "/Users/keith/Developer/communication-check/experiments/active-learning/campaigns/active-001/rounds/round-2/dev-report.json",
+  "payload": {
+    "data": "/Users/keith/Developer/communication-check/experiments/active-learning/campaigns/active-001/rounds/round-2/data.json",
+    "run": "/Users/keith/Developer/communication-check/experiments/active-learning/campaigns/active-001/rounds/round-2"
+  }
+}

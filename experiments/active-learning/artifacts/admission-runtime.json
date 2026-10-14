@@ -1,0 +1,57 @@
+{
+  "admissions": [
+    {
+      "admitted": false,
+      "reason": "empty",
+      "utf16Units": 0,
+      "tokens": null
+    },
+    {
+      "admitted": false,
+      "reason": "empty",
+      "utf16Units": 0,
+      "tokens": null
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "utf16Units": 1270,
+      "tokens": 256
+    },
+    {
+      "admitted": false,
+      "reason": "token_limit",
+      "utf16Units": 1275,
+      "tokens": 257
+    },
+    {
+      "admitted": false,
+      "reason": "character_limit",
+      "utf16Units": 2001,
+      "tokens": null
+    },
+    {
+      "admitted": false,
+      "reason": "character_limit",
+      "utf16Units": 2002,
+      "tokens": null
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "utf16Units": 41,
+      "tokens": 10
+    }
+  ],
+  "priorIntegrity": {
+    "encoder": {
+      "bundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "files": 67
+    },
+    "teaching": {
+      "bundleSha256": "35b3a7066873c6c5a5ce57cad255cecbfe228fa0750027c271e67fcd1560a51c",
+      "files": 30
+    }
+  },
+  "osNetworkDenied": true
+}

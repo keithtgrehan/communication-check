@@ -1,0 +1,488 @@
+{
+  "history": [
+    {
+      "path": "/Users/keith/Developer/communication-check/experiments/encoder-comparison/data/train-dev.json",
+      "rows": 150,
+      "sha256": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468"
+    },
+    {
+      "path": "/Users/keith/Developer/communication-check/experiments/active-learning/campaigns/active-001/pool/raw.json",
+      "rows": 300,
+      "sha256": "9e922a2853918800360b5036c68d818f7dc0f82b556451ca59c4f1f73685249f"
+    },
+    {
+      "path": "/Users/keith/Developer/communication-check/experiments/llm-teaching/inbox/teacher-demo-001/proposals.json",
+      "rows": 40,
+      "sha256": "e4a6b748580595083a6b949a6cf86f568c1743eced2037fb6d917a0298d7cca5"
+    },
+    {
+      "path": "/Users/keith/Developer/communication-check/experiments/llm-teaching/runs/teacher-demo-001/inputs/proposal.json",
+      "rows": 40,
+      "sha256": "e4a6b748580595083a6b949a6cf86f568c1743eced2037fb6d917a0298d7cca5"
+    }
+  ],
+  "isolation": "Separate actor sessions, same gpt-6-astra model family; procedural separation only",
+  "labels": "Synthetic AI reference labels; never human validation",
+  "moduleSha256": "483c85f68651060e563bdc3ca13b9edde0f25af490430e564c582576ba726007",
+  "protocolSha256": "64014ceca118168b8a885d0a40a742f658b04c7d15487c7b683115c3ce630cfe",
+  "rubricSha256": "e04af16f9d0ab3b5683bd4b8ec7b7e9315237026d7496e536c048674b82d4fe3",
+  "scenarioPlan": {
+    "dev": [
+      {
+        "discourse": "A field editor embeds quoted assurances in meeting recollections and separately adopts a concrete future delivery.",
+        "domain": "Lichen atlas specimen plates",
+        "group": "auto-dev-lichen-atlas",
+        "ids": [
+          "auto-dev-lichen-atlas-1",
+          "auto-dev-lichen-atlas-2",
+          "auto-dev-lichen-atlas-3",
+          "auto-dev-lichen-atlas-4"
+        ],
+        "tags": [
+          "attribution"
+        ]
+      },
+      {
+        "discourse": "A stage supervisor separates completed rigging from diagram delivery and a request to the recipient.",
+        "domain": "Marionette theatre rigging diagrams",
+        "group": "auto-dev-marionette",
+        "ids": [
+          "auto-dev-marionette-1",
+          "auto-dev-marionette-2",
+          "auto-dev-marionette-3",
+          "auto-dev-marionette-4"
+        ],
+        "tags": [
+          "past_action",
+          "request"
+        ]
+      },
+      {
+        "discourse": "An inspector distinguishes definite receipt before a reopening from delivery conditional on draining a chamber.",
+        "domain": "Historic canal-lock inspection folios",
+        "group": "auto-dev-canal-lock",
+        "ids": [
+          "auto-dev-canal-lock-1",
+          "auto-dev-canal-lock-2",
+          "auto-dev-canal-lock-3",
+          "auto-dev-canal-lock-4"
+        ],
+        "tags": [
+          "conditional_delivery"
+        ]
+      },
+      {
+        "discourse": "A registrar contrasts a colleague\u2019s promise, a negated dispatch, and first-person custody-card assurance.",
+        "domain": "Meteorite collection custody cards",
+        "group": "auto-dev-meteorite",
+        "ids": [
+          "auto-dev-meteorite-1",
+          "auto-dev-meteorite-2",
+          "auto-dev-meteorite-3",
+          "auto-dev-meteorite-4"
+        ],
+        "tags": [
+          "attribution",
+          "negation"
+        ]
+      },
+      {
+        "discourse": "A transcriber qualifies the schedule, then either explicitly resolves it or leaves a dependency unresolved.",
+        "domain": "Braille music score proofs",
+        "group": "auto-dev-braille-score",
+        "ids": [
+          "auto-dev-braille-score-1",
+          "auto-dev-braille-score-2",
+          "auto-dev-braille-score-3",
+          "auto-dev-braille-score-4"
+        ],
+        "tags": [
+          "conditional_delivery",
+          "explicit_assurance"
+        ]
+      },
+      {
+        "discourse": "A survey lead contrasts hypothetical overlays and bare capability with an explicit can-promise assurance.",
+        "domain": "Salt-marsh transect overlays",
+        "group": "auto-dev-salt-marsh",
+        "ids": [
+          "auto-dev-salt-marsh-1",
+          "auto-dev-salt-marsh-2",
+          "auto-dev-salt-marsh-3",
+          "auto-dev-salt-marsh-4"
+        ],
+        "tags": [
+          "explicit_assurance"
+        ]
+      },
+      {
+        "discourse": "A workshop dispatcher mixes a request and past work with a distinct unqualified schedule handover.",
+        "domain": "Heritage tram depot winding schedules",
+        "group": "auto-dev-tram-depot",
+        "ids": [
+          "auto-dev-tram-depot-1",
+          "auto-dev-tram-depot-2",
+          "auto-dev-tram-depot-3",
+          "auto-dev-tram-depot-4"
+        ],
+        "tags": [
+          "request",
+          "past_action",
+          "mixed"
+        ]
+      }
+    ],
+    "final": [
+      {
+        "discourse": "Nested attribution: a producer reports a technician quoting the author, then either adopts or declines that promise.",
+        "domain": "Planetarium projection calibration cards",
+        "group": "auto-final-planetarium",
+        "ids": [
+          "auto-final-planetarium-1",
+          "auto-final-planetarium-2",
+          "auto-final-planetarium-3",
+          "auto-final-planetarium-4"
+        ],
+        "tags": [
+          "attribution"
+        ]
+      },
+      {
+        "discourse": "Negation scope: deny a recipient action or an earlier date while separately assuring or negating actual delivery.",
+        "domain": "Lace-guild pattern plates",
+        "group": "auto-final-lace-guild",
+        "ids": [
+          "auto-final-lace-guild-1",
+          "auto-final-lace-guild-2",
+          "auto-final-lace-guild-3",
+          "auto-final-lace-guild-4"
+        ],
+        "tags": [
+          "negation"
+        ]
+      },
+      {
+        "discourse": "Distinguish a tide-based deadline from a genuine dependency; include an unresolved conditional assurance.",
+        "domain": "Harbour buoy lamp test dossiers",
+        "group": "auto-final-harbour-buoy",
+        "ids": [
+          "auto-final-harbour-buoy-1",
+          "auto-final-harbour-buoy-2",
+          "auto-final-harbour-buoy-3",
+          "auto-final-harbour-buoy-4"
+        ],
+        "tags": [
+          "conditional_delivery"
+        ]
+      },
+      {
+        "discourse": "A completed casting and historical promise surround a request, contrasted with a present future handover.",
+        "domain": "Fossil-casting mould transfer sheets",
+        "group": "auto-final-fossil-cast",
+        "ids": [
+          "auto-final-fossil-cast-1",
+          "auto-final-fossil-cast-2",
+          "auto-final-fossil-cast-3",
+          "auto-final-fossil-cast-4"
+        ],
+        "tags": [
+          "past_action",
+          "request"
+        ]
+      },
+      {
+        "discourse": "A schedule intention is explicitly resolved in one discourse and only repeated as an expectation in another.",
+        "domain": "Solar-observatory shutter timing plots",
+        "group": "auto-final-observatory",
+        "ids": [
+          "auto-final-observatory-1",
+          "auto-final-observatory-2",
+          "auto-final-observatory-3",
+          "auto-final-observatory-4"
+        ],
+        "tags": [
+          "explicit_assurance"
+        ]
+      },
+      {
+        "discourse": "A promise to ask someone to deliver differs from a direct assurance that the author\u2019s team will supply the slips.",
+        "domain": "Rare-book bindery collation slips",
+        "group": "auto-final-bookbindery",
+        "ids": [
+          "auto-final-bookbindery-1",
+          "auto-final-bookbindery-2",
+          "auto-final-bookbindery-3",
+          "auto-final-bookbindery-4"
+        ],
+        "tags": [
+          "attribution",
+          "request"
+        ]
+      },
+      {
+        "discourse": "Bare ability, explicit can-promise assurance, permission, and a concrete future tracing handover.",
+        "domain": "Stained-glass kiln batch tracings",
+        "group": "auto-final-glassworks",
+        "ids": [
+          "auto-final-glassworks-1",
+          "auto-final-glassworks-2",
+          "auto-final-glassworks-3",
+          "auto-final-glassworks-4"
+        ],
+        "tags": [
+          "explicit_assurance"
+        ]
+      },
+      {
+        "discourse": "Recipient receipt is assured despite no will-deliver phrase; compare recipient requests and third-party predictions.",
+        "domain": "Wildlife acoustic recorder call indexes",
+        "group": "auto-final-wildlife-acoustic",
+        "ids": [
+          "auto-final-wildlife-acoustic-1",
+          "auto-final-wildlife-acoustic-2",
+          "auto-final-wildlife-acoustic-3",
+          "auto-final-wildlife-acoustic-4"
+        ],
+        "tags": [
+          "explicit_assurance",
+          "request"
+        ]
+      },
+      {
+        "discourse": "Past perfect and future perfect in a multi-sentence handover; avoid treating completed laboratory work as delivery.",
+        "domain": "Dredge sediment microscopy contact sheets",
+        "group": "auto-final-dredge-lab",
+        "ids": [
+          "auto-final-dredge-lab-1",
+          "auto-final-dredge-lab-2",
+          "auto-final-dredge-lab-3",
+          "auto-final-dredge-lab-4"
+        ],
+        "tags": [
+          "past_action"
+        ]
+      },
+      {
+        "discourse": "Rhetorical questions, genuine recipient requests, and replies that either accept or merely discuss the proposed handover.",
+        "domain": "Opera costume-store repair inventories",
+        "group": "auto-final-costume-store",
+        "ids": [
+          "auto-final-costume-store-1",
+          "auto-final-costume-store-2",
+          "auto-final-costume-store-3",
+          "auto-final-costume-store-4"
+        ],
+        "tags": [
+          "request"
+        ]
+      },
+      {
+        "discourse": "A firm assertion about one work item coexists with a conditional second item; contrast conditions covering both.",
+        "domain": "Water-clock restoration gear charts",
+        "group": "auto-final-water-clock",
+        "ids": [
+          "auto-final-water-clock-1",
+          "auto-final-water-clock-2",
+          "auto-final-water-clock-3",
+          "auto-final-water-clock-4"
+        ],
+        "tags": [
+          "mixed",
+          "conditional_delivery"
+        ]
+      },
+      {
+        "discourse": "Pronoun and ownership switches distinguish a reported external dispatch from the author taking over responsibility.",
+        "domain": "Ice-core archive sleeve maps",
+        "group": "auto-final-ice-core",
+        "ids": [
+          "auto-final-ice-core-1",
+          "auto-final-ice-core-2",
+          "auto-final-ice-core-3",
+          "auto-final-ice-core-4"
+        ],
+        "tags": [
+          "attribution"
+        ]
+      },
+      {
+        "discourse": "A correction retracts a commitment or changes only the recipient/date while preserving an explicit assurance.",
+        "domain": "Handmade papermill watermark registers",
+        "group": "auto-final-papermill",
+        "ids": [
+          "auto-final-papermill-1",
+          "auto-final-papermill-2",
+          "auto-final-papermill-3",
+          "auto-final-papermill-4"
+        ],
+        "tags": [
+          "negation"
+        ]
+      },
+      {
+        "discourse": "Mixed and genuinely unresolved attribution or condition scope alongside clear positive and negative contrasts; retain ambiguity.",
+        "domain": "Percussion ensemble mallet allocation sheets",
+        "group": "auto-final-percussion",
+        "ids": [
+          "auto-final-percussion-1",
+          "auto-final-percussion-2",
+          "auto-final-percussion-3",
+          "auto-final-percussion-4"
+        ],
+        "tags": [
+          "mixed",
+          "attribution",
+          "conditional_delivery"
+        ]
+      }
+    ],
+    "train": [
+      {
+        "discourse": "A curator distinguishes promised accession packets from a donor quotation and a past dispatch.",
+        "domain": "Seed-bank accession envelopes",
+        "group": "auto-train-seed-bank",
+        "ids": [
+          "auto-train-seed-bank-1",
+          "auto-train-seed-bank-2",
+          "auto-train-seed-bank-3",
+          "auto-train-seed-bank-4"
+        ],
+        "tags": [
+          "attribution",
+          "past_action"
+        ]
+      },
+      {
+        "discourse": "A foundry engineer separates an unconditional certificate handover from cooling-dependent delivery.",
+        "domain": "Bell-foundry acoustic certificates",
+        "group": "auto-train-bell-foundry",
+        "ids": [
+          "auto-train-bell-foundry-1",
+          "auto-train-bell-foundry-2",
+          "auto-train-bell-foundry-3",
+          "auto-train-bell-foundry-4"
+        ],
+        "tags": [
+          "conditional_delivery"
+        ]
+      },
+      {
+        "discourse": "A restorer corrects a mistaken earlier assurance; distinguish negated scope from a new definite handover.",
+        "domain": "Silent-film restoration cue sheets",
+        "group": "auto-train-film-restoration",
+        "ids": [
+          "auto-train-film-restoration-1",
+          "auto-train-film-restoration-2",
+          "auto-train-film-restoration-3",
+          "auto-train-film-restoration-4"
+        ],
+        "tags": [
+          "negation",
+          "explicit_assurance"
+        ]
+      },
+      {
+        "discourse": "An expedition archivist answers a request, reports someone else\u2019s forecast, and owns a future map delivery.",
+        "domain": "Cave-survey cartographic plates",
+        "group": "auto-train-cave-survey",
+        "ids": [
+          "auto-train-cave-survey-1",
+          "auto-train-cave-survey-2",
+          "auto-train-cave-survey-3",
+          "auto-train-cave-survey-4"
+        ],
+        "tags": [
+          "request",
+          "attribution"
+        ]
+      },
+      {
+        "discourse": "An exhibit conservator contrasts recipient tasks, completed repairs, and assured receipt of condition cards.",
+        "domain": "Textile conservation condition cards",
+        "group": "auto-train-textile-museum",
+        "ids": [
+          "auto-train-textile-museum-1",
+          "auto-train-textile-museum-2",
+          "auto-train-textile-museum-3",
+          "auto-train-textile-museum-4"
+        ],
+        "tags": [
+          "request",
+          "past_action"
+        ]
+      },
+      {
+        "discourse": "A craftsperson distinguishes capability and intention from an explicit promise despite cautious surrounding wording.",
+        "domain": "Piano workshop voicing records",
+        "group": "auto-train-piano-workshop",
+        "ids": [
+          "auto-train-piano-workshop-1",
+          "auto-train-piano-workshop-2",
+          "auto-train-piano-workshop-3",
+          "auto-train-piano-workshop-4"
+        ],
+        "tags": [
+          "explicit_assurance"
+        ]
+      },
+      {
+        "discourse": "An organiser uses before-event deadlines and when-ready dependencies with different consequences for assurance.",
+        "domain": "Kite-regatta course sketches",
+        "group": "auto-train-kite-regatta",
+        "ids": [
+          "auto-train-kite-regatta-1",
+          "auto-train-kite-regatta-2",
+          "auto-train-kite-regatta-3",
+          "auto-train-kite-regatta-4"
+        ],
+        "tags": [
+          "conditional_delivery"
+        ]
+      },
+      {
+        "discourse": "A coordinator handles pronoun ownership across sentences and distinguishes their delivery from a grower\u2019s claim.",
+        "domain": "Heritage orchard graft ledgers",
+        "group": "auto-train-orchard-coop",
+        "ids": [
+          "auto-train-orchard-coop-1",
+          "auto-train-orchard-coop-2",
+          "auto-train-orchard-coop-3",
+          "auto-train-orchard-coop-4"
+        ],
+        "tags": [
+          "attribution"
+        ]
+      },
+      {
+        "discourse": "An archivist discusses an old delivery and a scheduled future-progressive inventory handover.",
+        "domain": "Community radio tape inventories",
+        "group": "auto-train-radio-archive",
+        "ids": [
+          "auto-train-radio-archive-1",
+          "auto-train-radio-archive-2",
+          "auto-train-radio-archive-3",
+          "auto-train-radio-archive-4"
+        ],
+        "tags": [
+          "past_action"
+        ]
+      },
+      {
+        "discourse": "An estimator withdraws one catalogue commitment but makes another, contrasted with a wholly conditional offer.",
+        "domain": "Stone-quarry sample catalogues",
+        "group": "auto-train-stone-quarry",
+        "ids": [
+          "auto-train-stone-quarry-1",
+          "auto-train-stone-quarry-2",
+          "auto-train-stone-quarry-3",
+          "auto-train-stone-quarry-4"
+        ],
+        "tags": [
+          "negation",
+          "mixed"
+        ]
+      }
+    ]
+  },
+  "scenarioPlanSha256": "d2378f647f916713c7add7da7374e9555ccc0434796f90311fb2cbadd311fbeb"
+}

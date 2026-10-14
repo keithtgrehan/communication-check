@@ -1,0 +1,16 @@
+{
+  "configuredModel": "gpt-6-astra",
+  "configuredEffort": "high",
+  "ephemeral": true,
+  "inheritedConversation": false,
+  "runnerVersion": "0.162.1",
+  "startedAt": 1791964469.0048351,
+  "finishedAt": 1791964524.653026,
+  "exitCode": 0,
+  "timedOut": false,
+  "launchError": null,
+  "toolTypes": [],
+  "noToolsRequired": true,
+  "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+  "sessionId": "01a13967-dbf9-7d23-98e4-93eefa8eaa69"
+}

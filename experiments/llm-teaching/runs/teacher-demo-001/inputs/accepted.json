@@ -1,0 +1,362 @@
+[
+  {
+    "category": "firm_delivery",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_443b335d562e4f2c",
+    "label": 1,
+    "rationale": "Direct author future delivery with a deadline and no condition.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "By Monday afternoon, I will put the invoice reconciliation sheet in your inbox."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_29f2bb8373c24aa0",
+    "label": 1,
+    "rationale": "Explicit unqualified team commitment to deliver a work item.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our finance team commits to delivering the completed invoice reconciliation sheet tomorrow."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_004a190745314ad3",
+    "label": 0,
+    "rationale": "An aim is an intention, not an assured delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I aim to put the invoice reconciliation sheet in your inbox by Monday afternoon."
+  },
+  {
+    "category": "request",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_f43913fbee494573",
+    "label": 0,
+    "rationale": "Recipient request, not an author delivery assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Please put the invoice reconciliation sheet in our inbox by Monday afternoon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_0e2ca03aa51744a9",
+    "label": 1,
+    "rationale": "Unqualified future delivery by the author team; the call marks a deadline.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our support team will hand over the reproduction package before the troubleshooting call."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_6df68067e6314a85",
+    "label": 1,
+    "rationale": "Assured future recipient receipt with explicit author ownership.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "You will receive the reproduction package from me at nine tomorrow."
+  },
+  {
+    "category": "reported",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_bf90a27204d74569",
+    "label": 0,
+    "rationale": "A quoted earlier message is reported wording, not a new direct assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The customer quoted an earlier message: \"Our support team will hand over the reproduction package tomorrow.\""
+  },
+  {
+    "category": "other",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_a4032476efe043ac",
+    "label": 0,
+    "rationale": "Completed past delivery, not a prospective assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our support team handed over the reproduction package before yesterday's troubleshooting call."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_f0e5cd813253443d",
+    "label": 1,
+    "rationale": "Explicit author promise of future work-item delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I promise to upload the localization glossary for you on Thursday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_6b1b72bc2b1a4614",
+    "label": 1,
+    "rationale": "Definite scheduled delivery and explicit author-team origin.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The localization glossary is going out from our team this evening."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_86331909a5464461",
+    "label": 0,
+    "rationale": "Future delivery depends on an explicit approval condition.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I will upload the localization glossary on Thursday if the translators sign it off."
+  },
+  {
+    "category": "request",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_2db815acc2544ed1",
+    "label": 0,
+    "rationale": "Asks the recipient team to deliver; no author-owned delivery assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Could your team upload the localization glossary for us on Thursday?"
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_664fdf74f4f44597",
+    "label": 1,
+    "rationale": "Scheduled future-progressive delivery by the author team.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We are sending you the office-hours agenda first thing tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_5b43db00ede44f29",
+    "label": 1,
+    "rationale": "Direct unqualified author future sharing with a deadline.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Before our office hours start, I will share the complete agenda with you."
+  },
+  {
+    "category": "reported",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_0219268329264419",
+    "label": 0,
+    "rationale": "Historical attribution of a promise rather than a fresh author assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The account history says we promised to share an office-hours agenda before the session."
+  },
+  {
+    "category": "other",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_d27d0b4d880e46cd",
+    "label": 0,
+    "rationale": "Explicit negation of future delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We will not send an office-hours agenda before the session."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_d84b430dcf724727",
+    "label": 1,
+    "rationale": "Explicit guarantee of future delivery with author ownership.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I guarantee that our route-validation log will reach you by three tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_a8760f4dc33d4855",
+    "label": 1,
+    "rationale": "Unqualified author-team future supply of a concrete artifact.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We will supply the route-validation log to your operations team this week."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_fac442190cb74b15",
+    "label": 0,
+    "rationale": "Delivery timing is framed as an estimate, not an assurance.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our estimate is that the route-validation log will reach you by three tomorrow."
+  },
+  {
+    "category": "request",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_a1f337b327824d4b",
+    "label": 0,
+    "rationale": "Question requests the recipient team's delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Will your operations team supply its route-validation log to us this week?"
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_cf359787425647da",
+    "label": 1,
+    "rationale": "Passive future delivery explicitly owned by the author team.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The decommission runbook will be delivered by our team on Tuesday morning."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_b35775fe54924bec",
+    "label": 1,
+    "rationale": "Definite author-owned future handover of a work item.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I am going to hand you the final decommission runbook at our next meeting."
+  },
+  {
+    "category": "reported",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_dcbd331181f14c53",
+    "label": 0,
+    "rationale": "Reports another person's delivery statement.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Jo told us that her team would deliver the decommission runbook on Tuesday morning."
+  },
+  {
+    "category": "other",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_197d62d92ffc4da5",
+    "label": 0,
+    "rationale": "Counterfactual delivery, not a firm real-world future assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "If we owned the decommission runbook, we would send it to you."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_77721aedbb5046af",
+    "label": 1,
+    "rationale": "Explicit undertaking to deliver a document; no promise about the credit amount.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We undertake to send you the service-credit calculation worksheet tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_8fec13f011d349c6",
+    "label": 1,
+    "rationale": "Unqualified future recipient receipt explicitly attributed to the author.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Your service-credit calculation worksheet will come from me before noon on Wednesday."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_5a36e497e62f4626",
+    "label": 0,
+    "rationale": "Delivery is conditional on an unfinished review.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Pending the billing review, we will send the service-credit calculation worksheet tomorrow."
+  },
+  {
+    "category": "request",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_2a348f2909aa4bb4",
+    "label": 0,
+    "rationale": "Recipient request rather than an author-owned delivery statement.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Would you send us the service-credit calculation worksheet before noon on Wednesday?"
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_1cd53b8399fe4100",
+    "label": 1,
+    "rationale": "Direct author future delivery of a draft; no claim that its contents are approved.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I will email you the consent wording draft this afternoon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_65429a43fd824f70",
+    "label": 1,
+    "rationale": "Explicit author-team assurance of future document delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We give you our word that the consent wording draft will be shared tomorrow."
+  },
+  {
+    "category": "reported",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_d2b8e28efcdc4073",
+    "label": 0,
+    "rationale": "Historical record of a promise rather than a new unqualified assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The project diary records my previous promise to email a consent wording draft this afternoon."
+  },
+  {
+    "category": "other",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_e0db81af7b9d43fa",
+    "label": 0,
+    "rationale": "Completed delivery rather than a future one.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The consent wording draft has already been emailed to your team."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_10b6f8c33f3f49db",
+    "label": 1,
+    "rationale": "Explicit team commitment to future artifact delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We commit to providing the seat-allocation register at the end of this week."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_602c65e4ffc34600",
+    "label": 1,
+    "rationale": "Unqualified author future provision of the register.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I will make the completed seat-allocation register available to you tomorrow morning."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_ea35e9dd395e40d6",
+    "label": 0,
+    "rationale": "Expectation is qualified delivery rather than a promise.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We expect to provide the seat-allocation register at the end of this week."
+  },
+  {
+    "category": "request",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_573ddd022f264962",
+    "label": 0,
+    "rationale": "Requests recipient provision of the register.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Can you make the completed seat-allocation register available to us tomorrow morning?"
+  }
+]

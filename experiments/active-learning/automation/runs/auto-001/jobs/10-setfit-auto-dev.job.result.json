@@ -1,0 +1,280 @@
+{
+  "admission": [
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 36,
+      "utf16Units": 145
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 28,
+      "utf16Units": 131
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 35,
+      "utf16Units": 153
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 33,
+      "utf16Units": 156
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 19,
+      "utf16Units": 73
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 25,
+      "utf16Units": 130
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 37,
+      "utf16Units": 160
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 23,
+      "utf16Units": 102
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 39,
+      "utf16Units": 161
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 36,
+      "utf16Units": 159
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 38,
+      "utf16Units": 177
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 39,
+      "utf16Units": 170
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 20,
+      "utf16Units": 93
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 27,
+      "utf16Units": 136
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 22,
+      "utf16Units": 106
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 35,
+      "utf16Units": 164
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 28,
+      "utf16Units": 123
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 22,
+      "utf16Units": 101
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 30,
+      "utf16Units": 133
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 27,
+      "utf16Units": 118
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 30,
+      "utf16Units": 121
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 22,
+      "utf16Units": 85
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 22,
+      "utf16Units": 86
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 34,
+      "utf16Units": 156
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 32,
+      "utf16Units": 164
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 23,
+      "utf16Units": 125
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 27,
+      "utf16Units": 139
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 33,
+      "utf16Units": 171
+    }
+  ],
+  "categories": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "evidence": null,
+  "peakRssBytes": 635174912,
+  "provenance": {
+    "batchSize": 16,
+    "candidate": "setfit-auto",
+    "dependencies": {
+      "huggingface-hub": "0.36.2",
+      "sentence-transformers": "3.4.1",
+      "setfit": "1.1.3",
+      "torch": "2.10.0",
+      "transformers": "4.46.3"
+    },
+    "encoderFiles": {
+      "1_Pooling/config.json": "a19c83805e1ce4174f3fbfec4ac8d3b8dbae0c958f8fd51b80937eb33e0c5335",
+      "README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+      "config.json": "311eb32435348df61b41511f61e581b485be1414799036366b65a4c297312f78",
+      "config_sentence_transformers.json": "ffa0fc59b58c656df804f9c577d255ed434c09e3cca21a7430a68a43b75aa60e",
+      "model.safetensors": "a505f7710955272424cb321b0ef764c5250dc2dc42400b86e498f5e6911fdd70",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+      "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+      "tokenizer.json": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c",
+      "tokenizer_config.json": "085f1ef19e247fdef3c6ff75d5115d7d9c7c3196861380c434af09df3d7cf9bc",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "hardware": {
+      "device": "cpu",
+      "logicalCpuCount": 8,
+      "machine": "arm64",
+      "processor": "arm",
+      "python": "3.11.3",
+      "system": "Darwin",
+      "threads": 4
+    },
+    "headSha256": "de2ce04b5ce0a73125c74816d0095054f5e33217e5f86d186d51859f550dca64",
+    "license": "apache-2.0",
+    "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+    "truncation": false
+  },
+  "rationale": null,
+  "scores": [
+    0.5807096866693365,
+    0.42542287105603604,
+    0.48648989010505683,
+    0.4071226866563223,
+    0.6749643219172572,
+    0.46133210289343757,
+    0.6590984031732273,
+    0.4749471978273196,
+    0.46167633359924487,
+    0.47670047651876896,
+    0.6334178319105072,
+    0.2446061799360138,
+    0.5767140152637171,
+    0.5002239718058737,
+    0.41674022422447266,
+    0.4990487827131628,
+    0.4230193305809315,
+    0.3784308442706409,
+    0.5838674730971178,
+    0.5828543679637664,
+    0.5617330449670624,
+    0.4617300958559387,
+    0.7421888326093578,
+    0.4961979989278898,
+    0.6385713025280814,
+    0.378162237669723,
+    0.4839187968777324,
+    0.6191840885661439
+  ],
+  "status": "ok",
+  "timing": {
+    "inferenceSeconds": 0.06591720800497569,
+    "loadSeconds": 2.9679891249979846,
+    "totalSeconds": 3.3156719169928692
+  }
+}

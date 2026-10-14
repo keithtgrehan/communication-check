@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "classifierHeadSeed": 42,
+  "batchSize": 16,
+  "pairIterations": 5,
+  "bodySteps": 50,
+  "learningRate": 2e-05
+}

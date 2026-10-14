@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "classifierHeadSeed": 42,
+  "batchSize": 16,
+  "pairIterations": 5,
+  "bodySteps": 50,
+  "learningRate": 0.00002,
+  "maximumAcceptedExamplesPerBatch": 40,
+  "nearDuplicateJaccardThreshold": 0.85,
+  "developmentPolicy": "Same 30 original DEV rows, thresholds 0.05..0.95 by 0.05, precision >=0.90 AND recall >=0.70; otherwise diagnostic threshold 0.50. No independent test commands."
+}

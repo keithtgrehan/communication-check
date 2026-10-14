@@ -1,0 +1,10 @@
+.venv-nli/
+models/
+cache/
+source-cache/
+__pycache__/
+runs/*/candidate/model/
+runs/*/candidate/checkpoints/
+runs/*/external/
+runs/*/jobs/*.log
+runs/*/data/*.log

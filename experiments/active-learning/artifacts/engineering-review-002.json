@@ -1,0 +1,22 @@
+{
+  "approved": false,
+  "summary": "Five prior findings are addressed. Structured failure evidence still misidentifies adapter failures; correct this before freezing and starting.",
+  "findings": [
+    {
+      "severity": "medium",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/campaign.py",
+      "line": 115,
+      "issue": "The adapter's actual reload-parity exception, \"Saved candidate does not reproduce in-memory scores.\" (model_adapter.py:295), becomes INVALID_SCORES rather than RELOAD_PARITY. An in-memory worker check confirmed this. Invalid score vectors produce identical operation/stage/error-type/reason fields. Likewise, incomplete optimization and unchanged encoder weights share one exception and reason code. Because raw diagnostics are deliberately omitted, the terminal audit cannot distinguish these failed invariants.",
+      "requiredFix": "Give adapter invariant failures explicit, text-free reason codes and propagate them unchanged through worker failure, JobFailure, terminal state and reporting. Add regression checks using the actual mocked adapter failure paths for reload parity, invalid scores, incomplete steps and unchanged weights."
+    }
+  ],
+  "verification": [
+    "Read DESIGN.md, engineering-review-001.json, all five implementation modules, all five test modules, schemas and relevant baseline helper source; no historical heldout or old fixture contents accessed.",
+    "Attempted all 87 tests with the existing Python environment and -B: 36 passed; 51 could not run because the read-only sandbox has no writable temporary directory. No assertion failures. The lead's reported 87-test pass and actual inbound/outbound denial verification were not independently reproduced.",
+    "In-memory worker checks confirmed network-denial refusal, expired-deadline refusal and altered-ticket refusal before model operations; replay after removing output still allowed only one model-operation call.",
+    "Verified original pool binding and pre/post contamination checks at campaign.py:93–97 and 480–490; inspected the rehashed-pool rejection test.",
+    "Inspected round/selection/final-report provenance checks at campaign.py:577–631 and tampered-report omission tests; final semantic exclusions apply to whole families before coverage validation and enter the frozen bundle.",
+    "Independent empty-string and whitespace checks passed structural validation and excluded exactly their four-member family through admission.",
+    "Confirmed actual adapter failure messages produce the ambiguous reason codes described above. No edits, training, agent launches, campaign start or experimental data generation performed."
+  ]
+}

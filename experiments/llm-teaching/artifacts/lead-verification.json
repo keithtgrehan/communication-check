@@ -1,0 +1,114 @@
+{
+  "runId": "teacher-demo-001",
+  "bundleSha256": "35b3a7066873c6c5a5ce57cad255cecbfe228fa0750027c271e67fcd1560a51c",
+  "networkPolicy": "(version 1)(allow default)(deny network*)",
+  "control": "Separate loopback connect denied with PermissionError errno1",
+  "predictions": [
+    {
+      "case": "normal",
+      "result": {
+        "admission": {
+          "admitted": true,
+          "reason": null,
+          "tokens": 15,
+          "utf16Units": 72
+        },
+        "category": "firm_delivery",
+        "devGatePassed": false,
+        "score": 0.5488650528289979,
+        "threshold": 0.5,
+        "uncalibratedScore": true
+      },
+      "processSeconds": 4.5664875420043245
+    },
+    {
+      "case": "empty",
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "empty",
+          "tokens": null,
+          "utf16Units": 0
+        },
+        "category": "abstain"
+      },
+      "processSeconds": 1.3358215840125922
+    },
+    {
+      "case": "token_boundary",
+      "result": {
+        "admission": {
+          "admitted": true,
+          "reason": null,
+          "tokens": 256,
+          "utf16Units": 1270
+        },
+        "category": "firm_delivery",
+        "devGatePassed": false,
+        "score": 0.5167672322289434,
+        "threshold": 0.5,
+        "uncalibratedScore": true
+      },
+      "processSeconds": 3.788384333020076
+    },
+    {
+      "case": "token_oversize",
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "token_limit",
+          "tokens": 257,
+          "utf16Units": 1275
+        },
+        "category": "abstain"
+      },
+      "processSeconds": 1.4776871250069235
+    },
+    {
+      "case": "unicode_oversize",
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "character_limit",
+          "tokens": null,
+          "utf16Units": 2002
+        },
+        "category": "abstain"
+      },
+      "processSeconds": 1.5770818750024773
+    },
+    {
+      "case": "character_oversize",
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "character_limit",
+          "tokens": null,
+          "utf16Units": 2001
+        },
+        "category": "abstain"
+      },
+      "processSeconds": 1.4428719170100521
+    }
+  ],
+  "completedRetrainRefused": true,
+  "duplicatePrepareRefused": true,
+  "frozenRunFilesUnchanged": 31,
+  "protectedManifests": [
+    {
+      "manifest": "work/llm-teaching/preservation-before.json",
+      "files": 132,
+      "changed": 0
+    },
+    {
+      "manifest": "work/encoder-comparison/preservation-before.json",
+      "files": 55,
+      "changed": 0
+    }
+  ],
+  "canaryNotEchoed": true,
+  "canaryAbsentFromTextArtifacts": 99,
+  "unitTests": 12,
+  "dependencyCheck": "pip check passed",
+  "interpretation": "OS-local prediction and integrity evidence; no real-customer reliability claim."
+}

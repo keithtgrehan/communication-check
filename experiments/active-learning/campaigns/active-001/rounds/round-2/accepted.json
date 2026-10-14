@@ -1,0 +1,362 @@
+[
+  {
+    "category": "firm_delivery",
+    "group": "al-g001",
+    "id": "al-p001",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I will send the finished opening animation, including the painted title sequence, to the producer on Thursday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g001",
+    "id": "al-p002",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The opening animation now has its final color palette. Our studio will deliver the rendered sequence and matching stills tomorrow afternoon."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "al-g001",
+    "id": "al-p003",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I expect to deliver the opening animation on Thursday, provided the final character poses are approved."
+  },
+  {
+    "category": "request",
+    "group": "al-g001",
+    "id": "al-p004",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "Please send the finished opening animation to the producer on Thursday. Include the painted title sequence in the export."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g003",
+    "id": "al-p009",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I guarantee that the facilities office will receive my boiler inspection certificate by noon tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g003",
+    "id": "al-p010",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The pressure tests are complete. Our maintenance team will place the signed boiler inspection certificate in the facilities register tomorrow morning."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "al-g003",
+    "id": "al-p011",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I should have the boiler inspection certificate ready tomorrow, assuming the pressure gauge passes its calibration check."
+  },
+  {
+    "category": "other",
+    "group": "al-g003",
+    "id": "al-p012",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "I filed the boiler inspection certificate yesterday. The facilities register already contains the signed copy and the pressure readings."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g013",
+    "id": "al-p049",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I will deliver the bakery's revised sourdough production sheet to the night shift before tonight's mixing begins."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g013",
+    "id": "al-p050",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The revised sheet separates starter refreshments from final dough mixing. Our bakery team will place printed copies at every mixing station this evening."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "al-g013",
+    "id": "al-p051",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I intend to deliver the revised sourdough production sheet tonight, though the fermentation timings are still provisional."
+  },
+  {
+    "category": "request",
+    "group": "al-g013",
+    "id": "al-p052",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "Please put the revised sourdough production sheet at every mixing station tonight. Make the starter refreshment times easy to find."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g017",
+    "id": "al-p065",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I will deliver the bound harbor fender replacement drawings to the marine contractor on Wednesday morning."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g017",
+    "id": "al-p066",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The harbor drawings specify the bolt spacing for each fender. Our engineering office will supply the contractor with the bound replacement set on Wednesday."
+  },
+  {
+    "category": "request",
+    "group": "al-g017",
+    "id": "al-p067",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Please deliver the bound harbor fender replacement drawings to the marine contractor before Wednesday's site meeting."
+  },
+  {
+    "category": "other",
+    "group": "al-g017",
+    "id": "al-p068",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The harbor fender drawings show three mounting arrangements. I will not issue a replacement set during this maintenance cycle."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g018",
+    "id": "al-p069",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Our bookbinding workshop will return the repaired atlas with its new linen spine on Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g018",
+    "id": "al-p070",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The atlas now has reinforced endpapers. I will deliver the repaired volume and its protective slipcase to the map room on Friday afternoon."
+  },
+  {
+    "category": "reported",
+    "group": "al-g018",
+    "id": "al-p071",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "The workshop proprietor said that her binders would return the repaired atlas with its new linen spine on Friday."
+  },
+  {
+    "category": "other",
+    "group": "al-g018",
+    "id": "al-p072",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "I returned the repaired atlas on Friday afternoon. Its linen spine and protective slipcase were inspected at the map room desk."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g019",
+    "id": "al-p073",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I will send the urban orchard coordinator a tree pruning diagram for every courtyard by tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g019",
+    "id": "al-p074",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The courtyard diagrams identify fruiting wood and crossing branches. Our arboriculture team will deliver the complete pruning diagram pack tomorrow afternoon."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "al-g019",
+    "id": "al-p075",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "We hope to deliver the courtyard pruning diagrams tomorrow, provided the remaining pear trees can be inspected today."
+  },
+  {
+    "category": "request",
+    "group": "al-g019",
+    "id": "al-p076",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "Please send the orchard coordinator a pruning diagram for each courtyard. Mark crossing branches separately from healthy fruiting wood."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g035",
+    "id": "al-p137",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I will give the public swimming pool manager the completed lane rope replacement inventory tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g035",
+    "id": "al-p138",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The inventory distinguishes cracked floats from damaged tensioners. Our pool maintenance team will send the manager the completed lane rope replacement inventory tomorrow afternoon."
+  },
+  {
+    "category": "request",
+    "group": "al-g035",
+    "id": "al-p139",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Would you give the swimming pool manager a completed inventory of replacement lane rope floats and tensioners?"
+  },
+  {
+    "category": "other",
+    "group": "al-g035",
+    "id": "al-p140",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "I am not issuing a lane rope replacement inventory tomorrow. The pool manager already has the inventory completed during last month's closure."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g052",
+    "id": "al-p205",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Our court interpretation office will provide the training coordinator with the fictional hearing glossary next Wednesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g052",
+    "id": "al-p206",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The practice hearing uses invented names and a fictional dispute. I will send the training coordinator the finished interpretation glossary and exercise notes on Wednesday."
+  },
+  {
+    "category": "request",
+    "group": "al-g052",
+    "id": "al-p207",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Could you provide the training coordinator with the fictional hearing glossary before next Wednesday's interpretation workshop?"
+  },
+  {
+    "category": "reported",
+    "group": "al-g052",
+    "id": "al-p208",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The interpretation trainer said she would supply the fictional hearing glossary next Wednesday. I recorded her statement alongside the workshop agenda."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g064",
+    "id": "al-p253",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Our canal maintenance team will deliver the lock gate seal replacement kit to the eastern depot tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g064",
+    "id": "al-p254",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The replacement kit contains cut seals and labeled fastening strips. I will bring the complete lock gate kit to the eastern depot tomorrow morning."
+  },
+  {
+    "category": "request",
+    "group": "al-g064",
+    "id": "al-p255",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Could you deliver the complete lock gate seal replacement kit to the eastern maintenance depot tomorrow?"
+  },
+  {
+    "category": "reported",
+    "group": "al-g064",
+    "id": "al-p256",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The canal workshop foreman said his team would deliver the lock gate seal kit tomorrow. I entered that statement in the depot's incoming equipment log."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g065",
+    "id": "al-p257",
+    "label": 1,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "I will send the poetry publisher the finished bilingual chapbook page proofs before Thursday's editorial meeting."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "al-g065",
+    "id": "al-p258",
+    "label": 1,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The facing pages keep each poem beside its translation. Our typesetting studio will deliver the complete bilingual chapbook proofs to the publisher on Wednesday evening."
+  },
+  {
+    "category": "request",
+    "group": "al-g065",
+    "id": "al-p259",
+    "label": 0,
+    "lengthClass": "single",
+    "split": "train",
+    "text": "Please send the poetry publisher the finished bilingual chapbook page proofs before Thursday's editorial meeting."
+  },
+  {
+    "category": "other",
+    "group": "al-g065",
+    "id": "al-p260",
+    "label": 0,
+    "lengthClass": "multi",
+    "split": "train",
+    "text": "The bilingual chapbook page proofs reached the publisher yesterday evening. I supplied the complete set with the poems and translations on facing pages."
+  }
+]

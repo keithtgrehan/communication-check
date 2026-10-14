@@ -1,0 +1,154 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "additionalProperties": false,
+      "properties": {
+        "actorId": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorId",
+        "model"
+      ],
+      "type": "object"
+    },
+    "examples": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "group": {
+            "enum": [
+              "auto-train-seed-bank",
+              "auto-train-bell-foundry",
+              "auto-train-film-restoration",
+              "auto-train-cave-survey",
+              "auto-train-textile-museum",
+              "auto-train-piano-workshop",
+              "auto-train-kite-regatta",
+              "auto-train-orchard-coop",
+              "auto-train-radio-archive",
+              "auto-train-stone-quarry"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "enum": [
+              "auto-train-seed-bank-1",
+              "auto-train-seed-bank-2",
+              "auto-train-seed-bank-3",
+              "auto-train-seed-bank-4",
+              "auto-train-bell-foundry-1",
+              "auto-train-bell-foundry-2",
+              "auto-train-bell-foundry-3",
+              "auto-train-bell-foundry-4",
+              "auto-train-film-restoration-1",
+              "auto-train-film-restoration-2",
+              "auto-train-film-restoration-3",
+              "auto-train-film-restoration-4",
+              "auto-train-cave-survey-1",
+              "auto-train-cave-survey-2",
+              "auto-train-cave-survey-3",
+              "auto-train-cave-survey-4",
+              "auto-train-textile-museum-1",
+              "auto-train-textile-museum-2",
+              "auto-train-textile-museum-3",
+              "auto-train-textile-museum-4",
+              "auto-train-piano-workshop-1",
+              "auto-train-piano-workshop-2",
+              "auto-train-piano-workshop-3",
+              "auto-train-piano-workshop-4",
+              "auto-train-kite-regatta-1",
+              "auto-train-kite-regatta-2",
+              "auto-train-kite-regatta-3",
+              "auto-train-kite-regatta-4",
+              "auto-train-orchard-coop-1",
+              "auto-train-orchard-coop-2",
+              "auto-train-orchard-coop-3",
+              "auto-train-orchard-coop-4",
+              "auto-train-radio-archive-1",
+              "auto-train-radio-archive-2",
+              "auto-train-radio-archive-3",
+              "auto-train-radio-archive-4",
+              "auto-train-stone-quarry-1",
+              "auto-train-stone-quarry-2",
+              "auto-train-stone-quarry-3",
+              "auto-train-stone-quarry-4"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "referenceCategory": {
+            "enum": [
+              "firm_delivery",
+              "qualified_delivery",
+              "request",
+              "reported",
+              "other",
+              "ambiguous"
+            ],
+            "type": "string"
+          },
+          "referenceLabel": {
+            "enum": [
+              0,
+              1,
+              null
+            ],
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "group",
+          "text",
+          "referenceLabel",
+          "referenceCategory",
+          "evidence",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 40,
+      "minItems": 40,
+      "type": "array"
+    },
+    "schemaVersion": {
+      "enum": [
+        1
+      ],
+      "type": "integer"
+    },
+    "syntheticOnly": {
+      "enum": [
+        true
+      ],
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "author",
+    "syntheticOnly",
+    "examples"
+  ],
+  "type": "object"
+}

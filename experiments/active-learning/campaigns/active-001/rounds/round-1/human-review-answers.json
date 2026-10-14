@@ -1,0 +1,97 @@
+{
+  "items": [
+    {
+      "id": "al-p006",
+      "reviewer": {
+        "category": "firm_delivery",
+        "evidence": [
+          "You will receive my completed attachment survey before the conservation briefing."
+        ],
+        "id": "item_540947430b0e27f6c4f059d1",
+        "label": 1,
+        "rationale": "The author assures receipt of a completed survey before an event deadline.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "firm_delivery",
+        "evidence": [
+          "You will receive my completed attachment survey before the conservation briefing."
+        ],
+        "id": "item_82963e48809b6717e280aeee",
+        "label": 1,
+        "rationale": "The author assures recipient receipt of the completed survey before an event deadline.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p025",
+      "reviewer": {
+        "category": "firm_delivery",
+        "evidence": [
+          "I will give the geometry class a complete set of paper folding proof cards on Wednesday."
+        ],
+        "id": "item_cbd006d12ec30bc456f3f5d0",
+        "label": 1,
+        "rationale": "The author directly asserts future provision of a complete card set.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "firm_delivery",
+        "evidence": [
+          "I will give the geometry class a complete set of paper folding proof cards on Wednesday."
+        ],
+        "id": "item_8e3b45102a63f58a25c638c4",
+        "label": 1,
+        "rationale": "The author directly asserts definite future provision of the cards.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p080",
+      "reviewer": {
+        "category": "reported",
+        "evidence": [
+          "The sound recordist wrote that she would deliver the underwater library on Tuesday."
+        ],
+        "id": "item_839d04c2db316a845e42b1f8",
+        "label": 0,
+        "rationale": "The delivery assertion is attributed to the sound recordist's written message.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "reported",
+        "evidence": [
+          "The sound recordist wrote that she would deliver the underwater library on Tuesday."
+        ],
+        "id": "item_ee5b7907a880f247fac6b9b3",
+        "label": 0,
+        "rationale": "The author reports another person's written delivery assertion.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p215",
+      "reviewer": {
+        "category": "reported",
+        "evidence": [
+          "The inspection contractor stated that her team would deliver the conveyor belt wear atlas on Friday."
+        ],
+        "id": "item_0d4601bc3b89fca462bb9b14",
+        "label": 0,
+        "rationale": "Delivery is attributed to a contractor's statement.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "reported",
+        "evidence": [
+          "The inspection contractor stated that her team would deliver the conveyor belt wear atlas on Friday."
+        ],
+        "id": "item_efb5bd9f8a330082eb04e93b",
+        "label": 0,
+        "rationale": "The delivery assertion is attributed to the inspection contractor.",
+        "status": "clear"
+      }
+    }
+  ],
+  "quarantine": []
+}

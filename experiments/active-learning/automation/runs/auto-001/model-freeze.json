@@ -1,0 +1,45 @@
+{
+  "deberta": {
+    "directory": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/models/deberta",
+    "files": {
+      "README.md": "75a2af474babafe0c57db14352013c8152442122e02aaf4e4c94eee5e5d39534",
+      "added_tokens.json": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+      "config.json": "a1c8011b852ae46d6ac26160d358fa595861d261352885f8f7bfcd2811030d9f",
+      "model.safetensors": "605e40d2020f4c66666db3e98a4bc277b6214565eac95f35c1a5027a93ee0ef0",
+      "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+      "spm.model": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+      "tokenizer.json": "05402ffae6dd382a8491b1d29bfc139bec5d332662e86a026f433ce54c25c202",
+      "tokenizer_config.json": "f5a1a74a632c0e9225e09a21ddf60c2e70ef5d3bfc1f261a24fd8ddab27254d2",
+      "worker-model-reference.json": "cbd2bd55c617cc166e2438239ccbb9e2c4b0949ebd2ce8cd081d024a30855119"
+    }
+  },
+  "modernbert": {
+    "directory": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/models/modernbert",
+    "files": {
+      "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+      "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+      "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+      "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+      "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17",
+      "worker-model-reference.json": "999f19e46e48ed10733f1d876b551166ec10c0d3692d1d8ebbda1aa80edac199"
+    }
+  },
+  "setfit-auto": {
+    "directory": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/runs/auto-001/candidate/model",
+    "files": {
+      "encoder/1_Pooling/config.json": "a19c83805e1ce4174f3fbfec4ac8d3b8dbae0c958f8fd51b80937eb33e0c5335",
+      "encoder/README.md": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0",
+      "encoder/config.json": "311eb32435348df61b41511f61e581b485be1414799036366b65a4c297312f78",
+      "encoder/config_sentence_transformers.json": "ffa0fc59b58c656df804f9c577d255ed434c09e3cca21a7430a68a43b75aa60e",
+      "encoder/model.safetensors": "a505f7710955272424cb321b0ef764c5250dc2dc42400b86e498f5e6911fdd70",
+      "encoder/modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "encoder/sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+      "encoder/special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+      "encoder/tokenizer.json": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c",
+      "encoder/tokenizer_config.json": "085f1ef19e247fdef3c6ff75d5115d7d9c7c3196861380c434af09df3d7cf9bc",
+      "encoder/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "head.json": "de2ce04b5ce0a73125c74816d0095054f5e33217e5f86d186d51859f550dca64"
+    }
+  }
+}

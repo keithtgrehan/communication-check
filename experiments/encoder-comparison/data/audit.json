@@ -1,0 +1,1209 @@
+{
+  "scope": "Read-only source audit, then byte-identical local dataset copy. No fitting, threshold selection or test access.",
+  "rows": 150,
+  "train": 120,
+  "dev": 30,
+  "categoryCounts": {
+    "train": {
+      "firm_delivery": 60,
+      "qualified_delivery": 15,
+      "request": 15,
+      "reported": 15,
+      "other": 15
+    },
+    "dev": {
+      "firm_delivery": 15,
+      "qualified_delivery": 4,
+      "request": 4,
+      "reported": 4,
+      "other": 3
+    }
+  },
+  "scenarioCounts": {
+    "train": 15,
+    "dev": 5
+  },
+  "normalizedDuplicateTexts": 0,
+  "scenarioGroupOverlap": [],
+  "crossSplitPairsReviewedComputationally": 3600,
+  "maxCrossSplitTokenJaccard": 0.3333333333333333,
+  "maxCrossSplitTokenSequenceRatio": 0.5,
+  "manualAudit": "All 150 text/label pairs and top 12 sequence-similarity pairs inspected by the PM AI agent. No material copied cross-split scenario/contrast set identified. Similarity measures do not prove semantic independence.",
+  "nearestPairsManuallyReviewed": [
+    {
+      "trainId": "train-configuration_guide-07",
+      "devId": "dev-migration_rehearsal-05",
+      "tokenJaccard": 0.29411764705882354,
+      "tokenSequenceRatio": 0.5
+    },
+    {
+      "trainId": "train-workshop_slides-08",
+      "devId": "dev-retention_schedule-06",
+      "tokenJaccard": 0.3157894736842105,
+      "tokenSequenceRatio": 0.48
+    },
+    {
+      "trainId": "train-launch_checklist-03",
+      "devId": "dev-acceptance_evidence-04",
+      "tokenJaccard": 0.3125,
+      "tokenSequenceRatio": 0.47619047619047616
+    },
+    {
+      "trainId": "train-import_template-05",
+      "devId": "dev-accessibility_audit-01",
+      "tokenJaccard": 0.3125,
+      "tokenSequenceRatio": 0.45454545454545453
+    },
+    {
+      "trainId": "train-import_template-05",
+      "devId": "dev-accessibility_audit-05",
+      "tokenJaccard": 0.3125,
+      "tokenSequenceRatio": 0.45454545454545453
+    },
+    {
+      "trainId": "train-import_template-04",
+      "devId": "dev-partner_playbook-03",
+      "tokenJaccard": 0.2857142857142857,
+      "tokenSequenceRatio": 0.4444444444444444
+    },
+    {
+      "trainId": "train-configuration_guide-03",
+      "devId": "dev-partner_playbook-03",
+      "tokenJaccard": 0.26666666666666666,
+      "tokenSequenceRatio": 0.42105263157894735
+    },
+    {
+      "trainId": "train-security_packet-04",
+      "devId": "dev-partner_playbook-03",
+      "tokenJaccard": 0.26666666666666666,
+      "tokenSequenceRatio": 0.42105263157894735
+    },
+    {
+      "trainId": "train-security_packet-05",
+      "devId": "dev-partner_playbook-03",
+      "tokenJaccard": 0.26666666666666666,
+      "tokenSequenceRatio": 0.42105263157894735
+    },
+    {
+      "trainId": "train-training_recording-08",
+      "devId": "dev-partner_playbook-06",
+      "tokenJaccard": 0.3125,
+      "tokenSequenceRatio": 0.4166666666666667
+    },
+    {
+      "trainId": "train-configuration_guide-03",
+      "devId": "dev-partner_playbook-05",
+      "tokenJaccard": 0.25,
+      "tokenSequenceRatio": 0.38095238095238093
+    },
+    {
+      "trainId": "train-field_mapping-02",
+      "devId": "dev-migration_rehearsal-01",
+      "tokenJaccard": 0.23529411764705882,
+      "tokenSequenceRatio": 0.38095238095238093
+    }
+  ],
+  "broadConstructionCounts": {
+    "train": {
+      "future_delivery_or_future_result": 25,
+      "scheduled_present_progressive": 9,
+      "explicit_assurance": 16,
+      "tentative_intention_or_estimate": 9,
+      "recipient_request": 15,
+      "quoted_or_quote_reference": 5,
+      "completed_past_delivery": 4,
+      "recipient_receipt_or_author_origin": 4,
+      "going_to_future": 6,
+      "conditional_delivery": 6,
+      "attributed_or_historical_report": 10,
+      "negated_delivery": 4,
+      "descriptive_discussion": 3,
+      "hypothetical_or_possibility": 4
+    },
+    "dev": {
+      "future_delivery_or_future_result": 6,
+      "explicit_assurance": 7,
+      "recipient_receipt_or_author_origin": 2,
+      "tentative_intention_or_estimate": 3,
+      "recipient_request": 4,
+      "quoted_or_quote_reference": 2,
+      "conditional_delivery": 1,
+      "attributed_or_historical_report": 2,
+      "negated_delivery": 1,
+      "completed_past_delivery": 1,
+      "hypothetical_or_possibility": 1
+    }
+  },
+  "sharedBroadConstructions": [
+    "attributed_or_historical_report",
+    "completed_past_delivery",
+    "conditional_delivery",
+    "explicit_assurance",
+    "future_delivery_or_future_result",
+    "hypothetical_or_possibility",
+    "negated_delivery",
+    "quoted_or_quote_reference",
+    "recipient_receipt_or_author_origin",
+    "recipient_request",
+    "tentative_intention_or_estimate"
+  ],
+  "perRecord": [
+    {
+      "id": "train-account_handoff-01",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-account_handoff-02",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-account_handoff-03",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-account_handoff-04",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-account_handoff-05",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-account_handoff-06",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-account_handoff-07",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "train-account_handoff-08",
+      "split": "train",
+      "scenarioGroup": "account_handoff",
+      "category": "other",
+      "broadConstructionFamily": "completed_past_delivery"
+    },
+    {
+      "id": "train-configuration_guide-01",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "recipient_receipt_or_author_origin"
+    },
+    {
+      "id": "train-configuration_guide-02",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "going_to_future"
+    },
+    {
+      "id": "train-configuration_guide-03",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-configuration_guide-04",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-configuration_guide-05",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "train-configuration_guide-06",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-configuration_guide-07",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-configuration_guide-08",
+      "split": "train",
+      "scenarioGroup": "configuration_guide",
+      "category": "other",
+      "broadConstructionFamily": "negated_delivery"
+    },
+    {
+      "id": "train-import_template-01",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-import_template-02",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-import_template-03",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-import_template-04",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-import_template-05",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-import_template-06",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-import_template-07",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-import_template-08",
+      "split": "train",
+      "scenarioGroup": "import_template",
+      "category": "other",
+      "broadConstructionFamily": "descriptive_discussion"
+    },
+    {
+      "id": "train-training_recording-01",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-training_recording-02",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "going_to_future"
+    },
+    {
+      "id": "train-training_recording-03",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-training_recording-04",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-training_recording-05",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-training_recording-06",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-training_recording-07",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "train-training_recording-08",
+      "split": "train",
+      "scenarioGroup": "training_recording",
+      "category": "other",
+      "broadConstructionFamily": "hypothetical_or_possibility"
+    },
+    {
+      "id": "train-launch_checklist-01",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-launch_checklist-02",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-launch_checklist-03",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-launch_checklist-04",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-launch_checklist-05",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "train-launch_checklist-06",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-launch_checklist-07",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-launch_checklist-08",
+      "split": "train",
+      "scenarioGroup": "launch_checklist",
+      "category": "other",
+      "broadConstructionFamily": "completed_past_delivery"
+    },
+    {
+      "id": "train-field_mapping-01",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-field_mapping-02",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-field_mapping-03",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-field_mapping-04",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-field_mapping-05",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-field_mapping-06",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-field_mapping-07",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-field_mapping-08",
+      "split": "train",
+      "scenarioGroup": "field_mapping",
+      "category": "other",
+      "broadConstructionFamily": "negated_delivery"
+    },
+    {
+      "id": "train-sandbox_credentials-01",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-sandbox_credentials-02",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "going_to_future"
+    },
+    {
+      "id": "train-sandbox_credentials-03",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-sandbox_credentials-04",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-sandbox_credentials-05",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-sandbox_credentials-06",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-sandbox_credentials-07",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "train-sandbox_credentials-08",
+      "split": "train",
+      "scenarioGroup": "sandbox_credentials",
+      "category": "other",
+      "broadConstructionFamily": "descriptive_discussion"
+    },
+    {
+      "id": "train-security_packet-01",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-security_packet-02",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-security_packet-03",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "recipient_receipt_or_author_origin"
+    },
+    {
+      "id": "train-security_packet-04",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-security_packet-05",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-security_packet-06",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-security_packet-07",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "train-security_packet-08",
+      "split": "train",
+      "scenarioGroup": "security_packet",
+      "category": "other",
+      "broadConstructionFamily": "completed_past_delivery"
+    },
+    {
+      "id": "train-usage_export-01",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-usage_export-02",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-usage_export-03",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-usage_export-04",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-usage_export-05",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "train-usage_export-06",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-usage_export-07",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-usage_export-08",
+      "split": "train",
+      "scenarioGroup": "usage_export",
+      "category": "other",
+      "broadConstructionFamily": "negated_delivery"
+    },
+    {
+      "id": "train-workshop_slides-01",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-workshop_slides-02",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-workshop_slides-03",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "going_to_future"
+    },
+    {
+      "id": "train-workshop_slides-04",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-workshop_slides-05",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-workshop_slides-06",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-workshop_slides-07",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-workshop_slides-08",
+      "split": "train",
+      "scenarioGroup": "workshop_slides",
+      "category": "other",
+      "broadConstructionFamily": "hypothetical_or_possibility"
+    },
+    {
+      "id": "train-support_roster-01",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-support_roster-02",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-support_roster-03",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "recipient_receipt_or_author_origin"
+    },
+    {
+      "id": "train-support_roster-04",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-support_roster-05",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "train-support_roster-06",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-support_roster-07",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "train-support_roster-08",
+      "split": "train",
+      "scenarioGroup": "support_roster",
+      "category": "other",
+      "broadConstructionFamily": "descriptive_discussion"
+    },
+    {
+      "id": "train-architecture_diagram-01",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-architecture_diagram-02",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-architecture_diagram-03",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-architecture_diagram-04",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-architecture_diagram-05",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-architecture_diagram-06",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-architecture_diagram-07",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-architecture_diagram-08",
+      "split": "train",
+      "scenarioGroup": "architecture_diagram",
+      "category": "other",
+      "broadConstructionFamily": "negated_delivery"
+    },
+    {
+      "id": "train-renewal_summary-01",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "going_to_future"
+    },
+    {
+      "id": "train-renewal_summary-02",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-renewal_summary-03",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-renewal_summary-04",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "recipient_receipt_or_author_origin"
+    },
+    {
+      "id": "train-renewal_summary-05",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "train-renewal_summary-06",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-renewal_summary-07",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-renewal_summary-08",
+      "split": "train",
+      "scenarioGroup": "renewal_summary",
+      "category": "other",
+      "broadConstructionFamily": "completed_past_delivery"
+    },
+    {
+      "id": "train-pilot_results-01",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-pilot_results-02",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-pilot_results-03",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-pilot_results-04",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "scheduled_present_progressive"
+    },
+    {
+      "id": "train-pilot_results-05",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "train-pilot_results-06",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-pilot_results-07",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-pilot_results-08",
+      "split": "train",
+      "scenarioGroup": "pilot_results",
+      "category": "other",
+      "broadConstructionFamily": "hypothetical_or_possibility"
+    },
+    {
+      "id": "train-contact_directory-01",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-contact_directory-02",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "train-contact_directory-03",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "train-contact_directory-04",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "going_to_future"
+    },
+    {
+      "id": "train-contact_directory-05",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "train-contact_directory-06",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "train-contact_directory-07",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "train-contact_directory-08",
+      "split": "train",
+      "scenarioGroup": "contact_directory",
+      "category": "other",
+      "broadConstructionFamily": "hypothetical_or_possibility"
+    },
+    {
+      "id": "dev-acceptance_evidence-01",
+      "split": "dev",
+      "scenarioGroup": "acceptance_evidence",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "dev-acceptance_evidence-02",
+      "split": "dev",
+      "scenarioGroup": "acceptance_evidence",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-acceptance_evidence-03",
+      "split": "dev",
+      "scenarioGroup": "acceptance_evidence",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "recipient_receipt_or_author_origin"
+    },
+    {
+      "id": "dev-acceptance_evidence-04",
+      "split": "dev",
+      "scenarioGroup": "acceptance_evidence",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "dev-acceptance_evidence-05",
+      "split": "dev",
+      "scenarioGroup": "acceptance_evidence",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "dev-acceptance_evidence-06",
+      "split": "dev",
+      "scenarioGroup": "acceptance_evidence",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "dev-migration_rehearsal-01",
+      "split": "dev",
+      "scenarioGroup": "migration_rehearsal",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "dev-migration_rehearsal-02",
+      "split": "dev",
+      "scenarioGroup": "migration_rehearsal",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-migration_rehearsal-03",
+      "split": "dev",
+      "scenarioGroup": "migration_rehearsal",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "recipient_receipt_or_author_origin"
+    },
+    {
+      "id": "dev-migration_rehearsal-04",
+      "split": "dev",
+      "scenarioGroup": "migration_rehearsal",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "conditional_delivery"
+    },
+    {
+      "id": "dev-migration_rehearsal-05",
+      "split": "dev",
+      "scenarioGroup": "migration_rehearsal",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    },
+    {
+      "id": "dev-migration_rehearsal-06",
+      "split": "dev",
+      "scenarioGroup": "migration_rehearsal",
+      "category": "other",
+      "broadConstructionFamily": "negated_delivery"
+    },
+    {
+      "id": "dev-accessibility_audit-01",
+      "split": "dev",
+      "scenarioGroup": "accessibility_audit",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-accessibility_audit-02",
+      "split": "dev",
+      "scenarioGroup": "accessibility_audit",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-accessibility_audit-03",
+      "split": "dev",
+      "scenarioGroup": "accessibility_audit",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "dev-accessibility_audit-04",
+      "split": "dev",
+      "scenarioGroup": "accessibility_audit",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "dev-accessibility_audit-05",
+      "split": "dev",
+      "scenarioGroup": "accessibility_audit",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "dev-accessibility_audit-06",
+      "split": "dev",
+      "scenarioGroup": "accessibility_audit",
+      "category": "other",
+      "broadConstructionFamily": "completed_past_delivery"
+    },
+    {
+      "id": "dev-partner_playbook-01",
+      "split": "dev",
+      "scenarioGroup": "partner_playbook",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "dev-partner_playbook-02",
+      "split": "dev",
+      "scenarioGroup": "partner_playbook",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "dev-partner_playbook-03",
+      "split": "dev",
+      "scenarioGroup": "partner_playbook",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-partner_playbook-04",
+      "split": "dev",
+      "scenarioGroup": "partner_playbook",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "dev-partner_playbook-05",
+      "split": "dev",
+      "scenarioGroup": "partner_playbook",
+      "category": "reported",
+      "broadConstructionFamily": "quoted_or_quote_reference"
+    },
+    {
+      "id": "dev-partner_playbook-06",
+      "split": "dev",
+      "scenarioGroup": "partner_playbook",
+      "category": "other",
+      "broadConstructionFamily": "hypothetical_or_possibility"
+    },
+    {
+      "id": "dev-retention_schedule-01",
+      "split": "dev",
+      "scenarioGroup": "retention_schedule",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-retention_schedule-02",
+      "split": "dev",
+      "scenarioGroup": "retention_schedule",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "explicit_assurance"
+    },
+    {
+      "id": "dev-retention_schedule-03",
+      "split": "dev",
+      "scenarioGroup": "retention_schedule",
+      "category": "firm_delivery",
+      "broadConstructionFamily": "future_delivery_or_future_result"
+    },
+    {
+      "id": "dev-retention_schedule-04",
+      "split": "dev",
+      "scenarioGroup": "retention_schedule",
+      "category": "qualified_delivery",
+      "broadConstructionFamily": "tentative_intention_or_estimate"
+    },
+    {
+      "id": "dev-retention_schedule-05",
+      "split": "dev",
+      "scenarioGroup": "retention_schedule",
+      "category": "request",
+      "broadConstructionFamily": "recipient_request"
+    },
+    {
+      "id": "dev-retention_schedule-06",
+      "split": "dev",
+      "scenarioGroup": "retention_schedule",
+      "category": "reported",
+      "broadConstructionFamily": "attributed_or_historical_report"
+    }
+  ],
+  "decision": "Preserve all 150 texts, labels, scenario groups and 120/30 split. Broad grammatical family overlap is disclosed, not treated as absence of leakage by group-ID checks. No semantic-template-independence claim.",
+  "changes": {
+    "text": 0,
+    "label": 0,
+    "split": 0,
+    "excluded": 0
+  }
+}

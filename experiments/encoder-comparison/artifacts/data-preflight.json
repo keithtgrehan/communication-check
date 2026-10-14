@@ -1,0 +1,15 @@
+{
+  "admitted": 150,
+  "dataSha256": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468",
+  "maxTokens": 21,
+  "maxUtf16Units": 95,
+  "predictionsComputed": false,
+  "reasons": {
+    "character_limit": 0,
+    "empty": 0,
+    "token_limit": 0
+  },
+  "rejected": 0,
+  "tokenizerRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "total": 150
+}

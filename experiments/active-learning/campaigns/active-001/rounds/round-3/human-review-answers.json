@@ -1,0 +1,97 @@
+{
+  "items": [
+    {
+      "id": "al-p180",
+      "reviewer": {
+        "category": "other",
+        "evidence": [
+          "We will not deliver the ceremonial drum harnesses this Friday."
+        ],
+        "id": "item_83fb3ca961dec170ceb4e564",
+        "label": 0,
+        "rationale": "The future delivery is explicitly negated.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "other",
+        "evidence": [
+          "We will not deliver the ceremonial drum harnesses this Friday."
+        ],
+        "id": "item_d618368006945146b2cea727",
+        "label": 0,
+        "rationale": "Future delivery is explicitly negated.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p272",
+      "reviewer": {
+        "category": "reported",
+        "evidence": [
+          "The rangeland adviser said her team would supply the pasture rotation chart on Wednesday."
+        ],
+        "id": "item_5688640b4d22f005762f29f5",
+        "label": 0,
+        "rationale": "The author records the adviser's assertion without making a new delivery commitment.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "reported",
+        "evidence": [
+          "The rangeland adviser said her team would supply the pasture rotation chart on Wednesday."
+        ],
+        "id": "item_bf0e42fe5c7034b8ac390eea",
+        "label": 0,
+        "rationale": "Delivery is attributed to the adviser's statement.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p281",
+      "reviewer": {
+        "category": "firm_delivery",
+        "evidence": [
+          "I will deliver the custom brass door pull prototypes to the furniture maker on Monday morning."
+        ],
+        "id": "item_2fea59a6d939103446d6a472",
+        "label": 1,
+        "rationale": "The author asserts definite future delivery of concrete prototypes.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "firm_delivery",
+        "evidence": [
+          "I will deliver the custom brass door pull prototypes to the furniture maker on Monday morning."
+        ],
+        "id": "item_141423028d33416d00c50cc3",
+        "label": 1,
+        "rationale": "The author directly asserts unconditional future prototype delivery.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p293",
+      "reviewer": {
+        "category": "firm_delivery",
+        "evidence": [
+          "Our freight terminal team will deliver the completed oversized sculpture handling plan"
+        ],
+        "id": "item_b573f973bb6a3192ad2661a0",
+        "label": 1,
+        "rationale": "The author directly asserts their team's unconditional delivery of the completed plan.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "firm_delivery",
+        "evidence": [
+          "Our freight terminal team will deliver the completed oversized sculpture handling plan to the rigging supervisor tomorrow."
+        ],
+        "id": "item_c9628735d401728eaf160b03",
+        "label": 1,
+        "rationale": "The author's team asserts definite future delivery of the completed plan.",
+        "status": "clear"
+      }
+    }
+  ],
+  "quarantine": []
+}

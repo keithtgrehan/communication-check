@@ -1,0 +1,167 @@
+{
+  "batchId": "teacher-demo-001",
+  "batchSha256": "e4a6b748580595083a6b949a6cf86f568c1743eced2037fb6d917a0298d7cca5",
+  "items": [
+    {
+      "id": "review_9fea601d25a1f7895ced",
+      "text": "I will email you the consent wording draft this afternoon."
+    },
+    {
+      "id": "review_66ac5150199804235f39",
+      "text": "We will supply the route-validation log to your operations team this week."
+    },
+    {
+      "id": "review_95f39bb26916f1f791f4",
+      "text": "Can you make the completed seat-allocation register available to us tomorrow morning?"
+    },
+    {
+      "id": "review_1a1e8b8fb14ff73afaa8",
+      "text": "I guarantee that our route-validation log will reach you by three tomorrow."
+    },
+    {
+      "id": "review_99df03215bd67ac31446",
+      "text": "We give you our word that the consent wording draft will be shared tomorrow."
+    },
+    {
+      "id": "review_0c7072593973c1121967",
+      "text": "Jo told us that her team would deliver the decommission runbook on Tuesday morning."
+    },
+    {
+      "id": "review_516fa6a8102dd0024682",
+      "text": "Our engineering team will send the load-test summary on Friday."
+    },
+    {
+      "id": "review_45ad8affd8f650786017",
+      "text": "The customer quoted an earlier message: \"Our support team will hand over the reproduction package tomorrow.\""
+    },
+    {
+      "id": "review_ce375bbbfabfd849a5a7",
+      "text": "I am going to hand you the final decommission runbook at our next meeting."
+    },
+    {
+      "id": "review_60dc28e60b5ccfe8610b",
+      "text": "Our finance team commits to delivering the completed invoice reconciliation sheet tomorrow."
+    },
+    {
+      "id": "review_ae98fa20fdd8f2ac171c",
+      "text": "Our support team will hand over the reproduction package before the troubleshooting call."
+    },
+    {
+      "id": "review_5821a6e64de50deb60f9",
+      "text": "The decommission runbook will be delivered by our team on Tuesday morning."
+    },
+    {
+      "id": "review_879afc698337892327c1",
+      "text": "Our estimate is that the route-validation log will reach you by three tomorrow."
+    },
+    {
+      "id": "review_8b2cd8506e3172118942",
+      "text": "We are sending you the office-hours agenda first thing tomorrow."
+    },
+    {
+      "id": "review_0883f077fbc3bed355ff",
+      "text": "We will not send an office-hours agenda before the session."
+    },
+    {
+      "id": "review_9e025a0f8276e3a71b84",
+      "text": "The forwarded note reads: \"Our engineering team will send the load-test summary on Friday.\""
+    },
+    {
+      "id": "review_d2c1bd47806adc5b88e8",
+      "text": "Will your operations team supply its route-validation log to us this week?"
+    },
+    {
+      "id": "review_f2255c7a18962b432b01",
+      "text": "I promise that you will have the load-test summary from us before the review begins."
+    },
+    {
+      "id": "review_4af600f9bbfe78be469a",
+      "text": "Would you send us the service-credit calculation worksheet before noon on Wednesday?"
+    },
+    {
+      "id": "review_4401ee4e54229bdd91d4",
+      "text": "The localization glossary is going out from our team this evening."
+    },
+    {
+      "id": "review_f2115bd5ec82005f3da5",
+      "text": "Before our office hours start, I will share the complete agenda with you."
+    },
+    {
+      "id": "review_8cc87c55c8f6384894f3",
+      "text": "By Monday afternoon, I will put the invoice reconciliation sheet in your inbox."
+    },
+    {
+      "id": "review_d077cc0503960fa8d7ae",
+      "text": "The project diary records my previous promise to email a consent wording draft this afternoon."
+    },
+    {
+      "id": "review_ab6e5e5cd6a97e18b969",
+      "text": "The consent wording draft has already been emailed to your team."
+    },
+    {
+      "id": "review_9d57e56b9907f48ff121",
+      "text": "I cannot promise to send the load-test summary on Friday."
+    },
+    {
+      "id": "review_febe2560bb523f23aa0d",
+      "text": "If we owned the decommission runbook, we would send it to you."
+    },
+    {
+      "id": "review_f9b42d8425235f625f16",
+      "text": "The account history says we promised to share an office-hours agenda before the session."
+    },
+    {
+      "id": "review_35b0ff3ed3f8e75835da",
+      "text": "I will upload the localization glossary on Thursday if the translators sign it off."
+    },
+    {
+      "id": "review_6f6d726f51e6fedeab94",
+      "text": "Our support team handed over the reproduction package before yesterday's troubleshooting call."
+    },
+    {
+      "id": "review_a6821c8563b65ae34384",
+      "text": "We commit to providing the seat-allocation register at the end of this week."
+    },
+    {
+      "id": "review_dc2e7f4477b754ee9651",
+      "text": "I will make the completed seat-allocation register available to you tomorrow morning."
+    },
+    {
+      "id": "review_5e6f97a234209282ceb4",
+      "text": "Could your team upload the localization glossary for us on Thursday?"
+    },
+    {
+      "id": "review_6e937ce4cedd82dd32f3",
+      "text": "I promise to upload the localization glossary for you on Thursday."
+    },
+    {
+      "id": "review_d7222b19d0d2d0b37fa6",
+      "text": "I aim to put the invoice reconciliation sheet in your inbox by Monday afternoon."
+    },
+    {
+      "id": "review_9fe1392a867f6bb85a9a",
+      "text": "Please put the invoice reconciliation sheet in our inbox by Monday afternoon."
+    },
+    {
+      "id": "review_c61b42ed3336df0e723e",
+      "text": "Pending the billing review, we will send the service-credit calculation worksheet tomorrow."
+    },
+    {
+      "id": "review_6cd378bd71cdbca468bf",
+      "text": "You will receive the reproduction package from me at nine tomorrow."
+    },
+    {
+      "id": "review_bfaa9515553c919fa5f1",
+      "text": "We expect to provide the seat-allocation register at the end of this week."
+    },
+    {
+      "id": "review_50089abdc3618ac35dc6",
+      "text": "We undertake to send you the service-credit calculation worksheet tomorrow."
+    },
+    {
+      "id": "review_bd19f22c0f3e7c02009c",
+      "text": "Your service-credit calculation worksheet will come from me before noon on Wednesday."
+    }
+  ],
+  "schemaVersion": 1
+}

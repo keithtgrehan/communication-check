@@ -1,0 +1,1712 @@
+[
+  {
+    "category": "firm_delivery",
+    "group": "account_handoff",
+    "id": "train-account_handoff-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll send the account handoff document tomorrow morning."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "account_handoff",
+    "id": "train-account_handoff-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will deliver the account summary by noon on Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "account_handoff",
+    "id": "train-account_handoff-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our team is sending you the completed handoff pack this afternoon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "account_handoff",
+    "id": "train-account_handoff-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I commit to sharing the handover notes before the next call."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "account_handoff",
+    "id": "train-account_handoff-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We hope to send the account handoff document tomorrow."
+  },
+  {
+    "category": "request",
+    "group": "account_handoff",
+    "id": "train-account_handoff-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Could you send the account handoff document tomorrow morning?"
+  },
+  {
+    "category": "reported",
+    "group": "account_handoff",
+    "id": "train-account_handoff-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "Mira wrote, \"We will deliver the account summary by noon.\""
+  },
+  {
+    "category": "other",
+    "group": "account_handoff",
+    "id": "train-account_handoff-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "We sent the account handoff document yesterday morning."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "You will receive the configuration guide from us on Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I am going to deliver the configuration instructions before lunch."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We promise to send the setup guide this week."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our onboarding team will share the final configuration guide at nine tomorrow."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We can send the configuration guide if the review finishes today."
+  },
+  {
+    "category": "request",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Please share the configuration guide before the workshop."
+  },
+  {
+    "category": "reported",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The customer said that we would send the configuration guide on Friday."
+  },
+  {
+    "category": "other",
+    "group": "configuration_guide",
+    "id": "train-configuration_guide-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "I will not send the configuration guide this week."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "import_template",
+    "id": "train-import_template-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We are delivering the import template to your team on Monday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "import_template",
+    "id": "train-import_template-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll have the import template in your inbox by five."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "import_template",
+    "id": "train-import_template-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I guarantee that we will send the import template before kickoff."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "import_template",
+    "id": "train-import_template-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We undertake to supply the import template tomorrow."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "import_template",
+    "id": "train-import_template-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We expect to deliver the import template on Monday."
+  },
+  {
+    "category": "request",
+    "group": "import_template",
+    "id": "train-import_template-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Would your team provide the import template by five?"
+  },
+  {
+    "category": "reported",
+    "group": "import_template",
+    "id": "train-import_template-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "In the previous email, I promised to send the import template on Monday."
+  },
+  {
+    "category": "other",
+    "group": "import_template",
+    "id": "train-import_template-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "The import template contains columns for names and account IDs."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "training_recording",
+    "id": "train-training_recording-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I will upload the training recording by the end of today."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "training_recording",
+    "id": "train-training_recording-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We are going to share the workshop recording tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "training_recording",
+    "id": "train-training_recording-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "The training recording will be delivered by our team this evening."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "training_recording",
+    "id": "train-training_recording-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll make the recording available to you before Thursday."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "training_recording",
+    "id": "train-training_recording-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "I might upload the training recording today."
+  },
+  {
+    "category": "request",
+    "group": "training_recording",
+    "id": "train-training_recording-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Can you make the training recording available before Thursday?"
+  },
+  {
+    "category": "reported",
+    "group": "training_recording",
+    "id": "train-training_recording-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "Her message reads: \"I will upload the training recording today.\""
+  },
+  {
+    "category": "other",
+    "group": "training_recording",
+    "id": "train-training_recording-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "If I were leading the session, I would send you the recording."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will provide a launch checklist before your kickoff session."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I am sending the launch checklist to you first thing tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our team guarantees delivery of the launch checklist on Wednesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We commit to getting the launch checklist to you by close of business."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "Subject to approval, we will provide the launch checklist on Wednesday."
+  },
+  {
+    "category": "request",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Please get the launch checklist to us by close of business."
+  },
+  {
+    "category": "reported",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "Their launch checklist email said they would provide it on Wednesday."
+  },
+  {
+    "category": "other",
+    "group": "launch_checklist",
+    "id": "train-launch_checklist-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "Our launch checklist was delivered last Wednesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "field_mapping",
+    "id": "train-field_mapping-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll deliver the field mapping sheet on Thursday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "field_mapping",
+    "id": "train-field_mapping-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will send over the finished mapping workbook tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "field_mapping",
+    "id": "train-field_mapping-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I promise that the mapping sheet will reach you by three."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "field_mapping",
+    "id": "train-field_mapping-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our implementation team is providing the mapping workbook next week."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "field_mapping",
+    "id": "train-field_mapping-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We aim to send the field mapping sheet next week."
+  },
+  {
+    "category": "request",
+    "group": "field_mapping",
+    "id": "train-field_mapping-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Will you deliver the field mapping sheet on Thursday?"
+  },
+  {
+    "category": "reported",
+    "group": "field_mapping",
+    "id": "train-field_mapping-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The notes record a promise from Lee to send the mapping sheet."
+  },
+  {
+    "category": "other",
+    "group": "field_mapping",
+    "id": "train-field_mapping-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "I cannot deliver the field mapping sheet on Thursday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will supply your sandbox credentials on Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I am going to send the sandbox access details later today."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our team commits to delivering the sandbox credentials before the demo."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll get the sandbox login pack to you by ten tomorrow."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We should be able to supply your sandbox credentials on Tuesday."
+  },
+  {
+    "category": "request",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Could your administrator send the sandbox access details today?"
+  },
+  {
+    "category": "reported",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The quoted note says our team will supply sandbox credentials on Tuesday."
+  },
+  {
+    "category": "other",
+    "group": "sandbox_credentials",
+    "id": "train-sandbox_credentials-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "Sandbox credentials grant access to the demonstration environment."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "security_packet",
+    "id": "train-security_packet-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I will deliver the security questionnaire answers next Monday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "security_packet",
+    "id": "train-security_packet-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We are sending our completed security packet tomorrow afternoon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "security_packet",
+    "id": "train-security_packet-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "You will have the security packet from us before the review meeting."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "security_packet",
+    "id": "train-security_packet-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We promise to provide the security documentation this evening."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "security_packet",
+    "id": "train-security_packet-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We intend to provide the security documentation this evening."
+  },
+  {
+    "category": "request",
+    "group": "security_packet",
+    "id": "train-security_packet-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Please deliver your security questionnaire answers next Monday."
+  },
+  {
+    "category": "reported",
+    "group": "security_packet",
+    "id": "train-security_packet-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "They told us, \"We are sending our completed security packet tomorrow.\""
+  },
+  {
+    "category": "other",
+    "group": "security_packet",
+    "id": "train-security_packet-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "We have already provided the security documentation."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "usage_export",
+    "id": "train-usage_export-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll send the usage export to you on Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "usage_export",
+    "id": "train-usage_export-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our analytics team will deliver the usage report tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "usage_export",
+    "id": "train-usage_export-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We guarantee that the usage export will be shared with you by noon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "usage_export",
+    "id": "train-usage_export-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I am delivering the usage spreadsheet before the review starts."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "usage_export",
+    "id": "train-usage_export-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We will deliver the usage report when the source data is ready."
+  },
+  {
+    "category": "request",
+    "group": "usage_export",
+    "id": "train-usage_export-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Could you share the usage export with our analytics team?"
+  },
+  {
+    "category": "reported",
+    "group": "usage_export",
+    "id": "train-usage_export-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "Last week I said that I would deliver a usage report."
+  },
+  {
+    "category": "other",
+    "group": "usage_export",
+    "id": "train-usage_export-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "There is no commitment from us to deliver the usage export on Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will send you the workshop slides after lunch today."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I commit to delivering the presentation deck tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our team is going to share the workshop deck by Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll upload the completed workshop slides this afternoon."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We may send the workshop slides after lunch today."
+  },
+  {
+    "category": "request",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Would you upload the workshop slides this afternoon?"
+  },
+  {
+    "category": "reported",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "According to the facilitator, we will send the workshop slides tomorrow."
+  },
+  {
+    "category": "other",
+    "group": "workshop_slides",
+    "id": "train-workshop_slides-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "Imagine that we promised to send a workshop deck by Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "support_roster",
+    "id": "train-support_roster-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I will provide the support contact roster tomorrow morning."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "support_roster",
+    "id": "train-support_roster-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We promise to share the escalation contact list by Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "support_roster",
+    "id": "train-support_roster-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "The support roster will reach you from our team this week."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "support_roster",
+    "id": "train-support_roster-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We are delivering the escalation directory before the handover."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "support_roster",
+    "id": "train-support_roster-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "Pending manager sign-off, we will share the escalation contact list."
+  },
+  {
+    "category": "request",
+    "group": "support_roster",
+    "id": "train-support_roster-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Can your team provide its support contact roster tomorrow?"
+  },
+  {
+    "category": "reported",
+    "group": "support_roster",
+    "id": "train-support_roster-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The old draft included the sentence \"We promise to share the escalation list.\""
+  },
+  {
+    "category": "other",
+    "group": "support_roster",
+    "id": "train-support_roster-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "Our support roster lists the current escalation contacts."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will deliver the architecture diagram this Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll share the final system diagram at the start of next week."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I guarantee delivery of the architecture drawing before the call."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our solutions team is sending you the architecture diagrams tomorrow."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "Our solutions team plans to send the architecture diagrams tomorrow."
+  },
+  {
+    "category": "request",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Please share your architecture diagram before the call."
+  },
+  {
+    "category": "reported",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "I heard that the solutions team will send an architecture diagram tomorrow."
+  },
+  {
+    "category": "other",
+    "group": "architecture_diagram",
+    "id": "train-architecture_diagram-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "We are not going to deliver the architecture diagram this Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I am going to send the renewal summary next Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will supply the renewal briefing before your internal meeting."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I promise to deliver the written renewal summary by tomorrow evening."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "You will receive the renewal briefing from us this afternoon."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We will send the renewal summary provided finance approves the draft."
+  },
+  {
+    "category": "request",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Could you deliver the renewal summary by tomorrow evening?"
+  },
+  {
+    "category": "reported",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The forwarded email promises that a renewal summary will arrive Tuesday."
+  },
+  {
+    "category": "other",
+    "group": "renewal_summary",
+    "id": "train-renewal_summary-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "I sent the written renewal summary to you yesterday evening."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "pilot_results",
+    "id": "train-pilot_results-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll deliver the pilot results report before the steering meeting."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "pilot_results",
+    "id": "train-pilot_results-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our project team will send you the pilot findings tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "pilot_results",
+    "id": "train-pilot_results-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We commit to sharing the completed pilot report by midday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "pilot_results",
+    "id": "train-pilot_results-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I am uploading the pilot results for you on Monday morning."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "pilot_results",
+    "id": "train-pilot_results-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We are targeting Monday morning for sharing the pilot results."
+  },
+  {
+    "category": "request",
+    "group": "pilot_results",
+    "id": "train-pilot_results-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Will your project team send us the pilot findings tomorrow?"
+  },
+  {
+    "category": "reported",
+    "group": "pilot_results",
+    "id": "train-pilot_results-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The project lead recalled promising to share the pilot results by midday."
+  },
+  {
+    "category": "other",
+    "group": "pilot_results",
+    "id": "train-pilot_results-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "We discussed whether a pilot results report would be useful."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "contact_directory",
+    "id": "train-contact_directory-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "We will provide the account contact directory tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "contact_directory",
+    "id": "train-contact_directory-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I guarantee that our contact directory will be in your inbox on Friday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "contact_directory",
+    "id": "train-contact_directory-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "I'll send the complete stakeholder list this evening."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "contact_directory",
+    "id": "train-contact_directory-04",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "train",
+    "text": "Our team is going to deliver the stakeholder directory at noon."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "contact_directory",
+    "id": "train-contact_directory-05",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "train",
+    "text": "We could deliver the contact directory tomorrow if everyone responds."
+  },
+  {
+    "category": "request",
+    "group": "contact_directory",
+    "id": "train-contact_directory-06",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "train",
+    "text": "Please send your complete stakeholder list this evening."
+  },
+  {
+    "category": "reported",
+    "group": "contact_directory",
+    "id": "train-contact_directory-07",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "train",
+    "text": "The account notes state that I promised to provide a contact directory."
+  },
+  {
+    "category": "other",
+    "group": "contact_directory",
+    "id": "train-contact_directory-08",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "train",
+    "text": "Sending the stakeholder directory tomorrow would be an option."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "acceptance_evidence",
+    "id": "dev-acceptance_evidence-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "Before the acceptance review, I will place the evidence bundle in your shared folder."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "acceptance_evidence",
+    "id": "dev-acceptance_evidence-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "Friday is the delivery date we commit to for the acceptance evidence."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "acceptance_evidence",
+    "id": "dev-acceptance_evidence-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "The acceptance evidence is coming from our team tomorrow morning."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "acceptance_evidence",
+    "id": "dev-acceptance_evidence-04",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "dev",
+    "text": "Our current estimate puts delivery of the acceptance evidence on Friday."
+  },
+  {
+    "category": "request",
+    "group": "acceptance_evidence",
+    "id": "dev-acceptance_evidence-05",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "dev",
+    "text": "For the acceptance review, would you place the evidence bundle in the shared folder?"
+  },
+  {
+    "category": "reported",
+    "group": "acceptance_evidence",
+    "id": "dev-acceptance_evidence-06",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "dev",
+    "text": "In the meeting transcript, Rowan says: \"The acceptance evidence is coming tomorrow.\""
+  },
+  {
+    "category": "firm_delivery",
+    "group": "migration_rehearsal",
+    "id": "dev-migration_rehearsal-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "By four this afternoon, we will hand over the migration rehearsal log."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "migration_rehearsal",
+    "id": "dev-migration_rehearsal-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "I give you my word that the rehearsal results will be sent tonight."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "migration_rehearsal",
+    "id": "dev-migration_rehearsal-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "Tomorrow you are getting the migration rehearsal notes from me."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "migration_rehearsal",
+    "id": "dev-migration_rehearsal-04",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "dev",
+    "text": "Barring any rerun, I will hand over the migration rehearsal log this afternoon."
+  },
+  {
+    "category": "reported",
+    "group": "migration_rehearsal",
+    "id": "dev-migration_rehearsal-05",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "dev",
+    "text": "The earlier plan stated that we would send the rehearsal results tonight."
+  },
+  {
+    "category": "other",
+    "group": "migration_rehearsal",
+    "id": "dev-migration_rehearsal-06",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "dev",
+    "text": "I will not be handing over any migration rehearsal notes tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "accessibility_audit",
+    "id": "dev-accessibility_audit-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "You can count on me to deliver the accessibility audit file on Monday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "accessibility_audit",
+    "id": "dev-accessibility_audit-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "Delivery of the accessibility findings by Thursday is our commitment."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "accessibility_audit",
+    "id": "dev-accessibility_audit-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "We are due to send the final accessibility audit at ten, and we will do so."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "accessibility_audit",
+    "id": "dev-accessibility_audit-04",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "dev",
+    "text": "Monday is our tentative date for delivering the accessibility audit file."
+  },
+  {
+    "category": "request",
+    "group": "accessibility_audit",
+    "id": "dev-accessibility_audit-05",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "dev",
+    "text": "Can I count on you to deliver the accessibility audit file on Monday?"
+  },
+  {
+    "category": "other",
+    "group": "accessibility_audit",
+    "id": "dev-accessibility_audit-06",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "dev",
+    "text": "We delivered the accessibility findings last Thursday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "partner_playbook",
+    "id": "dev-partner_playbook-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "At our next check-in I will hand you the partner playbook."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "partner_playbook",
+    "id": "dev-partner_playbook-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "I am taking responsibility for sending the partner playbook tomorrow; you will have it by noon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "partner_playbook",
+    "id": "dev-partner_playbook-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "We pledge to supply the final partner playbook this month."
+  },
+  {
+    "category": "request",
+    "group": "partner_playbook",
+    "id": "dev-partner_playbook-04",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "dev",
+    "text": "At our next check-in, could you hand me the partner playbook?"
+  },
+  {
+    "category": "reported",
+    "group": "partner_playbook",
+    "id": "dev-partner_playbook-05",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "dev",
+    "text": "The partner quoted our previous promise to supply the playbook this month."
+  },
+  {
+    "category": "other",
+    "group": "partner_playbook",
+    "id": "dev-partner_playbook-06",
+    "label": 0,
+    "rationale": "Past, negated, hypothetical or descriptive wording is not an unqualified prospective author delivery assertion.",
+    "split": "dev",
+    "text": "If we had the partner playbook, we would send it to you."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "retention_schedule",
+    "id": "dev-retention_schedule-01",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "The retention schedule is one thing I can promise to send you tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "retention_schedule",
+    "id": "dev-retention_schedule-02",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "We have a definite delivery commitment: your retention schedule goes out from us on Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "retention_schedule",
+    "id": "dev-retention_schedule-03",
+    "label": 1,
+    "rationale": "Author states an unqualified prospective delivery of a concrete work item; this labels wording, not its truth or usefulness as a finding.",
+    "split": "dev",
+    "text": "I will see to it that the final retention schedule reaches you before noon."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "retention_schedule",
+    "id": "dev-retention_schedule-04",
+    "label": 0,
+    "rationale": "Prospective delivery is conditional, tentative, estimated, intended or otherwise qualified.",
+    "split": "dev",
+    "text": "I anticipate sending the retention schedule tomorrow, but the date remains provisional."
+  },
+  {
+    "category": "request",
+    "group": "retention_schedule",
+    "id": "dev-retention_schedule-05",
+    "label": 0,
+    "rationale": "Asks the recipient to deliver something; does not assert the author's own firm delivery.",
+    "split": "dev",
+    "text": "Would your compliance lead send us the final retention schedule before noon?"
+  },
+  {
+    "category": "reported",
+    "group": "retention_schedule",
+    "id": "dev-retention_schedule-06",
+    "label": 0,
+    "rationale": "Reports, recalls, quotes or attributes delivery wording rather than making a new direct author delivery assertion.",
+    "split": "dev",
+    "text": "You mentioned that our team had promised to send a retention schedule on Tuesday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_443b335d562e4f2c",
+    "label": 1,
+    "rationale": "Direct author future delivery with a deadline and no condition.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "By Monday afternoon, I will put the invoice reconciliation sheet in your inbox."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_29f2bb8373c24aa0",
+    "label": 1,
+    "rationale": "Explicit unqualified team commitment to deliver a work item.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our finance team commits to delivering the completed invoice reconciliation sheet tomorrow."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_004a190745314ad3",
+    "label": 0,
+    "rationale": "An aim is an intention, not an assured delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I aim to put the invoice reconciliation sheet in your inbox by Monday afternoon."
+  },
+  {
+    "category": "request",
+    "group": "fam_f83bf64594db4f5f",
+    "id": "ex_f43913fbee494573",
+    "label": 0,
+    "rationale": "Recipient request, not an author delivery assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Please put the invoice reconciliation sheet in our inbox by Monday afternoon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_0e2ca03aa51744a9",
+    "label": 1,
+    "rationale": "Unqualified future delivery by the author team; the call marks a deadline.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our support team will hand over the reproduction package before the troubleshooting call."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_6df68067e6314a85",
+    "label": 1,
+    "rationale": "Assured future recipient receipt with explicit author ownership.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "You will receive the reproduction package from me at nine tomorrow."
+  },
+  {
+    "category": "reported",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_bf90a27204d74569",
+    "label": 0,
+    "rationale": "A quoted earlier message is reported wording, not a new direct assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The customer quoted an earlier message: \"Our support team will hand over the reproduction package tomorrow.\""
+  },
+  {
+    "category": "other",
+    "group": "fam_ed583698271547a5",
+    "id": "ex_a4032476efe043ac",
+    "label": 0,
+    "rationale": "Completed past delivery, not a prospective assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our support team handed over the reproduction package before yesterday's troubleshooting call."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_f0e5cd813253443d",
+    "label": 1,
+    "rationale": "Explicit author promise of future work-item delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I promise to upload the localization glossary for you on Thursday."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_6b1b72bc2b1a4614",
+    "label": 1,
+    "rationale": "Definite scheduled delivery and explicit author-team origin.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The localization glossary is going out from our team this evening."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_86331909a5464461",
+    "label": 0,
+    "rationale": "Future delivery depends on an explicit approval condition.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I will upload the localization glossary on Thursday if the translators sign it off."
+  },
+  {
+    "category": "request",
+    "group": "fam_cfda77e2acae47fb",
+    "id": "ex_2db815acc2544ed1",
+    "label": 0,
+    "rationale": "Asks the recipient team to deliver; no author-owned delivery assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Could your team upload the localization glossary for us on Thursday?"
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_664fdf74f4f44597",
+    "label": 1,
+    "rationale": "Scheduled future-progressive delivery by the author team.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We are sending you the office-hours agenda first thing tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_5b43db00ede44f29",
+    "label": 1,
+    "rationale": "Direct unqualified author future sharing with a deadline.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Before our office hours start, I will share the complete agenda with you."
+  },
+  {
+    "category": "reported",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_0219268329264419",
+    "label": 0,
+    "rationale": "Historical attribution of a promise rather than a fresh author assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The account history says we promised to share an office-hours agenda before the session."
+  },
+  {
+    "category": "other",
+    "group": "fam_ce2c78f7d42243a8",
+    "id": "ex_d27d0b4d880e46cd",
+    "label": 0,
+    "rationale": "Explicit negation of future delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We will not send an office-hours agenda before the session."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_d84b430dcf724727",
+    "label": 1,
+    "rationale": "Explicit guarantee of future delivery with author ownership.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I guarantee that our route-validation log will reach you by three tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_a8760f4dc33d4855",
+    "label": 1,
+    "rationale": "Unqualified author-team future supply of a concrete artifact.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We will supply the route-validation log to your operations team this week."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_fac442190cb74b15",
+    "label": 0,
+    "rationale": "Delivery timing is framed as an estimate, not an assurance.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Our estimate is that the route-validation log will reach you by three tomorrow."
+  },
+  {
+    "category": "request",
+    "group": "fam_7014af74e5ec4d5c",
+    "id": "ex_a1f337b327824d4b",
+    "label": 0,
+    "rationale": "Question requests the recipient team's delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Will your operations team supply its route-validation log to us this week?"
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_cf359787425647da",
+    "label": 1,
+    "rationale": "Passive future delivery explicitly owned by the author team.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The decommission runbook will be delivered by our team on Tuesday morning."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_b35775fe54924bec",
+    "label": 1,
+    "rationale": "Definite author-owned future handover of a work item.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I am going to hand you the final decommission runbook at our next meeting."
+  },
+  {
+    "category": "reported",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_dcbd331181f14c53",
+    "label": 0,
+    "rationale": "Reports another person's delivery statement.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Jo told us that her team would deliver the decommission runbook on Tuesday morning."
+  },
+  {
+    "category": "other",
+    "group": "fam_4ccdedf830ed476f",
+    "id": "ex_197d62d92ffc4da5",
+    "label": 0,
+    "rationale": "Counterfactual delivery, not a firm real-world future assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "If we owned the decommission runbook, we would send it to you."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_77721aedbb5046af",
+    "label": 1,
+    "rationale": "Explicit undertaking to deliver a document; no promise about the credit amount.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We undertake to send you the service-credit calculation worksheet tomorrow."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_8fec13f011d349c6",
+    "label": 1,
+    "rationale": "Unqualified future recipient receipt explicitly attributed to the author.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Your service-credit calculation worksheet will come from me before noon on Wednesday."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_5a36e497e62f4626",
+    "label": 0,
+    "rationale": "Delivery is conditional on an unfinished review.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Pending the billing review, we will send the service-credit calculation worksheet tomorrow."
+  },
+  {
+    "category": "request",
+    "group": "fam_9d037813efd8402b",
+    "id": "ex_2a348f2909aa4bb4",
+    "label": 0,
+    "rationale": "Recipient request rather than an author-owned delivery statement.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Would you send us the service-credit calculation worksheet before noon on Wednesday?"
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_1cd53b8399fe4100",
+    "label": 1,
+    "rationale": "Direct author future delivery of a draft; no claim that its contents are approved.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I will email you the consent wording draft this afternoon."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_65429a43fd824f70",
+    "label": 1,
+    "rationale": "Explicit author-team assurance of future document delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We give you our word that the consent wording draft will be shared tomorrow."
+  },
+  {
+    "category": "reported",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_d2b8e28efcdc4073",
+    "label": 0,
+    "rationale": "Historical record of a promise rather than a new unqualified assertion.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The project diary records my previous promise to email a consent wording draft this afternoon."
+  },
+  {
+    "category": "other",
+    "group": "fam_b10dbbcc514a4c48",
+    "id": "ex_e0db81af7b9d43fa",
+    "label": 0,
+    "rationale": "Completed delivery rather than a future one.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "The consent wording draft has already been emailed to your team."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_10b6f8c33f3f49db",
+    "label": 1,
+    "rationale": "Explicit team commitment to future artifact delivery.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We commit to providing the seat-allocation register at the end of this week."
+  },
+  {
+    "category": "firm_delivery",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_602c65e4ffc34600",
+    "label": 1,
+    "rationale": "Unqualified author future provision of the register.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "I will make the completed seat-allocation register available to you tomorrow morning."
+  },
+  {
+    "category": "qualified_delivery",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_ea35e9dd395e40d6",
+    "label": 0,
+    "rationale": "Expectation is qualified delivery rather than a promise.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "We expect to provide the seat-allocation register at the end of this week."
+  },
+  {
+    "category": "request",
+    "group": "fam_8c7f551a2925427b",
+    "id": "ex_573ddd022f264962",
+    "label": 0,
+    "rationale": "Requests recipient provision of the register.",
+    "sourceBatch": "teacher-demo-001",
+    "split": "train",
+    "text": "Can you make the completed seat-allocation register available to us tomorrow morning?"
+  }
+]

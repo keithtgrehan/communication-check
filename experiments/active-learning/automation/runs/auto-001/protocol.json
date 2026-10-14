@@ -1,0 +1,83 @@
+{
+  "failures": "No user adjudication, no regeneration, no automatic retry. Quarantine unresolved TRAIN families. Keep difficult DEV/FINAL rows; overlap invalidates target comparison, never remove rows based on model disagreement. Preserve failed runs and emit terminal report.",
+  "limits": {
+    "actorSeconds": 600,
+    "artifactBytes": 5000000000,
+    "cpuThreads": 4,
+    "downloadSeconds": 600,
+    "externalFileBytes": 100000000,
+    "modelSeconds": 600,
+    "peakProcessTreeBytes": 12884901888,
+    "totalSeconds": 3600
+  },
+  "mailEx": {
+    "revision": "57507a458ce157378300d982914d7528448a381d",
+    "use": "availability/schema/provenance assessment only; event taxonomy not a firm-delivery label; no automatic target transfer"
+  },
+  "models": {
+    "C42": {
+      "license": "apache-2.0",
+      "revision": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea"
+    },
+    "deberta": {
+      "id": "MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c",
+      "license": "mit",
+      "revision": "bddf8c5411c34ac3565e16e04384fd68b2618dda"
+    },
+    "modernbert": {
+      "id": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "license": "apache-2.0",
+      "restriction": "Research inference only; mixed original training-data licences, no commercial distillation lineage.",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1"
+    }
+  },
+  "name": "automatic-wording-comparison-001",
+  "privacy": "Only generated synthetic passages go to existing Codex actors. External data processed locally. Model inference/training OS network-denied; downloads separate. No product integration, deployment or new paid service.",
+  "publishedBenchmark": {
+    "hypothesis": "This passage states a company principle, commitment, or strategy related to environmental, social, or governance criteria.",
+    "license": "CC-BY-NC-SA-4.0",
+    "maxRows": 64,
+    "selection": "first64 ascending sha256 canonical source ID + full text; no label-stratification",
+    "source": "ML-Promise",
+    "split": "original English test",
+    "task": "published Promise Identification Yes/No; never target firm_delivery",
+    "threshold": 0.5,
+    "trainingEligible": false,
+    "url": "https://drive.usercontent.google.com/download?id=1TonLbkuKLCrpsv7HMZdnS5oTFn7FREid&export=download&confirm=t"
+  },
+  "replication": "Run IDs immutable. Later repeats of same dataset are replication, never fresh evidence. Existing historical heldouts not read or reused. Pretrained-model contamination unknown.",
+  "seed": 42,
+  "synthetic": {
+    "devRows": 28,
+    "familySize": 4,
+    "finalRows": 56,
+    "nearDuplicateJaccard": 0.85,
+    "trainRows": 40
+  },
+  "target": "author-owned unqualified future delivery of a concrete work item; not useful product warnings",
+  "teacher": {
+    "model": "gpt-6-astra",
+    "note": "Existing configured actor infrastructure exposes Astra only; no separately configured model-family service. Distinct sessions with same-family bias; AI agreement is not confidence or human gold.",
+    "reviewerModel": "gpt-6-astra",
+    "runner": "../run_agent.py",
+    "sharedModelFamily": true
+  },
+  "thresholdSelection": "Fresh synthetic DEV only. Grid .05 through .95 by .05; require precision>=.90 and recall>=.70 and coverage>=.90; maximize recall, precision, threshold. Otherwise .50 diagnostic. No abstention band, only invalid/oversize input abstentions.",
+  "training": {
+    "lineage": "original120 TRAIN plus new fully agreed synthetic families only; original30 DEV retained solely for legacy adapter diagnostics; no external or old active-learning additions",
+    "maxPasses": 1,
+    "minimumAdditions": 8,
+    "minimumFamilies": 2,
+    "minimumPerClass": 4,
+    "recipe": {
+      "batchSize": 16,
+      "bodySteps": 50,
+      "classifierHeadSeed": 42,
+      "learningRate": 2e-05,
+      "pairIterations": 5,
+      "seed": 42
+    }
+  },
+  "version": 1,
+  "winner": "Report all candidates once on all fresh FINAL rows. Diagnostic winner maximizes F1 then precision then fewer FP then fixed order C42,setfit-auto,deberta,modernbert. Improvement requires strictly higher F1 than C42 and no additional FP, all protocol integrity checks passing, and candidate DEV gate passing. No production promotion. Ambiguous author references remain in outputs but outside binary denominator; report their predictions separately."
+}

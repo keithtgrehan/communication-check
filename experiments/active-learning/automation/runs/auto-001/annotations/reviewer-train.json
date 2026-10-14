@@ -1,0 +1,1283 @@
+[
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-textile-museum",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-textile-museum-4",
+    "quarantined": false,
+    "rationale": "The author directly assures future delivery by their team.",
+    "supportingText": [
+      "Our conservation team will send you the matching condition cards tomorrow"
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-train-radio-archive",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-radio-archive-3",
+    "quarantined": false,
+    "rationale": "The author recalls an old promise without renewing it.",
+    "supportingText": [
+      "Last winter I promised to send the tape inventory by the end of that week. I am recounting the old arrangement here."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-seed-bank",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-seed-bank-1",
+    "quarantined": false,
+    "rationale": "The author unconditionally commits to sending concrete packets.",
+    "supportingText": [
+      "I will send you the accession packets for the dune-grass seeds tomorrow."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-train-piano-workshop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-piano-workshop-1",
+    "quarantined": false,
+    "rationale": "The passage describes capability without asserting delivery.",
+    "supportingText": [
+      "I can export the piano's voicing records as a PDF.",
+      "That describes the workshop software's capability; I have not set a delivery date."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-orchard-coop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-orchard-coop-4",
+    "quarantined": false,
+    "rationale": "The author's firm delivery assertion concerns a separate ledger from the grower's hope.",
+    "supportingText": [
+      "I will send you our completed cooperative graft ledger tomorrow."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-piano-workshop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-piano-workshop-4",
+    "quarantined": false,
+    "rationale": "The final explicit assurance resolves the initial plan wording.",
+    "supportingText": [
+      "Our plan is to send the concert piano's voicing log at noon on Friday. To be explicit, we will do so."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-train-kite-regatta",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-kite-regatta-2",
+    "quarantined": false,
+    "rationale": "Delivery depends on completion of the wind survey.",
+    "supportingText": [
+      "We will send the course sketches when the wind survey is ready."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-train-textile-museum",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-textile-museum-2",
+    "quarantined": false,
+    "rationale": "The passage describes completed work and past delivery.",
+    "supportingText": [
+      "I repaired the split hem yesterday and handed the revised condition card to the registrar."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-radio-archive",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-radio-archive-4",
+    "quarantined": false,
+    "rationale": "The author directly commits to future delivery of the music-tape inventory.",
+    "supportingText": [
+      "I will deliver the music-tape inventory this Friday."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-train-film-restoration",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-film-restoration-4",
+    "quarantined": false,
+    "rationale": "The prior assurance is withdrawn and replaced with a hope.",
+    "supportingText": [
+      "Please disregard that assurance; we now hope to send them later in the week."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-train-kite-regatta",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-kite-regatta-4",
+    "quarantined": false,
+    "rationale": "Delivery is explicitly conditional on the survey being ready.",
+    "supportingText": [
+      "If the wind survey is ready tonight, I will get you the course sketches before tomorrow's launch."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-cave-survey",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-cave-survey-3",
+    "quarantined": false,
+    "rationale": "The author directly assures delivery of the final plate.",
+    "supportingText": [
+      "I will send you the final cartographic plate tomorrow morning."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "abstain",
+    "dataProvenance": {
+      "group": "auto-train-stone-quarry",
+      "source": "synthetic-ai-author"
+    },
+    "label": null,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-stone-quarry-1",
+    "quarantined": true,
+    "rationale": "The withdrawal concerns granite; the separate limestone delivery is firmly asserted.",
+    "supportingText": [
+      "I will send you the limestone sample catalogue tomorrow."
+    ],
+    "trainingEligible": false
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-seed-bank",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-seed-bank-4",
+    "quarantined": false,
+    "rationale": "The author assures future receipt from their team.",
+    "supportingText": [
+      "You will receive the matching accession envelopes from our curation team by noon tomorrow."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-train-film-restoration",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-film-restoration-1",
+    "quarantined": false,
+    "rationale": "The author explicitly negates delivery and retracts the earlier assurance.",
+    "supportingText": [
+      "I will not deliver the restoration cue sheets tomorrow; that earlier assurance was a mistake."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-train-radio-archive",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-radio-archive-1",
+    "quarantined": false,
+    "rationale": "Delivery occurred in the past.",
+    "supportingText": [
+      "I delivered the community radio tape inventory last Tuesday."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-train-seed-bank",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-seed-bank-2",
+    "quarantined": false,
+    "rationale": "The promise is quoted from the donor rather than newly asserted by the author.",
+    "supportingText": [
+      "The donor wrote, \"I will send the accession envelopes on Thursday.\""
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-kite-regatta",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-kite-regatta-3",
+    "quarantined": false,
+    "rationale": "The author assures receipt before an event, which supplies a deadline.",
+    "supportingText": [
+      "Before the first kite launches, you will have the printed course sketches from our organising team."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-train-seed-bank",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-seed-bank-3",
+    "quarantined": false,
+    "rationale": "The dispatch is already completed.",
+    "supportingText": [
+      "Yesterday I dispatched the accession packets for all twelve meadow collections."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-textile-museum",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-textile-museum-3",
+    "quarantined": false,
+    "rationale": "The author unconditionally assures receipt by a specified deadline.",
+    "supportingText": [
+      "You will receive the completed tapestry condition cards from me by Thursday afternoon."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-kite-regatta",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-kite-regatta-1",
+    "quarantined": false,
+    "rationale": "The opening briefing supplies a deadline for an unconditional delivery assertion.",
+    "supportingText": [
+      "I will deliver the regatta course sketches before the opening briefing."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "abstain",
+    "dataProvenance": {
+      "group": "auto-train-stone-quarry",
+      "source": "synthetic-ai-author"
+    },
+    "label": null,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-stone-quarry-2",
+    "quarantined": true,
+    "rationale": "Both catalogue deliveries depend on approval.",
+    "supportingText": [
+      "If the quarry manager approves the sample list, I will send both catalogues on Friday. Without that approval, neither will be sent."
+    ],
+    "trainingEligible": false
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-piano-workshop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-piano-workshop-3",
+    "quarantined": false,
+    "rationale": "The phrase 'can promise' explicitly assures delivery.",
+    "supportingText": [
+      "Still, I can promise that I will deliver the voicing records tomorrow."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-bell-foundry",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-bell-foundry-4",
+    "quarantined": false,
+    "rationale": "The author asserts scheduled future-progressive delivery for the tested bell.",
+    "supportingText": [
+      "For the tested bell, our team will be handing over the signed acoustic certificate at 10 tomorrow."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-train-orchard-coop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-orchard-coop-1",
+    "quarantined": false,
+    "rationale": "The promise belongs to the quoted grower and her nursery staff.",
+    "supportingText": [
+      "Mara, the grower, told me, \"We will send the graft ledger on Monday.\" Her 'we' refers to the nursery staff."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-film-restoration",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-film-restoration-2",
+    "quarantined": false,
+    "rationale": "A new firm commitment explicitly covers reel one's cue sheet.",
+    "supportingText": [
+      "I will send the completed cue sheet for reel one on Friday."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-train-bell-foundry",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-bell-foundry-2",
+    "quarantined": false,
+    "rationale": "Delivery depends on uncertain cooling sufficient for testing.",
+    "supportingText": [
+      "If the bronze has cooled enough for the resonance test, we will deliver the acoustic certificate on Tuesday."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "request",
+    "dataProvenance": {
+      "group": "auto-train-cave-survey",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-cave-survey-1",
+    "quarantined": false,
+    "rationale": "The author asks the recipient to send the plates.",
+    "supportingText": [
+      "Could you send me the annotated cave-survey plates before the archive meeting?"
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-radio-archive",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-radio-archive-2",
+    "quarantined": false,
+    "rationale": "The author directly asserts scheduled future-progressive delivery.",
+    "supportingText": [
+      "At 9 tomorrow morning, we will be handing over the updated tape inventory to the station librarian."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "request",
+    "dataProvenance": {
+      "group": "auto-train-textile-museum",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-textile-museum-1",
+    "quarantined": false,
+    "rationale": "The author requests completion and return of the cards by the recipient.",
+    "supportingText": [
+      "Please enter the display-case numbers on the textile condition cards and return them to me."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-orchard-coop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-orchard-coop-2",
+    "quarantined": false,
+    "rationale": "The author commits their team to delivering its concrete ledger.",
+    "supportingText": [
+      "My coordination team owns the consolidated graft ledger. We will deliver it to you on Monday."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-cave-survey",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-cave-survey-4",
+    "quarantined": false,
+    "rationale": "The team delivery is firmly asserted and distinguished from a separate forecast.",
+    "supportingText": [
+      "Our archive team will deliver the western-passage map plates to you at Friday's briefing"
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-train-piano-workshop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-piano-workshop-2",
+    "quarantined": false,
+    "rationale": "An intention alone does not assure delivery.",
+    "supportingText": [
+      "I intend to send you the voicing records on Wednesday."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "abstain",
+    "dataProvenance": {
+      "group": "auto-train-stone-quarry",
+      "source": "synthetic-ai-author"
+    },
+    "label": null,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-stone-quarry-4",
+    "quarantined": true,
+    "rationale": "The final sentence leaves unresolved whether the condition covers only granite or also the initially firm limestone delivery.",
+    "supportingText": [
+      "Friday's handover: I will send the limestone catalogue; the granite catalogue will follow if the sample review passes. That condition applies to the catalogue delivery."
+    ],
+    "trainingEligible": false
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-train-cave-survey",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-cave-survey-2",
+    "quarantined": false,
+    "rationale": "The author records the cartographer's forecast without adopting it as an assurance.",
+    "supportingText": [
+      "The expedition cartographer expects her team to deliver the eastern-chamber plates next week. That is her forecast, copied into my archive notes."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-train-bell-foundry",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-bell-foundry-3",
+    "quarantined": false,
+    "rationale": "Delivery depends on the casting becoming cool enough for testing.",
+    "supportingText": [
+      "I will send its acoustic certificate when the casting is cool enough to test."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-film-restoration",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-film-restoration-3",
+    "quarantined": false,
+    "rationale": "The author explicitly promises receipt; the retraction concerns a different item.",
+    "supportingText": [
+      "I can promise that you will receive the corrected cue sheets tomorrow."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-train-orchard-coop",
+      "source": "synthetic-ai-author"
+    },
+    "label": 0,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-orchard-coop-3",
+    "quarantined": false,
+    "rationale": "The author merely copies the grower's delivery assertion.",
+    "supportingText": [
+      "She says she will deliver it on Thursday. I have only copied that statement into the cooperative's notes."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-train-bell-foundry",
+      "source": "synthetic-ai-author"
+    },
+    "label": 1,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-bell-foundry-1",
+    "quarantined": false,
+    "rationale": "The author unconditionally commits to handing over a specific certificate.",
+    "supportingText": [
+      "At Monday's inspection, I will hand you the acoustic certificate for bell B17."
+    ],
+    "trainingEligible": true
+  },
+  {
+    "annotationType": "AI pseudo-label",
+    "category": "abstain",
+    "dataProvenance": {
+      "group": "auto-train-stone-quarry",
+      "source": "synthetic-ai-author"
+    },
+    "label": null,
+    "modelProvenance": {
+      "configuredEffort": "high",
+      "configuredModel": "gpt-6-astra",
+      "ephemeral": true,
+      "exitCode": 0,
+      "finishedAt": 1791981435.565883,
+      "inheritedConversation": false,
+      "launchError": null,
+      "noToolsRequired": true,
+      "runnerVersion": "0.162.1",
+      "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+      "sessionId": "01a13a69-7726-7bb1-b4d0-5d83fca8c9eb",
+      "startedAt": 1791981351.3873248,
+      "timedOut": false,
+      "toolTypes": []
+    },
+    "passageId": "auto-train-stone-quarry-3",
+    "quarantined": true,
+    "rationale": "Receipt of sandstone is assured; the withdrawn promise concerns slate.",
+    "supportingText": [
+      "You will receive the sandstone sample catalogue from our estimating team by noon Monday."
+    ],
+    "trainingEligible": false
+  }
+]

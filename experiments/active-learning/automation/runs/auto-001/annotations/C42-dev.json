@@ -1,0 +1,1318 @@
+[
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-braille-score-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5374116254190879,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-braille-score-2",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.37889672489944626,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-braille-score-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.4786248450113517,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-braille-score-4",
+    "rationale": null,
+    "referenceCategory": "ambiguous",
+    "referenceLabel": null,
+    "score": 0.36766918293092776,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-canal-lock-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5768523729877004,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-canal-lock-2",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.40375575338312447,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-canal-lock-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5909649371044741,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-canal-lock-4",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.4338792163171196,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-lichen-atlas-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.42720390707725026,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-lichen-atlas-2",
+    "rationale": null,
+    "referenceCategory": "reported",
+    "referenceLabel": 0,
+    "score": 0.46739815555416114,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-lichen-atlas-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5842448912836627,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-lichen-atlas-4",
+    "rationale": null,
+    "referenceCategory": "reported",
+    "referenceLabel": 0,
+    "score": 0.2359389698516251,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-marionette-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5595754024478901,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-marionette-2",
+    "rationale": null,
+    "referenceCategory": "request",
+    "referenceLabel": 0,
+    "score": 0.5419306683839654,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-marionette-3",
+    "rationale": null,
+    "referenceCategory": "other",
+    "referenceLabel": 0,
+    "score": 0.39716925109376444,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-marionette-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.4955751878227804,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-meteorite-1",
+    "rationale": null,
+    "referenceCategory": "reported",
+    "referenceLabel": 0,
+    "score": 0.38241818747523654,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-meteorite-2",
+    "rationale": null,
+    "referenceCategory": "other",
+    "referenceLabel": 0,
+    "score": 0.33412059295500407,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-meteorite-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5050760776032198,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-meteorite-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.49489165677835595,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-salt-marsh-1",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.5545028221573128,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-salt-marsh-2",
+    "rationale": null,
+    "referenceCategory": "other",
+    "referenceLabel": 0,
+    "score": 0.41348520067938993,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-salt-marsh-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.7010331021852673,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-salt-marsh-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.47875798734515657,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-tram-depot-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5997595224655772,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-tram-depot-2",
+    "rationale": null,
+    "referenceCategory": "request",
+    "referenceLabel": 0,
+    "score": 0.3534395002610965,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "not_firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-tram-depot-3",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.49130269405689836,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "C42",
+    "modelProvenance": {
+      "batchSize": 16,
+      "candidate": "C42",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": "3.4.1",
+        "setfit": "1.1.3",
+        "torch": "2.10.0",
+        "transformers": "4.46.3"
+      },
+      "frozenBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "license": "apache-2.0",
+      "modelId": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "scoreMeaning": "Uncalibrated logistic probability; no secondary category classifier.",
+      "truncation": false
+    },
+    "passageId": "auto-dev-tram-depot-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5807337207621072,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  }
+]

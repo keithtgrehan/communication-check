@@ -1,0 +1,16 @@
+{
+  "preparedSha256": "b2bbd3e372f0bfaf11ffabf8b64fa40bbe5b95ae00dfd5924ba0fab4aad4fbbe",
+  "runId": "teacher-demo-001",
+  "recordedAtUtc": "2026-10-13T22:43:09.110529+00:00",
+  "leadEngineering": "APPROVED: source review, twelve passing contract tests, original 150 rows exactly retained, only 36 accepted TRAIN rows appended; immutable inputs and prior baseline verified.",
+  "independentProductReviewer": "APPROVED: snapshot aggregates, frozen review identity, whole-family quarantine and source boundaries verified before training.",
+  "scope": "One fixed CPU seed42 run and DEV-only comparison. No replenishment, quality retries, heldout access or promotion.",
+  "counts": {
+    "accepted": 36,
+    "quarantined": 4,
+    "acceptedFamilies": 9,
+    "quarantinedFamilies": 1,
+    "trainingRows": 156,
+    "developmentRows": 30
+  }
+}

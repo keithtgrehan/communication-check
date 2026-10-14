@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "batchId": {
+      "type": "string"
+    },
+    "examples": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "group": {
+            "pattern": "^fam_[0-9a-f]{8,32}$",
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^ex_[0-9a-f]{8,32}$",
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 1200,
+            "minLength": 1,
+            "type": "string"
+          },
+          "suggestedCategory": {
+            "enum": [
+              "firm_delivery",
+              "qualified_delivery",
+              "request",
+              "reported",
+              "other"
+            ]
+          },
+          "suggestedLabel": {
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "text": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "group",
+          "text",
+          "suggestedLabel",
+          "suggestedCategory",
+          "rationale"
+        ],
+        "type": "object"
+      },
+      "maxItems": 40,
+      "minItems": 8,
+      "type": "array"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "syntheticOnly": {
+      "const": true
+    },
+    "teacher": {
+      "additionalProperties": false,
+      "properties": {
+        "actorId": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "model": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorId",
+        "model"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "batchId",
+    "teacher",
+    "syntheticOnly",
+    "examples"
+  ],
+  "type": "object"
+}

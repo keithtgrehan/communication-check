@@ -1,0 +1,72 @@
+{
+  "finalEvaluation": "not performed: insufficient reference coverage",
+  "integrity": true,
+  "requirements": [
+    {
+      "evidence": "pool/raw.json, pool/eligible.json, pool/semantic-audit.json; 300/75 and balanced lengths verified",
+      "requirement": "Pool diversity and contrasts"
+    },
+    {
+      "evidence": "round selection manifests and actual-lineage-verification.json; tests cover quotas, ties and shortages",
+      "requirement": "Acquisition disagreement/uncertainty/random; no reuse"
+    },
+    {
+      "evidence": "packet/mapping/annotation manifests, actor-provenance.json; pure tests cover ambiguity and invalid evidence",
+      "requirement": "Blind independent labels, evidence, family quarantine"
+    },
+    {
+      "evidence": "12 training agreements; private final audit 44 exclusions +8 agreements; pending explicitly permitted",
+      "requirement": "Human dispute/agreement review"
+    },
+    {
+      "evidence": "exact lineage audit; 178 protected hashes; encoder67 and teaching30 manifests",
+      "requirement": "Original data and prior models preserved"
+    },
+    {
+      "evidence": "all round reports:50steps,101changed,CPUdevices,zero parity;3attempt markers",
+      "requirement": "Three fixed CPU fits and meaningful updates"
+    },
+    {
+      "evidence": "19thresholds each report, selection hash and timestamp before private author started",
+      "requirement": "DEV selection separate from final"
+    },
+    {
+      "evidence": "120authored,11families excluded,76remaining; private bundle frozen",
+      "requirement": "One fresh final reference and no replacement"
+    },
+    {
+      "evidence": "final-coverage.json, sealedterminal, absent consumed marker/finalreport, no final worker ticket",
+      "requirement": "Final coverage stop/no predictions"
+    },
+    {
+      "evidence": "conditionally not run: frozen coverage failed; no invented results or pass",
+      "requirement": "Final metrics/bootstrap/gate"
+    },
+    {
+      "evidence": "93testspre-freeze, actualhashchecks, three attempts, measured time/bytes",
+      "requirement": "Integrity/replay/limits"
+    },
+    {
+      "evidence": "engineering003 clearance; final result review pending",
+      "requirement": "Independent review"
+    },
+    {
+      "evidence": "README,DESIGN,AUDIT_REPORT,machine audit,lineage,human packets,provenance",
+      "requirement": "Deliverables/reproducibility"
+    },
+    {
+      "evidence": "pending completion after final review",
+      "requirement": "Project records/handoff"
+    },
+    {
+      "evidence": "protected app/source hashes; no deployment or publication; fictional data; historical raw fixtures not read",
+      "requirement": "No app/deploy/spend/customer/oldheldout use"
+    }
+  ],
+  "resourceEvidence": {
+    "artifactBytes": 279182038,
+    "fitAttempts": 3,
+    "seconds": 1282.7601137161255
+  },
+  "reviewAndHandoffPending": true
+}

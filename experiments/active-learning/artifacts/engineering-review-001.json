@@ -1,0 +1,55 @@
+{
+  "approved": false,
+  "summary": "Blocking protocol and integrity gaps remain. Fix these before freezing or starting the experiment.",
+  "findings": [
+    {
+      "severity": "high",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/campaign.py",
+      "line": 521,
+      "issue": "The directly callable _worker command bypasses campaign verification, locking, attempt accounting, time limits, and the network-denying launcher. Replaying a final request computes predictions again before write_new rejects the existing output. Changing output or run paths also bypasses the controller's guards. An in-memory mock confirmed two scoring calls for the same request.",
+      "requiredFix": "Require campaign-bound, immutable, one-shot requests and consume a worker-start marker before any model operation. Reject replayed or altered requests before scoring or fitting, and enforce network denial and deadlines for direct worker invocation."
+    },
+    {
+      "severity": "high",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/campaign.py",
+      "line": 383,
+      "issue": "Final contamination checking reads pool/raw.json without verifying the acquisition pool's frozen bundle. verify_campaign does not cover this file. Changes after the last acquisition can therefore remove contamination references and allow reused final examples through without an integrity stop.",
+      "requiredFix": "Verify the acquisition pool against its originally recorded freeze hash before and after contamination checking. Refuse changes before final prediction and record an integrity failure."
+    },
+    {
+      "severity": "high",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/campaign.py",
+      "line": 468,
+      "issue": "report() declares integrity passed after checking only campaign source and protected prior artifacts. It reads round reports, selection, and final results without verifying their frozen provenance. A changed round report can trigger an integrity stop elsewhere yet subsequently be included as valid development evidence; final-report.json has no recorded integrity binding.",
+      "requiredFix": "Validate the experiment artifacts consumed by report(), including completed-round bundles and selection. Bind the completed final report to an immutable recorded hash. Preserve incident reporting when verification fails, but do not present altered results as verified."
+    },
+    {
+      "severity": "medium",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/campaign.py",
+      "line": 384,
+      "issue": "Final preparation excludes only annotation failures and automatic identifier/exact/Jaccard overlaps. Unlike freeze-pool, it has no mechanism to apply identified scenario/paraphrase reuse. A known reused scenario below the lexical threshold remains eligible when both labels agree, contrary to the accepted final-reference exclusion rule.",
+      "requiredFix": "Accept a hash-bound semantic exclusion audit for final references, apply its exclusions to whole families before coverage validation, and freeze the audit and exclusion reasons without replacement."
+    },
+    {
+      "severity": "medium",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/core.py",
+      "line": 94,
+      "issue": "An empty or whitespace-only passage raises during pool validation, before admission and family exclusion. Consequently, one empty passage terminates acquisition-pool freezing or final preparation instead of quarantining its family. The accepted protocol explicitly treats nonempty text as an admission requirement and permits excluding invalid-input families.",
+      "requiredFix": "Keep structural validation separate from passage admission. Preserve structurally valid string inputs in the raw freeze, route empty strings through admission, and exclude their entire families before acquisition or final coverage checks."
+    },
+    {
+      "severity": "medium",
+      "file": "/Users/keith/Developer/communication-check/experiments/active-learning/campaign.py",
+      "line": 123,
+      "issue": "Worker failure evidence is discarded: only return code and stdout/stderr byte counts are saved, followed by a generic RuntimeError. The worker also suppresses its failure reason. CPU violations, incomplete optimization, reload-parity failures, and other failures consequently become indistinguishable in the terminal incident record.",
+      "requiredFix": "Preserve structured, text-free failure details: operation, stage, original error type, and an allowlisted invariant/reason code. Propagate these into the terminal record and audit report without persisting raw inputs or unsanitized diagnostics."
+    }
+  ],
+  "verification": [
+    "Read DESIGN.md, all five requested implementation modules, all four test modules, recipe/schema files, and relevant frozen encoder/teaching helper source.",
+    "Used experiments/encoder-comparison/.venv/bin/python with -B. Full discovery attempted 64 tests: 36 passed; 28 errored because the read-only sandbox cannot create temporary directories. The 36 filesystem-independent tests were then rerun successfully.",
+    "Ran additional in-memory mocked checks confirming worker replay, missing acquisition-pool verification, unverified report integrity, empty-input rejection, and discarded worker failure details.",
+    "No repository files were modified, agents launched, experiment data generated, or historical heldout contents read.",
+    "Real model fitting, inference, runtime CPU/network enforcement, and saved-model parity were not verified."
+  ]
+}

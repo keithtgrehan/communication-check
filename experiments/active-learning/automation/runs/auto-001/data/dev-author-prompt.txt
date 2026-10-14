@@ -1,0 +1,40 @@
+You are a fresh fictional data author. Do not use tools or external text. Return only schema-compliant JSON. Use a unique actorId and model identity. Author exactly four English passages for each assigned family, using exact assigned IDs. These are entirely fictional work-item communications, not real people or customer drafts. Each family must contain at least one positive and one negative reference; vary syntax, sentence order, speaker attribution and discourse, not just noun substitution. Use a mixture of single and multi-sentence passages, at most 2000 UTF-16 units each. Do not force genuinely ambiguous cases into binary labels: use null/ambiguous, retain them with exact evidence and a rationale. All difficult FINAL cases remain in the set. Provide exact nonempty evidence quotes and reference rationale for every passage. Do not seek human labels. Follow the rubric, not perceived risk or politeness.
+SPLIT: dev
+RUBRIC:
+# Shared wording-classification rubric v1
+
+Unit: one English passage, at most 2,000 UTF-16 code units. Binary classification
+of the supplied passage, not evidence-span extraction or email-level correctness.
+
+Positive (`label=1`, `firm_delivery`): the author directly asserts that they or
+their team will deliver a concrete work item in the future, with no stated
+condition or uncertainty. Explicit promises, guarantees, definite future delivery,
+scheduled future-progressive delivery and assured recipient receipt count.
+Ordinary document-sharing promises count even where the product suppresses them.
+
+Negative (`label=0`): `qualified_delivery` for conditional, tentative, estimated,
+aspirational or planned-but-unassured delivery; `request` for asking the recipient
+to act; `reported` for quoted, attributed or recalled assertions instead of a new
+author assertion; `other` for negated, hypothetical, completed-past or descriptive
+content. A quoted promise inside a report does not inherit a positive label.
+
+Precedence: determine author/attribution and temporal scope, then negation and
+conditions, then whether concrete delivery is asserted. An explicit assurance
+counts even where wording contains 'can promise'; bare capability does not.
+An intention or expectation alone is qualified; an explicit final 'we will do so'
+assurance can resolve earlier schedule wording within an otherwise clear passage.
+A stated action before an event is a deadline; 'when the source data is ready' is
+a delivery dependency. Do not assume unstated conditions or approval.
+
+Genuinely mixed/ambiguous examples belong outside primary binary scoring and are
+not silently forced into training labels. This audit identified no exclusions
+necessary among the 150 supplied development passages. That is AI author judgment,
+not a claim of human inter-annotator agreement.
+
+Positive never means incorrect, risky, unapproved, untrue, feasible or helpful to
+flag. Negative never means the email is safe or contains no other problem. This
+is the shared exploratory target for all compared models; useful review prompts
+require a separately defined, human-reviewed product target.
+
+ASSIGNED_SCENARIOS:
+[{"group": "auto-dev-lichen-atlas", "domain": "Lichen atlas specimen plates", "discourse": "A field editor embeds quoted assurances in meeting recollections and separately adopts a concrete future delivery.", "tags": ["attribution"], "ids": ["auto-dev-lichen-atlas-1", "auto-dev-lichen-atlas-2", "auto-dev-lichen-atlas-3", "auto-dev-lichen-atlas-4"]}, {"group": "auto-dev-marionette", "domain": "Marionette theatre rigging diagrams", "discourse": "A stage supervisor separates completed rigging from diagram delivery and a request to the recipient.", "tags": ["past_action", "request"], "ids": ["auto-dev-marionette-1", "auto-dev-marionette-2", "auto-dev-marionette-3", "auto-dev-marionette-4"]}, {"group": "auto-dev-canal-lock", "domain": "Historic canal-lock inspection folios", "discourse": "An inspector distinguishes definite receipt before a reopening from delivery conditional on draining a chamber.", "tags": ["conditional_delivery"], "ids": ["auto-dev-canal-lock-1", "auto-dev-canal-lock-2", "auto-dev-canal-lock-3", "auto-dev-canal-lock-4"]}, {"group": "auto-dev-meteorite", "domain": "Meteorite collection custody cards", "discourse": "A registrar contrasts a colleague\u2019s promise, a negated dispatch, and first-person custody-card assurance.", "tags": ["attribution", "negation"], "ids": ["auto-dev-meteorite-1", "auto-dev-meteorite-2", "auto-dev-meteorite-3", "auto-dev-meteorite-4"]}, {"group": "auto-dev-braille-score", "domain": "Braille music score proofs", "discourse": "A transcriber qualifies the schedule, then either explicitly resolves it or leaves a dependency unresolved.", "tags": ["conditional_delivery", "explicit_assurance"], "ids": ["auto-dev-braille-score-1", "auto-dev-braille-score-2", "auto-dev-braille-score-3", "auto-dev-braille-score-4"]}, {"group": "auto-dev-salt-marsh", "domain": "Salt-marsh transect overlays", "discourse": "A survey lead contrasts hypothetical overlays and bare capability with an explicit can-promise assurance.", "tags": ["explicit_assurance"], "ids": ["auto-dev-salt-marsh-1", "auto-dev-salt-marsh-2", "auto-dev-salt-marsh-3", "auto-dev-salt-marsh-4"]}, {"group": "auto-dev-tram-depot", "domain": "Heritage tram depot winding schedules", "discourse": "A workshop dispatcher mixes a request and past work with a distinct unqualified schedule handover.", "tags": ["request", "past_action", "mixed"], "ids": ["auto-dev-tram-depot-1", "auto-dev-tram-depot-2", "auto-dev-tram-depot-3", "auto-dev-tram-depot-4"]}]

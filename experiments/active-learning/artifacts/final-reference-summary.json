@@ -1,0 +1,31 @@
+{
+  "accepted": 76,
+  "acceptedFamilies": 19,
+  "annotationQuarantinedPassages": 0,
+  "authored": 120,
+  "categoryCounts": {
+    "firm_delivery": 38,
+    "other": 9,
+    "qualified_delivery": 10,
+    "reported": 12,
+    "request": 7
+  },
+  "evaluationMarkerExists": false,
+  "finalPredictionsPerformed": false,
+  "finalReportExists": false,
+  "humanAudit": {
+    "agreementSample": 8,
+    "excludedOrDisputed": 44,
+    "pending": true,
+    "privateDirectory": "/Users/keith/.codex/communication-check-evaluator/active-001-human-audit"
+  },
+  "labelCounts": {
+    "0": 38,
+    "1": 38
+  },
+  "overlapExcludedFamilies": 11,
+  "overlapReasons": {
+    "identified_scenario_reuse": 11
+  },
+  "privateBundleSha256": "b637f58254d1faaa3fa7006e246cdff0306fa037edbad5ee566cb4e9bd268f05"
+}

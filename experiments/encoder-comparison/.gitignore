@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+artifacts/models/
+artifacts/model-cache/
+artifacts/checkpoints/
+artifacts/embeddings/
+artifacts/attempts/
+artifacts/.evaluation-used-*

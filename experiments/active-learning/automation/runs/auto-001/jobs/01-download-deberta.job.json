@@ -1,0 +1,7 @@
+{
+  "action": "download",
+  "candidate": "deberta",
+  "model_dir": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/models/deberta",
+  "revision": "bddf8c5411c34ac3565e16e04384fd68b2618dda",
+  "run_dir": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/runs/auto-001/candidate"
+}

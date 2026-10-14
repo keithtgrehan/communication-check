@@ -1,0 +1,15 @@
+{
+  "approved": true,
+  "summary": "The result and report accurately describe a completed research workflow ready for handoff. No material findings. This is not model approval: final performance remains inconclusive and human audit is pending. The lead’s project-record update and aggregate-only companion handoff remain.",
+  "findings": [],
+  "verification": [
+    "Recomputed 228 threshold entries from saved DEV scores and checked report parity. All rounds remain: R1/R2 TP9/FP1/TN14/FN6, failing DEV; R3 TP11/FP1/TN14/FN4 at 0.45, passing DEV. The report correctly limits improvement to tuning evidence: experiments/active-learning/artifacts/AUDIT_REPORT.md:9.",
+    "Confirmed the correct insufficient_final_reference endpoint: 11 excluded families left 76 passages/19 families, 38 per class, versus required 108/27 and 50 per class; request and other categories also fall below ten. No final worker request, consumed marker, result report or replacement is recorded: experiments/active-learning/artifacts/final-reference-summary.json:2.",
+    "Verified selection and actor metadata hashes. Selection at 1791964879.4310799 preceded final author start at 1791964891.909753 by 12.479 seconds: campaigns/active-001/selection.json:22 and artifacts/actor-provenance.json:290, beneath experiments/active-learning.",
+    "Independently verified all 178 protected files, 16 frozen source files, prior 67-file encoder and 30-file teaching bundles, pool/round manifests, and sealed selection/terminal/coverage records. No hash mismatches.",
+    "Confirmed exactly three fit attempts. Frozen records consistently show the pinned pretrained restart, seed 42, batch 16, five pair iterations, learning rate 2e-5, 50 CPU steps, 101 changed tensors and zero reload error. Execution and artifact limits were respected.",
+    "Confirmed exact preservation of 150 original TRAIN/DEV records, cumulative TRAIN sizes 160/200/240, 30 distinct acquired families, independent agreement evidence and 12 stratified training audit samples. Human review remains explicitly pending: experiments/active-learning/artifacts/AUDIT_REPORT.md:48.",
+    "Reviewed the recorded 93-test pass, engineering-review-003 clearance, network/admission controls and prediction-runtime evidence. These runtime tests were not rerun during this review.",
+    "Review used read-only inspection, hashing and arithmetic only. No raw historical heldouts or raw final references/labels were opened; no inference, fitting, generation or edits were performed."
+  ]
+}

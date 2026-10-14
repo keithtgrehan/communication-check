@@ -1,0 +1,50 @@
+{
+  "modelBytes": 302836560,
+  "peakRssBytes": 266059776,
+  "processResources": {
+    "exitCode": 0,
+    "networkDenied": false,
+    "peakProcessTreeBytes": 290291712,
+    "seconds": 33.185757166997064,
+    "stopReason": null,
+    "watchedArtifactBytes": 682932092
+  },
+  "provenance": {
+    "candidate": "modernbert",
+    "dependencies": {
+      "huggingface-hub": "0.36.2",
+      "sentence-transformers": null,
+      "setfit": null,
+      "torch": "2.10.0",
+      "transformers": "4.51.3"
+    },
+    "files": {
+      "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+      "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+      "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+      "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+      "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+    },
+    "hardware": {
+      "device": "cpu",
+      "logicalCpuCount": 8,
+      "machine": "arm64",
+      "processor": "arm",
+      "python": "3.11.3",
+      "system": "Darwin",
+      "threads": 4
+    },
+    "license": "apache-2.0",
+    "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+    "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+    "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+    "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+    "usage": "Local research only; no product integration or commercial distillation."
+  },
+  "status": "ok",
+  "timing": {
+    "downloadSeconds": 31.32410841700039,
+    "totalSeconds": 32.75118670798838
+  }
+}

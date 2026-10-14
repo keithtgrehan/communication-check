@@ -1,0 +1,242 @@
+[
+  {
+    "group": "al-g001",
+    "id": "al-p001",
+    "lengthClass": "single",
+    "text": "I will send the finished opening animation, including the painted title sequence, to the producer on Thursday."
+  },
+  {
+    "group": "al-g001",
+    "id": "al-p002",
+    "lengthClass": "multi",
+    "text": "The opening animation now has its final color palette. Our studio will deliver the rendered sequence and matching stills tomorrow afternoon."
+  },
+  {
+    "group": "al-g001",
+    "id": "al-p003",
+    "lengthClass": "single",
+    "text": "I expect to deliver the opening animation on Thursday, provided the final character poses are approved."
+  },
+  {
+    "group": "al-g001",
+    "id": "al-p004",
+    "lengthClass": "multi",
+    "text": "Please send the finished opening animation to the producer on Thursday. Include the painted title sequence in the export."
+  },
+  {
+    "group": "al-g003",
+    "id": "al-p009",
+    "lengthClass": "single",
+    "text": "I guarantee that the facilities office will receive my boiler inspection certificate by noon tomorrow."
+  },
+  {
+    "group": "al-g003",
+    "id": "al-p010",
+    "lengthClass": "multi",
+    "text": "The pressure tests are complete. Our maintenance team will place the signed boiler inspection certificate in the facilities register tomorrow morning."
+  },
+  {
+    "group": "al-g003",
+    "id": "al-p011",
+    "lengthClass": "single",
+    "text": "I should have the boiler inspection certificate ready tomorrow, assuming the pressure gauge passes its calibration check."
+  },
+  {
+    "group": "al-g003",
+    "id": "al-p012",
+    "lengthClass": "multi",
+    "text": "I filed the boiler inspection certificate yesterday. The facilities register already contains the signed copy and the pressure readings."
+  },
+  {
+    "group": "al-g013",
+    "id": "al-p049",
+    "lengthClass": "single",
+    "text": "I will deliver the bakery's revised sourdough production sheet to the night shift before tonight's mixing begins."
+  },
+  {
+    "group": "al-g013",
+    "id": "al-p050",
+    "lengthClass": "multi",
+    "text": "The revised sheet separates starter refreshments from final dough mixing. Our bakery team will place printed copies at every mixing station this evening."
+  },
+  {
+    "group": "al-g013",
+    "id": "al-p051",
+    "lengthClass": "single",
+    "text": "I intend to deliver the revised sourdough production sheet tonight, though the fermentation timings are still provisional."
+  },
+  {
+    "group": "al-g013",
+    "id": "al-p052",
+    "lengthClass": "multi",
+    "text": "Please put the revised sourdough production sheet at every mixing station tonight. Make the starter refreshment times easy to find."
+  },
+  {
+    "group": "al-g017",
+    "id": "al-p065",
+    "lengthClass": "single",
+    "text": "I will deliver the bound harbor fender replacement drawings to the marine contractor on Wednesday morning."
+  },
+  {
+    "group": "al-g017",
+    "id": "al-p066",
+    "lengthClass": "multi",
+    "text": "The harbor drawings specify the bolt spacing for each fender. Our engineering office will supply the contractor with the bound replacement set on Wednesday."
+  },
+  {
+    "group": "al-g017",
+    "id": "al-p067",
+    "lengthClass": "single",
+    "text": "Please deliver the bound harbor fender replacement drawings to the marine contractor before Wednesday's site meeting."
+  },
+  {
+    "group": "al-g017",
+    "id": "al-p068",
+    "lengthClass": "multi",
+    "text": "The harbor fender drawings show three mounting arrangements. I will not issue a replacement set during this maintenance cycle."
+  },
+  {
+    "group": "al-g018",
+    "id": "al-p069",
+    "lengthClass": "single",
+    "text": "Our bookbinding workshop will return the repaired atlas with its new linen spine on Friday."
+  },
+  {
+    "group": "al-g018",
+    "id": "al-p070",
+    "lengthClass": "multi",
+    "text": "The atlas now has reinforced endpapers. I will deliver the repaired volume and its protective slipcase to the map room on Friday afternoon."
+  },
+  {
+    "group": "al-g018",
+    "id": "al-p071",
+    "lengthClass": "single",
+    "text": "The workshop proprietor said that her binders would return the repaired atlas with its new linen spine on Friday."
+  },
+  {
+    "group": "al-g018",
+    "id": "al-p072",
+    "lengthClass": "multi",
+    "text": "I returned the repaired atlas on Friday afternoon. Its linen spine and protective slipcase were inspected at the map room desk."
+  },
+  {
+    "group": "al-g019",
+    "id": "al-p073",
+    "lengthClass": "single",
+    "text": "I will send the urban orchard coordinator a tree pruning diagram for every courtyard by tomorrow."
+  },
+  {
+    "group": "al-g019",
+    "id": "al-p074",
+    "lengthClass": "multi",
+    "text": "The courtyard diagrams identify fruiting wood and crossing branches. Our arboriculture team will deliver the complete pruning diagram pack tomorrow afternoon."
+  },
+  {
+    "group": "al-g019",
+    "id": "al-p075",
+    "lengthClass": "single",
+    "text": "We hope to deliver the courtyard pruning diagrams tomorrow, provided the remaining pear trees can be inspected today."
+  },
+  {
+    "group": "al-g019",
+    "id": "al-p076",
+    "lengthClass": "multi",
+    "text": "Please send the orchard coordinator a pruning diagram for each courtyard. Mark crossing branches separately from healthy fruiting wood."
+  },
+  {
+    "group": "al-g035",
+    "id": "al-p137",
+    "lengthClass": "single",
+    "text": "I will give the public swimming pool manager the completed lane rope replacement inventory tomorrow."
+  },
+  {
+    "group": "al-g035",
+    "id": "al-p138",
+    "lengthClass": "multi",
+    "text": "The inventory distinguishes cracked floats from damaged tensioners. Our pool maintenance team will send the manager the completed lane rope replacement inventory tomorrow afternoon."
+  },
+  {
+    "group": "al-g035",
+    "id": "al-p139",
+    "lengthClass": "single",
+    "text": "Would you give the swimming pool manager a completed inventory of replacement lane rope floats and tensioners?"
+  },
+  {
+    "group": "al-g035",
+    "id": "al-p140",
+    "lengthClass": "multi",
+    "text": "I am not issuing a lane rope replacement inventory tomorrow. The pool manager already has the inventory completed during last month's closure."
+  },
+  {
+    "group": "al-g052",
+    "id": "al-p205",
+    "lengthClass": "single",
+    "text": "Our court interpretation office will provide the training coordinator with the fictional hearing glossary next Wednesday."
+  },
+  {
+    "group": "al-g052",
+    "id": "al-p206",
+    "lengthClass": "multi",
+    "text": "The practice hearing uses invented names and a fictional dispute. I will send the training coordinator the finished interpretation glossary and exercise notes on Wednesday."
+  },
+  {
+    "group": "al-g052",
+    "id": "al-p207",
+    "lengthClass": "single",
+    "text": "Could you provide the training coordinator with the fictional hearing glossary before next Wednesday's interpretation workshop?"
+  },
+  {
+    "group": "al-g052",
+    "id": "al-p208",
+    "lengthClass": "multi",
+    "text": "The interpretation trainer said she would supply the fictional hearing glossary next Wednesday. I recorded her statement alongside the workshop agenda."
+  },
+  {
+    "group": "al-g064",
+    "id": "al-p253",
+    "lengthClass": "single",
+    "text": "Our canal maintenance team will deliver the lock gate seal replacement kit to the eastern depot tomorrow."
+  },
+  {
+    "group": "al-g064",
+    "id": "al-p254",
+    "lengthClass": "multi",
+    "text": "The replacement kit contains cut seals and labeled fastening strips. I will bring the complete lock gate kit to the eastern depot tomorrow morning."
+  },
+  {
+    "group": "al-g064",
+    "id": "al-p255",
+    "lengthClass": "single",
+    "text": "Could you deliver the complete lock gate seal replacement kit to the eastern maintenance depot tomorrow?"
+  },
+  {
+    "group": "al-g064",
+    "id": "al-p256",
+    "lengthClass": "multi",
+    "text": "The canal workshop foreman said his team would deliver the lock gate seal kit tomorrow. I entered that statement in the depot's incoming equipment log."
+  },
+  {
+    "group": "al-g065",
+    "id": "al-p257",
+    "lengthClass": "single",
+    "text": "I will send the poetry publisher the finished bilingual chapbook page proofs before Thursday's editorial meeting."
+  },
+  {
+    "group": "al-g065",
+    "id": "al-p258",
+    "lengthClass": "multi",
+    "text": "The facing pages keep each poem beside its translation. Our typesetting studio will deliver the complete bilingual chapbook proofs to the publisher on Wednesday evening."
+  },
+  {
+    "group": "al-g065",
+    "id": "al-p259",
+    "lengthClass": "single",
+    "text": "Please send the poetry publisher the finished bilingual chapbook page proofs before Thursday's editorial meeting."
+  },
+  {
+    "group": "al-g065",
+    "id": "al-p260",
+    "lengthClass": "multi",
+    "text": "The bilingual chapbook page proofs reached the publisher yesterday evening. I supplied the complete set with the poems and translations on facing pages."
+  }
+]

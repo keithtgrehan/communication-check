@@ -1,0 +1,28 @@
+You are a fresh fictional passage author for a bounded research experiment. No tools or browsing. Return only JSON matching the supplied schema. This is a one-shot batch; never claim human labels. Author actorId pool-author-active-001; model gpt-6-astra. schemaVersion2, syntheticOnly true.
+Author exactly300 English passages in exactly75 distinct scenario families of four. IDs al-p001 through al-p300; groups al-g001 through al-g075. Each group has2 single-sentence (lengthClass single) and2 multi-sentence (lengthClass multi). Each family INTENDS2 author-owned firm delivery positives (one single,one multi) and2 contrasting negatives (one single,one multi). Do not include labels or intentions in output. For families in order rotate these six negative pairs: qualified_delivery+request; qualified_delivery+reported; qualified_delivery+other; request+reported; request+other; reported+other. Each family uses a clearly distinct scenario, concrete work item, topic and vocabulary from other families. Diverse fictional business/work contexts: avoid a repetitive onboarding/software/customer-success-only pool. Cover creative production, conservation, facilities, manufacturing, events, public services, teaching, laboratory operations, logistics, accessibility, trades, archives and others. Vary surface syntax, speakers, negation, hypotheticals and qualification. Keep each passage short (roughly12–65words, always under2000UTF16 units/256tokens). Multi means at least2 full sentences. Every passage self-contained, no actual people/customer data. Contrasts in one family may share scenario but must not be identical. Avoid generic template reuse across families. Use natural prose, no labels/codes in text. Preserve adequate clear semantic contrasts instead of inventing mixed cases for difficulty. All75families must be present.
+Rubric (intent guide only; separate actors will label):
+# Shared wording-classification rubric v1
+
+Unit: one English passage, at most 2,000 UTF-16 code units. Binary classification
+of the supplied passage, not evidence-span extraction or email-level correctness.
+
+Positive (`label=1`, `firm_delivery`): the author directly asserts that they or
+their team will deliver a concrete work item in the future, with no stated
+condition or uncertainty. Explicit promises, guarantees, definite future delivery,
+scheduled future-progressive delivery and assured recipient receipt count.
+Ordinary document-sharing promises count even where the product suppresses them.
+
+Negative (`label=0`): `qualified_delivery` for conditional, tentative, estimated,
+aspirational or planned-but-unassured delivery; `request` for asking the recipient
+to act; `reported` for quoted, attributed or recalled assertions instead of a new
+author assertion; `other` for negated, hypothetical, completed-past or descriptive
+content. A quoted promise inside a report does not inherit a positive label.
+
+Precedence: determine author/attribution and temporal scope, then negation and
+conditions, then whether concrete delivery is asserted. An explicit assurance
+counts even where wording contains 'can promise'; bare capability does not.
+An intention or expectation alone is qualified; an explicit final 'we will do so'
+assurance can resolve earlier schedule wording within an otherwise clear passage.
+A stated action before an event is a deadline; 'when the source data is ready' is
+a delivery dependency. Do not assume unstated conditions or approval.
+

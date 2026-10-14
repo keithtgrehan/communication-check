@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "configuredEffort": "high",
+    "configuredModel": "gpt-6-astra",
+    "ephemeral": true,
+    "exitCode": 0,
+    "finishedAt": 1791981351.083225,
+    "inheritedConversation": false,
+    "launchError": null,
+    "noToolsRequired": true,
+    "runnerVersion": "0.162.1",
+    "scope": "Codex service authoring/review, not local LLM; configured identity is not independent model telemetry.",
+    "sessionId": "01a13a68-2879-7290-8e38-347bbf9ab39c",
+    "startedAt": 1791981265.885091,
+    "timedOut": false,
+    "toolTypes": []
+  },
+  "output": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/runs/auto-001/data/teacher-raw.json",
+  "promptSha256": "1c8a3387c7b0e4c3f5a8b666da5544e549b44dca71405a622b140491ca48c8f1",
+  "schemaSha256": "124da4cff89160de148b44c666903a502742ccab20c694ea52d5a1c81302c5b0",
+  "sha256": "7666934c3bfc2a69f2c56eb043c2f78ce30d9b7b07b2f2c6112c02b8dcbad655"
+}

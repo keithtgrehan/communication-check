@@ -1,0 +1,63 @@
+{
+  "excludedFromTargetRanking": true,
+  "exclusions": [],
+  "hypothesis": "This passage states a company principle, commitment, or strategy related to environmental, social, or governance criteria.",
+  "sources": [
+    {
+      "acquisition": "verified local source-audit cache",
+      "bytes": 449446,
+      "commercialTrainingEligible": false,
+      "expectedSha256": "94d60d386c772bb06681336c5351673de87e57f8b6d045a29ad9b1f1f0361d0d",
+      "license": "CC-BY-NC-SA-4.0",
+      "name": "ML-Promise / author-hosted PromiseEval English test release",
+      "nativeLabelField": "promise_status",
+      "nativeMapping": {
+        "No": 0,
+        "Yes": 1
+      },
+      "schema": {
+        "URL": "str",
+        "data": "str",
+        "evidence_quality": "str",
+        "evidence_status": "str",
+        "page_number": "str",
+        "promise_status": "str",
+        "verification_timeline": "str"
+      },
+      "scorableNativeLabels": 64,
+      "selectedLabelCounts": {
+        "No": 21,
+        "Yes": 43
+      },
+      "selectedRows": 64,
+      "selectionDefinition": "First64 ascending SHA256 of compact UTF-8 JSON [sourceId, full data text], ensure_ascii=False; no label filtering or balancing.",
+      "sha256": "94d60d386c772bb06681336c5351673de87e57f8b6d045a29ad9b1f1f0361d0d",
+      "sourceIdDefinition": "English_test.json:<zero-based source index>",
+      "sourceLabelCounts": {
+        "No": 127,
+        "Yes": 273
+      },
+      "sourceRows": 400,
+      "split": "author Test/English_test.json",
+      "status": "prepared",
+      "targetLabelMapping": null,
+      "textField": "data",
+      "trainingEligible": false,
+      "url": "https://drive.usercontent.google.com/download?id=1TonLbkuKLCrpsv7HMZdnS5oTFn7FREid&export=download&confirm=t",
+      "versionCaveat": "Public file has 400 rows; the ML-Promise paper reports 200 English test rows. This benchmark uses the author-hosted PromiseEval release, not a reproduction of the paper's exact split."
+    },
+    {
+      "name": "MailEx",
+      "reason": "Native event taxonomy is not target firm delivery; no MailEx prediction benchmark frozen.",
+      "revision": "57507a458ce157378300d982914d7528448a381d",
+      "status": "provenance_and_availability_only",
+      "targetLabelMapping": null,
+      "trainingEligible": false,
+      "url": "https://drive.google.com/file/d/1a336g4-wlEwsVbXLPB9wPQnBDRE933mb/view"
+    }
+  ],
+  "status": "prepared",
+  "task": "published Promise Identification Yes/No",
+  "threshold": 0.5,
+  "trainingEligible": false
+}

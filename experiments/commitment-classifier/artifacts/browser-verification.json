@@ -1,0 +1,32 @@
+{
+  "passed": 16,
+  "checks": [
+    "CSP blocks connections and form submissions",
+    "blank initial editor and disabled classifier",
+    "result uses exact original quote",
+    "UTF16 selection covers supplied passage",
+    "editing clears result and announces stale state",
+    "oversized input retained and rejected explicitly",
+    "classification works offline",
+    "no requests during all text interactions",
+    "no runtime persistence or service workers",
+    "canary absent from URL, requests, and logs",
+    "automated accessibility scan has no violations",
+    "320px viewport has no horizontal overflow",
+    "reload clears text and findings",
+    "server exposes only allowlisted static files",
+    "server rejects text submission",
+    "no browser runtime errors"
+  ],
+  "storage": {
+    "local": 0,
+    "session": 0,
+    "databases": 0,
+    "caches": 0,
+    "serviceWorkers": 0
+  },
+  "initialAssetRequests": 5,
+  "interactionsAdditionalRequests": 0,
+  "axeViolations": 0,
+  "caveat": "Chromium automation at desktop and 320px; no human validation or physical-device claim."
+}

@@ -1,0 +1,287 @@
+{
+  "exampleIds": [
+    "al-p117",
+    "al-p118",
+    "al-p119",
+    "al-p120",
+    "al-p121",
+    "al-p122",
+    "al-p123",
+    "al-p124",
+    "al-p145",
+    "al-p146",
+    "al-p147",
+    "al-p148",
+    "al-p177",
+    "al-p178",
+    "al-p179",
+    "al-p180",
+    "al-p209",
+    "al-p210",
+    "al-p211",
+    "al-p212",
+    "al-p229",
+    "al-p230",
+    "al-p231",
+    "al-p232",
+    "al-p269",
+    "al-p270",
+    "al-p271",
+    "al-p272",
+    "al-p281",
+    "al-p282",
+    "al-p283",
+    "al-p284",
+    "al-p285",
+    "al-p286",
+    "al-p287",
+    "al-p288",
+    "al-p293",
+    "al-p294",
+    "al-p295",
+    "al-p296"
+  ],
+  "fallbackUncertaintyFamilies": 0,
+  "groups": {
+    "al-g030": "disagreement",
+    "al-g031": "uncertainty",
+    "al-g037": "disagreement",
+    "al-g045": "random",
+    "al-g053": "random",
+    "al-g058": "disagreement",
+    "al-g068": "disagreement",
+    "al-g071": "uncertainty",
+    "al-g072": "disagreement",
+    "al-g074": "uncertainty"
+  },
+  "poolHash": "6958d2bcf43a8f05bfe2ad9a1f5164cc2d2872f060cd95705a5a6455a1e95b79",
+  "roundNumber": 3,
+  "scoringCandidate": "/Users/keith/Developer/communication-check/experiments/active-learning/campaigns/active-001/rounds/round-2",
+  "stats": {
+    "al-g004": {
+      "disagreements": 1,
+      "distance": 0.11695815010736954
+    },
+    "al-g005": {
+      "disagreements": 2,
+      "distance": 0.04408058916671709
+    },
+    "al-g006": {
+      "disagreements": 2,
+      "distance": 0.015838572777484516
+    },
+    "al-g009": {
+      "disagreements": 1,
+      "distance": 0.05120162850938448
+    },
+    "al-g010": {
+      "disagreements": 0,
+      "distance": 0.12507483875072412
+    },
+    "al-g011": {
+      "disagreements": 1,
+      "distance": 0.04415583617625907
+    },
+    "al-g012": {
+      "disagreements": 1,
+      "distance": 0.15169040702384895
+    },
+    "al-g014": {
+      "disagreements": 2,
+      "distance": 0.03417984877356084
+    },
+    "al-g016": {
+      "disagreements": 1,
+      "distance": 0.010468332686368709
+    },
+    "al-g021": {
+      "disagreements": 1,
+      "distance": 0.012122976008648645
+    },
+    "al-g022": {
+      "disagreements": 2,
+      "distance": 0.08840429750809797
+    },
+    "al-g023": {
+      "disagreements": 1,
+      "distance": 0.004059136923740714
+    },
+    "al-g024": {
+      "disagreements": 0,
+      "distance": 0.07929060682029987
+    },
+    "al-g026": {
+      "disagreements": 2,
+      "distance": 0.007542855515248248
+    },
+    "al-g028": {
+      "disagreements": 1,
+      "distance": 0.0073109205457314586
+    },
+    "al-g029": {
+      "disagreements": 1,
+      "distance": 0.08067974639261
+    },
+    "al-g030": {
+      "disagreements": 2,
+      "distance": 0.04285894644684718
+    },
+    "al-g031": {
+      "disagreements": 1,
+      "distance": 0.0009992227282553112
+    },
+    "al-g032": {
+      "disagreements": 2,
+      "distance": 0.053198303730006
+    },
+    "al-g033": {
+      "disagreements": 0,
+      "distance": 0.01735504381409203
+    },
+    "al-g034": {
+      "disagreements": 1,
+      "distance": 0.010089233673707287
+    },
+    "al-g036": {
+      "disagreements": 1,
+      "distance": 0.09300269845222109
+    },
+    "al-g037": {
+      "disagreements": 2,
+      "distance": 0.007523731485508278
+    },
+    "al-g038": {
+      "disagreements": 2,
+      "distance": 0.06189553804134573
+    },
+    "al-g039": {
+      "disagreements": 1,
+      "distance": 0.009373747801335042
+    },
+    "al-g040": {
+      "disagreements": 1,
+      "distance": 0.10610614974511035
+    },
+    "al-g041": {
+      "disagreements": 0,
+      "distance": 0.05786998439274493
+    },
+    "al-g042": {
+      "disagreements": 1,
+      "distance": 0.05110929373171591
+    },
+    "al-g043": {
+      "disagreements": 1,
+      "distance": 0.031085016028313706
+    },
+    "al-g044": {
+      "disagreements": 1,
+      "distance": 0.029049181988998196
+    },
+    "al-g045": {
+      "disagreements": 1,
+      "distance": 0.11345497107767744
+    },
+    "al-g046": {
+      "disagreements": 0,
+      "distance": 0.09574383184050572
+    },
+    "al-g047": {
+      "disagreements": 1,
+      "distance": 0.07162073127679047
+    },
+    "al-g048": {
+      "disagreements": 1,
+      "distance": 0.009801942642513883
+    },
+    "al-g049": {
+      "disagreements": 2,
+      "distance": 0.011442847219516106
+    },
+    "al-g050": {
+      "disagreements": 2,
+      "distance": 0.022667509046992995
+    },
+    "al-g051": {
+      "disagreements": 2,
+      "distance": 0.058272750687113406
+    },
+    "al-g053": {
+      "disagreements": 1,
+      "distance": 0.09428925156599588
+    },
+    "al-g055": {
+      "disagreements": 1,
+      "distance": 0.05014463693251037
+    },
+    "al-g057": {
+      "disagreements": 2,
+      "distance": 0.03410414739931111
+    },
+    "al-g058": {
+      "disagreements": 2,
+      "distance": 0.12562394572273228
+    },
+    "al-g059": {
+      "disagreements": 0,
+      "distance": 0.02847421358786073
+    },
+    "al-g060": {
+      "disagreements": 1,
+      "distance": 0.019491429919910708
+    },
+    "al-g062": {
+      "disagreements": 2,
+      "distance": 0.07468892681323186
+    },
+    "al-g063": {
+      "disagreements": 1,
+      "distance": 0.10820781864691809
+    },
+    "al-g066": {
+      "disagreements": 2,
+      "distance": 0.11658035716245607
+    },
+    "al-g067": {
+      "disagreements": 2,
+      "distance": 0.019689539920237698
+    },
+    "al-g068": {
+      "disagreements": 2,
+      "distance": 0.10898787065198001
+    },
+    "al-g069": {
+      "disagreements": 2,
+      "distance": 0.012810912262011032
+    },
+    "al-g070": {
+      "disagreements": 2,
+      "distance": 0.014852382670571762
+    },
+    "al-g071": {
+      "disagreements": 1,
+      "distance": 0.0012465976654242317
+    },
+    "al-g072": {
+      "disagreements": 2,
+      "distance": 0.09695666337038028
+    },
+    "al-g073": {
+      "disagreements": 2,
+      "distance": 0.039657849257039635
+    },
+    "al-g074": {
+      "disagreements": 1,
+      "distance": 0.0002577256798796945
+    },
+    "al-g075": {
+      "disagreements": 1,
+      "distance": 0.10327372402550361
+    }
+  },
+  "thresholds": {
+    "A": 0.5,
+    "B": 0.5,
+    "current": 0.5
+  }
+}

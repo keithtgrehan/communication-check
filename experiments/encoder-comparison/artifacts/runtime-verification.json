@@ -1,0 +1,65 @@
+{
+  "candidates": {
+    "A": {
+      "device": "cpu",
+      "modelBytes": 61864,
+      "modelLoadSeconds": 0.000543333007954061,
+      "reloadMaxScoreDifference": 0.0,
+      "singlePassageLatencyMilliseconds": {
+        "median": 0.07635449583176523,
+        "n": 10,
+        "p95": 0.08720799814909697
+      },
+      "warmupExcluded": true
+    },
+    "B": {
+      "device": "cpu",
+      "modelBytes": 91628575,
+      "modelLoadSeconds": 2.643968999997014,
+      "reloadMaxScoreDifference": 0.0,
+      "singlePassageLatencyMilliseconds": {
+        "median": 4.293249978218228,
+        "n": 10,
+        "p95": 4.601305942924228
+      },
+      "warmupExcluded": true
+    },
+    "C42": {
+      "device": "cpu",
+      "modelBytes": 91832587,
+      "modelLoadSeconds": 0.03470341698266566,
+      "reloadMaxScoreDifference": 0.0,
+      "singlePassageLatencyMilliseconds": {
+        "median": 4.275854487787001,
+        "n": 10,
+        "p95": 4.543108998041134
+      },
+      "warmupExcluded": true
+    },
+    "C43": {
+      "device": "cpu",
+      "modelBytes": 91832593,
+      "modelLoadSeconds": 0.025663999986136332,
+      "reloadMaxScoreDifference": 0.0,
+      "singlePassageLatencyMilliseconds": {
+        "median": 4.193458502413705,
+        "n": 10,
+        "p95": 4.389768901455682
+      },
+      "warmupExcluded": true
+    },
+    "C44": {
+      "device": "cpu",
+      "modelBytes": 91832594,
+      "modelLoadSeconds": 0.025714874995173886,
+      "reloadMaxScoreDifference": 0.0,
+      "singlePassageLatencyMilliseconds": {
+        "median": 4.179875002591871,
+        "n": 10,
+        "p95": 4.308381117880344
+      },
+      "warmupExcluded": true
+    }
+  },
+  "dataScope": "First 10 sorted TRAIN rows only; no independent evaluation examples."
+}

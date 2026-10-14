@@ -1,0 +1,286 @@
+{
+  "admission": [
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 145
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 52,
+      "utf16Units": 131
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 59,
+      "utf16Units": 153
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 57,
+      "utf16Units": 156
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 43,
+      "utf16Units": 73
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 52,
+      "utf16Units": 130
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 62,
+      "utf16Units": 160
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 47,
+      "utf16Units": 102
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 63,
+      "utf16Units": 161
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 159
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 64,
+      "utf16Units": 177
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 61,
+      "utf16Units": 170
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 46,
+      "utf16Units": 93
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 54,
+      "utf16Units": 136
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 48,
+      "utf16Units": 106
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 62,
+      "utf16Units": 164
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 52,
+      "utf16Units": 123
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 47,
+      "utf16Units": 101
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 55,
+      "utf16Units": 133
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 52,
+      "utf16Units": 118
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 55,
+      "utf16Units": 121
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 47,
+      "utf16Units": 85
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 47,
+      "utf16Units": 86
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 57,
+      "utf16Units": 156
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 58,
+      "utf16Units": 164
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 49,
+      "utf16Units": 125
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 53,
+      "utf16Units": 139
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 171
+    }
+  ],
+  "categories": [
+    "reported",
+    "qualified_delivery",
+    "qualified_delivery",
+    "reported",
+    "reported",
+    "qualified_delivery",
+    "qualified_delivery",
+    "qualified_delivery",
+    "qualified_delivery",
+    "reported",
+    "reported",
+    "reported",
+    "other",
+    "other",
+    "reported",
+    "request",
+    "qualified_delivery",
+    "other",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "qualified_delivery",
+    "request",
+    "other",
+    "request",
+    "qualified_delivery"
+  ],
+  "evidence": null,
+  "peakRssBytes": 1296007168,
+  "provenance": {
+    "batchSize": 8,
+    "candidate": "modernbert",
+    "dependencies": {
+      "huggingface-hub": "0.36.2",
+      "sentence-transformers": null,
+      "setfit": null,
+      "torch": "2.10.0",
+      "transformers": "4.51.3"
+    },
+    "entailmentIndex": 0,
+    "files": {
+      "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+      "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+      "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+      "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+      "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+    },
+    "hardware": {
+      "device": "cpu",
+      "logicalCpuCount": 8,
+      "machine": "arm64",
+      "processor": "arm",
+      "python": "3.11.3",
+      "system": "Darwin",
+      "threads": 4
+    },
+    "hypotheses": {
+      "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+      "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+      "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+      "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+      "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+    },
+    "license": "apache-2.0",
+    "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+    "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+    "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+    "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+    "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+    "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+    "truncation": false,
+    "usage": "Local research only; no product integration or commercial distillation."
+  },
+  "rationale": null,
+  "scores": [
+    0.7773951292037964,
+    0.23493516445159912,
+    0.47604867815971375,
+    0.7997539639472961,
+    0.04593948274850845,
+    0.2421167939901352,
+    0.02498815394937992,
+    0.01954703964293003,
+    0.5887600779533386,
+    0.26838916540145874,
+    0.8361756801605225,
+    0.014141181483864784,
+    0.18323738873004913,
+    0.08957340568304062,
+    0.0004425494698807597,
+    0.010826846584677696,
+    0.25011858344078064,
+    0.0027953197713941336,
+    0.5104199647903442,
+    0.297429621219635,
+    0.22972990572452545,
+    0.002438116120174527,
+    0.635274350643158,
+    0.031175831332802773,
+    0.1489608883857727,
+    0.006419182289391756,
+    0.07199021428823471,
+    0.05142767354846001
+  ],
+  "status": "ok",
+  "timing": {
+    "inferenceSeconds": 2.6158771249756683,
+    "loadSeconds": 1.0991861659858841,
+    "totalSeconds": 5.0406189170025755
+  }
+}

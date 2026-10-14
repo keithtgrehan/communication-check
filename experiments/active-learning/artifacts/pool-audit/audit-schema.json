@@ -1,0 +1,27 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "excludedGroups": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "note": {
+      "type": "string"
+    },
+    "poolSha256": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "poolSha256",
+    "excludedGroups",
+    "reviewer",
+    "note"
+  ],
+  "type": "object"
+}

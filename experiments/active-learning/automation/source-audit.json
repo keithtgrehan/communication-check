@@ -1,0 +1,182 @@
+{
+  "verifiedDate": "2026-10-14",
+  "schemaVersion": 1,
+  "scope": "Primary-source provenance and native-label benchmark; no historical project heldouts read",
+  "targetRubric": "experiments/encoder-comparison/data/rubric.md",
+  "trainingPolicy": "No external rows or native labels enter target training in this milestone. No automatic Promise/Event to firm_delivery mapping.",
+  "datasets": [
+    {
+      "id": "mailex",
+      "primaryUrl": "https://github.com/salokr/Email-Event-Extraction",
+      "revision": "57507a458ce157378300d982914d7528448a381d",
+      "downloadUrl": "https://drive.usercontent.google.com/download?id=1a336g4-wlEwsVbXLPB9wPQnBDRE933mb&export=download&confirm=t",
+      "downloadVerified": {
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "contentLength": 5476134,
+        "filename": "data.zip",
+        "prefixHex": "504b030414000000",
+        "bodyBytesRead": 8,
+        "fullArchiveDownloaded": false,
+        "sha256": null
+      },
+      "license": "CC-BY-SA-4.0",
+      "licenseSource": "https://github.com/salokr/Email-Event-Extraction/blob/57507a458ce157378300d982914d7528448a381d/README.md",
+      "licenseTerms": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "provenance": "Annotated subset of Enron email threads; raw correspondence made public through FERC investigation",
+      "underlyingSource": "https://www.cs.cmu.edu/~enron/",
+      "commercialCompatibility": "License allows commercial adaptation subject to attribution/share-alike. Underlying correspondence rights/privacy remain separate; not automatically cleared for product training.",
+      "schemaVerifiedFrom": "Author README and loaders, not decoded full archive",
+      "schema": {
+        "sentences": "list of tokenized email turns",
+        "events": "dictionary keyed by turn, then event type",
+        "eventPayload": [
+          "labels",
+          "triggers",
+          "extras"
+        ]
+      },
+      "nativeEventTypes": [
+        "Request_Meeting",
+        "Request_Data",
+        "Request_Action",
+        "Request_Action_Data",
+        "Request_Meeting_Data",
+        "Deliver_Data",
+        "Deliver_Action_Data",
+        "Deliver_Meeting_Data",
+        "Amend_Data",
+        "Amend_Meeting_Data"
+      ],
+      "publishedSplitsThreads": {
+        "train": 1200,
+        "dev": 150,
+        "test": 150
+      },
+      "mappingCompatibility": "No native label proves new author-owned unqualified future concrete work-item delivery. Deliver_Data includes information delivery; events may be requests, context, or past actions. Target relabeling would be a separate task.",
+      "trainingEligible": false,
+      "targetLabelMapping": null,
+      "benchmarkStatus": "Availability/provenance only; no native event score"
+    },
+    {
+      "id": "ml-promise",
+      "paper": "https://arxiv.org/abs/2411.04473v1",
+      "finalPaper": "https://aclanthology.org/2025.emnlp-main.1028.pdf",
+      "landingUrl": "https://MLpromise.nlpfin.com/",
+      "publicFolder": "https://drive.google.com/drive/folders/1e4Ntcq3Gs2S7H4jfSwzd_HGvbzAWj37J",
+      "testFolder": "https://drive.google.com/drive/folders/1SX_l5L_iHtViSsq3wGSXe202UE8MdFvt",
+      "downloadUrl": "https://drive.usercontent.google.com/download?id=1TonLbkuKLCrpsv7HMZdnS5oTFn7FREid&export=download&confirm=t",
+      "downloadVerified": {
+        "status": 200,
+        "contentType": "application/octet-stream",
+        "bytes": 449446,
+        "sha256": "94d60d386c772bb06681336c5351673de87e57f8b6d045a29ad9b1f1f0361d0d",
+        "sourceRows": 400
+      },
+      "trainingFile": {
+        "url": "https://drive.usercontent.google.com/download?id=1yu9vkvIzChBv3E16LynMLp9JTiBNuZ6p&export=download&confirm=t",
+        "downloaded": false
+      },
+      "versionCaveat": "Author-hosted PromiseEval English_test.json contains 400 rows, while final ML-Promise paper describes 200 English test instances. Do not claim exact paper reproduction.",
+      "annotationLicense": "CC-BY-NC-SA-4.0",
+      "annotationLicenseSource": "Final paper section 7",
+      "manuscriptLicense": "arXiv v1 CC-BY-NC-ND-4.0; not dataset license",
+      "licenseTerms": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "commercialCompatibility": "Excluded from commercial training/deployment; isolated native-label research only",
+      "provenance": "Human-annotated company ESG report passages. Human annotations address published ESG tasks, not our target rubric.",
+      "schema": {
+        "root": "list",
+        "URL": "str",
+        "page_number": "str",
+        "data": "str",
+        "promise_status": "Yes|No",
+        "verification_timeline": [
+          "2 to 5 years",
+          "Already",
+          "Less than 2 years",
+          "More than 5 years",
+          "N/A"
+        ],
+        "evidence_status": "Yes|No",
+        "evidence_quality": [
+          "Clear",
+          "Misleading",
+          "N/A",
+          "Not Clear"
+        ]
+      },
+      "nativeLabelDefinition": "Promise Identification includes ESG principles, commitments and strategies; it is broader than firm future work-item delivery.",
+      "nativeLabelField": "promise_status",
+      "nativeLabelMapping": {
+        "Yes": 1,
+        "No": 0
+      },
+      "targetLabelMapping": null,
+      "trainingEligible": false,
+      "sourceLabelCounts": {
+        "Yes": 273,
+        "No": 127
+      },
+      "selectedLabelCounts": {
+        "Yes": 43,
+        "No": 21
+      },
+      "selection": "first64 ascending sha256 of compact UTF8 JSON [English_test.json:<zero-based source index>, full data text], ensure_ascii=False; labels not used for selection",
+      "selectedOver2000Utf16": 3,
+      "benchmarkHypothesis": "This passage states a company principle, commitment, or strategy related to environmental, social, or governance criteria.",
+      "threshold": 0.5,
+      "excludedFromTargetRanking": true,
+      "C42Interpretation": "Cross-task transfer diagnostic only; not target accuracy or native-task model ranking"
+    }
+  ],
+  "models": [
+    {
+      "id": "MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c",
+      "revision": "bddf8c5411c34ac3565e16e04384fd68b2618dda",
+      "metadataUrl": "https://huggingface.co/api/models/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c",
+      "modelCard": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/blob/bddf8c5411c34ac3565e16e04384fd68b2618dda/README.md",
+      "license": "mit",
+      "maxPositionEmbeddings": 512,
+      "id2label": {
+        "0": "entailment",
+        "1": "not_entailment"
+      },
+      "files": {
+        "config.json": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/config.json",
+        "model.safetensors": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/model.safetensors",
+        "tokenizer.json": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/tokenizer.json",
+        "tokenizer_config.json": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/tokenizer_config.json",
+        "special_tokens_map.json": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/special_tokens_map.json",
+        "spm.model": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/spm.model",
+        "added_tokens.json": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/resolve/bddf8c5411c34ac3565e16e04384fd68b2618dda/added_tokens.json"
+      },
+      "weightsDownloadedByAudit": false,
+      "targetTaskTrainingOrValidationClaim": false,
+      "commercialCompatibility": "Author asserts commercially friendly fine-tuning mix; permissive model license; not independent full provenance clearance",
+      "commercialDistillationEligible": true
+    },
+    {
+      "id": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "metadataUrl": "https://huggingface.co/api/models/MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "license": "apache-2.0",
+      "maxPositionEmbeddings": 8192,
+      "id2label": {
+        "0": "entailment",
+        "1": "not_entailment"
+      },
+      "files": {
+        "config.json": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/resolve/d421c4545a438fd006fb43f8b981c5d908faa1e1/config.json",
+        "model.safetensors": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/resolve/d421c4545a438fd006fb43f8b981c5d908faa1e1/model.safetensors",
+        "tokenizer.json": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/resolve/d421c4545a438fd006fb43f8b981c5d908faa1e1/tokenizer.json",
+        "tokenizer_config.json": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/resolve/d421c4545a438fd006fb43f8b981c5d908faa1e1/tokenizer_config.json",
+        "special_tokens_map.json": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/resolve/d421c4545a438fd006fb43f8b981c5d908faa1e1/special_tokens_map.json"
+      },
+      "weightsDownloadedByAudit": false,
+      "targetTaskTrainingOrValidationClaim": false,
+      "commercialCompatibility": "Unresolved: Apache-2.0 model metadata but card identifies general v2.0 mix, whose documentation includes noncommercial data. Research comparator only.",
+      "commercialDistillationEligible": false
+    }
+  ]
+}

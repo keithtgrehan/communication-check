@@ -1,0 +1,97 @@
+{
+  "items": [
+    {
+      "id": "al-p011",
+      "reviewer": {
+        "category": "qualified_delivery",
+        "evidence": [
+          "I should have the boiler inspection certificate ready tomorrow, assuming the pressure gauge passes its calibration check."
+        ],
+        "id": "item_e7cfe45586e796d2783142b1",
+        "label": 0,
+        "rationale": "Readiness is tentative and depends on a successful calibration check.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "qualified_delivery",
+        "evidence": [
+          "I should have the boiler inspection certificate ready tomorrow, assuming the pressure gauge passes its calibration check."
+        ],
+        "id": "item_f68075a40c940797dd72f31e",
+        "label": 0,
+        "rationale": "Readiness is tentative and depends on successful calibration.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p050",
+      "reviewer": {
+        "category": "firm_delivery",
+        "evidence": [
+          "Our bakery team will place printed copies at every mixing station this evening."
+        ],
+        "id": "item_b0fca23bfde46466b761f951",
+        "label": 1,
+        "rationale": "The author's team commits to distributing printed copies that evening.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "firm_delivery",
+        "evidence": [
+          "Our bakery team will place printed copies at every mixing station this evening."
+        ],
+        "id": "item_765183bcc44442c451c3c081",
+        "label": 1,
+        "rationale": "The bakery team commits to distributing printed copies that evening.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p067",
+      "reviewer": {
+        "category": "request",
+        "evidence": [
+          "Please deliver the bound harbor fender replacement drawings to the marine contractor before Wednesday's site meeting."
+        ],
+        "id": "item_1a1b8b1c5628df6205881b95",
+        "label": 0,
+        "rationale": "The author asks the recipient to deliver the drawings.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "request",
+        "evidence": [
+          "Please deliver the bound harbor fender replacement drawings"
+        ],
+        "id": "item_7c18102d3cc28415e8c8e4d8",
+        "label": 0,
+        "rationale": "The author requests delivery by the recipient.",
+        "status": "clear"
+      }
+    },
+    {
+      "id": "al-p070",
+      "reviewer": {
+        "category": "firm_delivery",
+        "evidence": [
+          "I will deliver the repaired volume and its protective slipcase to the map room on Friday afternoon."
+        ],
+        "id": "item_cc0d2a41b36a4c06e6c4ee7e",
+        "label": 1,
+        "rationale": "The author commits to delivering the repaired volume and slipcase.",
+        "status": "clear"
+      },
+      "teacher": {
+        "category": "firm_delivery",
+        "evidence": [
+          "I will deliver the repaired volume and its protective slipcase to the map room on Friday afternoon."
+        ],
+        "id": "item_1bc07675ae15c48af6890ae5",
+        "label": 1,
+        "rationale": "The author unconditionally asserts future delivery of the volume and slipcase.",
+        "status": "clear"
+      }
+    }
+  ],
+  "quarantine": []
+}

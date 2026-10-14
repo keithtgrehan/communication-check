@@ -1,0 +1,74 @@
+{
+  "accepted": 36,
+  "acceptedCounts": {
+    "firm_delivery": 18,
+    "other": 4,
+    "qualified_delivery": 5,
+    "reported": 4,
+    "request": 5
+  },
+  "acceptedFamilies": 9,
+  "baseDataSha256": "ae0236ea3ef255dc517f62cf77df6f3d40b1661a4a88f5c0abb7b81d1d533468",
+  "batchId": "teacher-demo-001",
+  "coverage": {
+    "admitted": 186,
+    "maxTokens": 22,
+    "maxUtf16Units": 108,
+    "reasons": {
+      "character_limit": 0,
+      "empty": 0,
+      "token_limit": 0
+    },
+    "rejected": 0,
+    "total": 186
+  },
+  "developmentRows": 30,
+  "developmentUnchanged": true,
+  "labelEvidence": "Separate AI teacher/reviewer agreement under procedural blinding; not human validation.",
+  "packetSha256": "3955391be854112053e51520a73a4c9b47c714443667e348201b0265baa70461",
+  "parent": null,
+  "preparedAtUtc": "2026-10-13T22:40:44Z",
+  "priorBundleSha256": "ce05cc78086746d0d2c2e59c693dfee7e5f40924dc72804c888fa445e3d450ea",
+  "proposalSha256": "e4a6b748580595083a6b949a6cf86f568c1743eced2037fb6d917a0298d7cca5",
+  "proposed": 40,
+  "quarantineReasons": {
+    "teacher_reviewer_disagreement": 4
+  },
+  "quarantined": 4,
+  "quarantinedFamilies": 1,
+  "readyForTraining": true,
+  "reviewSha256": "fb4f4c1379be316c66c22a13002ee0015ce9884be69a37c7c300120168b4d858",
+  "reviewer": {
+    "actorId": "senior_product_reviewer",
+    "model": "Codex AI agent; requested gpt-6-astra, actual runtime identifier not independently verified"
+  },
+  "runId": "teacher-demo-001",
+  "snapshotFiles": {
+    "inputs/accepted.json": "b206d51aced481d41f612d38d6ebfd5b895481d0a04df059b3b784116c513335",
+    "inputs/data.json": "4614f048a761c5104af510a89be134a39776f091286f18071a6c451ceb3fd2b7",
+    "inputs/packet.json": "3955391be854112053e51520a73a4c9b47c714443667e348201b0265baa70461",
+    "inputs/proposal.json": "e4a6b748580595083a6b949a6cf86f568c1743eced2037fb6d917a0298d7cca5",
+    "inputs/quarantine.json": "b040f753b10e7d28004051722f25a75544f0feb2b8b1bab04bbd7dcbee6acc6f",
+    "inputs/recipe.json": "abb522ef19e264bc526924da61605a4291ce3e2f18318e4063e9d84c93345853",
+    "inputs/review.json": "fb4f4c1379be316c66c22a13002ee0015ce9884be69a37c7c300120168b4d858",
+    "inputs/source/adapter.py": "c425732e31b626dd7db6a1fdec49894c85c4bf219b003a3d73cd67f0ca5f2eaf",
+    "inputs/source/contracts.py": "fe284ecd9def9a6464b756841ce79cadc4ff629070e9f4c78b73af06dadc6961",
+    "inputs/source/kit.py": "7fdf7128c8ee1ee8e65b006e8b1067f3318814b0b336ed8472c2f64b14babc03",
+    "inputs/source/recipe.json": "abb522ef19e264bc526924da61605a4291ce3e2f18318e4063e9d84c93345853",
+    "inputs/source/teaching.py": "1508e38713019b0b5cad6b11ba25883d4ed8b3cbed91788a14ee630070186819",
+    "inputs/source/tests/test_workflow.py": "6575e1aa83832acde11cac412380ce4e9bfe8cd3928767aad6ee0017786e77cb"
+  },
+  "sourceFiles": {
+    "adapter.py": "c425732e31b626dd7db6a1fdec49894c85c4bf219b003a3d73cd67f0ca5f2eaf",
+    "contracts.py": "fe284ecd9def9a6464b756841ce79cadc4ff629070e9f4c78b73af06dadc6961",
+    "kit.py": "7fdf7128c8ee1ee8e65b006e8b1067f3318814b0b336ed8472c2f64b14babc03",
+    "recipe.json": "abb522ef19e264bc526924da61605a4291ce3e2f18318e4063e9d84c93345853",
+    "teaching.py": "1508e38713019b0b5cad6b11ba25883d4ed8b3cbed91788a14ee630070186819",
+    "tests/test_workflow.py": "6575e1aa83832acde11cac412380ce4e9bfe8cd3928767aad6ee0017786e77cb"
+  },
+  "teacher": {
+    "actorId": "product_manager",
+    "model": "Codex AI agent; requested gpt-6-astra; runtime not independently verified"
+  },
+  "trainingRows": 156
+}

@@ -1,0 +1,1850 @@
+[
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-braille-score-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.7773951292037964,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-braille-score-2",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.23493516445159912,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-braille-score-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.47604867815971375,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-braille-score",
+      "referenceProvenance": null,
+      "scenarioDomain": "Braille music score proofs",
+      "scenarioFamily": "auto-dev-braille-score",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-braille-score-4",
+    "rationale": null,
+    "referenceCategory": "ambiguous",
+    "referenceLabel": null,
+    "score": 0.7997539639472961,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-canal-lock-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.04593948274850845,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-canal-lock-2",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.2421167939901352,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-canal-lock-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.02498815394937992,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-canal-lock",
+      "referenceProvenance": null,
+      "scenarioDomain": "Historic canal-lock inspection folios",
+      "scenarioFamily": "auto-dev-canal-lock",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-canal-lock-4",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.01954703964293003,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-lichen-atlas-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5887600779533386,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-lichen-atlas-2",
+    "rationale": null,
+    "referenceCategory": "reported",
+    "referenceLabel": 0,
+    "score": 0.26838916540145874,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-lichen-atlas-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.8361756801605225,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-dev-lichen-atlas",
+      "referenceProvenance": null,
+      "scenarioDomain": "Lichen atlas specimen plates",
+      "scenarioFamily": "auto-dev-lichen-atlas",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-lichen-atlas-4",
+    "rationale": null,
+    "referenceCategory": "reported",
+    "referenceLabel": 0,
+    "score": 0.014141181483864784,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-marionette-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.18323738873004913,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-marionette-2",
+    "rationale": null,
+    "referenceCategory": "request",
+    "referenceLabel": 0,
+    "score": 0.08957340568304062,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-marionette-3",
+    "rationale": null,
+    "referenceCategory": "other",
+    "referenceLabel": 0,
+    "score": 0.0004425494698807597,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "request",
+    "dataProvenance": {
+      "group": "auto-dev-marionette",
+      "referenceProvenance": null,
+      "scenarioDomain": "Marionette theatre rigging diagrams",
+      "scenarioFamily": "auto-dev-marionette",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-marionette-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.010826846584677696,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-meteorite-1",
+    "rationale": null,
+    "referenceCategory": "reported",
+    "referenceLabel": 0,
+    "score": 0.25011858344078064,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-meteorite-2",
+    "rationale": null,
+    "referenceCategory": "other",
+    "referenceLabel": 0,
+    "score": 0.0027953197713941336,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-meteorite-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.5104199647903442,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-meteorite",
+      "referenceProvenance": null,
+      "scenarioDomain": "Meteorite collection custody cards",
+      "scenarioFamily": "auto-dev-meteorite",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-meteorite-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.297429621219635,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "reported",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-salt-marsh-1",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.22972990572452545,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-salt-marsh-2",
+    "rationale": null,
+    "referenceCategory": "other",
+    "referenceLabel": 0,
+    "score": 0.002438116120174527,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "firm_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 1,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-salt-marsh-3",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.635274350643158,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-salt-marsh",
+      "referenceProvenance": null,
+      "scenarioDomain": "Salt-marsh transect overlays",
+      "scenarioFamily": "auto-dev-salt-marsh",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-salt-marsh-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.031175831332802773,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "request",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-tram-depot-1",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.1489608883857727,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "other",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-tram-depot-2",
+    "rationale": null,
+    "referenceCategory": "request",
+    "referenceLabel": 0,
+    "score": 0.006419182289391756,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "request",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-tram-depot-3",
+    "rationale": null,
+    "referenceCategory": "qualified_delivery",
+    "referenceLabel": 0,
+    "score": 0.07199021428823471,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  },
+  {
+    "category": "qualified_delivery",
+    "dataProvenance": {
+      "group": "auto-dev-tram-depot",
+      "referenceProvenance": null,
+      "scenarioDomain": "Heritage tram depot winding schedules",
+      "scenarioFamily": "auto-dev-tram-depot",
+      "source": "synthetic-ai-author"
+    },
+    "explanationAvailability": "Classifier returns scores, not explanatory evidence.",
+    "label": 0,
+    "model": "modernbert",
+    "modelProvenance": {
+      "batchSize": 8,
+      "candidate": "modernbert",
+      "dependencies": {
+        "huggingface-hub": "0.36.2",
+        "sentence-transformers": null,
+        "setfit": null,
+        "torch": "2.10.0",
+        "transformers": "4.51.3"
+      },
+      "entailmentIndex": 0,
+      "files": {
+        "README.md": "61818c282758d402513c102a570aacd8f446a74370e1baf3ace9692d3742e736",
+        "config.json": "d5c53ad1e5a23066144e958db475b1f8df7e8e45bf0ef6aba8a842c7f6450be1",
+        "model.safetensors": "5af4dac82bf3da16575d0c71c8c96ee7eb6621ae5f4f4726943d0a3583b44b46",
+        "special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+        "tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer_config.json": "c5a7dfd44d93c5d7ed9b2ddcd7a6018e935ec7d53f1de45910ea9868e0ff1c17"
+      },
+      "hardware": {
+        "device": "cpu",
+        "logicalCpuCount": 8,
+        "machine": "arm64",
+        "processor": "arm",
+        "python": "3.11.3",
+        "system": "Darwin",
+        "threads": 4
+      },
+      "hypotheses": {
+        "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+        "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+        "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+        "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+        "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+      },
+      "license": "apache-2.0",
+      "modelCard": "https://huggingface.co/MoritzLaurer/ModernBERT-base-zeroshot-v2.0/blob/d421c4545a438fd006fb43f8b981c5d908faa1e1/README.md",
+      "modelId": "MoritzLaurer/ModernBERT-base-zeroshot-v2.0",
+      "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+      "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+      "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+      "trainingDataLicenseCaveat": "Mixed training-data licenses; model license does not relicense training data.",
+      "truncation": false,
+      "usage": "Local research only; no product integration or commercial distillation."
+    },
+    "passageId": "auto-dev-tram-depot-4",
+    "rationale": null,
+    "referenceCategory": "firm_delivery",
+    "referenceLabel": 1,
+    "score": 0.05142767354846001,
+    "split": "dev",
+    "supportingText": null,
+    "threshold": 0.5
+  }
+]

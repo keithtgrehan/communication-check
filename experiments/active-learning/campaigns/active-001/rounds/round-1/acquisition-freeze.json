@@ -1,0 +1,12 @@
+{
+  "bundleSha256": "2fb2fa1870064635d309158ecee21d5966fbb5f6ebf5a665a844c4b3bc667620",
+  "files": {
+    "reviewer-mapping.json": "da74d9bbef3b4320dc8ab218e30b2341fc20fc841972156872a7d98ce2f9dce7",
+    "reviewer-packet.json": "287fbf687a711d707cabda6bdccea6204b5519f80ee3692e1a98d100f4078af8",
+    "scores.json": "79f5f43b269722beec1255c0ff1267f1ecf612c8eca15b906a15845a7af5178c",
+    "selected.json": "dc0ecef3ceddf15e3e4e2161a1a56d52905a48996e3333a4d46899f7616019f7",
+    "selection.json": "0a8939e47e46b76eaf978d7e256a5e14c075865bc2ea43bb8844464b46b4dfe5",
+    "teacher-mapping.json": "acc49696b89128751688ddcfc1d52fc169a78162ba0f89851c3b83744f09caad",
+    "teacher-packet.json": "1a883bd996dfd951f72dcb7e3220fdf21caec36f03b6749a1548ed798ced7dcd"
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "baseline": {
+    "devGatePassed": false,
+    "metrics": {
+      "accuracy": 0.8,
+      "f1": 0.7692307692307693,
+      "falsePositiveRate": 0.06666666666666667,
+      "fn": 5,
+      "fp": 1,
+      "n": 30,
+      "precision": 0.9090909090909091,
+      "recall": 0.6666666666666666,
+      "tn": 14,
+      "tp": 10
+    },
+    "name": "Frozen C42",
+    "threshold": 0.5
+  },
+  "candidate": {
+    "accuracy": 0.7666666666666667,
+    "f1": 0.7407407407407407,
+    "falsePositiveRate": 0.13333333333333333,
+    "fn": 5,
+    "fp": 2,
+    "n": 30,
+    "precision": 0.8333333333333334,
+    "recall": 0.6666666666666666,
+    "tn": 13,
+    "tp": 10
+  },
+  "categories": {
+    "firm_delivery": {
+      "baseline": {
+        "accuracy": 0.6666666666666666,
+        "f1": 0.8,
+        "falsePositiveRate": null,
+        "fn": 5,
+        "fp": 0,
+        "n": 15,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "tn": 0,
+        "tp": 10
+      },
+      "candidate": {
+        "accuracy": 0.6666666666666666,
+        "f1": 0.8,
+        "falsePositiveRate": null,
+        "fn": 5,
+        "fp": 0,
+        "n": 15,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "tn": 0,
+        "tp": 10
+      }
+    },
+    "other": {
+      "baseline": {
+        "accuracy": 1.0,
+        "f1": 0,
+        "falsePositiveRate": 0.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 3,
+        "precision": null,
+        "recall": null,
+        "tn": 3,
+        "tp": 0
+      },
+      "candidate": {
+        "accuracy": 0.6666666666666666,
+        "f1": 0.0,
+        "falsePositiveRate": 0.3333333333333333,
+        "fn": 0,
+        "fp": 1,
+        "n": 3,
+        "precision": 0.0,
+        "recall": null,
+        "tn": 2,
+        "tp": 0
+      }
+    },
+    "qualified_delivery": {
+      "baseline": {
+        "accuracy": 0.75,
+        "f1": 0.0,
+        "falsePositiveRate": 0.25,
+        "fn": 0,
+        "fp": 1,
+        "n": 4,
+        "precision": 0.0,
+        "recall": null,
+        "tn": 3,
+        "tp": 0
+      },
+      "candidate": {
+        "accuracy": 0.75,
+        "f1": 0.0,
+        "falsePositiveRate": 0.25,
+        "fn": 0,
+        "fp": 1,
+        "n": 4,
+        "precision": 0.0,
+        "recall": null,
+        "tn": 3,
+        "tp": 0
+      }
+    },
+    "reported": {
+      "baseline": {
+        "accuracy": 1.0,
+        "f1": 0,
+        "falsePositiveRate": 0.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 4,
+        "precision": null,
+        "recall": null,
+        "tn": 4,
+        "tp": 0
+      },
+      "candidate": {
+        "accuracy": 1.0,
+        "f1": 0,
+        "falsePositiveRate": 0.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 4,
+        "precision": null,
+        "recall": null,
+        "tn": 4,
+        "tp": 0
+      }
+    },
+    "request": {
+      "baseline": {
+        "accuracy": 1.0,
+        "f1": 0,
+        "falsePositiveRate": 0.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 4,
+        "precision": null,
+        "recall": null,
+        "tn": 4,
+        "tp": 0
+      },
+      "candidate": {
+        "accuracy": 1.0,
+        "f1": 0,
+        "falsePositiveRate": 0.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 4,
+        "precision": null,
+        "recall": null,
+        "tn": 4,
+        "tp": 0
+      }
+    }
+  },
+  "classifierHeadSeed": 42,
+  "comparisonNote": "DEV-only comparison at each predeclared operating point. Threshold selection is not independent evidence of model improvement.",
+  "decision": "Does not meet the exploratory development target. Retain as a diagnostic candidate; do not integrate.",
+  "developmentRows": 30,
+  "diagnosticOnly": true,
+  "encoderStartsFrom": "Pinned original pretrained MiniLM; not the parent candidate weights.",
+  "fitSeconds": 8.819578583992552,
+  "improvements": {
+    "f1Delta": -0.028490028490028574,
+    "falsePositiveDelta": 1,
+    "recallDelta": 0.0
+  },
+  "limitations": [
+    "Synthetic teacher and reviewer labels are not human ground truth.",
+    "Repeated use of this development set can overfit model selection.",
+    "No historical independent test was read or evaluated by this workflow."
+  ],
+  "modelBytes": 91831677,
+  "operatingPoint": {
+    "chosen": {
+      "accuracy": 0.7666666666666667,
+      "f1": 0.7407407407407407,
+      "falsePositiveRate": 0.13333333333333333,
+      "fn": 5,
+      "fp": 2,
+      "n": 30,
+      "precision": 0.8333333333333334,
+      "recall": 0.6666666666666666,
+      "threshold": 0.5,
+      "tn": 13,
+      "tp": 10
+    },
+    "curve": [
+      {
+        "accuracy": 0.5,
+        "f1": 0.6666666666666666,
+        "falsePositiveRate": 1.0,
+        "fn": 0,
+        "fp": 15,
+        "n": 30,
+        "precision": 0.5,
+        "recall": 1.0,
+        "threshold": 0.05,
+        "tn": 0,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.6666666666666666,
+        "falsePositiveRate": 1.0,
+        "fn": 0,
+        "fp": 15,
+        "n": 30,
+        "precision": 0.5,
+        "recall": 1.0,
+        "threshold": 0.1,
+        "tn": 0,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.6666666666666666,
+        "falsePositiveRate": 1.0,
+        "fn": 0,
+        "fp": 15,
+        "n": 30,
+        "precision": 0.5,
+        "recall": 1.0,
+        "threshold": 0.15,
+        "tn": 0,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.6666666666666666,
+        "falsePositiveRate": 1.0,
+        "fn": 0,
+        "fp": 15,
+        "n": 30,
+        "precision": 0.5,
+        "recall": 1.0,
+        "threshold": 0.2,
+        "tn": 0,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.6,
+        "f1": 0.7142857142857143,
+        "falsePositiveRate": 0.8,
+        "fn": 0,
+        "fp": 12,
+        "n": 30,
+        "precision": 0.5555555555555556,
+        "recall": 1.0,
+        "threshold": 0.25,
+        "tn": 3,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.6333333333333333,
+        "f1": 0.7317073170731707,
+        "falsePositiveRate": 0.7333333333333333,
+        "fn": 0,
+        "fp": 11,
+        "n": 30,
+        "precision": 0.5769230769230769,
+        "recall": 1.0,
+        "threshold": 0.3,
+        "tn": 4,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.7,
+        "f1": 0.7692307692307693,
+        "falsePositiveRate": 0.6,
+        "fn": 0,
+        "fp": 9,
+        "n": 30,
+        "precision": 0.625,
+        "recall": 1.0,
+        "threshold": 0.35,
+        "tn": 6,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.8333333333333334,
+        "f1": 0.8571428571428571,
+        "falsePositiveRate": 0.3333333333333333,
+        "fn": 0,
+        "fp": 5,
+        "n": 30,
+        "precision": 0.75,
+        "recall": 1.0,
+        "threshold": 0.4,
+        "tn": 10,
+        "tp": 15
+      },
+      {
+        "accuracy": 0.8,
+        "f1": 0.8125,
+        "falsePositiveRate": 0.26666666666666666,
+        "fn": 2,
+        "fp": 4,
+        "n": 30,
+        "precision": 0.7647058823529411,
+        "recall": 0.8666666666666667,
+        "threshold": 0.45,
+        "tn": 11,
+        "tp": 13
+      },
+      {
+        "accuracy": 0.7666666666666667,
+        "f1": 0.7407407407407407,
+        "falsePositiveRate": 0.13333333333333333,
+        "fn": 5,
+        "fp": 2,
+        "n": 30,
+        "precision": 0.8333333333333334,
+        "recall": 0.6666666666666666,
+        "threshold": 0.5,
+        "tn": 13,
+        "tp": 10
+      },
+      {
+        "accuracy": 0.7,
+        "f1": 0.6086956521739131,
+        "falsePositiveRate": 0.06666666666666667,
+        "fn": 8,
+        "fp": 1,
+        "n": 30,
+        "precision": 0.875,
+        "recall": 0.4666666666666667,
+        "threshold": 0.55,
+        "tn": 14,
+        "tp": 7
+      },
+      {
+        "accuracy": 0.6666666666666666,
+        "f1": 0.5454545454545454,
+        "falsePositiveRate": 0.06666666666666667,
+        "fn": 9,
+        "fp": 1,
+        "n": 30,
+        "precision": 0.8571428571428571,
+        "recall": 0.4,
+        "threshold": 0.6,
+        "tn": 14,
+        "tp": 6
+      },
+      {
+        "accuracy": 0.6666666666666666,
+        "f1": 0.5,
+        "falsePositiveRate": 0.0,
+        "fn": 10,
+        "fp": 0,
+        "n": 30,
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "threshold": 0.65,
+        "tn": 15,
+        "tp": 5
+      },
+      {
+        "accuracy": 0.5666666666666667,
+        "f1": 0.23529411764705882,
+        "falsePositiveRate": 0.0,
+        "fn": 13,
+        "fp": 0,
+        "n": 30,
+        "precision": 1.0,
+        "recall": 0.13333333333333333,
+        "threshold": 0.7,
+        "tn": 15,
+        "tp": 2
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "falsePositiveRate": 0.0,
+        "fn": 15,
+        "fp": 0,
+        "n": 30,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": 0.75,
+        "tn": 15,
+        "tp": 0
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "falsePositiveRate": 0.0,
+        "fn": 15,
+        "fp": 0,
+        "n": 30,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": 0.8,
+        "tn": 15,
+        "tp": 0
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "falsePositiveRate": 0.0,
+        "fn": 15,
+        "fp": 0,
+        "n": 30,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": 0.85,
+        "tn": 15,
+        "tp": 0
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "falsePositiveRate": 0.0,
+        "fn": 15,
+        "fp": 0,
+        "n": 30,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": 0.9,
+        "tn": 15,
+        "tp": 0
+      },
+      {
+        "accuracy": 0.5,
+        "f1": 0.0,
+        "falsePositiveRate": 0.0,
+        "fn": 15,
+        "fp": 0,
+        "n": 30,
+        "precision": null,
+        "recall": 0.0,
+        "threshold": 0.95,
+        "tn": 15,
+        "tp": 0
+      }
+    ],
+    "gatePassed": false,
+    "policy": "Thresholds 0.05..0.95 by 0.05; require precision>=0.90 AND recall>=0.70; maximize recall, precision, threshold. Otherwise 0.50 diagnostic only.",
+    "threshold": 0.5
+  },
+  "optimization": {
+    "changedParameterTensors": 101,
+    "maximumAbsoluteParameterChange": 0.00041909143328666687,
+    "successfulCpuSteps": 50,
+    "totalParameterTensors": 103
+  },
+  "parity": {
+    "headMaxError": 0.0,
+    "savedReloadMaxError": 0.0
+  },
+  "preparedSha256": "b2bbd3e372f0bfaf11ffabf8b64fa40bbe5b95ae00dfd5924ba0fab4aad4fbbe",
+  "runId": "teacher-demo-001",
+  "scope": "Development-only comparison on the same previously used 30 rows; not an independent generalization test.",
+  "seed": 42,
+  "totalWorkflowSeconds": 10.28781412501121,
+  "trainingRows": 156
+}

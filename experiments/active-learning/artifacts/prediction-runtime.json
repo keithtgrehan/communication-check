@@ -1,0 +1,63 @@
+{
+  "canaryPersisted": false,
+  "cases": [
+    {
+      "case": "valid_canary",
+      "inputNotEchoed": true,
+      "result": {
+        "admission": {
+          "admitted": true,
+          "reason": null,
+          "tokens": 39,
+          "utf16Units": 108
+        },
+        "label": 1,
+        "score": 0.5879654680791429,
+        "threshold": 0.45,
+        "uncalibratedScore": true
+      }
+    },
+    {
+      "case": "empty",
+      "inputNotEchoed": true,
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "empty",
+          "tokens": null,
+          "utf16Units": 0
+        },
+        "uncalibratedScore": true
+      }
+    },
+    {
+      "case": "oversized_unicode",
+      "inputNotEchoed": true,
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "character_limit",
+          "tokens": null,
+          "utf16Units": 2002
+        },
+        "uncalibratedScore": true
+      }
+    },
+    {
+      "case": "token_overflow",
+      "inputNotEchoed": true,
+      "result": {
+        "admission": {
+          "admitted": false,
+          "reason": "token_limit",
+          "tokens": 257,
+          "utf16Units": 1275
+        },
+        "uncalibratedScore": true
+      }
+    }
+  ],
+  "scope": "new experiment package only; no UI integration; actual selected candidate under network-denied CLI",
+  "timestamp": 1791964952.637414,
+  "unchangedFiles": 241
+}

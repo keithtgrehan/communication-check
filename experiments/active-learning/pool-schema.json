@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "enum": [
+        2
+      ]
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "actorId": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorId",
+        "model"
+      ],
+      "additionalProperties": false
+    },
+    "syntheticOnly": {
+      "type": "boolean",
+      "enum": [
+        true
+      ]
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "lengthClass": {
+            "type": "string",
+            "enum": [
+              "single",
+              "multi"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "group",
+          "text",
+          "lengthClass"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 300,
+      "maxItems": 300
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "author",
+    "syntheticOnly",
+    "examples"
+  ],
+  "additionalProperties": false
+}

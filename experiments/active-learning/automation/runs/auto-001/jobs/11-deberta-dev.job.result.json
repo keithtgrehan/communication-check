@@ -1,0 +1,288 @@
+{
+  "admission": [
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 58,
+      "utf16Units": 145
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 50,
+      "utf16Units": 131
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 57,
+      "utf16Units": 153
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 55,
+      "utf16Units": 156
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 41,
+      "utf16Units": 73
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 48,
+      "utf16Units": 130
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 57,
+      "utf16Units": 160
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 44,
+      "utf16Units": 102
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 161
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 159
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 177
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 60,
+      "utf16Units": 170
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 42,
+      "utf16Units": 93
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 49,
+      "utf16Units": 136
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 44,
+      "utf16Units": 106
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 57,
+      "utf16Units": 164
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 50,
+      "utf16Units": 123
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 45,
+      "utf16Units": 101
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 52,
+      "utf16Units": 133
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 50,
+      "utf16Units": 118
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 51,
+      "utf16Units": 121
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 43,
+      "utf16Units": 85
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 43,
+      "utf16Units": 86
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 53,
+      "utf16Units": 156
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 56,
+      "utf16Units": 164
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 47,
+      "utf16Units": 125
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 51,
+      "utf16Units": 139
+    },
+    {
+      "admitted": true,
+      "reason": null,
+      "tokens": 57,
+      "utf16Units": 171
+    }
+  ],
+  "categories": [
+    "qualified_delivery",
+    "qualified_delivery",
+    "qualified_delivery",
+    "reported",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "reported",
+    "reported",
+    "reported",
+    "qualified_delivery",
+    "other",
+    "reported",
+    "reported",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "reported",
+    "qualified_delivery",
+    "reported",
+    "other",
+    "qualified_delivery",
+    "reported"
+  ],
+  "evidence": null,
+  "peakRssBytes": 1446428672,
+  "provenance": {
+    "batchSize": 8,
+    "candidate": "deberta",
+    "dependencies": {
+      "huggingface-hub": "0.36.2",
+      "sentence-transformers": null,
+      "setfit": null,
+      "torch": "2.10.0",
+      "transformers": "4.51.3"
+    },
+    "entailmentIndex": 0,
+    "files": {
+      "README.md": "75a2af474babafe0c57db14352013c8152442122e02aaf4e4c94eee5e5d39534",
+      "added_tokens.json": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+      "config.json": "a1c8011b852ae46d6ac26160d358fa595861d261352885f8f7bfcd2811030d9f",
+      "model.safetensors": "605e40d2020f4c66666db3e98a4bc277b6214565eac95f35c1a5027a93ee0ef0",
+      "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+      "spm.model": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+      "tokenizer.json": "05402ffae6dd382a8491b1d29bfc139bec5d332662e86a026f433ce54c25c202",
+      "tokenizer_config.json": "f5a1a74a632c0e9225e09a21ddf60c2e70ef5d3bfc1f261a24fd8ddab27254d2"
+    },
+    "hardware": {
+      "device": "cpu",
+      "logicalCpuCount": 8,
+      "machine": "arm64",
+      "processor": "arm",
+      "python": "3.11.3",
+      "system": "Darwin",
+      "threads": 4
+    },
+    "hypotheses": {
+      "firm_delivery": "The author unconditionally promises that they or their team will deliver a concrete work item in the future.",
+      "other": "The passage describes negated, hypothetical, completed past, or descriptive content rather than a future delivery promise.",
+      "qualified_delivery": "The author describes conditional, tentative, estimated, hoped-for, or planned but unassured future delivery of work.",
+      "reported": "The passage quotes, attributes, or recalls a delivery assertion rather than making a new assertion by the author.",
+      "request": "The author asks the recipient to take an action rather than making a new delivery promise."
+    },
+    "license": "mit",
+    "modelCard": "https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c/blob/bddf8c5411c34ac3565e16e04384fd68b2618dda/README.md",
+    "modelId": "MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c",
+    "revision": "bddf8c5411c34ac3565e16e04384fd68b2618dda",
+    "scoreMeaning": "Independent checkpoint entailment probability for firm_delivery; uncalibrated.",
+    "secondaryCategoryMeaning": "Maximum entailment among non-firm hypotheses; diagnostic only.",
+    "trainingDataLicenseCaveat": null,
+    "truncation": false,
+    "usage": "Local research only; no product integration or commercial distillation."
+  },
+  "rationale": null,
+  "scores": [
+    0.5514428615570068,
+    0.006350838579237461,
+    0.3406880795955658,
+    0.053908493369817734,
+    0.044740621000528336,
+    0.02571486122906208,
+    0.10555226355791092,
+    0.011944102123379707,
+    0.40865057706832886,
+    0.1862812638282776,
+    0.012932561337947845,
+    0.0007369567756541073,
+    0.029247881844639778,
+    0.0010867153760045767,
+    0.001129588228650391,
+    0.0017752385465428233,
+    0.31597253680229187,
+    0.00024921068688854575,
+    0.813771665096283,
+    0.1076674684882164,
+    0.023127978667616844,
+    0.002743668621405959,
+    0.8315565586090088,
+    0.0008266568765975535,
+    0.00773049658164382,
+    0.0005108837503939867,
+    0.006151135079562664,
+    0.004742901306599379
+  ],
+  "status": "ok",
+  "timing": {
+    "inferenceSeconds": 3.4411285409878474,
+    "loadSeconds": 1.4690712500014342,
+    "totalSeconds": 6.772854165988974
+  }
+}

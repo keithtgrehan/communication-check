@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Delivery wording lab · Communication Check</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/demo.mjs"></script>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Communication Check · Local experiment</p>
+      <h1>Delivery wording lab</h1>
+      <p class="intro">A small classifier trained on fictional, author-labelled examples. Explore whether a short passage uses firm future delivery wording.</p>
+      <div class="notice"><strong>Experimental wording classification.</strong> This does not establish whether a promise is true, approved or worth flagging. It is separate from the live checker.</div>
+      <div class="notice outcome"><strong>Research result: this model recognised 1 of 30 firm-delivery examples and missed 29 in an independent synthetic test.</strong> These are agent-authored and labelled examples, not human validation. It is not ready to replace the checker. This local lab preserves the experiment for inspection; the live checker is unchanged.</div>
+      <section aria-labelledby="input-title">
+        <h2 id="input-title">Try one short passage</h2>
+        <p id="input-help">Use an English sentence or short passage up to 2,000 characters. Emoji may count as two characters. The whole supplied passage is selected as evidence. Keep real customer information out of this research demo.</p>
+        <label for="passage">Passage</label>
+        <textarea id="passage" rows="6" aria-describedby="input-help count" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+        <div class="toolbar"><span id="count">0 / 2,000 characters</span><button id="classify" type="button" disabled>Classify wording</button></div>
+        <div class="samples" aria-label="Fictional samples">
+          <button type="button" data-sample="firm">Load fictional firm example</button>
+          <button type="button" data-sample="qualified">Load fictional qualified example</button>
+          <button type="button" id="clear">Clear passage</button>
+        </div>
+      </section>
+      <section id="result" aria-labelledby="result-title" hidden>
+        <p class="eyebrow">Experimental result</p><h2 id="result-title"></h2>
+        <p id="result-explanation"></p>
+        <h3>Supplied passage</h3><blockquote id="quote"></blockquote>
+        <button id="select" type="button">Select supplied passage</button>
+      </section>
+      <p id="status" role="status" aria-live="polite">Loading the local model…</p>
+      <details><summary>How this experiment works</summary>
+        <p>TF-IDF word features and logistic regression learn weights from labelled examples. The model does not generate text. A threshold was selected using a separate development set before an independent synthetic test.</p>
+        <p>The model forces a classification for valid input, including ambiguous or unfamiliar wording. “No firm delivery classification” is not an all-clear. It does not review pricing, general capabilities or other communication issues.</p>
+        <p>After the page and model load, classification runs in browser memory with no text submission or storage. Reloading clears the passage. Synthetic performance does not establish real-world accuracy or usefulness.</p>
+      </details>
+    </main>
+  </body>
+</html>

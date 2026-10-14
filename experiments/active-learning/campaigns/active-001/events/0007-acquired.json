@@ -1,0 +1,19 @@
+{
+  "details": {
+    "groups": {
+      "al-g001": "disagreement",
+      "al-g003": "uncertainty",
+      "al-g013": "uncertainty",
+      "al-g017": "disagreement",
+      "al-g018": "disagreement",
+      "al-g019": "uncertainty",
+      "al-g035": "disagreement",
+      "al-g052": "random",
+      "al-g064": "random",
+      "al-g065": "disagreement"
+    },
+    "round": 2
+  },
+  "kind": "acquired",
+  "unixTime": 1791964583.2888498
+}

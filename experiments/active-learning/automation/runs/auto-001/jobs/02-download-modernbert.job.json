@@ -1,0 +1,7 @@
+{
+  "action": "download",
+  "candidate": "modernbert",
+  "model_dir": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/models/modernbert",
+  "revision": "d421c4545a438fd006fb43f8b981c5d908faa1e1",
+  "run_dir": "/Users/keith/Developer/communication-check/experiments/active-learning/automation/runs/auto-001/candidate"
+}
