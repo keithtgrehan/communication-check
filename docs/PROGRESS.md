@@ -10,6 +10,13 @@ Status: Run `auto-001` complete and reproducible; no candidate improved; product
 - Private human feedback, reserved FINAL material/per-case annotations, logs, model caches, external research-only data and obsolete/duplicate exports remain local. Frozen files are unchanged. Public-clone replay limits are documented in `experiments/README.md`.
 - Fresh checks: 164 Python + 11 JavaScript experiment tests; original `auto-001` 168-file integrity/metric reproduction; 8 setup + 466 app unit tests, typecheck and build passed. No new evaluation, browser run, model promotion or deployment.
 
+## October 13 interviewer README
+
+- Rewrote README for public portfolio review: customer problem, working demo, Keith's confirmed product-direction contribution, design trade-offs, separate fictional CRM demonstration and evidence links. Kept evaluation history linked and all application code unchanged.
+- Checked README links/anchors and whitespace; verified the public landing page responds with the expected title. Fresh independent Astra review found no source-review blockers. Existing release test counts are attributed to their records, not rerun for this documentation edit.
+- Keith explicitly made this repository public earlier in this chat. README changes were merged to main in PR #6; this October 14 publication preserves them while integrating the later local research work.
+
+
 ## October 14 automated wording classification
 
 - Delivered `experiments/active-learning/automation/README.md` launch/verify commands, frozen protocol, isolated compatible NLI runtime, public-source/licence audit, automated data/teacher/reviewer stages, one compact fit, machine annotations and comparison. Result: `runs/auto-001/REPORT.md` and `report.json` under that package. No manual labels, examples, adjudication or review packets requested; historical human audit remains unperformed and is not a completion gate.
